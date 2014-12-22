@@ -1,0 +1,4 @@
+dmbexrcs
+========
+
+dumb programming exercise
