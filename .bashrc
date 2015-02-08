@@ -13,6 +13,7 @@ fi
 alias sht='sudo shutdown -P now'
 alias rbt='sudo reboot'
 alias wrs='whereis'
+alias dfz='df -h / /mnt/*'
 alias ugr='sudo dnf upgrade && sudo pip install setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl --upgrade'
 
 alias ut=youtube-dl
