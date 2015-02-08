@@ -9,10 +9,10 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-alias prx='python /mnt/1/vmshr/prxpy/local/proxy.py'
+#alias prx='python /mnt/1/vmshr/prxpy/local/proxy.py'
 alias sht='sudo shutdown -P now'
 alias rbt='sudo reboot'
-
+alias wrs='whereis'
 alias ugr='sudo dnf upgrade && sudo pip install setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl --upgrade'
 
 alias ut=youtube-dl
@@ -105,3 +105,22 @@ export HTTP_PROXY=$http_proxy
 
 export https_proxy=http://127.0.0.1:8087
 export HTTPS_PROXY=$https_proxy
+
+function dprx()
+{
+	echo [$http_proxy]
+        echo [$https_proxy]
+        echo [$HTTP_PROXY]
+        echo [$HTTPS_PROXY]
+
+	unset http_proxy
+	unset https_proxy
+	unset HTTP_PROXY
+	unset HTTPS_PROXY
+
+	echo [$http_proxy]
+        echo [$https_proxy]
+        echo [$HTTP_PROXY]
+        echo [$HTTPS_PROXY]
+	
+}
