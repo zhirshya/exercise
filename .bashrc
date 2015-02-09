@@ -135,4 +135,13 @@ function prprx()
         echo HTTPS_PROXY:[$HTTPS_PROXY] 
 }
 
+function dshaskpss()
+{
+        echo SSH_ASKPASS:[$SSH_ASKPASS]
+
+        unset SSH_ASKPASS
+
+        echo SSH_ASKPASS:[$SSH_ASKPASS]
+}
+
 
