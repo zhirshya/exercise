@@ -32,6 +32,8 @@ alias txz='tar xvJf'
 alias clr=clear
 alias rmrf='rm -rf'
 
+alias gcc='gcc -g -Wall '
+
 function dtx()
 {
 	rm -rf ~/.cache ~/.thumbnail*
@@ -109,19 +111,28 @@ export HTTPS_PROXY=$https_proxy
 
 function dprx()
 {
-	echo [$http_proxy]
-        echo [$https_proxy]
-        echo [$HTTP_PROXY]
-        echo [$HTTPS_PROXY]
+	echo http_proxy: [$http_proxy]
+        echo https_proxy:[$https_proxy]
+        echo HTTP_PROXY: [$HTTP_PROXY]
+        echo HTTPS_PROXY:[$HTTPS_PROXY]
 
 	unset http_proxy
 	unset https_proxy
 	unset HTTP_PROXY
 	unset HTTPS_PROXY
 
-	echo [$http_proxy]
-        echo [$https_proxy]
-        echo [$HTTP_PROXY]
-        echo [$HTTPS_PROXY]
-	
+	echo http_proxy: [$http_proxy]
+        echo https_proxy:[$https_proxy]
+        echo HTTP_PROXY: [$HTTP_PROXY]
+        echo HTTPS_PROXY:[$HTTPS_PROXY]
 }
+
+function prprx() 
+{ 
+        echo http_proxy: [$http_proxy] 
+        echo https_proxy:[$https_proxy] 
+        echo HTTP_PROXY: [$HTTP_PROXY] 
+        echo HTTPS_PROXY:[$HTTPS_PROXY] 
+}
+
+
