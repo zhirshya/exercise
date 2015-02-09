@@ -1,0 +1,27 @@
+https://github.com/dmbwkslwltstrtr/dmbexrcs.git
+
+#git add <filename>
+#git commit -m "Commit message"
+#git push origin master
+
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/dmbwkslwltstrtr/dmbprmtv.git
+git push -u origin master
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/dmbwkslwltstrtr/dmbprmtv.git
+git push -u origin master
+
+GIT_ASKPASS
+           If this environment variable is set, then Git commands which need to acquire passwords or passphrases (e.g. for HTTP or IMAP
+           authentication) will call this program with a suitable prompt as command-line argument and read the password from its STDOUT. See also
+           the core.askpass option in git-config(1).
+
+unset SSH_ASKPASS
+
+echo $SSH_ASKPASS
+
+$HOME/.gitconfig
