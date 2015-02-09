@@ -1,7 +1,7 @@
 #!/bin/sh
 
-gnome-terminal --maximize --tab-with-profile=Default --tab-with-profile=Default --tab-with-profile=Default --working-directory=/mnt/0/gthb/dmbexrcs
+gnome-terminal --maximize --tab-with-profile=Default --tab-with-profile=Default --working-directory=/mnt/1 --tab-with-profile=Default --working-directory=/mnt/0 --tab-with-profile=Default --working-directory=/mnt/0/gthb/dmbexrcs
 
-google-chrome --ssl-version-min=tls1 --incognito http://ferd.ca/queues-don-t-fix-overload.html https://goagent.github.io http://speakingjs.com/es5/index.html 
+#google-chrome --ssl-version-min=tls1 --incognito http://ferd.ca/queues-don-t-fix-overload.html https://goagent.github.io http://speakingjs.com/es5/index.html 
 
-#firefox
+firefox --ssl-version-min=tls1 -private https://goagent.github.io http://speakingjs.com/es5/index.html 
