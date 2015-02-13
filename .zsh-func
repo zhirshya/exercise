@@ -1,0 +1,109 @@
+#!/bin/zsh
+
+function dtx()
+{
+	rm -rf ~/.cache ~/.thumbnail*
+}
+
+function inst()
+{
+	unset https_proxy
+	sudo dnf install "$*"
+}
+
+function fnd() 
+{
+# https://www.youtube.com/watch?v=IzrSb9WuG8o
+
+	if [ $# -eq 1 ]; then
+		id="$1"
+		if [[ $1 = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
+			id="${id#http*://*youtu*be*/*watch\?v=}"
+		elif [[ $1 = http*://*youtu*be*/[-_a-zA-Z0-9]* ]]; then
+			id="${id#http*://*youtu*be*/}"
+
+# bash: ${$1#http*://*youtu*be*/*watch\?v[=]}: bad substitution
+# bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
+
+		fi
+
+		echo "Search for ID [$id] now"
+		sudo find / -iname "*$id*"
+
+	fi
+}
+
+function srvstr()
+{
+	if [ $# -eq 1 ]; then
+		sudo service "$1" start
+	fi
+}
+
+function srvstp()
+{
+	if [ $# -eq 1 ]; then
+		sudo service "$1" stop
+	fi
+}
+
+function lpr()
+{
+	if [ $# -eq 0 ]; then
+		ll *part
+	else
+		if [[ $1 = */ ]]; then
+			ll "$1"*part
+		else
+			ll "$1"/*part
+		fi
+	fi
+}
+
+function utmp3()
+{
+        youtube-dl -x --audio-format mp3 --audio-quality 0 "$1"
+}
+
+function ut18()
+{
+        youtube-dl -f 18 "$1"
+}
+
+
+function dprx()
+{
+	echo http_proxy: [$http_proxy]
+        echo https_proxy:[$https_proxy]
+        echo HTTP_PROXY: [$HTTP_PROXY]
+        echo HTTPS_PROXY:[$HTTPS_PROXY]
+
+	unset http_proxy
+	unset https_proxy
+	unset HTTP_PROXY
+	unset HTTPS_PROXY
+
+	echo http_proxy: [$http_proxy]
+        echo https_proxy:[$https_proxy]
+        echo HTTP_PROXY: [$HTTP_PROXY]
+        echo HTTPS_PROXY:[$HTTPS_PROXY]
+}
+
+function prprx() 
+{ 
+        echo http_proxy: [$http_proxy] 
+        echo https_proxy:[$https_proxy] 
+        echo HTTP_PROXY: [$HTTP_PROXY] 
+        echo HTTPS_PROXY:[$HTTPS_PROXY] 
+}
+
+function dshaskpss()
+{
+        echo SSH_ASKPASS:[$SSH_ASKPASS]
+
+        unset SSH_ASKPASS
+
+        echo SSH_ASKPASS:[$SSH_ASKPASS]
+}
+
+
