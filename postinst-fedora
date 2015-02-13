@@ -4,9 +4,13 @@ dnf upgrade
 
 #dnf install yum-plugin-fastestmirror
 
-dnf install pycryptopp python-crypto python-cryptography
+dnf install tlp tlp-rdw htop wireshark gnome-tweak-tool
 
-dnf install tlp tlp-rdw htop
+dnf install ncurses-devel ncurses libselinux-devel
+
+dnf install pycryptopp python-crypto python-cryptography libffi-devel python-devel openssl-devel python-pip
+
+sudo pip install shadowsocks setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl
 
 dnf install –nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf install –nogpgcheck http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -15,3 +19,31 @@ dnf --nogpgcheck install google-chrome-stable_current_x86_64.rpm
 
 cp prxpy /etc/init.d/
 chkconfig --level 35 prxpy on
+
+cp shtdwnscrpt-fedora /etc/init.d/
+ln -s /etc/init.d/shtdwnscrpt-fedora /etc/rc0.d/k99shtdwnscrpt-fedora
+ln -s /etc/init.d/shtdwnscrpt-fedora /etc/rc6.d/k99shtdwnscrpt-fedora
+
+#err:
+Peer's Certificate issuer is not recognized
+Peer's certificate issuer has been marked as not trusted by the user
+
+gnutls-cli -p 443 github.com
+
+#check current shell in linux
+$ ps -fp $$
+UID        PID  PPID  C STIME TTY          TIME CMD
+r         2262  2202  0 10:43 pts/0    00:00:00 bash
+$ echo $0
+bash
+$ echo $SHELL
+/bin/bash
+
+chsh -s /bin/zsh
+file /usr/bin/sh
+/usr/bin/sh: symbolic link to `bash'
+
+git branch
+git branch -r
+git status
+
