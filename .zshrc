@@ -110,5 +110,6 @@ export HTTP_PROXY=$http_proxy
 export https_proxy=http://127.0.0.1:8087
 export HTTPS_PROXY=$https_proxy
 
-alias srfnc='source ~/.zsh-func'
+#alias srfnc='source ~/.zsh-func'
+source ~/.zsh-func
 
