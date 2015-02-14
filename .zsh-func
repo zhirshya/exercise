@@ -72,7 +72,6 @@ function ut18()
         youtube-dl -f 18 "$1"
 }
 
-
 function dprx()
 {
 	echo "http_proxy: [$http_proxy]"
@@ -106,6 +105,12 @@ function dshaskpss()
         unset SSH_ASKPASS
 
         echo "SSH_ASKPASS:[$SSH_ASKPASS]"
+}
+
+function ugr()
+{
+	dprx
+	sudo dnf upgrade && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl --upgrade
 }
 
 
