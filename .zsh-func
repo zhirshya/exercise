@@ -2,11 +2,12 @@
 
 function dtx()
 {
-	rm -rf ~/.cache ~/.thumbnail*
+	rm -rf ~/.cache
 }
 
 function inst()
 {
+	unset http_proxy
 	unset https_proxy
 	sudo dnf install "$*"
 }
@@ -27,8 +28,9 @@ function fnd()
 
 		fi
 
-		echo "Search for ID [$id] now"
+		echo "[SCRIPT]>>Search for ID [$id] now..."
 		sudo find / -iname "*$id*"
+		echo "[SCRIPT]>>END"
 
 	fi
 }
@@ -73,37 +75,37 @@ function ut18()
 
 function dprx()
 {
-	echo http_proxy: [$http_proxy]
-        echo https_proxy:[$https_proxy]
-        echo HTTP_PROXY: [$HTTP_PROXY]
-        echo HTTPS_PROXY:[$HTTPS_PROXY]
+	echo "http_proxy: [$http_proxy]"
+        echo "https_proxy:[$https_proxy]"
+        echo "HTTP_PROXY: [$HTTP_PROXY]"
+        echo "HTTPS_PROXY:[$HTTPS_PROXY]"
 
 	unset http_proxy
 	unset https_proxy
 	unset HTTP_PROXY
 	unset HTTPS_PROXY
 
-	echo http_proxy: [$http_proxy]
-        echo https_proxy:[$https_proxy]
-        echo HTTP_PROXY: [$HTTP_PROXY]
-        echo HTTPS_PROXY:[$HTTPS_PROXY]
+	echo "http_proxy: [$http_proxy]"
+        echo "https_proxy:[$https_proxy]"
+        echo "HTTP_PROXY: [$HTTP_PROXY]"
+        echo "HTTPS_PROXY:[$HTTPS_PROXY]"
 }
 
 function prprx() 
 { 
-        echo http_proxy: [$http_proxy] 
-        echo https_proxy:[$https_proxy] 
-        echo HTTP_PROXY: [$HTTP_PROXY] 
-        echo HTTPS_PROXY:[$HTTPS_PROXY] 
+        echo "http_proxy: [$http_proxy]"
+        echo "https_proxy:[$https_proxy]"
+        echo "HTTP_PROXY: [$HTTP_PROXY]"
+        echo "HTTPS_PROXY:[$HTTPS_PROXY]"
 }
 
 function dshaskpss()
 {
-        echo SSH_ASKPASS:[$SSH_ASKPASS]
+        echo "SSH_ASKPASS:[$SSH_ASKPASS]"
 
         unset SSH_ASKPASS
 
-        echo SSH_ASKPASS:[$SSH_ASKPASS]
+        echo "SSH_ASKPASS:[$SSH_ASKPASS]"
 }
 
 
