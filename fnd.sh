@@ -13,7 +13,7 @@
 
 		fi
 
-		echo "[SCRIPT]>>Search for ID [$id] now"
+		echo "[SCRIPT]>>Search for ID [$id] now..."
 		sudo find / -iname "*$id*"
-		echo "[SCRIPT]>>EXIT"
+		echo "[SCRIPT]>>END"
 	fi
