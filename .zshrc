@@ -84,7 +84,7 @@ alias sht='sudo shutdown -P now'
 alias rbt='sudo reboot'
 alias wrs='whereis'
 alias dfz='df -h / /mnt/*'
-alias ugr='sudo dnf upgrade && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl --upgrade'
+#alias ugr='sudo dnf upgrade && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl --upgrade'
 
 alias ut=youtube-dl
 alias utf='youtube-dl -a'
@@ -112,4 +112,6 @@ export HTTPS_PROXY=$https_proxy
 
 #alias srfnc='source ~/.zsh-func'
 source ~/.zsh-func
+
+unsetopt CASE_GLOB # match case insensitive patterns with ls
 
