@@ -4,7 +4,7 @@ gnome-terminal --maximize --tab-with-profile=Default --tab-with-profile=Default 
 
 #google-chrome --ssl-version-min=tls1 --incognito http://ferd.ca/queues-don-t-fix-overload.html https://goagent.github.io http://speakingjs.com/es5/index.html 
 
-#firefox --ssl-version-min=tls1 -private herbsutter.com https://github.com/kjellkod/g3log 
+#firefox --ssl-version-min=tls1 -private herbsutter.com https://github.com/kjellkod/g3log https://progit.org/ 
 
 vlc
 
