@@ -100,6 +100,9 @@ alias cd3='cd ../../..'
 alias txz='tar xvJf'
 #alias ll='ls -alF'
 alias clr=clear
+alias tl=tail
+alias hd=head
+alias lss=less
 alias rmrf='rm -rf'
 
 alias gcc='gcc -g -Wall '
