@@ -14,6 +14,6 @@
 		fi
 
 		echo "[SCRIPT]>>Search for ID [$id] now..."
-		sudo find / -iname "*$id*"
+		sudo find -xdev / -iname "*$id*"  # -xdev -> find: ‘/run/user/1000/gvfs’: Permission denied
 		echo "[SCRIPT]>>END"
 	fi
