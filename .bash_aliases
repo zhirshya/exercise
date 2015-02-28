@@ -75,12 +75,12 @@ function lpr()
 	fi
 }
 
-function ut-mp3()
+function utmp3()
 {
         youtube-dl -x --audio-format mp3 --audio-quality 0 "$1"
 }
 
-function ut-f18()
+function ut18()
 {
         youtube-dl -f 18 "$1"
 }
