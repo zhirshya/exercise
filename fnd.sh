@@ -14,6 +14,7 @@
 		fi
 
 		echo "[SCRIPT]>>Search for ID [$id] now..."
-		sudo find / -xdev -iname "*$id*"  # -xdev -> find: ‘/run/user/1000/gvfs’: Permission denied #find: paths must precede expression
+		# -xdev -> find: ‘/run/user/1000/gvfs’: Permission denied #find: paths must precede expression
+		sudo find / -iname "*$id*"
 		echo "[SCRIPT]>>END"
 	fi
