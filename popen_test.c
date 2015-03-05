@@ -43,6 +43,7 @@ void *func_thrd()
 		break;
 	}
 
+	#how to implement Arrow key Up/Down history toggle like in shell or linux terminal in C/C++?
 	while(NULL != fgets(cmd_out_buf,LINE_MAX,fp))
 	 	fputs(cmd_out_buf,stdout);
 	
