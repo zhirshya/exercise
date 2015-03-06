@@ -39,6 +39,7 @@ bash
 $ echo $SHELL
 /bin/bash
 
+# default shell --> zsh
 chsh -s /bin/zsh
 file /usr/bin/sh
 /usr/bin/sh: symbolic link to `bash'
