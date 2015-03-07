@@ -48,3 +48,6 @@ git branch
 git branch -r
 git status
 
+# reassign PRNTSCRN to open screenshot dialog
+gnome-screenshot -i
+
