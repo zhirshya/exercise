@@ -52,3 +52,6 @@ git status
 # reassign PRNTSCRN to open screenshot dialog
 gnome-screenshot -i
 
+# usb drive automount Fedora 21
+/run/media/
+
