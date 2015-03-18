@@ -3,6 +3,7 @@
 function dtx()
 {
 	rm -rf ~/.cache
+	# .thumbnails
 }
 
 function inst()
@@ -107,10 +108,10 @@ function dshaskpss()
         echo "SSH_ASKPASS:[$SSH_ASKPASS]"
 }
 
-function ugr()
+function upg()
 {
 	dprx
-	sudo dnf upgrade && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl --upgrade
+	sudo dnf upgrade && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography PyOpenSSL greenlet gevent youtube-dl --upgrade
 }
 
 
