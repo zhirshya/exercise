@@ -6,6 +6,7 @@ gnome-terminal --maximize --tab-with-profile=Default --tab-with-profile=Default 
 
 #firefox --ssl-version-min=tls1 -private herbsutter.com https://github.com/kjellkod/g3log https://progit.org/ 
 
-vlc
+/home/r/Downloads/firefox/firefox-bin --ssl-version-min=tls1 -private &
 
+vlc # should be the last line(last to start)
 
