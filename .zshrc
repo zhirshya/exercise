@@ -84,7 +84,7 @@ alias sht='sudo shutdown -P now'
 alias rbt='sudo reboot'
 alias wrs='whereis'
 alias dfz='df -h / /mnt/*'
-#alias upg='sudo dnf upgrade && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl --upgrade'
+#alias upg='sudo dnf upgrade -y && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl --upgrade'
 
 alias ut=youtube-dl
 alias utf='youtube-dl -a'
