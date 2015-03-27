@@ -18,6 +18,14 @@ Restart firewalld service:
 firewall-cmd --reload
 
 sudo dnf install mariadb mariadb-server -y
+Enable mysqld service at boot time with following command:
+	systemctl enable mysqld
+And start mysqld service using command:
+	systemctl start mysqld
+
+Set MariaDB root password:
+	mysql_secure_installation
+
 
 sudo dnf install php -y
 
