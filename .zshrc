@@ -79,6 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias src=source
 alias ll='ls -alF'
 alias sht='sudo shutdown -P now'
 alias rbt='sudo reboot'
