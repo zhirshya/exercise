@@ -90,7 +90,9 @@ alias dfz='df -h / /mnt/*'
 alias ut=youtube-dl
 alias utf='youtube-dl -a'
 alias utl='youtube-dl -citk --max-quality FORMAT'
+
 alias frf='firefox --ssl-version-min=tls1.2 -private'
+alias chr='google-chrome --ssl-version-min=tls1.2 --incognito'
 
 alias cd.='cd ~'
 alias cd-='cd -'
