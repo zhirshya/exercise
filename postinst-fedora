@@ -4,7 +4,7 @@ dnf upgrade
 
 #dnf install yum-plugin-fastestmirror
 
-dnf install tlp tlp-rdw htop wireshark gnome-tweak-tool vim tmux
+dnf install tlp tlp-rdw htop wireshark gnome-tweak-tool vim tmux  p7zip p7zip-plugins 
 
 dnf install ncurses-devel ncurses libselinux-devel
 
