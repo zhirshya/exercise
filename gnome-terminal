@@ -1,0 +1,16 @@
+xterm -hold -e "cmd string"
+x-terminal-emulator -e "
+
+gnome-terminal -e command
+or
+xterm -e command
+or
+konsole -e command
+
+terminal -e command
+
+To make the terminal stay when the command exits:
+In konsole there is a --noclose flag.
+
+In xterm, there is a -hold flag.
+
