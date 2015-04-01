@@ -1,0 +1,12 @@
+sudo update-rc.d -f apache2 remove
+sudo update-rc.d -f apache remove
+sudo update-rc.d -f telnet remove
+sudo update-rc.d -f Telnet remove
+sudo update-rc.d -f nmbd remove
+sudo update-rc.d -f smbd remove
+sudo update-rc.d -f named remove
+sudo update-rc.d -f lpd remove
+sudo update-rc.d -f ftpd remove
+sudo update-rc.d -f rlogin remove
+sudo update-rc.d -f git-daemon remove
+sudo update-rc.d -f vboxdrv remove
