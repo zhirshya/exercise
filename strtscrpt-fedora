@@ -1,6 +1,6 @@
 #!/bin/sh
 
-gnome-terminal --maximize --tab-with-profile=Default --working-directory=~ --tab-with-profile=Default --working-directory=/mnt/1/wbst --tab-with-profile=Default --working-directory=/mnt/0/gthb/noncode --tab-with-profile=Default --working-directory=/mnt/0/gthb/exercise
+gnome-terminal --maximize --tab-with-profile=Default --working-directory=~ --tab-with-profile=Default --working-directory=/mnt/1/wbst --tab-with-profile=Default --working-directory=/mnt/0/gthb/noncode --tab-with-profile=Default --working-directory=/mnt/0/gthb/xrcs
 
 #google-chrome --ssl-version-min=tls1.2 --incognito http://ferd.ca/queues-don-t-fix-overload.html https://goagent.github.io http://speakingjs.com/es5/index.html 
 
