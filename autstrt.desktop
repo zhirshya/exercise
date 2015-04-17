@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/mnt/0/gthb/exercise/strtscrpt-fedora
+Exec=~/gthb/xrcs/strtscrpt-fedora
 Hidden=false
 X-GNOME-Autostart-enabled=true
 Name[en_US]=autstrt
