@@ -2,9 +2,9 @@ dnf erase rhythmbox evolution totem thunderbird
 
 dnf upgrade
 
-#dnf install yum-plugin-fastestmirror
+dnf install glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb valgrind
 
-dnf install tlp tlp-rdw htop wireshark gnome-tweak-tool vim tmux  p7zip p7zip-plugins evince 
+dnf install tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins evince zsh
 
 dnf install ncurses-devel ncurses libselinux-devel
 
