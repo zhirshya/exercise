@@ -108,10 +108,9 @@ function dshaskpss()
         echo "SSH_ASKPASS:[$SSH_ASKPASS]"
 }
 
-function upg()
-{
-	dprx
-	sudo dnf upgrade -y && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography PyOpenSSL greenlet gevent youtube-dl --upgrade
-}
-
+#function upg()
+#{
+#	dprx
+#	sudo dnf upgrade -y && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography PyOpenSSL greenlet gevent youtube-dl --upgrade
+#}
 

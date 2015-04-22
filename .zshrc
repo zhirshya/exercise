@@ -86,13 +86,13 @@ alias rbt='sudo reboot'
 alias wrs='whereis'
 alias dfz='df -h / /mnt/*'
 #alias upg='sudo dnf upgrade -y && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl --upgrade'
-
+alias upg='sudo dnf upgrade -y'
 alias ut=youtube-dl
 alias utf='youtube-dl -a'
 alias utl='youtube-dl -citk --max-quality FORMAT'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private'
-alias chr='google-chrome --ssl-version-min=tls1.2 --incognito'
+alias krm='google-chrome --ssl-version-min=tls1.2 --incognito'
 
 alias cd.='cd ~'
 alias cd-='cd -'
@@ -102,7 +102,6 @@ alias cd3='cd ../../..'
 
 #alias less='less -N'
 alias txz='tar xvJf'
-#alias ll='ls -alF'
 alias clr=clear
 alias tl=tail
 alias hd=head
@@ -111,14 +110,15 @@ alias rmrf='rm -rf'
 
 alias gcc='gcc -g -Wall '
 
-export http_proxy=http://127.0.0.1:8087
-export HTTP_PROXY=$http_proxy
+#export http_proxy=http://127.0.0.1:8087
+#export HTTP_PROXY=$http_proxy
 
-export https_proxy=http://127.0.0.1:8087
-export HTTPS_PROXY=$https_proxy
+#export https_proxy=http://127.0.0.1:8087
+#export HTTPS_PROXY=$https_proxy
 
 #alias srfnc='source ~/.zsh-func'
 source ~/.zsh-func
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 
+unset SSH_ASKPASS # supress SSH from asking git usrname & psswrd using dialog window, but may harm SSH session?
