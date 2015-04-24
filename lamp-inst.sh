@@ -1,6 +1,9 @@
 sudo dnf install httpd -y
 
 systemctl enable httpd
+#[output given as following line when executed the above command as a standard user (non-admin) under Fedora 22Beta]
+#Created symlink from /etc/systemd/system/multi-user.target.wants/httpd.service to /usr/lib/systemd/system/httpd.service.
+
 systemctl start httpd
 
 If you are encountered with the following error:
@@ -18,14 +21,14 @@ Restart firewalld service:
 firewall-cmd --reload
 
 sudo dnf install mariadb mariadb-server -y
-Enable mysqld service at boot time with following command:
-	systemctl enable mysqld
-And start mysqld service using command:
-	systemctl start mysqld
+
+Enable MariaDB at startup:
+	systemctl enable mariadb
+Start the daemon:
+	systemctl start mariadb
 
 Set MariaDB root password:
 	mysql_secure_installation
-
 
 sudo dnf install php -y
 
