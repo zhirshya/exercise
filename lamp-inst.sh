@@ -30,5 +30,5 @@ Start the daemon:
 Set MariaDB root password:
 	mysql_secure_installation
 
-sudo dnf install php -y
+sudo dnf install php phpmyadmin -y
 
