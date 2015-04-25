@@ -55,3 +55,9 @@ gnome-screenshot -i
 # usb drive automount Fedora 21
 /run/media/
 
+# mkdir
+mkdir ~/gthb/xrcs
+mkdir ~/gthb/неkod
+mkdir ~/gthb/wbst
+
+
