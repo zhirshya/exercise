@@ -95,4 +95,4 @@ root	ALL=(ALL) 	ALL
 ## Read drop-in files from /etc/sudoers.d (the # here does not mean a comment)
 #includedir /etc/sudoers.d
 
-r	localhost=/sbin/shutdown, /sbin/reboot, /usr/bin/dnf, /usr/bin/find, /usr/bin/pip, /usr/sbin/service
+r	ergnmbhvgrfn=/usr/sbin/shutdown, /usr/sbin/reboot, /usr/bin/dnf, /usr/bin/find, /usr/bin/pip
