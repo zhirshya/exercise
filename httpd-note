@@ -1,2 +1,3 @@
 httpd -V
 
+Best permissions, ownership and paths for apache document root
