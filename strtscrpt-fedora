@@ -4,7 +4,7 @@
 
 gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed --working-directory=/home/r/gthb/неkod --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs \
 	--tab-with-profile=Unnamed --working-directory=/home/r/Downloads/4th_ed_xmpl --tab-with-profile=Unnamed --working-directory=/home/r/opencart \
-	--tab-with-profile=Unnamed --working-directory=/var/www/html --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst
+	--tab-with-profile=Unnamed --working-directory=/var/www --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst
 
 # tor
 #gnome-terminal -e /home/r/Downloads/tor-browser_en-US/start-tor-browser
