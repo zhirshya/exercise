@@ -1,3 +1,5 @@
+~/.oh-my-zsh/plugins/git/git.plugin.zsh
+
 #git add <filename>
 #git commit -m "Commit message"
 #git push origin master
