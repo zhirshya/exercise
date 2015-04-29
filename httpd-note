@@ -21,6 +21,9 @@ setfacl -d -m o:r /var/www
 #get detailed info on the acl using getfacl:
 getfacl /var/www
 
+setfacl -Rm u:apache:rwX /var/www/rss
+setfacl -Rm d:u:apache:rwX,u:apache:rwX /var/www/rss
+
 <<<
 What's the best way of handling permissions for apache2's user www-data in /var/www?
 Create a new group (www-pub) and add the users to that group
