@@ -49,7 +49,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/.local/bin:/home/r/bin:/mnt/1/vmshr/torbrsr"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -85,14 +85,14 @@ alias sht='sudo shutdown -P now'
 alias rbt='sudo reboot'
 alias wrs='whereis'
 alias dfz='df -h / /mnt/*'
-#alias upg='sudo dnf upgrade -y && sudo pip install shadowsocks setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl --upgrade'
-alias upg='sudo dnf upgrade -y'
+alias upg='sudo dnf upgrade -y && sudo pip install --upgrade pip shadowsocks setuptools dnslib pycrypto cryptography pyopenssl greenlet gevent youtube-dl '
+#alias upg='sudo dnf upgrade -y'
 alias ut=youtube-dl
 alias utf='youtube-dl -a'
 alias utl='youtube-dl -citk --max-quality FORMAT'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private'
-alias krm='google-chrome --ssl-version-min=tls1.2 --incognito'
+alias krm='google-chrome-stable --ssl-version-min=tls1.2 --incognito'
 
 alias cd.='cd ~'
 alias cd-='cd -'
