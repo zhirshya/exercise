@@ -8,7 +8,7 @@ dnf install glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb va
 
 dnf install tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins evince zsh
 
-dnf install ncurses-devel ncurses libselinux-devel
+dnf install ncurses-devel ncurses libselinux-devel dkms
 
 dnf install pycryptopp python-crypto python-cryptography libffi-devel python-devel openssl-devel python-pip
 
