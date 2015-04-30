@@ -1,3 +1,5 @@
+getenforce
+
 dnf erase rhythmbox evolution totem thunderbird
 
 dnf upgrade
