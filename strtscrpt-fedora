@@ -2,6 +2,8 @@
 
 #gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed --working-directory=/mnt/1/wbst --tab-with-profile=Unnamed --working-directory=/mnt/0/gthb/неkod --tab-with-profile=Unnamed --working-directory=/mnt/0/gthb/xrcs
 
+#gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed --working-directory=/home/r/gthb/неkod --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs --tab-with-profile=Unnamed --working-directory=/home/r/Downloads/4th_ed_xmpl --tab-with-profile=Unnamed --working-directory=/home/r/opencart --tab-with-profile=Unnamed --working-directory=/var/www --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst
+
 gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed --working-directory=/home/r/gthb/неkod --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs \
 	--tab-with-profile=Unnamed --working-directory=/home/r/Downloads/4th_ed_xmpl --tab-with-profile=Unnamed --working-directory=/home/r/opencart \
 	--tab-with-profile=Unnamed --working-directory=/var/www --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst
@@ -13,7 +15,7 @@ gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab
 
 #google-chrome-stable --ssl-version-min=tls1.0 --incognito herbsutter.com https://github.com/kjellkod/g3log https://progit.org https://calomel.org http://www.salottinogeek.net/lamp-server-fedora-centos http://www.weblio.jp http://www.opencart.com &
 
-google-chrome-stable --ssl-version-min=tls1.0 --incognito http://www.weblio.jp http://www.opencart.com https://httpd.apache.org/docs/2.4/misc/security_tips.html \
+google-chrome-stable --ssl-version-min=tls1.0 --incognito http://www.weblio.jp http://www.opencart.com https://httpd.apache.org/docs/2.4/misc/security_tips.html http://gihyo.jp \
 https://serverfault.com/questions/357108/what-permissions-should-my-website-files-folders-have-on-a-linux-webserver \
 https://serverfault.com/questions/224560/best-permissions-ownership-for-apache-document-root \
 http://www.tecmint.com/secure-files-using-acls-in-linux \
