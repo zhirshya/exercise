@@ -8,10 +8,10 @@ ps aux | grep apache
 
 Best permissions, ownership and paths for apache document root?
 
-groupadd httpdgrp
-usermod -a -G httpdgrp r
+groupadd webadmin
+usermod -a -G webadmin r
 #groups r
-chown -R root:httpdgrp /var/www
+chown -R root:webadmin /var/www
 chmod 2775 /var/www
 find /var/www -type d -exec chmod 2775 {} +
 find /var/www -type f -exec chmod 0664 {} +
