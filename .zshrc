@@ -79,6 +79,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+#apache2
+alias apstt='sudo systemctl -l status apache2'
+alias apstp='sudo systemctl stop apache2'
+alias apstr='sudo systemctl start apache2'
+alias aprst='sudo systemctl restart apache2'
+alias aprld='sudo systemctl reload apache2'
+
 alias src=source
 alias vm=vim
 alias ll='ls -alF'
