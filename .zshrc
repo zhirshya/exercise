@@ -80,11 +80,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #apache2
-alias apstt='sudo systemctl -l status apache2'
-alias apstp='sudo systemctl stop apache2'
-alias apstr='sudo systemctl start apache2'
-alias aprst='sudo systemctl restart apache2'
-alias aprld='sudo systemctl reload apache2'
+#alias apstt='sudo systemctl -l status apache2'
+#alias apstp='sudo systemctl stop apache2'
+#alias apstr='sudo systemctl start apache2'
+#alias aprst='sudo systemctl restart apache2'
+#alias aprld='sudo systemctl reload apache2'
+
+alias apstt='sudo /etc/init.d/apache2 status'
+alias apstp='sudo /etc/init.d/apache2 graceful-stop'
+alias apstr='sudo /etc/init.d/apache2 start'
+alias aprst='sudo /etc/init.d/apache2 restart'
+alias aprld='sudo /etc/init.d/apache2 reload'
 
 alias src=source
 alias vm=vim
