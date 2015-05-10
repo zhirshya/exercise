@@ -1,5 +1,7 @@
 ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 
+git config -l | grep proxy
+
 #git add <filename>
 #git commit -m "Commit message"
 #git push origin master
