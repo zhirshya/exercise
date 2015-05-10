@@ -1,0 +1,6 @@
+https://sites.google.com/site/easylinuxtipsproject/
+
+#E: encountered a section with no package: header
+#E: problem with Mergelist/var/lib/apt/lists
+sudo rm -Rf /var/lib/apt/lists/* -vf
+
