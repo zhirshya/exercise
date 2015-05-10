@@ -1,3 +1,7 @@
+#fedora
+#OpenCart
+https://www.rosehosting.com/blog/install-opencart-2-on-an-ubuntu-14-04-vps-with-nginx-and-php-fpm/
+
 sudo dnf install httpd -y
 
 systemctl enable httpd
@@ -30,5 +34,10 @@ Start the daemon:
 Set MariaDB root password:
 	mysql_secure_installation
 
+#PHP
 sudo dnf install php phpmyadmin -y
+
+#PHP module #php5-mysqlnd <==> php5-mysqld
+sudo apt-get install php5-fpm php5-cli php5-mcrypt php5-gd php5-mysqlnd php5-curl
+sudo php5enmod mcrypt
 
