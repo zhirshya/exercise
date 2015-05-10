@@ -91,6 +91,11 @@ alias apstp='sudo /etc/init.d/apache2 graceful-stop'
 alias apstr='sudo /etc/init.d/apache2 start'
 alias aprst='sudo /etc/init.d/apache2 restart'
 alias aprld='sudo /etc/init.d/apache2 reload'
+#mysql, mariadb
+alias mystt='sudo systemctl -a status mysql'
+alias mystp='sudo systemctl stop mysql'
+alias mystr='sudo systemctl start mysql'
+alias myrst='sudo systemctl restart mysql'
 
 alias src=source
 alias vm=vim
