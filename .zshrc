@@ -140,4 +140,4 @@ source ~/.zsh-func
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 
-unset SSH_ASKPASS # supress SSH from asking git usrname & psswrd using dialog window, but may harm SSH session?
+#unset SSH_ASKPASS # Fedora only? supress SSH from asking git usrname & psswrd using dialog window, but may harm SSH session?
