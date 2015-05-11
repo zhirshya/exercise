@@ -24,6 +24,8 @@ https://httpd.apache.org/docs/2.4/urlmapping.html \
 https://aws.amazon.com/start-ups/ \
 http://startupguide.com/
 
+#google-chrome-stable --ssl-version-min=tls1.1 --incognito http://www.weblio.jp http://www3.nhk.or.jp/news/easy/ http://www.opencart.com https://httpd.apache.org/docs/2.4/misc/security_tips.html http://gihyo.jp/admin/serial/01/ubuntu-recipe/0372 https://progit.org 
+
 #firefox --ssl-version-min=tls1.2 -private herbsutter.com https://github.com/kjellkod/g3log https://progit.org https://calomel.org https://www.google.com  &
 
 #vlc
