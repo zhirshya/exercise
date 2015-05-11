@@ -3,7 +3,7 @@ https://www.rosehosting.com/blog/install-opencart-2-on-an-ubuntu-14-04-vps-with-
 
 Install LAMP in Ubuntu Server 14.04 LTS
 
-#fedora
+#httpd fedora
 sudo dnf install httpd -y
 
 systemctl enable httpd
@@ -26,8 +26,10 @@ Restart firewalld service:
 
 firewall-cmd --reload
 
-#ubuntu
+#apache2 ubuntu
 sudo apt-get install apache2 apache2-utils
+
+sudo vim /etc/apache2/mods-enabled/dir.conf #reorder def index file
 
 sudo service apache2 restart
 
