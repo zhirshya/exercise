@@ -1,6 +1,8 @@
 #OpenCart
 https://www.rosehosting.com/blog/install-opencart-2-on-an-ubuntu-14-04-vps-with-nginx-and-php-fpm/
 
+Install LAMP in Ubuntu Server 14.04 LTS
+
 #fedora
 sudo dnf install httpd -y
 
