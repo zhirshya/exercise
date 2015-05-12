@@ -114,3 +114,12 @@ function dshaskpss()
 #	sudo dnf upgrade -y && sudo pip install --upgrade setuptools dnslib pycrypto PyOpenSSL greenlet gevent youtube-dl
 #}
 
+function kln()
+{
+	sudo apt-get autoremove
+	sudo apt-get autoclean
+	sudo apt-get clean
+#E: encountered a section with no package: header
+#E: problem with Mergelist/var/lib/apt/lists
+	sudo rm -Rf /var/lib/apt/lists/* -vf
+}
