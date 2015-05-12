@@ -1,3 +1,6 @@
+uname -a
+lsb_release -a
+
 https://sites.google.com/site/easylinuxtipsproject/
 
 sudo ufw status verbose
