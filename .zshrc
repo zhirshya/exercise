@@ -97,6 +97,7 @@ alias mystp='sudo systemctl stop mysql'
 alias mystr='sudo systemctl start mysql'
 alias myrst='sudo systemctl restart mysql'
 
+alias ufwstt='sudo ufw status verbose'
 alias src=source
 alias vm=vim
 alias ll='ls -alF'
