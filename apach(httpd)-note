@@ -29,6 +29,18 @@ setfacl -Rm d:u:apache:rwX,u:apache:rwX /var/www/rss
 setfacl -Rm d:u:www-data:rwX,u:www-data:rwX /var/www/rss
 #setfacl -Rm u:www-data:rwX /var/www/rss
 
+#Setup Virtual Hosts In Apache On Ubuntu 14.04 LTS
+cd /etc/apache2/sites-available
+sudo cp 000-default.conf nkk.com.conf
+	ServerName nkk.com
+        ServerAlias www.nkk.com
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/nkk
+
+sudo a2dissite 000-default.conf
+sudo a2ensite nkk.com.conf
+sudo service apache2 reload
+
 <<<
 What's the best way of handling permissions for apache2's user www-data in /var/www?
 Create a new group (www-pub) and add the users to that group
