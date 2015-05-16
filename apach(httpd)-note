@@ -40,6 +40,7 @@ sudo cp 000-default.conf nkk.com.conf
 sudo a2dissite 000-default.conf
 sudo a2ensite nkk.com.conf
 sudo service apache2 reload
+sudo vim /etc/hosts
 
 <<<
 What's the best way of handling permissions for apache2's user www-data in /var/www?
