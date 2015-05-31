@@ -19,3 +19,10 @@ gsettings set com.canonical.desktop.interface scrollbar-mode normal
 #E: problem with Mergelist/var/lib/apt/lists
 sudo rm -Rf /var/lib/apt/lists/* -vf
 
+#Brightness is reset to Maximum on restart
+sudo apt-get install xbacklight
+Open the Startup Applications Preferences menu.
+Click the Add button and add the following information:
+Name: Brightness Command: xbacklight -set 60
+Replace 60 with whatever brightness level you prefer.
+
