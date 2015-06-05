@@ -2,3 +2,5 @@
 #read range of lines from a file into current buffer
 :r !sed -n 24,410p ~/Downloads/Ex_files_Creating_a_website_using__Bootstrap/wiredwiki.html
 
+#oros(Русский) --> oros\(Русский\)
+%s/\([(|)]\)/\\\1/g
