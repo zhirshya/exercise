@@ -1,0 +1,7 @@
+#!/bin/sh
+mkdir ~/hlth\(здоровье\)
+mkdir ~/kukin
+mkdir ~/lflssn
+mkdir ~/lsr\(досуг\)
+mkdir ~/oros\(Русский\)
+mkdir ~/tekvid
