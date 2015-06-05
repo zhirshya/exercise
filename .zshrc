@@ -107,8 +107,8 @@ alias sht='sudo shutdown -P now'
 alias rbt='sudo reboot'
 alias wrs='whereis'
 alias dfz='df -h / /mnt/*'
-alias upg='sudo dnf upgrade -y && sudo youtube-dl -U'
-#alias upg='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
+alias upg='sudo dnf upgrade -y && youtube-dl -U'
+#alias upg='sudo apt-get update && sudo apt-get upgrade -y && youtube-dl -U'
 alias ut=youtube-dl
 alias utupg='sudo youtube-dl -U'
 alias utf='youtube-dl -a'
@@ -144,4 +144,4 @@ source ~/.zsh-func
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 
-#unset SSH_ASKPASS # Fedora only? supress SSH from asking git usrname & psswrd using dialog window, but may harm SSH session?
+#unset SSH_ASKPASS # Fedora only? suppress SSH from asking git usrname & psswrd using dialog window, but may harm SSH session?
