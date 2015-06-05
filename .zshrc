@@ -110,7 +110,7 @@ alias dfz='df -h / /mnt/*'
 alias upg='sudo dnf upgrade -y && youtube-dl -U'
 #alias upg='sudo apt-get update && sudo apt-get upgrade -y && youtube-dl -U'
 alias ut=youtube-dl
-alias utupg='sudo youtube-dl -U'
+alias utupg='youtube-dl -U'
 alias utf='youtube-dl -a'
 alias utl='youtube-dl -citk --max-quality FORMAT'
 
