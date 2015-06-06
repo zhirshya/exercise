@@ -64,3 +64,5 @@ mkdir ~/"hlth(здоровье)" #(health)
 mkdir ~/"oros(Русский)"
 mkdir ~/"lsr(досуг)"
 
+fedora 22 SELinux
+
