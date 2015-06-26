@@ -1,21 +1,6 @@
-#!/bin/sh
-
-#gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed --working-directory=/mnt/1/wbst --tab-with-profile=Unnamed --working-directory=/mnt/0/gthb/неkod --tab-with-profile=Unnamed --working-directory=/mnt/0/gthb/xrcs
-
-#gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed --working-directory=/home/r/gthb/неkod --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs --tab-with-profile=Unnamed --working-directory=/home/r/Downloads/4th_ed_xmpl --tab-with-profile=Unnamed --working-directory=/home/r/opencart --tab-with-profile=Unnamed --working-directory=/var/www --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst
-
-#gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed --working-directory=/home/r/gthb/неkod --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs \
-#	--tab-with-profile=Unnamed --working-directory=/home/r/Downloads/4th_ed_xmpl --tab-with-profile=Unnamed --working-directory=/home/r/opencart \
-#	--tab-with-profile=Unnamed --working-directory=/var/www --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst
-
 gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed --working-directory=/home/r/gthb/неkod --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs --tab-with-profile=Unnamed --working-directory=/home/r/Downloads/4th_ed_xmpl --tab-with-profile=Unnamed --working-directory=/home/r/Personal-Website --tab-with-profile=Unnamed --working-directory=/home/r/gthb/ktnwr 
 
-# tor
 #gnome-terminal -e /home/r/Downloads/tor-browser_en-US/start-tor-browser
-
-#google-chrome --ssl-version-min=tls1.2 --incognito http://ferd.ca/queues-don-t-fix-overload.html https://goagent.github.io http://speakingjs.com/es5/index.html 
-
-#google-chrome-stable --ssl-version-min=tls1.2 --incognito herbsutter.com https://github.com/kjellkod/g3log https://progit.org https://calomel.org http://www.salottinogeek.net/lamp-server-fedora-centos http://www.weblio.jp http://www.opencart.com &
 
 #google-chrome-stable --ssl-version-min=tls1.2 --incognito http://www.weblio.jp http://www.opencart.com https://httpd.apache.org/docs/2.4/misc/security_tips.html http://gihyo.jp \
 #http://gihyo.jp/admin/serial/01/ubuntu-recipe/0372 \
@@ -29,12 +14,17 @@ gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab
 #https://www.google.co.jp/search?q=php+html5+ecommerce+website+and+CMS \
 #https://www.youtube.com/results?search_query=php+html5+ecommerce+website+and+CMS \
 #http://getbootstrap.com/getting-started/ \
-#https://jquery.com/
-
-google-chrome-stable --ssl-version-min=tls1.0 --incognito http://www.weblio.jp http://www3.nhk.or.jp/news/easy  https://github.com/sergei1152/Personal-Website https://github.com/e107inc/e107 https://www.udemy.com/ecommerce-website-in-php-mysqli/ http://gihyo.jp/admin/serial/01/ubuntu-recipe/0372  https://www.youtube.com/results?search_query=php+html5+ecommerce+website+and+CMS https://www.google.co.jp/search?q=php+bootstrap+ecommerce+website+CMS https://www.google.co.jp/search?q=best+php+framework+for+Bootstrap+eCommerce+website+CMS http://www.v5jp.com/html/fuxi/fuxi001_01.html http://getbootstrap.com/getting-started https://learn.jquery.com/about-jquery/how-jquery-works https://jquery.com https://www.youtube.com/watch?v=K7kyhKGANcc&t=10m https://www.youtube.com/watch?v=YBK_1WrM294 
+#https://jquery.com
+#https://www.youtube.com/watch?v=K7kyhKGANcc&t=10m
 #https://www.youtube.com/watch?v=e6VYRVRoC40&t=5m15s
+#file:///home/r/gthb/ktnwr/index.html
+#https://www.youtube.com/watch?v=NtKkSxUjwvU&t=15m 
+#https://www.youtube.com/watch?v=YBK_1WrM294
+#herbsutter.com
+#https://github.com/kjellkod/g3log
+#https://progit.org
+#https://calomel.org
+#http://ferd.ca/queues-don-t-fix-overload.html
+#http://speakingjs.com/es5/index.html 
 
-#firefox --ssl-version-min=tls1.2 -private herbsutter.com https://github.com/kjellkod/g3log https://progit.org https://calomel.org https://www.google.com  &
-
-#vlc
-
+google-chrome-stable --ssl-version-min=tls1.0 --incognito http://www.asahi.com http://www.yomiuri.co.jp http://www.weblio.jp https://github.com/sergei1152/Personal-Website https://github.com/e107inc/e107 https://www.udemy.com/ecommerce-website-in-php-mysqli https://www.youtube.com/results?search_query=php+html5+ecommerce+website+and+CMS https://www.google.co.jp/search?q=php+bootstrap+ecommerce+website+CMS https://www.google.co.jp/search?q=best+php+framework+for+Bootstrap+eCommerce+website+CMS http://getbootstrap.com/getting-started https://learn.jquery.com/about-jquery/how-jquery-works https://jquery.com 
