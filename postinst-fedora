@@ -20,6 +20,7 @@ dnf --nogpgcheck install google-chrome-stable_current_x86_64.rpm
 
 #VirtualBox
 Creating group 'vboxusers'. VM users must be member of that group!
+sudo usermod -a -G vboxusers r
 
 #cp prxpy /etc/init.d/
 #chkconfig --level 35 prxpy on
