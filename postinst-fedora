@@ -127,6 +127,11 @@ mkdir ~/"oros(Русский)"
 mkdir ~/"lsr(досуг)"
 mkdir ~/chess
 mkdir ~/mgl
+mkdir ~/math
+mkdir ~/voice
+mkdir ~/bsnss-entrprnr
+mkdir ~/hack
+mkdir ~/tekvid
 
 fedora 22 SELinux
 
