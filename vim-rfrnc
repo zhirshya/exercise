@@ -4,3 +4,7 @@
 
 #oros(Русский) --> oros\(Русский\)
 %s/\([(|)]\)/\\\1/g
+
+:sort u (Uniq - Removing duplicate lines, sort all lines and remove duplicates (keeping unique lines))
+
+
