@@ -1,5 +1,8 @@
 getenforce
 
+#hrdwr info
+lspci  -v | grep -i wireless
+
 dnf erase rhythmbox evolution totem thunderbird nano
 
 dnf upgrade -y
