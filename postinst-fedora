@@ -36,14 +36,14 @@ Now you just need to sign the driver, but where's the driver located?
 d. modinfo vboxdrv
    e.g. 
 	filename:       /lib/modules/4.0.7-300.fc22.x86_64/extra/vboxdrv.ko
-version:        5.0.0 (0x00230001)
-license:        GPL
-description:    Oracle VM VirtualBox Support Driver
-author:         Oracle Corporation
-srcversion:     BB52120EF916D88D829D91E
-depends:        
-vermagic:       4.0.7-300.fc22.x86_64 SMP mod_unload 
-parm:           force_async_tsc:force the asynchronous TSC mode (int)
+	version:        5.0.0 (0x00230001)
+	license:        GPL
+	description:    Oracle VM VirtualBox Support Driver
+	author:         Oracle Corporation
+	srcversion:     BB52120EF916D88D829D91E
+	depends:        
+	vermagic:       4.0.7-300.fc22.x86_64 SMP mod_unload 
+	parm:           force_async_tsc:force the asynchronous TSC mode (int)
 
 e. sign the module using modinfo to locate the driver:
 	/usr/src/kernels/$(uname -r)/scripts/sign-file sha256 ./vboxdrv_X.509.priv ./vboxdrv_X.509.der $(modinfo -n vboxdrv)
@@ -51,17 +51,17 @@ e. sign the module using modinfo to locate the driver:
 	modinfo vboxdrv
    e.g.
 	filename:       /lib/modules/4.0.7-300.fc22.x86_64/extra/vboxdrv.ko
-version:        5.0.0 (0x00230001)
-license:        GPL
-description:    Oracle VM VirtualBox Support Driver
-author:         Oracle Corporation
-srcversion:     BB52120EF916D88D829D91E
-depends:        
-vermagic:       4.0.7-300.fc22.x86_64 SMP mod_unload 
-signer:         vboxdrv_X.509_Org
-sig_key:        C9:50:B6:C1:A3:05:BC:9C:4D:64:65:49:2F:CC:E5:8A:69:9B:17:E2
-sig_hashalgo:   sha256
-parm:           force_async_tsc:force the asynchronous TSC mode (int)
+	version:        5.0.0 (0x00230001)
+	license:        GPL
+	description:    Oracle VM VirtualBox Support Driver
+	author:         Oracle Corporation
+	srcversion:     BB52120EF916D88D829D91E
+	depends:        
+	vermagic:       4.0.7-300.fc22.x86_64 SMP mod_unload 
+	signer:         vboxdrv_X.509_Org
+	sig_key:        C9:50:B6:C1:A3:05:BC:9C:4D:64:65:49:2F:CC:E5:8A:69:9B:17:E2
+	sig_hashalgo:   sha256
+	parm:           force_async_tsc:force the asynchronous TSC mode (int)
 
 f. To enroll the public key in the vboxdrv_X.509 (Module owned Key), the UEFI partition must have MokManager.efi installed.
    Now add the public key to shim's vboxdrv_X.509 list:
@@ -71,18 +71,19 @@ f. To enroll the public key in the vboxdrv_X.509 (Module owned Key), the UEFI pa
 
 g. after reboot you can check that the key is in the system:
 	user@localhost:$ keyctl list %:.system_keyring
-112560593: ---lswrv 0 0 asymmetric: Fedora kernel signing key: e948c9015e04bd4cd5879fe2f9230a1d70859c7d
-489921950: ---lswrv 0 0 asymmetric: Fedora Secure Boot CA: fde32599c2d61db1bf5807335d7b20e4cd963b42
-98641885: ---lswrv 0 0 asymmetric: vboxdrv_X.509_Org: d5d3e2008907a7cebc8914780bd29b03fecc214b
-525156767: ---lswrv 0 0 asymmetric: Microsoft Corporation UEFI CA 2011: 13adbf4309bd82709c8cd54f316ed522988a1bd4
-1001714488: ---lswrv 0 0 asymmetric: Microsoft Windows Production PCA 2011: a92902398e16c49778cd90f99e4f9ae17c55af53
+	112560593: ---lswrv 0 0 asymmetric: Fedora kernel signing key: e948c9015e04bd4cd5879fe2f9230a1d70859c7d
+	489921950: ---lswrv 0 0 asymmetric: Fedora Secure Boot CA: fde32599c2d61db1bf5807335d7b20e4cd963b42
+	98641885: ---lswrv 0 0 asymmetric: vboxdrv_X.509_Org: d5d3e2008907a7cebc8914780bd29b03fecc214b
+	525156767: ---lswrv 0 0 asymmetric: Microsoft Corporation UEFI CA 2011: 13adbf4309bd82709c8cd54f316ed522988a1bd4
+	1001714488: ---lswrv 0 0 asymmetric: Microsoft Windows Production PCA 2011: a92902398e16c49778cd90f99e4f9ae17c55af53
 h. And that it was EFI who loaded it:
 	user@localhost:$ dmesg | grep 'EFI: Loaded cert'
-[ 0.456158] EFI: Loaded cert 'Microsoft Windows Production PCA 2011: a92902398e16c49778cd90f99e4f9ae17c55af53' linked to '.system_keyring'
-[ 0.456194] EFI: Loaded cert 'Microsoft Corporation UEFI CA 2011: 13adbf4309bd82709c8cd54f316ed522988a1bd4' linked to '.system_keyring'
-[ 0.457111] EFI: Loaded cert 'vboxdrv_X.509_Org: d5d3e2008907a7cebc8914780bd29b03fecc214b' linked to '.system_keyring'
-[ 0.457768] EFI: Loaded cert 'Fedora Secure Boot CA: fde32599c2d61db1bf5807335d7b20e4cd963b42' linked to '.system_keyring'
+	[ 0.456158] EFI: Loaded cert 'Microsoft Windows Production PCA 2011: a92902398e16c49778cd90f99e4f9ae17c55af53' linked to '.system_keyring'
+	[ 0.456194] EFI: Loaded cert 'Microsoft Corporation UEFI CA 2011: 13adbf4309bd82709c8cd54f316ed522988a1bd4' linked to '.system_keyring'
+	[ 0.457111] EFI: Loaded cert 'vboxdrv_X.509_Org: d5d3e2008907a7cebc8914780bd29b03fecc214b' linked to '.system_keyring'
+	[ 0.457768] EFI: Loaded cert 'Fedora Secure Boot CA: fde32599c2d61db1bf5807335d7b20e4cd963b42' linked to '.system_keyring'
 
+#https://github.com/goagent/goagent
 #cp prxpy /etc/init.d/
 #chkconfig --level 35 prxpy on
 
@@ -116,9 +117,6 @@ git status
 
 # reassign PRNTSCRN to open screenshot dialog
 gnome-screenshot -i
-
-# usb drive automount Fedora 21
-/run/media/
 
 # mkdir
 mkdir ~/gthb/xrcs
