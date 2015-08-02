@@ -1,7 +1,26 @@
-httpd -V
+#Install LAMP Stack (Apache, MariaDB And PHP) In Fedora 22
+#http://www.unixmen.com/how-to-install-lamp-stack-apache-mariadb-and-php-in-fedora-22/
+su
+dnf install httpd -y 
+systemctl enable httpd
+
+#And adjust the firewall to allow the httpd service to access it from remote clients.
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=https
+Restart firewalld service:
+firewall-cmd --reload
+
+dnf install mariadb mariadb-server -y
+systemctl enable mariadb
+systemctl start mariadb
+mysql_secure_installation
+
+dnf install php phpMyAdmin php-mysql php-common php-cli php-fpm -y  #PHP command Line Interpreter (http://www.tecmint.com/run-php-codes-from-linux-commandline/)
 
 ps aux | grep httpd
 ps aux | grep apache
+
+httpd -V
 
 #Removing user r from group apache
 # gpasswd -d r apache
