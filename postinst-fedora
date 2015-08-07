@@ -1,4 +1,6 @@
-getenforce
+Use the /usr/sbin/getenforce or /usr/sbin/sestatus commands to check the status of SELinux. The getenforce command returns Enforcing, Permissive, or Disabled. The getenforce command returns Enforcing when SELinux is enabled (SELinux policy rules are enforced).
+/usr/sbin/getenforce
+/usr/sbin/sestatus
 
 #hrdwr info
 lspci  -v | grep -i wireless
