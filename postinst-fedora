@@ -120,6 +120,10 @@ git status
 # reassign PRNTSCRN to open screenshot dialog
 gnome-screenshot -i
 
+#turn off screen
+xset dpms force off
+#turn off and lock screen 
+
 # mkdir
 mkdir ~/gthb/xrcs
 mkdir ~/gthb/неkod
