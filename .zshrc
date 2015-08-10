@@ -102,7 +102,7 @@ alias myrst='sudo systemctl restart mysql'
 alias ufwstt='sudo ufw status verbose'
 alias src=source
 alias vm=vim
-alias ll='ls -alF'
+alias ll='ls -alF | less'
 alias sht='sudo shutdown -P now'
 alias rbt='sudo reboot'
 alias wrs='whereis'
@@ -111,11 +111,11 @@ alias upg='sudo dnf upgrade -y && sudo youtube-dl -U'
 #alias upg='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
 alias ut=youtube-dl
 alias utupg='sudo youtube-dl -U'
-alias utf='youtube-dl -a'
+alias utf='youtube-dl --prefer-ffmpeg -a'
 alias utl='youtube-dl -citk --max-quality FORMAT'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private'
-alias krm='google-chrome-stable --ssl-version-min=tls1.2 --incognito'
+alias krm='google-chrome-stable --ssl-version-min=tls1 --incognito'
 
 alias cd.='cd ~'
 alias cd-='cd -'
