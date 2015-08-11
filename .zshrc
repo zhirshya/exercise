@@ -132,6 +132,7 @@ alias lss=less
 alias rmrf='rm -rf'
 
 alias gcc='gcc -g -Wall '
+alias g++='g++ -g -Wall '
 
 #export http_proxy=http://127.0.0.1:8087
 #export HTTP_PROXY=$http_proxy
