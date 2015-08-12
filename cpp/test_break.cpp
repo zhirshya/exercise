@@ -10,7 +10,12 @@ int main()
 		for(; j < 5; ++j)
 		{
 			std::cout << j << ":" << "inside inner loop\n";
-			if(3 == j)
+			if(2 == j)
+			{
+				std::cout << "continue fired from inside inner loop\n";
+				continue;
+			}
+			else if(3 == j)
 			{
 				std::cout << "break from inner loop\n";
 				break;
