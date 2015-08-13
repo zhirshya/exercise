@@ -1,7 +1,10 @@
-#!/usr/bin/zsh
+#!/bin/sh
 
 openssl req -new -x509 -newkey rsa:2048 -keyout vboxdrv_X.509.priv -outform DER -out vboxdrv_X.509.der -nodes -days 36500 -subj "/CN=vboxdrv_X.509_Org/"
 
+#doesn't work!
+su
+wait
 /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 ./vboxdrv_X.509.priv ./vboxdrv_X.509.der $(modinfo -n vboxdrv)
-
+wait
 mokutil --import vboxdrv_X.509.der
