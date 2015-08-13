@@ -1,4 +1,9 @@
 #filter array
-(fn[delim lst] (filter #(< % delim) lst))
-{fn[delim lst] (filter #(< % delim) lst)}
+(fn[delim lst] (filter #(< % delim) lst)) #function def
+{fn[delim lst] (filter #(< % delim) lst)} #{}wrong? 
+
+(filter #(< % 7) '(9 5 3 7 -23 -11)) 
+
+(fn[lst](apply + (filter odd? lst))) #function def
+
 
