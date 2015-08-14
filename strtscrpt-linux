@@ -1,7 +1,4 @@
-gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ -e 'sudo dnf upgrade -y && sudo youtube-dl -U' --tab-with-profile=Unnamed  --working-directory=/home/r/gthb/неkod -e gst --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs -e gst --tab-with-profile=Unnamed --working-directory=/home/r/vmshr/clojure-1.7.0 -e 'java -cp clojure-1.7.0.jar clojure.main' 
-
-#http://leiningen.org/
-#https://superuser.com/questions/198015/open-gnome-terminal-programmatically-and-execute-commands-after-bashrc-was-execu
+gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed  --working-directory=/home/r/gthb/неkod --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs --tab-with-profile=Unnamed --working-directory=~
 
 #google-chrome-stable --ssl-version-min=tls1.2 --incognito http://www.weblio.jp http://www.opencart.com https://httpd.apache.org/docs/2.4/misc/security_tips.html http://gihyo.jp \
 #http://gihyo.jp/admin/serial/01/ubuntu-recipe/0372 \
@@ -39,11 +36,11 @@ gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ -e 's
 #http://rosettacode.org/wiki/Category:Programming_Tasks
 #
 #http://exercism.io/
-#http://www.learningclojure.com/
 #https://github.com/technomancy/leiningen
 #http://www.tecmint.com/install-java-jdk-jre-in-linux/
 #
 #http://learnlispthehardway.org/
+#https://superuser.com/questions/198015/open-gnome-terminal-programmatically-and-execute-commands-after-bashrc-was-execu
 
-google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://www.tecmint.com/create-mobile-friendly-responsive-web-application-using-jquery https://www.coursera.org/ http://www.tecmint.com https://jobs-in-tokyo.net http://baito.mynavi.jp http://www.rikunabi.com www.daijob.com http://baito.mynavi.jp/contents/oyakudachi/rirekisyo/ https://career.nikkei.co.jp/contents/rireki http://jstherightway.org/ http://www.oreilly.com/catalog/errata.csp?isbn=9781491918661 https://github.com/rwaldron/idiomatic.js http://www.codeproject.com http://www.codeproject.com/Articles/1012843/Win-Thread-Pools-and-Cplusplus-A-quick-wrapper http://rosettacode.org/wiki/Category:Programming_Tasks http://exercism.io/ cpprocks.com http://clojure.org/getting_started https://github.com/technomancy/leiningen http://leiningen.org/ http://cliki.net/ https://common-lisp.net/ 
+google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://www.tecmint.com/create-mobile-friendly-responsive-web-application-using-jquery https://www.coursera.org/ http://www.tecmint.com https://jobs-in-tokyo.net http://baito.mynavi.jp http://www.rikunabi.com www.daijob.com http://baito.mynavi.jp/contents/oyakudachi/rirekisyo/ https://career.nikkei.co.jp/contents/rireki http://jstherightway.org/ http://www.oreilly.com/catalog/errata.csp?isbn=9781491918661 https://github.com/rwaldron/idiomatic.js http://www.codeproject.com http://www.codeproject.com/Articles/1012843/Win-Thread-Pools-and-Cplusplus-A-quick-wrapper http://rosettacode.org/wiki/Category:Programming_Tasks http://exercism.io/ cpprocks.com http://cliki.net/ https://common-lisp.net/ http://learnlispthehardway.org/
 
