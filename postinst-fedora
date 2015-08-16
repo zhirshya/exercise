@@ -129,7 +129,7 @@ mkdir ~/gthb/xrcs
 mkdir ~/gthb/неkod
 mkdir ~/gthb/wbst
 mkdir ~/lflssn
-mkdir ~/"hlth(здоровье)" #(health)
+mkdir ~/"hlth(здоровье)" #health
 mkdir ~/"oros(Русский)"
 mkdir ~/"lsr(досуг)"
 mkdir ~/chess
@@ -138,6 +138,7 @@ mkdir ~/math
 mkdir ~/voice
 mkdir ~/bsnss-entrprnr
 mkdir ~/hack
+mkdir ~/fruglthrft #frugal thrift minimalist living
 mkdir ~/tekvid
 
 fedora 22 SELinux
