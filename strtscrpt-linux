@@ -45,8 +45,13 @@ gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab
 #http://baito.mynavi.jp/contents/oyakudachi/rirekisyo/ https://career.nikkei.co.jp/contents/rireki
 #cpprocks.com
 #
-google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://www.tecmint.com/create-mobile-friendly-responsive-web-application-using-jquery https://www.coursera.org/ http://www.tecmint.com https://jobs-in-tokyo.net www.daijob.com http://jstherightway.org/ http://www.oreilly.com/catalog/errata.csp?isbn=9781491918661 https://github.com/rwaldron/idiomatic.js http://www.codeproject.com http://www.codeproject.com/Articles/1012843/Win-Thread-Pools-and-Cplusplus-A-quick-wrapper http://rosettacode.org/wiki/Category:Programming_Tasks http://cliki.net/ https://common-lisp.net/ http://learnlispthehardway.org/ http://hyperpolyglot.org/lisp https://kjellkod.wordpress.com/2012/02/06/exploring-c11-part-1-time/
+#google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://www.tecmint.com/create-mobile-friendly-responsive-web-application-using-jquery https://www.coursera.org/ http://www.tecmint.com https://jobs-in-tokyo.net www.daijob.com http://jstherightway.org/ http://www.oreilly.com/catalog/errata.csp?isbn=9781491918661 https://github.com/rwaldron/idiomatic.js http://www.codeproject.com http://www.codeproject.com/Articles/1012843/Win-Thread-Pools-and-Cplusplus-A-quick-wrapper http://rosettacode.org/wiki/Category:Programming_Tasks http://cliki.net/ https://common-lisp.net/ http://learnlispthehardway.org/ http://hyperpolyglot.org/lisp https://kjellkod.wordpress.com/2012/02/06/exploring-c11-part-1-time/ http://www.codergears.com/Blog/?p=431
 #http://blog.jetbrains.com/clion/2015/07/webinar-recording-a-tour-of-modern-c/
 #https://stackoverflow.com/questions/12883493/timing-the-execution-of-statements-c
 #https://stackoverflow.com/questions/2808398/easily-measure-elapsed-time
 #https://codereview.stackexchange.com/questions/86963/track-execution-time-using-stdchrono-facilities-and-print-the-execution-time-i
+#
+#https://jrruethe.github.io/blog/2015/08/02/singletons/
+#http://www.codergears.com/Blog/?p=431
+#https://github.com/KjellKod/g3log
+#
