@@ -116,7 +116,7 @@ alias utf='youtube-dl --prefer-ffmpeg -a'
 alias utl='youtube-dl -citk --max-quality FORMAT'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private'
-alias krm='google-chrome-stable --ssl-version-min=tls1 --incognito'
+alias krm='google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp '
 
 alias cd.='cd ~'
 alias cd-='cd -'
@@ -133,7 +133,7 @@ alias lss=less
 alias rmrf='rm -rf'
 
 alias gcc='gcc -g -Wall '
-alias g++='g++ -g -Wall -std=c++11 '
+alias gxx='g++ -g -Wall -std=c++11 '
 
 #export http_proxy=http://127.0.0.1:8087
 #export HTTP_PROXY=$http_proxy
