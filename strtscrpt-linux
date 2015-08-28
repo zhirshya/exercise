@@ -27,7 +27,6 @@ gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab
 #https://github.com/sergei1152/Personal-Website
 #https://github.com/e107inc/e107
 #
-#https://jobs.gaijinpot.com/job/view/employer_type/direct/orderby/latest/lang/en/job_id/106114
 #http://www.realmenrealstyle.com/how-to-tie-necktie-chart/
 #http://www.atailoredsuit.com/match-tie-knot-shirt-collar-style.html
 #https://www.youtube.com/watch?v=Ew0ppa9knyM
@@ -42,10 +41,14 @@ gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab
 #http://learnlispthehardway.org/
 #https://superuser.com/questions/198015/open-gnome-terminal-programmatically-and-execute-commands-after-bashrc-was-execu
 
-#http://baito.mynavi.jp/contents/oyakudachi/rirekisyo/ https://career.nikkei.co.jp/contents/rireki
 #cpprocks.com
 #
-google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://www.tecmint.com/create-mobile-friendly-responsive-web-application-using-jquery http://www.tecmint.com https://jobs-in-tokyo.net www.daijob.com http://jstherightway.org/ http://www.oreilly.com/catalog/errata.csp?isbn=9781491918661 https://github.com/rwaldron/idiomatic.js http://www.codeproject.com http://rosettacode.org/wiki/Category:Programming_Tasks http://cliki.net/ https://common-lisp.net/ http://learnlispthehardway.org/ http://hyperpolyglot.org/lisp https://kjellkod.wordpress.com/2012/02/06/exploring-c11-part-1-time/ http://www.codergears.com/Blog/?p=431 http://nerds-central.blogspot.de/2015/08/functional-c-approaching-fibonacci-from.html
+#http://cliki.net/
+#https://common-lisp.net/
+#http://learnlispthehardway.org/
+#http://hyperpolyglot.org/lisp
+google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://www.tecmint.com/create-mobile-friendly-responsive-web-application-using-jquery http://jstherightway.org/ http://www.oreilly.com/catalog/errata.csp?isbn=9781491918661 https://github.com/rwaldron/idiomatic.js http://www.codeproject.com http://rosettacode.org/wiki/Category:Programming_Tasks https://kjellkod.wordpress.com/2012/02/06/exploring-c11-part-1-time/ http://www.codergears.com/Blog/?p=431 http://nerds-central.blogspot.de/2015/08/functional-c-approaching-fibonacci-from.html http://www.codeproject.com/Tips/29524/Generators-in-C http://www.codeproject.com/Articles/669611/C-or-Cplusplus-Console-Program-Code-Generator http://www.enkisoftware.com/devlogpost-20150822-1-Implementing_a_lightweight_task_scheduler.html https://jrruethe.github.io/blog/2015/08/17/yaml-de-slash-serialization-with-boost-fusion/ https://msdn.microsoft.com/en-us/magazine/dn913181.aspx http://www.toeic.or.jp/index.html http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034 http://www.drdobbs.com/cpp/c11s-async-template/240001196 
+
 #http://blog.jetbrains.com/clion/2015/07/webinar-recording-a-tour-of-modern-c/
 #https://stackoverflow.com/questions/12883493/timing-the-execution-of-statements-c
 #https://stackoverflow.com/questions/2808398/easily-measure-elapsed-time
