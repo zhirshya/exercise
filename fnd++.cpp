@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 
 	arg = arg.substr(arg.find('=')+1);
 	cout << "substr to send to system(): [" << arg << "]" << endl;
-	string syscmd{"find /home/r/tekvid -iname '*"};
+	string syscmd{"find /home/r -iname '*"};
 	syscmd.append(arg).append("*'");
 	cout << "invoke shell command: [" << syscmd << "]" << endl;
 
