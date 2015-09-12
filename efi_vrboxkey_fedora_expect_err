@@ -1,0 +1,33 @@
+#!/usr/bin/expect
+set timeout 60
+
+set cmd1Args "req -new -x509 -newkey rsa:2048 -keyout vboxdrv_X.509.priv -outform DER -out vboxdrv_X.509.der -nodes -days 36500 -subj '/CN=vboxdrv_X.509_Org/'"
+set cmd2Arg1 "sha256 ./vboxdrv_X.509.priv ./vboxdrv_X.509.der"
+set cmd2Arg2 `modinfo -n vboxdrv`
+set cmd3Args "--import vboxdrv_X.509.der"
+set unamer `uname -r`
+
+spawn su
+expect ": $"
+send "PASSWRD\r"
+#expect "\\$"
+
+spawn echo `uname -r`
+#cd /home/r/vboxdrv_key
+
+#spawn "openssl req -new -x509 -newkey rsa:2048 -keyout vboxdrv_X.509.priv -outform DER -out vboxdrv_X.509.der -nodes -days 36500 -subj '/CN=vboxdrv_X.509_Org/'"
+#spawn "/usr/src/kernels/$(uname -r)/scripts/sign-file sha256 ./vboxdrv_X.509.priv ./vboxdrv_X.509.der $(modinfo -n vboxdrv)"
+#spawn "/usr/src/kernels/`uname -r`/scripts/sign-file sha256 ./vboxdrv_X.509.priv ./vboxdrv_X.509.der `modinfo -n vboxdrv`"
+#spawn mokutil --import vboxdrv_X.509.der
+spawn openssl $cmd1Args
+spawn /usr/src/kernels/$unamer/scripts/sign-file $cmd2Arg1 $cmd2Arg2
+spawn mokutil $cmd3Args
+
+
+expect ": $"
+send "PASSWRD\r"
+expect ": $"
+send "PASSWRD\r"
+
+interact
+expect eof
