@@ -115,8 +115,8 @@ alias utupg='sudo youtube-dl -U'
 alias utf='youtube-dl --prefer-ffmpeg -a'
 alias utl='youtube-dl -citk --max-quality FORMAT'
 
-alias frf='firefox --ssl-version-min=tls1.2 -private'
-alias krm='google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp '
+alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
+alias krm='google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
 
 alias cd.='cd ~'
 alias cd-='cd -'
