@@ -50,7 +50,7 @@ plugins=(git)
 # User configuration
 
 #export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/bin"
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/.local/bin:/home/r/bin"  # zsh + oh-my-zsh @fedora #default
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/.local/bin:/home/r/bin:/home/r/node-v4.0.0-linux-x64/bin"  # zsh + oh-my-zsh @fedora #default
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -131,7 +131,7 @@ alias tl=tail
 alias hd=head
 alias lss=less
 alias rmrf='rm -rf'
-
+alias 0='echo > '
 alias gcc='gcc -g -Wall '
 alias gxx='g++ -g -Wall -std=c++14 '
 
