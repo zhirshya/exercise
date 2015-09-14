@@ -4,6 +4,9 @@ Use the /usr/sbin/getenforce or /usr/sbin/sestatus commands to check the status 
 
 sudo /etc/cron.daily/logrotate
 
+/etc/crontab
+0 */2 * * * root dnf upgrade -y && youtube-dl -U >> /var/log/upgrd.log 2>>&1
+
 #hrdwr info
 lspci  -v | grep -i wireless
 
