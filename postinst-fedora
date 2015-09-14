@@ -2,6 +2,8 @@ Use the /usr/sbin/getenforce or /usr/sbin/sestatus commands to check the status 
 /usr/sbin/getenforce
 /usr/sbin/sestatus
 
+sudo /etc/cron.daily/logrotate
+
 #hrdwr info
 lspci  -v | grep -i wireless
 
