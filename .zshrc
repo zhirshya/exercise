@@ -107,7 +107,8 @@ alias lls='ls -alF | less'
 alias sht='sudo shutdown -P now'
 alias rbt='sudo reboot'
 alias wrs='whereis'
-alias dfz='df -h / /mnt/*'
+alias dfz='sudo df -h /var/log /mnt /'
+alias duz='sudo du -sh /var/log /mnt /'
 alias upg='sudo dnf upgrade -y && sudo youtube-dl -U'
 #alias upg='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
 alias ut=youtube-dl
@@ -131,6 +132,8 @@ alias tl=tail
 alias hd=head
 alias lss=less
 alias rmrf='rm -rf'
+alias kty=whoami #Кто я?
+
 alias 0='echo > '
 alias gcc='gcc -g -Wall '
 alias gxx='g++ -g -Wall -std=c++14 '
