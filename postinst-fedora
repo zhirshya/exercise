@@ -5,7 +5,7 @@ Use the /usr/sbin/getenforce or /usr/sbin/sestatus commands to check the status 
 sudo /etc/cron.daily/logrotate
 
 /etc/crontab
-0 */2 * * * root script.sh > /var/log/upgrd.log 2>&1
+0 */2 * * * root script > /var/log/upgrd.log 2>&1
 
 #hrdwr info
 lspci  -v | grep -i wireless
@@ -148,6 +148,6 @@ mkdir ~/tekvid
 
 fedora 22 SELinux
 
-#chrome:
+#disable Adobe Flash Player in Chrome:
 chrome://plugins
 
