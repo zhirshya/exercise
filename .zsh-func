@@ -124,12 +124,13 @@ function kln()
 	sudo rm -Rf /var/lib/apt/lists/* -vf
 }
 
-function pnd() #append to todo file
+#function pnd() #append to todo file
+function +()
 {
-	echo '$#' is $#
+#	echo '$#' is $#
 	if [[ $# > 0 ]]; then
 		echo "$*" >> /home/r/gthb/неkod/.todo
-		lss /home/r/gthb/неkod/.todo
+#		lss /home/r/gthb/неkod/.todo
 	fi
 }
 
