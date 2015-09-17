@@ -104,8 +104,8 @@ alias src=source
 alias vm=vim
 alias ll='ls -alF'
 alias lls='ls -alF | less'
-alias sht='sudo shutdown -P now'
-alias rbt='sudo reboot'
+alias sht='sudo shutdown -P -f --no-wall now'
+alias rbt='sudo reboot -f --no-wall'
 alias wrs='whereis'
 alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
@@ -137,12 +137,6 @@ alias kty=whoami #Кто я?
 alias 0='echo > '
 alias gcc='gcc -g -Wall '
 alias gxx='g++ -g -Wall -std=c++14 '
-
-#export http_proxy=http://127.0.0.1:8087
-#export HTTP_PROXY=$http_proxy
-
-#export https_proxy=http://127.0.0.1:8087
-#export HTTPS_PROXY=$https_proxy
 
 #alias srfnc='source ~/.zsh-func'
 source ~/.zsh-func
