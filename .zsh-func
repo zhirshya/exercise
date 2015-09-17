@@ -130,7 +130,6 @@ function +()
 #	echo '$#' is $#
 	if [[ $# > 0 ]]; then
 		echo "$*" >> /home/r/gthb/неkod/.todo
-#		lss /home/r/gthb/неkod/.todo
 	fi
 }
 
