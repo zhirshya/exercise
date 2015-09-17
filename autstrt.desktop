@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/r/gthb/xrcs/strtscrpt-linux
+Exec=/home/r/gthb/xrcs/strt.sh
 Hidden=false
 X-GNOME-Autostart-enabled=true
 Name[en_US]=autstrt
