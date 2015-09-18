@@ -55,6 +55,9 @@ gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab
 
 google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp/content/%E6%B1%BA%E6%B8%88 http://sanderrossel.com/mean-web-development-1-mean-the-what-and-why https://github.com/jlevy/the-art-of-command-line https://unity3d.com http://www.sputnik.ru http://speakingjs.com/es5/index.html http://eloquentjavascript.net https://facebook.github.io/react/index.html https://leanpub.com/javascriptallongesix/read http://glebbahmutov.com/blog/perfect-code-zero-effort http://glebbahmutov.com/blog/review-principles-of-oo-javascript http://glebbahmutov.com/blog/categories/process http://glebbahmutov.com/blog/categories/products http://glebbahmutov.com/blog/javascript-closures http://glebbahmutov.com/blog/starting-to-react http://slides.com/bahmutov/public-speaking > /dev/null 2>&1 &
 
+#vim buffer register y,d,e!,e!#, w %.bak, 17, 23 w r -> 9p r?
+#http://wwwmpa.mpa-garching.mpg.de/~gaoliang/vi/ch05_05.htm
+
 #http://glebbahmutov.com #JavaScript ninja, image processing expert, software quality fanatic
 #http://www.moj.go.jp/ONLINE/IMMIGRATION/16-2.html
 
