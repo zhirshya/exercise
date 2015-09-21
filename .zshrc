@@ -125,25 +125,26 @@ alias cd1='cd ..'
 alias cd2='cd ../..'
 alias cd3='cd ../../..'
 
-#alias less='less -N'
 alias txz='tar xvJf'
 alias clr=clear
 alias tl=tail
 alias hd=head
 alias lss=less
+#alias less='less -N'
 alias rmrf='rm -rf'
 alias kty=whoami #Кто я?
 
 alias 0='echo > '
+
+alias ins='sudo dnf install'
+
 alias gcc='gcc -g -Wall '
 alias gxx='g++ -g -Wall -std=c++14 '
 
 #rss word
 alias rs1='echo убирать' #clean up, tidy up
 
-#alias srfnc='source ~/.zsh-func'
-source ~/.zsh-func
-
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 
-#unset SSH_ASKPASS # Fedora only? suppress SSH from asking git usrname & psswrd using dialog window, but may harm SSH session?
+. ~/.zsh-func
+. ~/.nvm/nvm.sh #https://github.com/creationix/nvm, Node Version Manager - Simple bash script to manage multiple active node.js versions

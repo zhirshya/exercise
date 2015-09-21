@@ -6,13 +6,6 @@ function dtx()
 	# .thumbnails
 }
 
-function inst()
-{
-	unset http_proxy
-	unset https_proxy
-	sudo dnf install "$*"
-}
-
 function fnd() 
 {
 # https://www.youtube.com/watch?v=IzrSb9WuG8o
@@ -108,12 +101,6 @@ function dshaskpss()
         echo "SSH_ASKPASS:[$SSH_ASKPASS]"
 }
 
-#function upg()
-#{
-#	dprx
-#	sudo dnf upgrade -y && sudo pip install --upgrade setuptools dnslib pycrypto PyOpenSSL greenlet gevent youtube-dl
-#}
-
 function kln()
 {
 	sudo apt-get autoremove
@@ -124,8 +111,7 @@ function kln()
 	sudo rm -Rf /var/lib/apt/lists/* -vf
 }
 
-#function pnd() #append to todo file
-function +()
+function +() #append to todo file
 {
 #	echo '$#' is $#
 	if [[ $# > 0 ]]; then
