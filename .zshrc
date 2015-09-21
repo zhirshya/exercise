@@ -138,6 +138,9 @@ alias 0='echo > '
 alias gcc='gcc -g -Wall '
 alias gxx='g++ -g -Wall -std=c++14 '
 
+#rss word
+alias rs1='echo убирать' #clean up, tidy up
+
 #alias srfnc='source ~/.zsh-func'
 source ~/.zsh-func
 
