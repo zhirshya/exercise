@@ -14,7 +14,7 @@ dnf erase rhythmbox evolution totem thunderbird nano
 
 dnf upgrade -y
 
-dnf install glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb valgrind
+dnf install glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb ccache valgrind
 
 dnf install tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins evince zsh
 
