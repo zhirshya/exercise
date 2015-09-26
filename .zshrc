@@ -138,8 +138,8 @@ alias 0='echo > '
 
 alias ins='sudo dnf install'
 
-alias gcc='gcc -g -Wall '
-alias gxx='g++ -g -Wall -std=c++14 '
+alias gcc='ccache gcc -g -Wall '
+alias gxx='ccache g++ -g -Wall -std=c++14 '
 
 #rss word
 alias rs1='echo убирать' #clean up, tidy up
