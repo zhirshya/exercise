@@ -80,3 +80,9 @@ google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp htt
 #https://isocpp.org/blog/2014/06/stroustrup-lists
 #http://nerds-central.blogspot.de/2015/08/functional-c-approaching-fibonacci-from.html
 
+#http://zshwiki.org/home/scripting/args
+#http://hackerific.net/2008/10/27/my-top-5-zsh-tips/
+#http://www.zzapper.co.uk/zshtips.html
+#http://tldp.org/LDP/abs/html/loops1.html
+#http://www.thegeekstuff.com/2011/07/bash-for-loop-examples/
+#http://www.cyberciti.biz/faq/bash-for-loop/
