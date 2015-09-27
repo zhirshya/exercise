@@ -7,4 +7,5 @@
 
 :sort u (Uniq - Removing duplicate lines, sort all lines and remove duplicates (keeping unique lines))
 
-
+#replace space with new line
+Use Control-v and then Enter key instead of \n. Control-v is the special character escape key.
