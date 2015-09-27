@@ -135,6 +135,7 @@ alias rmrf='rm -rf'
 alias kty=whoami #Кто я?
 
 alias 0='echo > '
+#alias ?='sudo find / -iname '
 
 alias ins='sudo dnf install'
 

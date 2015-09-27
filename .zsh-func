@@ -2,31 +2,25 @@
 
 function dtx()
 {
-	rm -rf ~/.cache
-	# .thumbnails
+	rm -rf ~/.cache ~/.mozilla/firefox/oghgfeld.default/crashes ~/.mozilla/firefox/oghgfeld.default/minidumps ~/.mozilla/firefox/oghgfeld.default/sessionstore-backups ~/.mozilla/firefox/Crash\ Reports ~/.mozilla/firefox/oghgfeld.default/healthreport* ~/.mozilla/firefox/oghgfeld.default/places* ~/.Trash
 }
 
-function fnd() 
+function fndut() #for youtube video only
 {
-# https://www.youtube.com/watch?v=IzrSb9WuG8o
-
-	if [ $# -eq 1 ]; then
-		id="$1"
-		if [[ $1 = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
+	echo "[SCRIPT]>>START"
+	for id in "$@"; do
+		if [[ $id = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
 			id="${id#http*://*youtu*be*/*watch\?v=}"
-		elif [[ $1 = http*://*youtu*be*/[-_a-zA-Z0-9]* ]]; then
+		elif [[ $id = http*://*youtu*be*/[-_a-zA-Z0-9]* ]]; then
 			id="${id#http*://*youtu*be*/}"
 
 # bash: ${$1#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 # bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
-
 		fi
-
-		echo "[SCRIPT]>>Search for ID [$id] now..."
+		echo "Search for ID [$id] now..."
 		sudo find / -iname "*$id*"
-		echo "[SCRIPT]>>END"
-
-	fi
+	done
+	echo "[SCRIPT]>>END"
 }
 
 function srvstr()
@@ -115,7 +109,7 @@ function +() #append to todo file
 {
 #	echo '$#' is $#
 	if [[ $# > 0 ]]; then
-		echo "$*" >> /home/r/gthb/неkod/.todo
+		echo "$*" >> /home/r/gthb/неkod/.todo #$@ "$@"
 	fi
 }
 
