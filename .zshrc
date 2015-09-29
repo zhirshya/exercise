@@ -112,9 +112,10 @@ alias duz='sudo du -sh /var/log /mnt /'
 alias upg='sudo dnf upgrade -y && sudo youtube-dl -U'
 #alias upg='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
 alias ut=youtube-dl
-alias utupg='sudo youtube-dl -U'
+alias utr50='youtube-dl -r 50k '
 alias utf='youtube-dl --prefer-ffmpeg -a'
 alias utl='youtube-dl -citk --max-quality FORMAT'
+alias utupg='sudo youtube-dl -U'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
 alias krm='google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
