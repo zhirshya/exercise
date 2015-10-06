@@ -2,7 +2,7 @@
 gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed  --working-directory=/home/r/gthb/неkod --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst  > /dev/null 2>&1 &
 
 #2
-#vlc > /dev/null 2>&1 &
+vlc > /dev/null 2>&1 &
 
 #3
 #https://serverfault.com/questions/357108/what-permissions-should-my-website-files-folders-have-on-a-linux-webserver \
@@ -53,8 +53,9 @@ gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab
 
 #google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://www.tecmint.com/create-mobile-friendly-responsive-web-application-using-jquery http://jstherightway.org/ http://www.oreilly.com/catalog/errata.csp?isbn=9781491918661 https://github.com/rwaldron/idiomatic.js http://www.codeproject.com http://rosettacode.org/wiki/Category:Programming_Tasks https://kjellkod.wordpress.com/2012/02/06/exploring-c11-part-1-time/ http://www.codergears.com/Blog/?p=431 http://nerds-central.blogspot.de/2015/08/functional-c-approaching-fibonacci-from.html http://www.codeproject.com/Tips/29524/Generators-in-C http://www.codeproject.com/Articles/669611/C-or-Cplusplus-Console-Program-Code-Generator http://www.enkisoftware.com/devlogpost-20150822-1-Implementing_a_lightweight_task_scheduler.html https://jrruethe.github.io/blog/2015/08/17/yaml-de-slash-serialization-with-boost-fusion/ https://msdn.microsoft.com/en-us/magazine/dn913181.aspx http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034 http://www.drdobbs.com/cpp/c11s-async-template/240001196 http://sanderrossel.com/mean-web-development-1-mean-the-what-and-why http://www.codeproject.com/Tips/1023227/A-General-Cplusplus-Reflection-Engine-Based-on-C www.toeic.or.jp/index.html
 
-google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://sanderrossel.com/mean-web-development-1-mean-the-what-and-why http://eloquentjavascript.net https://facebook.github.io/react/index.html https://leanpub.com/javascriptallongesix/read http://glebbahmutov.com/blog/perfect-code-zero-effort http://glebbahmutov.com/blog/starting-to-react http://www.ibm.com/developerworks/library/wa-mean1/index.html https://thinkster.io/mean-stack-tutorial http://hapijs.com http://www.codeproject.com http://www.codeproject.com/Articles/856277/ESJ-Extremely-Simple-JSON-for-Cplusplus http://algs4.cs.princeton.edu/code www.toeic.or.jp/index.html  > /dev/null 2>&1 &
+google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://sanderrossel.com/mean-web-development-1-mean-the-what-and-why http://eloquentjavascript.net https://facebook.github.io/react/index.html https://leanpub.com/javascriptallongesix/read http://glebbahmutov.com/blog/starting-to-react http://www.ibm.com/developerworks/library/wa-mean1/index.html https://thinkster.io/mean-stack-tutorial http://hapijs.com http://www.codeproject.com http://www.codeproject.com/Articles/856277/ESJ-Extremely-Simple-JSON-for-Cplusplus http://algs4.cs.princeton.edu/code www.toeic.or.jp/index.html https://www.youtube.com/results?search_query=memorize+numbers http://winterbe.com/posts/2014/03/16/java-8-tutorial http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples http://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples > /dev/null 2>&1 &
 
+#http://thenextweb.com/insider/2015/09/29/30-essential-books-for-business-marketing-and-social-media/
 #http://glebbahmutov.com/blog/variable-assignment-shortcut/
 #http://glebbahmutov.com/blog/bending-javascript-rules/
 #https://github.com/jlevy/the-art-of-command-line https://unity3d.com http://www.sputnik.ru http://speakingjs.com/es5/index.html 
