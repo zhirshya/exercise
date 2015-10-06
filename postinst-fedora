@@ -164,4 +164,5 @@ chrome://plugins
 /home/r/bootlint
 /home/r/ModernCpp
 /home/r/java8-tutorial
+/home/r/hapi			#Server Framework for Node.js http://hapijs.com
 
