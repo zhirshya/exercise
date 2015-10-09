@@ -101,7 +101,13 @@ alias myrst='sudo systemctl restart mysql'
 
 alias ufwstt='sudo ufw status verbose'
 alias src=source
-alias vm=vim
+
+if [ -e /usr/bin/vimx ]; then 
+	alias vm='/usr/bin/vimx'
+else
+	alias vm=vim
+fi
+
 alias ll='ls -alF'
 alias lls='ls -alF | less'
 alias sht='sudo shutdown -P -f --no-wall now'
@@ -114,7 +120,7 @@ alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'
 alias ut=youtube-dl
 alias utr50='youtube-dl -r 50k '
 alias utf='youtube-dl --prefer-ffmpeg -a'
-alias utl='youtube-dl -citk --max-quality FORMAT'
+alias utl='youtube-dl -citk '
 alias utupg='sudo youtube-dl -U'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
