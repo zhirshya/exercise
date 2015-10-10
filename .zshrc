@@ -118,9 +118,9 @@ alias duz='sudo du -sh /var/log /mnt /'
 alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'
 #alias s+='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
 alias ut=youtube-dl
-alias utr50='youtube-dl -r 50k '
-alias utf='youtube-dl --prefer-ffmpeg -a'
-alias utl='youtube-dl -citk '
+alias utr50='youtube-dl -r 50k'
+alias utf='youtube-dl -a' #--prefer-avconv Prefer avconv over ffmpeg for running the postprocessors (default)
+alias utl='youtube-dl -ci'
 alias utupg='sudo youtube-dl -U'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
