@@ -1,0 +1,21 @@
+#How to show zsh function definition (like bash “type myfunc”)?
+The zsh idiom is whence, the -f flag prints function definitions:
+zsh$ whence -f foo
+foo () {
+    echo hello
+    }
+zsh$
+In zsh, type is defined as equivalent to whence -v, so you can continue to use type, but you'll need to use the -f argument:
+
+zsh$ type -f foo
+foo () {
+        echo hello
+}
+zsh$
+And, finally, in zsh which is defined as equivalent to whence -c - print results in csh-like format, so which foo will yield the same results.
+
+man zshbuiltins for all of this.
+
+Works, but only if no alias of the same name happens to be defined, in which case that is reported (whence -f, type -f, which report the highest-precedence form of the command).
+declare -f foo (see below) is better because even if the function is hidden by an alias, it will still be shown, whereas 'whence' is liable to show just the alias, OR both the alias and the function.
+
