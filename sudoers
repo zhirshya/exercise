@@ -95,4 +95,5 @@ root	ALL=(ALL) 	ALL
 ## Read drop-in files from /etc/sudoers.d (the # here does not mean a comment)
 #includedir /etc/sudoers.d
 
-r	ergnmbhvgrfn=/usr/sbin/shutdown, /usr/sbin/reboot, /usr/bin/dnf, /usr/bin/find, /usr/bin/pip, /usr/local/bin/youtube-dl
+r	ergnmbhvgrfn=/usr/sbin/reboot, /usr/bin/dnf, /usr/bin/find, /usr/bin/pip
+r	ergnmbhvgrfn=NOPASSWD:/usr/sbin/shutdown, /usr/sbin/reboot, /usr/bin/du, /usr/bin/df, /usr/local/bin/youtube-dl
