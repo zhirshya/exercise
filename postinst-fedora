@@ -141,11 +141,18 @@ mkdir ~/chess
 mkdir ~/mgl
 mkdir ~/math
 mkdir ~/voice
+mkdir ~/finance
 mkdir ~/bsnss-entrprnr
-mkdir ~/"hak(howto)"
+mkdir ~/"hack(howto)"
 mkdir ~/fruglthrft #frugal thrift minimalist living
-mkdir ~/tekvid
 mkdir ~/btкоин (Биткоин)
+mkdir ~/eecs-ict
+mkdir ~/nixcpp
+mkdir ~/c
+mkdir ~/embnix
+mkdir ~/nixpythn
+mkdir ~/nixc3d
+mkdir ~/ambidexterity
 
 #disable Adobe Flash Player in Chrome:
 chrome://plugins
