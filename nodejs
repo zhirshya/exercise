@@ -1,3 +1,6 @@
+node -v
+node -pe process.release.lts
+
 npm install -g hapi	#express.js replacement
 npm install -g angular
 npm install -g ember-cli
