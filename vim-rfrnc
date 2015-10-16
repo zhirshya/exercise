@@ -9,3 +9,7 @@
 
 #replace space with new line
 Use Control-v and then Enter key instead of \n. Control-v is the special character escape key.
+
+:r !date +%F
+The above commands insert the output of the date program after the current line. If wanted, the !! command can be used to filter the current line, replacing it with the output of date.
+
