@@ -159,6 +159,7 @@ chrome://plugins
 
 #git pull
 /home/r/benchmark		#microbenchmark support library, google
+/home/r/CppCon2015
 /home/r/CppCoreGuidelines
 /home/r/g3log
 /home/r/g3sinks
