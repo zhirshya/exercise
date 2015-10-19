@@ -49,8 +49,7 @@ plugins=(git)
 
 # User configuration
 
-#export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/bin"
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/.local/bin:/home/r/bin:/opt/mongodb/bin:/opt/nodejs/bin"  # zsh + oh-my-zsh @fedora #default
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/.local/bin:/home/r/bin:/opt/mongodb/bin:/opt/node-v4.2.0-linux-x64/bin"  # zsh + oh-my-zsh @fedora #default
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
