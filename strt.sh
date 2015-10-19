@@ -1,5 +1,5 @@
 #1
-gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed  --working-directory=/home/r/gthb/неkod --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst  > /dev/null 2>&1 &
+gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed  --working-directory=/home/r/gthb/неkod --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst --tab-with-profile=Unnamed --working-directory=/home/r/meanapp  > /dev/null 2>&1 &
 
 #2
 vlc > /dev/null 2>&1 &
@@ -53,7 +53,22 @@ vlc > /dev/null 2>&1 &
 
 #google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://www.tecmint.com/create-mobile-friendly-responsive-web-application-using-jquery http://jstherightway.org/ http://www.oreilly.com/catalog/errata.csp?isbn=9781491918661 https://github.com/rwaldron/idiomatic.js http://www.codeproject.com http://rosettacode.org/wiki/Category:Programming_Tasks https://kjellkod.wordpress.com/2012/02/06/exploring-c11-part-1-time/ http://www.codergears.com/Blog/?p=431 http://nerds-central.blogspot.de/2015/08/functional-c-approaching-fibonacci-from.html http://www.codeproject.com/Tips/29524/Generators-in-C http://www.codeproject.com/Articles/669611/C-or-Cplusplus-Console-Program-Code-Generator http://www.enkisoftware.com/devlogpost-20150822-1-Implementing_a_lightweight_task_scheduler.html https://jrruethe.github.io/blog/2015/08/17/yaml-de-slash-serialization-with-boost-fusion/ https://msdn.microsoft.com/en-us/magazine/dn913181.aspx http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034 http://www.drdobbs.com/cpp/c11s-async-template/240001196 http://sanderrossel.com/mean-web-development-1-mean-the-what-and-why http://www.codeproject.com/Tips/1023227/A-General-Cplusplus-Reflection-Engine-Based-on-C www.toeic.or.jp/index.html
 
-google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://sanderrossel.com/mean-web-development-1-mean-the-what-and-why http://eloquentjavascript.net https://facebook.github.io/react/docs/getting-started.html https://leanpub.com/javascriptallongesix/read http://glebbahmutov.com/blog/starting-to-react http://www.ibm.com/developerworks/library/wa-mean1/index.html https://thinkster.io/mean-stack-tutorial http://www.codeproject.com http://www.codeproject.com/Articles/856277/ESJ-Extremely-Simple-JSON-for-Cplusplus http://algs4.cs.princeton.edu/code   http://winterbe.com/posts/2014/03/16/java-8-tutorial http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples http://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples  > /dev/null 2>&1 &
+google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp http://sanderrossel.com/mean-web-development-1-mean-the-what-and-why http://eloquentjavascript.net https://facebook.github.io/react/docs/getting-started.html https://leanpub.com/javascriptallongesix/read http://glebbahmutov.com/blog/starting-to-react http://www.ibm.com/developerworks/library/wa-mean1/index.html https://thinkster.io/mean-stack-tutorial http://www.codeproject.com http://www.codeproject.com/Articles/856277/ESJ-Extremely-Simple-JSON-for-Cplusplus http://algs4.cs.princeton.edu/code   http://winterbe.com/posts/2014/03/16/java-8-tutorial http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples http://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples http://qiita.com/gitseitanaka/items/77e5d647fa364020d3f1 https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make http://www.navitime.co.jp http://www.elbeno.com/blog/?p=1211 https://www.youtube.com/watch?v=XnPyoxnmdX4 http://www.vasinov.com/blog/16-months-of-functional-programming/ https://nodejs.org/en/blog  > /dev/null 2>&1 &
+
+#https://developer.chrome.com/devtools/docs/cpu-profiling
+#https://scaleyourcode.com/blog
+#http://floating-point-gui.de/
+#http://blog.chewxy.com/2014/02/24/what-every-javascript-developer-should-know-about-floating-point-numbers/
+#Floating-point maths, constexpr style http://www.elbeno.com/blog/?p=1211
+#More constexpr floating-point computation http://www.elbeno.com/blog/?p=1245
+#Making the www great: http://www.paulirish.com/
+#http://code.tutsplus.com/tutorials/protecting-your-aws-website-from-a-ddos-attack--cms-24631
+#http://timblinetics.azurewebsites.net/creating-and-deploying-a-node-js-application-using-the-mean-stack-to-microsoft-azure/
+#https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
+#http://qiita.com/gitseitanaka/items/77e5d647fa364020d3f1
+#http://www.sitepoint.com/introduction-to-mean-stack/
+
+#http://www.artofmanliness.com/2013/02/01/confused-by-the-stock-market-dont-be-a-primer-on-stocks/
 
 #http://tenshoku.mynavi.jp/it-engineer/knowhow/resume/coach/01
 #www.toeic.or.jp/index.html
