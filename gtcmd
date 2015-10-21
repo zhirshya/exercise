@@ -38,3 +38,4 @@ git clone from bitbucket.org is not working by https
 #diff file in local and remote repo
 git diff origin/master -- <file>
 
+git checkout -- strt.sh #accidentally deleted 
