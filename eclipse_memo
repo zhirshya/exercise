@@ -1,0 +1,4 @@
+Eclipse stores all its workspace settings and files in the .metadata folder.
+Never touch/copy/change/move the .metadata folder.
+Use different workspaces for each Eclipse version.
+Store the projects outside of the workspace if you want to share them across different Eclipse versions.
