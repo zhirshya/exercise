@@ -1,3 +1,4 @@
+declare -f FuncName
 #How to show zsh function definition (like bash “type myfunc”)?
 The zsh idiom is whence, the -f flag prints function definitions:
 zsh$ whence -f foo
