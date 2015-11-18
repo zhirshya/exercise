@@ -123,7 +123,7 @@ alias utl='youtube-dl -ci'
 alias utupg='sudo youtube-dl -U'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
-alias krm='google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
+alias krm='google-chrome-stable --ssl-version-min=tls1.1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
 
 alias cd.='cd ~'
 alias cd-='cd -'
@@ -142,11 +142,13 @@ alias kty=whoami #Кто я?
 
 alias 0='echo > '
 #alias ?='sudo find / -iname '
-
+alias upgrlog='less /var/log/upgrd.log'
 alias ins='sudo dnf install'
 
 alias gcc='ccache gcc -g -Wall '
 alias gxx='ccache g++ -g -Wall -std=c++14 '
+
+alias scrot='scrot -q 100 -d 5 '
 
 #rss word
 alias rs1='echo убирать' #clean up, tidy up
