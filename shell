@@ -22,3 +22,11 @@ declare -f foo is better because even if the function is hidden by an alias, it 
 
 #tar -C /opt -xzvf node-v4.2.0-linux-x64.tar.gz
 
+#Concatenating media files
+https://trac.ffmpeg.org/wiki/Concatenate
+ffmpeg -f concat -i filelist -c copy "Подмосковные Вечера(en+rss).mp3"
+#content of filelist
+file '/tmp/Moscow Night  Helmut Lotti-VbZHzF-Av1I.mp3'
+file '/tmp/Russian Red Army Choir - Moscow Nights-aw5L0IdKjps.mp3'
+
+
