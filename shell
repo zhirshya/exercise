@@ -29,4 +29,9 @@ ffmpeg -f concat -i filelist -c copy "Подмосковные Вечера(en+r
 file '/tmp/Moscow Night  Helmut Lotti-VbZHzF-Av1I.mp3'
 file '/tmp/Russian Red Army Choir - Moscow Nights-aw5L0IdKjps.mp3'
 
+#apache
+httpd -V
+Server version: Apache/2.4.17 (Fedora)
+...
+Server MPM:     prefork
 
