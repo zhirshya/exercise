@@ -177,3 +177,4 @@ chrome://plugins
 /home/r/hapi			#Server Framework for Node.js http://hapijs.com
 /home/r/MVARobotics
 /home/r/mean			#MEAN (Mongo, Express, Angular, Node) - A Simple, Scalable and Easy starting point for full stack javascript web development - utilizing many of the best practices we've found on the way http://mean.io
+/home/r/FunctionalPlus		#helps you write concise and readable C++ code
