@@ -1,10 +1,5 @@
 #!/bin/zsh
 
-function dtx()
-{
-	rm -rf ~/.cache ~/.mozilla/firefox/oghgfeld.default/crashes ~/.mozilla/firefox/oghgfeld.default/minidumps ~/.mozilla/firefox/oghgfeld.default/sessionstore-backups ~/.mozilla/firefox/Crash\ Reports ~/.mozilla/firefox/oghgfeld.default/healthreport* ~/.mozilla/firefox/oghgfeld.default/places* ~/.Trash
-}
-
 function fndut() #for youtube video only
 {
 	echo "[SCRIPT]>>START"
@@ -52,7 +47,7 @@ function lpr()
 
 function utmp3()
 {
-        youtube-dl -x --audio-format mp3 --audio-quality 0 "$1"
+        youtube-dl -x --audio-format mp3 --audio-quality 0 -k "$1" #keep video
 }
 
 function ut18()
@@ -62,11 +57,6 @@ function ut18()
 
 function dprx()
 {
-	echo "http_proxy: [$http_proxy]"
-        echo "https_proxy:[$https_proxy]"
-        echo "HTTP_PROXY: [$HTTP_PROXY]"
-        echo "HTTPS_PROXY:[$HTTPS_PROXY]"
-
 	unset http_proxy
 	unset https_proxy
 	unset HTTP_PROXY
@@ -95,14 +85,15 @@ function dshaskpss()
         echo "SSH_ASKPASS:[$SSH_ASKPASS]"
 }
 
-function kln()
+function clean()
 {
-	sudo apt-get autoremove
-	sudo apt-get autoclean
-	sudo apt-get clean
+	rm -rf ~/.cache ~/.thumbnails ~/.mozilla/firefox/oghgfeld.default/crashes ~/.mozilla/firefox/oghgfeld.default/minidumps ~/.mozilla/firefox/oghgfeld.default/sessionstore-backups ~/.mozilla/firefox/Crash\ Reports ~/.mozilla/firefox/oghgfeld.default/healthreport* ~/.mozilla/firefox/oghgfeld.default/places* ~/.Trash
+#	sudo apt-get autoremove
+#	sudo apt-get autoclean
+#	sudo apt-get clean
 #E: encountered a section with no package: header
 #E: problem with Mergelist/var/lib/apt/lists
-	sudo rm -Rf /var/lib/apt/lists/* -vf
+#	sudo rm -Rf /var/lib/apt/lists/* -vf
 }
 
 function +() #append to todo file
