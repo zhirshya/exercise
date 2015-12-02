@@ -49,7 +49,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/.local/bin:/home/r/node-v4.2.2-linux-x64/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/.local/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
