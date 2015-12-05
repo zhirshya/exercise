@@ -47,7 +47,7 @@ function lpr()
 
 function utmp3()
 {
-        youtube-dl -x --audio-format mp3 --audio-quality 0 -k "$1" #keep video
+        youtube-dl -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
 }
 
 function ut18()
