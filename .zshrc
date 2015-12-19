@@ -148,7 +148,7 @@ alias ins='sudo dnf install'
 alias gcc='ccache gcc -g -Wall '
 alias gxx='ccache g++ -g -Wall -std=c++14 '
 
-alias scrot='scrot -q 100 -d 5 '
+alias scrot='scrot -q 100 -d 7 -c -s -e eog '
 
 #rss word
 alias rs1='echo убирать' #clean up, tidy up
