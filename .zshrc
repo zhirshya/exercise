@@ -149,6 +149,7 @@ alias gcc='ccache gcc -g -Wall '
 alias gxx='ccache g++ -g -Wall -std=c++14 '
 
 alias scrot='scrot -q 100 -d 7 -c -s -e eog '
+alias vlc='vlc > /dev/null 2>&1 &'
 
 #rss word
 alias rs1='echo убирать' #clean up, tidy up
