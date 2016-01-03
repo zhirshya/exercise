@@ -116,10 +116,9 @@ alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
 alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'
 #alias s+='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
-alias ut=youtube-dl
-alias utr50='youtube-dl -r 50k'
-alias utf='youtube-dl -a' #--prefer-avconv Prefer avconv over ffmpeg for running the postprocessors (default)
-alias utl='youtube-dl -ci'
+alias ut='youtube-dl --youtube-skip-dash-manifest'
+alias utf='youtube-dl --youtube-skip-dash-manifest -a' #--prefer-avconv Prefer avconv over ffmpeg for running the postprocessors (default)
+alias utl='youtube-dl --youtube-skip-dash-manifest -ci'
 alias utupg='sudo youtube-dl -U'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
@@ -137,9 +136,9 @@ alias tl=tail
 alias hd=head
 alias lss=less
 #alias less='less -N'
+alias mr=more
 alias rmrf='rm -rf'
 alias kty=whoami #Кто я?
-
 alias 0='echo > '
 #alias ?='sudo find / -iname '
 alias upgrlog='less /var/log/upgrd.log'

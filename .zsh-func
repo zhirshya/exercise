@@ -47,12 +47,12 @@ function lpr()
 
 function utmp3()
 {
-        youtube-dl -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
+        youtube-dl --youtube-skip-dash-manifest -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
 }
 
 function ut18()
 {
-        youtube-dl -f 18 "$1"
+        youtube-dl --youtube-skip-dash-manifest -f 18 "$1"
 }
 
 function dprx()
@@ -101,6 +101,14 @@ function +() #append to todo file
 #	echo '$#' is $#
 	if [[ $# > 0 ]]; then
 		echo "$*" >> /home/r/gthb/неkod/.todo #$@ "$@"
+	fi
+}
+
+function dn+() #append to todo file
+{
+#	echo '$#' is $#
+	if [[ $# > 0 ]]; then
+		echo "$*" >> dwn #$@ "$@"
 	fi
 }
 
