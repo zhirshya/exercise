@@ -1,12 +1,10 @@
 #!/bin/bash
 
 #invoke as: su -c /home/r/gthb/xrcs/efi_vrboxkey_fedora
-cd /home/r/vboxdrv_key #or generate in /tmp
+cd /tmp
 
 openssl req -new -x509 -newkey rsa:2048 -keyout vboxdrv_X.509.priv -outform DER -out vboxdrv_X.509.der -nodes -days 36500 -subj "/CN=vboxdrv_X.509_Org/"
 
 /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 ./vboxdrv_X.509.priv ./vboxdrv_X.509.der $(modinfo -n vboxdrv)
 
 echo -e "Passwrd\nPasswrd" | mokutil --import vboxdrv_X.509.der
-
-rm -rf /home/r/vboxdrv_key/*

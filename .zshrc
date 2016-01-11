@@ -10,6 +10,10 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
+
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
@@ -49,8 +53,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/r/.local/bin"
-
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -109,13 +112,15 @@ fi
 
 alias ll='ls -alF'
 alias lls='ls -alF | less'
-alias sht='sudo shutdown -P -f --no-wall now'
-alias rbt='sudo reboot -f --no-wall'
+#alias sht='sudo shutdown -P -f --no-wall now'
+#alias rbt='sudo reboot -f --no-wall'
+alias sht='sudo shutdown -P -f now'
+alias rbt='sudo reboot -f'
 alias wrs='whereis'
 alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
-alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'
-#alias s+='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
+#alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'
+alias s+='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
 alias ut='youtube-dl --youtube-skip-dash-manifest'
 alias utf='youtube-dl --youtube-skip-dash-manifest -a' #--prefer-avconv Prefer avconv over ffmpeg for running the postprocessors (default)
 alias utl='youtube-dl --youtube-skip-dash-manifest -ci'
@@ -156,4 +161,4 @@ alias rs1='echo убирать' #clean up, tidy up
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 
 . ~/.zsh-func
-. ~/.nvm/nvm.sh #https://github.com/creationix/nvm, Node Version Manager - Simple bash script to manage multiple active node.js versions
+#. ~/.nvm/nvm.sh #https://github.com/creationix/nvm, Node Version Manager - Simple bash script to manage multiple active node.js versions
