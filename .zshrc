@@ -121,13 +121,13 @@ alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
 #alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'
 alias s+='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
-alias ut='youtube-dl --youtube-skip-dash-manifest'
-alias utf='youtube-dl --youtube-skip-dash-manifest -a' #--prefer-avconv Prefer avconv over ffmpeg for running the postprocessors (default)
-alias utl='youtube-dl --youtube-skip-dash-manifest -ci'
+alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg'
+alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a'
+alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -ci'
 alias utupg='sudo youtube-dl -U'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
-alias krm='google-chrome-stable --ssl-version-min=tls1.1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
+alias krm='google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
 
 alias cd.='cd ~'
 alias cd-='cd -'
