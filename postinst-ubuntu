@@ -4,3 +4,5 @@ sudo apt-get install binutils autoconf gcc g++ gdb dkms build-essential ufw gimp
 #*Please note that if using this ppa I would *not* try upgrading to 14.10/15.04, ect. Do a fresh install instead. The intent here is just for users wishing to stay on 14.04* If upgrading anyway use ppa-purge *First*
 sudo ppa-purge ppa:mc3man/trusty-media
 sudo ppa-purge ppa:videolan/stable-daily
+
+sudo find /mnt/0/r -iname '*on7p8oqfv80*' -exec ls -alF {} +
