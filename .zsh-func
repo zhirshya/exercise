@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-function fndut() #for youtube video only
+function \?() #youtube
 {
-	echo "[SCRIPT]>>START"
+#	echo "[SCRIPT]>>START"
 	for id in "$@"; do
 		if [[ $id = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
 			id="${id#http*://*youtu*be*/*watch\?v=}"
@@ -13,9 +13,9 @@ function fndut() #for youtube video only
 # bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 		fi
 		echo "Search for ID [$id] now..."
-		sudo find / -iname "*$id*"
+		sudo find / -iname "*$id*" -exec ls -alF {} +
 	done
-	echo "[SCRIPT]>>END"
+#	echo "[SCRIPT]>>END"
 }
 
 function srvstr()
@@ -47,12 +47,12 @@ function lpr()
 
 function utmp3()
 {
-        youtube-dl --youtube-skip-dash-manifest -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
+        youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
 }
 
 function ut18()
 {
-        youtube-dl --youtube-skip-dash-manifest -f 18 "$1"
+        youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -f 18 "$1"
 }
 
 function dprx()
