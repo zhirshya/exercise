@@ -13,3 +13,9 @@ sudo vi /etc/default/grub
 #GRUB_CMDLINE_LINUX_DEFAULT="quiet splash" ->
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi=force"
 sudo update-grub
+
+sudo addgroup --system admin
+sudo adduser r admin
+sudo chgrp admin 0
+sudo chmod g+w,o-w 0
+
