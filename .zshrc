@@ -146,7 +146,7 @@ alias rmrf='rm -rf'
 alias kty=whoami #Кто я?
 alias 0='echo > '
 #alias ?='sudo find / -iname '
-alias upgrlog='less /var/log/upgrd.log'
+#alias upgrlog='less /var/log/upgrd.log' #extended to zsh function
 alias ins='sudo dnf install'
 
 alias gcc='ccache gcc -g -Wall '

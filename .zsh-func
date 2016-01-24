@@ -87,7 +87,7 @@ function dshaskpss()
 
 function clean()
 {
-	rm -rf ~/.cache ~/.thumbnails ~/.mozilla/firefox/oghgfeld.default/crashes ~/.mozilla/firefox/oghgfeld.default/minidumps ~/.mozilla/firefox/oghgfeld.default/sessionstore-backups ~/.mozilla/firefox/Crash\ Reports ~/.mozilla/firefox/oghgfeld.default/healthreport* ~/.mozilla/firefox/oghgfeld.default/places* ~/.Trash
+	rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.mozilla/firefox
 #	sudo apt-get autoremove
 #	sudo apt-get autoclean
 #	sudo apt-get clean
@@ -109,6 +109,15 @@ function dn+() #append to todo file
 #	echo '$#' is $#
 	if [[ $# > 0 ]]; then
 		echo "$*" >> dwn #$@ "$@"
+	fi
+}
+
+function upgrlog() #view cron job upgrade cmd log
+{
+	if [[ -f /var/log/upgrd.log ]]; then
+		less /var/log/upgrd.log
+	elif [[ -f /var/log/youtube-dl_upgrade.log ]]; then
+		less /var/log/youtube-dl_upgrade.log
 	fi
 }
 
