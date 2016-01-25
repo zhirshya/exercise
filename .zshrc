@@ -124,6 +124,8 @@ alias s+='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
 alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg'
 alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a'
 alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -ci'
+alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --all-subs'
+alias utlscap='youtube-dl --youtube-skip-dash-manifest --list-subs'
 alias utupg='sudo youtube-dl -U'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
