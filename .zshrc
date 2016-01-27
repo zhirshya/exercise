@@ -112,10 +112,10 @@ fi
 
 alias ll='ls -alF'
 alias lls='ls -alF | less'
-#alias sht='sudo shutdown -P -f --no-wall now'
-#alias rbt='sudo reboot -f --no-wall'
-alias sht='sudo shutdown -P -f now'
-alias rbt='sudo reboot -f'
+#alias sht='sudo shutdown -P -f --no-wall'	#Fedora
+#alias rbt='sudo reboot -f --no-wall'	#Fedora
+alias sht='sudo shutdown -P -f'	#Ubuntu
+alias rbt='sudo reboot -f'	#Ubuntu
 alias wrs='whereis'
 alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
