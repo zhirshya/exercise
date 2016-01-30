@@ -19,3 +19,8 @@ sudo adduser r admin
 sudo chgrp admin 0
 sudo chmod g+w,o-w 0
 
+#Remove firefox and all associated language packs
+sudo apt-get --purge autoremove firefox
+dpkg --list | grep firefox
+sudo apt-get --purge autoremove <leftover>
+
