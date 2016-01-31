@@ -24,3 +24,5 @@ sudo apt-get --purge autoremove firefox
 dpkg --list | grep firefox
 sudo apt-get --purge autoremove <leftover>
 
+sudo apt-get remove --purge webaccounts-extension-common
+
