@@ -101,7 +101,7 @@ alias mystp='sudo systemctl stop mysql'
 alias mystr='sudo systemctl start mysql'
 alias myrst='sudo systemctl restart mysql'
 
-alias ufwstt='sudo ufw status verbose'
+alias ufwst='sudo ufw status verbose'
 alias src=source
 
 if [ -e /usr/bin/vimx ]; then 
@@ -122,7 +122,7 @@ alias duz='sudo du -sh /var/log /mnt /'
 #alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'
 alias s+='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
 alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 17'
-alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 17 -a'
+alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 17 -a dwn'
 alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 17 -ci'
 alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 17 --write-sub --sub-lang ru,en --sub-format best --embed-subs '
 alias utlscap='youtube-dl --youtube-skip-dash-manifest -R 17 --list-subs'
