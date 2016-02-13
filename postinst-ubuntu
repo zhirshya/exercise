@@ -26,3 +26,7 @@ sudo apt-get --purge autoremove <leftover>
 
 sudo apt-get remove --purge webaccounts-extension-common
 sudo apt-get remove --purge unity-scope-musicstores unity-scope-musique unity-scope-tomboy 
+
+sudo vim /etc/rc.local
+echo 50 > /sys/class/backlight/intel_backlight/brightness
+
