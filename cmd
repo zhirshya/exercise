@@ -22,3 +22,7 @@ add same line:
 #Remove Cron Jobs
 crontab -ir
 
+#rename files in respective directories
+#find /mnt/0 -type f -iname 'dwn.wait' -execdir mv {} dwn.todo +
+find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} +
+
