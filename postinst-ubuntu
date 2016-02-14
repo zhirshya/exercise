@@ -30,3 +30,5 @@ sudo apt-get remove --purge unity-scope-musicstores unity-scope-musique unity-sc
 sudo vim /etc/rc.local
 echo 50 > /sys/class/backlight/intel_backlight/brightness
 
+%admin ALL=(ALL) NOPASSWD: /sbin/shutdown
+
