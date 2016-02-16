@@ -26,3 +26,4 @@ crontab -ir
 #find /mnt/0 -type f -iname 'dwn.wait' -execdir mv {} dwn.todo +
 find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} +
 
+rfkill unblock bluetooth
