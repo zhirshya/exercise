@@ -26,7 +26,7 @@ Replace 60 with whatever brightness level you prefer.
 
 sudo apt-get remove --purge libtotem-plparser18 totem totem-common totem-mozilla thunderbird firefox flashplugin-installer
 sudo apt-get autoremove
-sudo apt-get install binutils autoconf gcc g++ gdb dkms build-essential ufw gimp scrot htop wireshark curl wget zsh vim gnuchess xboard ccache valgrind anki p7zip-rar p7zip-full evince unity-tweak-tool vlc gawk ubuntu-restricted-extras git 
+sudo apt-get install binutils autoconf gcc g++ gdb dkms build-essential ufw gimp scrot htop wireshark curl wget zsh vim gnuchess xboard ccache valgrind anki p7zip-rar p7zip-full evince unity-tweak-tool vlc gawk ubuntu-restricted-extras git vimx meld
 
 #*Please note that if using this ppa I would *not* try upgrading to 14.10/15.04, ect. Do a fresh install instead. The intent here is just for users wishing to stay on 14.04* If upgrading anyway use ppa-purge *First*
 sudo ppa-purge ppa:mc3man/trusty-media
