@@ -121,15 +121,15 @@ alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
 #alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'
 alias s+='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
-alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 17'
-alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 17 -a dwn'
-alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 17 -ci'
-alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 17 --write-sub --sub-lang ru,en --sub-format best --embed-subs '
-alias utlscap='youtube-dl --youtube-skip-dash-manifest -R 17 --list-subs'
+alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 19'
+alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 19 -a dwn'
+alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 19 -ci'
+alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 19 --write-sub --sub-lang ru,en --sub-format best --embed-subs '
+alias utlscap='youtube-dl --youtube-skip-dash-manifest -R 19 --list-subs'
 alias utupg='sudo youtube-dl -U'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
-alias krm='google-chrome-stable --ssl-version-min=tls1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
+alias krm='google-chrome-stable --ssl-version-min=tls1.1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
 
 alias cd.='cd ~'
 alias cd-='cd -'
@@ -156,6 +156,7 @@ alias gxx='ccache g++ -g -Wall -std=c++14 '
 
 alias scrot='scrot -q 100 -d 7 -c -s -e eog '
 alias vlc='vlc > /dev/null 2>&1 &'
+alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
 
 #rss word
 alias rs1='echo убирать' #clean up, tidy up
