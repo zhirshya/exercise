@@ -2,7 +2,6 @@
 
 function \?() #youtube
 {
-#	echo "[SCRIPT]>>START"
 	for id in "$@"; do
 		if [[ $id = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
 			id="${id#http*://*youtu*be*/*watch\?v=}"
@@ -13,9 +12,8 @@ function \?() #youtube
 # bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 		fi
 		echo "Search for ID [$id] now..."
-		sudo find / -iname "*$id*" -exec ls -alF {} +
+		find /mnt/0 ~ -iname "*$id*" -exec ls -alF {} + #search in 2 dir
 	done
-#	echo "[SCRIPT]>>END"
 }
 
 function srvstr()
@@ -47,12 +45,12 @@ function lpr()
 
 function utmp3()
 {
-        youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
+        youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
 }
 
 function ut18()
 {
-        youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -f 18 "$1"
+        youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -f 18 "$1"
 }
 
 function dprx()
@@ -104,7 +102,7 @@ function +() #append to todo file
 	fi
 }
 
-function dn+() #append to todo file
+function ut+() #append to youtube download file
 {
 #	echo '$#' is $#
 	if [[ $# > 0 ]]; then
