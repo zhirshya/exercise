@@ -129,7 +129,7 @@ alias utlscap='youtube-dl --youtube-skip-dash-manifest -R 21 --list-subs'
 alias utupg='sudo youtube-dl -U'
 
 alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
-alias krm='google-chrome-stable --ssl-version-min=tls1.1 --ssl-version-fallback-min tls1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
+alias krm='google-chrome-stable --ssl-version-min=tls1.1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
 
 alias cd.='cd ~'
 alias cd-='cd -'
@@ -157,6 +157,7 @@ alias gxx='ccache g++ -g -Wall -std=c++14 '
 alias scrot='scrot -q 100 -d 7 -c -s -e eog '
 alias vlc='vlc > /dev/null 2>&1 &'
 alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
+alias dff='declare -f ' #if not defined as shell alias check for shell functions
 
 #rss word
 alias rs1='echo убирать' #clean up, tidy up
