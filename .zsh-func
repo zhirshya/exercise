@@ -112,8 +112,8 @@ function ut+() #append to youtube download file
 
 function upgrlog() #view cron job upgrade cmd log
 {
-	if [[ -f /var/log/upgrd.log ]]; then
-		less /var/log/upgrd.log
+	if [[ -f /var/log/sys_upgrade.log ]]; then
+		less /var/log/sys_upgrade.log
 	elif [[ -f /var/log/youtube-dl_upgrade.log ]]; then
 		less /var/log/youtube-dl_upgrade.log
 	fi
