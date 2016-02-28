@@ -30,5 +30,5 @@ find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} +
 rfkill unblock bluetooth
 
 #Create Symbolic Links in Linux
-sudo ln -s /mnt/0/gthb/xrcs/utuv.sh /usr/local/bin/utuv
+sudo ln -s /mnt/0/gthb/xrcs/utv.sh /usr/local/bin/utv
 
