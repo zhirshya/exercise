@@ -9,5 +9,5 @@ find /mnt/0 -type f -iname 'dwn' -execdir youtube-dl --youtube-skip-dash-manifes
 
 #wait
 
-sudo shutdown -P -f +3
+sudo shutdown -P -f +15
 #sudo shutdown -P -f now
