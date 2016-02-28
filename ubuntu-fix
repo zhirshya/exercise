@@ -58,4 +58,4 @@ echo 55 > /sys/class/backlight/intel_backlight/brightness
 
 %admin ALL=(ALL) NOPASSWD: /sbin/shutdown
 
-sudo apt-get purge linux-image-3.19.0-{39,43,47,49,51}-generic linux-image-extra-3.19.0-{39,43,47,49,51}-generic
+sudo apt-get purge linux-image-3.19.0-{39,43,47,49,51}-generic linux-image-extra-3.19.0-{39,43,47,49,51}-generic linux-headers-3.19.0-{39,43,47,49,51} linux-headers-3.19.0-{39,43,47,49,51}-generic 
