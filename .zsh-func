@@ -83,7 +83,7 @@ function dshaskpss()
         echo "SSH_ASKPASS:[$SSH_ASKPASS]"
 }
 
-function clean()
+function --() #clean
 {
 	rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.mozilla/firefox
 #	sudo apt-get autoremove

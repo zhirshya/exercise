@@ -115,6 +115,7 @@ alias lls='ls -alF | less'
 #alias sht='sudo shutdown -P -f --no-wall'	#Fedora
 #alias rbt='sudo reboot -f --no-wall'	#Fedora
 alias sht='sudo shutdown -P -f'	#Ubuntu
+alias sht0='sudo shutdown -P -f 0'	#Ubuntu
 alias rbt='sudo reboot -f'	#Ubuntu
 alias wrs='whereis'
 alias dfz='sudo df -h /var/log /mnt /'
@@ -158,7 +159,8 @@ alias scrot='scrot -q 100 -d 7 -c -s -e eog '
 alias vlc='vlc > /dev/null 2>&1 &'
 alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
 alias dff='declare -f ' #if not defined as shell alias check for shell functions
-
+alias tdr='less /mnt/0/gthb/неkod/.todo'
+alias tdw='vim /mnt/0/gthb/неkod/.todo'
 #rss word
 alias rs1='echo убирать' #clean up, tidy up
 
