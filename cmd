@@ -9,15 +9,18 @@ ffmpeg -i InputFile  -vn -acodec copy -ss 00:00:00 -t <duration> OutPutFile
 crontab –l –u username
 
 #Edit Cron Jobs
-If you want to run a script as a normal user:
+To use cron for tasks meant to run only for your user profile, add entries to your own user's crontab file. Start the crontab editor from a terminal window:
 crontab -e
 add line:
 07,37 * * * * /usr/bin/tunlrupdate.sh
 
-If you want to run your script as root:
+Commands that normally run with administrative privileges (i.e. they are generally run using sudo) should be added to the root user's crontab (instead of the user's crontab):
 sudo crontab -e
 add same line:
 07,37 * * * * /usr/bin/tunlrupdate.sh
+
+Depending on the commands being run, you may need to expand the root users PATH variable by putting the following line at the top of their crontab file:
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
 
 #Remove Cron Jobs
 crontab -ir
