@@ -1,3 +1,40 @@
+declare -f FuncName
+#How to show zsh function definition (like bash “type myfunc”)?
+The zsh idiom is whence, the -f flag prints function definitions:
+zsh$ whence -f foo
+foo () {
+    echo hello
+    }
+zsh$
+In zsh, type is defined as equivalent to whence -v, so you can continue to use type, but you'll need to use the -f argument:
+
+zsh$ type -f foo
+foo () {
+        echo hello
+}
+zsh$
+And, finally, in zsh which is defined as equivalent to whence -c - print results in csh-like format, so which foo will yield the same results.
+
+man zshbuiltins for all of this.
+
+Works, but only if no alias of the same name happens to be defined, in which case that is reported (whence -f, type -f, which report the highest-precedence form of the command).
+declare -f foo is better because even if the function is hidden by an alias, it will still be shown, whereas 'whence' is liable to show just the alias, OR both the alias and the function.
+
+#tar -C /opt -xzvf node-v4.2.0-linux-x64.tar.gz
+
+#Concatenating media files
+https://trac.ffmpeg.org/wiki/Concatenate
+ffmpeg -f concat -i filelist -c copy "Подмосковные Вечера(en+rss).mp3"
+#content of filelist
+file '/tmp/Moscow Night  Helmut Lotti-VbZHzF-Av1I.mp3'
+file '/tmp/Russian Red Army Choir - Moscow Nights-aw5L0IdKjps.mp3'
+
+#apache
+httpd -V
+Server version: Apache/2.4.17 (Fedora)
+...
+Server MPM:     prefork
+
 #how to check if port is open and unused
 netstat -tln | tail -n +3 | awk '{ print $4 }'
 
