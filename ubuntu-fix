@@ -9,6 +9,7 @@ sudo vim /etc/sysctl.conf
 vm.swappiness=10
 
 sudo apt-get purge unity-webapps-common xul-ext-unity xul-ext-websites-integration
+sudo apt-get purge apport
 sudo apt-get install unity-tweak-tool
 
 gsettings set com.canonical.desktop.interface scrollbar-mode normal
