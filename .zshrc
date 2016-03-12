@@ -114,13 +114,14 @@ alias ll='ls -alF'
 alias lls='ls -alF | less'
 #alias sht='sudo shutdown -P -f --no-wall'	#Fedora
 #alias rbt='sudo reboot -f --no-wall'	#Fedora
+#alias ins='sudo dnf install'	#Fedora
 alias sht='sudo shutdown -P -f'	#Ubuntu
 alias prf='sudo shutdown -P -f 0'	#Ubuntu
 alias rbt='sudo reboot -f'	#Ubuntu
 alias wrs='whereis'
 alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
-#alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'
+#alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'	#Fedora
 alias s+='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
 alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21'
 alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -a dwn'
@@ -151,8 +152,7 @@ alias kty=whoami #Кто я?
 alias 0='echo -n > '
 #alias ?='sudo find / -iname '
 #alias upgrlog='less /var/log/upgrd.log' #extended to zsh function
-alias ins='sudo dnf install'
-
+alias mv='mv -i'
 alias gcc='ccache gcc -g -Wall '
 alias gxx='ccache g++ -g -Wall -std=c++14 '
 
