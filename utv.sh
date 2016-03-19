@@ -9,5 +9,11 @@ find /mnt/0 -type f -iname 'dwn' -execdir youtube-dl --youtube-skip-dash-manifes
 
 #wait
 
-sudo shutdown -P -f +15
-#sudo shutdown -P -f now
+timeout_arg=now
+if [[ $# -eq 1 && $1 =~ "^[0-9]+$" ]]; then
+	timeout_arg=+$1
+else
+	timeout_arg="+3"
+fi
+
+sudo shutdown -P -f $timeout_arg
