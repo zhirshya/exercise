@@ -129,53 +129,6 @@ gnome-screenshot -i
 xset dpms force off
 #turn off and lock screen 
 
-# mkdir
-mkdir ~/gthb/xrcs
-mkdir ~/gthb/неkod
-mkdir ~/gthb/wbst
-mkdir ~/lflssn
-mkdir ~/"hlth(здоровье)" #health
-mkdir ~/"oros(Русский)"
-mkdir ~/"lsr(досуг)"
-mkdir ~/chess
-mkdir ~/mgl
-mkdir ~/math
-mkdir ~/voice
-mkdir ~/finance
-mkdir ~/bsnss-entrprnr
-mkdir ~/"hack(howto)"
-mkdir ~/fruglthrft #frugal thrift minimalist living
-mkdir ~/btкоин (Биткоин)
-mkdir ~/eecs-ict
-mkdir ~/nixcpp
-mkdir ~/c
-mkdir ~/embnix
-mkdir ~/nixpythn
-mkdir ~/nixc3d
-mkdir ~/ambidexterity
-mkdir ~/"xrcs(упражнение)"
-
 #disable Adobe Flash Player in Chrome:
 chrome://plugins
 
-#git pull
-/home/r/benchmark		#microbenchmark support library, google
-/home/r/CppCon2015
-/home/r/CppCoreGuidelines
-/home/r/g3log
-/home/r/g3sinks
-/home/r/You-Dont-Know-JS
-/home/r/Eloquent-JavaScript
-/home/r/node			#nodejs
-/home/r/QueueNado
-/home/r/todomvc
-/home/r/react
-/home/r/react-native
-/home/r/bootlint
-/home/r/ModernCpp
-/home/r/java8-tutorial
-/home/r/hapi			#Server Framework for Node.js http://hapijs.com
-/home/r/MVARobotics
-/home/r/mean			#MEAN (Mongo, Express, Angular, Node) - A Simple, Scalable and Easy starting point for full stack javascript web development - utilizing many of the best practices we've found on the way http://mean.io
-/home/r/FunctionalPlus		#helps you write concise and readable C++ code
-/home/r/hacker-scripts
