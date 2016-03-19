@@ -1,0 +1,3 @@
+git clone https://github.com/0xAX/linux-insides.git
+git clone https://github.com/torvalds/linux.git
+git clone https://github.com/copy/v86.git
