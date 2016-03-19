@@ -14,3 +14,15 @@ Use Control-v and then Enter key instead of \n. Control-v is the special charact
 The above commands insert the output of the date program after the current line. If wanted, the !! command can be used to filter the current line, replacing it with the output of date.
 
 W: Move forward a WORD (any non-whitespace characters).
+
+#system clipboard
+Vim has extended vi to allow use of the * register as a reference to the system clipboard. So we can use normal mode commands like: "*dd or 1G"*yG to copy things into the * register and "*p to paste text from it. We can also use this * register with the ex yank command, so :%y * will accomplish the same goal as gg"*yG (copy all text into the system clipboard so it can be pasted into an X or MS Windows application).
+
+X11-clipboard support in terminal
+Getting Vim to work with the X11 clipboard can be a struggle, at least when you like to run Vim in a terminal. The GUI version of Vim always has clipboard support, however, if you like to use Vim from a terminal, you will have to check for X11-clipboard support.
+
+From the console, type:
+
+% vim --version
+If you see "+xterm_clipboard", you are good to go. If it's "-xterm_clipboard", you will need to look for a version of Vim that was compiled with clipboard support.
+
