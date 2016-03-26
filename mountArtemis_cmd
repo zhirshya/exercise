@@ -1,0 +1,1 @@
+net use \\10.86.123.253\gi_bp @st_bp0 /user:nst_bp
