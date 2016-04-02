@@ -72,3 +72,5 @@ rfkill unblock bluetooth
 #Create Symbolic Links in Linux
 sudo ln -s /mnt/0/gthb/xrcs/utv.sh /usr/local/bin/utv
 
+#sed, vim
+%s/\(>\s*[-\h\d.+/~]\+\)\s\+2>&1$/\&\1/c #pattern not found
