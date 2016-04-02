@@ -157,7 +157,7 @@ alias gcc='ccache gcc -g -Wall '
 alias gxx='ccache g++ -g -Wall -std=c++14 '
 
 alias scrot='scrot -q 100 -d 7 -c -s -e eog '
-alias vlc='vlc > /dev/null 2>&1 &'
+alias vlc='vlc &> /dev/null &'
 alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
 alias dff='declare -f ' #if not defined as shell alias check for shell functions
 alias tdr='less /mnt/0/gthb/неkod/.todo'
