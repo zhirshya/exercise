@@ -130,9 +130,9 @@ alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --wri
 alias utlscap='youtube-dl --youtube-skip-dash-manifest -R 21 --list-subs'
 alias utupg='sudo youtube-dl -U'
 
-alias frf='firefox --ssl-version-min=tls1.2 -private > /dev/null 2>&1 &'
-alias krm='google-chrome-stable --ssl-version-min=tls1.1 --incognito http://www.weblio.jp  > /dev/null 2>&1 &'
-alias bnk='google-chrome-stable --ssl-version-min=tls1 --incognito > /dev/null 2>&1 &'
+alias frf='firefox --ssl-version-min=tls1.2 -private &> /dev/null &'
+alias krm='google-chrome-stable --ssl-version-min=tls1.1 --incognito http://www.weblio.jp http://www.merriam-webster.com &> /dev/null &'
+alias bnk='google-chrome-stable --ssl-version-min=tls1 --incognito &> /dev/null  &'
 
 alias cd.='cd ~'
 alias cd-='cd -'
