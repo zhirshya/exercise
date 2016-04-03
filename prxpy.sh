@@ -35,7 +35,7 @@ case $1 in
 	;;
     stop)
 	log_begin_msg "Stopping prxpy..."
-	start-stop-daemon --stop --pidfile $pid >/dev/null 2>&1 || true
+	start-stop-daemon --stop --pidfile $pid &>/dev/null || true
 	log_end_msg $?
 	rm -rf $pid $logfile
         ;;
