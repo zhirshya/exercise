@@ -133,6 +133,7 @@ alias utupg='sudo youtube-dl -U'
 alias frf='firefox --ssl-version-min=tls1.2 -private &> /dev/null &'
 alias krm='google-chrome-stable --ssl-version-min=tls1.1 --incognito http://www.weblio.jp http://www.merriam-webster.com &> /dev/null &'
 alias bnk='google-chrome-stable --ssl-version-min=tls1 --incognito &> /dev/null  &'
+alias or='cd ~/Downloads/tor-browser_en-US && ./start-tor-browser.desktop'
 
 alias cd.='cd ~'
 alias cd-='cd -'
