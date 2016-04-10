@@ -1,8 +1,3 @@
-/**
- * 
- */
-package com.ajinomoto.wz11.wz1139.service.domain.common.app;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import com.ajinomoto.framework.standard.shared.MessageUtils;
