@@ -1,0 +1,28 @@
+/**
+ * DATE形式チェック
+ * @param date
+ *            判断対象 入力形式 （YYYYMMDD) 入力範囲 (00010101～99991231)
+ * @return 判断結果
+ */
+public static boolean isDateFormat(String date) {
+	// 入力文字が変換可能な文字をチェックする
+	if (null == date || 8 > date.length()) {
+		return false;
+	}
+	else if(8 == date.length()){
+		long lnDate = Long.parseLong(date);
+		if (lnDate < 10101 || lnDate > 99991231) {
+			return false;
+		}
+		return true;
+	}
+	else{
+		try{
+			(new SimpleDateFormat(SQL_DATETIME_FORMAT)).parse(date); //2016-03-28 01:53:35.81
+		}catch(ParseException e){
+			LOG.error(MessageUtils.get(MsgConstant.WARING_DATE_FORMAT_FAILED));
+			return false;
+		}
+	}
+	return true;
+}
