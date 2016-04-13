@@ -27,7 +27,7 @@ Replace 60 with whatever brightness level you prefer.
 
 sudo apt-get remove --purge libtotem-plparser18 totem totem-common totem-mozilla thunderbird firefox flashplugin-installer
 sudo apt-get autoremove
-sudo apt-get install binutils autoconf gcc g++ gdb dkms build-essential ufw gimp scrot htop wireshark curl wget zsh vim gnuchess xboard ccache valgrind anki p7zip-rar p7zip-full evince unity-tweak-tool vlc gawk ubuntu-restricted-extras git vimx meld
+sudo apt-get install binutils autoconf gcc g++ gdb dkms build-essential ufw gimp scrot htop wireshark curl wget zsh vim gnuchess xboard ccache valgrind anki p7zip-rar p7zip-full evince unity-tweak-tool vlc gawk ubuntu-restricted-extras git vimx meld ack-grep
 
 #*Please note that if using this ppa I would *not* try upgrading to 14.10/15.04, ect. Do a fresh install instead. The intent here is just for users wishing to stay on 14.04* If upgrading anyway use ppa-purge *First*
 sudo ppa-purge ppa:mc3man/trusty-media
@@ -60,3 +60,10 @@ echo 55 > /sys/class/backlight/intel_backlight/brightness
 %admin ALL=(ALL) NOPASSWD: /sbin/shutdown
 
 sudo apt-get purge linux-image-3.19.0-{39,43,47,49,51}-generic linux-image-extra-3.19.0-{39,43,47,49,51}-generic linux-headers-3.19.0-{39,43,47,49,51} linux-headers-3.19.0-{39,43,47,49,51}-generic 
+
+sudo apt-get purge linux-headers-3.19.0-{39,43,47,49,51} linux-headers-3.19.0-{39,43,47,49,51}-generic
+
+~ mv Downloads/tor-browser_en-US .
+~ rmrf Downloads 
+~ ln -s /mnt/0/skachat ~/Downloads
+
