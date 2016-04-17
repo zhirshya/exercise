@@ -9,6 +9,9 @@ import java.util.ArrayList;
 public class TstKlas {
 
 	public static void main(String[] args){
+		System.out.println("System.nanoTime():\t\t"+System.nanoTime());
+		System.out.println("System.currentTimeMillis():\t"+System.currentTimeMillis());
+		
 		String tmpdir = System.getProperty("java.io.tmpdir");
 		System.out.println("System.getProperty(\"java.io.tmpdir\") : " + tmpdir);
 		
