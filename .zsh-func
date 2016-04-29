@@ -74,15 +74,6 @@ function prprx()
         echo "HTTPS_PROXY:[$HTTPS_PROXY]"
 }
 
-function dshaskpss()
-{
-        echo "SSH_ASKPASS:[$SSH_ASKPASS]"
-
-        unset SSH_ASKPASS
-
-        echo "SSH_ASKPASS:[$SSH_ASKPASS]"
-}
-
 function --() #clean
 {
 	rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.local/share/Trash ~/.local/share/trash ~/.mozilla/firefox
@@ -102,7 +93,7 @@ function +() #append to todo file
 	fi
 }
 
-function ut+() #append to youtube download file
+function ++() #append to youtube download file
 {
 #	echo '$#' is $#
 	if [[ $# > 0 ]]; then
