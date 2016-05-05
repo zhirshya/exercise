@@ -1,0 +1,59 @@
+/* multiline comment
+ * with nesting: /* nested block comment */
+ */
+
+psql -h 10.200.234.96 -p 5452 -d twz11 -U wz11adm01 -W
+
+psql -h 10.200.234.96 -p 5452 -U wz11adm01 -d twz11 -c "\COPY wz11tt_002(hojin_code, shori_ymd, kbn, recno, bukrs, blart, belnr, bldat, budat, wwert, xblnr, bktxt, waers, kursf, xmwst, bschl, mwskz, fwste, hwste, bschl2, umskz, zumsk, newko, hkont, gsber, mwskz2, dmbtr, wrbtr, zuonr, sgtxt, kostl, vault, aufnr, prctr, paobj1, paobj2, paobj3, paobj4, zterm, zfbdt, zbd1t, zlsch, zlspr, hbkid, bvtyp, rstgr, matnr, vptnr, xref1, xref2, xref3, dtws1, dtws2, dtws3, lzbkz, pycur, anred, name1, name2, name3, name4, stras, ort01, pstlz, bankl, banks, bankn, bkont, dtaws, wdate, wname, wort01, wbzog, wort2, wbank, wevwv, wstat, errmsg, userid, rnew_day) FROM 'C:/tmp/tt002.csv' DELIMITER ',' CSV HEADER ENCODING 'utf-8';"
+psql -h 10.200.234.96 -p 5452 -U wz11adm01 -d twz11 -c "\COPY wz11tt_002(hojin_code, shori_ymd, kbn, recno, bukrs, blart, belnr, bldat, budat, wwert, xblnr, bktxt, waers, kursf, xmwst, bschl, mwskz, fwste, hwste, bschl2, umskz, zumsk, newko, hkont, gsber, mwskz2, dmbtr, wrbtr, zuonr, sgtxt, kostl, vault, aufnr, prctr, paobj1, paobj2, paobj3, paobj4, zterm, zfbdt, zbd1t, zlsch, zlspr, hbkid, bvtyp, rstgr, matnr, vptnr, xref1, xref2, xref3, dtws1, dtws2, dtws3, lzbkz, pycur, anred, name1, name2, name3, name4, stras, ort01, pstlz, bankl, banks, bankn, bkont, dtaws, wdate, wname, wort01, wbzog, wort2, wbank, wevwv, wstat, errmsg, userid, rnew_day) TO 'c:/tmp/tt002.csv' DELIMITER ',' CSV HEADER ENCODING 'utf-8';"
+psql -h 10.200.234.96 -p 5452 -U wz11adm01 -d twz11 -c "COPY wz11tt_002 TO stdout DELIMITER ',' CSV HEADER;" > c:/tmp/tt002.csv
+psql -h 10.200.234.96 -p 5452 -U wz11adm01 -d twz11 -c "COPY wz11tt_002 TO 'c:/tmp/tt002.csv' DELIMITER ',' CSV HEADER ENCODING 'utf-8';"
+ERROR:  must be superuser to COPY to or from a file
+HINT:  Anyone can COPY to stdout or from stdin. psql's \copy command also works for anyone.
+psql -h 10.200.234.96 -p 5452 -U wz11adm01 -d twz11 -c "\COPY wz11tt_002 TO 'c:/tmp/tt002-utf8.csv' DELIMITER ',' CSV HEADER ENCODING 'utf-8';"
+
+SELECT count(*) as count_all, count(DISTINCT id) as count_dist_id
+  FROM wz11tt_001;
+
+Server [localhost]: 10.200.234.96
+Database [postgres]: twz11
+Port [5432]: 5452
+Username [postgres]: wz11adm01
+Client Encoding [SJIS]: utf-8
+psql (9.3.5)
+"help" でヘルプを表示します.
+twz11=> select count(*) from wz11tm_024;
+ count
+-------
+   886
+(1 行)
+
+twz11=> COPY (SELECT * FROM wz11tm_024) TO 'C:\Users\batu_qing\AppData\Local\Tem
+p\wz11tm_024.csv' WITH CSV HEADER;
+ERROR:  must be superuser to COPY to or from a file
+HINT:  Anyone can COPY to stdout or from stdin. psql's \copy command also works
+for anyone.
+twz11=> COPY (SELECT * FROM wz11tm_024) TO '"C:\Users\batu_qing\AppData\Local\Te
+mp\wz11tm_024.csv"' (format CSV);
+ERROR:  must be superuser to COPY to or from a file
+HINT:  Anyone can COPY to stdout or from stdin. psql's \copy command also works
+for anyone.
+twz11=> \copy (SELECT * FROM wz11tm_024) TO 'C:\Users\batu_qing\AppData\Local\Te
+mp\wz11tm_024.csv' WITH CSV HEADER;
+twz11=> \copy (SELECT * FROM wz11tm_024) TO '"%TEMP%\wz11tm_024.csv"' WITH CSV H
+EADER;
+"%TEMP%/wz11tm_024.csv: Invalid argument
+twz11=>
+
+#sql
+INSERT INTO wz11tm_024(
+            hojin_code, matkl, wgbez, userid, rnew_day)
+    VALUES ('0100', 'matkl', 'wgbez', 'WZ11ADM01', now());
+
+twz11=> \i C:/dbC/wz11tm_025.sql
+psql:C:/dbC/wz11tm_025.sql:41: ERROR:  must be superuser to COPY to or from a file
+HINT:  Anyone can COPY to stdout or from stdin. psql's \copy command also works for anyone.
+twz11=> \COPY wz11tm_025 (rep_id, ka_box_cc, exchg_1_cc, exchg_2_cc, exchg_3_cc, exchg_4_cc, exchg_5_cc, exchg_6_cc, exchg_7_cc, exchg_8_cc, exchg_9_cc, exchg_10_cc) FROM 'C:/dbC/wz11tm_025.dat' DELIMITER ',' CSV;
+twz11=>
+
+

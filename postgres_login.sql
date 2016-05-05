@@ -1,1 +1,0 @@
-psql -h 10.200.234.96 -d twz11 -U wz11adm01 -W
