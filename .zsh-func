@@ -76,7 +76,7 @@ function prprx()
 
 function --() #clean
 {
-	rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.local/share/Trash ~/.local/share/trash ~/.mozilla/firefox
+	rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
 #	sudo apt-get autoremove
 #	sudo apt-get autoclean
 #	sudo apt-get clean
