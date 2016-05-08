@@ -1,3 +1,16 @@
+-- Sequence: wz11tt_001_id_seq
+
+-- DROP SEQUENCE wz11tt_001_id_seq;
+
+CREATE SEQUENCE wz11tt_001_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 139
+  CACHE 1;
+ALTER TABLE wz11tt_001_id_seq
+  OWNER TO wz11adm01;
+
 -- Table: wz11tt_001
 
 -- DROP TABLE wz11tt_001;
