@@ -84,3 +84,5 @@ g/\(>.\+\)\s\+2>&1/s//\&\1/gc	#work
 less /proc/sys/dev/cdrom/info
 cdrecord -minfo -v
 
+grub2-mkconfig -o /boot/grub2/grub.cfg
+
