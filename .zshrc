@@ -54,7 +54,7 @@ plugins=(git)
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -130,7 +130,7 @@ alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --wri
 alias utlscap='youtube-dl --youtube-skip-dash-manifest -R 21 --list-subs'
 alias utupg='sudo youtube-dl -U'
 
-alias ff='firefox --ssl-version-min=tls1.2 -private &> /dev/null &'
+alias fx='firefox --ssl-version-min=tls1.2 -private &> /dev/null &'
 alias krm='google-chrome-stable --ssl-version-min=tls1.2 --incognito weblio.jp merriam-webster.com  &> /dev/null &'
 alias bnk='google-chrome-stable --ssl-version-min=tls1 --incognito &> /dev/null  &'
 alias or='cd ~/Downloads/tor-browser_en-US && ./start-tor-browser.desktop && -'

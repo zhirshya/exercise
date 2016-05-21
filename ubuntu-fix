@@ -8,7 +8,7 @@ sudo vim /etc/sysctl.conf
 # Decrease swap usage to a more reasonable level
 vm.swappiness=10
 
-sudo apt-get purge apport unity-webapps-common xul-ext-unity xul-ext-websites-integration webaccounts-extension-common unity-scope-musicstores unity-scope-musique unity-scope-tomboy libtotem-plparser18 totem totem-common totem-mozilla thunderbird firefox flashplugin-installer
+sudo apt-get purge apport unity-webapps-common xul-ext-unity xul-ext-websites-integration unity-scope-musicstores unity-scope-musique unity-scope-tomboy libtotem-plparser18 totem totem-common thunderbird flashplugin-installer
 #Remove firefox and all associated language packs
 sudo apt-get --purge autoremove firefox
 dpkg --list | grep firefox
@@ -61,4 +61,8 @@ sudo apt-get purge linux-headers-3.19.0-{39,43,47,49,51} linux-headers-3.19.0-{3
 ~ mv Downloads/tor-browser_en-US .
 ~ rmrf Downloads 
 ~ ln -s /mnt/0/skachat ~/Downloads
+
+#Remove Guest Session in Ubuntu 16.04 Login Screen
+sudo mkdir /etc/lightdm/lightdm.conf.d
+sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" > /etc/lightdm/lightdm.conf.d/50-no-guest.conf'
 
