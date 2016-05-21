@@ -82,3 +82,5 @@ g/\(>.\+\)\s\+2>&1/s//\&\1/gc	#work
 7z x -o/mnt/0/dbC\(gtdвrus\) dbC.7z
 
 less /proc/sys/dev/cdrom/info
+cdrecord -minfo -v
+
