@@ -32,6 +32,8 @@ Replace 60 with whatever brightness level you prefer.
 
 sudo apt-get install binutils autoconf gcc g++ gdb dkms build-essential ufw gimp scrot htop wireshark curl wget zsh vim gnuchess xboard ccache valgrind anki p7zip-rar p7zip-full evince unity-tweak-tool vlc gawk ubuntu-restricted-extras git vimx meld ack-grep
 
+sudo apt-get purge flashplugin-installer #ubuntu-restricted-extras automatically install flashplugin-installer
+
 #*Please note that if using this ppa I would *not* try upgrading to 14.10/15.04, ect. Do a fresh install instead. The intent here is just for users wishing to stay on 14.04* If upgrading anyway use ppa-purge *First*
 sudo ppa-purge ppa:mc3man/trusty-media
 sudo ppa-purge ppa:videolan/stable-daily
