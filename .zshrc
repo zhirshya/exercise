@@ -161,8 +161,8 @@ alias scrot='scrot -q 100 -d 7 -c -s -e eog '
 alias vlc='vlc &> /dev/null &'
 alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
 alias dff='declare -f ' #if not defined as shell alias check for shell functions
-alias tdr='less /mnt/0/gthb/неkod/.todo'
-alias tdw='vim /mnt/0/gthb/неkod/.todo'
+alias tdr='less /media/r/0/gthb/неkod/.todo'
+alias tdw='vim /media/r/0/gthb/неkod/.todo'
 #rss word
 alias rs1='echo убирать' #clean up, tidy up
 

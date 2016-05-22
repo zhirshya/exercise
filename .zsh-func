@@ -12,7 +12,7 @@ function \?() #youtube
 # bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 		fi
 		echo "Search for ID [$id] now..."
-		find /mnt/0 ~ -iname "*$id*" -exec ls -alF {} + #search in 2 dir
+		find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} + #search in 2 dir
 	done
 }
 
@@ -89,7 +89,7 @@ function +() #append to todo file
 {
 #	echo '$#' is $#
 	if [[ $# > 0 ]]; then
-		echo "$*" >> /mnt/0/gthb/неkod/.todo #$@ "$@"
+		echo "$*" >> /media/r/0/gthb/неkod/.todo #$@ "$@"
 	fi
 }
 
