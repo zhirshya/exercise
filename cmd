@@ -63,14 +63,14 @@ PATH=/usr/sbin:/usr/bin:/sbin:/bin
 crontab -ir
 
 #rename files in respective directories
-#find /mnt/0 -type f -iname 'dwn.wait' -execdir mv {} dwn.todo +
-find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} +
+#find /media/r/0 -type f -iname 'dwn.wait' -execdir mv {} dwn.todo +
+find /media/r/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} +
 
 #http://askubuntu.com/questions/419115/make-bluetooth-disabled-by-default
 rfkill unblock bluetooth
 
 #Create Symbolic Links in Linux
-sudo ln -s /mnt/0/gthb/xrcs/utv.sh /usr/local/bin/utv
+sudo ln -s /media/r/0/gthb/xrcs/utv.sh /usr/local/bin/utv
 
 grep -Ril "2>&1" .
 
@@ -79,7 +79,7 @@ grep -Ril "2>&1" .
 g/\(>\s*[/\w.-]\+\)\s\+2>&1/s//\&\1/gc #pattern not found
 g/\(>.\+\)\s\+2>&1/s//\&\1/gc	#work
 
-7z x -o/mnt/0/dbC\(gtdвrus\) dbC.7z
+7z x -o/media/r/0/dbC\(gtdвrus\) dbC.7z
 
 less /proc/sys/dev/cdrom/info
 cdrecord -minfo -v
