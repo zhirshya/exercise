@@ -16,4 +16,4 @@ else
 	timeout_arg="+3"
 fi
 
-sudo shutdown -P -f $timeout_arg
+sudo shutdown -P $timeout_arg
