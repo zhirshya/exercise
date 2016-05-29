@@ -88,3 +88,5 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 utl $(cat list)
 
+➜  DEBS sudo dpkg -R -i .
+
