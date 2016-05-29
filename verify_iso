@@ -1,0 +1,8 @@
+wget -q -O - https://www.kali.org/archive-key.asc | gpg --import
+wget http://cdimage.kali.org/kali-2016.1/SHA1SUMS.gpg
+wget http://cdimage.kali.org/kali-2016.1/SHA1SUMS
+gpg --verify SHA1SUMS.gpg SHA1SUMS
+
+wget http://ftp.jaist.ac.jp/pub/Linux/CentOS/7/isos/x86_64/CentOS-7-x86_64-DVD-1511.iso
+wget http://buildlogs.centos.org/rolling/7/isos/x86_64/sha256sum.txt.asc
+sha256sum CentOS-7-x86_64-DVD-1511.iso
