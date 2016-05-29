@@ -17,4 +17,4 @@ else
 fi
 
 #sudo shutdown -P $timeout_arg #[sudo] ask for password
-shutdown -P $timeout_arg
+sudo shutdown -P $timeout_arg
