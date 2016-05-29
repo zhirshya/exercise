@@ -10,8 +10,10 @@
 # bits.
 #
 # By default this script does nothing.
-
 rfkill block bluetooth
-/etc/init.d/bluetooth stop
+#turn on the bluetooth soft:
+#rfkill unblock bluetooth
+#To get a list:
+#rfkill list
 
 exit 0
