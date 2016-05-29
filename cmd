@@ -92,4 +92,6 @@ utl $(cat list)
 
 How to modify a invalid /etc/sudoers file?
 pkexec visudo
+use /etc/sudoers.d instead of modifying /etc/sudoers
+pkexec visudo -f /etc/sudoers.d/myOverrides
 
