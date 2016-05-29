@@ -90,3 +90,6 @@ utl $(cat list)
 
 ➜  DEBS sudo dpkg -R -i .
 
+How to modify a invalid /etc/sudoers file?
+pkexec visudo
+
