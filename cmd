@@ -90,8 +90,8 @@ utl $(cat list)
 
 ➜  DEBS sudo dpkg -R -i .
 
-How to modify a invalid /etc/sudoers file?
+How to modify invalid /etc/sudoers file?
 pkexec visudo
-use /etc/sudoers.d instead of modifying /etc/sudoers
+Better create custom sudoers in /etc/sudoers.d instead of modifying /etc/sudoers
 pkexec visudo -f /etc/sudoers.d/myOverrides
 
