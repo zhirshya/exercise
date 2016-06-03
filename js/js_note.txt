@@ -1,0 +1,69 @@
+"use strict";
+
+As of ES6, Number.EPSILON is predefined with this tolerance value, so you'd want to use it, but you can safely polyfill the definition for pre-ES6:
+if (!Number.EPSILON) {
+    Number.EPSILON = Math.pow(2,-52);
+}
+
+As compared to other type-enforced languages, JavaScript arrays are just containers for any type of value, from string to number to object to even another array (which is how you get multidimensional arrays).
+var a = [ 1, "2", [3] ];
+a.length;       // 3
+a[0] === 1;     // true
+a[2][0] === 3;  // true
+
+NaN literally stands for "not a number", though this label/description is very poor and misleading, as we'll see shortly. It would be much more accurate to think of NaN as being "invalid number," "failed number," or even "bad number," than to think of it as "not a number."
+
+NaN is never equal to itself, so you have to use ES6's Number.isNaN(..) (or a polyfill). Simlarly, -0 lies and pretends that it's equal (even === strict equal -- see Chapter 4) to regular positive 0, so you have to use the somewhat hackish isNegZero(..) utility we suggested above.
+
+As of ES6, there's a new utility that can be used to test two values for absolute equality, without any of these exceptions. It's called Object.is(..)
+
+There's a pretty simple polyfill for Object.is(..) for pre-ES6 environments:
+
+if (!Object.is) {
+    Object.is = function(v1, v2) {
+        // test for `-0`
+        if (v1 === 0 && v2 === 0) {
+            return 1 / v1 === 1 / v2;
+        }
+        // test for `NaN`
+        if (v1 !== v1) {
+            return v2 !== v2;
+        }
+        // everything else
+        return v1 === v2;
+    };
+}
+
+//reference
+In JavaScript, there are no pointers, and references work a bit differently. You cannot have a reference from one JS variable to another variable. That's just not possible.
+
+A reference in JS points at a (shared) value, so if you have 10 different references, they are all always distinct references to a single shared value; none of them are references/pointers to each other.
+
+Moreover, in JavaScript, there are no syntactic hints that control value vs. reference assignment/passing. Instead, the type of the value solely controls whether that value will be assigned by value-copy or by reference-copy.
+e.g.:
+var a = 2;
+var b = a; // `b` is always a copy of the value in `a`
+b++;
+a; // 2
+b; // 3
+
+var c = [1,2,3];
+var d = c; // `d` is a reference to the shared `[1,2,3]` value
+d.push( 4 );
+c; // [1,2,3,4]
+d; // [1,2,3,4]
+
+Simple values (aka scalar primitives) are always assigned/passed by value-copy: null, undefined, string, number, boolean, and ES6's symbol.
+
+Compound values -- objects (including arrays, and all boxed object wrappers -- see Chapter 3) and functions -- always create a copy of the reference on assignment or passing.
+Since references point to the values themselves and not to the variables, you cannot use one reference to change where another reference is pointed:
+var a = [1,2,3];
+var b = a;
+a; // [1,2,3]
+b; // [1,2,3]
+
+// later
+b = [4,5,6];
+a; // [1,2,3]
+b; // [4,5,6]
+
