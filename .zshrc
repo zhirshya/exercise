@@ -102,7 +102,7 @@ alias mystr='sudo systemctl start mysql'
 alias myrst='sudo systemctl restart mysql'
 
 alias ufwst='sudo ufw status verbose'
-alias src=source
+alias src='source ~/.zshrc'
 
 if [ -e /usr/bin/vimx ]; then 
 	alias vm='/usr/bin/vimx'
@@ -157,7 +157,7 @@ alias gcc='ccache gcc -g -Wall '
 alias gxx='ccache g++ -g -Wall -std=c++14 '
 
 alias scrot='scrot -q 100 -d 7 -c -s -e eog '
-alias vlc='vlc &> /dev/null &'
+#alias vlc='vlc &> /dev/null &'
 alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
 alias dff='declare -f ' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /media/r/0/gthb/неkod/.todo'
