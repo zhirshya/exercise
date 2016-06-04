@@ -95,3 +95,5 @@ pkexec visudo
 Better create custom sudoers in /etc/sudoers.d instead of modifying /etc/sudoers
 pkexec visudo -f /etc/sudoers.d/myOverrides
 
+dd if=kali-linux-2016.1-amd64.iso of=/dev/sdb bs=512k
+
