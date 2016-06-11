@@ -98,4 +98,6 @@ pkexec visudo -f /etc/sudoers.d/myOverrides
 dd if=kali-linux-2016.1-amd64.iso of=/dev/sdb bs=512k
 
 pdftk polymersummit-es6.pdf cat 15-69 72-end output use-es6-with-polymer,2015.pdf
+pdftk Eloquent\ JavaScript,\ 2nd\ Edition.pdf cat 1 8 13-end output eloquent_JavaScript_2nd_ed.NoStarchPress.pdf
+
 
