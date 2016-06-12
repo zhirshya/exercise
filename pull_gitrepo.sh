@@ -54,14 +54,6 @@ cd /mnt/0/masteringnode
 pwd
 git pull
 echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
-cd /mnt/0/node
-pwd
-git pull
-echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
-cd /mnt/0/nodejs.org
-pwd
-git pull
-echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
 cd /mnt/0/QueueNado
 pwd
 git pull
@@ -118,23 +110,15 @@ cd /mnt/0/macchina.io
 pwd
 git pull
 echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
-cd /mnt/0/tungstenjs
-pwd
-git pull
-echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
 cd /mnt/0/Raspberry_Pi_2_and_OpenCV_3_Tutorial_Part_1
 pwd
 git pull
 echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
-cd /mnt/0/"tutorials(REST With Spring Classes)"
-pwd
-git pull
-echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
-cd /mnt/0/india_ejb_
-pwd
-git pull
-echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
 cd /mnt/0/CppCon2015
+pwd
+git pull
+echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
+cd /mnt/0/"tutorials(REST With Spring Classes)"
 pwd
 git pull
 echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
