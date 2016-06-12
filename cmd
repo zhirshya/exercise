@@ -101,5 +101,5 @@ pdftk polymersummit-es6.pdf cat 15-69 72-end output use-es6-with-polymer,2015.pd
 pdftk Eloquent\ JavaScript,\ 2nd\ Edition.pdf cat 1 8 13-end output eloquent_JavaScript_2nd_ed.NoStarchPress.pdf
 
 cd /media/r/0
-fdupes -Sr js nodejs_screencast java cpp aws c c++graphic eecs-ict php embnix nixcpp nixc3d nixpythn socket 01 fpga wbst tekvid swift ms
+fdupes -Sr js nodejs_screencast java cpp aws c c++graphic eecs-ict php embnix nixcpp nixc3d nixpythn socket 01 fpga wbst swift ms tekvid android game hak how pentst
 
