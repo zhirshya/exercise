@@ -103,3 +103,9 @@ pdftk Eloquent\ JavaScript,\ 2nd\ Edition.pdf cat 1 8 13-end output eloquent_Jav
 cd /media/r/0
 fdupes -Sr js nodejs_screencast java cpp aws c c++graphic eecs-ict php embnix nixcpp nixc3d nixpythn socket 01 fpga wbst swift ms tekvid android game hak how pentst
 
+#access and mount iPhone 6 in Linux
+sudo apt-get install ideviceinstaller python-imobiledevice libimobiledevice-utils libimobiledevice4 libplist2 python-plist ifuse 
+sudo vim /etc/fuse.conf
+idevicepair pair
+ifuse /media/iPhone/
+fusermount -u /media/iPhone
