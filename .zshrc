@@ -112,18 +112,18 @@ fi
 
 alias ll='ls -alF'
 alias lls='ls -alF | less'
-#alias sht='sudo shutdown -P -f --no-wall'	#Fedora
+#alias s0='sudo shutdown -P -f --no-wall'	#Fedora
 #alias rbt='sudo reboot -f --no-wall'	#Fedora
 #alias ins='sudo dnf install'	#Fedora
-alias sht='sudo shutdown -P -f'	#Ubuntu
-alias nsht='sudo shutdown -c'
-alias npr='sudo shutdown -P -f 0'	#Ubuntu
+alias s0='sudo shutdown -P -f'	#Ubuntu
+alias ns0='sudo shutdown -c'
+alias 0p='sudo shutdown -P -f 0'	#Ubuntu
 alias rbt='sudo reboot -f'	#Ubuntu
 alias wrs='whereis'
 alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
-#alias s+='sudo dnf upgrade -y && sudo youtube-dl -U'	#Fedora
-alias s+='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
+#alias ss='sudo dnf upgrade -y && sudo youtube-dl -U'	#Fedora
+alias ss='sudo apt-get update && sudo apt-get upgrade -y && sudo youtube-dl -U'
 alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21'
 alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -a dwn'
 alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -ci'
