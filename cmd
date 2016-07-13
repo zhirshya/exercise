@@ -109,3 +109,6 @@ sudo vim /etc/fuse.conf
 idevicepair pair
 ifuse /media/iPhone/
 fusermount -u /media/iPhone
+
+eog - GNOME image viewer
+
