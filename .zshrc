@@ -151,6 +151,8 @@ alias mr='more -s'
 alias rmrf='rm -rf'
 alias kty=whoami #Кто я?
 alias 0='echo -n > '
+alias 0glob='disable -p "?"'
+alias 1glob='enable -p ?'
 #alias ?='sudo find / -iname '
 #alias upgrlog='less /var/log/upgrd.log' #extended to zsh function
 alias mv='mv -i'
@@ -167,6 +169,7 @@ alias td='vim /media/r/0/gthb/неkod/.todo'
 alias rs1='echo убирать' #clean up, tidy up
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls
+#setopt noglob #turn off globbing(wildcard expansion)
 
 . ~/.zsh-func
 #. ~/.nvm/nvm.sh #https://github.com/creationix/nvm, Node Version Manager - Simple bash script to manage multiple active node.js versions

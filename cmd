@@ -112,3 +112,28 @@ fusermount -u /media/iPhone
 
 eog - GNOME image viewer
 
+#turn off globbing(wildcard expansion) temporaly/for current session
+➜  0 ? https://www.youtube.com/watch?v=kGosatWQ5ag
+zsh: no matches found: https://www.youtube.com/watch?v=kGosatWQ5ag
+➜  0 disable -p ?                                 
+disable: invalid pattern: c
+➜  0 disable -p '?'                               
+➜  0 ? https://www.youtube.com/watch?v=kGosatWQ5ag
+Search for ID [kGosatWQ5ag] now...
+find: ‘/home/r/.dbus’: Permission denied
+-rw-rw-r-- 1 r r 43429548 сен 25  2014 /media/r/0/oros(Русский)/Weekly Russian Words with Katya - Computer Words-kGosatWQ5ag.mkv
+➜  0 enable ?
+enable: no such hash table element: ?
+➜  0 enable -p ?
+➜  0 ? https://www.youtube.com/watch?v=kGosatWQ5ag
+zsh: no matches found: https://www.youtube.com/watch?v=kGosatWQ5ag
+➜  0 disable -p "?"                               
+➜  0 ? https://www.youtube.com/watch?v=kGosatWQ5ag
+Search for ID [kGosatWQ5ag] now...
+find: ‘/home/r/.dbus’: Permission denied
+-rw-rw-r-- 1 r r 43429548 сен 25  2014 /media/r/0/oros(Русский)/Weekly Russian Words with Katya - Computer Words-kGosatWQ5ag.mkv
+#persistent effect
+setopt noglob
+#bash
+set -o noglob
+

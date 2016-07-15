@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-function \?() #youtube
+function \?()
 {
 	for id in "$@"; do
 		if [[ $id = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
