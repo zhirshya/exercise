@@ -144,4 +144,4 @@ function dshaskpss()
         echo SSH_ASKPASS:[$SSH_ASKPASS]
 }
 
-
+#set -o noglob #turn off globbing(wildcard expansion)
