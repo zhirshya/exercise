@@ -156,11 +156,11 @@ alias 13f='enable -p ?'
 #alias ?='sudo find / -iname '
 #alias upgrlog='less /var/log/upgrd.log' #extended to zsh function
 alias mv='mv -i'
-alias gcc='ccache gcc -g -Wall '
-alias gxx='ccache g++ -g -Wall -std=c++14 '
+alias cp='cp -i'
+alias gcc='ccache gcc -std=c11 -Wall -Wextra -g '
+alias gxx='ccache g++ -std=c++14 -Wall -Wextra -g '
 
 alias scrot='scrot -q 100 -d 7 -c -s -e eog '
-#alias vlc='vlc &> /dev/null &'
 alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
 alias dff='declare -f ' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /media/r/0/gthb/неkod/.todo'
