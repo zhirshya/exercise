@@ -137,6 +137,7 @@ setopt noglob
 #bash
 set -o noglob
 
-➜  0 diff ~/.zshrc /media/r/0/gthb/xrcs/.zshrc 
-➜  0 diff ~/.zsh-func /media/r/0/gthb/xrcs/.zsh-func 
+diff ~/.zshrc /media/r/0/gthb/xrcs/.zshrc 
+diff ~/.zsh-func /media/r/0/gthb/xrcs/.zsh-func 
+diff /media/r/0/gthb/xrcs/Makefile /media/r/0/xrc/Makefile
 
