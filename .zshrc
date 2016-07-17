@@ -153,12 +153,18 @@ alias kty=whoami #Кто я?
 alias 0='echo -n > '
 alias 03f='disable -p "?"'
 alias 13f='enable -p ?'
+alias 021='disable -p "!"' #incorrect
+alias 121='enable -p !'
+alias 023='disable -p "#"'
+alias 123='enable -p #'
 #alias ?='sudo find / -iname '
 #alias upgrlog='less /var/log/upgrd.log' #extended to zsh function
 alias mv='mv -i'
 alias cp='cp -i'
+
 alias gcc='ccache gcc -std=c11 -Wall -Wextra -g '
 alias gxx='ccache g++ -std=c++14 -Wall -Wextra -g '
+alias vgr='valgrind'
 
 alias scrot='scrot -q 100 -d 7 -c -s -e eog '
 alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
