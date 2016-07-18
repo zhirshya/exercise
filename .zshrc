@@ -115,6 +115,7 @@ alias lls='ls -alF | less'
 #alias s0='sudo shutdown -P -f --no-wall'	#Fedora
 #alias rbt='sudo reboot -f --no-wall'	#Fedora
 #alias ins='sudo dnf install'	#Fedora
+alias ins='sudo apt install'
 alias 0p+='sudo shutdown -P -f'	#Ubuntu
 alias 00p='sudo shutdown -c'
 alias 0p='sudo shutdown -P -f 0'	#Ubuntu
