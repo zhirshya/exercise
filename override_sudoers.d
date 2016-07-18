@@ -1,1 +1,0 @@
-r ALL= NOPASSWD: /sbin/shutdown, /sbin/reboot, /usr/bin/du, /usr/bin/df, /usr/local/bin/youtube-dl, /usr/bin/apt-get update, /usr/bin/apt-get upgrade -y, /usr/bin/apt-get autoremove, /usr/bin/apt-get autoclean, /usr/bin/apt-get clean
