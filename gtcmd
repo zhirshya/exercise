@@ -39,3 +39,9 @@ git clone from bitbucket.org is not working by https
 git diff origin/master -- <file>
 
 git checkout -- strt.sh #accidentally deleted 
+
+#git empty file bad file descriptor
+git fsck --full
+git hash-object -w <file>
+git gc --aggressive --prune=now
+
