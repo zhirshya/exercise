@@ -27,7 +27,7 @@ Restart firewalld service:
 firewall-cmd --reload
 
 #apache2 ubuntu
-sudo apt-get install apache2 apache2-utils
+sudo apt install apache2 apache2-utils
 
 sudo vim /etc/apache2/mods-enabled/dir.conf #reorder def index file
 
@@ -47,13 +47,13 @@ Set MariaDB root password:
 #mariadb ubuntu
 #sudo systemctl stop mysql  #fedora only?
 sudo service mysql stop
-sudo apt-get remove --purge mysql-server mysql-client mysql-common
-sudo apt-get autoremove
-sudo apt-get autoclean
+sudo apt remove --purge mysql-server mysql-client mysql-common
+sudo apt autoremove
+sudo apt autoclean
 sudo rm -rf /var/lib/mysql/
 sudo rm -rf /etc/mysql/
 
-sudo apt-get install mariadb-server
+sudo apt install mariadb-server
 
 mysql_secure_installation
 
@@ -61,11 +61,11 @@ mysql_secure_installation
 sudo dnf install php phpmyadmin -y
 
 #PHP module #php5-mysqlnd <==> php5-mysqld
-sudo apt-get install php5-fpm php5-cli php5-mcrypt php5-gd php5-mysqlnd php5-curl
+sudo apt install php5-fpm php5-cli php5-mcrypt php5-gd php5-mysqlnd php5-curl
 sudo php5enmod mcrypt
 
 #PHP ubuntu
-sudo apt-get install libapache2-mod-php5 php5 php5-mysql php-pear php5-gd php5-mcrypt php5-curl
+sudo apt install libapache2-mod-php5 php5 php5-mysql php-pear php5-gd php5-mcrypt php5-curl
 
 /*
 dbconfig-common: writing config to /etc/dbconfig-common/phpmyadmin.conf
@@ -84,5 +84,5 @@ apache2_invoke: Enable configuration phpmyadmin
  * Reloading web server apache2                                                                                                                   * 
 */
 
-sudo apt-get install phpmyadmin 
+sudo apt install phpmyadmin 
 

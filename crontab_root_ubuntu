@@ -25,4 +25,4 @@ PATH=/usr/bin:/usr/local/bin
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-0 22	* * *	{ apt-get update && apt-get upgrade -y ; youtube-dl -U ; } &> /var/log/sys_upgrade.log
+0 22	* * *	{ apt update && apt upgrade -y ; youtube-dl -U ; } &> /var/log/sys_upgrade.log
