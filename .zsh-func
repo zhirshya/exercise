@@ -77,9 +77,9 @@ function prprx()
 function --() #clean
 {
 	rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
-#	sudo apt-get autoremove
-#	sudo apt-get autoclean
-#	sudo apt-get clean
+	sudo apt autoremove -y
+	sudo apt autoclean
+	sudo apt clean
 #E: encountered a section with no package: header
 #E: problem with Mergelist/var/lib/apt/lists
 #	sudo rm -Rf /var/lib/apt/lists/* -vf
