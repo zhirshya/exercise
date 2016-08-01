@@ -9,16 +9,17 @@ find /media/r/0 -type f -iname 'dwn' -execdir youtube-dl --youtube-skip-dash-man
 
 #wait
 
-timeout_arg=now
-if [[ $# -eq 1 ]]; then
-	if [[ $1 =~ "^[0-9]+$" ]]; then
-		timeout_arg=+$1
-	elif [[ $1 -eq 's' ]]; then #stand-by
-		echo "Exiting program."
-		exit 0
-	fi 
+#timeout_arg=now
+if [[ $# -eq 1 ]] && [[ $1 =~ "\d+" ]]; then
+	timeout_arg=+$1
+#	elif [[ $1 -eq 's' ]]; then #stand-by
+#		echo "Exiting program."
+#		exit 0
+#	fi 
 else
-	timeout_arg="+3"
+#	timeout_arg="+3"
+	echo "Exiting script."
+	exit 0
 fi
 
 sudo shutdown -P -f $timeout_arg
