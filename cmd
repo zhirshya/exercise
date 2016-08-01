@@ -145,3 +145,5 @@ diff /media/r/0/gthb/xrcs/Makefile /media/r/0/xrc/Makefile
 #Delete lines in a text file that containing a specific string
 ex +g/match/d -cwq file
 
+top -b -o +%MEM | head
+ps -eo %mem,%cpu,pid,ppid,cmd --sort=-%mem | head
