@@ -110,6 +110,6 @@ function upgrlog() #view cron job upgrade cmd log
 	fi
 }
 
-function vl() {
+function vd() {
 	vlc "$*" &> /dev/null &
 }
