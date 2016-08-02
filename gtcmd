@@ -45,3 +45,6 @@ git fsck --full
 git hash-object -w <file>
 git gc --aggressive --prune=now
 
+#.gitignore
+git config --global core.excludesfile /media/r/0/.gitignore_global
+
