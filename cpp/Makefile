@@ -4,6 +4,6 @@ CC       = gcc
 CCFLAGS  = -std=c11 -Wall -Wextra -g
 
 clean:
-	rm -f *.o *.out
+	rm -rf bin_ignore/*.*
 rebuild: clean build
 
