@@ -1,6 +1,7 @@
 uname -a
 lsb_release -a
 
+sudo ufw enable
 sudo ufw status verbose
 
 cat /proc/sys/vm/swappiness
