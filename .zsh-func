@@ -119,5 +119,6 @@ function utup() {
 	while [ $xt_code -ne 0 ]; do
 	  sudo youtube-dl -U
 	  xt_code=$?	
+	  echo "exit code(sudo youtube-dl -U):$xt_code"
 	done
 }
