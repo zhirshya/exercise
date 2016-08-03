@@ -113,3 +113,11 @@ function upgrlog() #view cron job upgrade cmd log
 function vd() {
 	vlc "$*" &> /dev/null &
 }
+
+function utup() {
+	xt_code=-1
+	while [ $xt_code -ne 0 ]; do
+	  sudo youtube-dl -U
+	  xt_code=$?	
+	done
+}

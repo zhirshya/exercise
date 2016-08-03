@@ -130,17 +130,14 @@ alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -a dwn'
 alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -ci'
 alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --write-sub --sub-lang ru,en --sub-format best --embed-subs '
 alias utlscap='youtube-dl --youtube-skip-dash-manifest -R 21 --list-subs'
-alias utup='sudo youtube-dl -U'
 
 alias fx='firefox --ssl-version-min=tls1.2 -private &> /dev/null &'
 alias krm='google-chrome-stable --ssl-version-min=tls1.2 --incognito weblio.jp merriam-webster.com  &> /dev/null &'
 alias or='cd ~/Downloads/tor-browser_en-US && ./start-tor-browser.desktop && -'
 
-alias cd.='cd ~'
-alias cd-='cd -'
-alias cd1='cd ..'
-alias cd2='cd ../..'
-alias cd3='cd ../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 alias txz='tar xvJf'
 alias clr=clear
