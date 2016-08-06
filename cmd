@@ -108,8 +108,8 @@ fdupes -Sr js nodejs_screencast java cpp aws c c++graphic eecs-ict php embnix ni
 sudo apt install ideviceinstaller python-imobiledevice libimobiledevice-utils libimobiledevice4 libplist2 python-plist ifuse 
 sudo vim /etc/fuse.conf
 idevicepair pair
-ifuse /media/iPhone/
-fusermount -u /media/iPhone
+ifuse /opt/iPhone/
+fusermount -u /opt/iPhone
 
 eog - GNOME image viewer
 
