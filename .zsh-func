@@ -9,8 +9,8 @@ for id in "$@"; do
  fi
 # bash: ${$1#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 # bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
- echo "Search for ID [$id] now..."
- find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} + #search in 2 dir
+ echo "#searchin pattern:$id"
+ find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} +
 done
 }
 
