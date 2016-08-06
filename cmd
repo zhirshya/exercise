@@ -147,3 +147,8 @@ ex +g/match/d -cwq file
 
 top -b -o +%MEM | head
 ps -eo %mem,%cpu,pid,ppid,cmd --sort=-%mem | head
+
+#chntpw
+cd /media/win/Windows/System32/config
+sudo chntpw [-u <username>] SAM
+
