@@ -1,3 +1,19 @@
+~/.vimrc
+" tabstop:          Width of tab character
+" softtabstop:      Fine tunes the amount of white space to be added
+" shiftwidth        Determines the amount of whitespace to add in normal mode
+" expandtab:        When on uses space instead of tabs
+set tabstop     =4
+set softtabstop =4
+set shiftwidth  =4
+set expandtab
+
+#tab -> space
+:%s/^\s\{2,}/  /
+
+#move { to function signature line
+:%s/)\s*\(.*\)\s*\r*\n\s*{\s*/) { \1/
+
 .,$s/\n/\rgit pull\r/
 
 %g/^.\{-,5}$/d
@@ -19,6 +35,10 @@ W: Move forward a WORD (any non-whitespace characters).
 
 #system clipboard
 Vim has extended vi to allow use of the * register as a reference to the system clipboard. So we can use normal mode commands like: "*dd or 1G"*yG to copy things into the * register and "*p to paste text from it. We can also use this * register with the ex yank command, so :%y * will accomplish the same goal as gg"*yG (copy all text into the system clipboard so it can be pasted into an X or MS Windows application).
+e.g.
+nnoremap <C-Tab> :bn<CR>  #buffer next
+nnoremap <C-S-Tab> :bp<CR>  #buffer previous
+vim ~/.zshrc ~/.zsh-func
 
 X11-clipboard support in terminal
 Getting Vim to work with the X11 clipboard can be a struggle, at least when you like to run Vim in a terminal. The GUI version of Vim always has clipboard support, however, if you like to use Vim from a terminal, you will have to check for X11-clipboard support.
