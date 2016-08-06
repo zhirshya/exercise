@@ -2,48 +2,48 @@
 
 function \?() {
 for id in "$@"; do
- if [[ $id = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
-  id="${id#http*://*youtu*be*/*watch\?v=}"
- elif [[ $id = http*://*youtu*be*/[-_a-zA-Z0-9]* ]]; then
-  id="${id#http*://*youtu*be*/}"
- fi
+	if [[ $id = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
+		id="${id#http*://*youtu*be*/*watch\?v=}"
+	elif [[ $id = http*://*youtu*be*/[-_a-zA-Z0-9]* ]]; then
+		id="${id#http*://*youtu*be*/}"
+	fi
 # bash: ${$1#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 # bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
- echo "#search local(non /) pattern:$id"
- find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} +
+	echo "#search local(non /) pattern:$id"
+	find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} +
 done
 }
 
 function srvstr() {
-if [ $# -eq 1 ]; then
- sudo service "$1" start
-fi
+for srv in "$@"; do
+	sudo service "$srv" start
+done
 }
 
 function srvstp() {
-if [ $# -eq 1 ]; then
- sudo service "$1" stop
-fi
+for srv in "$@"; do
+	sudo service "$srv" stop
+done
 }
 
 function lpr() {
 if [ $# -eq 0 ]; then
- ll *part
+	ll *part
 else
- if [[ $1 = */ ]]; then
-  ll "$1"*part
- else
-  ll "$1"/*part
- fi
+	if [[ $1 = */ ]]; then
+		ll "$1"*part
+	else
+		ll "$1"/*part
+	fi
 fi
 }
 
 function utmp3() {
- youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
+	youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
 }
 
 function ut18() {
- youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -f 18 "$1"
+	youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -f 18 "$1"
 }
 
 function dprx() {
@@ -77,21 +77,21 @@ sudo apt clean
 
 function +() { #append to todo file
 if [[ $# > 0 ]]; then
- echo "$@" >> /media/r/0/gthb/неkod/.todo
+	echo "$@" >> /media/r/0/gthb/неkod/.todo
 fi
 }
 
 function ++() { #append to youtube download file
 if [[ $# > 0 ]]; then
- echo "$@" >> dwn
+	echo "$@" >> dwn
 fi
 }
 
 function upgrlog() { #view cron job upgrade cmd log
 if [[ -f /var/log/sys_upgrade.log ]]; then
- less /var/log/sys_upgrade.log
+	less /var/log/sys_upgrade.log
 elif [[ -f /var/log/youtube-dl_upgrade.log ]]; then
- less /var/log/youtube-dl_upgrade.log
+	less /var/log/youtube-dl_upgrade.log
 fi
 }
 
@@ -102,9 +102,9 @@ vlc "$@" &> /dev/null &
 function utup() {
 xt_code=-1
 while [ $xt_code -ne 0 ]; do
- sudo youtube-dl -U
- xt_code=$?	
- echo "exit code(sudo youtube-dl -U):$xt_code"
+	sudo youtube-dl -U
+	xt_code=$?	
+	echo "exit code(sudo youtube-dl -U):$xt_code"
 done
 }
 
@@ -119,8 +119,8 @@ google-chrome-stable --ssl-version-min=tls1.2 --incognito weblio.jp merriam-webs
 function 0p() {
 #echo '$#':$#
 if [[ $# -eq 1 && $1 =~ [0-9]+ ]]; then
- sudo shutdown -P -f $1
+	sudo shutdown -P -f $1
 else
- sudo shutdown -P -f 0
+	sudo shutdown -P -f 0
 fi
 }
