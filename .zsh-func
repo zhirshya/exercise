@@ -1,124 +1,119 @@
 #!/bin/zsh
 
-function \?()
-{
-	for id in "$@"; do
-		if [[ $id = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
-			id="${id#http*://*youtu*be*/*watch\?v=}"
-		elif [[ $id = http*://*youtu*be*/[-_a-zA-Z0-9]* ]]; then
-			id="${id#http*://*youtu*be*/}"
-
+function \?() {
+for id in "$@"; do
+ if [[ $id = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
+  id="${id#http*://*youtu*be*/*watch\?v=}"
+ elif [[ $id = http*://*youtu*be*/[-_a-zA-Z0-9]* ]]; then
+  id="${id#http*://*youtu*be*/}"
+ fi
 # bash: ${$1#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 # bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
-		fi
-		echo "Search for ID [$id] now..."
-		find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} + #search in 2 dir
-	done
+ echo "Search for ID [$id] now..."
+ find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} + #search in 2 dir
+done
 }
 
-function srvstr()
-{
-	if [ $# -eq 1 ]; then
-		sudo service "$1" start
-	fi
+function srvstr() {
+if [ $# -eq 1 ]; then
+ sudo service "$1" start
+fi
 }
 
-function srvstp()
-{
-	if [ $# -eq 1 ]; then
-		sudo service "$1" stop
-	fi
+function srvstp() {
+if [ $# -eq 1 ]; then
+ sudo service "$1" stop
+fi
 }
 
-function lpr()
-{
-	if [ $# -eq 0 ]; then
-		ll *part
-	else
-		if [[ $1 = */ ]]; then
-			ll "$1"*part
-		else
-			ll "$1"/*part
-		fi
-	fi
+function lpr() {
+if [ $# -eq 0 ]; then
+ ll *part
+else
+ if [[ $1 = */ ]]; then
+  ll "$1"*part
+ else
+  ll "$1"/*part
+ fi
+fi
 }
 
-function utmp3()
-{
-        youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
+function utmp3() {
+ youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
 }
 
-function ut18()
-{
-        youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -f 18 "$1"
+function ut18() {
+ youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -f 18 "$1"
 }
 
-function dprx()
-{
-	unset http_proxy
-	unset https_proxy
-	unset HTTP_PROXY
-	unset HTTPS_PROXY
+function dprx() {
+unset http_proxy
+unset https_proxy
+unset HTTP_PROXY
+unset HTTPS_PROXY
 
-	echo "http_proxy: [$http_proxy]"
-        echo "https_proxy:[$https_proxy]"
-        echo "HTTP_PROXY: [$HTTP_PROXY]"
-        echo "HTTPS_PROXY:[$HTTPS_PROXY]"
+echo "http_proxy: [$http_proxy]"
+echo "https_proxy:[$https_proxy]"
+echo "HTTP_PROXY: [$HTTP_PROXY]"
+echo "HTTPS_PROXY:[$HTTPS_PROXY]"
 }
 
-function prprx() 
-{ 
-        echo "http_proxy: [$http_proxy]"
-        echo "https_proxy:[$https_proxy]"
-        echo "HTTP_PROXY: [$HTTP_PROXY]"
-        echo "HTTPS_PROXY:[$HTTPS_PROXY]"
+function prprx() { 
+echo "http_proxy: [$http_proxy]"
+echo "https_proxy:[$https_proxy]"
+echo "HTTP_PROXY: [$HTTP_PROXY]"
+echo "HTTPS_PROXY:[$HTTPS_PROXY]"
 }
 
-function --() #clean
-{
-	rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
-	sudo apt autoremove -y
-	sudo apt autoclean
-	sudo apt clean
+function --() { #clean
+rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
+sudo apt autoremove -y
+sudo apt autoclean
+sudo apt clean
 #E: encountered a section with no package: header
 #E: problem with Mergelist/var/lib/apt/lists
-#	sudo rm -Rf /var/lib/apt/lists/* -vf
+#sudo rm -Rf /var/lib/apt/lists/* -vf
 }
 
-function +() #append to todo file
-{
-#	echo '$#' is $#
-	if [[ $# > 0 ]]; then
-		echo "$*" >> /media/r/0/gthb/неkod/.todo #$@ "$@"
-	fi
+function +() { #append to todo file
+echo '$#:' $#
+if [[ $# > 0 ]]; then
+ echo "$*" >> /media/r/0/gthb/неkod/.todo
+fi
 }
 
-function ++() #append to youtube download file
-{
-#	echo '$#' is $#
-	if [[ $# > 0 ]]; then
-		echo "$*" >> dwn #$@ "$@"
-	fi
+function ++() { #append to youtube download file
+echo '$#:' $#
+if [[ $# > 0 ]]; then
+ echo "$@" >> dwn
+fi
 }
 
-function upgrlog() #view cron job upgrade cmd log
-{
-	if [[ -f /var/log/sys_upgrade.log ]]; then
-		less /var/log/sys_upgrade.log
-	elif [[ -f /var/log/youtube-dl_upgrade.log ]]; then
-		less /var/log/youtube-dl_upgrade.log
-	fi
+function upgrlog() { #view cron job upgrade cmd log
+if [[ -f /var/log/sys_upgrade.log ]]; then
+ less /var/log/sys_upgrade.log
+elif [[ -f /var/log/youtube-dl_upgrade.log ]]; then
+ less /var/log/youtube-dl_upgrade.log
+fi
 }
 
 function vd() {
-	vlc "$*" &> /dev/null &
+vlc "$@" &> /dev/null &
 }
 
 function utup() {
-	xt_code=-1
-	while [ $xt_code -ne 0 ]; do
-	  sudo youtube-dl -U
-	  xt_code=$?	
-	  echo "exit code(sudo youtube-dl -U):$xt_code"
-	done
+xt_code=-1
+while [ $xt_code -ne 0 ]; do
+ sudo youtube-dl -U
+ xt_code=$?	
+ echo "exit code(sudo youtube-dl -U):$xt_code"
+done
+}
+
+function fx() {
+firefox --ssl-version-min=tls1.2 -private "$@" &> /dev/null &
+}
+
+function krm() {
+google-chrome-stable --ssl-version-min=tls1.2 --incognito weblio.jp merriam-webster.com "$@" &> /dev/null &
 }
