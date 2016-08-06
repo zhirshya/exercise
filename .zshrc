@@ -162,7 +162,7 @@ alias vgr='valgrind --leak-check=yes'
 
 alias scrot='scrot -q 100 -d 7 -c -s -e eog '
 alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
-alias dff='declare -f ' #if not defined as shell alias check for shell functions
+alias fdef='declare -f ' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /media/r/0/gthb/неkod/.todo'
 alias td='vim /media/r/0/gthb/неkod/.todo'
 alias dwnr='more ./dwn*' #echo download file content
