@@ -51,3 +51,12 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" tabstop:          Width of tab character
+" softtabstop:      Fine tunes the amount of white space to be added
+" shiftwidth        Determines the amount of whitespace to add in normal mode
+" expandtab:        When on uses space instead of tabs
+set tabstop     =2
+set softtabstop =2
+set shiftwidth  =2
+set noexpandtab
