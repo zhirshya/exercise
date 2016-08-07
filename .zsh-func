@@ -124,3 +124,14 @@ else
 	sudo shutdown -P -f 0
 fi
 }
+
+function dwn() {
+#	file=$(ls dwn*)
+for file in $(find /media/r/0 ~ -type f -iname 'dwn*'); do
+	if [[ $file != "^find.*Permission denied$" ]]; then
+		echo $file:
+		more $file
+	fi
+done
+}
+
