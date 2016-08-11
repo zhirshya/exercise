@@ -1,3 +1,4 @@
+#zsh
 declare -f FuncName
 #How to show zsh function definition (like bash “type myfunc”)?
 The zsh idiom is whence, the -f flag prints function definitions:
@@ -19,6 +20,10 @@ man zshbuiltins for all of this.
 
 Works, but only if no alias of the same name happens to be defined, in which case that is reported (whence -f, type -f, which report the highest-precedence form of the command).
 declare -f foo is better because even if the function is hidden by an alias, it will still be shown, whereas 'whence' is liable to show just the alias, OR both the alias and the function.
+
+setopt nocasematch
+unsetopt nocasematch
+setopt #list set options
 
 #tar -C /opt -xzvf node-v4.2.0-linux-x64.tar.gz
 
