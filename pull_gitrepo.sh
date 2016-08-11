@@ -122,3 +122,11 @@ cd /media/r/0/"tutorials(REST With Spring Classes)"
 pwd
 git pull
 echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
+cd /media/r/0/GenericMakefile
+pwd
+git pull
+echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
+cd /media/r/0/gitignore
+pwd
+git pull
+echo ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓ ∓
