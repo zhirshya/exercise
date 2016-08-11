@@ -1,1 +1,4 @@
-apt fullupgrade -y
+#1.
+sudo apt full-upgrade -y
+#2.
+sudo apt update && sudo apt upgrade -y
