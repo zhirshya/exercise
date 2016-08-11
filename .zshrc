@@ -166,7 +166,6 @@ alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
 alias fdef='declare -f ' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /media/r/0/gthb/неkod/.todo'
 alias td='vim /media/r/0/gthb/неkod/.todo'
-alias dwnr='more ./dwn*' #echo download file content
 alias utv0='utv 0'
 #rss word
 alias rs1='echo убирать' #clean up, tidy up
