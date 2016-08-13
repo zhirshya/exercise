@@ -11,8 +11,9 @@ for id in "$@"; do
 	fi
 	echo "#search local(non /) pattern:$id"
 	fnd_out=$(find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} +)
-	if [[ "$fnd_out" =~ "[fF]ind.*[pP]ermission\sdenied.*" ]]; then #stderr unreachable this way!
-		echo '$MATCH(stderr)':$MATCH
+	if [[ ! -z "$fnd_out" ]]; then
+		echo $fnd_out
+		[[ "$fnd_out" =~ "[fF]ind.*[pP]ermission\sdenied.*" ]] && echo '$MATCH(stderr)':$MATCH #stderr inaccessible this way!
 	fi
 done
 }
@@ -135,7 +136,7 @@ function dwn() {
 setopt nocasematch
 
 for file in $(find /media/r/0 ~ -type f -iname 'dwn*'); do
-	if [[ "$file" != "[fF]ind.*[pP]ermission\sdenied.*" ]]; then #stderr unreachable this way!
+	if [[ "$file" != "[fF]ind.*[pP]ermission\sdenied.*" ]]; then #stderr inaccessible this way!
 		echo $file:
 		more $file
 	fi
