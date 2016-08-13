@@ -157,6 +157,6 @@ ps -eo %mem,%cpu,pid,ppid,cmd --sort=-%mem | head
 cd %systemroot%/System32/config
 sudo chntpw [-u <username>] SAM
 
-#ftp
+#ftp, smbclient
 lcd(local cd) get put del/rm?
 
