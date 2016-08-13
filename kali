@@ -1,4 +1,4 @@
-#1.
+#1. because of rolling release
 sudo apt full-upgrade -y
 #2.
 sudo apt update && sudo apt upgrade -y
