@@ -154,6 +154,9 @@ top -b -o +%MEM | head
 ps -eo %mem,%cpu,pid,ppid,cmd --sort=-%mem | head
 
 #chntpw
-cd /media/win/Windows/System32/config
+cd %systemroot%/System32/config
 sudo chntpw [-u <username>] SAM
+
+#ftp
+lcd(local cd) get put del/rm?
 
