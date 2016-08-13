@@ -1,16 +1,19 @@
 #!/bin/zsh
 
 function \?() {
+setopt nocasematch
+
 for id in "$@"; do
-	if [[ $id = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
+	if [[ "$id" = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]]; then
 		id="${id#http*://*youtu*be*/*watch\?v=}"
-	elif [[ $id = http*://*youtu*be*/[-_a-zA-Z0-9]* ]]; then
+	elif [[ "$id" = http*://*youtu*be*/[-_a-zA-Z0-9]* ]]; then
 		id="${id#http*://*youtu*be*/}"
 	fi
-# bash: ${$1#http*://*youtu*be*/*watch\?v[=]}: bad substitution
-# bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 	echo "#search local(non /) pattern:$id"
-	find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} +
+	fnd_out=$(find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} +)
+	if [[ "$fnd_out" =~ "[fF]ind.*[pP]ermission\sdenied.*" ]]; then #stderr unreachable this way!
+		echo '$MATCH(stderr)':$MATCH
+	fi
 done
 }
 
@@ -105,7 +108,7 @@ xt_code=-1
 out_msg="error"
 while [[ $xt_code -ne 0 || "$out_msg" =~ error* ]]; do # ERROR: can't find the current version. Please try again later.
 	out_msg=$(sudo youtube-dl -U)
-	xt_code=$?	
+	xt_code=$?
 	echo "exit code:$xt_code"
 	echo "output message:$out_msg"
 done
@@ -132,7 +135,7 @@ function dwn() {
 setopt nocasematch
 
 for file in $(find /media/r/0 ~ -type f -iname 'dwn*'); do
-	if [[ "$file" != "find*permission denied*" ]]; then
+	if [[ "$file" != "[fF]ind.*[pP]ermission\sdenied.*" ]]; then #stderr unreachable this way!
 		echo $file:
 		more $file
 	fi
