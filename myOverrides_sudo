@@ -1,1 +1,1 @@
-r ALL=NOPASSWD:/sbin/shutdown,/sbin/reboot,/usr/bin/du,/usr/bin/df,/usr/local/bin/youtube-dl,/usr/bin/apt install -y,/usr/bin/apt update,/usr/bin/apt upgrade -y,/usr/bin/apt autoremove -y,/usr/bin/apt autoclean,/usr/bin/apt clean,/usr/sbin/ufw,/usr/bin/diff
+r ALL=NOPASSWD:/sbin/shutdown,/sbin/reboot,/usr/bin/du,/usr/bin/df,/usr/local/bin/youtube-dl,/usr/bin/apt,/usr/sbin/ufw,/usr/bin/diff
