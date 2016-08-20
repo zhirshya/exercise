@@ -147,7 +147,7 @@ diff ~/.zshrc /media/r/0/gthb/xrcs/.zshrc
 diff ~/.zsh-func /media/r/0/gthb/xrcs/.zsh-func 
 diff /media/r/0/gthb/xrcs/Makefile /media/r/0/xrc/Makefile
 
-#Delete lines in a text file that containing a specific string
+#Delete lines in text file that containing specific string
 ex +g/match/d -cwq file
 
 top -b -o +%MEM | head
@@ -157,6 +157,7 @@ ps -eo %mem,%cpu,pid,ppid,cmd --sort=-%mem | head
 cd %systemroot%/System32/config
 sudo chntpw [-u <username>] SAM
 
-#ftp, smbclient
+#ftp
 lcd(local cd) get put del/rm?
+
 
