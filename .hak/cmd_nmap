@@ -1,0 +1,123 @@
+➜  x nmap -PN 192.168.1.200
+
+Starting Nmap 7.25BETA1 ( https://nmap.org ) at 2016-08-19 10:23 JST
+Nmap scan report for 192.168.1.200
+Host is up (0.0073s latency).
+Not shown: 991 closed ports
+PORT      STATE SERVICE
+21/tcp    open  ftp
+80/tcp    open  http
+139/tcp   open  netbios-ssn
+443/tcp   open  https
+445/tcp   open  microsoft-ds
+873/tcp   open  rsync
+3689/tcp  open  rendezvous
+8873/tcp  open  dxspider
+22939/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 1.78 seconds
+➜  x nmap -O 192.168.1.200
+
+Starting Nmap 7.25BETA1 ( https://nmap.org ) at 2016-08-19 10:25 JST
+Nmap scan report for 192.168.1.200
+Host is up (0.0028s latency).
+Not shown: 991 closed ports
+PORT      STATE SERVICE
+21/tcp    open  ftp
+80/tcp    open  http
+139/tcp   open  netbios-ssn
+443/tcp   open  https
+445/tcp   open  microsoft-ds
+873/tcp   open  rsync
+3689/tcp  open  rendezvous
+8873/tcp  open  dxspider
+22939/tcp open  unknown
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.13
+Network Distance: 2 hops
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 2.66 seconds
+➜  x nmap -sO 192.168.1.200      
+
+Starting Nmap 7.25BETA1 ( https://nmap.org ) at 2016-08-19 10:34 JST
+Warning: 192.168.1.200 giving up on port because retransmission cap hit (10).
+Nmap scan report for 192.168.1.200
+Host is up (0.00086s latency).
+Not shown: 250 closed protocols
+PROTOCOL STATE         SERVICE
+1        open          icmp
+2        open|filtered igmp
+6        open          tcp
+17       open          udp
+47       open|filtered gre
+136      open|filtered udplite
+
+Nmap done: 1 IP address (1 host up) scanned in 288.79 seconds
+➜  x nmap -T5 -sV -O 192.168.1.200
+
+Starting Nmap 7.25BETA1 ( https://nmap.org ) at 2016-08-19 11:05 JST
+Nmap scan report for 192.168.1.200
+Host is up (0.0040s latency).
+Not shown: 991 closed ports
+PORT      STATE SERVICE     VERSION
+21/tcp    open  ftp         ProFTPD
+80/tcp    open  http        lighttpd 1.4.32
+139/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+443/tcp   open  ssl/http    lighttpd 1.4.32
+445/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+873/tcp   open  rsync       (protocol version 31)
+3689/tcp  open  daap        mt-daapd DAAP svn-1586
+8873/tcp  open  ssl/rsync   (protocol version 31)
+22939/tcp open  ssl/unknown
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.13
+Network Distance: 2 hops
+Service Info: Host: 192.168.1.200; OS: Unix
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 157.79 seconds
+➜  x nmblookup -A 192.168.1.200
+Looking up status of 192.168.1.200
+	TEN-JI          <00> -         B <ACTIVE> 
+	TEN-JI          <03> -         B <ACTIVE> 
+	TEN-JI          <20> -         B <ACTIVE> 
+	WORKGROUP       <1e> - <GROUP> B <ACTIVE> 
+	WORKGROUP       <00> - <GROUP> B <ACTIVE> 
+
+	MAC Address = 00-00-00-00-00-00
+
+➜  x smbclient -L TEN-JI -I 192.168.1.200
+WARNING: The "syslog" option is deprecated
+Enter root's password: 
+Domain=[WORKGROUP] OS=[Unix] Server=[Samba 3.6.19-60.osstech]
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	IPC$            IPC       IPC Service (Ten-ji-FileServer1)
+	infra           Disk      
+	営業          Disk      営業
+	不動産       Disk      不動産
+	社長専用    Disk      社長専用
+	翻訳          Disk      翻訳
+	事務          Disk      事務
+	人事          Disk      人事
+	バックアップ Disk      バックアップ
+	share           Disk      LinkStation folder
+	info            Disk      LinkStation Utilities
+Domain=[WORKGROUP] OS=[Unix] Server=[Samba 3.6.19-60.osstech]
+
+	Server               Comment
+	---------            -------
+	TEN-JI               Ten-ji-FileServer1
+	TEN-JI_100           LinkStation
+
+	Workgroup            Master
+	---------            -------
+	WORKGROUP            TEN-JI_100
+➜  x                                     
+

