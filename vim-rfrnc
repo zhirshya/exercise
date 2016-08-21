@@ -65,3 +65,21 @@ $ awk '!a[$0]++' file
 #vim global command :g
 :[range]g/pattern/cmd
 
+#Vim Uppercase & Lowercase
+Convert a visual selection to all uppercase letters.
+gU
+Convert to lowercase letters
+gu
+uppercase until end of word:
+gUw
+Or, two words:
+gU2w
+Or, end of the line:
+gU$
+Or, next 10 characters:
+gU10l
+to change all UPPERCASE letters to lowercase letters in a file:
+ggguGG
+or
+:%s/[A-Z]/\L&/g
+
