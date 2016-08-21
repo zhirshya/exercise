@@ -51,22 +51,54 @@ function ut18() {
 }
 
 function dprx() {
-unset http_proxy
-unset https_proxy
-unset HTTP_PROXY
-unset HTTPS_PROXY
+setopt nocasematch
 
-echo "http_proxy: [$http_proxy]"
-echo "https_proxy:[$https_proxy]"
-echo "HTTP_PROXY: [$HTTP_PROXY]"
-echo "HTTPS_PROXY:[$HTTPS_PROXY]"
+if [[ $# -eq 1 ]];then
+	if [[ "$1" == http ]];then
+		unset http_proxy
+		unset HTTP_PROXY
+	elif [[ "$1" == https ]];then
+		unset https_proxy
+		unset HTTPS_PROXY
+	elif [[ "$1" == ftp ]];then
+		unset ftp_proxy
+		unset FTP_PROXY
+	elif [[ "$1" =~ sock ]];then
+		unset socks_proxy
+		unset SOCKS_PROXY
+	fi
+elif [[ $# -eq 0 ]];then
+		unset http_proxy
+		unset HTTP_PROXY
+		unset https_proxy
+		unset HTTPS_PROXY
+		unset ftp_proxy
+		unset FTP_PROXY
+		unset socks_proxy
+		unset SOCKS_PROXY
+fi
+
+echo "http_proxy:$http_proxy"
+echo "https_proxy:$https_proxy"
+echo "ftp_proxy:$ftp_proxy"
+echo "socks_proxy:$socks_proxy"
+echo "HTTP_PROXY:$HTTP_PROXY"
+echo "HTTPS_PROXY:$HTTPS_PROXY"
+echo "FTP_PROXY:$FTP_PROXY"
+echo "SOCKS_PROXY:$SOCKS_PROXY"
 }
 
 function prprx() { 
-echo "http_proxy: [$http_proxy]"
-echo "https_proxy:[$https_proxy]"
-echo "HTTP_PROXY: [$HTTP_PROXY]"
-echo "HTTPS_PROXY:[$HTTPS_PROXY]"
+echo "http_proxy:$http_proxy"
+echo "https_proxy:$https_proxy"
+echo "ftp_proxy:$ftp_proxy"
+echo "socks_proxy:$socks_proxy"
+echo "no_proxy:$no_proxy"
+echo "HTTP_PROXY:$HTTP_PROXY"
+echo "HTTPS_PROXY:$HTTPS_PROXY"
+echo "FTP_PROXY:$FTP_PROXY"
+echo "SOCKS_PROXY:$SOCKS_PROXY"
+echo "NO_PROXY:$NO_PROXY"
 }
 
 function --() { #clean
@@ -143,3 +175,7 @@ for file in $(find /media/r/0 ~ -type f -iname 'dwn*'); do
 done
 }
 
+function ss() {
+sudo apt update && sudo apt upgrade -y
+utup
+}
