@@ -83,3 +83,4 @@ ggguGG
 or
 :%s/[A-Z]/\L&/g
 
+:[range]s/\s*\[\|\]//g
