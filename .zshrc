@@ -122,7 +122,6 @@ alias wrs='whereis'
 alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
 #alias ss='sudo dnf upgrade -y && sudo youtube-dl -U'	#Fedora
-alias ss='sudo apt update && sudo apt upgrade -y && sudo youtube-dl -U'
 alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21'
 alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -a dwn'
 alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -ci'
