@@ -55,15 +55,19 @@ setopt nocasematch
 
 if [[ $# -eq 1 ]];then
 	if [[ "$1" == http ]];then
+		echo "hit regex \"== http\""
 		unset http_proxy
 		unset HTTP_PROXY
 	elif [[ "$1" == https ]];then
+		echo "hit regex \"== https\""
 		unset https_proxy
 		unset HTTPS_PROXY
 	elif [[ "$1" == ftp ]];then
+		echo "hit regex \"== ftp\""
 		unset ftp_proxy
 		unset FTP_PROXY
 	elif [[ "$1" =~ sock ]];then
+		echo "hit regex \"=~ sock\""
 		unset socks_proxy
 		unset SOCKS_PROXY
 	fi
