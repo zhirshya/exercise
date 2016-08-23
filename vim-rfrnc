@@ -84,3 +84,8 @@ or
 :%s/[A-Z]/\L&/g
 
 :[range]s/\s*\[\|\]//g
+
+[[ "$1" =~ *error* ]] :failed to compile regex: Invalid preceding regular expression
+
+:%s/\($?\)/'&':&/gc (& : the whole matched pattern)
+
