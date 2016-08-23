@@ -84,8 +84,8 @@ grep -Ril "2>&1" .
 g/\(>\s*[/\w.-]\+\)\s\+2>&1/s//\&\1/gc #pattern not found
 g/\(>.\+\)\s\+2>&1/s//\&\1/gc	#work
 
-7z x -o/media/r/0/dbC\(gtdвrus\) dbC.7z
-7z a -p'P@s5w0rd' gthb.7z gthb
+7z x -o/media/r/0/vrk -p".*\!#" vrk.7z
+7z a -p".*\!#" curr.7z curr
 
 less /proc/sys/dev/cdrom/info
 cdrecord -minfo -v
