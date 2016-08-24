@@ -199,6 +199,8 @@ if [[ $# -eq 1 ]];then
 	echo '$?':$?
 else
 	echo "usage: putfio <id>"
+#define EX_USAGE 64 /* command line usage error */
+	return 64
 fi
 }
 
@@ -211,6 +213,8 @@ elif [[ $# -eq 1 ]];then
 	echo '$?':$?
 else
 	echo "usage: getfio <id> [output_file_name_without_suffix]"
+#define EX_USAGE 64 /* command line usage error */
+	return 64
 fi
 }
 
