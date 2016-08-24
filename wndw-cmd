@@ -1,0 +1,10 @@
+net user administrator /active:yes
+net user administrator GodMode.{}
+
+windows command line exit code
+echo %ERRORLEVEL%
+
+IF %ERRORLEVEL% NEQ 0 (
+  REM do something here to address the error
+)
+
