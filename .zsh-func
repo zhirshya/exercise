@@ -148,15 +148,16 @@ setopt nocasematch
 xt_code=113
 out_msg="error"
 counter=0
-while [[ $xt_code -ne 0 || "$out_msg" =~ "*error*" ]];do #1.ERROR: can't find the current version. Please try again later. 2.Updating to version 2016.08.22 ...\nERROR: unable to download latest version (for err2,better to detect network connection and exit if connection lost)
+while [[ $xt_code -ne 0 || "$out_msg" =~ error ]];do #1.ERROR: can't find the current version. Please try again later. 2.Updating to version 2016.08.22 ...\nERROR: unable to download latest version (for error 2,better to detect network connection and exit if connection lost)
 	if [[ $((counter++)) -gt 4 ]];then
 		return 113
 	fi
 	out_msg=$(sudo youtube-dl -U)
 	xt_code=$?
-	echo counter:$counter
-	echo "youtube-dl -U exit code:$xt_code"
-	echo "youtube-dl -U output message:$out_msg"
+	echo "#debug:counter:$counter"
+	echo '#debug:regexp $match:['$match']'
+	echo "#debug:youtube-dl -U exit code:$xt_code"
+	echo "#debug:youtube-dl -U output message:$out_msg"
 done
 }
 
