@@ -196,7 +196,7 @@ utup
 
 function putfio() {
 if [[ $# -eq 1 ]];then
-	curl -F "file=@$1" 'https://file.io/?expires=3'
+	curl -F "file=@$1" 'https://file.io/?expires=3d'
 	echo '$?':$?
 else
 	echo "usage: putfio <id>"
