@@ -160,7 +160,7 @@ alias gcc='ccache gcc -std=c11 -Wall -Wextra -g '
 alias gxx='ccache g++ -std=c++14 -Wall -Wextra -g '
 alias vgr='valgrind --leak-check=yes'
 
-alias scrot='scrot -q 100 -d 7 -c -s -e eog '
+alias scrot='scrot -q 100 -d 7 -c -u -e eog'
 alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
 alias fdef='declare -f ' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /media/r/0/gthb/неkod/.todo'
