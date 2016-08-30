@@ -155,7 +155,7 @@ while [[ $xt_code -ne 0 || "$out_msg" =~ error ]];do #1.ERROR: can't find the cu
 	out_msg=$(sudo youtube-dl -U)
 	xt_code=$?
 	echo "#debug:counter:$counter"
-	echo '#debug:regexp $match:['$match']'
+	echo '#debug:regexp:$match:['$match'],$MATCH:['$MATCH']'
 	echo "#debug:youtube-dl -U exit code:$xt_code"
 	echo "#debug:youtube-dl -U output message:$out_msg"
 done
@@ -195,11 +195,18 @@ utup
 }
 
 function putfio() {
+# Load module
+zmodload zsh/pcre
+
 if [[ $# -eq 1 ]];then
 	curl -F "file=@$1" 'https://file.io/?expires=3d'
 	echo '$?':$?
+elif [[ $# -eq 2 && "$2" -pcre-match "\d{1,3}[dmwDMW]" ]];then
+	echo '#debug:-pcre-match:$MATCH:['$MATCH'],array $match:['$match']'
+	curl -F "file=@$1" "https://file.io/?expires=$2"
+	echo '$?':$?
 else
-	echo "usage: putfio <id>"
+	echo "usage: putfio <id> [(expires=)<9d/3m/7w>]"
 #define EX_USAGE 64 /* command line usage error */
 	return 64
 fi
