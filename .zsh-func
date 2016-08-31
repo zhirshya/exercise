@@ -226,3 +226,14 @@ else
 fi
 }
 
+function sjis2utf8() {
+if [[ $# -eq 1 ]];then
+	basename=${1%\.*}
+	extension=${1##*\.}
+	echo 'file base name:${file%\.*}':$basename
+	echo 'file extension:${file##*\.}':$extension
+	iconv -f SHIFT-JIS -t UTF-8 "$1" > "${basename}_utf8.${extension}"
+	#iconv -t UTF-8 "$1" > "${basename}_utf8.${extension}"
+	echo '$?':$?
+fi
+}
