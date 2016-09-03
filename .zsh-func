@@ -237,3 +237,28 @@ if [[ $# -eq 1 ]];then
 	echo '$?':$?
 fi
 }
+
+#function fnd() {
+#idlist=''
+#for id in "$@";do
+##idlist += $id + "|"
+#idlist+="-iname \"*$id*\" -o "
+#done
+#idlist=${idlist% -o }
+#echo 'find multiple name criteria':$idlist
+#find \( $idlist \) -type f -exec ls -alF {} +
+#echo '$?':$?
+#}
+function fnd() {
+cmd='find \( '
+
+for id in "$@";do
+cmd+="-iname \"*$id*\" -o "
+done
+
+cmd=${cmd% -o }
+cmd+=' \) -type f -exec ls -alF {} +'
+echo 'dynamically constructed command':$cmd
+eval ${cmd}
+echo '$?':$?
+}
