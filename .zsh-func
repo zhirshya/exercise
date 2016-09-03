@@ -3,19 +3,30 @@
 function \?() {
 setopt nocasematch
 
+cmd='find /media/r/0 ~ \( '
 for id in "$@";do
 	if [[ "$id" = http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]];then
-		id="${id#http*://*youtu*be*/*watch\?v=}"
+		id="${id##http*://*youtu*be*/*watch\?v=}"
 	elif [[ "$id" = http*://*youtu*be*/[-_a-zA-Z0-9]* ]];then
-		id="${id#http*://*youtu*be*/}"
+		id="${id##http*://*youtu*be*/}"
 	fi
-	echo "#search local(non /) pattern:$id"
-	fnd_out=$(find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} +)
-	if [[ ! -z "$fnd_out" ]];then
-		echo $fnd_out
-		[[ "$fnd_out" =~ "[fF]ind.*[pP]ermission\sdenied.*" ]] && echo '$MATCH(stderr)':$MATCH #stderr inaccessible this way!
-	fi
+	cmd+="-iname \"*$id*\" -o "
 done
+cmd=${cmd% -o }
+cmd+=' \) -type f -exec ls -alF {} +'
+echo 'dynamically constructed command':$cmd
+eval ${cmd}
+echo '$?':$?
+
+#	echo "#search local(non /) keyword:$id"
+#	fnd_out=$(find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} +)
+##	xt_code=$?
+#	echo '$?':$?
+#	
+#	if [[ ! -z "$fnd_out" ]];then
+#		echo $fnd_out
+#		[[ "$fnd_out" =~ "[fF]ind.*[pP]ermission\sdenied.*" ]] && echo '#debug:regexp:$match:['$match'],$MATCH:['$MATCH']' #stderr inaccessible this way!
+#	fi
 }
 
 function srvstr() {
