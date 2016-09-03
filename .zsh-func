@@ -246,11 +246,11 @@ fi
 #done
 #idlist=${idlist% -o }
 #echo 'find multiple name criteria':$idlist
-#find \( $idlist \) -type f -exec ls -alF {} +
+#find /media/r/0 ~ \( $idlist \) -type f -exec ls -alF {} +
 #echo '$?':$?
 #}
 function fnd() {
-cmd='find \( '
+cmd='find /media/r/0 ~ \( '
 
 for id in "$@";do
 cmd+="-iname \"*$id*\" -o "
