@@ -16,12 +16,12 @@ set expandtab
 
 .,$s/\n/\rgit pull\r/
 
-%g/^.\{-,5}$/d
+:%g/^.\{-,5}$/d
 #read range of lines from a file into current buffer
 :r !sed -n 24,410p ~/Downloads/Ex_files_Creating_a_website_using__Bootstrap/wiredwiki.html
 
 #oros(Русский) --> oros\(Русский\)
-%s/\([(|)]\)/\\\1/g
+:%s/\([(|)]\)/\\\1/g
 
 :sort u (Uniq - Removing duplicate lines, sort all lines and remove duplicates (keeping unique lines))
 
@@ -64,6 +64,7 @@ $ awk '!a[$0]++' file
 
 #vim global command :g
 :[range]g/pattern/cmd
+:g/ll\|pwd\|src\|ss/d
 
 #Vim Uppercase & Lowercase
 Convert a visual selection to all uppercase letters.
