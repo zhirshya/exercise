@@ -89,3 +89,5 @@ or
 
 :%s/\($?\)/'&':&/gc (& : the whole matched pattern)
 
+vim Repeat last colon command (The last command entered with ':' can be repeated with @: and further repeats can be done with @@)
+
