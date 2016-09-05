@@ -25,6 +25,7 @@ for id in "$@";do
 #https://codek.tv/v/6MaOPdQPvow
 #https://video.xx.fbcdn.net/v/t43.1792-2/14018597_941915082602721_1324838905_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=588&oh=37f5d4bd4e3b3de99d2f0093c17a69d0&oe=57CBD2F3
 #https://vimeo.com/115796769
+#https://www.facebook.com/ehbichig/videos/991876094204055/
 	fi
 	cmd+="-iname \"*$id*\" -o "
 done
