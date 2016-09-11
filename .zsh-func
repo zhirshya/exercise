@@ -9,24 +9,21 @@ cmd='find /media/r/0 ~ \( '
 for id in "$@";do
 	if [[ "$id" == http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]];then
 		id="${id##http*://*youtu*be*/*watch\?v=}"
-		id="${id%%\?*}"
 	elif [[ "$id" == http*://*youtu*be*/[-_a-zA-Z0-9]* ]];then
 		id="${id##http*://*youtu*be*/}"
-		id="${id%%\?*}"
 	elif [[ "$id" == http*://codek.tv/v/[-_a-zA-Z0-9]* ]];then
 		id="${id##http*://codek.tv/v/}"
 	elif [[ "$id" == http*://video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/[-_.a-zA-Z0-9]*mp4* ]];then
 		id="${id##http*://video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/}"
-		id="${id%%\?*}"
 	elif [[ "$id" == http*://vimeo.com/[-_a-zA-Z0-9]* ]];then
 		id="${id##http*://vimeo.com/}"
-		id="${id%%\?*}"
 #https://youtu.be/oYtGrCP_n0k?t=329
 #https://codek.tv/v/6MaOPdQPvow
 #https://video.xx.fbcdn.net/v/t43.1792-2/14018597_941915082602721_1324838905_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=588&oh=37f5d4bd4e3b3de99d2f0093c17a69d0&oe=57CBD2F3
 #https://vimeo.com/115796769
 #https://www.facebook.com/ehbichig/videos/991876094204055/
 	fi
+	id="${id%%\?*}"
 	cmd+="-iname \"*$id*\" -o "
 done
 cmd=${cmd% -o }
@@ -150,9 +147,9 @@ fi
 }
 
 function ++() { #append to youtube download file
-if [[ $# > 0 ]];then
-	echo "$@" >> dwn
-fi
+for file in "$@";do
+	echo "$file" >> dwn
+done
 }
 
 function upgrlog() { #view cron job upgrade cmd log
