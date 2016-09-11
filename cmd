@@ -163,4 +163,7 @@ sudo chntpw [-u <username>] SAM
 #ftp
 lcd(local cd) get put del/rm?
 
+#date
+\date +"now is week: %V of %Y"
+\date +"now is week: %U of %Y"
 
