@@ -27,13 +27,6 @@ setopt #list set options
 
 #tar -C /opt -xzvf node-v4.2.0-linux-x64.tar.gz
 
-#Concatenating media files
-https://trac.ffmpeg.org/wiki/Concatenate
-ffmpeg -f concat -i filelist -c copy "Подмосковные Вечера(en+rss).mp3"
-#content of filelist
-file '/tmp/Moscow Night  Helmut Lotti-VbZHzF-Av1I.mp3'
-file '/tmp/Russian Red Army Choir - Moscow Nights-aw5L0IdKjps.mp3'
-
 #apache
 httpd -V
 Server version: Apache/2.4.17 (Fedora)
@@ -43,10 +36,18 @@ Server MPM:     prefork
 #how to check if port is open and unused
 netstat -tln | tail -n +3 | awk '{ print $4 }'
 
-#crop audio/video
-ffmpeg -i InputFile -vcodec copy -acodec copy -ss 00:00:00 -t <duration> OutPutFile
+#trim, strip off audio/video
+ffmpeg -i InputFile -c copy -ss 00:00:00 -t <duration> OutPutFile
 ffmpeg -i InputFile  -vn -acodec copy -ss 00:00:00 -t <duration> OutPutFile
-ffmpeg -i MGTOW\ Reason\ \#13\ -\ Aftershock\ From\ The\ Wedding-A17CBtwEmcE.webm -vcodec copy -an aftershock\ marriage-A17CBtwEmcE.webm
+ffmpeg -i MGTOW\ Reason\ \#13\ -\ Aftershock\ From\ The\ Wedding-A17CBtwEmcE.webm -an -vcodec copy aftershock\ marriage-A17CBtwEmcE.webm
+ffmpeg -i How\ to\ lace\ dress\ shoes\ ·\ Carmina\ shoemaker-L3p_jjYKImc.mkv -an -vcodec copy -ss 0:0:7 -t 0:0:39 lace_dress_shoe-L3p_jjYKImc.mkv
+
+#Concatenating media files
+https://trac.ffmpeg.org/wiki/Concatenate
+ffmpeg -f concat -i filelist -c copy "Подмосковные Вечера(en+rss).mp3"
+#content of filelist
+file '/tmp/Moscow Night  Helmut Lotti-VbZHzF-Av1I.mp3'
+file '/tmp/Russian Red Army Choir - Moscow Nights-aw5L0IdKjps.mp3'
 
 #List Cron Jobs
 crontab –l –u username
