@@ -4,7 +4,6 @@ function \?() {
 setopt nocasematch
 #string == pattern
 #    true if string matches pattern. The ‘==’ form is the preferred one. The ‘=’ form is for backward compatibility and should be considered obsolete.
-
 cmd='find /media/r/0 ~ \( '
 for id in "$@";do
 	if [[ "$id" == http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]];then
@@ -146,7 +145,7 @@ if [[ $# > 0 ]];then
 fi
 }
 
-function ++() { #append to youtube download file
+function dwn+() { #append to youtube download file
 for file in "$@";do
 	echo "$file" >> dwn
 done
@@ -196,7 +195,6 @@ google-chrome-stable --ssl-version-min=tls1.2 --incognito weblio.jp merriam-webs
 }
 
 function 0p() {
-#echo '$#':$#
 if [[ $# -eq 1 && "$1" =~ [0-9]+ ]];then
 	sudo shutdown -P -f "$1"
 else
