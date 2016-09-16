@@ -146,8 +146,8 @@ fi
 }
 
 function dwn+() { #append to youtube download file
-for file in "$@";do
-	echo "$file" >> dwn
+for url in "$@";do
+	echo "$url" >> dwn
 done
 }
 
@@ -214,7 +214,9 @@ done
 }
 
 function ss() {
+#detect OS(Ubuntu, Debian, Mint, kali, RHEL, Centos, Fedora, Suse, etc.)
 sudo apt update && sudo apt upgrade -y
+#sudo dnf upgrade -y #Fedora
 echo '$?':$?
 utup
 }
@@ -287,3 +289,34 @@ echo 'dynamically constructed command':$cmd
 eval ${cmd}
 echo '$?':$?
 }
+
+function srv() {
+#detect OS(Ubuntu, Debian, Mint, kali, RHEL, Centos, Fedora, Suse, etc.)
+
+if [[ $# -eq 2 ]];then
+	if [[ "$1" == status ]];then
+		sudo systemctl -al status "$2"
+	fi
+		sudo systemctl "$1" "$2"
+fi
+echo '$?':$?
+#apache2, same for httpd
+#alias apstt='sudo systemctl -l status apache2'
+#alias apstp='sudo systemctl stop apache2'
+#alias apstr='sudo systemctl start apache2'
+#alias aprst='sudo systemctl restart apache2'
+#alias aprld='sudo systemctl reload apache2'
+
+#alias apstt='sudo /etc/init.d/apache2 status'
+#alias apstp='sudo /etc/init.d/apache2 graceful-stop'
+#alias apstr='sudo /etc/init.d/apache2 start'
+#alias aprst='sudo /etc/init.d/apache2 restart'
+#alias aprld='sudo /etc/init.d/apache2 reload'
+
+#mysql, mariadb
+#alias mystt='sudo systemctl -a status mysql'
+#alias mystp='sudo systemctl stop mysql'
+#alias mystr='sudo systemctl start mysql'
+#alias myrst='sudo systemctl restart mysql'
+}
+
