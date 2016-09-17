@@ -1,6 +1,6 @@
 #!/bin/sh
 sudo apt update && sudo apt upgrade -y && youtube-dl -U
-sudo apt install -y vim valgrind g++ git python perl htop evince ack-grep p7zip-full unrar fcitx fcitx-pinyin fcitx-sunpinyin fcitx-googlepinyin fcitx-anthy fcitx-mozc ffmpeg vlc browser-plugin-vlc libreoffice sqlite
+sudo apt install -y vim valgrind g++ git python perl htop evince ack-grep p7zip-full unrar fcitx fcitx-pinyin fcitx-sunpinyin fcitx-googlepinyin fcitx-anthy fcitx-mozc ffmpeg vlc browser-plugin-vlc libreoffice sqlite mosh
 sudo apt install -y traceroute ettercap-graphical dsniff nmap wireshark 
 sudo apt install -y openprinting-gutenprint cups
 
