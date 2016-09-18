@@ -152,7 +152,7 @@ nohup vlc "$@" &> /dev/null &
 }
 
 function vlopt() {
-nohup vlc --longhelp --advanced
+vlc --longhelp --advanced
 }
 
 function utup() {
