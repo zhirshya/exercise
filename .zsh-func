@@ -42,18 +42,6 @@ echo '$?':$?
 #	fi
 }
 
-function srvstr() {
-for srv in "$@";do
-	sudo service "$srv" start
-done
-}
-
-function srvstp() {
-for srv in "$@";do
-	sudo service "$srv" stop
-done
-}
-
 function lpr() {
 if [ $# -eq 0 ];then
 	ll *part
@@ -160,11 +148,11 @@ fi
 }
 
 function vd() {
-vlc "$@" &> /dev/null &
+nohup vlc "$@" &> /dev/null &
 }
 
 function vlopt() {
-vlc --longhelp --advanced
+nohup vlc --longhelp --advanced
 }
 
 function utup() {
@@ -187,11 +175,11 @@ done
 }
 
 function fx() {
-firefox --ssl-version-min=tls1.2 -private "$@" &> /dev/null &
+nohup firefox --ssl-version-min=tls1.2 -private "$@" &> /dev/null &
 }
 
 function krm() {
-google-chrome-stable --ssl-version-min=tls1.2 --incognito weblio.jp merriam-webster.com "$@" &> /dev/null &
+nohup google-chrome-stable --ssl-version-min=tls1.2 --incognito weblio.jp merriam-webster.com "$@" &> /dev/null &
 }
 
 function 0p() {
@@ -318,5 +306,17 @@ echo '$?':$?
 #alias mystp='sudo systemctl stop mysql'
 #alias mystr='sudo systemctl start mysql'
 #alias myrst='sudo systemctl restart mysql'
+}
+
+function srvstr() {
+for srv in "$@";do
+	sudo service "$srv" start
+done
+}
+
+function srvstp() {
+for srv in "$@";do
+	sudo service "$srv" stop
+done
 }
 
