@@ -36,6 +36,14 @@ The above commands insert the output of the date program after the current line.
 W: Move forward a WORD (any non-whitespace characters).
 
 #system clipboard
+copying/pasting from the system clipboard will not work if :echo has('clipboard') returns 0.
+#Make Vim use the system clipboard as the default register
+If your version of Vim supports both the +clipboard and +xterm_clipboard features, then you might prefer to use this setting instead:
+
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+endif
+
 Vim has extended vi to allow use of the * register as a reference to the system clipboard. So we can use normal mode commands like: "*dd or 1G"*yG to copy things into the * register and "*p to paste text from it. We can also use this * register with the ex yank command, so :%y * will accomplish the same goal as gg"*yG (copy all text into the system clipboard so it can be pasted into an X or MS Windows application).
 e.g.
 nnoremap <C-Tab> :bn<CR>  #buffer next
