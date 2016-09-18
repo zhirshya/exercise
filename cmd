@@ -48,6 +48,9 @@ ffmpeg -f concat -i filelist -c copy "Подмосковные Вечера(en+r
 #content of filelist
 file '/tmp/Moscow Night  Helmut Lotti-VbZHzF-Av1I.mp3'
 file '/tmp/Russian Red Army Choir - Moscow Nights-aw5L0IdKjps.mp3'
+#crop, scale
+ffmpeg -i crop_1.jpg -vf crop="250:ih-15:0:15" crop_2.jpg
+ffmpeg -i headscarf\ old\ women.jpg -vf scale=320:-1 crop.jpg
 
 #List Cron Jobs
 crontab –l –u username
