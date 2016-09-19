@@ -20,7 +20,6 @@ if [[ $# -eq 1 ]] && [[ "$1" =~ [0-9]+ ]];then
 #	fi 
 else
 #	timeout_arg="+3"
-	echo "exit script."
 	exit 0
 fi
 
