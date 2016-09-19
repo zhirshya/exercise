@@ -5,14 +5,14 @@
 # extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
 xt_code=-1
-while [ $xt_code -ne 0 ]; do
+while [[ $xt_code -ne 0 ]];do
   find /media/r/0 -type f -iname 'dwn' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 19 -a {} +
   xt_code=$?
   echo "exit code(find...-execdir youtube-dl...{} +):$xt_code"
 done
 
 #timeout_arg=now
-if [[ $# -eq 1 ]] && [[ $1 =~ "[0-9]+" ]]; then
+if [[ $# -eq 1 ]] && [[ "$1" =~ [0-9]+ ]];then
 	timeout_arg=+$1
 #	elif [[ $1 -eq 's' ]]; then #stand-by
 #		echo "Exiting program."
