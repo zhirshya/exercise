@@ -129,7 +129,7 @@ sudo apt autoclean
 
 function +() { #append to todo file
 if [[ $# > 0 ]];then
-	echo "$@" >> /media/r/0/gthb/неkod/.todo
+	echo "$@" >> /media/r/0/gthb/note/.todo
 fi
 }
 
