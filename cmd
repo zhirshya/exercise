@@ -36,6 +36,11 @@ Server MPM:     prefork
 #how to check if port is open and unused
 netstat -tln | tail -n +3 | awk '{ print $4 }'
 
+#get video dimension from ffmpeg -i
+ffprobe -v error -show_entries stream=width,height -of default=noprint_wrappers=1 headscarf\ old\ women.jpg
+width=960
+height=640
+
 #trim, strip off audio/video
 ffmpeg -i InputFile -c copy -ss 00:00:00 -t <duration> OutPutFile
 ffmpeg -i InputFile  -vn -acodec copy -ss 00:00:00 -t <duration> OutPutFile
