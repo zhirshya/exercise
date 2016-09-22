@@ -100,3 +100,9 @@ or
 
 vim Repeat last colon command (The last command entered with ':' can be repeated with @: and further repeats can be done with @@)
 
+#Replacement part of the S&R
+&	the whole matched pattern
+~	the previous substitute string
+\r split line in two at this point
+\l next character made lowercase
+\u next character made uppercase
