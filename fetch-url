@@ -1,9 +1,9 @@
 #ubuntu
-http://cdimage.ubuntu.com/xenial/daily-live/pending/
+http://cdimage.ubuntu.com/xenial/daily-live/current/
 http://releases.ubuntu.com/xenial/
 #kali
-https://www.kali.org/downloads/
 http://cdimage.kali.org/kali-weekly/
+https://www.kali.org/downloads/
 #VS Code
 https://code.visualstudio.com/updates
 #CentOS
