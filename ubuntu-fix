@@ -9,6 +9,9 @@ sudo vim /etc/sysctl.conf
 # Decrease swap usage to a more reasonable level
 vm.swappiness=10
 
+gsettings set com.canonical.indicator.datetime time-format 'custom'
+gsettings set com.canonical.indicator.datetime custom-time-format '%A %B %d %Y %H:%M:%S %:::z'
+
 sudo apt purge apport unity-webapps-common xul-ext-unity xul-ext-websites-integration unity-scope-musicstores unity-scope-musique unity-scope-tomboy libtotem-plparser18 totem totem-common thunderbird flashplugin-installer mosh
 #Remove firefox and all associated language packs
 sudo apt --purge autoremove firefox

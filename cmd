@@ -175,5 +175,6 @@ lcd(local cd) get put del/rm?
 #date
 \date +"now is week: %V of %Y"
 \date +"now is week: %U of %Y"
+gsettings set com.canonical.indicator.datetime time-format 'custom'
 gsettings set com.canonical.indicator.datetime custom-time-format '%A %B %d %Y %H:%M:%S %:::z'
 
