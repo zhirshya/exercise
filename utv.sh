@@ -15,7 +15,6 @@ done
 if [[ $# -eq 1 ]] && [[ "$1" =~ [0-9]+ ]];then
 	timeout_arg=+$1
 #	elif [[ $1 -eq 's' ]]; then #stand-by
-#		echo "Exiting program."
 #		exit 0
 #	fi 
 else
