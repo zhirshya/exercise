@@ -148,7 +148,7 @@ fi
 }
 
 function vd() {
-nohup vlc "$@" &> /dev/null & disown -h
+nohup vlc "$@" &> /dev/null & disown
 }
 
 function vlopt() {
@@ -175,11 +175,11 @@ done
 }
 
 function fx() {
-nohup firefox --ssl-version-min=tls1.2 -private "$@" &> /dev/null & disown -h
+nohup firefox --ssl-version-min=tls1.2 -private "$@" &> /dev/null & disown
 }
 
 function krm() {
-nohup google-chrome-stable --ssl-version-min=tls1.2 --incognito weblio.jp merriam-webster.com "$@" &> /dev/null & disown -h
+nohup google-chrome-stable --ssl-version-min=tls1.2 --incognito weblio.jp merriam-webster.com "$@" &> /dev/null & disown
 }
 
 function 0p() {
