@@ -9,4 +9,4 @@
 # /boot/efi was on /dev/sda1 during installation
 UUID=D68E-24A3  /boot/efi       vfat    umask=0077      0       1
 /dev/mapper/fedora_ergnmbhvgrfn-swap none            swap    sw              0       0
-UUID=c9c76661-95b5-4987-9812-6d77c86edfe2	/media/r/0	ext4	defaults	0	2
+UUID=c9c76661-95b5-4987-9812-6d77c86edfe2	/mnt/0	ext4	defaults	0	2

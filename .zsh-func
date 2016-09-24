@@ -4,7 +4,7 @@ function \?() {
 setopt nocasematch
 #string == pattern
 #    true if string matches pattern. The ‘==’ form is the preferred one. The ‘=’ form is for backward compatibility and should be considered obsolete.
-cmd='find /media/r/0 ~ \( '
+cmd='find /mnt/0 ~ \( '
 for id in "$@";do
 	if [[ "$id" == http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]];then
 		id="${id##http*://*youtu*be*/*watch\?v=}"
@@ -32,7 +32,7 @@ eval ${cmd}
 echo '$?':$?
 
 #	echo "#search local(non /) keyword:$id"
-#	fnd_out=$(find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} +)
+#	fnd_out=$(find /mnt/0 ~ -iname "*$id*" -exec ls -alF {} +)
 ##	xt_code=$?
 #	echo '$?':$?
 #	
@@ -129,7 +129,7 @@ sudo apt autoclean
 
 function +() { #append to todo file
 if [[ $# > 0 ]];then
-	echo "$@" >> /media/r/0/gthb/note/.todo
+	echo "$@" >> /mnt/0/gthb/note/.todo
 fi
 }
 
@@ -193,7 +193,7 @@ fi
 function dwn() {
 setopt nocasematch
 
-for file in $(find /media/r/0 ~ -type f -iname 'dwn*');do
+for file in $(find /mnt/0 ~ -type f -iname 'dwn*');do
 	if [[ "$file" != "[fF]ind.*[pP]ermission\sdenied.*" ]];then #stderr inaccessible this way!
 		echo $file:
 		more $file
@@ -261,11 +261,11 @@ fi
 #done
 #idlist=${idlist% -o }
 #echo 'find multiple name criteria':$idlist
-#find /media/r/0 ~ \( $idlist \) -type f -exec ls -alF {} +
+#find /mnt/0 ~ \( $idlist \) -type f -exec ls -alF {} +
 #echo '$?':$?
 #}
 function fnd() {
-cmd='find /media/r/0 ~ \( '
+cmd='find /mnt/0 ~ \( '
 
 for id in "$@";do
 cmd+="-iname \"*$id*\" -o "

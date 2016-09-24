@@ -10,7 +10,7 @@ for id in "$@"; do
 # bash: ${$1#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 # bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 	echo "#search local(non /) pattern:$id"
-	find /media/r/0 ~ -iname "*$id*" -exec ls -alF {} +
+	find /mnt/0 ~ -iname "*$id*" -exec ls -alF {} +
 done
 }
 
@@ -76,7 +76,7 @@ sudo apt autoclean
 
 function +() { #append to todo file
 if [[ $# > 0 ]]; then
-	echo "$@" >> /media/r/0/gthb/неkod/.todo
+	echo "$@" >> /mnt/0/gthb/note/.todo
 fi
 }
 
@@ -131,7 +131,7 @@ fi
 function dwn() {
 shopt -s nocasematch
 
-for file in $(find /media/r/0 ~ -type f -iname 'dwn*'); do
+for file in $(find /mnt/0 ~ -type f -iname 'dwn*'); do
 	if [[ "$file" != "find*permission denied*" ]]; then
 		echo $file:
 		more $file
@@ -220,8 +220,8 @@ alias vgr='valgrind --leak-check=yes'
 alias scrot='scrot -q 100 -d 7 -c -s -e eog '
 alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
 alias fdef='declare -f ' #if not defined as shell alias check for shell functions
-alias tdr='tail -n 15 /media/r/0/gthb/неkod/.todo'
-alias td='vim /media/r/0/gthb/неkod/.todo'
+alias tdr='tail -n 15 /mnt/0/gthb/note/.todo'
+alias td='vim /mnt/0/gthb/note/.todo'
 alias utv0='utv 0'
 #rss word
 alias rs1='echo убирать' #clean up, tidy up

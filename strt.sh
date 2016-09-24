@@ -2,7 +2,7 @@
 #gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed  --working-directory=/home/r/gthb/note --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst --tab-with-profile=Unnamed --working-directory=/home/r/meanapp  &> /dev/null &
 gnome-terminal --tab-with-profile=Unnamed --working-directory=/home/r/meanapp --tab-with-profile=Unnamed  --working-directory=/home/r/gthb/note --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs --tab-with-profile=Unnamed --working-directory=/home/r/gthb/wbst --tab-with-profile=Unnamed --working-directory=~  &> /dev/null &
 #ubuntu
-#gnome-terminal --tab-with-profile=Unnamed --tab-with-profile=Unnamed --working-directory=/media/r/0  &> /dev/null &
+#gnome-terminal --tab-with-profile=Unnamed --tab-with-profile=Unnamed --working-directory=/mnt/0  &> /dev/null &
 
 #2
 vlc &> /dev/null &

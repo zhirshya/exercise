@@ -47,7 +47,7 @@ sudo apt purge flashplugin-installer #ubuntu-restricted-extras automatically ins
 sudo ppa-purge ppa:mc3man/trusty-media
 sudo ppa-purge ppa:videolan/stable-daily
 
-sudo find /media/r/0/ -iname '*on7p8oqfv80*' -exec ls -alF {} +
+sudo find /mnt/0/ -iname '*on7p8oqfv80*' -exec ls -alF {} +
 
 #Ubuntu 14.04.3 freeze/hang on shutdown
 sudo vi /etc/default/grub
@@ -71,7 +71,7 @@ sudo apt purge linux-headers-3.19.0-{39,43,47,49,51} linux-headers-3.19.0-{39,43
 
 ~ mv Downloads/tor-browser_en-US .
 ~ rmrf Downloads 
-~ ln -s /media/r/0/skachat ~/Downloads
+~ ln -s /mnt/0/skachat ~/Downloads
 
 #Remove Guest Session in Ubuntu 16.04 Login Screen
 sudo mkdir /etc/lightdm/lightdm.conf.d

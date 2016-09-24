@@ -78,8 +78,8 @@ PATH=/usr/sbin:/usr/bin:/sbin:/bin
 crontab -ir
 
 #rename files in respective directories
-#find /media/r/0 -type f -iname 'dwn.wait' -execdir mv {} dwn.todo +
-find /media/r/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} +
+#find /mnt/0 -type f -iname 'dwn.wait' -execdir mv {} dwn.todo +
+find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} +
 
 find . -type f -exec chmod 644 {} +
 
@@ -87,7 +87,7 @@ find . -type f -exec chmod 644 {} +
 rfkill unblock bluetooth
 
 #Create Symbolic Links in Linux
-sudo ln -s /media/r/0/gthb/xrcs/utv.sh /usr/local/bin/utv
+sudo ln -s /mnt/0/gthb/xrcs/utv.sh /usr/local/bin/utv
 
 grep -Ril "2>&1" .
 
@@ -96,7 +96,7 @@ grep -Ril "2>&1" .
 g/\(>\s*[/\w.-]\+\)\s\+2>&1/s//\&\1/gc #pattern not found
 g/\(>.\+\)\s\+2>&1/s//\&\1/gc	#work
 
-7z x -o/media/r/0/vrk -p".*\!#" vrk.7z
+7z x -o/mnt/0/vrk -p".*\!#" vrk.7z
 7z a -p".*\!#" curr.7z curr
 
 less /proc/sys/dev/cdrom/info
@@ -118,7 +118,7 @@ dd if=kali-linux-2016.1-amd64.iso of=/dev/sdb bs=512k
 pdftk polymersummit-es6.pdf cat 15-69 72-end output use-es6-with-polymer,2015.pdf
 pdftk Eloquent\ JavaScript,\ 2nd\ Edition.pdf cat 1 8 13-end output eloquent_JavaScript_2nd_ed.NoStarchPress.pdf
 
-cd /media/r/0
+cd /mnt/0
 fdupes -Sr js nodejs_screencast java cpp aws c c++graphic eecs-ict php embnix nixcpp nixc3d nixpythn socket 01 fpga wbst swift ms tekvid android game hak how pentst
 
 #access and mount iPhone 6 in Linux
@@ -139,7 +139,7 @@ disable: invalid pattern: c
 ➜  0 ? https://www.youtube.com/watch?v=kGosatWQ5ag
 Search for ID [kGosatWQ5ag] now...
 find: ‘/home/r/.dbus’: Permission denied
--rw-rw-r-- 1 r r 43429548 сен 25  2014 /media/r/0/oros(Русский)/Weekly Russian Words with Katya - Computer Words-kGosatWQ5ag.mkv
+-rw-rw-r-- 1 r r 43429548 сен 25  2014 /mnt/0/oros(Русский)/Weekly Russian Words with Katya - Computer Words-kGosatWQ5ag.mkv
 ➜  0 enable ?
 enable: no such hash table element: ?
 ➜  0 enable -p ?
@@ -149,15 +149,15 @@ zsh: no matches found: https://www.youtube.com/watch?v=kGosatWQ5ag
 ➜  0 ? https://www.youtube.com/watch?v=kGosatWQ5ag
 Search for ID [kGosatWQ5ag] now...
 find: ‘/home/r/.dbus’: Permission denied
--rw-rw-r-- 1 r r 43429548 сен 25  2014 /media/r/0/oros(Русский)/Weekly Russian Words with Katya - Computer Words-kGosatWQ5ag.mkv
+-rw-rw-r-- 1 r r 43429548 сен 25  2014 /mnt/0/oros(Русский)/Weekly Russian Words with Katya - Computer Words-kGosatWQ5ag.mkv
 #persistent effect
 setopt noglob
 #bash
 set -o noglob
 
-diff ~/.zshrc /media/r/0/gthb/xrcs/.zshrc 
-diff ~/.zsh-func /media/r/0/gthb/xrcs/.zsh-func 
-diff /media/r/0/gthb/xrcs/Makefile /media/r/0/xrc/Makefile
+diff ~/.zshrc /mnt/0/gthb/xrcs/.zshrc 
+diff ~/.zsh-func /mnt/0/gthb/xrcs/.zsh-func 
+diff /mnt/0/gthb/xrcs/Makefile /mnt/0/xrc/Makefile
 
 #Delete lines in text file that containing specific string
 ex +g/match/d -cwq file
@@ -197,4 +197,6 @@ group::---
 mask::r-x
 other::---
 
+#linux recursive search and replace string in directory
+find . -type f -execdir sed -i 's/\/media\/r\/0/\/mnt\/0/g' {} +
 
