@@ -185,3 +185,16 @@ curl wttr.in/st.petersburg
 #https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB#quickstarts
 sudo dd if=/path/to/image.iso of=/dev/sdX bs=8M status=progress oflag=direct
 
+#ACL
+drwxr-x---+  3 root root 4096 сен 24 17:56 r/
+➜ getfacl r
+# file: r
+# owner: root
+# group: root
+user::rwx
+user:r:r-x
+group::---
+mask::r-x
+other::---
+
+
