@@ -182,3 +182,6 @@ gsettings set com.canonical.indicator.datetime custom-time-format '%A %B %d %Y %
 curl wttr.in/hailar
 curl wttr.in/st.petersburg
 
+#https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB#quickstarts
+sudo dd if=/path/to/image.iso of=/dev/sdX bs=8M status=progress oflag=direct
+
