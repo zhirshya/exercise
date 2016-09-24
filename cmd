@@ -178,3 +178,7 @@ lcd(local cd) get put del/rm?
 gsettings set com.canonical.indicator.datetime time-format 'custom'
 gsettings set com.canonical.indicator.datetime custom-time-format '%A %B %d %Y %H:%M:%S %:::z'
 
+#linux commnad line weather
+curl wttr.in/hailar
+curl wttr.in/st.petersburg
+
