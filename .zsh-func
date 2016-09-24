@@ -148,7 +148,7 @@ fi
 }
 
 function vd() {
-nohup vlc "$@" &> /dev/null & disown
+nohup vlc --one-instance --playlist-enqueue "$@" &> /dev/null & disown
 }
 
 function vlopt() {
@@ -162,7 +162,7 @@ xt_code=113
 out_msg="error"
 counter=0
 while [[ $xt_code -ne 0 || "$out_msg" =~ error ]];do #1.ERROR: can't find the current version. Please try again later. 2.Updating to version 2016.08.22 ...\nERROR: unable to download latest version (for error 2,better to detect network connection and exit if connection lost)
-	if [[ $((counter++)) -gt 4 ]];then
+	if [[ $((counter++)) -gt 9 ]];then
 		return 113
 	fi
 	out_msg=$(sudo youtube-dl -U)
@@ -175,11 +175,11 @@ done
 }
 
 function fx() {
-nohup firefox --ssl-version-min=tls1.2 -private "$@" &> /dev/null & disown
+nohup firefox --ssl-version-min=tls1.3 -private "$@" &> /dev/null & disown
 }
 
 function krm() {
-nohup google-chrome-stable --ssl-version-min=tls1.2 --incognito weblio.jp merriam-webster.com "$@" &> /dev/null & disown
+nohup google-chrome-stable --ssl-version-min=tls1.3 --incognito weblio.jp merriam-webster.com "$@" &> /dev/null & disown
 }
 
 function 0p() {
