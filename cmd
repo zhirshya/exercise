@@ -240,3 +240,6 @@ adm:x:4:
 ➜  xrcs git:(master) ✗ getent group admin
 ➜  xrcs git:(master) ✗ 
 
+#shell cmd
+print - $((524288000/1024/1024))
+
