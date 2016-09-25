@@ -1,3 +1,0 @@
-gnome-terminal --maximize --tab-with-profile=Unnamed --working-directory=~ --tab-with-profile=Unnamed  --working-directory=/home/r/gthb/note --tab-with-profile=Unnamed --working-directory=/home/r/gthb/xrcs --tab-with-profile=Unnamed --working-directory=/home/r/meanapp  &> /dev/null &
-
-google-chrome-stable --ssl-version-min=tls1.1 --incognito http://www.weblio.jp 
