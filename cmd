@@ -207,6 +207,19 @@ find /mnt/0 -type d -name '.*' -execdir chmod 750 {} \; -execdir setfacl -m u:r:
 find /mnt/0 -type f -name '.*' -execdir chmod 640 {} \; -execdir setfacl -m u:r:rw {} \;
 find /mnt/0 -type f -execdir chmod 640 {} \; -execdir setfacl -m u:r:rw {} \;
 #effective permissions are formed by ANDing permissions with umask.
+➜  xrcs git:(master) ✗ getfacl .
+# file: .
+# # owner: root
+# # group: root
+# user::rwx
+# user:r:rwx			#effective:r-x
+# group::r-x
+# mask::r-x
+# other::---
+#
+# ➜  xrcs git:(master) ✗ umask 
+# 022
+#
 
 #linux recursive search and replace string in directory
 find . -type f -execdir sed -i 's/\/media\/r\/0/\/mnt\/0/g' {} \;
