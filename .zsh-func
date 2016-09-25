@@ -26,13 +26,13 @@ for id in "$@";do
 	cmd+="-iname \"*$id*\" -o "
 done
 cmd=${cmd% -o }
-cmd+=' \) -type f -exec ls -alF {} +'
+cmd+=' \) -type f -execdir ls -alF {} \;'
 echo '#dynamically constructed command':$cmd
 eval ${cmd}
 echo '$?':$?
 
 #	echo "#search local(non /) keyword:$id"
-#	fnd_out=$(find /mnt/0 ~ -iname "*$id*" -exec ls -alF {} +)
+#	fnd_out=$(find /mnt/0 ~ -iname "*$id*" -execdir ls -alF {} \;)
 ##	xt_code=$?
 #	echo '$?':$?
 #	
@@ -120,8 +120,10 @@ echo "NO_PROXY:$NO_PROXY"
 
 function --() { #clean
 rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
-sudo apt autoremove -y
-sudo apt autoclean
+sudo dnf autoremove -y
+#sudo apt autoremove -y
+#sudo apt autoclean
+#sudo apt clean
 #E: encountered a section with no package: header
 #E: problem with Mergelist/var/lib/apt/lists
 #sudo rm -Rf /var/lib/apt/lists/* -vf
@@ -203,8 +205,8 @@ done
 
 function ss() {
 #detect OS(Ubuntu, Debian, Mint, kali, RHEL, Centos, Fedora, Suse, etc.)
-sudo apt update && sudo apt upgrade -y
-#sudo dnf upgrade -y #Fedora
+#sudo apt update && sudo apt upgrade -y
+sudo dnf upgrade -y #Fedora
 echo '$?':$?
 utup
 }
@@ -261,7 +263,7 @@ fi
 #done
 #idlist=${idlist% -o }
 #echo 'find multiple name criteria':$idlist
-#find /mnt/0 ~ \( $idlist \) -type f -exec ls -alF {} +
+#find /mnt/0 ~ \( $idlist \) -type f -execdir ls -alF {} \;
 #echo '$?':$?
 #}
 function fnd() {
@@ -272,7 +274,7 @@ cmd+="-iname \"*$id*\" -o "
 done
 
 cmd=${cmd% -o }
-cmd+=' \) -type f -exec ls -alF {} +'
+cmd+=' \) -type f -execdir ls -alF {} \;'
 echo 'dynamically constructed command':$cmd
 eval ${cmd}
 echo '$?':$?

@@ -10,7 +10,7 @@ for id in "$@"; do
 # bash: ${$1#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 # bash: ${"$1"#http*://*youtu*be*/*watch\?v[=]}: bad substitution
 	echo "#search local(non /) pattern:$id"
-	find /mnt/0 ~ -iname "*$id*" -exec ls -alF {} +
+	find /mnt/0 ~ -iname "*$id*" -execdir ls -alF {} \;
 done
 }
 

@@ -79,9 +79,9 @@ crontab -ir
 
 #rename files in respective directories
 #find /mnt/0 -type f -iname 'dwn.wait' -execdir mv {} dwn.todo +
-find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} +
+find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} \;
 
-find . -type f -exec chmod 644 {} +
+find . -type f -exec chmod 644 {} \;
 
 #http://askubuntu.com/questions/419115/make-bluetooth-disabled-by-default
 rfkill unblock bluetooth
@@ -197,6 +197,33 @@ group::---
 mask::r-x
 other::---
 
+#set ACL
+chown -R root:root /mnt/0/*
+chown -R root:root /mnt/0/.*
+#find /mnt/0 -type f -execdir chmod 640 {} \;
+#find /mnt/0 -type d -execdir chmod 750 {} \;
+find /mnt/0 -type d -execdir chmod 750 {} \; -execdir setfacl -m u:r:rwx {} \;
+find /mnt/0 -type d -name '.*' -execdir chmod 750 {} \; -execdir setfacl -m u:r:rwx {} \;
+find /mnt/0 -type f -name '.*' -execdir chmod 640 {} \; -execdir setfacl -m u:r:rw {} \;
+find /mnt/0 -type f -execdir chmod 640 {} \; -execdir setfacl -m u:r:rw {} \;
+#effective permissions are formed by ANDing permissions with umask.
+
 #linux recursive search and replace string in directory
-find . -type f -execdir sed -i 's/\/media\/r\/0/\/mnt\/0/g' {} +
+find . -type f -execdir sed -i 's/\/media\/r\/0/\/mnt\/0/g' {} \;
+
+#UNIX / Linux Command To Check Existing Groups and Users
+➜  xrcs git:(master) ✗ groups r
+r : r
+➜  xrcs git:(master) ✗ id r
+uid=1000(r) gid=1000(r) groups=1000(r)
+➜  xrcs git:(master) ✗ id adm
+uid=3(adm) gid=4(adm) groups=4(adm)
+➜  xrcs git:(master) ✗ id admin
+id: ‘admin’: no such user
+➜  xrcs git:(master) ✗ getent group r
+r:x:1000:
+➜  xrcs git:(master) ✗ getent group adm
+adm:x:4:
+➜  xrcs git:(master) ✗ getent group admin
+➜  xrcs git:(master) ✗ 
 

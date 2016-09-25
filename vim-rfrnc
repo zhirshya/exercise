@@ -106,3 +106,6 @@ vim Repeat last colon command (The last command entered with ':' can be repeated
 \r split line in two at this point
 \l next character made lowercase
 \u next character made uppercase
+
+:%s/-exec\(.*{}\) +/-execdir\1 \\;/gc
+
