@@ -245,3 +245,5 @@ adm:x:4:
 #shell cmd
 print - $((524288000/1024/1024))
 
+find /mnt/0 ~ ! -path "/mnt/0/linux/*" -iname "*debug*" -type f -exec ls -alF {} \;
+
