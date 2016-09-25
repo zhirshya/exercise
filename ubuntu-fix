@@ -47,8 +47,6 @@ sudo apt purge flashplugin-installer #ubuntu-restricted-extras automatically ins
 sudo ppa-purge ppa:mc3man/trusty-media
 sudo ppa-purge ppa:videolan/stable-daily
 
-sudo find /mnt/0/ -iname '*on7p8oqfv80*' -execdir ls -alF {} \;
-
 #Ubuntu 14.04.3 freeze/hang on shutdown
 sudo vi /etc/default/grub
 #GRUB_CMDLINE_LINUX_DEFAULT="quiet splash" ->

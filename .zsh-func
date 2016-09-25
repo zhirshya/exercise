@@ -26,13 +26,13 @@ for id in "$@";do
 	cmd+="-iname \"*$id*\" -o "
 done
 cmd=${cmd% -o }
-cmd+=' \) -type f -execdir ls -alF {} \;'
+cmd+=' \) -type f -exec ls -alF {} \;'
 echo '#dynamically constructed command':$cmd
 eval ${cmd}
 echo '$?':$?
 
 #	echo "#search local(non /) keyword:$id"
-#	fnd_out=$(find /mnt/0 ~ -iname "*$id*" -execdir ls -alF {} \;)
+#	fnd_out=$(find /mnt/0 ~ -iname "*$id*" -exec ls -alF {} \;)
 ##	xt_code=$?
 #	echo '$?':$?
 #	
@@ -263,7 +263,7 @@ fi
 #done
 #idlist=${idlist% -o }
 #echo 'find multiple name criteria':$idlist
-#find /mnt/0 ~ \( $idlist \) -type f -execdir ls -alF {} \;
+#find /mnt/0 ~ \( $idlist \) -type f -exec ls -alF {} \;
 #echo '$?':$?
 #}
 function fnd() {
@@ -274,7 +274,7 @@ cmd+="-iname \"*$id*\" -o "
 done
 
 cmd=${cmd% -o }
-cmd+=' \) -type f -execdir ls -alF {} \;'
+cmd+=' \) -type f -exec ls -alF {} \;'
 echo 'dynamically constructed command':$cmd
 eval ${cmd}
 echo '$?':$?

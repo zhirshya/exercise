@@ -82,6 +82,8 @@ crontab -ir
 find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} \;
 
 find . -type f -exec chmod 644 {} \;
+find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} ";"
+find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} \;
 
 #http://askubuntu.com/questions/419115/make-bluetooth-disabled-by-default
 rfkill unblock bluetooth
