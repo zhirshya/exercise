@@ -57,6 +57,9 @@ file '/tmp/Russian Red Army Choir - Moscow Nights-aw5L0IdKjps.mp3'
 ffmpeg -i crop_1.jpg -vf crop="250:ih-15:0:15" crop_2.jpg
 ffmpeg -i headscarf\ old\ women.jpg -vf scale=320:-1 crop.jpg
 
+#speed up av
+ffmpeg -i Russian\ numbers\ 2\ 10\ 20\ 30,\ 100,\ 1000-vFlzWw62XQo.mp4 -filter:v "setpts=PTS/1.5" -filter:a "atempo=1.5" rus_num_1000-vFlzWw62XQo_1.5spd.mp4
+
 #List Cron Jobs
 crontab –l –u username
 
