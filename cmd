@@ -250,3 +250,13 @@ print - $((524288000/1024/1024))
 
 find /mnt/0 ~ ! -path "/mnt/0/linux/*" ! -path "/mnt/0/linux-insides/*" -iname "*debug*" -type f -exec ls -alF {} \;
 
+#shell single quote file name with single quote and space
+infile_quoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
+outfile_quoted=$(printf \'%s\' "$(printf %s "$outfile" | sed "s/'/'\\\\''/g")")
+echo '"${infile_quoted}"':"${infile_quoted}"
+echo '"${outfile_quoted}"':"${outfile_quoted}"
+echo '"$infile_quoted"':"$infile_quoted"
+echo '"$outfile_quoted"':"$outfile_quoted"
+echo '$infile_quoted':$infile_quoted
+echo '$outfile_quoted':$outfile_quoted
+
