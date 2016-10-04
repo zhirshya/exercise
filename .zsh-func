@@ -384,7 +384,7 @@ else
   infile=$1
 fi
 
-if (($# == 2)) && [[ $2 != [1-9]\.{0,1}[0-9]{0,2} ]];then
+if (($# == 2)) && [[ $2 != ^[-+]?[1-9]\.?[0-9]{0,2}$ ]];then
 #if (($# == 2)) && [[ $2 == [a-zA-Z-_.0-9]* ]];then # =~ failed to compile regex: Invalid range end
     factor=2
     outfile="$2"
@@ -393,10 +393,10 @@ if (($# == 2)) && [[ $2 != [1-9]\.{0,1}[0-9]{0,2} ]];then
     outfile+="."
     suffix="${infile##*.}"
     outfile+=$suffix
-    echo 'hit (($# == 2)) && [[ $2 != [1-9]\.{0,1}[0-9]{0,2} ]]'
+    echo 'hit (($# == 2)) && [[ $2 != ^[-+]?[1-9]\.?[0-9]{0,2}$ ]]'
 fi
 
-if (($# >= 2)) && [[ $2 == [1-9]\.{0,1}[0-9]{0,2} ]];then
+if (($# >= 2)) && [[ $2 == ^[-+]?[1-9]\.?[0-9]{0,2}$ ]];then
     factor=$2
     if (($# == 3));then
       outfile=$3
@@ -408,7 +408,7 @@ if (($# >= 2)) && [[ $2 == [1-9]\.{0,1}[0-9]{0,2} ]];then
     outfile+="."
     suffix="${infile##*.}"
     outfile+=$suffix
-    echo 'hit (($# >= 2)) && [[ $2 == [1-9]\.{0,1}[0-9]{0,2} ]]'
+    echo 'hit (($# >= 2)) && [[ $2 == ^[-+]?[1-9]\.?[0-9]{0,2}$ ]]'
 #else #wrong logic!
 #  echo command line argument error.
 #  echo "usage: avspd <local file> [speed factor(2.0 1.75 2.25 2.5...)(optional)] [output file name prefix(optional)]"
@@ -417,34 +417,44 @@ if (($# >= 2)) && [[ $2 == [1-9]\.{0,1}[0-9]{0,2} ]];then
 fi
 
 #logic error: 1.75 -> 2
-#"${infile_quoted}":'How'\''s Do One-Way Mirrors Work-4kKL32opewI.mp4'
-#"${outfile_quoted}":'1.75_spdx2.mp4'
+#"${infile_singlequoted}":'How'\''s Do One-Way Mirrors Work-4kKL32opewI.mp4'
+#"${outfile_singlequoted}":'1.75_spdx2.mp4'
 #cmd:ffmpeg -i 'How'\''s Do One-Way Mirrors Work-4kKL32opewI.mp4' -filter:v "setpts=PTS/2" -filter:a "atempo=2" '1.75_spdx2.mp4'
 
 #http://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters
-#infile_quoted=$(printf %s. "$infile" | sed "s/'/'\\\\''/g")
-#outfile_quoted=$(printf %s. "$outfile" | sed "s/'/'\\\\''/g")
+#infile_singlequoted=$(printf %s. "$infile" | sed "s/'/'\\\\''/g")
+#outfile_singlequoted=$(printf %s. "$outfile" | sed "s/'/'\\\\''/g")
 
 #'How'\''s Do One-Way Mirrors Work-4kKL32opewI.mp4' #ll output
 
-infile_quoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
-outfile_quoted=$(printf \'%s\' "$(printf %s "$outfile" | sed "s/'/'\\\\''/g")")
-echo '"${infile_quoted}"':"${infile_quoted}"
-echo '"${outfile_quoted}"':"${outfile_quoted}"
+infile_singlequoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
+outfile_singlequoted=$(printf \'%s\' "$(printf %s "$outfile" | sed "s/'/'\\\\''/g")")
+echo '"${infile_singlequoted}"':"${infile_singlequoted}"
+echo '"${outfile_singlequoted}"':"${outfile_singlequoted}"
 
-if [[ -f $outfile ]];then
+#test<
+if (($# == 2)) && [[ "$2" != ^[-+]?[1-9]\.?[0-9]{0,2}$ ]];then
+  echo 'hit if (($# == 2)) && [[ "$2" != ^[-+]?[1-9]\.?[0-9]{0,2}$ ]]'
+fi
+
+if (($# >= 2)) && [[ "$2" == ^[-+]?[1-9]\.?[0-9]{0,2}$ ]];then
+  echo 'hit if (($# >= 2)) && [[ "$2" == ^[-+]?[1-9]\.?[0-9]{0,2}$ ]]'
+fi
+#test>
+
+if [[ -f ${outfile_singlequoted} ]];then
   echo please specify a valid local file name, and try again.
   return 113
 fi
 
 cmd='ffmpeg -i '
-cmd+="${infile_quoted}"
+cmd+="${infile_singlequoted}" #"$infile_singlequoted"
 cmd+=' -filter:v "setpts=PTS/'
 cmd+=$factor
 cmd+='" -filter:a "atempo='
 cmd+=$factor
 cmd+='" '
-cmd+="${outfile_quoted}"
+cmd+="${outfile_singlequoted}" #"$outfile_singlequoted"
 
 #cmd=${cmd//\'/\\\'} #eval: unmatched '
 #cmd=${cmd//*/\*}
