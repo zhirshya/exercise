@@ -1,10 +1,12 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # Path to your oh-my-zsh installation.
 export ZSH=/home/r/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -51,12 +53,11 @@ HYPHEN_INSENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+source $ZSH/oh-my-zsh.sh
+
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -82,8 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias ufwst='sudo ufw status verbose'
 alias src='source ~/.zshrc'
 
 if [ -e /usr/bin/vimx ]; then 
@@ -95,11 +94,11 @@ fi
 alias ll='ls -alF'
 alias lls='ls -alF | less'
 #alias s0='sudo shutdown -P -f --no-wall'	#Fedora
-#alias rbt='sudo reboot -f --no-wall'	#Fedora
-#alias ins='sudo dnf install'	#Fedora
-alias ins='sudo apt install'
+alias rbt='sudo reboot -f --no-wall'	#Fedora
+alias ins='sudo dnf install -y'	#Fedora
+#alias ins='sudo apt install -y'
 alias 00p='sudo shutdown -c'
-alias rbt='sudo reboot -f'	#Ubuntu
+#alias rbt='sudo reboot -f'	#Ubuntu
 alias wrs='whereis'
 alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
@@ -109,7 +108,7 @@ alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -ci'
 alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --write-sub --sub-lang ru,en --sub-format best --embed-subs '
 alias utlscap='youtube-dl --youtube-skip-dash-manifest -R 21 --list-subs'
 
-alias or='cd ~/Downloads/tor-browser_en-US && ./start-tor-browser.desktop && -'
+alias or='cd /mnt/0/skachat/tor-browser_en-US && ./start-tor-browser.desktop && -'
 
 alias ..='cd ..'
 alias ...='cd ../..'
