@@ -150,8 +150,9 @@ alias fdef='declare -f ' #if not defined as shell alias check for shell function
 alias tdr='tail -n 15 /mnt/0/gthb/note/.todo'
 alias td='vim /mnt/0/gthb/note/.todo'
 alias utv0='utv 0'
-#rss word
-alias rs1='echo убирать' #clean up, tidy up
+#rss word,punctuation,symbol
+alias ru2anglbrkt='echo « »'
+alias ruclean='echo убирать' #clean up, tidy up
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 #setopt noglob #turn off globbing(wildcard expansion)
