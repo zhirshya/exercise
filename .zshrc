@@ -106,7 +106,7 @@ alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21'
 alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -a dwn'
 alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -ci'
 alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --write-sub --sub-lang ru,en --sub-format best --embed-subs '
-alias utlscap='youtube-dl --youtube-skip-dash-manifest -R 21 --list-subs'
+alias utlscap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --list-subs'
 
 alias or='cd /mnt/0/skachat/tor-browser_en-US && ./start-tor-browser.desktop && -'
 
