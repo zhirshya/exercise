@@ -105,7 +105,7 @@ alias duz='sudo du -sh /var/log /mnt /'
 alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21'
 alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -a dwn'
 alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -ci'
-alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --write-sub --sub-lang ru,en --sub-format best --embed-subs '
+alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --write-sub --sub-lang ru,en --sub-format best --embed-subs'
 alias utlscap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --list-subs'
 
 alias or='cd /mnt/0/skachat/tor-browser_en-US && ./start-tor-browser.desktop && -'
@@ -124,7 +124,7 @@ alias dff='diff -Bb'
 alias mr='more -s'
 alias rmrf='rm -rf'
 alias kty=whoami #Кто я?
-alias 0='echo -n > '
+alias 0='echo -n >'
 alias 03f='disable -p "?"'
 alias 13f='enable -p ?'
 #alias 026='disable -p "&"' #disable: invalid pattern: &
@@ -134,19 +134,19 @@ alias 021='disable -p "!"' #incorrect
 alias 121='enable -p !'
 alias 023='disable -p "#"'
 alias 123='enable -p #'
-#alias ?='sudo find / -iname '
 #alias upgrlog='less /var/log/upgrd.log' #extended to zsh function
 alias mv='mv -i'
 alias cp='cp -i'
 alias date='date +"%Y-%m-%d %H:%M:%S"'
 
-alias gcc='ccache gcc -std=c11 -Wall -Wextra -g '
-alias gxx='ccache g++ -std=c++14 -Wall -Wextra -g '
+alias gcc='ccache gcc -std=c11 -Wall -Wextra -g'
+alias gxx='ccache g++ -std=c++14 -Wall -Wextra -g'
 alias vgr='valgrind --leak-check=yes'
 
 alias scrot='scrot -q 100 -d 7 -c -e eog'
-alias wget='wget --no-cookies --retry-connrefused -t 40 ' #or utilize .wgetrc
-alias fdef='declare -f ' #if not defined as shell alias check for shell functions
+alias wget='wget --no-cookies --retry-connrefused -t 40' #or utilize .wgetrc
+alias wgetf='wget --no-cookies --retry-connrefused -t 40 -i' #or utilize .wgetrc
+alias fdef='declare -f' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /mnt/0/gthb/note/.todo'
 alias td='vim /mnt/0/gthb/note/.todo'
 alias utv0='utv 0'
