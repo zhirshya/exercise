@@ -260,3 +260,5 @@ echo '"$outfile_quoted"':"$outfile_quoted"
 echo '$infile_quoted':$infile_quoted
 echo '$outfile_quoted':$outfile_quoted
 
+#read into var
+read start _ < <(du -bcm kali-linux-2016-W41-amd64.iso| tail -1); echo $start
