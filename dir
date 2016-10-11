@@ -6,7 +6,7 @@ mkdir /mnt/0/howto
 mkdir /mnt/0/hack
 mkdir /mnt/0/finance
 mkdir /mnt/0/bsnss-entrprnr
-mkdir /mnt/0/"hlth(здоровье)" #health
+mkdir /mnt/0/"hlth(здоровье)"
 mkdir /mnt/0/"oros(Русский)"
 mkdir /mnt/0/chess
 mkdir /mnt/0/mgl
@@ -18,7 +18,7 @@ mkdir /mnt/0/eecs-ict
 mkdir /mnt/0/nixcpp
 mkdir /mnt/0/c
 mkdir /mnt/0/embnix
-mkdir /mnt/0/nixpythn
+mkdir /mnt/0/python
 mkdir /mnt/0/nixc3d
 mkdir /mnt/0/ambidexterity
 mkdir /mnt/0/"xrcs(упражнение)"
