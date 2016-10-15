@@ -269,3 +269,11 @@ $?:0
 #or
 scrub -p dod /dev/sdb1...
 
+#Find Out What Version of Linux You Are Running
+#http://www.tecmint.com/find-linux-kernel-version-distribution-name-version-number/
+cat /proc/version
+cat /etc/os-release
+lsb_release -a
+
+lscpu
+
