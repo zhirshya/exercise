@@ -106,7 +106,8 @@ alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21'
 alias utf='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -a dwn'
 alias utl='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -ci'
 alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --write-sub --sub-lang ru,en --sub-format best --embed-subs'
-alias utlscap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 --list-subs'
+alias utlscap='youtube-dl --youtube-skip-dash-manifest -R 21 --list-subs'
+alias utlscvr='youtube-dl --youtube-skip-dash-manifest -R 21 --list-thumbnails'
 
 alias or='cd /mnt/0/skachat/tor-browser_en-US && ./start-tor-browser.desktop && -'
 
@@ -150,7 +151,8 @@ alias fdef='declare -f' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /mnt/0/gthb/note/.todo'
 alias td='vim /mnt/0/gthb/note/.todo'
 alias utv0='utv 0'
-#rss word,punctuation,symbol
+#punctuation,symbol,rus word
+alias unicdnum='echo №'
 alias ru2anglbrkt='echo « »'
 alias ruclean='echo убирать' #clean up, tidy up
 
