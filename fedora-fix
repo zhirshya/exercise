@@ -130,3 +130,28 @@ xset dpms force off
 #disable Adobe Flash Player in Chrome:
 chrome://plugins
 
+#fcitx mozc
+#https://srobb.net/jpninpt.html#Fedora
+dnf search fcitx mozc
+sudo dnf install -y fcitx fcitx-data fcitx-m17n fcitx-anthy fcitx-cloudpinyin fcitx-libs fcitx-configtool mozc
+#font
+sudo dnf install -y vlgothic-fonts vlgothic-p-fonts sazanami-mincho-fonts sazanami-gothic-fonts
+
+#.bashrc
+export LC_CTYPE=en_US.UTF-8
+
+#$HOME/.xinitrc
+export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+
+#$HOME/.config/fcitx/profile
+anthy:true
+
+#disable ibus integration in Gnome
+gsettings set org.gnome.settings-daemon.plugins.keyboard active false
+#switch im-settings
+imsettings-switch fcitx
+#turn off ibus
+su -c 'mv /usr/bin/ibus-daemon /usr/bin/ibus-daemon.bak'
+
