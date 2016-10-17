@@ -154,7 +154,8 @@ if [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]];then
 #wndw_pos="--video-x 0 --video-y 0" #vlc won't work this way!
 echo 'hit [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]]'
 fi
-nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
+nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue --loop "$@" &> /dev/null & disown
+#nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
 }
 
 function vlopt() {
