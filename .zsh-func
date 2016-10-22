@@ -164,7 +164,7 @@ vlc --longhelp --advanced
 
 function utup() {
 setopt nocasematch
-
+echo «$(\date)»
 xt_code=113
 out_msg="error"
 counter=0
@@ -180,6 +180,7 @@ while (($xt_code != 0)) || [[ $out_msg =~ error* ]];do #1.ERROR: can't find the 
   echo "#debug:youtube-dl -U exit code:$xt_code"
   echo "#debug:youtube-dl -U output message:$out_msg"
 done
+echo «$(\date)»
 }
 
 function fx() {
@@ -213,6 +214,7 @@ done
 function ss() {
 #detect OS(Ubuntu, Debian, Mint, kali, RHEL, Centos, Fedora, Suse, etc.)
 #sudo apt update && sudo apt upgrade -y
+echo «$(\date)»
 sudo dnf upgrade -y #Fedora
 echo '$?':$?
 utup
