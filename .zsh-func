@@ -218,6 +218,13 @@ echo «$(\date)»
 sudo dnf upgrade -y #Fedora
 echo '$?':$?
 utup
+xt_code=$?
+echo '$xt_code':$xt_code
+#trap on EXIT, that way, times will be called whenever the shell exits and the exit status will be preserved.
+#http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
+trap times EXIT
+echo '$?':$?
+#exit $?
 }
 
 function putfio() {
