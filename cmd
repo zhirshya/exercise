@@ -277,3 +277,9 @@ lsb_release -a
 
 lscpu
 
+#disown, nohup
+#Detach a Linux Processes From Controlling Terminal
+#to completely detach a process from a controlling terminal, use the command format below, this is more effective for graphical user interface (GUI) applications such as firefox:
+firefox </dev/null &>/dev/null &
+#http://www.tecmint.com/run-linux-command-process-in-background-detach-process/
+
