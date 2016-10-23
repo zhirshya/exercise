@@ -56,11 +56,11 @@ echo '$?':$?
 }
 
 function utmp3() {
-  youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
+  youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
 }
 
 function ut18() {
-  youtube-dl --youtube-skip-dash-manifest -R 21 --prefer-ffmpeg -f 18 "$1"
+  youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -f 18 "$1"
 }
 
 function dprx() {
@@ -223,6 +223,8 @@ echo '$xt_code':$xt_code
 #trap on EXIT, that way, times will be called whenever the shell exits and the exit status will be preserved.
 #http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
 trap times EXIT
+echo '$(time)':$(time)
+echo '$(times)':$(times)
 echo '$?':$?
 #exit $?
 }

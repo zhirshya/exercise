@@ -9,7 +9,7 @@ echo «$(\date)»
 
 xt_code=-1
 while [[ $xt_code -ne 0 ]];do
-  find /mnt/0 -type f -iname 'dwn' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -R 21 -a {} +
+  find /mnt/0 -type f -iname 'dwn' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} +
   xt_code=$?
   echo "exit code(find...-execdir youtube-dl...{} +):$xt_code"
 done
