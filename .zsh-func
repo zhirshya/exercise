@@ -491,3 +491,31 @@ echo '#cmd':$cmd
 eval ${cmd}
 echo '$?':$?
 }
+
+function appvr() {
+uname -a
+vim --version
+echo
+gdb --version
+echo
+gcc --version
+echo
+g++ --version
+echo
+git --version
+echo
+openssl version
+echo
+ssh -V
+echo
+libreoffice --version
+echo
+vlc --version
+echo
+firefox --version
+echo
+xmllint --version
+echo
+youtube-dl --version
+echo
+}
