@@ -221,11 +221,13 @@ xt_code=$?
 echo '$xt_code':$xt_code
 #trap on EXIT, that way, times will be called whenever the shell exits and the exit status will be preserved.
 #http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
+echo 'trap times EXIT'
 trap times EXIT
-echo '$(time)':$(time)
-echo '$(times)':$(times)
+echo '$(time) after "trap times EXIT"':$(time)
+echo '$(times) after "trap times EXIT"':$(times)
 echo '$?':$?
-#exit $?
+echo 'exit $?'
+exit $?
 }
 
 function putfio() {
