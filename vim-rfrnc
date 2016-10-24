@@ -109,3 +109,16 @@ vim Repeat last colon command (The last command entered with ':' can be repeated
 
 :%s/-exec\(.*{}\) +/-execdir\1 \\;/gc #should NOT use with ls variants!
 
+#http://vim.wikia.com/wiki/Moving_to_matching_braces
+% key can be used for the following:
+    To jump to a matching opening or closing parenthesis, square bracket or a curly brace: ([{}])
+    To jump to start or end of a C-style comment: /* */.
+    To jump to a matching C/C++ preprocessor conditional: #if, #ifdef, #else, #elif, #endif.
+    To jump between appropriate keywords, if supported by the ftplugin file, for example, between begin and end in a Pascal program. 
+
+A nice keymap is:
+noremap % v%
+
+This way, whenever you type % you jump to the matching object, and you visually select all the text in between. It's useful for indenting a C/C++ method/class: go to opening/closing brace, and type =%
+«end of % »
+
