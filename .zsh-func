@@ -226,8 +226,6 @@ trap times EXIT
 echo '$(time) after "trap times EXIT"':$(time)
 echo '$(times) after "trap times EXIT"':$(times)
 echo '$?':$?
-echo 'exit $?'
-exit $?
 }
 
 function putfio() {
@@ -496,6 +494,7 @@ echo '$?':$?
 
 function appvr() {
 uname -a
+echo
 vim --version
 echo
 gdb --version
@@ -512,12 +511,16 @@ ssh -V
 echo
 libreoffice --version
 echo
+ffmpeg -version
+echo
+gimp --version
+echo
 vlc --version
 echo
 firefox --version
 echo
 xmllint --version
 echo
-youtube-dl --version
+echo 'youtube-dl --version':$(youtube-dl --version)
 echo
 }
