@@ -524,3 +524,16 @@ echo
 echo 'youtube-dl --version':$(youtube-dl --version)
 echo
 }
+
+function librsprsht() {
+nohup libreoffice --calc "$@" &> /dev/null & disown
+}
+
+function librwrtr() {
+nohup libreoffice --writer "$@" &> /dev/null & disown
+}
+
+function librsld() {
+nohup libreoffice --impress "$@" &> /dev/null & disown
+}
+
