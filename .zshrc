@@ -156,9 +156,11 @@ alias utv0='utv 0'
 alias lynx='lynx -cookies=off'
 
 #punctuation,symbol,rus word
-alias unicdnum='echo №'
-alias ru2anglbrkt='echo « »'
-alias cfmrk='echo ↔'
+alias numero='echo №'
+alias guillemet='echo ‹ › « »'
+alias notesin='echo ※'
+alias cfmrk='echo ↔ ⇔'
+alias tikcrs='echo ✓ ✔ ✗ ✘'
 alias ruclean='echo убирать' #clean up, tidy up
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls
