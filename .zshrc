@@ -158,6 +158,7 @@ alias lynx='lynx -cookies=off'
 #punctuation,symbol,rus word
 alias unicdnum='echo №'
 alias ru2anglbrkt='echo « »'
+alias cfmrk='echo ↔'
 alias ruclean='echo убирать' #clean up, tidy up
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls

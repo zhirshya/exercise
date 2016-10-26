@@ -494,35 +494,21 @@ echo '$?':$?
 
 function appvr() {
 uname -a
-echo
 vim --version
-echo
 gdb --version
-echo
 gcc --version
-echo
 g++ --version
-echo
 git --version
-echo
 openssl version
-echo
 ssh -V
-echo
 libreoffice --version
-echo
 ffmpeg -version
-echo
 gimp --version
-echo
 vlc --version
-echo
 firefox --version
-echo
 xmllint --version
-echo
+echo 'node --version':$(node --version)
 echo 'youtube-dl --version':$(youtube-dl --version)
-echo
 }
 
 function librsprsht() {
