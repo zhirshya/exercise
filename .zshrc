@@ -157,6 +157,10 @@ alias lynx='lynx -cookies=off'
 
 #punctuation,symbol,rus word
 alias numero='echo №'
+alias pilcrow='echo ¶'
+alias section='echo §'
+alias xclam='echo !'
+alias question='echo ?'
 alias guillemet='echo ‹ › « »'
 alias notesin='echo ※'
 alias cfmrk='echo ↔ ⇔'
