@@ -156,6 +156,7 @@ alias utv0='utv 0'
 alias lynx='lynx -cookies=off'
 
 #punctuation,symbol,rus word
+alias rubl='echo ₽'
 alias numero='echo №'
 alias pilcrow='echo ¶'
 alias section='echo §'
