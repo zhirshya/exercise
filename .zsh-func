@@ -511,15 +511,15 @@ echo 'node --version':$(node --version)
 echo 'youtube-dl --version':$(youtube-dl --version)
 }
 
-function librsprsht() {
+function sprsht() {
 nohup libreoffice --calc "$@" &> /dev/null & disown
 }
 
-function librwrtr() {
+function wrtr() {
 nohup libreoffice --writer "$@" &> /dev/null & disown
 }
 
-function librsld() {
+function slid() {
 nohup libreoffice --impress "$@" &> /dev/null & disown
 }
 
