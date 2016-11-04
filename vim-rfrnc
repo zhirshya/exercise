@@ -122,3 +122,8 @@ noremap % v%
 This way, whenever you type % you jump to the matching object, and you visually select all the text in between. It's useful for indenting a C/C++ method/class: go to opening/closing brace, and type =%
 «end of % »
 
+#delete from current position until <x>
+dtx deletes from current position till just before x. Just tx moves the cursor to just before character x in current line.
+To delete up to and including the space, use df<space>.
+
+
