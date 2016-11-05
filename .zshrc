@@ -93,8 +93,8 @@ else
 	alias vm=vim
 fi
 
-alias ll='ls -alF'
-alias lls='ls -alF | less'
+alias ll='ls -alFt' #Pass the -r option to reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size)
+alias lls='ls -alFt | less'
 #alias s0='sudo shutdown -P -f --no-wall'	#Fedora
 alias rbt='sudo reboot -f --no-wall'	#Fedora
 alias ins='sudo dnf install -y'	#Fedora
