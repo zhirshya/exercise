@@ -283,3 +283,7 @@ lscpu
 firefox </dev/null &>/dev/null &
 #http://www.tecmint.com/run-linux-command-process-in-background-detach-process/
 
+#list all open ports or currently running ports including TCP and UDP
+cat /etc/services | less
+netstat -lntu
+
