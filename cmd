@@ -287,3 +287,6 @@ firefox </dev/null &>/dev/null &
 cat /etc/services | less
 netstat -lntu
 
+#youtube
+framestep through a paused video using , (comma) and . (dot) to go backwards and forwards 1 frame.
+
