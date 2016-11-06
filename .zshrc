@@ -147,8 +147,8 @@ alias gxx='ccache g++ -std=c++14 -Wall -Wextra -g'
 alias vgr='valgrind --leak-check=yes'
 
 alias scrot='scrot -q 100 -d 7 -c -e eog'
-alias wget='wget --no-cookies --retry-connrefused -t 40 -c' #or utilize .wgetrc
-alias wgetf='wget --no-cookies --retry-connrefused -t 40 -c -i' #or utilize .wgetrc
+alias wget='wget --no-cookies -c' #or utilize .wgetrc
+alias wgetf='wget --no-cookies -c -i' #or utilize .wgetrc
 alias fdef='declare -f' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /mnt/0/gthb/note/.todo'
 alias td='vim /mnt/0/gthb/note/.todo'
