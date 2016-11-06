@@ -51,3 +51,5 @@ git config --global core.excludesfile /mnt/0/.gitignore_global
 #add new/modified/deleted files in the current directory
 ga -A .
 
+git remote -v
+
