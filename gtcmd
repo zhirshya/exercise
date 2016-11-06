@@ -52,4 +52,6 @@ git config --global core.excludesfile /mnt/0/.gitignore_global
 ga -A .
 
 git remote -v
+git checkout -b newbranch
+git branch
 
