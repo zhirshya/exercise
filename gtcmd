@@ -51,7 +51,12 @@ git config --global core.excludesfile /mnt/0/.gitignore_global
 #add new/modified/deleted files in the current directory
 ga -A .
 
-git remote -v
 git checkout -b newbranch
-git branch
+git remote -v
+#git branch
+git merge master
+git add -A
+git commit
+git push --set-upstream origin newbranch
+
 
