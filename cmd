@@ -42,10 +42,12 @@ width=960
 height=640
 
 #trim, strip off audio/video
+#https://trac.ffmpeg.org/wiki/Encode/HighQualityAudio
 ffmpeg -i InputFile -c copy -ss 00:00:00 -t <duration> OutPutFile
 ffmpeg -i InputFile  -vn -acodec copy -ss 00:00:00 -t <duration> OutPutFile
 ffmpeg -i MGTOW\ Reason\ \#13\ -\ Aftershock\ From\ The\ Wedding-A17CBtwEmcE.webm -an -vcodec copy aftershock\ marriage-A17CBtwEmcE.webm
 ffmpeg -i How\ to\ lace\ dress\ shoes\ ·\ Carmina\ shoemaker-L3p_jjYKImc.mkv -an -vcodec copy -ss 0:0:7 -t 0:0:39 lace_dress_shoe-L3p_jjYKImc.mkv
+ffmpeg -i 21\ дарь\ эхийн\ ачлал.mkv -vn -c:a libmp3lame -aq 0 21\ дарь\ эхийн\ ачлал_aq_0.mp3
 
 #Concatenating media files
 https://trac.ffmpeg.org/wiki/Concatenate
