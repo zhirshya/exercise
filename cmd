@@ -292,3 +292,13 @@ netstat -lntu
 #youtube
 framestep through a paused video using , (comma) and . (dot) to go backwards and forwards 1 frame.
 
+#shell debug
+1. #!/bin/bash -xv
+2. bash/zsh/ksh -xv shellscript
+
+http://docstore.mik.ua/orelly/unix3/upt/ch37_01.htm
+#save the debugging output in file and see it on screen? Use tee to copy the scrfile stdout and stderr; add tee to the pipeline before the pager.
+# $ scrfile | tee outfile 2>&1 | less
+shellscript | tee output 2>&1 | less
+
+tail -f shellscript.log
