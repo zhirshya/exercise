@@ -1,11 +1,15 @@
 #!/bin/zsh
 
+#lock screen and power off display
+dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+xset dpms force off
+
 #1. find *.part files and download separately by extracting ID
 #find /mnt/0 -type f -iname '*.part' -execdir youtube-dl --youtube-skip-dash-manifest -a {} +
 # extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
 typeset -F SECONDS
-echo «$(\date)»
+echo (start)«$(\date)»
 
 xt_code=-1
 while [[ $xt_code -ne 0 ]];do
@@ -14,7 +18,7 @@ while [[ $xt_code -ne 0 ]];do
   echo "exit code(find...-execdir youtube-dl...{} +):$xt_code"
 done
 
-echo «$(\date)»
+echo (end)«$(\date)»
 echo '$(time)':$(time)
 echo '$(times)':$(times)
 #or add a trap on EXIT, that way, times will be called whenever the shell exits and the exit status will be preserved.
