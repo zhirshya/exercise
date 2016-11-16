@@ -302,3 +302,11 @@ http://docstore.mik.ua/orelly/unix3/upt/ch37_01.htm
 shellscript | tee output 2>&1 | less
 
 tail -f shellscript.log
+
+#linux lock screen and power off display from command line
+https://geek1011.github.io/linux-tip-lock-screen-from-command-line/
+https://github.com/geek1011/Scripts.sh/blob/master/LockScreen/LockScreen.sh
+xset dpms force off
+dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+
+
