@@ -9,7 +9,7 @@ xset dpms force off
 # extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
 typeset -F SECONDS
-echo (start)«$(\date)»
+echo "(start)«$(\date)»"
 
 xt_code=-1
 while [[ $xt_code -ne 0 ]];do
@@ -18,7 +18,7 @@ while [[ $xt_code -ne 0 ]];do
   echo "exit code(find...-execdir youtube-dl...{} +):$xt_code"
 done
 
-echo (end)«$(\date)»
+echo "(end)«$(\date)»"
 echo '$(time)':$(time)
 echo '$(times)':$(times)
 #or add a trap on EXIT, that way, times will be called whenever the shell exits and the exit status will be preserved.
