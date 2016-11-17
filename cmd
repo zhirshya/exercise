@@ -311,3 +311,10 @@ dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver
 
 dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock;xset dpms force off;utv0
 
+#Linux Unified Key Setup (LUKS)
+#The security issue relies due to a vulnerability (CVE-2016-4484) in the implementation of the Cryptsetup utility used for encrypting hard drives via Linux Unified Key Setup (LUKS), which is the standard implementation of disk encryption on a Linux-based operating system.
+#modify the cryptroot file to stop the boot sequence when the number of password attempts has been exhausted.
+#http://thehackernews.com/2016/11/hacking-linux-system.html
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="/GRUB_CMDLINE_LINUX_DEFAULT="panic=5 /' /etc/default/grub grub-install
+
+
