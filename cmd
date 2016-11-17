@@ -309,4 +309,5 @@ https://github.com/geek1011/Scripts.sh/blob/master/LockScreen/LockScreen.sh
 xset dpms force off
 dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 
+dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock;xset dpms force off;utv0
 
