@@ -1,0 +1,16 @@
+https://stackoverflow.com/questions/40562173/cant-resolve-host-github-com-on-ubuntu-14-04-but-not-in-fedora-22
+
+<div class="post-text" itemprop="text">
+
+<p>Whenever I push to github repos in Ubuntu 14.04+ (14.04LTS, .1, .2, .3 as well as 16.04LTS, .1), first 4 or 5 times always fail with </p>
+
+<pre><code>can't resolve host github.com
+</code></pre>
+
+<p>then only at 5th or 6th try it succeed, but in Fedora 22~24 on the <strong>same laptop</strong> with the <strong>same WiFi connection</strong>, there haven't a single time that <em>"can't resolve host github.com"</em> so far.</p>
+
+<p>For my old Lenovo laptop, have <strong>exactly the same problem</strong>, i.e., push to github always fail for the first few tries, but never for fedora, same laptop same WiFi.<br>
+That's the reason I moved from ubuntu to fedora.<br>
+I'm not tech-savvy, I haven't changed any network settings for both ubuntu and fedora installation. For ubuntu, I installed <em><a href="https://wiki.ubuntu.com/UncomplicatedFirewall" rel="nofollow noreferrer">UFW</a></em>, kept with default settings, and for fedora, no firewall.</p><p>
+What's the problem of the issue and how to solve that if I have to use ubuntu?</p>
+</div>
