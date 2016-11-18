@@ -156,6 +156,8 @@ alias utv0='utv 0'
 alias lynx='lynx -cookies=off'
 
 #punctuation,symbol,rus word
+alias rangli='echo ð'
+alias theta='echo θ Θ ϴ ϑ'
 alias rubl='echo ₽'
 alias numero='echo №'
 alias pilcrow='echo ¶'

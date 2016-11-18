@@ -1,0 +1,43 @@
+<div class="post-text" itemprop="text">
+
+<p>In Windows 7 workstation, the following route was added to access Linux server through SSH.<br>
+<code>route -p add 172.24.16.0 mask 255.255.240.0 192.168.114.9</code>
+</p><p>
+Is it possible to <em><strong>add in the Linux server a route to a Windows share that is on the same local network with Windows 7 workstation</strong></em>?<br>In order to <strong><em>copy app log to a Windows share</em></strong><strong> directly from within Linux server</strong> without first downloading onto a Windows 7 workstation, then transfer to the Windows share.(i.e. reverse route back to windows share from linux server)</p>
+
+<p>The Linux server has 3 Ethernet interfaces, relevant info as below obtained from "ifconfig":<br>
+
+eth0: inet addr 172.24.22.1 Bcast 172.24.22.255 Mask 255.255.255.0<br>
+eth1: inet addr 172.24.23.1 Bcast 172.24.23.127 Mask 255.255.255.128<br>
+eth2: inet addr 172.24.21.1 Bcast 172.24.21.127 Mask 255.255.255.128<br>
+lo:   inet addr 127.0.0.1   Bcast 255.0.0.0<br>
+</p>
+
+<p><code>#route -n</code> <em>(Linux server)</em><br>
+
+Kernel IP routing table<br>
+Destination | Gateway | Genmask | Flags | Metric | Ref | Use | Iface<br>
+172.24.30.64 | 172.24.22.254 | 255.255.255.224 | UG | 0 | 0 | 0 | eth0<br>
+172.24.20.128 | 172.24.22.254 | 255.255.255.128 | UG | 0 | 0 | 0 | eth0<br>
+172.24.21.0 | 0.0.0.0 | 255.255.255.128 | U | 0 | 0 | 0 | eth2<br>
+172.24.23.0 | 0.0.0.0 | 255.255.255.128 | U | 0 | 0 | 0 | eth1<br>
+172.24.22.0 | 0.0.0.0 | 255.255.255.0 | UG | 0 | 0 | 0 | eth0<br>
+172.24.17.0 | 172.24.22.254 | 255.255.255.0 | UG | 0 | 0 | 0 | eth0<br>
+0.0.0.0 | 172.24.21.126 | 0.0.0.0 | UG | 0 | 0 | 0 | eth2<br>
+</p>
+
+<p>Suppose the IP of Windows 7 workstation is 192.168.114.127, net mask is 255.255.255.0 and default gateway is 192.168.114.1, as "ipconfig/all" output.
+</p><p>
+If possible, <strong>what's the correct route command to issue in Linux server?</strong><br>
+<code>
+route -v add -net <strong>public_ip_of_Windows_network?</strong> netmask <strong>255.x.y.z?</strong> gw <strong>172.24.22.254?<em>(gateway field for interface eth0 of above "route -n")</em></strong>
+</code>
+<br>
+Or better with what <strong><em>iproute2</em></strong> command?
+</p><p>
+The Linux server is RHEL 6.5.
+<br>
+The Windows LAN has imposed corporate proxy which I'm currently not familiar with.
+</p><p>
+<strong>Beside that, what packages other than Samba are required?</strong></p>
+</div>
