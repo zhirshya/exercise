@@ -523,3 +523,8 @@ function slid() {
 nohup libreoffice --impress "$@" &> /dev/null & disown
 }
 
+function scrlkpf() {
+dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+xset dpms force off
+}
+
