@@ -317,4 +317,7 @@ dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver
 #http://thehackernews.com/2016/11/hacking-linux-system.html
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="/GRUB_CMDLINE_LINUX_DEFAULT="panic=5 /' /etc/default/grub grub-install
 
+#UEFI
+dd;BIOS UEFI mode;secure boot OFF #Kali 2016.2+
+dd;BIOS UEFI mode #Fedora
 
