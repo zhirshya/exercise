@@ -528,3 +528,7 @@ dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver
 xset dpms force off
 }
 
+function evince() {
+nohup evince "$@" &> /dev/null & disown
+}
+
