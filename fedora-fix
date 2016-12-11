@@ -19,7 +19,7 @@ rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-24.no
 dnf install –nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf install –nogpgcheck http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-dnf install -y glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb ccache valgrind anki tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins bzip2 evince zsh vlc gimp ffmpeg lynx scrot mosh
+dnf install -y glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb ccache valgrind anki tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins bzip2 evince zsh vlc gimp ffmpeg lynx scrot mosh zbar
 
 #dnf install ncurses-devel ncurses libselinux-devel dkms acl kernel-devel kernel-headers
 #dnf install pycryptopp python-crypto python-cryptography libffi-devel python-devel openssl-devel python-pip
