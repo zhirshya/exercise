@@ -92,6 +92,7 @@ if [ -e /usr/bin/vimx ]; then
 else
 	alias vm=vim
 fi
+alias vm='gvim -v' #The -v option will run gvim in terminal mode, and gvim is always built with support for X11 and the clipboard.
 
 alias ll='ls -alFt' #Pass the -r option to reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size)
 alias lls='ls -alFt | less'
