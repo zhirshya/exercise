@@ -87,12 +87,12 @@ export LC_CTYPE=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias src='source ~/.zshrc'
 
-if [ -e /usr/bin/vimx ]; then 
-	alias vm='/usr/bin/vimx'
+if [ -e /usr/bin/vimx ]; then  #/usr/bin/vimx: symbolic link to gvim
+	alias vm='/usr/bin/vimx -v'
+#	alias vm='gvim -v' #The -v option will run gvim in terminal mode, and gvim is always built with support for X11 and the clipboard.
 else
 	alias vm=vim
 fi
-alias vm='gvim -v' #The -v option will run gvim in terminal mode, and gvim is always built with support for X11 and the clipboard.
 
 alias ll='ls -alFt' #Pass the -r option to reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size)
 alias lls='ls -alFt | less'
