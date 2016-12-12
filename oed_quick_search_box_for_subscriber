@@ -1,0 +1,3 @@
+<div style=”font:normal 13px/1.5 Arial;width:318px;height:98px;background:#f1f5fb;border:1px solid #d8e0f5;margin:0;padding:20px 10px 10px 10px;text-align:left”> <h1 style=”margin:0 0 5px 0;color:#2b5688;font-size:15px”>Search Oxford English Dictionary</h1> <div style=”background:#fff;width:300px;padding:5px;margin:0″> <form enctype=”application/x-www-form-urlencoded” method=”get” action=”http://www.oed.com:80/search” name=”oed_search” id=”oed_search”> <div style=”text-align:left;width:280px;margin:10px auto 10px”> <label for=”text”>Enter word or phrase:</label><input size=”20″ name=”q” type=”text” style=”textfield”></input><br/><input type=”submit” value=”Search”></input> </div></form></div></div>
+
+http://public.oed.com/subscriber-services/lookup-tools/
