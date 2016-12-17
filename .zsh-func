@@ -57,10 +57,12 @@ echo '$?':$?
 
 function utmp3() {
   youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
+echo '$?':$?
 }
 
 function ut18() {
   youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -f 18 "$1"
+echo '$?':$?
 }
 
 function dprx() {
@@ -112,6 +114,7 @@ echo "NO_PROXY:$NO_PROXY"
 
 function --() { #clean
 rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
+echo '$?':$?
 #sudo dnf autoremove -y #always automatically remove kernel-modules-extra which will be installed on next system upgrade!
 #sudo apt autoremove -y
 #sudo apt autoclean
@@ -125,12 +128,14 @@ function +() { #append to todo file
 if (($# > 0));then
   echo "$@" >> /mnt/0/gthb/note/.todo
 fi
+echo '$?':$?
 }
 
 function dwn+() { #append to youtube download file
 for url in "$@";do
   echo "$url" >> dwn
 done
+echo '$?':$?
 }
 
 function upgrlog() { #view cron job upgrade cmd log
@@ -208,6 +213,7 @@ for file in $(find /mnt/0 ~ -type f -iname 'dwn*');do
     more $file
   fi
 done
+echo '$?':$?
 }
 
 function ss() {
