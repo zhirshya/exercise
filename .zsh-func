@@ -115,7 +115,7 @@ echo "NO_PROXY:$NO_PROXY"
 function --() { #clean
 rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
 echo '$?':$?
-#sudo dnf autoremove -y #always automatically remove kernel-modules-extra which will be installed on next system upgrade!
+sudo dnf autoremove #always automatically remove kernel-modules-extra which will be installed on next system upgrade!
 #sudo apt autoremove -y
 #sudo apt autoclean
 #sudo apt clean
