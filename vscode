@@ -1,0 +1,16 @@
+#disable crash reporting
+From File > Preferences > User Settings, add the following option to disable crash reporting:
+
+    "telemetry.enableCrashReporter": false
+
+Important Notice: This option requires a restart of VS Code to take effect.
+
+#disable telemetry reporting
+VS Code collects usage data and sends it to Microsoft to help improve our products and services. Read our privacy statement to learn more.
+
+If you don’t wish to send usage data to Microsoft, you can set the telemetry.enableTelemetry setting to false.
+
+From File > Preferences > User Settings, add the following option to disable telemetry reporting:
+    "telemetry.enableTelemetry": false
+https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-crash-reporting
+
