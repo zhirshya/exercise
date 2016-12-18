@@ -10,21 +10,19 @@ sudo /etc/cron.daily/logrotate
 #hrdwr info
 lspci  -v | grep -i wireless
 
-dnf erase rhythmbox evolution totem thunderbird nano
+#rpmfusion
+su -c 'dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+
+dnf remove rhythmbox evolution totem thunderbird nano
 
 dnf upgrade -y
 
-rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-24.noarch.rpm
+dnf install -y glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb ccache valgrind anki tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins bzip2 evince zsh vlc gimp ffmpeg lynx scrot
 
-dnf install –nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-dnf install –nogpgcheck http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-dnf install -y glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb ccache valgrind anki tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins bzip2 evince zsh vlc gimp ffmpeg lynx scrot mosh zbar
+#mosh zbar
 
 #dnf install ncurses-devel ncurses libselinux-devel dkms acl kernel-devel kernel-headers
 #dnf install pycryptopp python-crypto python-cryptography libffi-devel python-devel openssl-devel python-pip
-
-dnf --nogpgcheck install google-chrome-stable_current_x86_64.rpm
 
 #VirtualBox
 Creating group 'vboxusers'. VM users must be member of that group!
@@ -154,4 +152,27 @@ gsettings set org.gnome.settings-daemon.plugins.keyboard active false
 imsettings-switch fcitx
 #turn off ibus
 su -c 'mv /usr/bin/ibus-daemon /usr/bin/ibus-daemon.bak'
+
+#clean up old packages
+https://fedoraproject.org/wiki/DNF_system_upgrade#Clean_up_old_packages
+You can see list of packages with broken dependencies like this:
+$ sudo dnf repoquery --unsatisfied
+
+Ideally there should be none. If there are some, consider removing them, because they are not likely to work properly anyway.
+
+You can see duplicated packages (packages with multiple versions installed) like this:
+$ sudo dnf repoquery --duplicated
+
+For ordinary packages, just the latest version should be installed. But there can be exceptions to the rule, only remove what you are sure you no longer need.
+
+Some packages might stay on your system while they have been removed from the repositories. See them using:
+$ sudo dnf list extras
+
+If you don't use these, you can consider removing them. Please note that this list is only valid if you have a fully updated system. Otherwise you'll see all installed packages which are no longer in the repositories, because there is a newer update available. So before acting on these, make sure you have run sudo dnf update and generate the list of extra packages again. Also, this list might contain packages installed from third-party repositories for which an updated repository hasn't been published yet. This often involves e.g. RPM Fusion or Dropbox.
+
+You can remove no-longer-needed packages using:
+$ sudo dnf autoremove
+
+but beware that dnf decides that a package is no longer needed if you haven't explicitly asked to install it and nothing else requires it. That doesn't mean that package is not useful or that you don't use it. Only remove what you are certain you don't need. There's a known bug in PackageKit which doesn't mark packages as user-installed, see bug 1259865. If you use PackageKit (or GNOME Software, Apper, etc) for installation, this output might list even important apps and system packages, so beware.
+
 
