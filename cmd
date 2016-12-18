@@ -328,3 +328,5 @@ rpmfusion-free-release-25-2.noarch
 
 rpm -qa | grep vlc
 
+rpm -qa | egrep '(uname)|(vim)|(gdb)|(gcc)|(g++)|(git)|(openssl)|(ssh)|(libreoffice)|(ffmpeg)|(gimp)|(vlc)|(firefox)|(xmllint)|(node)|(youtube-dl)' #grep lot more other app
+
