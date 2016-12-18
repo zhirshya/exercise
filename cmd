@@ -321,3 +321,12 @@ sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="/GRUB_CMDLINE_LINUX_DEFAULT="panic=5 /' /e
 dd;BIOS UEFI mode;secure boot OFF #Kali 2016.2+
 dd;BIOS UEFI mode #Fedora
 
+#rpm
+su -c 'dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+
+rpm -qa | grep rpmfusion
+rpmfusion-free-appstream-data-25-3.fc25.noarch
+rpmfusion-free-release-25-2.noarch
+
+rpm -qa | grep vlc
+
