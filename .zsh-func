@@ -42,7 +42,21 @@ echo '$?':$?
 #  fi
 }
 
-function lpr() {
+function fnd() {
+cmd='find /mnt/0 ~ -xdev \( '
+
+for id in "$@";do
+cmd+="-iname \"*$id*\" -o "
+done
+
+cmd=${cmd% -o }
+cmd+=' \) -type f -exec ls -alF {} \;'
+echo '#cmd':$cmd
+eval ${cmd}
+echo '$?':$?
+}
+
+function lsprt() {
 if (($# == 0));then
   ll *part
 else
@@ -114,8 +128,8 @@ echo "NO_PROXY:$NO_PROXY"
 
 function --() { #clean
 rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
+sudo dnf autoremove #sometimes automatically remove kernel-modules-extra which will be installed on next system upgrade!
 echo '$?':$?
-sudo dnf autoremove #always automatically remove kernel-modules-extra which will be installed on next system upgrade!
 #sudo apt autoremove -y
 #sudo apt autoclean
 #sudo apt clean
@@ -150,13 +164,13 @@ function vd() {
 audio_only_flg=""
 wndw_pos=""
 if [[ $* =~ mp3\|flac\|aac\|wav ]];then
-#if [[ $* =~ (mp3|flac|aac|wav)* ]];then #parse error near `|'
-audio_only_flg="--qt-start-minimized"
-echo 'hit [[ $* =~ mp3\|flac\|aac\|wav ]]'
+  #if [[ $* =~ (mp3|flac|aac|wav)* ]];then #parse error near `|'
+    audio_only_flg="--qt-start-minimized"
+    echo 'hit [[ $* =~ mp3\|flac\|aac\|wav ]]'
 elif [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]];then
-#if [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]];then #parse error near `|'
-#wndw_pos="--video-x 0 --video-y 0" #vlc won't work this way!
-echo 'hit [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]]'
+  #if [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]];then #parse error near `|'
+    #wndw_pos="--video-x 0 --video-y 0" #vlc won't work this way!
+    echo 'hit [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]]'
 fi
 nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue --qt-start-minimized --loop "$@" &> /dev/null & disown
 #nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
@@ -277,20 +291,6 @@ if (($# == 1));then
   #iconv -t UTF-8 "$1" > "${basename}_utf8.${extension}"
   echo '$?':$?
 fi
-}
-
-function fnd() {
-cmd='find /mnt/0 ~ -xdev \( '
-
-for id in "$@";do
-cmd+="-iname \"*$id*\" -o "
-done
-
-cmd=${cmd% -o }
-cmd+=' \) -type f -exec ls -alF {} \;'
-echo '#cmd':$cmd
-eval ${cmd}
-echo '$?':$?
 }
 
 function srv() {
