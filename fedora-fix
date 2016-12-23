@@ -14,7 +14,7 @@ lspci  -v | grep -i wireless
 su -c 'dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
 
 #remove flash
-sudo find / -iname "*macromedia*" -o -iname "*flashplayer*" -execdir rm -ri {} \;
+sudo find / -xdev -iname "*macromedia*" -o -iname "*flashplayer*" -execdir rm -ri {} \;  #"find: ‘/run/user/1000/gvfs’: Permission denied" even for root #http://unix.stackexchange.com/questions/77453/why-cannot-find-read-run-user-1000-gvfs-even-though-it-is-running-as-root
 sudo dnf remove flash-plugin flashplugin-installer
 firefox: about:config about:plugins
 

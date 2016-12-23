@@ -4,7 +4,7 @@ function \?() {
 setopt nocasematch
 #string == pattern
 #  true if string matches pattern. The ‘==’ form is the preferred one. The ‘=’ form is for backward compatibility and should be considered obsolete.
-cmd='find /mnt/0 ~ \( '
+cmd='find /mnt/0 ~ -xdev \( '
 for id in "$@";do
   if [[ "$id" == http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]];then
     id="${id##http*://*youtu*be*/*watch\?v=}"
@@ -280,7 +280,7 @@ fi
 }
 
 function fnd() {
-cmd='find /mnt/0 ~ \( '
+cmd='find /mnt/0 ~ -xdev \( '
 
 for id in "$@";do
 cmd+="-iname \"*$id*\" -o "
