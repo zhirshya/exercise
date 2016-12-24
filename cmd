@@ -41,7 +41,7 @@ ffprobe -v error -show_entries stream=width,height -of default=noprint_wrappers=
 width=960
 height=640
 
-#trim, strip off audio/video
+#trim/clip, strip off audio/video
 #https://trac.ffmpeg.org/wiki/Encode/HighQualityAudio
 ffmpeg -i InputFile -c copy -ss 00:00:00 -t <duration> OutPutFile
 ffmpeg -i InputFile  -vn -acodec copy -ss 00:00:00 -t <duration> OutPutFile
@@ -49,18 +49,22 @@ ffmpeg -i MGTOW\ Reason\ \#13\ -\ Aftershock\ From\ The\ Wedding-A17CBtwEmcE.web
 ffmpeg -i How\ to\ lace\ dress\ shoes\ ·\ Carmina\ shoemaker-L3p_jjYKImc.mkv -an -vcodec copy -ss 0:0:7 -t 0:0:39 lace_dress_shoe-L3p_jjYKImc.mkv
 ffmpeg -i 21\ дарь\ эхийн\ ачлал.mkv -vn -c:a libmp3lame -aq 0 21\ дарь\ эхийн\ ачлал_aq_0.mp3
 
-#Concatenating media files
+#speed up av
+ffmpeg -i Russian\ numbers\ 2\ 10\ 20\ 30,\ 100,\ 1000-vFlzWw62XQo.mp4 -filter:v "setpts=PTS/1.5" -filter:a "atempo=1.5" rus_num_1000-vFlzWw62XQo_1.5spd.mp4
+
+#clip+speed
+ffmpeg -i Russian\ Cursive\ Writing\(connecting\ letters\)-ZP8SDSHIk9g.mp4 -c copy -ss 0:0:40 -t 0:5:0 rus_cursive_connected-ZP8SDSHIk9g.mp4 && avspd rus_cursive_connected-ZP8SDSHIk9g.mp4 && echo '$?':$?
+
+#concatenate
 https://trac.ffmpeg.org/wiki/Concatenate
 ffmpeg -f concat -i filelist -c copy "Подмосковные Вечера(en+rss).mp3"
 #content of filelist
 file '/tmp/Moscow Night  Helmut Lotti-VbZHzF-Av1I.mp3'
 file '/tmp/Russian Red Army Choir - Moscow Nights-aw5L0IdKjps.mp3'
+
 #crop, scale
 ffmpeg -i crop_1.jpg -vf crop="250:ih-15:0:15" crop_2.jpg
 ffmpeg -i headscarf\ old\ women.jpg -vf scale=320:-1 crop.jpg
-
-#speed up av
-ffmpeg -i Russian\ numbers\ 2\ 10\ 20\ 30,\ 100,\ 1000-vFlzWw62XQo.mp4 -filter:v "setpts=PTS/1.5" -filter:a "atempo=1.5" rus_num_1000-vFlzWw62XQo_1.5spd.mp4
 
 #List Cron Jobs
 crontab –l –u username
