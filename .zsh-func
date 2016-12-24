@@ -160,7 +160,7 @@ elif [[ -f /var/log/youtube-dl_upgrade.log ]];then
 fi
 }
 
-function avl() {
+function vln() {
 audio_only_flg=""
 wndw_pos=""
 if [[ $* =~ mp3\|flac\|aac\|wav ]];then
