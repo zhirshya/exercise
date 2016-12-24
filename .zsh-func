@@ -56,7 +56,7 @@ eval ${cmd}
 echo '$?':$?
 }
 
-function lsprt() {
+function lsprt() {  #obsolete as having defined "03f && ? .part" ➟ find /mnt/0 ~ -xdev \( -iname "*.part*" \) -type f -exec ls -alF {} \;
 if (($# == 0));then
   ll *part
 else
