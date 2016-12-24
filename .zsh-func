@@ -326,6 +326,7 @@ done
 }
 
 #erroneous
+#Shift JIS to utf8
 function sjis2utf8() {
 if (($# == 1));then
   basename=${1%\.*}
@@ -382,17 +383,18 @@ else
 fi
 }
 
-#erroneous
+#primitive
 function avspd() {
-if (($# < 1 || $# > 3));then
+if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then  # { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?  http://unix.stackexchange.com/questions/88850/precedence-of-the-shell-logical-operators
   echo usage: avspd <local file> [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]
 #define EX_USAGE 64 /* command line usage error */
   return 64
 fi
 
 echo '$#':$#
+idx=0
 for arg in "$@";do
-  echo 'arg from "$@"':$arg
+  echo '$'$((++idx)):$arg
 done
 
 infile=""
@@ -448,7 +450,7 @@ if (($# == 3));then
     outfile+="."
     suffix="${infile##*.}"
     outfile+=$suffix
-  else
+  else  #? redundant as already checked at function start
     echo usage: avspd <local file> [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]
     #define EX_USAGE 64 /* command line usage error */
     return 64
@@ -460,13 +462,17 @@ if (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
   echo '[debug] hit (($# == 2)) && [[ $2 == (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]]'
 fi
 
-# [[ != ]] string match?
+# [[ != ]] literal string comparison?
 if (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
   echo '[debug] hit (($# == 2)) && [[ $2 != (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]]'
 fi
 
 if (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
-  echo '[debug] hit (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]'
+  echo '[debug] hit (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] #"[[ ! (xpr) ]]'
+fi
+
+if (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]];then
+  echo '[debug] hit (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]] #"[[ ! ( xpr ) ]]'
 fi
 echo "#test>"
 
@@ -474,7 +480,7 @@ echo "#test>"
 #infile_singlequoted=$(printf %s. "$infile" | sed "s/'/'\\\\''/g")
 #outfile_singlequoted=$(printf %s. "$outfile" | sed "s/'/'\\\\''/g")
 
-#'How'\''s Do One-Way Mirrors Work-4kKL32opewI.mp4' #output by ll
+#'How'\''s Do One-Way Mirrors Work-4kKL32opewI.mp4' #output by ll on Fedora24+
 
 infile_singlequoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
 outfile_singlequoted=$(printf \'%s\' "$(printf %s "$outfile" | sed "s/'/'\\\\''/g")")
