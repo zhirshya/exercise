@@ -171,6 +171,9 @@ elif [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]];then
   #if [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]];then #parse error near `|'
     #wndw_pos="--video-x 0 --video-y 0" #place VLC in top left corner
     echo '[debug] hit [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]]'
+else
+  echo 'error: invalid input files, please specify valid media files, and try again.'
+  return 113
 fi
 nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue --qt-start-minimized "$@" &> /dev/null & disown
 #nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
