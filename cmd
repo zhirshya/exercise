@@ -93,6 +93,7 @@ find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} \
 find . -type f -exec chmod 644 {} \;
 find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} ";"
 find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} \;
+find /mnt/0 ~ \( -iname "*07n*" -o -iname "*0n7*" -o -iname "*0o7*" -o -iname "*07o*" \) -type f -exec ls -alF {} \;
 
 #http://askubuntu.com/questions/419115/make-bluetooth-disabled-by-default
 rfkill unblock bluetooth
