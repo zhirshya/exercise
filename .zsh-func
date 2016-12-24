@@ -386,7 +386,10 @@ fi
 #primitive
 function avspd() {
 if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then  # { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?  http://unix.stackexchange.com/questions/88850/precedence-of-the-shell-logical-operators
-  echo usage: avspd <local file> [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]
+  if (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
+    echo '※[debug] hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
+  fi
+  echo 'usage: avspd input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]'
 #define EX_USAGE 64 /* command line usage error */
   return 64
 fi
@@ -401,7 +404,7 @@ infile=""
 outfile=""
 
 if [[ ! -f $1 ]];then
-  echo please specify a valid local file name, and try again.
+  echo 'please specify a valid local file name, and try again.'
   return 113
 else
   infile="$1"
@@ -451,7 +454,7 @@ if (($# == 3));then
     suffix="${infile##*.}"
     outfile+=$suffix
   else  #? redundant as already checked at function start
-    echo usage: avspd <local file> [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]
+    echo 'usage: avspd input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]'
     #define EX_USAGE 64 /* command line usage error */
     return 64
   fi
@@ -488,7 +491,7 @@ echo '"${infile_singlequoted}"':"${infile_singlequoted}"
 echo '"${outfile_singlequoted}"':"${outfile_singlequoted}"
 
 if [[ -f ${outfile_singlequoted} ]];then
-  echo error: destination/output file already exist, please specify other name for output, and try again.
+  echo 'error: destination/output file already exist, please specify other name for output, and try again.'
   return 113
 fi
 
