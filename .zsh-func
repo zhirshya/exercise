@@ -84,19 +84,19 @@ setopt nocasematch
 
 if (($# == 1));then
   if [[ "$1" == http ]];then
-    echo "hit regex \"== http\""
+    echo "[debug] hit regex \"== http\""
     unset http_proxy
     unset HTTP_PROXY
   elif [[ "$1" == https ]];then
-    echo "hit regex \"== https\""
+    echo "[debug] hit regex \"== https\""
     unset https_proxy
     unset HTTPS_PROXY
   elif [[ "$1" == ftp ]];then
-    echo "hit regex \"== ftp\""
+    echo "[debug] hit regex \"== ftp\""
     unset ftp_proxy
     unset FTP_PROXY
   elif [[ $1 =~ sock* ]];then
-    echo "hit regex \"=~ sock\""
+    echo "[debug] hit regex \"=~ sock\""
     unset socks_proxy
     unset SOCKS_PROXY
   fi
@@ -160,19 +160,19 @@ elif [[ -f /var/log/youtube-dl_upgrade.log ]];then
 fi
 }
 
-function vd() {
+function avl() {
 audio_only_flg=""
 wndw_pos=""
 if [[ $* =~ mp3\|flac\|aac\|wav ]];then
   #if [[ $* =~ (mp3|flac|aac|wav)* ]];then #parse error near `|'
     audio_only_flg="--qt-start-minimized"
-    echo 'hit [[ $* =~ mp3\|flac\|aac\|wav ]]'
+    echo '[debug] hit [[ $* =~ mp3\|flac\|aac\|wav ]]'
 elif [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]];then
   #if [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]];then #parse error near `|'
-    #wndw_pos="--video-x 0 --video-y 0" #vlc won't work this way!
-    echo 'hit [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]]'
+    #wndw_pos="--video-x 0 --video-y 0" #place VLC in top left corner
+    echo '[debug] hit [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]]'
 fi
-nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue --qt-start-minimized --loop "$@" &> /dev/null & disown
+nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue --qt-start-minimized "$@" &> /dev/null & disown
 #nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
 }
 
@@ -211,7 +211,7 @@ nohup google-chrome-stable --ssl-version-min=tls1.3 --incognito weblio.jp merria
 
 function 0p() {
 if (($# == 1)) && [[ $1 =~ [0-9]+ ]];then
-  echo 'hit (($# == 1)) && [[ $1 =~ [0-9]+ ]] and $1':$1
+  echo '[debug] hit (($# == 1)) && [[ $1 =~ [0-9]+ ]] and $1':$1
   sudo shutdown -P -f "$1"
 else
   sudo shutdown -P -f 0
