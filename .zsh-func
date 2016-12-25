@@ -175,7 +175,7 @@ else
   echo 'error: invalid input files, please specify valid media files, and try again.'
   return 113
 fi
-nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue --rate 1.2 --qt-start-minimized "$@" &> /dev/null & disown  #Playback speed
+nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue --rate 1.3 --qt-start-minimized "$@" &> /dev/null & disown  #Playback speed
 #nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
 }
 
