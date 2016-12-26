@@ -448,6 +448,10 @@ fi
 if (($# == 3));then
 #if [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]];then #parse error near `|'
   if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
+    if [[ -e $3 ]];then
+      echo 'error: destination/output file already exist, please specify other name for output, and try again.'
+      return 113
+    fi
     echo '[debug] hit [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]]'
     factor="$2"
     outfile="$3"
@@ -493,7 +497,7 @@ outfile_singlequoted=$(printf \'%s\' "$(printf %s "$outfile" | sed "s/'/'\\\\''/
 echo '"${infile_singlequoted}"':"${infile_singlequoted}"
 echo '"${outfile_singlequoted}"':"${outfile_singlequoted}"
 
-if [[ -f ${outfile_singlequoted} ]];then
+if [[ -e ${outfile_singlequoted} ]];then
   echo 'error: destination/output file already exist, please specify other name for output, and try again.'
   return 113
 fi
