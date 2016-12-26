@@ -434,6 +434,9 @@ if (($# == 2));then
     outfile+="."
     suffix="${infile##*.}"
     outfile+=$suffix
+  elif [[ -e $2 ]];then
+    echo 'error: destination/output file already exist, please specify other name for output, and try again.'
+    return 113
   else
     outfile="$2"
     outfile+="_spdx"
