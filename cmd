@@ -36,6 +36,9 @@ Server MPM:     prefork
 #how to check if port is open and unused
 netstat -tln | tail -n +3 | awk '{ print $4 }'
 
+#&&
+03f && ? ".f1*." ".f2*." ".f3*." ".f4*." ".f5*."
+
 #get video dimension from ffmpeg -i
 ffprobe -v error -show_entries stream=width,height -of default=noprint_wrappers=1 headscarf\ old\ women.jpg
 width=960
