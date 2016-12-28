@@ -562,3 +562,23 @@ function evince() {
 nohup evince "$@" &> /dev/null & disown
 }
 
+function mkcd() {
+if [[ -z $1 ]] || [[ ! -n $1 ]];then
+  echo 'error: please specify a valid directory name and try again.'
+  return 113
+elif [[ -d $1 ]];then
+  echo "error: destination directory '$1' already exist, please specify other name and try again."
+  return 113
+else
+  mkdir -p -- "$1" &&
+  cd -P -- "$1"
+  #BASH BUILTIN COMMANDS
+  #Unless otherwise noted, each builtin command documented in this section as accepting options preceded by - accepts -- to signify the end of the options.
+  #mkdir -p "$1" &&
+  #cd "$1"  #cd: line number : no such file or directory
+  echo '$?':$?
+  echo -n 'pwd:'
+  pwd
+fi
+}
+
