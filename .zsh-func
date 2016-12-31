@@ -5,55 +5,52 @@ setopt nocasematch
 #string == pattern
 #  true if string matches pattern. The ‘==’ form is the preferred one. The ‘=’ form is for backward compatibility and should be considered obsolete.
 cmd='find /mnt/0 ~ -xdev \( '
-for id in "$@";do
-  if [[ "$id" == http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]];then
-    id="${id##http*://*youtu*be*/*watch\?v=}"
-  elif [[ "$id" == http*://*youtu*be*/[-_a-zA-Z0-9]* ]];then
-    id="${id##http*://*youtu*be*/}"
-  elif [[ "$id" == http*://codek.tv/v/[-_a-zA-Z0-9]* ]];then
-    id="${id##http*://codek.tv/v/}"
-  elif [[ "$id" == http*://video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/[-_.a-zA-Z0-9]*mp4* ]];then
-    id="${id##http*://video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/}"
-  elif [[ "$id" == http*://vimeo.com/[-_a-zA-Z0-9]* ]];then
-    id="${id##http*://vimeo.com/}"
+idx=0
+#IFS=' ' read -a str_array <<< "$@"  #bad option: -a
+#for str in "${str_array[@]}";do  #unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
+for str in "$@";do
 #https://youtu.be/oYtGrCP_n0k?t=329
 #https://codek.tv/v/6MaOPdQPvow
 #https://video.xx.fbcdn.net/v/t43.1792-2/14018597_941915082602721_1324838905_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=588&oh=37f5d4bd4e3b3de99d2f0093c17a69d0&oe=57CBD2F3
 #https://vimeo.com/115796769
 #https://www.facebook.com/ehbichig/videos/991876094204055/
+  if [[ $str == http*://*youtu*be*/playlist\?list=[-_a-zA-Z0-9]* ]];then  #[[ $str == http*://*youtu*be*/[-_a-zA-Z0-9]* ]] seems match playlist url, so have to test with playlist regxpr first!
+    echo '$'$((++idx)):'['$str']'
+    echo "early return with RC=113: sorry, playlists are currently not supported."
+    return 113  #shell return from inside loop won't break it early?
+  elif [[ $str == http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]];then
+    str="${str##http*://*youtu*be*/*watch\?v=}"
+  elif [[ $str == http*://*youtu*be*/[-_a-zA-Z0-9]* ]];then
+    str="${str##http*://*youtu*be*/}"
+  elif [[ $str == http*://codek.tv/v/[-_a-zA-Z0-9]* ]];then
+    str="${str##http*://codek.tv/v/}"
+  elif [[ $str == http*://video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/[-_.a-zA-Z0-9]*mp4* ]];then
+    str="${str##http*://video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/}"
+  elif [[ $str == http*://vimeo.com/[-_a-zA-Z0-9]* ]];then
+    str="${str##http*://vimeo.com/}"
+  else
+    echo '$'$((++idx)):'['$str']'
+    echo "early return with RC=113: sorry, specified arguments are currently not supported."
+    return 113  #shell return from inside loop won't break it early?
   fi
-  id="${id%%\?*}"
-  cmd+="-iname \"*$id*\" -o "
+  str="${str%%\?*}"
+  cmd+="-iname \"*$str*\" -o "
 done
 cmd=${cmd% -o }
 cmd+=' \) -type f -exec ls -alF {} \;'
-echo '#cmd':$cmd
+echo '#\?':$cmd
 eval ${cmd}
 echo '$?':$?
 
-#  echo "#search local(non /) keyword:$id"
-#  fnd_out=$(find /mnt/0 ~ -iname "*$id*" -exec ls -alF {} \;)
-##  xt_code=$?
+#  echo "#search local(non /) keyword:$str"
+#  fnd_out=$(find /mnt/0 ~ -iname "*$str*" -exec ls -alF {} \;)
+#  return_code=$?
 #  echo '$?':$?
-#  
 #  if [[ ! -z "$fnd_out" ]];then
 #    echo $fnd_out
 #    [[ $fnd_out =~ "[fF]ind.*[pP]ermission\sdenied.*" ]] && echo '#debug:regexp:$match:['$match'],$MATCH:['$MATCH']' #stderr inaccessible this way!
 #  fi
-}
-
-function fnd() {
-cmd='find /mnt/0 ~ -xdev \( '
-
-for id in "$@";do
-cmd+="-iname \"*$id*\" -o "
-done
-
-cmd=${cmd% -o }
-cmd+=' \) -type f -exec ls -alF {} \;'
-echo '#cmd':$cmd
-eval ${cmd}
-echo '$?':$?
+#  return $return_code
 }
 
 function lsprt() {  #obsolete as having defined "03f && ? .part" ➟ find /mnt/0 ~ -xdev \( -iname "*.part*" \) -type f -exec ls -alF {} \;
@@ -145,13 +142,6 @@ fi
 echo '$?':$?
 }
 
-function dwn+() { #append to youtube download file
-for url in "$@";do
-  echo "$url" >> dwn
-done
-echo '$?':$?
-}
-
 function upgrlog() { #view cron job upgrade cmd log
 if [[ -f /var/log/sys_upgrade.log ]];then
   less /var/log/sys_upgrade.log
@@ -186,20 +176,20 @@ vlc --longhelp --advanced | less
 function utup() {
 setopt nocasematch
 echo «$(\date)»
-xt_code=113
+return_code=113
 out_msg="error"
 counter=0
-while (($xt_code != 0)) || [[ $out_msg =~ error* ]];do #1.ERROR: can't find the current version. Please try again later. 2.Updating to version 2016.08.22 ...\nERROR: unable to download latest version (for error 2,better to detect network connection and exit if connection lost)
-#while (($xt_code <> 0)) || [[ $out_msg =~ error ]];do #bad math expression: operand expected at `> 0'
+while (($return_code != 0)) || [[ $out_msg =~ error* ]];do #1.ERROR: can't find the current version. Please try again later. 2.Updating to version 2016.08.22 ...\nERROR: unable to download latest version (for error 2,better to detect network connection and return if connection lost)
+#while (($return_code <> 0)) || [[ $out_msg =~ error ]];do #bad math expression: operand expected at `> 0'
   if ((counter++ > 9));then
     return 113
   fi
   out_msg=$(sudo youtube-dl -U)
-  xt_code=$?
+  return_code=$?
   echo "#debug:counter:$counter"
   echo '#debug:regexp:$match:['$match'],$MATCH:['$MATCH']'
-  echo "#debug:youtube-dl -U exit code:$xt_code"
-  echo "#debug:youtube-dl -U output message:$out_msg"
+  echo "#debug:youtube-dl -U:RC:$return_code"
+  echo "#debug:youtube-dl -U:output message:$out_msg"
 done
 echo «$(\date)»
 }
@@ -221,18 +211,6 @@ else
 fi
 }
 
-function dwn() {
-setopt nocasematch
-
-for file in $(find /mnt/0 ~ -type f -iname 'dwn*');do
-  if [[ "$file" != "find.*permission\sdenied.*" ]];then #stderr inaccessible this way!
-    echo $file:
-    more $file
-  fi
-done
-echo '$?':$?
-}
-
 function ss() {
 #detect OS(Ubuntu, Debian, Mint, kali, RHEL, Centos, Fedora, Suse, etc.)
 #sudo apt update && sudo apt upgrade -y
@@ -240,8 +218,8 @@ echo «$(\date)»
 sudo dnf upgrade -y #Fedora
 echo '$?':$?
 utup
-xt_code=$?
-echo '$xt_code':$xt_code
+return_code=$?
+echo '$return_code':$return_code
 #trap on EXIT, that way, times will be called whenever the shell exits and the exit status will be preserved.
 #http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
 echo 'trap times EXIT'
@@ -400,7 +378,7 @@ fi
 echo '$#':$#
 idx=0
 for arg in "$@";do
-  echo '$'$((++idx)):$arg
+  echo '$'$((++idx)):'['$arg']'
 done
 
 infile=""
@@ -517,7 +495,7 @@ cmd+="${outfile_singlequoted}" #"$outfile_singlequoted"
 #cmd=${cmd//\'/\\\'} #eval: unmatched '
 #cmd=${cmd//*/\*}
 
-echo '#cmd':$cmd
+echo '#avspd':$cmd
 eval ${cmd}
 echo '$?':$?
 }
@@ -553,7 +531,7 @@ function slid() {
 nohup libreoffice --impress "$@" &> /dev/null & disown
 }
 
-function scrlkpf() {
+function scrblk() {
 dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 xset dpms force off
 }
@@ -580,5 +558,42 @@ else
   echo -n 'pwd:'
   pwd
 fi
+}
+
+function dwn() {
+setopt nocasematch
+
+for file in $(find /mnt/0 ~ -type f -iname 'dwn*');do
+  if [[ "$file" != "find.*permission\sdenied.*" ]];then #stderr inaccessible this way!
+    echo $file:
+    more $file
+  fi
+done
+echo '$?':$?
+}
+
+function dwnchk() {
+urls_whitespaced=""
+for file in $(find /mnt/0 ~ -xdev -type f -iname 'dwn*');do
+  while read -r line;do
+    urls_whitespaced+="\"$line\" "  #urls_whitespaced+=("$line"+" ")?
+    #urls_whitespaced+="$line "  #urls_whitespaced+=("$line"+" ")?
+  done < "$file"
+  echo '$urls_whitespaced:['$urls_whitespaced']'
+#  IFS=' ' read -a urls_whitespaced_arr <<<"$urls_whitespaced"  #bad option: -a
+#  \? "$urls_whitespaced_arr"  #wrong
+#  \? $urls_whitespaced  #wrong
+  cmd="\? $urls_whitespaced"
+  eval ${cmd}
+  urls_whitespaced=""
+done
+echo '$?':$?
+}
+
+function dwn+() { #append to youtube download file
+for url in "$@";do
+  echo "$url" >> dwn
+done
+echo '$?':$?
 }
 
