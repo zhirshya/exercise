@@ -30,8 +30,7 @@ for str in "$@";do
     str="${str##http*://vimeo.com/}"
   else
     echo '$'$((++idx)):'['$str']'
-    echo "early return with RC=113: sorry, specified arguments are currently not supported."
-    return 113  #shell return from inside loop won't break it early?
+    echo "INFO:specified arguments are currently not well/fully supported, but continue anyway, may result in unexpected behavior!"
   fi
   str="${str%%\?*}"
   cmd+="-iname \"*$str*\" -o "
