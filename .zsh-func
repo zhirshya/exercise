@@ -4,7 +4,7 @@ function \?() {
 setopt nocasematch
 #string == pattern
 #  true if string matches pattern. The ‘==’ form is the preferred one. The ‘=’ form is for backward compatibility and should be considered obsolete.
-cmd='find /mnt/0 ~ -xdev \( '
+cmd='find /mnt/0 ~ -xdev -type f \( '
 idx=0
 #IFS=' ' read -a str_array <<< "$@"  #bad option: -a
 #for str in "${str_array[@]}";do  #unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
@@ -36,7 +36,7 @@ for str in "$@";do
   cmd+="-iname \"*$str*\" -o "
 done
 cmd=${cmd% -o }
-cmd+=' \) -type f -exec ls -alF {} \;'
+cmd+=' \) -exec ls -alF {} \;'
 echo '#\?':$cmd
 eval ${cmd}
 echo '$?':$?
