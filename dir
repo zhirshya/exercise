@@ -2,8 +2,8 @@ mkdir /mnt/0/gthb/xrcs
 mkdir /mnt/0/gthb/note
 mkdir /mnt/0/gthb/wbst
 mkdir /mnt/0/lflssn
-mkdir /mnt/0/howto
-mkdir /mnt/0/hack
+mkdir /mnt/0/how
+mkdir /mnt/0/hak
 mkdir /mnt/0/read
 mkdir /mnt/0/finance
 mkdir /mnt/0/bsnss-entrprnr
@@ -24,4 +24,3 @@ mkdir /mnt/0/nixc3d
 mkdir /mnt/0/ambidexterity
 mkdir /mnt/0/"xrcs(упражнение)"
 mkdir /mnt/0/cookin
-mkdir /mnt/0/"lsr(досуг)"
