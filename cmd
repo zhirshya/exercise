@@ -96,7 +96,8 @@ find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} \
 find . -type f -exec chmod 644 {} \;
 find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} ";"
 find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} \;
-find /mnt/0 ~ \( -iname "*07n*" -o -iname "*0n7*" -o -iname "*0o7*" -o -iname "*07o*" \) -type f -exec ls -alF {} \;
+find /mnt/0 ~ -type f \( -iname "*07n*" -o -iname "*0n7*" -o -iname "*0o7*" -o -iname "*07o*" \) -exec ls -alF {} \;
+find /mnt/0 ~ -xdev -type f -iname 'dwn' -execdir rm {} \; && echo '$?':$?
 
 #http://askubuntu.com/questions/419115/make-bluetooth-disabled-by-default
 rfkill unblock bluetooth
@@ -258,7 +259,7 @@ adm:x:4:
 #shell cmd
 print - $((524288000/1024/1024))
 
-find /mnt/0 ~ ! -path "/mnt/0/linux/*" ! -path "/mnt/0/linux-insides/*" -iname "*debug*" -type f -exec ls -alF {} \;
+find /mnt/0 ~ ! -path "/mnt/0/linux/*" ! -path "/mnt/0/linux-insides/*" -type f -iname "*debug*" -exec ls -alF {} \;
 
 #shell single quote file name with single quote and space
 infile_quoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
