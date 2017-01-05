@@ -14,7 +14,7 @@ mkdir /mnt/0/mgl
 mkdir /mnt/0/math
 mkdir /mnt/0/voice
 mkdir /mnt/0/fruglthrft #frugal thrift minimalist living
-mkdir /mnt/0/btкоин #Биткоин
+mkdir /mnt/0/blokchain
 mkdir /mnt/0/eecs-ict
 mkdir /mnt/0/nixcpp
 mkdir /mnt/0/c
