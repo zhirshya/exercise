@@ -345,3 +345,9 @@ tar -xvzf wkhtmltopdf-0.10.0_rc2-static-amd64.tar.bz2 -C /opt
 #clang
 clang++ -std=c++14 your_source.cpp -o your_binary
 
+#sort & uniq
+#After running sort on an input stream, you can remove repeated lines with uniq as in the example below.
+#To indicate the number of occurrences of a line, use the -c option and ignore differences in case while comparing by including the -i option:
+sort txt_file | uniq -i -c
+
+
