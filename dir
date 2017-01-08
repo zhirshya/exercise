@@ -8,6 +8,7 @@ mkdir /mnt/0/read
 mkdir /mnt/0/finance
 mkdir /mnt/0/bsnss-entrprnr
 mkdir /mnt/0/"hlth(здоровье)"
+mkdir /mnt/0/intrvw
 mkdir /mnt/0/"oros(Русский)"
 mkdir /mnt/0/chess
 mkdir /mnt/0/mgl
