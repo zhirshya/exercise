@@ -564,10 +564,10 @@ setopt nocasematch
 
 urls_whitespaced=""
 for file in $(find /mnt/0 ~ -xdev -type f -iname 'dwn*');do
-  if [[ "$file" != "find*permission*denied*" ]];then #stderr inaccessible this way!
+#  if [[ "$file" != "find*permission*denied*" ]];then #stderr inaccessible this way!
     echo $file:
     more $file
-  fi
+#  fi
   while read -r line;do
     urls_whitespaced+="\"$line\" "  #urls_whitespaced+=("$line"+" ")?
     #urls_whitespaced+="$line "  #urls_whitespaced+=("$line"+" ")?
