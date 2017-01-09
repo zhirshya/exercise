@@ -559,21 +559,15 @@ else
 fi
 }
 
-function dwn() {
+function dwnchk() {
 setopt nocasematch
 
-for file in $(find /mnt/0 ~ -type f -iname 'dwn*');do
-  if [[ "$file" != "find.*permission\sdenied.*" ]];then #stderr inaccessible this way!
+urls_whitespaced=""
+for file in $(find /mnt/0 ~ -xdev -type f -iname 'dwn*');do
+  if [[ "$file" != "find*permission*denied*" ]];then #stderr inaccessible this way!
     echo $file:
     more $file
   fi
-done
-echo '$?':$?
-}
-
-function dwnchk() {
-urls_whitespaced=""
-for file in $(find /mnt/0 ~ -xdev -type f -iname 'dwn*');do
   while read -r line;do
     urls_whitespaced+="\"$line\" "  #urls_whitespaced+=("$line"+" ")?
     #urls_whitespaced+="$line "  #urls_whitespaced+=("$line"+" ")?
