@@ -590,3 +590,13 @@ done
 echo '$?':$?
 }
 
+function 0() {
+for file in "$@";do
+  if [[ -f $file ]];then
+    mv "$file" "$file.bak"
+    echo -n > "$file"
+  fi
+done
+echo '$?':$?
+}
+

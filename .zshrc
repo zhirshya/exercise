@@ -131,7 +131,6 @@ alias dffBb='diff -Bb'
 alias mr='more -s'
 alias rmrf='rm -rf'
 alias kty=whoami #Кто я?
-alias 0='echo -n >'
 alias 03f='disable -p "?"'
 alias 13f='enable -p ?'
 #alias 026='disable -p "&"' #disable: invalid pattern: &
