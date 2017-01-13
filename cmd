@@ -99,6 +99,10 @@ find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} \;
 find /mnt/0 ~ -type f \( -iname "*07n*" -o -iname "*0n7*" -o -iname "*0o7*" -o -iname "*07o*" \) -exec ls -alF {} \;
 find /mnt/0 ~ -xdev -type f -iname 'dwn' -execdir rm {} \; && echo '$?':$?
 
+#http://stackoverflow.com/questions/6844785/how-to-use-regex-with-find-command
+find /mnt/0 ~ -xdev -type f -regextype posix-extended -regex '.*node.*(\.(pdf|epub|(ppt|doc|xls)x?)?)?' -print
+find /mnt/0 ~ -xdev -type f -regextype posix-egrep -regex '.*node.*(\.(pdf|epub|(ppt|doc|xls)x?)?)?' -print
+
 #http://askubuntu.com/questions/419115/make-bluetooth-disabled-by-default
 rfkill unblock bluetooth
 
