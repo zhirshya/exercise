@@ -334,6 +334,12 @@ sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="/GRUB_CMDLINE_LINUX_DEFAULT="panic=5 /' /e
 dd;BIOS UEFI mode;secure boot OFF #Kali 2016.2+
 dd;BIOS UEFI mode #Fedora
 
+#change case of entire file
+dd if=tst.tst of=tst.ucase conv=ucase
+diff tst.tst tst.ucase
+dd if=tst.tst of=tst.lcase conv=lcase
+diff tst.tst tst.lcase
+
 #rpm
 rpm -qa | grep rpmfusion
 rpmfusion-free-appstream-data-25-3.fc25.noarch
