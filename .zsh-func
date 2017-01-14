@@ -516,7 +516,8 @@ firefox --version
 xmllint --version
 echo 'node --version':$(node --version)
 echo 'youtube-dl --version':$(youtube-dl --version)
-echo 'python --version':$(python --version)
+#echo 'python --version':$(python --version) #python outputs its name automatically!
+echo $(python --version)
 }
 
 function sprsht() {
