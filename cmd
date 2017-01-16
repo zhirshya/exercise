@@ -360,4 +360,12 @@ clang++ -std=c++14 your_source.cpp -o your_binary
 #To indicate the number of occurrences of a line, use the -c option and ignore differences in case while comparing by including the -i option:
 sort txt_file | uniq -i -c
 
+#sjis -> utf8
+for i in $(find . -xdev -type f -iname ...);do
+iconv -f shift-JIS -t utf-8 ${i} > ${i}_utf-8  #${var}? vs "$var"
+echo '$?':$?
+done
+
+#useradd
+useradd amlkcfr && usermod -aG appGrp amlkcfr
 
