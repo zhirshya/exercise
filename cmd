@@ -98,6 +98,8 @@ find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} ";"
 find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} \;
 find /mnt/0 ~ -type f \( -iname "*07n*" -o -iname "*0n7*" -o -iname "*0o7*" -o -iname "*07o*" \) -exec ls -alF {} \;
 find /mnt/0 ~ -xdev -type f -iname 'dwn' -execdir rm {} \; && echo '$?':$?
+#find output redirection works
+find /mnt/0 ~ -xdev -type f -iname '*.py' -exec ls -alF {} \; > outfile
 
 #http://stackoverflow.com/questions/6844785/how-to-use-regex-with-find-command
 find /mnt/0 ~ -xdev -type f -regextype posix-extended -regex '.*node.*(\.(pdf|epub|(ppt|doc|xls)x?)?)?' -print
@@ -361,8 +363,9 @@ clang++ -std=c++14 your_source.cpp -o your_binary
 sort txt_file | uniq -i -c
 
 #sjis -> utf8
-for i in $(find . -xdev -type f -iname ...);do
-iconv -f shift-JIS -t utf-8 ${i} > ${i}_utf-8  #${var}? vs "$var"
+for i in $(find . -xdev -type f -iname '*.*sh' -o -iname '*.sql' -o -iname '*.csv');do
+#iconv -f shift-JIS -t utf-8 < ${i} > ${i%.*}_utf-8.${i##*.}  #${var}? vs "$var"
+iconv -f shift-JIS -t utf8 ${i} > ${i%.*}_utf8.${i##*.}  #${var}? vs "$var" #man iconv: utf8,utf-8
 echo '$?':$?
 done
 
