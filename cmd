@@ -372,3 +372,7 @@ done
 #useradd
 useradd amlkcfr && usermod -aG appGrp amlkcfr
 
+#Find Number of Files in a Directory and Subdirectories
+FILES=$(sudo find . -type f -print | wc -l)
+echo "There are $FILES in the current working directory."
+
