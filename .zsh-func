@@ -36,13 +36,13 @@ for str in "$@";do
   cmd+="-iname \"*$str*\" -o "
 done
 cmd=${cmd% -o }
-cmd+=' \) -exec ls -alF {} \;'
+cmd+=' \) -exec ls -alFt {} \;'
 echo '#\?':$cmd
 eval ${cmd}
 echo '$?':$?
 
 #  echo "#search local(non /) keyword:$str"
-#  fnd_out=$(find /mnt/0 ~ -iname "*$str*" -exec ls -alF {} \;)
+#  fnd_out=$(find /mnt/0 ~ -iname "*$str*" -exec ls -alFt {} \;)
 #  return_code=$?
 #  echo '$?':$?
 #  if [[ ! -z "$fnd_out" ]];then
@@ -52,7 +52,7 @@ echo '$?':$?
 #  return $return_code
 }
 
-function lsprt() {  #obsolete as having defined "03f && ? .part" ➟ find /mnt/0 ~ -xdev \( -iname "*.part*" \) -type f -exec ls -alF {} \;
+function lsprt() {  #obsolete as having defined "03f && ? .part" ➟ find /mnt/0 ~ -xdev \( -iname "*.part*" \) -type f -exec ls -alFt {} \;
 if (($# == 0));then
   ll *part
 else
