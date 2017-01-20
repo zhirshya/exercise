@@ -9,6 +9,7 @@ idx=0
 #IFS=' ' read -a str_array <<< "$@"  #bad option: -a
 #for str in "${str_array[@]}";do  #unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
 for str in "$@";do
+#https://www.youtube.com/watch?v=fDoYwL90WUg&list=PLS1QulWo1RIaJECMeUT4LFwJ-ghgoSH6n&index=8
 #https://youtu.be/oYtGrCP_n0k?t=329
 #https://codek.tv/v/6MaOPdQPvow
 #https://video.xx.fbcdn.net/v/t43.1792-2/14018597_941915082602721_1324838905_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=588&oh=37f5d4bd4e3b3de99d2f0093c17a69d0&oe=57CBD2F3
@@ -33,6 +34,7 @@ for str in "$@";do
     echo "INFO:specified arguments are currently not well/fully supported, but continue anyway, may result in unexpected behavior!"
   fi
   str="${str%%\?*}"
+  str="${str%%&list=*}"  #remove '&list=' and '&index=' parts
   cmd+="-iname \"*$str*\" -o "
 done
 cmd=${cmd% -o }
