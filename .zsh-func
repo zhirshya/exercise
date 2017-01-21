@@ -1,9 +1,6 @@
 #!/bin/zsh
 
 function \?() {
-setopt nocasematch
-#string == pattern
-#  true if string matches pattern. The ‘==’ form is the preferred one. The ‘=’ form is for backward compatibility and should be considered obsolete.
 cmd='find /mnt/0 ~ -xdev -type f \( '
 idx=0
 #IFS=' ' read -a str_array <<< "$@"  #bad option: -a
@@ -13,28 +10,34 @@ for str in "$@";do
 #https://youtu.be/oYtGrCP_n0k?t=329
 #https://codek.tv/v/6MaOPdQPvow
 #https://video.xx.fbcdn.net/v/t43.1792-2/14018597_941915082602721_1324838905_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=588&oh=37f5d4bd4e3b3de99d2f0093c17a69d0&oe=57CBD2F3
-#https://vimeo.com/115796769
 #https://www.facebook.com/ehbichig/videos/991876094204055/
-  if [[ $str == http*://*youtu*be*/playlist\?list=[-_a-zA-Z0-9]* ]];then  #[[ $str == http*://*youtu*be*/[-_a-zA-Z0-9]* ]] seems match playlist url, so have to test with playlist regxpr first!
+#https://vimeo.com/115796769
+  if [[ $str =~ https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+('&'list=[-_.a-zA-Z0-9?%='&']+)? ]];then  #forced to single-quote '&', otherwise: parse error near `&'  # [[ $str =~ ^regxpr$ ]] fails match!
+    echo "[debug]:[$str] match [ https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+('&'list=[-_.a-zA-Z0-9?%='&']+)? ]"
+    str="${str##*youtu*be*/}"
+    str="${str##watch\?v=}"
+  elif [[ $str =~ https?://(www\.)?youtu\.?be(\.com)?/playlist\?list=[-_a-zA-Z0-9]+ ]];then
+    echo "[debug]:[$str] match [ https?://(www\.)?youtu\.?be(\.com)?/playlist\?list=[-_a-zA-Z0-9]+ ]"
     echo '$'$((++idx)):'['$str']'
     echo "early return with RC=113: sorry, playlists are currently not supported."
-    return 113  #shell return from inside loop won't break it early?
-  elif [[ $str == http*://*youtu*be*/*watch\?v=[-_a-zA-Z0-9]* ]];then
-    str="${str##http*://*youtu*be*/*watch\?v=}"
-  elif [[ $str == http*://*youtu*be*/[-_a-zA-Z0-9]* ]];then
-    str="${str##http*://*youtu*be*/}"
-  elif [[ $str == http*://codek.tv/v/[-_a-zA-Z0-9]* ]];then
-    str="${str##http*://codek.tv/v/}"
-  elif [[ $str == http*://video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/[-_.a-zA-Z0-9]*mp4* ]];then
-    str="${str##http*://video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/}"
-  elif [[ $str == http*://vimeo.com/[-_a-zA-Z0-9]* ]];then
-    str="${str##http*://vimeo.com/}"
+    return 113
+  elif [[ $str =~ https?://(www\.)?codek\.tv/v/[-_a-zA-Z0-9]+ ]];then
+    echo "[debug]:[$str] match [ https?://(www\.)?codek\.tv/v/[-_a-zA-Z0-9]+ ]"
+    str="${str##*codek.tv/v/}"
+  elif [[ $str =~ https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+ ]];then
+    echo "[debug]:[$str] match [ https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+ ]"
+    str="${str##*vimeo.com/}"
+  elif [[ $str =~ https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%='&']* ]];then  #forced to single-quote '&', otherwise: parse error near `&'
+    echo "[debug]:[$str] match [ https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%='&']* ]"
+#    str="${str##*video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/}"
+    str="${str##*video.*fbcdn.net/v/*/}"
   else
     echo '$'$((++idx)):'['$str']'
-    echo "INFO:specified arguments are currently not well/fully supported, but continue anyway, may result in unexpected behavior!"
+    echo "INFO:unknown pattern found, specified argument will be applied without any modification, may result in unexpected behavior!"
   fi
+  str="${str%&list=*}"
+  str="${str%&index=*}"
   str="${str%%\?*}"
-  str="${str%&list=*}"  #remove '&list=' and '&index=' parts
   cmd+="-iname \"*$str*\" -o "
 done
 cmd=${cmd% -o }
@@ -49,7 +52,7 @@ echo '$?':$?
 #  echo '$?':$?
 #  if [[ ! -z "$fnd_out" ]];then
 #    echo $fnd_out
-#    [[ $fnd_out =~ "[fF]ind.*[pP]ermission\sdenied.*" ]] && echo '#debug:regexp:$match:['$match'],$MATCH:['$MATCH']' #stderr inaccessible this way!
+#    [[ $fnd_out =~ [fF]ind.*[pP]ermission[s ]*denied ]] && echo '#debug:regexp:$match:['$match'],$MATCH:['$MATCH']' #stderr inaccessible this way!
 #  fi
 #  return $return_code
 }
@@ -58,7 +61,7 @@ function lsprt() {  #obsolete as having defined "03f && ? .part" ➟ find /mnt/0
 if (($# == 0));then
   ll *part
 else
-  if [[ "$1" == */ ]];then #[[ $1 =~ */ ]]: failed to compile regex: Invalid preceding regular expression
+  if [[ $1 =~ /$ ]];then
     ll "$1"*part
   else
     ll "$1"/*part
@@ -138,7 +141,7 @@ echo '$?':$?
 
 function +() { #append to todo file
 if (($# > 0));then
-  echo "$@" >> /mnt/0/gthb/note/.todo
+  echo -e "$@" >> /mnt/0/gthb/note/.todo
 fi
 echo '$?':$?
 }
@@ -315,8 +318,9 @@ if (($# == 1));then
   extension=${1##*\.}
   echo 'file base name:${file%\.*}':$basename
   echo 'file extension:${file##*\.}':$extension
-  iconv -f SHIFT-JIS -t UTF-8 "$1" > "${basename}_utf8.${extension}"
-  #iconv -t UTF-8 "$1" > "${basename}_utf8.${extension}"
+  iconv -f shift-JIS -t utf8 "$1" > "${basename}_utf8.${extension}"
+#  iconv -f SHIFT-JIS -t UTF-8 "$1" > "${basename}_UTF-8.${extension}"
+#  iconv -f shift-JIS -t utf-8 "$1" > "${basename}_utf-8.${extension}"
   echo '$?':$?
 fi
 }
@@ -353,11 +357,11 @@ if (($# == 0));then
   echo '$?':$?
 else
   for arg in "$@";do
-    if [[ "$arg" == [a-zA-Z0-9.]*[a-zA-Z]+ ]];then
+    if [[ $arg =~ [a-zA-Z0-9.]*[a-zA-Z]+ ]];then
       curl wttr.in/@$arg
-    elif [[ "$arg" == [a-zA-Z0-9]* ]];then
+    elif [[ $arg =~ [a-zA-Z0-9]* ]];then
       curl wttr.in/$arg
-    elif [[ "$arg" == [/-]h ]];then
+    elif [[ $arg =~ [/-]h ]];then
       curl wttr.in/:help
     fi
     echo '$?':$?
@@ -402,10 +406,9 @@ else
 fi
 
 if (($# == 2));then
-#if (($# == 2)) && [[ $2 == [a-zA-Z0-9._-,;?!]* ]];then # =~ failed to compile regex: Invalid range end
 #if [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]];then #parse error near `|'
   if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then #http://www.regular-expressions.info/floatingpoint.html
-    echo '[debug] hit [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]]'
+    echo '[debug] hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
     factor="$2"
     outfile="${infile%.*}"
     outfile+="_spdx"
@@ -434,7 +437,7 @@ if (($# == 3));then
       echo 'error: destination/output file already exist, please specify other name for output, and try again.'
       return 113
     fi
-    echo '[debug] hit [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]]'
+    echo '[debug] hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
     factor="$2"
     outfile="$3"
     outfile+="_spdx"
@@ -451,12 +454,12 @@ fi
 
 echo "#test<"
 if (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-  echo '[debug] hit (($# == 2)) && [[ $2 == (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]]'
+  echo '[debug] hit (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 fi
 
 # [[ != ]] literal string comparison?
 if (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-  echo '[debug] ERRONEOUS/WRONG! hit (($# == 2)) && [[ $2 != (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]], [[ != ]] literal string comparison?'
+  echo '[debug] ERRONEOUS/WRONG! hit (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]], [[ != ]] literal string comparison?'
 fi
 
 if (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
@@ -564,11 +567,9 @@ fi
 }
 
 function dwnchk() {
-setopt nocasematch
-
 urls_whitespaced=""
 for file in $(find /mnt/0 ~ -xdev -type f -iname 'dwn*');do
-#  if [[ "$file" != "find*permission*denied*" ]];then #stderr inaccessible this way!
+#  if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*denied ) ]];then #stderr inaccessible this way!  #error: condition expected: $file
     echo $file:
     more $file
 #  fi
@@ -589,7 +590,8 @@ echo '$?':$?
 
 function dwn+() { #append to youtube download file
 for url in "$@";do
-  url="${url%&list=*}"  #remove '&list=' and '&index=' parts
+  url="${url%&list=*}"
+  url="${url%&index=*}"
   echo "$url" >> dwn
 done
 echo '$?':$?
