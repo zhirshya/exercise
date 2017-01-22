@@ -1,34 +1,41 @@
 #!/bin/zsh
 
 function \?() {
-cmd='find /mnt/0 ~ -xdev -type f \( '
-idx=0
-#IFS=' ' read -a str_array <<< "$@"  #bad option: -a
-#for str in "${str_array[@]}";do  #unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
-for str in "$@";do
+#https://www.youtube.com/playlist?list=PLypxmOPCOkHXL8TuVKiDChkTH32MfLr7S
 #https://www.youtube.com/watch?v=fDoYwL90WUg&list=PLS1QulWo1RIaJECMeUT4LFwJ-ghgoSH6n&index=8
 #https://youtu.be/oYtGrCP_n0k?t=329
 #https://codek.tv/v/6MaOPdQPvow
 #https://video.xx.fbcdn.net/v/t43.1792-2/14018597_941915082602721_1324838905_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=588&oh=37f5d4bd4e3b3de99d2f0093c17a69d0&oe=57CBD2F3
 #https://www.facebook.com/ehbichig/videos/991876094204055/
 #https://vimeo.com/115796769
-  if [[ $str =~ https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+('&'list=[-_.a-zA-Z0-9?%='&']+)? ]];then  #forced to single-quote '&', otherwise: parse error near `&'  # [[ $str =~ ^regxpr$ ]] fails match!
-    echo "[debug]:[$str] match [ https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+('&'list=[-_.a-zA-Z0-9?%='&']+)? ]"
-    str="${str##*youtu*be*/}"
-    str="${str##watch\?v=}"
-  elif [[ $str =~ https?://(www\.)?youtu\.?be(\.com)?/playlist\?list=[-_a-zA-Z0-9]+ ]];then
-    echo "[debug]:[$str] match [ https?://(www\.)?youtu\.?be(\.com)?/playlist\?list=[-_a-zA-Z0-9]+ ]"
+utvList_regxpr="https?://(www\.)?youtu\.?be(\.com)?/playlist\?list=[-_a-zA-Z0-9]+"
+utvSingl_regxpr="https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+(\&list=[-_.a-zA-Z0-9?%=&]+)?"  #better off using variables to hold regxprs instead of matching directly which has potential error: parse error near `&'
+codek_regxpr="https?://(www\.)?codek\.tv/v/[-_a-zA-Z0-9]+"
+vimeo_regxpr="https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+"
+facebook_regxpr="https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%=&]*"
+idx=0
+
+cmd='find /mnt/0 ~ -xdev -type f \( '
+#IFS=' ' read -a str_array <<< "$@"  #bad option: -a
+#for str in "${str_array[@]}";do  #unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
+for str in "$@";do
+  if [[ $str =~ $utvList_regxpr ]];then  # [[ $str =~ ^regxpr$ ]] fails to match [ .../(watch\?v=)?[-_a-zA-Z0-9]+('&'list=[-_.a-zA-Z0-9?%='&']+)? ], so have to remove anchors ^ and $, therefore match [ .../playlist\?list= ] at first!
+    echo "[debug]:[$str] match [$utvList_regxpr]"
     echo '$'$((++idx)):'['$str']'
     echo "early return with RC=113: sorry, playlists are currently not supported."
     return 113
-  elif [[ $str =~ https?://(www\.)?codek\.tv/v/[-_a-zA-Z0-9]+ ]];then
-    echo "[debug]:[$str] match [ https?://(www\.)?codek\.tv/v/[-_a-zA-Z0-9]+ ]"
+  elif [[ $str =~ $utvSingl_regxpr ]];then
+    echo "[debug]:[$str] match [$utvSingl_regxpr]"
+    str="${str##*youtu*be*/}"
+    str="${str##watch\?v=}"
+  elif [[ $str =~ $codek_regxpr ]];then
+    echo "[debug]:[$str] match [$codek_regxpr]"
     str="${str##*codek.tv/v/}"
-  elif [[ $str =~ https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+ ]];then
-    echo "[debug]:[$str] match [ https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+ ]"
+  elif [[ $str =~ $vimeo_regxpr ]];then
+    echo "[debug]:[$str] match [$vimeo_regxpr]"
     str="${str##*vimeo.com/}"
-  elif [[ $str =~ https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%='&']* ]];then  #forced to single-quote '&', otherwise: parse error near `&'
-    echo "[debug]:[$str] match [ https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%='&']* ]"
+  elif [[ $str =~ $facebook_regxpr ]];then
+    echo "[debug]:[$str] match [$facebook_regxpr]"
 #    str="${str##*video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/}"
     str="${str##*video.*fbcdn.net/v/*/}"
   else
