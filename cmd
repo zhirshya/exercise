@@ -59,6 +59,15 @@ ffmpeg -i Russian\ numbers\ 2\ 10\ 20\ 30,\ 100,\ 1000-vFlzWw62XQo.mp4 -filter:v
 ffmpeg -i Russian\ Cursive\ Writing\(connecting\ letters\)-ZP8SDSHIk9g.mp4 -c copy -ss 0:0:40 -t 0:5:0 rus_cursive_connected-ZP8SDSHIk9g.mp4 && avspd rus_cursive_connected-ZP8SDSHIk9g.mp4 && echo '$?':$?
 
 #concatenate
+FFMeg Concat: "unsafe file name" error
+The demuxer accepts the "-safe" option (obviously an input option, to
+be placed before the corresponding input file):
+    safe
+        If set to 1, reject unsafe file paths.
+        [...]
+        If set to 0, any file name is accepted.
+ffmpeg -f concat -safe 0 -i filelist -c copy "swanlake-part1__No.4_Gmajor_K41_II.Andante.mp3"
+
 https://trac.ffmpeg.org/wiki/Concatenate
 ffmpeg -f concat -i filelist -c copy "Подмосковные Вечера(en+rss).mp3"
 #content of filelist
