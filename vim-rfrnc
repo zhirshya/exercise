@@ -126,4 +126,14 @@ This way, whenever you type % you jump to the matching object, and you visually 
 dtx deletes from current position till just before x. Just tx moves the cursor to just before character x in current line.
 To delete up to and including the space, use df<space>.
 
+#vim \r \n
+From http://vim.wikia.com/wiki/Search_and_replace :
+When Searching
+...
+\n is newline, \r is CR (carriage return = Ctrl-M = ^M)
+When Replacing
+...
+\r is newline, \n is a null byte (0x00).
+for more information, :h :s%, especially the last paragraph. (via :h :s)
+
 
