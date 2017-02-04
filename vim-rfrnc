@@ -136,4 +136,17 @@ When Replacing
 \r is newline, \n is a null byte (0x00).
 for more information, :h :s%, especially the last paragraph. (via :h :s)
 
+#vim delete multiline comment
+:%s/\/\*\_.\{-}\*\///gc
+\{-} non-greedy Quantifier
+\_s : \s + \n
+\_. : . + \n
+
+non-greedy quantifiers: use \{-} in place of *
+Quantifier Description
+\{-} matches 0 or more of the preceding atom, as few as possible
+\{-n,m} matches 1 or more of the preceding characters...
+\{-n,} matches at lease or more of the preceding characters...
+\{-,m} matches 1 or more of the preceding characters...
+where n and m are positive integers (>0)
 
