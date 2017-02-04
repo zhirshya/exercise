@@ -22,7 +22,7 @@ dnf remove rhythmbox evolution totem thunderbird nano
 
 dnf upgrade -y
 
-dnf install -y glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb ccache valgrind anki tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins bzip2 evince zsh vlc gimp ffmpeg lynx scrot
+dnf install -y glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb ccache valgrind anki tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins bzip2 evince zsh vlc gimp ffmpeg lynx 
 
 #mosh zbar
 
