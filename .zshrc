@@ -157,6 +157,7 @@ alias tdr='tail -n 15 /mnt/0/gthb/note/.todo'
 alias td='vim /mnt/0/gthb/note/.todo'
 alias utv0='utv 0'
 alias lynx='lynx -cookies=off'
+alias rtkod='echo "\$\?":$?'
 
 #punctuation,symbol,rus word
 alias rangli='echo ð'
