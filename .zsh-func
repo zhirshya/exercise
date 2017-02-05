@@ -47,12 +47,16 @@ for str in "$@";do
   str="${str%%\?*}"
   cmd+="-iname \"*$str*\" -o "
 done
-cmd=${cmd% -o }
-cmd+=' \) -exec ls -alFt {} \;'
-echo '#\?':$cmd
-eval ${cmd}
-echo '$?':$?
 
+if [[ $cmd =~ -iname ]];then  #\?:find /mnt/0 ~ -xdev -type f \(  \) -exec ls -alFt {} \; #find: invalid expression; empty parentheses are not allowed.
+  cmd=${cmd% -o }
+  cmd+=' \) -exec ls -alFt {} \;'
+  echo '#\?':$cmd
+  eval ${cmd}
+  echo '$?':$?
+else
+  return 113  #can't be reflected on(passed to) outer/upper level!
+fi
 #  echo "#search local(non /) keyword:$str"
 #  fnd_out=$(find /mnt/0 ~ -iname "*$str*" -exec ls -alFt {} \;)
 #  return_code=$?
