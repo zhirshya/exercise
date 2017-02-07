@@ -385,3 +385,7 @@ useradd amlkcfr && usermod -aG appGrp amlkcfr
 FILES=$(sudo find . -type f -print | wc -l)
 echo "There are $FILES in the current working directory."
 
+#firefox simplified/text-only print preview
+about:config >> print.use_simplify_page
+Alt-f-v
+
