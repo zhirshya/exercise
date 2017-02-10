@@ -150,3 +150,6 @@ Quantifier Description
 \{-,m} matches 1 or more of the preceding characters...
 where n and m are positive integers (>0)
 
+# \=
+:%s/System\.out\.print\(ln\)\=/LOGGER.debug/gc
+
