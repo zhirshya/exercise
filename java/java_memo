@@ -1,3 +1,5 @@
 try {new SimpleDateFormat(SQL_DATETIME_FORMAT).parse(date); //2016-03-28 01:53:35.81
 } catch(ParseException e){}
 
+jar tvf log4j2-api.jar log4j2-core.jar
+
