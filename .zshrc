@@ -143,7 +143,7 @@ alias 123='enable -p #'
 #alias upgrlog='less /var/log/upgrd.log' #extended to zsh function
 alias mv='mv -i'
 alias cp='cp -i'
-alias date='date +"%Y-%m-%d %H:%M:%S"'
+alias date='date +"%Y%m%d %H%M%S.%N%::z%Z %A"'
 
 alias gcc='ccache gcc -std=c11 -Wall -Wextra -g'
 alias gxx='ccache g++ -std=c++14 -Wall -Wextra -g'
