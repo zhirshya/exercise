@@ -1,7 +1,74 @@
 I want to process traditional Mongolian text in Fedora 25+ using LibreOffice 5.2.5.1 20(Build:1) or above.<br>
-The IME is **fcitx**, with input language/source "Mongolian mn" added.<br>
-I did all the steps stated at *[traditional Mongolian driver for Ubuntu][1]*, but can't input the vertical script at all.<br>
-Relevant part of ***/usr/share/X11/xkb/rules/evdev.xml*** is:<br>
+I did all the steps stated at *[traditional Mongolian driver for Ubuntu][1]*, but can't input the vertical script at all.<p>
+"ms"(which the author stated to put in /usr/share/X11/xkb/symbols) is ASCII text with following content:<br>
+
+    partial default alphanumeric_keys
+    xkb_symbols "basic" {
+    
+      name[Group1]= "Mongolian Script";
+    
+      key <TLDE> { [ U301C,  U20AE	   ] };//~  Tilde Tugrig 
+      key <AE01> { [ U0031,  U2049     ] };//1  one   !
+      key <AE02> { [ U0032,  U003C     ] };//2  two   Less <
+      key <AE03> { [ U0033,  U003E     ] };//3  three Greater >
+      key <AE04> { [ U0034,  U0024     ] };//4  four  Dollar $
+      key <AE05> { [ U0035,  U0025     ] };//5  five  persent %
+      key <AE06> { [ U0036,  U002E     ] };//6  six   full stop .
+      key <AE07> { [ U0037,  U002C     ] };//7  seven comma ,
+      key <AE08> { [ U0038,  U002A     ] };//8  eight asterisk *
+      key <AE09> { [ U0039,  U0028     ] };//9  nine  Left double parenthesis(
+      key <AE10> { [ U0030,  U0029     ] };//0  zero  Right double parenthesis)
+      key <AE11> { [ U002D,  U002F     ] };//-  minus slash 
+      key <AE12> { [ U003D,  U002B     ] };//=  equal plus 
+    
+      key <AD01> { [ U1839,  U200C     ] };//Q  FA     ZWNJ
+      key <AD02> { [ U1834,  U1806     ] };//W  CHA    hyphen
+      key <AD03> { [ U1824,  U3010     ] };//E  U     left black Lentucular bracke
+      key <AD04> { [ U1835,  U3011     ] };//R  JA    Right black Lentucular bracket4Dots ::
+      key <AD05> { [ U1821,  U3008     ] };//T  E     Left angle bracket
+      key <AD06> { [ U1828,  U3009     ] };//Y  NA    Right angle bracket
+      key <AD07> { [ U182d,  U180C     ] };//U  GA    FVS2
+      key <AD08> { [ U1831,  U180D     ] };//I  SHA   FVS3
+      key <AD09> { [ U1826,  U23DE     ] };//O  UE    Top Curly bracket  {
+      key <AD10> { [ U183d,  U23DF     ] };//P  ZA    Bottom Curly bracket } 
+      key <AD11> { [ U183b,  U23B4     ] };//{[ KHA   Top square bracket [
+      key <AD12> { [ U182B,  U23B5     ] };//   PA    Bottom square bracket ]
+    
+      key <AC01> { [ U1829,  U200D     ] };//A  NG    ZWJ
+      key <AC02> { [ U180E,  U180A     ] };//S  MVS   Nirugu
+      key <AC03> { [ U182a,  U1838     ] };//D  BA    WA
+      key <AC04> { [ U1825,  U181B     ] };//F  OE
+      key <AC05> { [ U1820,  U181E	   ] };//G  A
+      key <AC06> { [ U182C,  U183E     ] };//H  QA    HAA
+      key <AC07> { [ U1837,  U183F     ] };//J  RA    ZRA
+      key <AC08> { [ U1823,  U183a     ] };//K  O	  KA
+      key <AC09> { [ U182F,  U1840     ] };//L  LA    LHA
+      key <AC10> { [ U1833,  U1804     ] };//:; DA    Mongolian Colon
+      key <AC11> { [ U180B,  U1801     ] };//"' FVS1  Ellipses
+      key <BKSL> { [ U003A,  U003B     ] };//|\ :     ;
+    
+      key <LSGT> { [ NoSymbol,NoSymbol ] };
+      key <AB01> { [ U1836,  U1841     ] };//Z  YA    ZHI
+      key <AB02> { [ U183c,  U1842     ] };//X  TSA   CHI
+      key <AB03> { [ U1827,  U181A     ] };//C  EE    
+      key <AB04> { [ U1830,  U181C     ] };//V  SA    
+      key <AB05> { [ U182e,  U181D     ] };//B  MA    
+      key <AB06> { [ U1822,  U1800     ] };//N  I     Birga  
+      key <AB07> { [ U1832,  U1805     ] };//M  TA    4Dots   
+      key <AB08> { [ U1802,  U300A     ] };//<  COMMA Left double angle bracket
+      key <AB09> { [ U1803,  U300B     ] };//>  FullS Right double angle bracket
+      key <AB10> { [ U202f,  U2048     ] };//?  NNBS  Question
+    
+      // End alphanumeric section
+    
+      key <SPCE> { [     space ] };
+    
+      //include "level2(ralt_switch)"
+    };
+
+
+<br>
+Modification to ***/usr/share/X11/xkb/rules/evdev.xml*** is:<br>
 
     <layout>
     <configitem>
@@ -46,14 +113,14 @@ locale:<br>
     LC_ALL=
 
 <br>
-I submitted my problems and questions on that site, still haven't gotten reply.<br>
-The reason I'm not using Ubuntu is because of persistent mysterious Wifi and github disconnectivity problem,i.e. Wifi suddenly goes off or push to github repeatedly fails with "unable to resolve host github.com" when Wifi is connected.<br>
-Fedora may not be the problem, I suspect my FCITX configuration is problematic. ***If*** the FCITX entry for Mongolian is "**ms**"(the file which is copied to ***/usr/share/X11/xkb/symbols*** as given in the first URL: [http://www.mongoltolbo.com/ubuntu-mongol-bichgiin-gariin-draiver][1] ) ***not*** "mn", maybe possible to input vertical Mongolian, isn't it?<br>
-I set up FCITX following <br>
-[https://srobb.net/jpninpt.html#Fedora][2]<br>and<br>
-[https://blogs.fsfe.org/stefan.a/2014/09/23/set-up-fcitx-chinese-and-japanese-language-input-ubuntu-14-04/][3]
-<br>
-Finally, IBus isn't uninstalled.<p>
-I came across a github repo about vertical typesetting, [https://github.com/andreas-vox/ScribusCTL][4], the content and all the above problems are way above my comprehension.<br>Using Windows or Mac OSX is impossible for me now.<p>
+Current active IME is **fcitx**, with input language/source "Mongolian mn" added.<br>I set up FCITX by following <br>
+[https://blogs.fsfe.org/stefan.a/2014/09/23/set-up-fcitx-chinese-and-japanese-language-input-ubuntu-14-04/][2]
+<br>Default IME IBus isn't uninstalled, just set off.
+<p>I submitted my problems and questions on that site, still haven't gotten reply.<br>
+The reason I'm not using Ubuntu is because of persistent mysterious Wifi and github disconnectivity problem,i.e. Wifi suddenly goes off or push to github repeatedly fails with "unable to resolve host github.com" when Wifi is connected.<p>
+Fedora may not be the problem, I suspect my FCITX configuration is problematic. ***If*** the FCITX entry for Mongolian is "**ms**"(the file which is copied to ***/usr/share/X11/xkb/symbols*** as given in the above URL link) ***not*** "mn", maybe possible to input vertical Mongolian, isn't it?<p>
+Using Windows or Mac OSX is impossible for me now.<p>
 I genuinely appreciate any suggestion, advice and correction for the causes of and solutions for my problems and theory & practice for vertical text processing in Fedora 25+ with LibreOffice 5.2.5+.<br>Thanks in advance.
 
+  [1]: http://www.mongoltolbo.com/ubuntu-mongol-bichgiin-gariin-draiver
+  [2]: https://blogs.fsfe.org/stefan.a/2014/09/23/set-up-fcitx-chinese-and-japanese-language-input-ubuntu-14-04/
