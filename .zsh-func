@@ -44,6 +44,7 @@ for str in "$@";do
     echo "[debug]:unknown pattern found, specified argument will be applied without any modification, may result in unexpected behavior!"
   fi
   str="${str%&list=*}"
+  str="${str%&t=*}"
   str="${str%&index=*}"
   str="${str%%\?*}"
   cmd+="-iname \"*$str*\" -o "
