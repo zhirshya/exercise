@@ -153,3 +153,7 @@ where n and m are positive integers (>0)
 # \=
 :%s/System\.out\.print\(ln\)\=/LOGGER.debug/gc
 
+#remove contiguous duplicate lines
+:%!uniq
+
+
