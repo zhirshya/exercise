@@ -156,4 +156,7 @@ where n and m are positive integers (>0)
 #remove contiguous duplicate lines
 :%!uniq
 
+#Capitalize first letter of each word in a selection
+http://stackoverflow.com/questions/17440659/capitalize-first-letter-of-each-word-in-a-selection-using-vim
+s/\<./\u&/g
 
