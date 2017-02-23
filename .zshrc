@@ -149,6 +149,7 @@ alias gcc='ccache gcc -std=c11 -Wall -Wextra -g'
 alias gxx='ccache g++ -std=c++14 -Wall -Wextra -g'
 alias vgr='valgrind --leak-check=yes'
 
+alias vlc='vlc --no-metadata-network-access --one-instance --playlist-enqueue --qt-start-minimized'
 alias gnome-screenshot='gnome-screenshot -w -p -d 7 -f'
 alias wget='wget --no-cookies -c' #or utilize .wgetrc
 alias wgetf='wget --no-cookies -c -i' #or utilize .wgetrc
