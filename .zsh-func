@@ -182,7 +182,7 @@ elif [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]];then
   #wndw_pos="--video-x 0 --video-y 0" #place VLC in top left corner
   echo '[debug] hit [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]]'
 else
-  echo 'error: invalid input files, please specify valid media files, and try again.'
+  echo "error: invalid input files, please specify valid media files, and try again."
   return 113
 fi
 #todo
@@ -389,7 +389,7 @@ if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2
   if (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
     echo '※[debug] hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
   fi
-  echo 'usage: avspd input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]'
+  echo "usage: avspd input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
 #define EX_USAGE 64 /* command line usage error */
   return 64
 fi
@@ -404,7 +404,7 @@ infile=""
 outfile=""
 
 if [[ ! -f $1 ]];then
-  echo 'please specify a valid local file name, and try again.'
+  echo "please specify a valid local file name, and try again."
   return 113
 else
   infile="$1"
@@ -431,7 +431,7 @@ if (($# == 2));then
     suffix="${infile##*.}"
     outfile+=$suffix
   elif [[ -e $2 ]];then
-    echo 'error: destination/output file already exist, please specify other name for output, and try again.'
+    echo "error: destination/output file already exist, please specify other name for output, and try again."
     return 113
   else
     outfile="$2"
@@ -448,7 +448,7 @@ if (($# == 3));then
 #if [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]];then #parse error near `|'
   if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
     if [[ -e $3 ]];then
-      echo 'error: destination/output file already exist, please specify other name for output, and try again.'
+      echo "error: destination/output file already exist, please specify other name for output, and try again."
       return 113
     fi
     echo '[debug] hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
@@ -460,7 +460,7 @@ if (($# == 3));then
     suffix="${infile##*.}"
     outfile+=$suffix
   else  #? redundant as already checked at function start
-    echo 'usage: avspd input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]'
+    echo "usage: avspd input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
     #define EX_USAGE 64 /* command line usage error */
     return 64
   fi
@@ -497,7 +497,7 @@ echo '"${infile_singlequoted}"':"${infile_singlequoted}"
 echo '"${outfile_singlequoted}"':"${outfile_singlequoted}"
 
 if [[ -e ${outfile_singlequoted} ]];then
-  echo 'error: destination/output file already exist, please specify other name for output, and try again.'
+  echo "error: destination/output file already exist, please specify other name for output, and try again."
   return 113
 fi
 
@@ -513,7 +513,7 @@ cmd+="${outfile_singlequoted}" #"$outfile_singlequoted"
 #cmd=${cmd//\'/\\\'} #eval: unmatched '
 #cmd=${cmd//*/\*}
 
-echo '#avspd':$cmd
+echo "#avspd":$cmd
 eval ${cmd}
 echo '$?':$?
 }
@@ -533,9 +533,9 @@ gimp --version
 vlc --version
 firefox --version
 xmllint --version
-echo 'node --version':$(node --version)
-echo 'youtube-dl --version':$(youtube-dl --version)
-#echo 'python --version':$(python --version) #python outputs its name automatically!
+echo "node --version":$(node --version)
+echo "youtube-dl --version":$(youtube-dl --version)
+#echo "python --version":$(python --version) #python outputs its name automatically!
 echo $(python --version)
 }
 
@@ -544,7 +544,20 @@ nohup libreoffice --calc "$@" &> /dev/null & disown
 }
 
 function wrtr() {
-nohup libreoffice --writer "$@" &> /dev/null & disown
+args=""
+for file in "$@";do
+  if [[ -d $file ]];then
+    echo "error: directory with name \`$file' already exist, unable to edit directories, please specify other file name, and try again."
+    return 113
+  elif [[ ! -e $file ]];then
+    touch $file
+  fi
+  
+  args+="$file "
+done
+args=${args%% }
+nohup libreoffice --writer "$args" &> /dev/null & disown
+#nohup libreoffice --writer "$@" &> /dev/null & disown
 }
 
 function slid() {
@@ -562,10 +575,10 @@ nohup evince "$@" &> /dev/null & disown
 
 function mkcd() {
 if [[ -z $1 ]] || [[ ! -n $1 ]];then
-  echo 'error: please specify a valid directory name and try again.'
+  echo "error: please specify a valid directory name and try again."
   return 113
 elif [[ -d $1 ]];then
-  echo "error: destination directory '$1' already exist, please specify other name and try again."
+  echo "error: destination directory \`$1' already exist, please specify other name and try again."
   return 113
 else
   mkdir -p -- "$1" &&
