@@ -1,0 +1,77 @@
+uname -a
+lsb_release -a
+
+sudo ufw enable
+sudo ufw status verbose
+
+cat /proc/sys/vm/swappiness
+sudo vim /etc/sysctl.conf
+# Decrease swap usage to a more reasonable level
+vm.swappiness=10
+
+gsettings set com.canonical.indicator.datetime time-format 'custom'
+gsettings set com.canonical.indicator.datetime custom-time-format '%A %B %d %Y %H:%M:%S %:::z'
+
+sudo apt purge apport unity-webapps-common xul-ext-unity xul-ext-websites-integration unity-scope-musicstores unity-scope-musique unity-scope-tomboy libtotem-plparser18 totem totem-common thunderbird flashplugin-installer mosh
+#Remove firefox and all associated language packs
+sudo apt --purge autoremove firefox
+dpkg --list | grep firefox
+sudo apt --purge autoremove <leftover>
+sudo apt autoremove
+
+sudo apt install fcitx-pinyin fcitx-sunpinyin fcitx-googlepinyin fcitx-anthy fcitx-mozc
+
+sudo apt install unity-tweak-tool
+
+gsettings set com.canonical.desktop.interface scrollbar-mode normal
+
+#E: encountered a section with no package: header
+#E: problem with Mergelist/var/lib/apt/lists
+sudo rm -Rf /var/lib/apt/lists/* -vf
+
+#Brightness is reset to Maximum on restart
+sudo apt install xbacklight
+Open the Startup Applications Preferences menu.
+Click the Add button and add the following information:
+Name: Brightness Command: xbacklight -set 60
+Replace 60 with whatever brightness level you prefer.
+
+sudo apt install binutils autoconf gcc g++ gdb dkms build-essential ufw gimp htop curl wget zsh vim gnuchess xboard ccache valgrind anki p7zip-rar p7zip-full bzip2 evince unity-tweak-tool vlc gawk ubuntu-restricted-extras git vimx meld ack-grep fdupes openjdk-8-jdk 
+
+sudo apt install traceroute nmap ettercap-graphical dsniff winbind cifs-utils smbclient wireshark
+sudo apt install netcat socat tsocks
+
+sudo apt purge flashplugin-installer #ubuntu-restricted-extras automatically install flashplugin-installer
+
+#*Please note that if using this ppa I would *not* try upgrading to 14.10/15.04, ect. Do a fresh install instead. The intent here is just for users wishing to stay on 14.04* If upgrading anyway use ppa-purge *First*
+sudo ppa-purge ppa:mc3man/trusty-media
+sudo ppa-purge ppa:videolan/stable-daily
+
+#Ubuntu 14.04.3 freeze/hang on shutdown
+sudo vi /etc/default/grub
+#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash" ->
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi=force"
+sudo update-grub
+
+sudo addgroup --system admin
+sudo adduser r admin
+sudo chgrp admin 0
+sudo chmod g+w,o-w 0
+
+sudo vim /etc/rc.local
+echo 55 > /sys/class/backlight/intel_backlight/brightness
+
+%admin ALL=(ALL) NOPASSWD: /sbin/shutdown
+
+sudo apt purge linux-image-3.19.0-{39,43,47,49,51}-generic linux-image-extra-3.19.0-{39,43,47,49,51}-generic linux-headers-3.19.0-{39,43,47,49,51} linux-headers-3.19.0-{39,43,47,49,51}-generic 
+
+sudo apt purge linux-headers-3.19.0-{39,43,47,49,51} linux-headers-3.19.0-{39,43,47,49,51}-generic
+
+~ mv Downloads/tor-browser_en-US .
+~ rmrf Downloads 
+~ ln -s /mnt/0/skachat ~/Downloads
+
+#Remove Guest Session in Ubuntu 16.04 Login Screen
+sudo mkdir /etc/lightdm/lightdm.conf.d
+sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" > /etc/lightdm/lightdm.conf.d/50-no-guest.conf'
+
