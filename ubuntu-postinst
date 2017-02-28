@@ -36,7 +36,7 @@ Click the Add button and add the following information:
 Name: Brightness Command: xbacklight -set 60
 Replace 60 with whatever brightness level you prefer.
 
-sudo apt install binutils autoconf gcc g++ gdb dkms build-essential ufw gimp htop curl wget zsh vim gnuchess xboard ccache valgrind anki p7zip-rar p7zip-full bzip2 evince unity-tweak-tool vlc gawk ubuntu-restricted-extras git vimx meld ack-grep fdupes openjdk-8-jdk 
+sudo apt install binutils autoconf gcc g++ gdb dkms build-essential ufw gimp htop curl wget zsh vim gnuchess xboard ccache valgrind anki p7zip-rar p7zip-full bzip2 lzip evince unity-tweak-tool vlc gawk ubuntu-restricted-extras git vimx meld ack-grep fdupes openjdk-8-jdk 
 
 sudo apt install traceroute nmap ettercap-graphical dsniff winbind cifs-utils smbclient wireshark
 sudo apt install netcat socat tsocks

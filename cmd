@@ -363,6 +363,9 @@ rpm -qa | egrep '(uname)|(vim)|(gdb)|(gcc)|(g++)|(git)|(openssl)|(ssh)|(libreoff
 #?
 tar -xvzf wkhtmltopdf-0.10.0_rc2-static-amd64.tar.bz2 -C /opt
 
+#.tar.lz
+tar --lzip -xvf gmp-6.1.2.tar.lz
+
 #clang
 clang++ -std=c++14 your_source.cpp -o your_binary
 
