@@ -52,11 +52,32 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+syntax on
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+set number
+set nocompatible
+set nowritebackup
+set noswapfile
+set background=light
+set autoindent
+set smartindent
+set showmatch
+set guioptions=T
+set fileencodings=utf-8,prc
+set ruler
+set incsearch
+map gs :%s
+set t_Co=256
+:colorscheme evening
+
 " tabstop:          Width of tab character
 " softtabstop:      Fine tunes the amount of white space to be added
 " shiftwidth        Determines the amount of whitespace to add in normal mode
 " expandtab:        When on uses space instead of tabs
-set tabstop     =2
-set softtabstop =2
-set shiftwidth  =2
+set tabstop     =8
+set softtabstop =0
+set shiftwidth  =4
 set noexpandtab
