@@ -3,3 +3,5 @@ For example the monthly payment on a 30 year mortgage of $500,000 at 4% would be
 =PMT(4%/12, 360, -500000)
 The interest rate is the annual rate but we are looking for a monthly payment so we divide by 12. A 30 year mortgage has 360 monthly payments. The function produces negative amounts so the principal amount must be entered as a negative to output a positive payment.
 
+F4 : Repeat last edit
+
