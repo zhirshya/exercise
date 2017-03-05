@@ -180,4 +180,10 @@ $ sudo dnf autoremove
 
 but beware that dnf decides that a package is no longer needed if you haven't explicitly asked to install it and nothing else requires it. That doesn't mean that package is not useful or that you don't use it. Only remove what you are certain you don't need. There's a known bug in PackageKit which doesn't mark packages as user-installed, see bug 1259865. If you use PackageKit (or GNOME Software, Apper, etc) for installation, this output might list even important apps and system packages, so beware.
 
+#Disable and Remove Unwanted Services on RHEL/CentOS
+systemctl stop chronyd
+systemctl disable chronyd
+
+systemctl status httpd
+systemctl stop httpd
 
