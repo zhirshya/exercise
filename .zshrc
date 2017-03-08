@@ -156,7 +156,8 @@ alias wgetf='wget --no-cookies -c -i' #or utilize .wgetrc
 alias fdef='declare -f' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /mnt/0/gthb/note/.todo'
 alias td='vim /mnt/0/gthb/note/.todo'
-alias utv0='utv 0'
+alias utv0='utv -l0 -p600'
+alias utv1='utv -p600'
 alias lynx='lynx -cookies=off'
 alias rtkod='echo "\$\?":$?'
 
