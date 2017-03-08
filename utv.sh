@@ -5,7 +5,8 @@
 #extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
 lockpoweroff_screen="on"
-shutdown_timeout=0
+shutdown_timeout="NOW"
+#shutdown_timeout=0
 
 while getopts l:p: opt;do
 	case "$opt" in
@@ -15,12 +16,13 @@ while getopts l:p: opt;do
 		echo >&2 \
 		"usage: $0 [-l [off|0]] [-p positive_integer]"
 		exit 1;;
+	*) echo "default case of getopts, nothing to do";;
 	esac
 done
 shift $((OPTIND-1))
 
 if [[ $lockpoweroff_screen != off ]] && [[ $lockpoweroff_screen != 0 ]];then
-#if ! ( [[ $lockpoweroff_screen == off ]] || [[ $lockpoweroff_screen == 0 ]] || (($lockpoweroff_screen == 0)) );then #NOT work
+#if ! ( [[ $lockpoweroff_screen == off ]] || [[ $lockpoweroff_screen == 0 ]] || (($lockpoweroff_screen == 0)) );then #NOT work,DANGER! NO get back!
 	dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 	xset dpms force off
 fi
@@ -45,7 +47,8 @@ echo '$(times)':$(times)
 echo '$SECONDS':$SECONDS
 #http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
 
-if [[ $shutdown_timeout == now ]] || [[ $shutdown_timeout =~ [0-9]+ ]];then
+#Failed to parse time specification: NOW
+if ( [[ $shutdown_timeout =~ [nN][oO][wW] ]] && shutdown_timeout="now" ) || [[ $shutdown_timeout =~ [0-9]+ ]];then
 	sudo shutdown -P -f $shutdown_timeout
 else
 	exit $xt_code
