@@ -8,13 +8,13 @@ lockpoweroff_screen="on"
 shutdown_timeout="NOW"
 #shutdown_timeout=0
 
-while getopts l:p: opt;do
+while getopts l:s: opt;do
 	case "$opt" in
 	l) lockpoweroff_screen="$OPTARG";; #0(zero) or "off"
-	p) shutdown_timeout="$OPTARG";;
+	s) shutdown_timeout="$OPTARG";;
 	\?) # unknown flag
 		echo >&2 \
-		"usage: $0 [-l [off|0]] [-p positive_integer]"
+		"usage: $0 [-l [off|0]] [-s positive_integer]"
 		exit 1;;
 	*) echo "default case of getopts, nothing to do";;
 	esac
