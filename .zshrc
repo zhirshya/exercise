@@ -96,14 +96,13 @@ fi
 
 alias ll='ls -alFt' #Pass the -r option to reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size)
 alias lls='ls -alFt | less'
-#alias s0='sudo shutdown -P -f --no-wall'	#Fedora
-alias rbt='sudo reboot -f --no-wall'	#Fedora
+alias s0='sudo shutdown -P -f'
+alias 0s0='sudo shutdown -c'
+alias rbt='sudo reboot -f'
 alias ins='sudo dnf install'
 #alias ins='sudo apt install'
 alias rmv='sudo dnf remove'
 alias rpmsrch='sudo dnf search all'
-alias 00p='sudo shutdown -c'
-#alias rbt='sudo reboot -f'	#Ubuntu
 alias wrs='whereis'
 alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'

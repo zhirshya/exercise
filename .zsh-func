@@ -224,7 +224,7 @@ function krm() {
 nohup google-chrome-stable --ssl-version-min=tls1.3 --incognito weblio.jp merriam-webster.com "$@" &> /dev/null & disown
 }
 
-function 0p() {
+function s0() {
 if (($# == 1)) && [[ $1 =~ [0-9]+ ]];then
   echo '[debug] hit (($# == 1)) && [[ $1 =~ [0-9]+ ]] and $1':$1
   sudo shutdown -P -f "$1"
