@@ -9,3 +9,5 @@ CTRL + Backspace : Show active cell
 CTRL + Spacebar : Select the entire column
 Shift + Spacebar : Select the entire row
 
+=VALUE(TRIM(A2))
+=VALUE(TRIM(CLEAN(A2)))
