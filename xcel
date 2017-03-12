@@ -9,5 +9,15 @@ CTRL + Backspace : Show active cell
 CTRL + Spacebar : Select the entire column
 Shift + Spacebar : Select the entire row
 
+debugging formulas using F9 key:
+=CONCATENATE(TRANSPOSE(B2:B19))
+Don’t press enter yet.
+Select the TRANSPOSE(B2:B19) portion and press F9. (related: debugging formulas using F9 key)
+This replaces the TRANSPOSE(B2:B19) with its result
+Now remove curly brackets { and }
+Enter
+Done!
+http://chandoo.org/wp/2014/01/13/combine-text-values-quick-tip/
+
 =VALUE(TRIM(A2))
 =VALUE(TRIM(CLEAN(A2)))
