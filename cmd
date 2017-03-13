@@ -392,3 +392,6 @@ echo "There are $FILES in the current working directory."
 about:config >> print.use_simplify_page
 Alt-f-v
 
+#shutdown after wget exit
+wgetf url && s0
+
