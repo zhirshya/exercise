@@ -96,7 +96,6 @@ fi
 
 alias ll='ls -alFt' #Pass the -r option to reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size)
 alias lls='ls -alFt | less'
-alias s0='sudo shutdown -P -f +0'
 alias 0s0='sudo shutdown -c'
 alias rbt='sudo reboot -f'
 alias ins='sudo dnf install'
