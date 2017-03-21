@@ -395,3 +395,9 @@ Alt-f-v
 #shutdown after wget exit
 wgetf url && s0
 
+#g++
+g++ -std=c++11 -Wall -Wextra -O0 -ggdb3 -S numberpermute.cpp /*output: numberpermute.s*/
+
+#make
+linux makefile put rules for different programming languages in one makefile (possible with java and c++ on RHEL7.1, tested on Mar.17,2017)
+
