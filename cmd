@@ -401,3 +401,7 @@ g++ -std=c++11 -Wall -Wextra -O0 -ggdb3 -S numberpermute.cpp /*output: numberper
 #make
 linux makefile put rules for different programming languages in one makefile (possible with java and c++ on RHEL7.1, tested on Mar.17,2017)
 
+#systemctl
+udisks2.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+
+
