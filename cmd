@@ -123,6 +123,7 @@ sudo ln -s /mnt/0/gthb/xrcs/utv.sh /usr/local/bin/utv
 grep -Ril "2>&1" .
 
 #sed, vim
+sed -i.bak "s/\"\\\\n\"/'\\\\n'/g" *.cpp /* cout << "\n" --> cout << '\n' (see Effective Modern C++ by Scott Meyer) */
 %s/\(>\s*[/\w.+~-]\+\)\s\+2>&1/\&\1/gc #pattern not found
 g/\(>\s*[/\w.-]\+\)\s\+2>&1/s//\&\1/gc #pattern not found
 g/\(>.\+\)\s\+2>&1/s//\&\1/gc	#work
