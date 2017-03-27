@@ -405,4 +405,13 @@ linux makefile put rules for different programming languages in one makefile (po
 #systemctl
 udisks2.service changed on disk. Run 'systemctl daemon-reload' to reload units.
 
+#seq
+seq -s, 2 7 100
+seq -s, 100
+
+#tee
+pstree | tee -a pstree_tee.out
+
+#df
+df -aTh
 
