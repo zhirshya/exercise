@@ -363,6 +363,7 @@ rpm -qa | egrep '(uname)|(vim)|(gdb)|(gcc)|(g++)|(git)|(openssl)|(ssh)|(libreoff
 
 #?
 tar -xvzf wkhtmltopdf-0.10.0_rc2-static-amd64.tar.bz2 -C /opt
+tar --bzip2 -xf /path/to/boost_1_63_0.tar.bz2
 
 #.tar.lz
 tar --lzip -xvf gmp-6.1.2.tar.lz
