@@ -416,3 +416,6 @@ pstree | tee -a pstree_tee.out
 #df
 df -aTh
 
+$alias which
+which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
+
