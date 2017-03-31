@@ -394,9 +394,6 @@ echo "There are $FILES in the current working directory."
 about:config >> print.use_simplify_page
 Alt-f-v
 
-#shutdown after wget exit
-wgetf url && s0
-
 #g++
 g++ -std=c++11 -Wall -Wextra -O0 -ggdb3 -S numberpermute.cpp /*output: numberpermute.s*/
 
@@ -418,4 +415,16 @@ df -aTh
 
 $alias which
 which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
+
+#one-liner(env check): utilize ';' , query multiple aliases at once!
+echo $CLASSPATH ; echo $JAVA_HOME
+java -version ; javac -version
+alias jv8c="$JAVA_HOME/bin/javac -g -Xdiags:verbose -d . -classpath ."
+alias jv8="$JAVA_HOME/bin/java -classpath ."
+alias g++ gcc gxx jv8c jv8
+
+#shutdown after wget exit
+wgetf url && s0
+wgetf url ; s0
+
 
