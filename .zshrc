@@ -142,6 +142,7 @@ alias 123='enable -p #'
 alias mv='mv -i'
 alias cp='cp -i'
 alias date='date +"%Y%m%d %H%M%S.%N%::z%Z %A"'
+alias bc='bc -l' #echo "scale=3; 30000/7" | bc -l
 
 alias gcc='ccache gcc -std=c11 -Wall -Wextra -ggdb3 -O0'
 alias gxx='ccache g++ -std=c++14 -Wall -Wextra -ggdb3 -O0'
