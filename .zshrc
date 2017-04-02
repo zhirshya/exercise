@@ -156,7 +156,9 @@ alias fdef='declare -f' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /mnt/0/gthb/note/.todo'
 alias td='vim /mnt/0/gthb/note/.todo'
 alias utv0='utv -l0 -s600'
+alias utv0r='utv -l0 -s600 -b75'
 alias utv1='utv -s600'
+alias utv1r='utv -s600 -b75'
 alias lynx='lynx -cookies=off'
 alias rtkod='echo "\$\?":$?'
 
