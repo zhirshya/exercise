@@ -426,5 +426,6 @@ alias g++ gcc gxx jv8c jv8
 #shutdown after wget exit
 wgetf url && s0
 wgetf url ; s0
+scrblk;wgetf url --limit-rate=75k;s0 60
 
 
