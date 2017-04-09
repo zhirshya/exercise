@@ -321,6 +321,9 @@ framestep through a paused video using , (comma) and . (dot) to go backwards and
 1. #!/bin/bash -xv
 2. bash/zsh/ksh -xv shellscript
 
+#tee
+pstree | tee -a pstree_tee.out
+
 http://docstore.mik.ua/orelly/unix3/upt/ch37_01.htm
 #save the debugging output in file and see it on screen? Use tee to copy the scrfile stdout and stderr; add tee to the pipeline before the pager.
 # $ scrfile | tee outfile 2>&1 | less
@@ -406,9 +409,6 @@ udisks2.service changed on disk. Run 'systemctl daemon-reload' to reload units.
 #seq
 seq -s, 2 7 100
 seq -s, 100
-
-#tee
-pstree | tee -a pstree_tee.out
 
 #df
 df -aTh
