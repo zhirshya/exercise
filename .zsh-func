@@ -525,6 +525,7 @@ gdb --version
 gcc --version
 g++ --version
 git --version
+as --version  #GNU assembler
 openssl version
 ssh -V
 libreoffice --version
