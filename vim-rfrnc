@@ -160,3 +160,5 @@ where n and m are positive integers (>0)
 http://stackoverflow.com/questions/17440659/capitalize-first-letter-of-each-word-in-a-selection-using-vim
 s/\<./\u&/g
 
+nnoremap ; :
+nnoremap : ;
