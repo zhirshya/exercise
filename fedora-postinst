@@ -187,3 +187,7 @@ systemctl disable chronyd
 systemctl status httpd
 systemctl stop httpd
 
+sudo find /var/cache/PackageKit/ -name "*.rpm" -execdir rm {} \;
+vim /etc/PackageKit/PackageKit.conf
+KeepCache=false
+
