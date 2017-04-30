@@ -221,7 +221,7 @@ nohup firefox --ssl-version-min=tls1.3 -private "$@" &> /dev/null & disown
 }
 
 function krm() {
-nohup google-chrome-stable --ssl-version-min=tls1.3 --incognito weblio.jp merriam-webster.com "$@" &> /dev/null & disown
+nohup google-chrome-stable --ssl-version-min=tls1.2 "$@" &> /dev/null & disown
 }
 
 function s0() {
