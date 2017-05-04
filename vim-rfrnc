@@ -162,3 +162,16 @@ s/\<./\u&/g
 
 nnoremap ; :
 nnoremap : ;
+
+delete word around cursor in VIM:
+To delete all characters between two whitespaces, in normal mode: daW
+To delete just one word:
+daw : delete the word under the cursor    
+caw : delete the word under the cursor and put you in insert mode 
+'a' specifies that the deletion is to include a delimiter
+To delete the entire word your cursor is on and to put you in insert mode use ciw
+If the cursor is inside the word:
+diw to delete in the word (doesn't include spaces)
+daw to delete around the word (includes spaces before the next word).
+
+
