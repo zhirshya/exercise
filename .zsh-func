@@ -520,6 +520,7 @@ echo '$?':$?
 function appvr() {
 uname -a
 vim --version
+nvim --version
 gdb --version
 gcc --version
 g++ --version
