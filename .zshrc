@@ -114,7 +114,7 @@ alias utcap='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --write-sub
 alias utlscap='youtube-dl --youtube-skip-dash-manifest --list-subs'
 alias utlscvr='youtube-dl --youtube-skip-dash-manifest --list-thumbnails'
 
-alias or='cd /mnt/0/skachat/tor-browser_en-US && ./start-tor-browser.desktop && -'
+alias or='cd /mnt/0/download/tor-browser_en-US && ./start-tor-browser.desktop && -'
 
 alias ..='cd ..'
 alias ...='cd ../..'
