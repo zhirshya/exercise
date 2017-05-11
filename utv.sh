@@ -5,8 +5,7 @@
 #extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
 lockpoweroff_screen="on"
-shutdown_timeout="NOW"
-#shutdown_timeout=0
+#shutdown_timeout="NOW"  #or 0
 
 while getopts "l:s:b:" opt; do
 	case "$opt" in
@@ -70,8 +69,7 @@ echo '$(times)':$(times)
 echo '$SECONDS':$SECONDS
 #http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
 
-#Failed to parse time specification: NOW
-if [[ $shutdown_timeout =~ [nN][oO][wW] ]] && shutdown_timeout="now" || [[ $shutdown_timeout =~ [0-9]+ ]];then
+if [[ $shutdown_timeout =~ [nN][oO][wW] ]] || [[ $shutdown_timeout =~ [0-9]+ ]];then
 	sudo shutdown -P -f $shutdown_timeout
 else
 	exit $xt_code

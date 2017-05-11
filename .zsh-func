@@ -186,8 +186,8 @@ else
 fi
 #todo
 #$* or $@ find substr("--rate[ \t]1") ? (NO "--rate 1.5" && pass on everything else ) : $@
-nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue --rate 1.5 --qt-start-minimized "$@" &> /dev/null & disown
-#nohup vlc --no-metadata-network-access --one-instance --playlist-enqueue "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
+nohup vlc --no-metadata-network-access --rate 1.5 --qt-start-minimized "$@" &> /dev/null & disown  #work in pair?: --one-instance --playlist-enqueue
+#nohup vlc --no-metadata-network-access --rate 1.3 "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
 }
 
 function vlopt() {

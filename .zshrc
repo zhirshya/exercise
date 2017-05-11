@@ -157,10 +157,11 @@ alias wgetf='wget --no-cookies -c -i' #or utilize .wgetrc
 alias fdef='declare -f' #if not defined as shell alias check for shell functions
 alias tdr='tail -n 15 /mnt/0/gthb/note/.todo'
 alias td='vim /mnt/0/gthb/note/.todo'
-alias utv0='utv -s90'  #override timeout if to leave suspended for long time, because get IMMEDIATE shutdown in case of wakeup/resume from sleep/hibernation timeout(system time on wakeup >= scheduled shutdown time)
-alias utv0r='utv -s90 -b100'
-#alias utvl0='utv -l0 -s90'
-#alias utvl0r='utv -l0 -s90 -b100'
+alias utv0='utv -sNOW'
+alias utv0r='utv -sNOW -b100'
+alias utvr='utv -b100'
+alias utvl0='utv -l0'
+alias utvl0r='utv -l0 -b100'
 alias lynx='lynx -cookies=off'
 alias rtkod='echo "\$\?":$?'
 
