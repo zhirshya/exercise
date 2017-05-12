@@ -31,3 +31,10 @@ Explore techniques to extend your Node.js application on Azure with Web Jobs. Fi
 codegeek, codektv
 Source via: Channel9 - MVA
 
+#basic
+> var arr=['garlic3clove','discipline','survival skill','responsive website','mobile app','blockchain electronic currency','russian'];
+undefined
+> arr[arr.length]='blindfold chess!';
+'blindfold chess!'
+> console.log(arr);
+
