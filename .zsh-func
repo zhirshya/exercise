@@ -533,7 +533,6 @@ ffmpeg -version
 gimp --version
 vlc --version
 google-chrome-stable --version
-firefox --version
 xmllint --version
 echo "node --version":$(node --version)
 echo "youtube-dl --version":$(youtube-dl --version)
