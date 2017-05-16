@@ -128,7 +128,7 @@ sed -i.bak "s/\"\\\\n\"/'\\\\n'/g" *.cpp /* cout << "\n" --> cout << '\n' (see E
 g/\(>\s*[/\w.-]\+\)\s\+2>&1/s//\&\1/gc #pattern not found
 g/\(>.\+\)\s\+2>&1/s//\&\1/gc	#work
 
-7z x -o/mnt/0/vrk -p".*\!#" vrk.7z
+7z x -o/mnt/0/vrk -p".*\!#" vrk.7z  #-o{OutputDirectory} x:eXtract with full paths
 7z a -p".*\!#" curr.7z curr
 
 less /proc/sys/dev/cdrom/info
