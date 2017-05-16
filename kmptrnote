@@ -147,8 +147,12 @@ pkexec visudo -f /etc/sudoers.d/myOverrides
 
 dd if=kali-linux-2016.1-amd64.iso of=/dev/sdb bs=512k
 
-pdftk polymersummit-es6.pdf cat 15-69 72-end output use-es6-with-polymer,2015.pdf
-pdftk Eloquent\ JavaScript,\ 2nd\ Edition.pdf cat 1 8 13-end output eloquent_JavaScript_2nd_ed.NoStarchPress.pdf
+#Stapler is a pure Python alternative to PDFtk, a tool for manipulating PDF documents from the command line
+pdf-stapler del photography_BasicPrinciples.pdf 2-8 photography_BasicPrinciples_DavidCapel_346B_IST.pdf
+https://github.com/hellerbarde/stapler
+sudo dnf install pdf-stapler
+#pdftk polymersummit-es6.pdf cat 15-69 72-end output use-es6-with-polymer,2015.pdf
+#pdftk Eloquent\ JavaScript,\ 2nd\ Edition.pdf cat 1 8 13-end output eloquent_JavaScript_2nd_ed.NoStarchPress.pdf
 
 cd /mnt/0
 fdupes -Sr js nodejs_screencast java cpp aws c c++graphic eecs-ict php embnix nixcpp nixc3d nixpythn socket 01 fpga wbst swift ms tekvid android game hak how pentst
