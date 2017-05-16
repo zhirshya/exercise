@@ -541,3 +541,6 @@ cut -d: -f1 /etc/group | sort
 #Google Chrome Bookmarks Location
 ~/.config/google-chrome/Default/Bookmarks
 
+#batch convert .png images to .jpg
+bash -c 'for image in *.png; do convert "$image" "${image%.png}.jpg"; echo -n “$image:$?,”; done' #-n: do not output the trailing newline
+
