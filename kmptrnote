@@ -550,7 +550,7 @@ bash -c 'for image in *.png; do convert "$image" "${image%.png}.jpg"; echo -n â€
 
 #vlc
 $HOME/.config/vlc/vlcrc
-#Save snapshots in the same folder as the video;Save snapshots with timestamp(where is the snapshot in the video)
+#Save snapshots in the same folder as the video;Save snapshots with timestamp(where is the snapshot in the video): filename+current_playback_time.jpg
 Video snapshot directory: /$N_$T
 Video snapshot file prefix: EMPTY
 
