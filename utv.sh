@@ -4,24 +4,22 @@
 #find /mnt/0 ~ -type f -iname '*.part' -execdir youtube-dl --youtube-skip-dash-manifest -a {} +
 #extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
-lockpoweroff_screen="on"
-
-while getopts "l:s:b:" opt; do
+while getopts "st:b:" opt; do
 	case "$opt" in
-	l) lockpoweroff_screen="$OPTARG";; #0(zero) or "off"
-	s) shutdown_timeout="$OPTARG";;
+	s) lockpoweroff_screen="NoLockPoweroffScreen";;
+	t) shutdown_timeout="$OPTARG";;
 	b) bandwidth_rate="$OPTARG";;
 	\?) # unknown flag
-		echo >&2 \
-		"usage: $0 [-l [off|0]] [-s positive_integer] [-b positive_integer[kKmM]]"
+		#echo >&2 \
+		echo "usage: $0 [-s] [-t positive_integer] [-b positive_integer[kKmM]]"
 		exit 1;;
-	*) echo "default case of getopts, nothing to do";;
+	*) echo "default case of getopts, most un-eco!";;
 	esac
 done
 shift $((OPTIND-1))
 
-if [[ $lockpoweroff_screen != off ]] && [[ $lockpoweroff_screen != 0 ]];then
-#if ! ( [[ $lockpoweroff_screen == off ]] || [[ $lockpoweroff_screen == 0 ]] || (($lockpoweroff_screen == 0)) );then #NOT work,DANGER! NO get back!
+if [[ -z $lockpoweroff_screen ]] || [[ -n $lockpoweroff_screen ]];then
+#if ! ( [[ $lockpoweroff_screen == off ]] || [[ $lockpoweroff_screen == 0 ]] || (($lockpoweroff_screen == 0)) );then #NOT work!
 	dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 	xset dpms force off
 fi

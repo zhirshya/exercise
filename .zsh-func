@@ -599,7 +599,22 @@ function dwnchk() {
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 urls_whitespaced=""
 errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"  #use variable to hold complex regxpr!
-for file in $(find /mnt/0 ~ -xdev -type f -iname 'dwn*');do
+dwnlst_file="dwn"
+
+while getopts "t" opt; do
+	case "$opt" in
+	t) dwnlst_file="dwn*";;
+	\?) # unknown flag
+		#echo >&2 \
+		echo "usage: $0 [-t]"
+		return 1;;
+	*) echo "default case of getopts, nothing special.";;
+	esac
+done
+shift $((OPTIND-1))
+
+
+for file in $(find /mnt/0 ~ -xdev -type f -iname $dwnlst_file );do
 #  if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then  #error: condition expected: $file  #stderr inaccessible this way!
   if [[ ! $file =~ $errmsg ]];then  #stderr inaccessible this way!
     echo $file:
