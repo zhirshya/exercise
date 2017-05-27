@@ -558,3 +558,5 @@ Video snapshot file prefix: EMPTY
 #download range: download byte ranges;determine which bytes correspond to (slice)begin/start and (slice)end times, most likely by peeking into the first or last bytes of the file;reassemble that sequence to play
 https://github.com/rg3/youtube-dl/issues/622
 
+<?xml version="1.0" encoding="UTF-8"?>
+
