@@ -561,3 +561,7 @@ https://github.com/rg3/youtube-dl/issues/622
 
 <?xml version="1.0" encoding="UTF-8"?>
 
+#clamav
+/usr/bin/freshclam
+clamscan --exclude-dir="^/sys" -r --bell -i /
+
