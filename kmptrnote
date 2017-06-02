@@ -565,4 +565,6 @@ https://github.com/rg3/youtube-dl/issues/622
 /usr/bin/freshclam
 clamscan --exclude-dir="^/sys" -r --bell -i /
 --exclude-dir=^/sys  --exclude-dir=^/dev --exclude-dir=^/proc
+freshclam;clamscan --exclude-dir="^/sys" -r --bell -i /;echo $?
+
 
