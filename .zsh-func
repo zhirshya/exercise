@@ -670,3 +670,8 @@ else
 fi
 }
 
+function klam() {
+sudo freshclam;sudo clamscan --exclude-dir='^/sys' -i --bell -r /;echo '$?':$?
+#nohup "sudo freshclam;sudo clamscan --exclude-dir='^/sys' -i --bell -r / &> ~/.klam & disown;echo '$?':$?
+}
+
