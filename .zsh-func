@@ -657,14 +657,14 @@ echo '$?':$?
 
 function scrshot() {
 if ((1 == $#)) && [[ ! -d $1 ]];then
-#  scrot -q 100 -d 7 -c -s "$1"  #faulty
-  gnome-screenshot -w -p -d 7 -f "$1"
+#  scrot -q 100 -d 5 -c -s "$1"  #faulty
+  gnome-screenshot -w -p -d 5 -f "$1"
   echo '$?':$?
   nohup eog "$1" &> /dev/null & disown
 else
-#  scrot -q 100 -d 7 -c -s -e 'eog $f'  #faulty
+#  scrot -q 100 -d 5 -c -s -e 'eog $f'  #faulty
   filename=$(\date +"%Y%m%d%H%M%S%::z").jpg
-  gnome-screenshot -w -p -d 7 -f "$HOME/$filename"
+  gnome-screenshot -w -p -d 5 -f "$HOME/$filename"
   echo '$?':$?
   nohup eog "$HOME/$filename" &> /dev/null & disown
 fi
