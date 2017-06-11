@@ -675,3 +675,10 @@ sudo freshclam;sudo clamscan --exclude-dir='^/sys' -i --bell -r /;echo '$?':$?
 #nohup "sudo freshclam;sudo clamscan --exclude-dir='^/sys' -i --bell -r / &> ~/.klam & disown;echo '$?':$?
 }
 
+function blutu0() {
+sudo systemctl status bluetooth.service
+sudo systemctl stop bluetooth.service
+sudo systemctl disable bluetooth.service
+sudo systemctl status bluetooth.service
+}
+
