@@ -565,5 +565,5 @@ https://github.com/rg3/youtube-dl/issues/622
 #clamav
 --exclude-dir=^/sys  --exclude-dir=^/dev --exclude-dir=^/proc
 sudo freshclam;sudo clamscan --exclude-dir="^/sys" -i --bell -r /;echo '$?':$?
-
+{ echo "braced logging start."; sudo freshclam; sudo clamscan --exclude-dir='^/sys' -i --bell -r / ; echo "braced logging end."; } &> ~/.cache/clam.log
 
