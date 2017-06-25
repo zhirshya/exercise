@@ -85,7 +85,6 @@ export LC_CTYPE=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias src='source ~/.zshrc'
 
 if [ -e /usr/bin/vimx ]; then  #/usr/bin/vimx: symbolic link to gvim
 	alias vm='/usr/bin/vimx -v'
@@ -95,7 +94,6 @@ else
 fi
 
 alias nvm=nvim
-
 alias ll='ls -alFt' #Pass the -r option to reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size)
 alias lls='ls -alFt | less'
 alias 0s0='sudo shutdown -c'
@@ -164,6 +162,7 @@ alias utvs='utv -s'
 alias utvsr='utv -s -b100'
 alias lynx='lynx -cookies=off'
 alias rtkod='echo "\$\?":$?'
+alias src='source ~/.zshrc'
 
 #punctuation,symbol,rus word
 alias rangli='echo ð'
