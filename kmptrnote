@@ -122,6 +122,7 @@ sudo systemctl disable bluetooth.service
 sudo ln -s /mnt/0/gthb/xrcs/utv.sh /usr/local/bin/utv
 
 grep -Ril "2>&1" .
+grep -Hinr "usermod -aG" /mnt/0/gthb/xrcs/
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} -Hinr'
 
 #sed, vim
@@ -566,4 +567,12 @@ https://github.com/rg3/youtube-dl/issues/622
 --exclude-dir=^/sys  --exclude-dir=^/dev --exclude-dir=^/proc
 sudo freshclam;sudo clamscan --exclude-dir="^/sys" -i --bell -r /;echo '$?':$?
 { echo "braced logging start."; sudo freshclam; sudo clamscan --exclude-dir='^/sys' -i --bell -r / ; echo "braced logging end."; } &> ~/.cache/clam.log
+
+#docker
+groupadd docker
+systemctl restart docker
+ll /var/run/docker.sock 
+srw-rw----. 1 root docker 0 Jun 25 21:21 /var/run/docker.sock
+usermod -aG docker (user)
+su - (user) #or log out and log back in again
 
