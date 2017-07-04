@@ -596,3 +596,7 @@ srw-rw----. 1 root docker 0 Jun 25 21:21 /var/run/docker.sock
 usermod -aG docker (user)
 su - (user) #or log out and log back in again
 
+#record voice from builtin Mic or speaker
+pacmd list-sources|awk '/index:/ {print $0}; /name:/ {print $0}; /device\.description/ {print $0}'
+ffmpeg -f pulse -i alsa_input.pci-0000_00_1b.0.analog-stereo -c:a libmp3lame Native-Mandarin-Voice-Sample.mp3
+
