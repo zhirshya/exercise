@@ -90,8 +90,8 @@ function utmp3() {
 echo '$?':$?
 }
 
-function ut18() {
-  youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -f 18 "$1"
+function utlsfrm() {
+  youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats "$1"
 echo '$?':$?
 }
 
