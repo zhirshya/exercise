@@ -682,3 +682,7 @@ sudo systemctl disable bluetooth.service
 sudo systemctl status bluetooth.service
 }
 
+function evolut() {
+nohup evolution &> /dev/null & disown
+}
+
