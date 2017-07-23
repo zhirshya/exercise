@@ -85,8 +85,8 @@ fi
 echo '$?':$?
 }
 
-function utmp3() {
-  youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -x --audio-format mp3 --audio-quality 0 "$1" #to keep video: -k
+function utau() {
+  youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -x --audio-format best --audio-quality 0 "$1" #to keep video: -k
 echo '$?':$?
 }
 
