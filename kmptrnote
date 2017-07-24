@@ -600,3 +600,8 @@ su - (user) #or log out and log back in again
 pacmd list-sources|awk '/index:/ {print $0}; /name:/ {print $0}; /device\.description/ {print $0}'
 ffmpeg -f pulse -i alsa_input.pci-0000_00_1b.0.analog-stereo -c:a libmp3lame Native-Mandarin-Voice-Sample.mp3
 
+#python
+pip install --user -U pip setuptools
+pip install --user beautifulsoup selenium
+
+
