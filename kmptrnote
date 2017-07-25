@@ -602,6 +602,6 @@ ffmpeg -f pulse -i alsa_input.pci-0000_00_1b.0.analog-stereo -c:a libmp3lame Nat
 
 #python
 pip install --user -U pip setuptools
-pip install --user beautifulsoup selenium
+pip install --user beautifulsoup selenium chromedriver
 
 
