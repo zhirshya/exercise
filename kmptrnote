@@ -118,6 +118,9 @@ find /mnt/0 ~ -xdev -type f -regextype posix-egrep -regex '.*node.*(\.(pdf|epub|
 rfkill unblock bluetooth
 sudo systemctl disable bluetooth.service
 
+DEVICES_TO_DISABLE_ON_STARTUP="bluetooth"
+/etc/default/tlp
+
 #Create Symbolic Links in Linux
 sudo ln -s /mnt/0/gthb/xrcs/utv.sh /usr/local/bin/utv
 
