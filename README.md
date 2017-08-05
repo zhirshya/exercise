@@ -1,4 +1,3 @@
-dmbexrcs
+exrcise
 ========
-
-dumb programming exercise
+primitive programming exercise
