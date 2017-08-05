@@ -143,7 +143,7 @@ echo "NO_PROXY:$NO_PROXY"
 }
 
 function --() {
-rm -rf ~/.cache ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
+rm -rf ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
 sudo find /var/cache/PackageKit/ -name "*.rpm" -execdir rm {} \; #probably Fedora only
 sudo dnf autoremove #many times faultily automatically remove kernel-modules-extra which will be reinstalled on next system upgrade!
 #sudo apt autoremove -y; sudo apt autoclean; sudo apt clean
