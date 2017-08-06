@@ -20,8 +20,8 @@ sudo find / -xdev -iname "*macromedia*" -o -iname "*flashplayer*" -execdir rm -r
 sudo dnf remove flash-plugin flashplugin-installer
 firefox: about:config about:plugins
 
-dnf remove rhythmbox totem thunderbird nano
-sudo rpm -e --nodeps gedit totem totem-devel totem-pl-parser-devel; echo $?
+sudo dnf remove rhythmbox totem thunderbird nano
+sudo rpm -e --nodeps gedit totem totem-devel totem-pl-parser totem-pl-parser-devel; echo $?
 
 dnf upgrade -y
 
