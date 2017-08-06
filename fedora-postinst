@@ -2,6 +2,8 @@ Use the /usr/sbin/getenforce or /usr/sbin/sestatus commands to check the status 
 /usr/sbin/getenforce
 /usr/sbin/sestatus
 
+sudo dnf config-manager --set-disabled updates-testing
+
 sudo /etc/cron.daily/logrotate
 
 /etc/crontab
