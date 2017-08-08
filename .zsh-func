@@ -43,10 +43,13 @@ for str in "$@";do
     echo '$'$((++idx)):'['$str']'
     echo "[debug]:unknown pattern found, specified argument will be applied without any modification, may result in unexpected behavior!"
   fi
+  str="${str%% *}"
+  str="${str%&index=*}"
   str="${str%&list=*}"
   str="${str%&t=*}"
-  str="${str%&index=*}"
   str="${str%%\?*}"
+  str="${str%%&*}"
+  str="${str%%#*}"
   cmd+="-iname \"*$str*\" -o "
 done
 
@@ -614,7 +617,7 @@ done
 shift $((OPTIND-1))
 
 
-for file in $(find /mnt/0 ~ -xdev -type f -iname $dwnlst_file );do
+for file in $(find /mnt/0 ~ -xdev -type f -iname $dwnlst_file);do
 #  if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then  #error: condition expected: $file  #stderr inaccessible this way!
   if [[ ! $file =~ $errmsg ]];then  #stderr inaccessible this way!
     echo $file:
