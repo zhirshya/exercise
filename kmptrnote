@@ -608,6 +608,7 @@ ffmpeg -f pulse -i alsa_input.pci-0000_00_1b.0.analog-stereo -c:a libmp3lame Nat
 pip install --user -U pip setuptools
 pip install --user beautifulsoup selenium chromedriver
 pip install --user openpyxl pillow
+pip install --user kitchen
 
 #fedora Reinstalling packages with missing/corrupt files
 #https://unix.stackexchange.com/questions/216697/reinstalling-packages-with-missing-corrupt-files?rq=1
