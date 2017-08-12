@@ -29,6 +29,7 @@ for str in "$@";do
     echo "[debug]:[$str] match [$utvSingl_regxpr]"
     str="${str##*youtu*be*/}"
     str="${str##watch\?v=}"
+    str="${str%% *}"
   elif [[ $str =~ $codek_regxpr ]];then
     echo "[debug]:[$str] match [$codek_regxpr]"
     str="${str##*codek.tv/v/}"
@@ -43,7 +44,6 @@ for str in "$@";do
     echo '$'$((++idx)):'['$str']'
     echo "[debug]:unknown pattern found, specified argument will be applied without any modification, may result in unexpected behavior!"
   fi
-  str="${str%% *}"
   str="${str%&index=*}"
   str="${str%&list=*}"
   str="${str%&t=*}"
