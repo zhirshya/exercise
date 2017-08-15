@@ -28,6 +28,7 @@ typeset -F SECONDS
 echo "(start)«$(\date)»"
 
 xt_code=-1
+counter=0
 while [[ $xt_code -ne 0 ]];do
 	#https://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions
 	#-v varname: True if the shell variable varname is set (has been assigned a value).
@@ -38,6 +39,11 @@ while [[ $xt_code -ne 0 ]];do
 	#http://zsh.sourceforge.net/Doc/Release/Conditional-Expressions.html
 	#if [[ ! -v bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
 	#if [[ ! -v $bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
+	if ((counter++ > 9));then
+		return 113
+	fi
+
+
 	if [[ -z $bandwidth_rate ]];then
 		echo '#hit [[ -z $bandwidth_rate ]]'
 		find /mnt/0 ~ -type f -iname 'dwn' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} +
