@@ -40,7 +40,8 @@ while [[ $xt_code -ne 0 ]];do
 	#if [[ ! -v bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
 	#if [[ ! -v $bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
 	if ((counter++ > 9));then
-		return 113
+		shutdown_timeout=0
+		break
 	fi
 
 
