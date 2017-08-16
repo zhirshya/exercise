@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 #todo find *.part files and download separately by extracting ID
-#find /mnt/0 ~ -type f -iname '*.part' -execdir youtube-dl --youtube-skip-dash-manifest -a {} +
+#sudo find /mnt/0 ~ -type f -iname '*.part' -execdir youtube-dl --youtube-skip-dash-manifest -a {} +
 #extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
 while getopts "st:b:" opt; do
@@ -28,7 +28,7 @@ typeset -F SECONDS
 echo "(start)«$(\date)»"
 
 xt_code=-1
-counter=0
+err_counter=0
 while [[ $xt_code -ne 0 ]];do
 	#https://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions
 	#-v varname: True if the shell variable varname is set (has been assigned a value).
@@ -39,15 +39,14 @@ while [[ $xt_code -ne 0 ]];do
 	#http://zsh.sourceforge.net/Doc/Release/Conditional-Expressions.html
 	#if [[ ! -v bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
 	#if [[ ! -v $bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
-	if ((counter++ > 9));then
+	if ((err_counter++ > 9));then
 		shutdown_timeout=0
 		break
 	fi
 
-
 	if [[ -z $bandwidth_rate ]];then
 		echo '#hit [[ -z $bandwidth_rate ]]'
-		find /mnt/0 ~ -type f -iname 'dwn' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} +
+		sudo find /mnt/0 ~ -iname 'dwn' -type f -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} +
 	else
 		if [[ ! $bandwidth_rate =~ ^[0-9]+[kKmM]$ ]];then
 			if [[ $bandwidth_rate =~ ^[0-9]+$ ]];then
@@ -57,10 +56,10 @@ while [[ $xt_code -ne 0 ]];do
 			fi
 		fi
 		echo "#bandwidth_rate":$bandwidth_rate
-		find /mnt/0 ~ -type f -iname 'dwn' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} +
+		sudo find /mnt/0 ~ -iname 'dwn' -type f -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} +
 	fi
 	xt_code=$?
-	echo "exit code(find...-execdir youtube-dl...{} +):$xt_code"
+	echo "exit code(sudo find...-execdir youtube-dl...{} +):$xt_code"
 done
 
 echo "(end)«$(\date)»"
