@@ -16,7 +16,7 @@ vimeo_regxpr="https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+"
 facebook_regxpr="https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%=&]*"
 idx=0
 
-cmd='find /mnt/0 ~ -xdev -type f \( '
+cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 #IFS=' ' read -a str_array <<< "$@"  #bad option: -a
 #for str in "${str_array[@]}";do  #unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
 for str in "$@";do
@@ -53,7 +53,7 @@ for str in "$@";do
   cmd+="-iname \"*$str*\" -o "
 done
 
-if [[ $cmd =~ -iname ]];then  #\?:find /mnt/0 ~ -xdev -type f \(  \) -exec ls -alFt {} \; #find: invalid expression; empty parentheses are not allowed.
+if [[ $cmd =~ -iname ]];then
   cmd=${cmd% -o }
   cmd+=' \) -exec ls -alFt {} \;'
   echo '#\?':$cmd
@@ -63,34 +63,6 @@ else
   return 113  #can't be reflected on(passed to) outer/upper level!
 fi
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
-#  echo "#search local(non /) keyword:$str"
-#  fnd_out=$(find /mnt/0 ~ -iname "*$str*" -exec ls -alFt {} \;)
-#  return_code=$?
-#  echo '$?':$?
-#  errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"  #use variable to hold complex regxpr!
-#  if [[ ! -z "$fnd_out" ]];then
-#    echo $fnd_out
-#    [[ $fnd_out =~ $errmsg ]] && echo '#debug:regxpr:$match:['$match'],$MATCH:['$MATCH']' #stderr inaccessible this way!
-#  fi
-#  return $return_code
-}
-
-function lsprt() {  #obsolete as having defined "03f && ? .part" ➟ find /mnt/0 ~ -xdev \( -iname "*.part*" \) -type f -exec ls -alFt {} \;
-if (($# == 0));then
-  ll *part
-else
-  if [[ $1 =~ /$ ]];then
-    ll "$1"*part
-  else
-    ll "$1"/*part
-  fi
-fi
-echo '$?':$?
-}
-
-function utau() {
-  youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -x --audio-format best --audio-quality 0 "$1" #to keep video: -k
-echo '$?':$?
 }
 
 function utlsfrm() {
@@ -202,15 +174,15 @@ setopt nocasematch
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 return_code=113
 out_msg="error"
-counter=0
+err_counter=0
 while (($return_code != 0)) || [[ $out_msg =~ error* ]];do #1.ERROR: can't find the current version. Please try again later. 2.Updating to version 2016.08.22 ...\nERROR: unable to download latest version (for error 2,better to detect network connection and return if connection lost)
 #while (($return_code <> 0)) || [[ $out_msg =~ error ]];do #bad math expression: operand expected at `> 0'
-  if ((counter++ > 9));then
+  if ((err_counter++ > 9));then
     return 113
   fi
   out_msg=$(sudo youtube-dl -U)
   return_code=$?
-  echo "#debug:counter:$counter"
+  echo "#debug:err_counter:$err_counter"
   echo '#debug:regxpr:$match:['$match'],$MATCH:['$MATCH']'
   echo "#debug:youtube-dl -U:RC:$return_code"
   echo "#debug:youtube-dl -U:output message:$out_msg"
@@ -241,6 +213,7 @@ function ss() {
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 sudo dnf upgrade -y #Fedora
 echo '$?':$?
+#youtube-dl upgrade
 utup
 return_code=$?
 echo '$return_code':$return_code
@@ -616,8 +589,7 @@ while getopts "t" opt; do
 done
 shift $((OPTIND-1))
 
-
-for file in $(find /mnt/0 ~ -xdev -type f -iname $dwnlst_file);do
+for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dwnlst_file);do
 #  if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then  #error: condition expected: $file  #stderr inaccessible this way!
   if [[ ! $file =~ $errmsg ]];then  #stderr inaccessible this way!
     echo $file:
