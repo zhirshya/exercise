@@ -16,9 +16,9 @@ vimeo_regxpr="https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+"
 facebook_regxpr="https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%=&]*"
 idx=0
 
-cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 #IFS=' ' read -a str_array <<< "$@"  #bad option: -a
 #for str in "${str_array[@]}";do  #unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
+cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 for str in "$@";do
   if [[ $str =~ $utvList_regxpr ]];then  # [[ $str =~ ^regxpr$ ]] fails to match [ .../(watch\?v=)?[-_a-zA-Z0-9]+('&'list=[-_.a-zA-Z0-9?%='&']+)? ], so have to remove anchors ^ and $, therefore match [ .../playlist\?list= ] at first!
     echo "[debug]:[$str] match [$utvList_regxpr]"
@@ -56,7 +56,7 @@ done
 if [[ $cmd =~ -iname ]];then
   cmd=${cmd% -o }
   cmd+=' \) -exec ls -alFt {} \;'
-  echo '#\?':$cmd
+  echo '$cmd':$cmd
   eval ${cmd}
   echo '$?':$?
 else
