@@ -84,5 +84,5 @@ bookinfolist.append(bookinfo.copy())
 #print 'ISBN:',isbn
 #print 'progress_text:',progress_text
 #print 'publish_when:',publish_when
-for book in bookinfolist:
-    print book
+for bookinfo in bookinfolist:
+    print bookinfo
