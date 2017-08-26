@@ -60,7 +60,7 @@ def send_email(mailInfoFile):
 
         msg['Date'] = formatdate(localtime=True)
 
-        #todo1:
+        #todo:
         #Default encoding mode set to Quoted Printable. Acts globally!
         Charset.add_charset('utf-8', Charset.QP, Charset.QP, 'utf-8')
         
@@ -77,6 +77,9 @@ def send_email(mailInfoFile):
                 msgAttachment = MIMEBase('application', 'octet-stream')
                 msgAttachment.set_payload(data)
                 Encoders.encode_base64(msgAttachment)
+                #todo1:
+                #escape special characters in file name: & ? ! etc., already escaped(\ , \& etc.) path results error!
+                #[Errno 2] No such file or directory: u'/mnt/0/Never\\ trust\\ a\\ girl--always\\ get\\ it\\ on\\ tape\\ and\\ bring\\ backup-XFj2oDvK3m0.mkv'
                 msgAttachment.add_header('Content-Disposition', 'attachment; filename="{}"'.format(os.path.basename(file)))
                 msg.attach(msgAttachment)
         except IOError, e:
