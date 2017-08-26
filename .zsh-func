@@ -653,6 +653,8 @@ sudo freshclam;sudo clamscan --exclude-dir='^/sys' -i --bell -r /;echo '$?':$?
 function blutu0() {
 sudo systemctl stop bluetooth.service
 sudo systemctl disable bluetooth.service
+sudo systemctl status bluetooth.service
+echo '$?':$?
 }
 
 function volut() {
