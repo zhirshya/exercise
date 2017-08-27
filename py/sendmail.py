@@ -71,7 +71,7 @@ def send_email(mailInfoFile):
             msg.attach(MIMEText(body,'plain','utf-8'))
 
         try:
-            attachmentList = attachments.split(',')
+            attachmentList = attachments.split('@')
             for file in attachmentList:
                 file = file.strip()
                 #no need to explicitly close files?
