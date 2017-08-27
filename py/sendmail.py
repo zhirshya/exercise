@@ -20,16 +20,16 @@ def send_email(mailInfoFile):
     if os.path.exists(mailInfoFile):
         config = configparser.ConfigParser()
         config.read(mailInfoFile)
-        from_emails = config['DEFAULT']['from']
-        to_emails = config['DEFAULT']['to']
-        cc_emails = config['DEFAULT']['cc']
-        bcc_emails = config['DEFAULT']['bcc']
-        subject = config['DEFAULT']['subject']
-        body = config['DEFAULT']['body']
-        attachments = config['DEFAULT']['attachment']
-        passwd = config['DEFAULT']['passwd']
-        smtpServer = config['DEFAULT']['smtpServer']
-        port = config['DEFAULT']['port']
+        from_emails = config['PRIVATE']['from']
+        to_emails = config['PRIVATE']['to']
+        cc_emails = config['PRIVATE']['cc']
+        bcc_emails = config['PRIVATE']['bcc']
+        subject = config['PRIVATE']['subject']
+        body = config['PRIVATE']['body']
+        attachments = config['PRIVATE']['attachment']
+        passwd = config['PRIVATE']['passwd']
+        smtpServer = config['PRIVATE']['smtpServer']
+        port = config['PRIVATE']['port']
 
         #debug
         print 'from_emails:',from_emails
