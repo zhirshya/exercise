@@ -66,12 +66,14 @@ def send_email(mailInfoFile):
         
         msg['Subject'] = '{}'.format(Header(subject,'utf-8'))
         if body:
+            #todo: opt for rich format such as html?
             msg.attach(MIMEText(body,'plain','utf-8'))
 
         try:
             attachmentList = attachments.split(',')
             for file in attachmentList:
                 file = file.strip()
+                #no need to explicitly close files?
                 with open(file, 'rb') as fos:
                     data = fos.read()
                 msgAttachment = MIMEBase('application', 'octet-stream')
