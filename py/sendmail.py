@@ -15,7 +15,8 @@ from email.Utils import formatdate
 from email import Charset
 from email.generator import Generator
 from cStringIO import StringIO
- 
+
+#todo: set config section via command line arg! 
 def send_email(mailInfoFile):
     if os.path.exists(mailInfoFile):
         config = configparser.ConfigParser()
