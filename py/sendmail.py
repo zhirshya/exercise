@@ -47,12 +47,12 @@ def send_email(mailInfoFile):
         #construct mail
         msg = MIMEMultipart()
         msg['From'] = from_emails
-        #msg['To'] = ', '.join(to_emails)
         msg['To'] = to_emails
-        #msg['cc'] = ', '.join(cc_emails)
         msg['cc'] = cc_emails
-        #msg['bcc'] = ', '.join(bcc_emails)
         msg['bcc'] = bcc_emails
+        #msg['To'] = ', '.join(to_emails)
+        #msg['cc'] = ', '.join(cc_emails)
+        #msg['bcc'] = ', '.join(bcc_emails)
 
         emails = []
         emails.append(to_emails)
