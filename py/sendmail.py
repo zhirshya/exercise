@@ -71,6 +71,7 @@ def send_email(mailInfoFile):
             msg.attach(MIMEText(body,'plain','utf-8'))
 
         try:
+            #file name may contain ',' e.g. Pixel Recursive Super Resolution,1702.00783.pdf
             attachmentList = attachments.split('@')
             for file in attachmentList:
                 file = file.strip()
