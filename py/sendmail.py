@@ -16,7 +16,10 @@ from email import Charset
 from email.generator import Generator
 from cStringIO import StringIO
 
+#todo: reset vim tabwidth to 8 or default and use default tabwidth to indent!
+
 #todo: set config section via command line arg! 
+
 def send_email(mailInfoFile):
     if os.path.exists(mailInfoFile):
         config = configparser.ConfigParser()
@@ -33,16 +36,16 @@ def send_email(mailInfoFile):
         port = config['PRIVATE']['port']
 
         #debug
-        print 'from_emails:',from_emails
-        print 'to_emails:',to_emails
-        print 'cc_emails:',cc_emails
-        print 'bcc_emails:',bcc_emails
-        print 'subject:',subject
-        print 'body:',body
-        print 'attachments:',attachments
-        print 'passwd:',passwd
-        print 'smtpServer:',smtpServer
-        print 'port:',port
+        print 'from_emails:[',from_emails,']'
+        print 'to_emails:[',to_emails,']'
+        print 'cc_emails:[',cc_emails,']'
+        print 'bcc_emails:[',bcc_emails,']'
+        print 'subject:[',subject,']'
+        print 'body:[',body,']'
+        print 'attachments:[',attachments,']'
+        print 'passwd:[',passwd,']'
+        print 'smtpServer:[',smtpServer,']'
+        print 'port:[',port,']'
 
         #construct mail
         msg = MIMEMultipart()
@@ -70,29 +73,31 @@ def send_email(mailInfoFile):
             #todo: opt for rich format such as html?
             msg.attach(MIMEText(body,'plain','utf-8'))
 
-        try:
-            #file name may contain ',' e.g. Pixel Recursive Super Resolution,1702.00783.pdf
-            attachmentList = attachments.split('@')
-            for file in attachmentList:
-                file = file.strip()
-                #no need to explicitly close files?
-                with open(file, 'rb') as fos:
-                    data = fos.read()
-                msgAttachment = MIMEBase('application', 'octet-stream')
-                msgAttachment.set_payload(data)
-                Encoders.encode_base64(msgAttachment)
-                #todo1: escape special characters in file name: & ? ! etc., already escaped(\ , \& etc.) path results error!
-                #[Errno 2] No such file or directory: u'/mnt/0/Never\\ trust\\ a\\ girl--always\\ get\\ it\\ on\\ tape\\ and\\ bring\\ backup-XFj2oDvK3m0.mkv'
-                #workaround: leave spaces in paths unquoted and use '@' to delimit files
-                msgAttachment.add_header('Content-Disposition', 'attachment; filename="{}"'.format(os.path.basename(file)))
-                msg.attach(msgAttachment)
-        except IOError, e:
-        #todo2: better detailed exception info
-            msg = 'Error opening attachment file "{}"'.format(file)
-            print 'except e:',e
-            print 'os.path.basename(file)',os.path.basename(file)
-            print msg
-            sys.exit(1)
+        #file name may contain ',' e.g. Pixel Recursive Super Resolution,1702.00783.pdf
+        attachmentList = attachments.strip().split('@')
+        if attachmentList:
+            try:
+                for attached in attachmentList:
+                    attached = attached.strip()
+                    if attached:
+                        #no need to explicitly close files?
+                        with open(attached, 'rb') as fos:
+                            data = fos.read()
+                        msgAttachment = MIMEBase('application', 'octet-stream')
+                        msgAttachment.set_payload(data)
+                        Encoders.encode_base64(msgAttachment)
+                        #todo1: escape special characters in file name: & ? ! etc., already escaped(\ , \& etc.) path results error!
+                        #[Errno 2] No such file or directory: u'/mnt/0/Never\\ trust\\ a\\ girl--always\\ get\\ it\\ on\\ tape\\ and\\ bring\\ backup-XFj2oDvK3m0.mkv'
+                        #workaround: leave spaces in paths unquoted and use '@' to delimit files
+                        msgAttachment.add_header('Content-Disposition', 'attachment; filename="{}"'.format(os.path.basename(attached)))
+                        msg.attach(msgAttachment)
+            except IOError, e:
+            #todo2: better detailed exception info
+                msg = 'Error opening attachment file "{}"'.format(attached)
+                print 'except e:',e
+                print 'os.path.basename(attached)',os.path.basename(attached)
+                print msg
+                sys.exit(1)
 
         #type(port): <type 'unicode'>
         print 'type(port):',type(port)
