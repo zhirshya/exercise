@@ -540,12 +540,11 @@ FUD (fully undetecable) #backdoor with msfvenom ( part of metasploit framework )
 Fear, uncertainty and doubt (often shortened to FUD) is a disinformation strategy used in sales, marketing, public relations, politics and propaganda. FUD is generally a strategy to influence perception by disseminating negative and dubious or false information and a manifestation of the appeal to fear.
 
 #windows
-winkey+r: mspaint, calc, excel, msword
-#wingod
+winkey+r: mspaint, calc, excel, msword, snippingtool
 GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
 
-#windir
-%systemroot%/SysWOW64
+echo %windir%
+echo %SystemRoot%/SysWOW64
 
 #list all group in linux
 cut -d: -f1 /etc/group | sort
