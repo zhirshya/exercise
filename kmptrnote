@@ -606,11 +606,26 @@ pacmd list-sources|awk '/index:/ {print $0}; /name:/ {print $0}; /device\.descri
 ffmpeg -f pulse -i alsa_input.pci-0000_00_1b.0.analog-stereo -c:a libmp3lame Native-Mandarin-Voice-Sample.mp3
 
 #python
+#ll ~/.local/lib/
+#ll ~/.local/bin/
+#set one virtualenv per user:group and give proper system permissions to the folder containing python package? installed with pip install --user <EOL>
+#https://stackoverflow.com/questions/33412974/how-to-uninstall-a-package-installed-with-pip-install-user
 pip install --user -U pip setuptools
 #https://docs.python.org/3/howto/pyporting.html
 #http://python-future.org/automatic_conversion.html
 #futurize and pasteurize
 pip install coverage future pylint caniusepython3 tox six configparser --user
+futurize --stage1 -f idioms -w *.py
+futurize --stage2 -w *.py
+#Note that with recursive globbing in bash or zsh, you can apply stage 1 to all Python source files recursively with:
+futurize --stage1 -f idioms -w **/*.py
+futurize --stage2 -w **/*.py
+
+RefactoringTool: There were 4 errors:
+RefactoringTool: Can't parse download/tor-browser_en-US/Browser/TorBrowser/Tor/PluggableTransports/twisted/web/test/test_newclient.py: ParseError: bad input: type=22, value=u'=', context=(u' ', (1641, 17))
+RefactoringTool: Can't parse pro-python-best-practices/maze_run-master/part1_debugging/event_loop.py: ParseError: bad input: type=1, value=u'print', context=('', (23, 15))
+RefactoringTool: Can't parse pro-python-best-practices/maze_run-master/part1_debugging/to_debug/chapter02_load_tiles.py: ParseError: bad input: type=1, value=u'pygame', context=(u' ', (8, 6))
+RefactoringTool: Can't parse pro-python-best-practices/maze_run-master/part1_debugging/to_debug/chapter04_event_loop.py: ParseError: bad input: type=1, value=u'print', context=('', (26, 15))
 
 pip install --user beautifulsoup selenium chromedriver
 ##python excel
