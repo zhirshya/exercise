@@ -199,7 +199,7 @@ nohup firefox --ssl-version-min=tls1.1 -private "$@" &> /dev/null & disown
 }
 
 function krm() {
-nohup google-chrome-stable --ssl-version-min=tls1.1 http://www.thechessdrum.net/chessacademy/index.html http://www.thechessdrum.net/65thSquare/65_janfeb04.html http://www.cppsamples.com http://docs.python-guide.org/en/latest https://github.com/line/line-bot-sdk-python http://python-future.org/automatic_conversion.html "$@" &> /dev/null & disown
+nohup google-chrome-stable --ssl-version-min=tls1.1 http://www.thechessdrum.net/chessacademy/index.html http://www.thechessdrum.net/65thSquare/65_janfeb04.html http://www.cppsamples.com http://docs.python-guide.org/en/latest https://github.com/line/line-bot-sdk-python http://python-future.org/automatic_conversion.html http://python-future.org/compatible_idioms.html#compatible-idioms http://python-future.org/what_else.html#what-else "$@" &> /dev/null & disown
 }
 
 function s0() {
