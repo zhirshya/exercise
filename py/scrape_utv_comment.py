@@ -1,6 +1,7 @@
 #!/usr/bin/python -tt
 # -*- coding: utf-8 -*-
  
+from __future__ import print_function
 from selenium import webdriver
 import sys
 import time
@@ -32,8 +33,8 @@ while True:
  
 # print the comments, separated by a line
 for item in driver.find_elements_by_class_name("comment-renderer"):
-    print item.text
-    print "-"*80
+    print(item.text)
+    print("-"*80)
  
 # close the browser
 driver.close()

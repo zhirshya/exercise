@@ -1,6 +1,7 @@
 #!/usr/bin/python -tt
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
 from lxml import html
 import requests
 
@@ -84,4 +85,4 @@ bookinfolist.append(bookinfo.copy())
 #print 'progress_text:',progress_text
 #print 'publish_when:',publish_when
 for bookinfo in bookinfolist:
-    print bookinfo
+    print(bookinfo)

@@ -1,6 +1,7 @@
 #!/usr/bin/python -tt
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
 from lxml import html
 import requests
 
@@ -45,5 +46,5 @@ osList.append(osinfo.copy())
 #print 'kali_release_version:',kali_release_version
 #print 'sha256sum:',sha256sum
 for osItem in osList:
-    print osItem
+    print(osItem)
 

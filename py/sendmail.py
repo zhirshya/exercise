@@ -1,6 +1,9 @@
 #!/usr/bin/python -tt
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
+from future import standard_library
+standard_library.install_aliases()
 import sys
 import os
 import string
@@ -14,7 +17,7 @@ from email.header import Header
 from email.Utils import formatdate
 from email import Charset
 from email.generator import Generator
-from cStringIO import StringIO
+from io import StringIO
 
 #todo: reset vim tabwidth to 8 or default and use default tabwidth to indent!
 
@@ -36,16 +39,16 @@ def send_email(mailInfoFile):
         port = config['PRIVATE']['port']
 
         #debug
-        print 'from_emails:[',from_emails,']'
-        print 'to_emails:[',to_emails,']'
-        print 'cc_emails:[',cc_emails,']'
-        print 'bcc_emails:[',bcc_emails,']'
-        print 'subject:[',subject,']'
-        print 'body:[',body,']'
-        print 'attachments:[',attachments,']'
-        print 'passwd:[',passwd,']'
-        print 'smtpServer:[',smtpServer,']'
-        print 'port:[',port,']'
+        print('from_emails:[',from_emails,']')
+        print('to_emails:[',to_emails,']')
+        print('cc_emails:[',cc_emails,']')
+        print('bcc_emails:[',bcc_emails,']')
+        print('subject:[',subject,']')
+        print('body:[',body,']')
+        print('attachments:[',attachments,']')
+        print('passwd:[',passwd,']')
+        print('smtpServer:[',smtpServer,']')
+        print('port:[',port,']')
 
         #construct mail
         msg = MIMEMultipart()
@@ -91,16 +94,16 @@ def send_email(mailInfoFile):
                         #workaround: leave spaces in paths unquoted and use '@' to delimit files
                         msgAttachment.add_header('Content-Disposition', 'attachment; filename="{}"'.format(os.path.basename(attached)))
                         msg.attach(msgAttachment)
-            except IOError, e:
+            except IOError as e:
             #todo2: better detailed exception info
                 msg = 'Error opening attachment file "{}"'.format(attached)
-                print 'except e:',e
-                print 'os.path.basename(attached)',os.path.basename(attached)
-                print msg
+                print('except e:',e)
+                print('os.path.basename(attached)',os.path.basename(attached))
+                print(msg)
                 sys.exit(1)
 
         #type(port): <type 'unicode'>
-        print 'type(port):',type(port)
+        print('type(port):',type(port))
         smtpObj = smtplib.SMTP(smtpServer, port.encode('ascii','ignore'))
         smtpObj.ehlo()
         smtpObj.starttls()
@@ -108,7 +111,7 @@ def send_email(mailInfoFile):
         smtpObj.sendmail(from_emails, emails, msg.as_string())
         smtpObj.quit()
     else:
-        print 'Config file not found! Exiting!'
+        print('Config file not found! Exiting!')
         sys.exit(1)
 
 if __name__ == '__main__':
