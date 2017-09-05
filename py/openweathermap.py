@@ -1,11 +1,23 @@
 #!/usr/bin/python -tt
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from builtins import dict
+from builtins import int
+from future import standard_library
+standard_library.install_aliases()
+from builtins import str
 import datetime
 import json
 import urllib.request
 
 #https://codereview.stackexchange.com/questions/131371/script-to-print-weather-report-from-openweathermap-api
+
+#todo: Possible update of API version? e.g. 3.0, 5.5, 7.5 etc. in http://api.openweathermap.org/data/2.5
+#Carbon Monoxide Data: http://openweathermap.org/api/pollution/co
 
 def time_converter(time):
     converted_time = datetime.datetime.fromtimestamp(
@@ -13,15 +25,12 @@ def time_converter(time):
     ).strftime('%I:%M %p')
     return converted_time
 
-
 def url_builder(city_id):
-    user_api = ''  # Obtain yours form: http://openweathermap.org/
     unit = 'metric'  # For Fahrenheit use imperial, for Celsius use metric, and the default is Kelvin.
     api = 'http://api.openweathermap.org/data/2.5/weather?id='     # Search for your city ID here: http://bulk.openweathermap.org/sample/city.list.json.gz
 
-    full_api_url = api + str(city_id) + '&mode=json&units=' + unit + '&APPID=' + user_api
+    full_api_url = api + str(city_id) + '&mode=json&units=' + unit + '&APPID=8ae110110260b06d58fbba48a73cacc0'
     return full_api_url
-
 
 def data_fetch(full_api_url):
     with urllib.request.urlopen(full_api_url) as url:
@@ -29,7 +38,6 @@ def data_fetch(full_api_url):
         #output = url.read().decode('utf-8')
         #raw_api_dict = json.loads(output)
         #return raw_api_dict
-
 
 def data_organizer(raw_api_dict):
     data = dict(
@@ -49,7 +57,6 @@ def data_organizer(raw_api_dict):
         cloudiness=raw_api_dict.get('clouds').get('all')
     )
     return data
-
 
 def data_output(data):
     data['m_symbol'] = '\xb0' + 'C'
@@ -85,7 +92,11 @@ Last update from the server: {dt}
     print(s.format(**data))
 
 if __name__ == '__main__':
+    cities = {'Hailar':2037078, 'Tokyo':1850144, 'Saint Petersburg':498817, 'Moscow':524901, 'Manzhouli':2035836, 'Harbin':2037013}
     try:
-        data_output(data_organizer(data_fetch(url_builder(2172797))))
-    except IOError:
-        print('no internet')
+        if isinstance(cities, dict):
+            for k,v in list(cities.items()):
+                data_output(data_organizer(data_fetch(url_builder(v))))
+    except IOError as xcpt:
+    #except IOError:
+        print(xcpt)
