@@ -13,6 +13,8 @@ from builtins import str
 import datetime
 import json
 import urllib.request
+import argparse
+import sys
 
 #https://codereview.stackexchange.com/questions/131371/script-to-print-weather-report-from-openweathermap-api
 
@@ -25,11 +27,10 @@ def time_converter(time):
     ).strftime('%I:%M %p')
     return converted_time
 
-def url_builder(city_id):
+def url_builder(city_id, api_key):
     unit = 'metric'  # For Fahrenheit use imperial, for Celsius use metric, and the default is Kelvin.
-    api = 'http://api.openweathermap.org/data/2.5/weather?id='     # Search for your city ID here: http://bulk.openweathermap.org/sample/city.list.json.gz
-
-    full_api_url = api + str(city_id) + '&mode=json&units=' + unit + '&APPID=8ae110110260b06d58fbba48a73cacc0'
+    api = 'http://api.openweathermap.org/data/2.5/weather?id='  # Search for your city ID here: http://bulk.openweathermap.org/sample/city.list.json.gz
+    full_api_url = api + str(city_id) + '&mode=json&units=' + unit + '&APPID=' + api_key
     return full_api_url
 
 def data_fetch(full_api_url):
@@ -92,11 +93,24 @@ Last update from the server: {dt}
     print(s.format(**data))
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Fetch weather data for designated cities using OpenWeatherMap API Key(ASCII alphanumeric) specified on command line.', add_help=True)
+    parser.add_argument('--apikey', required=True, action='store', dest='api_key', help='take in OpenWeatherMap API Key(ASCII alphanumeric)')
+    parser.add_argument('--version', action='version', version='%(prog)s 1.0')
+
+    print('parser.parse_args():{0}'.format(parser.parse_args()))
+    args = parser.parse_args()
+
+    print('sys.argv[0]:{0}'.format(sys.argv[0]))
+    print('sys.argv[1]:{0}'.format(sys.argv[1]))
+    
+    apiKey = args.api_key
+    print('(local var)apiKey:{0}'.format(apiKey))
+    
     cities = {'Hailar':2037078, 'Tokyo':1850144, 'Saint Petersburg':498817, 'Moscow':524901, 'Manzhouli':2035836, 'Harbin':2037013}
     try:
         if isinstance(cities, dict):
             for k,v in list(cities.items()):
-                data_output(data_organizer(data_fetch(url_builder(v))))
+                data_output(data_organizer(data_fetch(url_builder(v,apiKey))))
     except IOError as xcpt:
     #except IOError:
         print(xcpt)
