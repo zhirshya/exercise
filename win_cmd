@@ -1,0 +1,15 @@
+net user administrator /active:yes
+net user administrator GodMode.{}
+
+windows command line exit code
+echo %ERRORLEVEL%
+
+IF %ERRORLEVEL% NEQ 0 (
+  REM do something here to address the error
+)
+
+#Sakura editor
+Ctrl Alt x: not break line(折り返さない)
+Ctrl \: copy full path of current file
+Ctrl -: copy current file name
+
