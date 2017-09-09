@@ -76,7 +76,7 @@ file '/tmp/Russian Red Army Choir - Moscow Nights-aw5L0IdKjps.mp3'
 
 #crop, scale
 ffmpeg -i crop_1.jpg -vf crop="250:ih-15:0:15" crop_2.jpg
-ffmpeg -i headscarf\ old\ women.jpg -vf scale=320:-1 crop.jpg
+ffmpeg -i pktr/me_kamer_metrik.jpg -vf scale=800:-1 me2015.jpg
 
 #List Cron Jobs
 crontab –l –u username
