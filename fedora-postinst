@@ -127,7 +127,7 @@ git branch -r
 git status
 
 # reassign PRNTSCRN to open screenshot dialog
-gnome-screenshot -i
+gnome-screenshot -p -i
 
 #turn off screen
 xset dpms force off
