@@ -181,7 +181,8 @@ alias question='echo ?'
 alias guillemet='echo ‹ › « »'
 alias notesin='echo ※'
 alias cfmrk='echo ↔ ⇔'
-alias tikcrs='echo ✓ ✔ ✗ ✘'
+alias tik='echo ✓ ✔'
+alias crs='echo ✗ ✘'
 alias ruclean='echo убирать' #clean up, tidy up
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls
