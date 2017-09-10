@@ -81,3 +81,19 @@ set tabstop     =8
 set softtabstop =0
 set shiftwidth  =4
 set noexpandtab
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+nnoremap ; :
+nnoremap : ;
+
+iabbrev py# #!/usr/bin/python -tt
+iabbrev utf# # -*- coding: utf-8 -*-
+iabbrev guleml ‹
+iabbrev gulemr ›
+iabbrev gulem2l «
+iabbrev gulem2r »
+iabbrev rfrmrk ※
+
