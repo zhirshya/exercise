@@ -1,10 +1,12 @@
 [Unit]
-Description=My script that requires network
-After=network.target
+Description=update system preferably after dnfdragora finished checking update
+#After=network.target
+After=network-online.target
 
 [Service]
-Type=oneshot
-ExecStart=/mnt/0/gthb/xrcs/sysupdate.sh >> /mnt/0/workspace/sysupdate.log
+Type=idle
+StandardInput=null
+ExecStart=/mnt/0/gthb/xrcs/sysupdate.sh
 
 [Install]
 WantedBy=multi-user.target
