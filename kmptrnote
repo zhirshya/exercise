@@ -670,6 +670,7 @@ systemctl daemon-reload;echo $?
 
 sudo systemctl status sysupdate.service
 sudo journalctl -o verbose -u sysupdate.service
+journalctl -xe
 
 ##https://superuser.com/questions/476379/how-do-i-setup-a-systemd-service-to-be-started-by-a-non-root-user-as-a-user-daem
 Systemd normally does not allow ordinary users to start system services. While it does support giving access via polkit, that part is still somewhat lacking, and you cannot yet allow only one specific service.
