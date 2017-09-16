@@ -282,6 +282,9 @@ adm:x:4:
 ➜  xrcs git:(master) ✗ getent group admin
 ➜  xrcs git:(master) ✗ 
 
+#Change the Primary Group of a User: usermod -g
+usermod -g adm r
+
 #shell cmd
 print - $((524288000/1024/1024))
 
