@@ -7,6 +7,9 @@ sudo dnf upgrade -y
 echo '$?':$?
 sudo youtube-dl -U
 echo '$?':$?
-blutu0
+sudo systemctl stop bluetooth.service
+sudo systemctl disable bluetooth.service
+sudo systemctl status bluetooth.service
+echo '$?':$?
 
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»

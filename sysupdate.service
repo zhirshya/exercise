@@ -8,13 +8,15 @@ AssertPathExists=/home/r
 #Type=simple
 #User=nobody
 User=r
-Group=r
+Group=adm
 PrivateTmp=true
 NoNewPrivileges=true
 StandardInput=null
 WorkingDirectory=/home/r
+#ExecStart=/home/r/.config/systemd/user/sysupdate.sh
 ExecStart=/mnt/0/gthb/xrcs/sysupdate.sh
 #Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target
+#WantedBy=multi-user.target
+WantedBy=default.target
