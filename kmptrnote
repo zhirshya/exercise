@@ -280,7 +280,6 @@ r:x:1000:
 ➜  xrcs git:(master) ✗ getent group adm
 adm:x:4:
 ➜  xrcs git:(master) ✗ getent group admin
-➜  xrcs git:(master) ✗ 
 
 #Change the Primary Group of a User: usermod -g
 usermod -g adm r
