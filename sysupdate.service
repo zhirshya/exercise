@@ -1,12 +1,20 @@
 [Unit]
 Description=update system preferably after dnfdragora finished checking update
-#After=network.target
-After=network-online.target
+After=syslog.target network.target network-online.target auditd.service
+AssertPathExists=/home/r
 
 [Service]
-Type=idle
+#Type=forking
+#Type=simple
+#User=nobody
+User=r
+Group=r
+PrivateTmp=true
+NoNewPrivileges=true
 StandardInput=null
+WorkingDirectory=/home/r
 ExecStart=/mnt/0/gthb/xrcs/sysupdate.sh
+#Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target

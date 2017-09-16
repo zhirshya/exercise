@@ -1,6 +1,6 @@
 #!/bin/sh
 
-exec  &>> /mnt/0/workspace/sysupdate.log
+exec  &>> /home/r/sysupdate.log
 
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 sudo dnf upgrade -y
