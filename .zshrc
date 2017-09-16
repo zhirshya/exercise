@@ -181,6 +181,7 @@ alias question='echo ?'
 alias guillemet='echo ‹ › « »'
 alias notesin='echo ※'
 alias cfmrk='echo ↔ ⇔'
+alias laro='echo → '
 alias tik='echo ✓ ✔'
 alias crs='echo ✗ ✘'
 alias ruclean='echo убирать' #clean up, tidy up
