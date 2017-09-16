@@ -660,3 +660,21 @@ rpm -qf $(rpm -Va 2>&1 | grep -vE '^$|prelink:' | sed 's|.* /|/|') | sort -u
 #ll
 ll **/*py
 
+#systemd unit file
+systemctl daemon-reload;echo $?
+
+sudo systemctl status sysupdate.service
+sudo journalctl -o verbose -u sysupdate.service
+
+##https://superuser.com/questions/476379/how-do-i-setup-a-systemd-service-to-be-started-by-a-non-root-user-as-a-user-daem
+Systemd normally does not allow ordinary users to start system services. While it does support giving access via polkit, that part is still somewhat lacking, and you cannot yet allow only one specific service.
+Since rtorrent is not actually a system service, and because you want every user to have their own instance of rtorrent, experiment with systemd's "user" mode.
+When you log in, the system will start a user@<uid>.service system unit for you, which will launch a separate "--user" instance of systemd. The new user-systemd will read unit files (starting with default.target) from ~/.config/systemd/user/, /etc/systemd/user/ and /usr/lib/systemd/user/.
+
+#https://www.brendanlong.com/systemd-user-services-are-amazing.html
+Auto-start and lingering
+To enable autostart, I just had to run:
+systemctl --user enable moin # or ghost or whatever
+Then:
+loginctl enable-linger moin # this will need authentication from a sudoer
+
