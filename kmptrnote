@@ -261,7 +261,6 @@ find /mnt/0 -type f -execdir chmod 640 {} \; -execdir setfacl -m u:r:rw {} \;
 #
 # ➜  xrcs git:(master) ✗ umask 
 # 022
-#
 
 #linux recursive search and replace string in directory
 find . -type f -execdir sed -i 's/\/media\/r\/0/\/mnt\/0/g' {} \;
@@ -685,4 +684,8 @@ To enable autostart, I just had to run:
 systemctl --user enable moin # or ghost or whatever
 Then:
 loginctl enable-linger moin # this will need authentication from a sudoer
+
+#system startup time
+last reboot
+who -b
 
