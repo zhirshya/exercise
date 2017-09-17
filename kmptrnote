@@ -689,3 +689,6 @@ loginctl enable-linger moin # this will need authentication from a sudoer
 last reboot
 who -b
 
+Python list filtering syntax:
+[mapping-expression for element in source-list if filter-expression]
+
