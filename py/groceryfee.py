@@ -7,37 +7,72 @@ from __future__ import division
 from __future__ import absolute_import
 from future import standard_library
 standard_library.install_aliases()
+
 import sys
+import re
 from math import floor
 from functools import reduce
 
-def calcTaxed(lst):
+def calcTaxed(rawLst):
+#todo: duplicate: 88x3 or 88 x 3
+#filter out NaN except ① num1[x|*|X]num2 and ② args consists solely of symbols in ['x', '*', 'X']
+#for ② multiply previous and following numbers
+#③
+
+    multiplySymbols = ['x', '*', 'X']
+    numLst = []
+    
+    pttrn = re.compile('^\d*[x*]+\d+|\d+[x*]+\d*$', re.IGNORECASE)
+
+    for arg in rawLst:
+        try:
+            numLst.append(float(arg))
+        except ValueError as ve:
+            print(ve)
+            if pttrn.match(arg):
+                multiplicandLst = list(arg.split(multiplySymb) for multiplySymb in multiplySymbols if arg.find(multiplySymb) > -1)
+                #multiplicandLst = [arg.split(multiplySymb) for multiplySymb in multiplySymbols if arg.find(multiplySymb) > -1]
+                print('multiplicandLst before flattening:{}'.format(multiplicandLst))
+                multiplicandLstFlat = [item for splitLst in multiplicandLst for item in splitLst]
+                print('multiplicandLst after flattening:{}'.format(multiplicandLstFlat))
+                
+                numLst.append(reduce(lambda x,y: float(x)*float(y), multiplicandLstFlat))
+                #numLst.append(reduce((lambda x,y: float(x)*float(y)), multiplicandLst))
+            else:
+                continue
+ 
+    print('numLst:{}'.format(numLst))
+    varSum = sum(item for item in numLst)
+    varSumByReduce = reduce(lambda x,y: x+y,numLst)
+
+    #varSum = sum(float(item) for item in numLst)
+    #varSumByReduce = reduce((lambda x,y: float(x)+float(y)),numLst)
+
 #tax 8%
-    #sum(float(item) for item in lst)
-    total8_sum = sum(float(item) for item in lst)*1.08
-    total8_reduce = reduce((lambda x,y: float(x)+float(y)),lst)*1.08
+    varSum8 = varSum*1.08
+    varSumByReduce8 = varSumByReduce*1.08
 #tax 8% floor
-    total8flr_sum = floor(total8_sum)
-    total8flr_reduce = floor(total8_reduce)
+    varSum8flr = floor(varSum8)
+    varSumByReduce8flr = floor(varSumByReduce8)
 
 #tax 10%
-    total10_sum = sum(float(item) for item in lst)*1.1
-    total10_reduce = reduce((lambda x,y: float(x)+float(y)),lst)*1.1
+    varSum10 = varSum*1.1
+    varSumByReduce10 = varSumByReduce*1.1
 #tax 10% floor
-    total10flr_sum = floor(total10_sum)
-    total10flr_reduce = floor(total10_reduce)
+    varSum10flr = floor(varSum10)
+    varSumByReduce10flr = floor(varSumByReduce10)
 
 #tax 12%
-    total12_sum = sum(float(item) for item in lst)*1.12
-    total12_reduce = reduce((lambda x,y: float(x)+float(y)),lst)*1.12
+    varSum12 = varSum*1.12
+    varSumByReduce12 = varSumByReduce*1.12
 #tax 12% floor
-    total12flr_sum = floor(total12_sum)
-    total12flr_reduce = floor(total12_reduce)
+    varSum12flr = floor(varSum12)
+    varSumByReduce12flr = floor(varSumByReduce12)
 
-    feeDict = {'8%':{'from func "sum"':total8_sum, 'from func "reduce"':total8_reduce}, '8% floor':{'from func "sum"':total8flr_sum, 'from func "reduce"':total8flr_reduce}, '10%':{'from func "sum"':total10_sum, 'from func "reduce"':total10_reduce}, '10% floor':{'from func "sum"':total10flr_sum, 'from func "reduce"':total10flr_reduce}, '12%':{'from func "sum"':total12_sum, 'from func "reduce"':total12_reduce}, '12% floor':{'from func "sum"':total12flr_sum, 'from func "reduce"':total12flr_reduce}}
+    feeDict = {'8%':{'from func "sum"':varSum8, 'from func "reduce"':varSumByReduce8}, '8% floor':{'from func "sum"':varSum8flr, 'from func "reduce"':varSumByReduce8flr}, '10%':{'from func "sum"':varSum10, 'from func "reduce"':varSumByReduce10}, '10% floor':{'from func "sum"':varSum10flr, 'from func "reduce"':varSumByReduce10flr}, '12%':{'from func "sum"':varSum12, 'from func "reduce"':varSumByReduce12}, '12% floor':{'from func "sum"':varSum12flr, 'from func "reduce"':varSumByReduce12flr}}
 
     for k,v in list(feeDict.items()):
-        print('{0}+{1}:{2}'.format(lst,k,v))
+        print('{0}+{1}:{2}'.format(rawLst,k,v))
 
 if __name__=='__main__':
     argCnt = len(sys.argv) -1 
