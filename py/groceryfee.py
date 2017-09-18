@@ -17,8 +17,8 @@ def calcTaxed(rawLst):
     multiplySymbols = ['x', '*', 'X']
     numLst = []
     
-    pttrn = re.compile('^\d*[x*]+\d+$|^\d+[x*]+\d*$', re.IGNORECASE)
-    #pttrn = re.compile('^\d*[x*]+\d+|\d+[x*]+\d*$', re.IGNORECASE)
+    ptnNumXNum = re.compile('^\d*[x*]+\d+$|^\d+[x*]+\d*$', re.IGNORECASE)
+    #ptnNumXNum = re.compile('^\d*[x*]+\d+|\d+[x*]+\d*$', re.IGNORECASE)
 
     for arg in rawLst:
         try:
@@ -26,7 +26,7 @@ def calcTaxed(rawLst):
         except ValueError as ve:
             print(ve)
 #for ① "num1[x|*|X]num2", e.g. 88x3 or 88*3 or 88X3
-            if pttrn.match(arg):
+            if ptnNumXNum.match(arg):
                 multiplicandLst = list(arg.split(multiplySymb) for multiplySymb in multiplySymbols if arg.find(multiplySymb) > -1)
                 #multiplicandLst = [arg.split(multiplySymb) for multiplySymb in multiplySymbols if arg.find(multiplySymb) > -1]
                 print('multiplicandLst before flattening:{}'.format(multiplicandLst))
