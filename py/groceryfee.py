@@ -14,21 +14,20 @@ from math import floor
 from functools import reduce
 
 def calcTaxed(rawLst):
-#todo: duplicate: 88x3 or 88 x 3
-#filter out NaN except ① num1[x|*|X]num2 and ② args consists solely of symbols in ['x', '*', 'X']
-#for ② multiply previous and following numbers
-#③
-
     multiplySymbols = ['x', '*', 'X']
     numLst = []
     
-    pttrn = re.compile('^\d*[x*]+\d+|\d+[x*]+\d*$', re.IGNORECASE)
+    pttrn = re.compile('^\d*[x*]+\d+$|^\d+[x*]+\d*$', re.IGNORECASE)
+    #pttrn = re.compile('^\d*[x*]+\d+|\d+[x*]+\d*$', re.IGNORECASE)
 
     for arg in rawLst:
         try:
             numLst.append(float(arg))
         except ValueError as ve:
             print(ve)
+#todo: duplicate: 88x3 or 88 x 3
+#filter out NaN except ① num1[x|*|X]num2 and ② args consists solely of symbols in ['x', '*', 'X']
+#for ①
             if pttrn.match(arg):
                 multiplicandLst = list(arg.split(multiplySymb) for multiplySymb in multiplySymbols if arg.find(multiplySymb) > -1)
                 #multiplicandLst = [arg.split(multiplySymb) for multiplySymb in multiplySymbols if arg.find(multiplySymb) > -1]
@@ -38,13 +37,16 @@ def calcTaxed(rawLst):
                 
                 numLst.append(reduce(lambda x,y: float(x)*float(y), multiplicandLstFlat))
                 #numLst.append(reduce((lambda x,y: float(x)*float(y)), multiplicandLst))
+
+#for ② multiply previous and following numbers
+            elif arg in multiplySymbols:
+                pass
             else:
                 continue
  
     print('numLst:{}'.format(numLst))
     varSum = sum(item for item in numLst)
     varSumByReduce = reduce(lambda x,y: x+y,numLst)
-
     #varSum = sum(float(item) for item in numLst)
     #varSumByReduce = reduce((lambda x,y: float(x)+float(y)),numLst)
 
