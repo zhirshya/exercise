@@ -25,9 +25,7 @@ def calcTaxed(rawLst):
             numLst.append(float(arg))
         except ValueError as ve:
             print(ve)
-#todo: duplicate: 88x3 or 88 x 3
-#filter out NaN except ① num1[x|*|X]num2 and ② args consists solely of symbols in ['x', '*', 'X']
-#for ①
+#for ① "num1[x|*|X]num2", e.g. 88x3 or 88*3 or 88X3
             if pttrn.match(arg):
                 multiplicandLst = list(arg.split(multiplySymb) for multiplySymb in multiplySymbols if arg.find(multiplySymb) > -1)
                 #multiplicandLst = [arg.split(multiplySymb) for multiplySymb in multiplySymbols if arg.find(multiplySymb) > -1]
@@ -38,9 +36,11 @@ def calcTaxed(rawLst):
                 numLst.append(reduce(lambda x,y: float(x)*float(y), multiplicandLstFlat))
                 #numLst.append(reduce((lambda x,y: float(x)*float(y)), multiplicandLst))
 
-#for ② multiply previous and following numbers
+#todo difficult
+#for ② args consists solely of symbols in ['x', '*', 'X'], multiply previous and following numbers, e.g. 88 x 3
             elif arg in multiplySymbols:
                 pass
+#filter out other NaN
             else:
                 continue
  
