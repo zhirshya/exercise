@@ -685,6 +685,9 @@ systemctl --user enable moin # or ghost or whatever
 Then:
 loginctl enable-linger moin # this will need authentication from a sudoer
 
+#systemd user timer and service in ~/.config/systemd/user
+systemctl --user daemon-reload && systemctl --user enable sysupdate.timer
+
 #system startup time
 last reboot
 who -b
