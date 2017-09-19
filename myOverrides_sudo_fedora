@@ -1,2 +1,2 @@
 Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin/
-r ALL=NOPASSWD:/usr/sbin/shutdown,/usr/sbin/reboot,/usr/bin/du,/usr/bin/df,/usr/local/bin/youtube-dl,/usr/bin/dnf,/usr/bin/diff,/usr/bin/find,/usr/bin/rpm,/usr/bin/npm,/usr/bin/docker,/usr/bin/systemctl,/usr/bin/freshclam,/usr/bin/clamscan
+r ALL=NOPASSWD:/usr/sbin/shutdown,/usr/sbin/reboot,/usr/bin/du,/usr/bin/df,/usr/local/bin/youtube-dl,/usr/bin/dnf,/usr/bin/diff,/usr/bin/find,/usr/bin/rpm,/usr/bin/npm,/usr/bin/docker,/usr/bin/systemctl,/usr/bin/journalctl,/usr/bin/freshclam,/usr/bin/clamscan
