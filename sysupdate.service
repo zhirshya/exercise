@@ -1,6 +1,6 @@
 [Unit]
 Description=update system preferably after dnfdragora finished checking update
-After=syslog.target network.target network-online.target auditd.service
+After=syslog.target network.target network-online.target auditd.service systemd-user-sessions.service dnfdaemon.service dnf-makecache.service
 AssertPathExists=/home/r
 
 [Service]
