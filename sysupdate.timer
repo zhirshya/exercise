@@ -1,0 +1,13 @@
+[Unit]
+Description=update system preferably after dnfdragora finished checking update
+
+[Timer]
+OnBootSec=4min
+OnUnitActiveSec=1d 
+
+Unit=sysupdate.service
+
+[Install]
+#WantedBy=timers.target
+WantedBy=multi-user.target
+#WantedBy=default.target
