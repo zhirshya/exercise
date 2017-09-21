@@ -690,6 +690,14 @@ systemctl --user daemon-reload && systemctl --user enable sysupdate.timer
 journalctl -o verbose -u sysupdate.service
 journalctl -xe
 
+#todo: NOT work
+#1.sudo: effective uid is not 0, is /usr/bin/sudo on a file system with the 'nosuid' option set or an NFS file system without root privileges?
+#2.systemd service: Failed to determine supplementary groups: Operation not permitted
+#inside sysupdate.service
+#User=nobody
+#User=r
+#Group=adm
+
 #system startup time
 last reboot
 who -b
