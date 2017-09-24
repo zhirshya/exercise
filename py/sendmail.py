@@ -51,6 +51,7 @@ def send_email(mailInfoFile):
         print('body:[',body,']')
         print('attachments:[',attachments,']')
         print('passwd:[',passwd,']')
+#todo: gmail + attachment with cyrillic file name
         print('smtpServer:[',smtpServer,']')
         print('port:[',port,']')
 
