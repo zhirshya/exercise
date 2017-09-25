@@ -434,6 +434,8 @@ alias jv8c="$JAVA_HOME/bin/javac -g -Xdiags:verbose -d . -classpath ."
 alias jv8="$JAVA_HOME/bin/java -classpath ."
 alias g++ gcc gxx jv8c jv8
 
+java -Xmx64m -jar c:\workspace\BPO\FileDivision.jar c:\workspace\BPO\conf.properties c:\workspace\BPO\sl4j.properties
+
 #shutdown after wget exit
 wgetf url && s0
 wgetf url ; s0
