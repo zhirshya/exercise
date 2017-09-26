@@ -722,3 +722,6 @@ The way to do nested list comprehensions is to put the for statements in the sam
 [... for inner_list in outer_list for item in inner_list]
 flattened = [val for sublist in list_of_lists for val in sublist]
 
+#git push multiple repos under a directory recursively from command line
+for repo in xrcs note;do cd /mnt/0/gthb/$repo && ggpush;done
+
