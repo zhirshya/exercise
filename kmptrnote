@@ -577,8 +577,12 @@ awk -F: '/^[^#]/ { print $1 }' /etc/freshclam.conf | uniq
 sudo freshclam;sudo clamscan --exclude-dir="^/sys" -i --bell -r /;echo '$?':$?
 { echo "braced logging start."; sudo freshclam; sudo clamscan --exclude-dir='^/sys' -i --bell -r / ; echo "braced logging end."; } &> ~/.cache/clam.log
 
+#shell group output redirection
 {echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)} &>> /mnt/0/workspace/test.log && s0
 (echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)) &>> /mnt/0/workspace/test.log && s0
+
+{echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)} &>> /mnt/0/workspace/test.log ; s0
+(echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)) &>> /mnt/0/workspace/test.log ; s0
 
 #docker
 Hello from Docker!
