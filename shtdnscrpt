@@ -1,0 +1,9 @@
+#!/bin/sh
+#$USER ?
+rm -rf /home/r/.cache /home/r/.thumbnails /home/r/.Trash /home/r/.mozilla/firefox/oghgfeld.default/crashes /home/r/.mozilla/firefox/oghgfeld.default/minidumps /home/r/.mozilla/firefox/oghgfeld.default/sessionstore-backups /home/r/.mozilla/firefox/Crash\ Reports /home/r/.mozilla/firefox/oghgfeld.default/healthreport* /home/r/.mozilla/firefox/oghgfeld.default/places*
+
+# cp shtdwnscrpt /etc/rc.d/init.d
+#Doesn't work!
+# ln -s /etc/rc.d/init.d/shtdwnscrpt /etc/rc.d/rc0.d/K99shtdwnscrpt
+# ln -s /etc/rc.d/init.d/shtdwnscrpt /etc/rc.d/rc6.d/K99shtdwnscrpt
+
