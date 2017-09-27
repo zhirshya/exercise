@@ -98,13 +98,14 @@ PATH=/usr/sbin:/usr/bin:/sbin:/bin
 #Remove Cron Jobs
 crontab -ir
 
-#todo: Perl rename vs nix built-in rename
-
 #rename files in respective directories
 #find /mnt/0 -type f -iname 'dwn.wait' -execdir mv {} dwn.todo +
-find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} \;
 
+#Perl rename
+find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} \;
+#nix built-in rename
 find /mnt/0 ~ -xdev -type f -iname 'dwn*' -execdir rename -vn dwn dl '{}' \;
+find /mnt/0 ~ -xdev -type f -iname 'dl' -o -iname 'dl.todo' -execdir rename -vn dl dllst '{}' \;
 
 find . -type f -exec chmod 644 {} \;
 find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} ";"
