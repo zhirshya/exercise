@@ -103,9 +103,9 @@ crontab -ir
 
 #Perl rename
 find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} \;
-#nix built-in rename
-find /mnt/0 ~ -xdev -type f -iname 'dwn*' -execdir rename -vn dwn dl '{}' \;
-find /mnt/0 ~ -xdev -type f -iname 'dl' -o -iname 'dl.todo' -execdir rename -vn dl dllst '{}' \;
+#shell built-in rename
+find /mnt/0 ~ -xdev -type f -iname 'dwn*' -execdir rename -v dwn dl '{}' \;
+find /mnt/0 ~ -xdev -type f \( -iname 'dl' -o -iname 'dl.todo' \) -execdir rename -v dl dllst '{}' \;
 
 find . -type f -exec chmod 644 {} \;
 find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} ";"
