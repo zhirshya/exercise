@@ -12,7 +12,7 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #https://vimeo.com/115796769
 
 #use variables to hold regxprs to avoid: parse error near `&'
-#"dwn+"(echo "$url" >> dwn for url in "$@") automatically escape ? and = in output file! e.g. https://www.youtube.com/playlist\?list\=PLKK11Ligqitg9MOX3-0tFT1Rmh3uJp7kA
+#"dl+"(echo "$url" >> dl for url in "$@") automatically escape ? and = in output file! e.g. https://www.youtube.com/playlist\?list\=PLKK11Ligqitg9MOX3-0tFT1Rmh3uJp7kA
 #utvList_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/playlist[\]?\?list[\]?=[-_a-zA-Z0-9]+$"
 utvList_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/playlist\\\\?\?list\\\\?=[-_a-zA-Z0-9]+$"
 #utvSingl_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+([\&#]list=[-_.a-zA-Z0-9]+)?([-_.a-zA-Z0-9\&#=]+)*$"
@@ -578,15 +578,15 @@ else
 fi
 }
 
-function dwnchk() {
+function dlchk() {
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 urls_whitespaced=""
 errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"  #use variable to hold complex regxpr!
-dwnlst_file="dwn"
+dllst_file="dl"
 
 while getopts "t" opt; do
 	case "$opt" in
-	t) dwnlst_file="dwn*";;
+	t) dllst_file="dl*";;
 	\?) # unknown flag
 		#echo >&2 \
 		echo "usage: $0 [-t]"
@@ -600,7 +600,7 @@ shift $((OPTIND-1))
 #https://stackoverflow.com/questions/3583111/regular-expression-find-spaces-tabs-space-but-not-newlines
 blankline_rexpr="^[ \t\u3000]*$"
 
-for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dwnlst_file);do
+for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 #  if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then  #error: condition expected: $file  #stderr inaccessible this way!
   if [[ ! $file =~ $errmsg ]];then  #stderr inaccessible this way!
     echo $file:
@@ -624,11 +624,12 @@ echo '$?':$?
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 }
 
-function dwn+() { #append to youtube download file
+#append to youtube download file
+function dl+() {
 for url in "$@";do
   url="${url%&list=*}"
   url="${url%&index=*}"
-  echo "$url" >> dwn
+  echo "$url" >> dl
 done
 echo '$?':$?
 }
