@@ -12,7 +12,7 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #https://vimeo.com/115796769
 
 #use variables to hold regxprs to avoid: parse error near `&'
-#"dl+"(echo "$url" >> dl for url in "$@") automatically escape ? and = in output file! e.g. https://www.youtube.com/playlist\?list\=PLKK11Ligqitg9MOX3-0tFT1Rmh3uJp7kA
+#"dl+"(echo "$url" >> dllst for url in "$@") automatically escape ? and = in output file! e.g. https://www.youtube.com/playlist\?list\=PLKK11Ligqitg9MOX3-0tFT1Rmh3uJp7kA
 #utvList_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/playlist[\]?\?list[\]?=[-_a-zA-Z0-9]+$"
 utvList_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/playlist\\\\?\?list\\\\?=[-_a-zA-Z0-9]+$"
 #utvSingl_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+([\&#]list=[-_.a-zA-Z0-9]+)?([-_.a-zA-Z0-9\&#=]+)*$"
@@ -582,11 +582,11 @@ function dlchk() {
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 urls_whitespaced=""
 errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"  #use variable to hold complex regxpr!
-dllst_file="dl"
+dllst_file="dllst"
 
 while getopts "t" opt; do
 	case "$opt" in
-	t) dllst_file="dl*";;
+	t) dllst_file="dllst*";;
 	\?) # unknown flag
 		#echo >&2 \
 		echo "usage: $0 [-t]"
@@ -629,7 +629,7 @@ function dl+() {
 for url in "$@";do
   url="${url%&list=*}"
   url="${url%&index=*}"
-  echo "$url" >> dl
+  echo "$url" >> dllst
 done
 echo '$?':$?
 }
