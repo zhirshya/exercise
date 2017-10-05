@@ -734,3 +734,9 @@ flattened = [val for sublist in list_of_lists for val in sublist]
 #git push multiple repos under a directory recursively from command line
 for repo in xrcs note;do cd /mnt/0/gthb/$repo && ggpush;done
 
+#check installed Linux Kernels
+#On RHEL / CentOS / Scientific Linux / Fedora:
+sudo rpm -qa kernel
+#On Debian / Ubuntu / Linux Mint:
+dpkg --list | grep linux-image
+
