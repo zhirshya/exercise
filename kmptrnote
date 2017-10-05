@@ -735,6 +735,7 @@ flattened = [val for sublist in list_of_lists for val in sublist]
 for repo in xrcs note;do cd /mnt/0/gthb/$repo && ggpush;done
 
 #check installed Linux Kernels
+ls /boot/ | grep vmlinuz
 #On RHEL / CentOS / Scientific Linux / Fedora:
 sudo rpm -qa kernel
 #On Debian / Ubuntu / Linux Mint:
