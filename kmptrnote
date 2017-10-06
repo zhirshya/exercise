@@ -555,6 +555,10 @@ echo %windir%
 echo %SystemRoot%/SysWOW64
 echo %USERPROFILE%Envs
 
+#excel formula
+#always use & instead of concatenate()!
+=$A$1&" = "&""""&$A$2&""""&";"
+
 #list all group in linux
 cut -d: -f1 /etc/group | sort
 
