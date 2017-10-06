@@ -106,11 +106,12 @@ if __name__ == '__main__':
     apiKey = args.api_key
     print('(local var)apiKey:{0}'.format(apiKey))
     
-    cities = {'Hailar':2037078, 'Tokyo':1850144, 'Saint Petersburg':498817, 'Moscow':524901, 'Manzhouli':2035836, 'Harbin':2037013}
+    cities = {2037078:['Hailar',,], 2036892:['Hohhot',40.816667,111.65], 2014407:['Улан-Удэ',,], 2023469:['Irkutsk',,], 1850144:['Tokyo',,], 498817:['Saint Petersburg',,], 524901:['Moscow',,], 2035836:['Manchur',,], 2037013:['Harbin',,]}
     try:
         if isinstance(cities, dict):
             for k,v in list(cities.items()):
-                data_output(data_organizer(data_fetch(url_builder(v,apiKey))))
+                data_output(data_organizer(data_fetch(url_builder(k,apiKey))))
+                print(data_fetch("{0}{1}{2}{3}{4}".format("http://api.openweathermap.org/pollution/v1/co/",v[1],v[2],"/current.json?appid=",apiKey)))
     except IOError as xcpt:
     #except IOError:
         print(xcpt)
