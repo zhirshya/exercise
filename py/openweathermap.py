@@ -19,7 +19,8 @@ import sys
 #https://codereview.stackexchange.com/questions/131371/script-to-print-weather-report-from-openweathermap-api
 
 #todo: Possible update of API version? e.g. 3.0, 5.5, 7.5 etc. in http://api.openweathermap.org/data/2.5
-#Carbon Monoxide Data: http://openweathermap.org/api/pollution/co
+#Particle Pollution (PM2.5, PM10)
+#Air Quality Index (AQI)
 
 def time_converter(time):
     converted_time = datetime.datetime.fromtimestamp(
