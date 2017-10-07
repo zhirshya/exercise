@@ -138,10 +138,10 @@ if __name__ == '__main__':
     try:
         if isinstance(cities, dict):
             for k,v in list(cities.items()):
-                print("city id:{}".format(k))
-                print("city:{}".format(v[0]))
-                print("latitude:{}".format(v[1]))
-                print("longitude:{}".format(v[2]))
+                print('city id:{}'.format(k))
+                print('city:{}'.format(v[0]))
+                print('latitude:{}'.format(v[1]))
+                print('longitude:{}'.format(v[2]))
                 data_output(data_organizer(data_fetch(url_builder(k,apiKey))))
 
                 for k_prtkl,v_prtkl in list(particles_dict.items()):
@@ -165,13 +165,13 @@ if __name__ == '__main__':
 #                print('O3 query URL@http://openweathermap.org/api/pollution:{}'.format(o3_URL))
 #                print(data_fetch(o3_URL))
 
-            print("{0}{1}".format("Access Carbon Monoxide index for any location on Earth! Data is available in JSON.",'''
+            print('{0}{1}'.format('Access Carbon Monoxide index for any location on Earth! Data is available in JSON.','''
                 Air pollution (beta):
                     Carbon Monoxide Data (CO)
                     Ozone Data (O3)
                     Sulfur Dioxide Data (SO2)
                     Nitrogen Dioxide Data (NO2),etc.
                     http://openweathermap.org/api'''))
-    except IOError as xcpt:
-    #except IOError:
+    #except IOError as xcpt:
+    except Exception as xcpt:
         print(xcpt)
