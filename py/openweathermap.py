@@ -18,7 +18,8 @@ import sys
 
 #https://codereview.stackexchange.com/questions/131371/script-to-print-weather-report-from-openweathermap-api
 
-#todo: Possible update of API version? e.g. 3.0, 5.5, 7.5 etc. in http://api.openweathermap.org/data/2.5
+#todo: automated periodic check/query for update of API version? e.g. 3.0, 5.5, 7.5 etc. in http://api.openweathermap.org/data/2.5
+#world air pollution data api
 #Particle Pollution (PM2.5, PM10)
 #Air Quality Index (AQI)
 
@@ -126,22 +127,51 @@ if __name__ == '__main__':
 #URL format http://api.openweathermap.org/pollution/v1/co/{location}/{datetime}.json?appid={api_key}
 #http://api.openweathermap.org/pollution/v1/co/0.000,10.000/2016-03-01Z.json?appid={your-api-key} 3 digits (78m)
 
-    cities = {2037078:['Hailar',49.200000,119.700000], 2036892:['Hohhot',40.816667,111.65], 2014407:['Улан-Удэ',51.833333,107.6], 2023469:['Irkutsk',52.283333,104.283333], 1850144:['Tokyo',35.683333,139.683333], 498817:['Saint Petersburg',59.95,30.3], 524901:['Moscow',55.75,37.616667], 2035836:['Manchur',49.6,117.433333], 2037013:['Harbin',45.75,126.633333]}
+    particles_dict={'so2':'Sulfur dioxide','no2':'Nitrogen dioxide','co':'Carbon monoxide','o3':'Ozone'}
+
+    #HTTP Error 404: Not Found
+    #cities = {2037078:['Hailar',49.200000,119.700000], 2036892:['Hohhot',40.816667,111.65], 2014407:['Улан-Удэ',51.833333,107.6], 2023469:['Иркутск',52.283333,104.283333], 1850144:['Tokyo',35.683333,139.683333], 498817:['Санкт-Петерб́ург',59.95,30.3], 524901:['Москва',55.75,37.616667], 2035836:['Manchur',49.6,117.433333], 2037013:['Harbin',45.75,126.633333]}
+    #cities = {2037078:['Hailar',49.200,119.700], 2036892:['Hohhot',40.816,111.65], 2014407:['Улан-Удэ',51.833,107.6], 2023469:['Иркутск',52.283,104.283], 1850144:['Tokyo',35.683,139.683], 498817:['Санкт-Петерб́ург',59.95,30.3], 524901:['Москва',55.75,37.616], 2035836:['Manchur',49.6,117.433], 2037013:['Harbin',45.75,126.633]}
+    #cities = {2037078:['Hailar',49.20,119.70], 2036892:['Hohhot',40.81,111.65], 2014407:['Улан-Удэ',51.83,107.6], 2023469:['Иркутск',52.28,104.28], 1850144:['Tokyo',35.68,139.68], 498817:['Санкт-Петерб́ург',59.95,30.3], 524901:['Москва',55.75,37.61], 2035836:['Manchur',49.6,117.43], 2037013:['Harbin',45.75,126.63]}
+    cities = {2037078:['Hailar',49.2,119.7], 2036892:['Hohhot',40.8,111.6], 2014407:['Улан-Удэ',51.8,107.6], 2023469:['Иркутск',52.2,104.2], 1850144:['Tokyo',35.6,139.6], 498817:['Санкт-Петерб́ург',59.9,30.3], 524901:['Москва',55.7,37.6], 2035836:['Manchur',49.6,117.4], 2037013:['Harbin',45.7,126.6]}
+
     try:
         if isinstance(cities, dict):
             for k,v in list(cities.items()):
-                print("k:{}".format(k))
+                print("city id:{}".format(k))
+                print("city:{}".format(v[0]))
                 print("latitude:{}".format(v[1]))
                 print("longitude:{}".format(v[2]))
                 data_output(data_organizer(data_fetch(url_builder(k,apiKey))))
-                print("{0}{1}".format("Access Carbon Monoxide index for any location on Earth! Data is available in JSON.",'''
-                    Air pollution (beta):
-                        Carbon Monoxide Data (CO)
-                        Ozone Data (O3)
-                        Sulfur Dioxide Data (SO2)
-                        Nitrogen Dioxide Data (NO2)'''))
-                #HTTP Error 404: Not Found
-                print(data_fetch("{0}{1},{2}{3}{4}".format("http://api.openweathermap.org/pollution/v1/co/",v[1],v[2],"/current.json?appid=",apiKey)))
+
+                for k_prtkl,v_prtkl in list(particles_dict.items()):
+                    prtURL='{0}/{1}/{2},{3}/{4}{5}'.format('http://api.openweathermap.org/pollution/v1',k_prtkl,v[1],v[2],'current.json?appid=',apiKey)
+                    print('{0}({1}) query URL@http://openweathermap.org/api/pollution:{2}'.format(k_prtkl,v_prtkl,prtURL))
+                    print(data_fetch(prtURL))
+                
+#                so2_URL='{0}{1},{2}/{3}{4}'.format('http://api.openweathermap.org/pollution/v1/so2/',v[1],v[2],'current.json?appid=',apiKey)
+#                print('SO2 query URL@http://openweathermap.org/api/pollution:{}'.format(so2_URL))
+#                print(data_fetch(so2_URL))
+#                
+#                no2_URL='{0}{1},{2}/{3}{4}'.format('http://api.openweathermap.org/pollution/v1/no2/',v[1],v[2],'current.json?appid=',apiKey)
+#                print('NO2 query URL@http://openweathermap.org/api/pollution:{}'.format(no2_URL))
+#                print(data_fetch(no2_URL))
+#                
+#                co_URL='{0}{1},{2}/{3}{4}'.format('http://api.openweathermap.org/pollution/v1/co/',v[1],v[2],'current.json?appid=',apiKey)
+#                print('CO query URL@http://openweathermap.org/api/pollution:{}'.format(co_URL))
+#                print(data_fetch(co_URL))
+#                
+#                o3_URL='{0}{1},{2}/{3}{4}'.format('http://api.openweathermap.org/pollution/v1/o3/',v[1],v[2],'current.json?appid=',apiKey)
+#                print('O3 query URL@http://openweathermap.org/api/pollution:{}'.format(o3_URL))
+#                print(data_fetch(o3_URL))
+
+            print("{0}{1}".format("Access Carbon Monoxide index for any location on Earth! Data is available in JSON.",'''
+                Air pollution (beta):
+                    Carbon Monoxide Data (CO)
+                    Ozone Data (O3)
+                    Sulfur Dioxide Data (SO2)
+                    Nitrogen Dioxide Data (NO2),etc.
+                    http://openweathermap.org/api'''))
     except IOError as xcpt:
     #except IOError:
         print(xcpt)
