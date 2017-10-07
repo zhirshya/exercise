@@ -106,12 +106,41 @@ if __name__ == '__main__':
     apiKey = args.api_key
     print('(local var)apiKey:{0}'.format(apiKey))
     
-    cities = {2037078:['Hailar',,], 2036892:['Hohhot',40.816667,111.65], 2014407:['Улан-Удэ',,], 2023469:['Irkutsk',,], 1850144:['Tokyo',,], 498817:['Saint Petersburg',,], 524901:['Moscow',,], 2035836:['Manchur',,], 2037013:['Harbin',,]}
+    #49°12'00.0"N 119°42'00.0"E
+    #DMS	49° 12′ 0″ N, 119° 42′ 0″ E
+    #Decimal    49.2, 119.7	
+    #Geo URI	geo:49.2,119.7
+    #UTM	50U 696682 5453199
+
+    #51°50′00″ с. ш. 107°37′00″ в. д. HGЯO
+    #Geo URI	geo:51.833333,107.6
+
+    #Geo URI	geo:55.75,37.616667
+    #Geo URI	geo:59.95,30.3
+    #Geo URI	geo:52.283333,104.283333
+
+    #Geo URI	geo:45.75,126.633333
+    #Geo URI	geo:49.6,117.433333
+
+#URL format http://api.openweathermap.org/pollution/v1/co/{location}/{datetime}.json?appid={api_key}
+#http://api.openweathermap.org/pollution/v1/co/0.000,10.000/2016-03-01Z.json?appid={your-api-key} 3 digits (78m)
+
+    cities = {2037078:['Hailar',49.200000,119.700000], 2036892:['Hohhot',40.816667,111.65], 2014407:['Улан-Удэ',51.833333,107.6], 2023469:['Irkutsk',52.283333,104.283333], 1850144:['Tokyo',35.683333,139.683333], 498817:['Saint Petersburg',59.95,30.3], 524901:['Moscow',55.75,37.616667], 2035836:['Manchur',49.6,117.433333], 2037013:['Harbin',45.75,126.633333]}
     try:
         if isinstance(cities, dict):
             for k,v in list(cities.items()):
+                print("k:{}".format(k))
+                print("latitude:{}".format(v[1]))
+                print("longitude:{}".format(v[2]))
                 data_output(data_organizer(data_fetch(url_builder(k,apiKey))))
-                print(data_fetch("{0}{1}{2}{3}{4}".format("http://api.openweathermap.org/pollution/v1/co/",v[1],v[2],"/current.json?appid=",apiKey)))
+                print("{0}{1}".format("Access Carbon Monoxide index for any location on Earth! Data is available in JSON.",'''
+                    Air pollution (beta):
+                        Carbon Monoxide Data (CO)
+                        Ozone Data (O3)
+                        Sulfur Dioxide Data (SO2)
+                        Nitrogen Dioxide Data (NO2)'''))
+                #HTTP Error 404: Not Found
+                print(data_fetch("{0}{1},{2}{3}{4}".format("http://api.openweathermap.org/pollution/v1/co/",v[1],v[2],"/current.json?appid=",apiKey)))
     except IOError as xcpt:
     #except IOError:
         print(xcpt)
