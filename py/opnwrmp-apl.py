@@ -15,6 +15,7 @@ import json
 import urllib.request
 import argparse
 import sys
+import codecs
 
 #https://codereview.stackexchange.com/questions/131371/script-to-print-weather-report-from-openweathermap-api
 
@@ -127,47 +128,45 @@ if __name__ == '__main__':
 #URL format http://api.openweathermap.org/pollution/v1/co/{location}/{datetime}.json?appid={api_key}
 #http://api.openweathermap.org/pollution/v1/co/0.000,10.000/2016-03-01Z.json?appid={your-api-key} 3 digits (78m)
 
-    particles_dict={'so2':'Sulfur dioxide','no2':'Nitrogen dioxide','co':'Carbon monoxide','o3':'Ozone'}
+    particles_dict={'SO2':'Sulfur dioxide','NO2':'Nitrogen dioxide','CO':'Carbon monoxide','O3':'Ozone'}
 
     #HTTP Error 404: Not Found
-    cityLatLngtDict = {2037078:['Hailar',49.200000,119.700000], 2036892:['Hohhot',40.816667,111.65], 2014407:['Улан-Удэ',51.833333,107.6], 2023469:['Иркутск',52.283333,104.283333], 1850144:['Tokyo',35.683333,139.683333], 498817:['Санкт-Петерб́ург',59.95,30.3], 524901:['Москва',55.75,37.616667], 2035836:['Manchur',49.6,117.433333], 2037013:['Harbin',45.75,126.633333]}
-    cityLatLngtDict_3frac = {2037078:['Hailar',49.200,119.700], 2036892:['Hohhot',40.816,111.65], 2014407:['Улан-Удэ',51.833,107.6], 2023469:['Иркутск',52.283,104.283], 1850144:['Tokyo',35.683,139.683], 498817:['Санкт-Петерб́ург',59.95,30.3], 524901:['Москва',55.75,37.616], 2035836:['Manchur',49.6,117.433], 2037013:['Harbin',45.75,126.633]}
-    cityLatLngtDict_2frac = {2037078:['Hailar',49.20,119.70], 2036892:['Hohhot',40.81,111.65], 2014407:['Улан-Удэ',51.83,107.6], 2023469:['Иркутск',52.28,104.28], 1850144:['Tokyo',35.68,139.68], 498817:['Санкт-Петерб́ург',59.95,30.3], 524901:['Москва',55.75,37.61], 2035836:['Manchur',49.6,117.43], 2037013:['Harbin',45.75,126.63]}
-    cityLatLngtDict_1frac = {2037078:['Hailar',49.2,119.7], 2036892:['Hohhot',40.8,111.6], 2014407:['Улан-Удэ',51.8,107.6], 2023469:['Иркутск',52.2,104.2], 1850144:['Tokyo',35.6,139.6], 498817:['Санкт-Петерб́ург',59.9,30.3], 524901:['Москва',55.7,37.6], 2035836:['Manchur',49.6,117.4], 2037013:['Harbin',45.7,126.6]}
-    cityLatLngtDict_0frac = {2037078:['Hailar',49,119], 2036892:['Hohhot',40,111], 2014407:['Улан-Удэ',51,107], 2023469:['Иркутск',52,104], 1850144:['Tokyo',35,139], 498817:['Санкт-Петерб́ург',59,30], 524901:['Москва',55,37], 2035836:['Manchur',49,117], 2037013:['Harbin',45,126]}
+    cityLatLngtDict = {2037078:['Hailar',49.200000,119.700000], 2036892:['Hohhot',40.816667,111.65], 2014407:[u'Улан-Удэ',51.833333,107.6], 2023469:[u'Иркутск',52.283333,104.283333], 1850144:['Tokyo',35.683333,139.683333], 498817:[u'Санкт-Петерб́ург',59.95,30.3], 524901:[u'Москва',55.75,37.616667], 2035836:['Manchur',49.6,117.433333], 2037013:['Harbin',45.75,126.633333]}
+#    cityLatLngtDict_3frac = {2037078:['Hailar',49.200,119.700], 2036892:['Hohhot',40.816,111.65], 2014407:['Улан-Удэ',51.833,107.6], 2023469:['Иркутск',52.283,104.283], 1850144:['Tokyo',35.683,139.683], 498817:['Санкт-Петерб́ург',59.95,30.3], 524901:['Москва',55.75,37.616], 2035836:['Manchur',49.6,117.433], 2037013:['Harbin',45.75,126.633]}
+#    cityLatLngtDict_2frac = {2037078:['Hailar',49.20,119.70], 2036892:['Hohhot',40.81,111.65], 2014407:['Улан-Удэ',51.83,107.6], 2023469:['Иркутск',52.28,104.28], 1850144:['Tokyo',35.68,139.68], 498817:['Санкт-Петерб́ург',59.95,30.3], 524901:['Москва',55.75,37.61], 2035836:['Manchur',49.6,117.43], 2037013:['Harbin',45.75,126.63]}
+#    cityLatLngtDict_1frac = {2037078:['Hailar',49.2,119.7], 2036892:['Hohhot',40.8,111.6], 2014407:['Улан-Удэ',51.8,107.6], 2023469:['Иркутск',52.2,104.2], 1850144:['Tokyo',35.6,139.6], 498817:['Санкт-Петерб́ург',59.9,30.3], 524901:['Москва',55.7,37.6], 2035836:['Manchur',49.6,117.4], 2037013:['Harbin',45.7,126.6]}
+#    cityLatLngtDict_0frac = {2037078:['Hailar',49,119], 2036892:['Hohhot',40,111], 2014407:['Улан-Удэ',51,107], 2023469:['Иркутск',52,104], 1850144:['Tokyo',35,139], 498817:['Санкт-Петерб́ург',59,30], 524901:['Москва',55,37], 2035836:['Manchur',49,117], 2037013:['Harbin',45,126]}
 
+    fracFrmtSpcfrLst=['f','.3f','.2f','.1f','.0f']
     try:
         if isinstance(cityLatLngtDict, dict):
-            with open('/mnt/0/workspace/opnwrmp-ap.trace','w') as trcfile:
-                #for k,v in list(cityLatLngtDict.items()):
+            #with open('/mnt/0/workspace/opnwrmp-ap.trace','w') as trcfile:
+            with codecs.open('/mnt/0/workspace/opnwrmp-ap.trace','w','utf-8') as trcfile:
                 for k,v in list(cityLatLngtDict.items()):
                     print('city id:{}'.format(k))
                     print('city:{}'.format(v[0]))
                     print('latitude:{}'.format(v[1]))
                     print('longitude:{}'.format(v[2]))
                     data_output(data_organizer(data_fetch(url_builder(k,apiKey))))
+                    
+                    print('{0} {1} {2}\n'.format(v[0],v[1],v[2])) #city
+                    trcfile.write('{0} {1} {2}\n'.format(v[0],v[1],v[2])) #city
 
                     for k_prtkl,v_prtkl in list(particles_dict.items()):
-                        prtURL='{0}/{1}/{2},{3}/{4}{5}'.format('http://api.openweathermap.org/pollution/v1',k_prtkl,v[1],v[2],'current.json?appid=',apiKey)
-                        print('{0}({1}) query URL@http://openweathermap.org/api/pollution:{2}'.format(k_prtkl,v_prtkl,prtURL))
-    #                    print(data_fetch(prtURL))
-                        trcfile.write('{0}({1}) query URL@http://openweathermap.org/api/pollution:{2}\n'.format(k_prtkl,v_prtkl,prtURL))
-                    
-    #                so2_URL='{0}{1},{2}/{3}{4}'.format('http://api.openweathermap.org/pollution/v1/so2/',v[1],v[2],'current.json?appid=',apiKey)
-    #                print('SO2 query URL@http://openweathermap.org/api/pollution:{}'.format(so2_URL))
-    #                print(data_fetch(so2_URL))
-    #                
-    #                no2_URL='{0}{1},{2}/{3}{4}'.format('http://api.openweathermap.org/pollution/v1/no2/',v[1],v[2],'current.json?appid=',apiKey)
-    #                print('NO2 query URL@http://openweathermap.org/api/pollution:{}'.format(no2_URL))
-    #                print(data_fetch(no2_URL))
-    #                
-    #                co_URL='{0}{1},{2}/{3}{4}'.format('http://api.openweathermap.org/pollution/v1/co/',v[1],v[2],'current.json?appid=',apiKey)
-    #                print('CO query URL@http://openweathermap.org/api/pollution:{}'.format(co_URL))
-    #                print(data_fetch(co_URL))
-    #                
-    #                o3_URL='{0}{1},{2}/{3}{4}'.format('http://api.openweathermap.org/pollution/v1/o3/',v[1],v[2],'current.json?appid=',apiKey)
-    #                print('O3 query URL@http://openweathermap.org/api/pollution:{}'.format(o3_URL))
-    #                print(data_fetch(o3_URL))
+                        print('{0}({1})'.format(k_prtkl,v_prtkl)) #particle
+                        trcfile.write('{0}({1})\n'.format(k_prtkl,v_prtkl)) #particle
+
+                        for fracFrmtSpcfr in fracFrmtSpcfrLst:
+                        #prtklURL='{0}/{1}/{2},{3}/{4}{5}'.format('http://api.openweathermap.org/pollution/v1',k_prtkl,v[1],v[2],'current.json?appid=',apiKey)
+                            frmtSpcfr='{0}/{1}/{2:'+fracFrmtSpcfr+'},{3:'+fracFrmtSpcfr+'}/{4}{5}'
+                            prtklURL=frmtSpcfr.format('http://api.openweathermap.org/pollution/v1',k_prtkl,v[1],v[2],'current.json?appid=',apiKey)
+                            print('{0}:{1}'.format(frmtSpcfr,prtklURL)) #query URL
+                            trcfile.write('{0}:{1}\n'.format(frmtSpcfr,prtklURL)) #query URL
+
+        #                    print(data_fetch(prtklURL)) #core work!
+
+                    trcfile.write('-'*80+'\n')
+                    #trcfile.write('{}\n'.format('-'*80))
 
             print('{0}{1}'.format('Access Carbon Monoxide index for any location on Earth! Data is available in JSON.','''
                 Air pollution (beta):
