@@ -128,7 +128,7 @@ if __name__ == '__main__':
 #URL format http://api.openweathermap.org/pollution/v1/co/{location}/{datetime}.json?appid={api_key}
 #http://api.openweathermap.org/pollution/v1/co/0.000,10.000/2016-03-01Z.json?appid={your-api-key} 3 digits (78m)
 
-    particles_dict={'SO2':'Sulfur dioxide','NO2':'Nitrogen dioxide','CO':'Carbon monoxide','O3':'Ozone'}
+    particles_dict={'so2':'Sulfur Dioxide','no2':'Nitrogen Dioxide','co':'Carbon Monoxide','o3':'Ozone'}
 
     #HTTP Error 404: Not Found
     cityLatLngtDict = {2037078:['Hailar',49.200000,119.700000], 2036892:['Hohhot',40.816667,111.65], 2014407:[u'Улан-Удэ',51.833333,107.6], 2023469:[u'Иркутск',52.283333,104.283333], 1850144:['Tokyo',35.683333,139.683333], 498817:[u'Санкт-Петерб́ург',59.95,30.3], 524901:[u'Москва',55.75,37.616667], 2035836:['Manchur',49.6,117.433333], 2037013:['Harbin',45.75,126.633333]}
