@@ -167,6 +167,7 @@ alias utvsr='utv -s -b100'
 alias lynx='lynx -cookies=off'
 alias rtkod='echo "\$\?":$?'
 alias grep='grep --color=auto -R -n -H -C 5 -i --exclude-dir={.git,.svn,.hg,.bzr,CVS} '
+#alias grp='grep --color=auto -R -n -H -C 5 -i --exclude-dir={.git,.svn,.hg,.bzr,CVS} '
 alias src='source ~/.zshrc'
 
 #punctuation,symbol,rus word
