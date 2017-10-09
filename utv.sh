@@ -46,7 +46,7 @@ while [[ $xt_code -ne 0 ]];do
 
 	if [[ -z $bandwidth_rate ]];then
 		echo '#hit [[ -z $bandwidth_rate ]]'
-		sudo find /mnt/0 ~ -iname 'dllst' -type f -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} +
+		sudo find /mnt/0 ~ -iname 'dllst' -o -iname 'dllst.todo' -type f -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} +
 	else
 		if [[ ! $bandwidth_rate =~ ^[0-9]+[kKmM]$ ]];then
 			if [[ $bandwidth_rate =~ ^[0-9]+$ ]];then
@@ -56,7 +56,7 @@ while [[ $xt_code -ne 0 ]];do
 			fi
 		fi
 		echo "#bandwidth_rate":$bandwidth_rate
-		sudo find /mnt/0 ~ -iname 'dllst' -type f -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} +
+		sudo find /mnt/0 ~ -iname 'dllst' -o -iname 'dllst.todo' -type f -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} +
 	fi
 	xt_code=$?
 	echo "exit code(sudo find...-execdir youtube-dl...{} +):$xt_code"
