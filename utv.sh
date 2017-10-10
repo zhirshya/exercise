@@ -4,6 +4,11 @@
 #sudo find /mnt/0 ~ -type f -iname '*.part' -execdir youtube-dl --youtube-skip-dash-manifest -a {} +
 #extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
+exec  &>> /home/r/utv.sh.log
+
+typeset -F SECONDS
+echo "(start)«$(\date)»"
+
 while getopts "st:b:" opt; do
 	case "$opt" in
 	s) lockpoweroff_screen="NoLockPoweroffScreen";;
@@ -24,9 +29,6 @@ if [[ -z $lockpoweroff_screen ]] || [[ -n $lockpoweroff_screen ]];then
 	xset dpms force off
 fi
 
-typeset -F SECONDS
-echo "(start)«$(\date)»"
-
 xt_code=-1
 err_counter=0
 while [[ $xt_code -ne 0 ]];do
@@ -46,7 +48,7 @@ while [[ $xt_code -ne 0 ]];do
 
 	if [[ -z $bandwidth_rate ]];then
 		echo '#hit [[ -z $bandwidth_rate ]]'
-		sudo find /mnt/0 ~ -iname 'dllst' -o -iname 'dllst.todo' -type f -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} +
+		sudo find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} \;
 	else
 		if [[ ! $bandwidth_rate =~ ^[0-9]+[kKmM]$ ]];then
 			if [[ $bandwidth_rate =~ ^[0-9]+$ ]];then
@@ -56,7 +58,7 @@ while [[ $xt_code -ne 0 ]];do
 			fi
 		fi
 		echo "#bandwidth_rate":$bandwidth_rate
-		sudo find /mnt/0 ~ -iname 'dllst' -o -iname 'dllst.todo' -type f -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} +
+		sudo find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
 	fi
 	xt_code=$?
 	echo "exit code(sudo find...-execdir youtube-dl...{} +):$xt_code"
