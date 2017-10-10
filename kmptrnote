@@ -745,5 +745,5 @@ sudo rpm -qa kernel
 #On Debian / Ubuntu / Linux Mint:
 dpkg --list | grep linux-image
 
-rpm_-Va.cmd:1:rpm -qf $(rpm -Va 2>&1 | grep -vE '^$|prelink:' | sed 's|.* /|/|') | sort -u
+rpm -qf $(rpm -Va 2>&1 | grep -vE '^$|prelink:' | sed 's|.* /|/|') | sort -u
 
