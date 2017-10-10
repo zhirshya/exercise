@@ -682,7 +682,7 @@ echo ------
 diff ~/.zshrc /mnt/0/gthb/xrcs/.zshrc
 }
 
-function pushrepos() {
+function psrepos() {
 	curdir=$PWD
 	cd /mnt/0/gthb
 	for repo in xrcs note;do cd /mnt/0/gthb/$repo && git push origin $(git_current_branch);done
