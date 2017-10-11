@@ -74,9 +74,9 @@ echo '$(times)':$(times)
 echo '$SECONDS':$SECONDS
 #http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
 
-if [[ $shutdown_timeout =~ [nN][oO][wW] ]];then
+if [[ $shutdown_timeout =~ ^[nN][oO][wW]$ ]];then
 	sudo shutdown -P -f +0
-elif [[ $shutdown_timeout =~ [0-9]+ ]];then
+elif [[ $shutdown_timeout =~ ^[0-9]+$ ]];then
 	sudo shutdown -P -f $shutdown_timeout
 else
 	exit $xt_code
