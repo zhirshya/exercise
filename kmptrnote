@@ -747,3 +747,12 @@ dpkg --list | grep linux-image
 
 rpm -qf $(rpm -Va 2>&1 | grep -vE '^$|prelink:' | sed 's|.* /|/|') | sort -u
 
+#work
+sudo find /mnt/0 ~ -xdev -user root -group root -execdir sudo chown -R r:adm {} \;
+#NOT work
+sudo find /mnt/0 ~ -xdev -user root -o -group root -execdir sudo chown -R r:adm {} \;
+#validate with
+sudo find /mnt/0 ~ -xdev -user root -group root
+sudo find /mnt/0 ~ -xdev -user root -o -group root
+
+
