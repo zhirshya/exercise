@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 #todo find *.part files and download separately by extracting ID
-#sudo find /mnt/0 ~ -type f -iname '*.part' -execdir youtube-dl --youtube-skip-dash-manifest -a {} +
+#find /mnt/0 ~ -type f -iname '*.part' -execdir youtube-dl --youtube-skip-dash-manifest -a {} +
 #extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
 exec  &>> /home/r/utv.sh.log
@@ -48,8 +48,8 @@ while [[ $xt_code -ne 0 ]];do
 
 	if [[ -z $bandwidth_rate ]];then
 		echo '#hit [[ -z $bandwidth_rate ]]'
-		#sudo find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} \;
-		sudo find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} \;
+		#find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} \;
+		find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} \;
 	else
 		if [[ ! $bandwidth_rate =~ ^[0-9]+[kKmM]$ ]];then
 			if [[ $bandwidth_rate =~ ^[0-9]+$ ]];then
@@ -59,11 +59,11 @@ while [[ $xt_code -ne 0 ]];do
 			fi
 		fi
 		echo "#bandwidth_rate":$bandwidth_rate
-		#sudo find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
-		sudo find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
+		#find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
+		find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
 	fi
 	xt_code=$?
-	echo "exit code(sudo find...-execdir youtube-dl...{} +):$xt_code"
+	echo "exit code(find...-execdir youtube-dl...{} +):$xt_code"
 done
 
 echo "(end)«$(\date)»"
@@ -77,7 +77,7 @@ echo '$SECONDS':$SECONDS
 #http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
 
 if [[ $shutdown_timeout =~ ^[nN][oO][wW]$ ]];then
-	echo 'true:[[ $shutdown_timeout =~ ^[nN][oO][wW]$ ]], exec:shutdown -P -f +0'
+	echo 'true:[[ $shutdown_timeout =~ ^[nN][oO][wW]$ ]], exec:sudo shutdown -P -f +0'
 	sudo shutdown -P -f +0
 elif [[ $shutdown_timeout =~ ^[0-9]+$ ]];then
 	echo 'true:[[ $shutdown_timeout =~ ^[0-9]+$ ]], exec':"sudo shutdown -P -f $shutdown_timeout"
