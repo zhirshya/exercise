@@ -22,90 +22,92 @@ vimeo_regxpr="^https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+$"
 facebook_regxpr="^https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%=&]*$"
 idx=0
 
-#IFS=' ' read -a str_array <<< "$@"  #bad option: -a
-#for str in "${str_array[@]}";do  #unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
+#IFS=' ' read -a str_array <<< "$@"	#bad option: -a
+#for str in "${str_array[@]}";do	#unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
 cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 for str in "$@";do
-  if [[ $str =~ $utvList_regxpr ]];then
-    echo "[debug]:[$str] match [$utvList_regxpr]"
-    echo '$'$((++idx)):'['$str']'
-    echo "playlist (contained) item(s) search is currently not supported!"
-    continue
-  elif [[ $str =~ $utvSingl_regxpr ]];then
-    echo "[debug]:[$str] match [$utvSingl_regxpr]"
-    str="${str##*youtu*be*/}"
-    str="${str##watch\?v=}"
-    str="${str%% *}"
-  elif [[ $str =~ $codek_regxpr ]];then
-    echo "[debug]:[$str] match [$codek_regxpr]"
-    str="${str##*codek.tv/v/}"
-  elif [[ $str =~ $vimeo_regxpr ]];then
-    echo "[debug]:[$str] match [$vimeo_regxpr]"
-    str="${str##*vimeo.com/}"
-  elif [[ $str =~ $facebook_regxpr ]];then
-    echo "[debug]:[$str] match [$facebook_regxpr]"
-#    str="${str##*video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/}"
-    str="${str##*video.*fbcdn.net/v/*/}"
-  else
-    echo '$'$((++idx)):'['$str']'
-    echo "[debug]:unknown pattern found, specified argument will be applied without any modification, may result in unexpected behavior!"
-  fi
-  str="${str%&index=*}"
-  str="${str%&list=*}"
-  str="${str%&t=*}"
-  str="${str%%\?*}"
-  str="${str%%&*}"
-  str="${str%%#*}"
-  cmd+="-iname \"*$str*\" -o "
+	if [[ $str =~ $utvList_regxpr ]];then
+		echo "[debug]:[$str] match [$utvList_regxpr]"
+		echo '$'$((++idx)):'['$str']'
+		echo "playlist (contained) item(s) search is currently not supported!"
+		continue
+	elif [[ $str =~ $utvSingl_regxpr ]];then
+		echo "[debug]:[$str] match [$utvSingl_regxpr]"
+		str="${str##*youtu*be*/}"
+		str="${str##watch\?v=}"
+		str="${str%% *}"
+	elif [[ $str =~ $codek_regxpr ]];then
+		echo "[debug]:[$str] match [$codek_regxpr]"
+		str="${str##*codek.tv/v/}"
+	elif [[ $str =~ $vimeo_regxpr ]];then
+		echo "[debug]:[$str] match [$vimeo_regxpr]"
+		str="${str##*vimeo.com/}"
+	elif [[ $str =~ $facebook_regxpr ]];then
+		echo "[debug]:[$str] match [$facebook_regxpr]"
+#		str="${str##*video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/}"
+		str="${str##*video.*fbcdn.net/v/*/}"
+	else
+		echo '$'$((++idx)):'['$str']'
+		echo "[debug]:unknown pattern found, specified argument will be applied without any modification, may result in unexpected behavior!"
+	fi
+	str="${str%&index=*}"
+	str="${str%&list=*}"
+	str="${str%&t=*}"
+	str="${str%%\?*}"
+	str="${str%%&*}"
+	str="${str%%#*}"
+	cmd+="-iname \"*$str*\" -o "
 done
 
 if [[ $cmd =~ -iname ]];then
-  cmd=${cmd% -o }
-  cmd+=' \) -exec ls -alFt {} \;'
-  echo '$cmd':$cmd
-  eval ${cmd}
-  echo '$?':$?
+	cmd=${cmd% -o }
+	cmd+=' \) -exec ls -alFt {} \;'
+	echo '$cmd':$cmd
+	eval ${cmd}
+	echo '$?':$?
 else
-  return 113  #can't be reflected on(passed to) outer/upper level!
+	return 113	#can't be reflected on(passed to) outer/upper level!
 fi
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 }
 
 function utlsfrm() {
-  youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats "$1"
-echo '$?':$?
+	for url in "$@";do
+		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
+	done
+	echo '$?':$?
 }
 
 function dprx() {
 setopt nocasematch
 
 if (($# == 1));then
-  if [[ "$1" == http ]];then
-    echo "[debug] hit regex \"== http\""
-    unset http_proxy
-    unset HTTP_PROXY
-  elif [[ "$1" == https ]];then
-    echo "[debug] hit regex \"== https\""
-    unset https_proxy
-    unset HTTPS_PROXY
-  elif [[ "$1" == ftp ]];then
-    echo "[debug] hit regex \"== ftp\""
-    unset ftp_proxy
-    unset FTP_PROXY
-  elif [[ $1 =~ sock* ]];then
-    echo "[debug] hit regex \"=~ sock\""
-    unset socks_proxy
-    unset SOCKS_PROXY
-  fi
+	if [[ "$1" == http ]];then
+		echo "[debug] hit regex \"== http\""
+		unset http_proxy
+		unset HTTP_PROXY
+	elif [[ "$1" == https ]];then
+		echo "[debug] hit regex \"== https\""
+		unset https_proxy
+		unset HTTPS_PROXY
+	elif [[ "$1" == ftp ]];then
+		echo "[debug] hit regex \"== ftp\""
+		unset ftp_proxy
+		unset FTP_PROXY
+	elif [[ $1 =~ sock* ]];then
+		echo "[debug] hit regex \"=~ sock\""
+		unset socks_proxy
+		unset SOCKS_PROXY
+	fi
 elif (($# == 0));then
-  unset http_proxy
-  unset HTTP_PROXY
-  unset https_proxy
-  unset HTTPS_PROXY
-  unset ftp_proxy
-  unset FTP_PROXY
-  unset socks_proxy
-  unset SOCKS_PROXY
+	unset http_proxy
+	unset HTTP_PROXY
+	unset https_proxy
+	unset HTTPS_PROXY
+	unset ftp_proxy
+	unset FTP_PROXY
+	unset socks_proxy
+	unset SOCKS_PROXY
 fi
 prprx
 }
@@ -136,16 +138,16 @@ echo '$?':$?
 
 function +() { #append to todo file
 if (($# > 0));then
-  echo -e "$@" >> /mnt/0/gthb/note/.todo
+	echo -e "$@" >> /mnt/0/gthb/note/.todo
 fi
 echo '$?':$?
 }
 
 function upgrlog() { #view cron job upgrade cmd log
 if [[ -f /var/log/sys_upgrade.log ]];then
-  less /var/log/sys_upgrade.log
+	less /var/log/sys_upgrade.log
 elif [[ -f /var/log/youtube-dl_upgrade.log ]];then
-  less /var/log/youtube-dl_upgrade.log
+	less /var/log/youtube-dl_upgrade.log
 fi
 }
 
@@ -155,19 +157,19 @@ audio_only_flg=""
 wndw_pos=""
 #if [[ $* =~ mp3\|flac\|aac\|wav ]];then
 if [[ $* =~ (mp3|flac|aac|wav)* ]];then
-  audio_only_flg="--qt-start-minimized"
-  echo '[debug] hit [[ $* =~ (mp3|flac|aac|wav)* ]]'
+	audio_only_flg="--qt-start-minimized"
+	echo '[debug] hit [[ $* =~ (mp3|flac|aac|wav)* ]]'
 #elif [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]];then
 elif [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]];then
-  #wndw_pos="--video-x 0 --video-y 0" #place VLC in top left corner
-  echo '[debug] hit [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]]'
+	#wndw_pos="--video-x 0 --video-y 0" #place VLC in top left corner
+	echo '[debug] hit [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]]'
 else
-  echo "error: invalid input files, please specify valid media files, and try again."
-  return 113
+	echo "error: invalid input files, please specify valid media files, and try again."
+	return 113
 fi
 #todo
 #$* or $@ find substr("--rate[ \t]1") ? (NO "--rate 1.5" && pass on everything else ) : $@
-nohup vlc --no-metadata-network-access --rate 1.5 --qt-start-minimized "$@" &> /dev/null & disown  #work in pair?: --one-instance --playlist-enqueue
+nohup vlc --no-metadata-network-access --rate 1.5 --qt-start-minimized "$@" &> /dev/null & disown	#work in pair?: --one-instance --playlist-enqueue
 #nohup vlc --no-metadata-network-access --rate 1.3 "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
 }
 
@@ -183,15 +185,15 @@ out_msg="error"
 err_counter=0
 while (($return_code != 0)) || [[ $out_msg =~ error* ]];do #1.ERROR: can't find the current version. Please try again later. 2.Updating to version 2016.08.22 ...\nERROR: unable to download latest version (for error 2,better to detect network connection and return if connection lost)
 #while (($return_code <> 0)) || [[ $out_msg =~ error ]];do #bad math expression: operand expected at `> 0'
-  if ((err_counter++ > 9));then
-    return 113
-  fi
-  out_msg=$(sudo youtube-dl -U)
-  return_code=$?
-  echo "#debug:err_counter:$err_counter"
-  echo '#debug:regxpr:$match:['$match'],$MATCH:['$MATCH']'
-  echo "#debug:youtube-dl -U:RC:$return_code"
-  echo "#debug:youtube-dl -U:output message:$out_msg"
+	if ((err_counter++ > 9));then
+		return 113
+	fi
+	out_msg=$(sudo youtube-dl -U)
+	return_code=$?
+	echo "#debug:err_counter:$err_counter"
+	echo '#debug:regxpr:$match:['$match'],$MATCH:['$MATCH']'
+	echo "#debug:youtube-dl -U:RC:$return_code"
+	echo "#debug:youtube-dl -U:output message:$out_msg"
 done
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 }
@@ -201,17 +203,17 @@ nohup firefox --ssl-version-min=tls1.1 -private "$@" &> /dev/null & disown
 }
 
 function krm() {
-nohup google-chrome-stable --ssl-version-min=tls1.1 https://stackoverflow.com/questions/16807011/python-how-to-identify-if-a-variable-is-an-array-or-a-scalar http://bisqwit.iki.fi/ http://docs.python-guide.org/en/latest http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask https://encrypted.google.com/search\?hl=en\&as_q=python+3+book https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+set+like+data+structure http://danwalsh.livejournal.com/68723.html https://linux.die.net/man/1/setfacl https://www.reddit.com/r/learnpython/comments/264ffw/what_is_the_pythonic_way_of_storing_credentials https://www.youtube.com/watch\?v=WNfTEl6sJ-4 https://www.youtube.com/watch\?v=ndTK8yqmNs8 https://www.youtube.com/watch\?v=hh2Z2hSgFIY https://encrypted.google.com/search\?hl=en\&as_q=programming+loop+unroll https://en.wikipedia.org/wiki/Loop_unrolling https://www.youtube.com/watch\?v=AxiZC50IjCM http://openweathermap.org/api/pollution/co  "$@" &> /dev/null & disown
+nohup google-chrome-stable --ssl-version-min=tls1.1 https://stackoverflow.com/questions/16807011/python-how-to-identify-if-a-variable-is-an-array-or-a-scalar http://bisqwit.iki.fi/ http://docs.python-guide.org/en/latest http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask https://encrypted.google.com/search\?hl=en\&as_q=python+3+book https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+set+like+data+structure http://danwalsh.livejournal.com/68723.html https://linux.die.net/man/1/setfacl https://www.reddit.com/r/learnpython/comments/264ffw/what_is_the_pythonic_way_of_storing_credentials https://www.youtube.com/watch\?v=WNfTEl6sJ-4 https://www.youtube.com/watch\?v=ndTK8yqmNs8 https://www.youtube.com/watch\?v=hh2Z2hSgFIY https://encrypted.google.com/search\?hl=en\&as_q=programming+loop+unroll https://en.wikipedia.org/wiki/Loop_unrolling https://www.youtube.com/watch\?v=AxiZC50IjCM https://openweathermap.desk.com/	"$@" &> /dev/null & disown
 #https://docs.python.org/3/library/email.examples.html https://docs.python.org/2/library/email-examples.html https://stackoverflow.com/questions/34668240/email-an-attachment-with-non-ascii-filename-with-python-email https://developers.google.com/gmail/api/guides/sending 
 #nohup google-chrome-stable --ssl-version-min=tls1.1 http://www.thechessdrum.net/chessacademy/index.html http://www.thechessdrum.net/65thSquare/65_janfeb04.html http://www.cppsamples.com http://docs.python-guide.org/en/latest https://github.com/line/line-bot-sdk-python http://python-future.org/automatic_conversion.html http://python-future.org/compatible_idioms.html#compatible-idioms http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask "$@" &> /dev/null & disown
 }
 
 function s0() {
 if (($# == 1)) && [[ $1 =~ [0-9]+ ]];then
-  echo '[debug] hit (($# == 1)) && [[ $1 =~ [0-9]+ ]] and $1':$1
-  sudo shutdown -P -f "$1"
+	echo '[debug] hit (($# == 1)) && [[ $1 =~ [0-9]+ ]] and $1':$1
+	sudo shutdown -P -f "$1"
 else
-  sudo shutdown -P -f 0
+	sudo shutdown -P -f 0
 fi
 }
 
@@ -236,30 +238,30 @@ echo '$?':$?
 
 function putfio() {
 if (($# == 1));then
-  curl -F "file=@$1" 'https://file.io/?expires=3d'
-  echo '$?':$?
+	curl -F "file=@$1" 'https://file.io/?expires=3d'
+	echo '$?':$?
 elif (($# == 2)) && [[ $2 =~ [1-9][0-9]{0,2}[dmwDMW] ]];then
-  echo '#debug: =~ [1-9][0-9]{0,2}[dmwDMW] :$MATCH:['$MATCH'],array $match:['$match']'
-  curl -F "file=@$1" "https://file.io/?expires=$2"
-  echo '$?':$?
+	echo '#debug: =~ [1-9][0-9]{0,2}[dmwDMW] :$MATCH:['$MATCH'],array $match:['$match']'
+	curl -F "file=@$1" "https://file.io/?expires=$2"
+	echo '$?':$?
 else
-  echo "usage: putfio <id> [(expires=)<9d/3m/7w>]"
+	echo "usage: putfio <id> [(expires=)<9d/3m/7w>]"
 #define EX_USAGE 64 /* command line usage error */
-  return 64
+	return 64
 fi
 }
 
 function getfio() {
 if (($# == 2));then
-  curl -o "$2.7z" "https://file.io/$1"
-  echo '$?':$?
+	curl -o "$2.7z" "https://file.io/$1"
+	echo '$?':$?
 elif (($# == 1));then
-  curl -o "$1.7z" "https://file.io/$1"
-  echo '$?':$?
+	curl -o "$1.7z" "https://file.io/$1"
+	echo '$?':$?
 else
-  echo "usage: getfio <id> [output_file_name_without_suffix]"
+	echo "usage: getfio <id> [output_file_name_without_suffix]"
 #define EX_USAGE 64 /* command line usage error */
-  return 64
+	return 64
 fi
 }
 
@@ -267,10 +269,10 @@ function srv() {
 #detect OS(Ubuntu, Debian, Mint, kali, RHEL, Centos, Fedora, Suse, etc.)
 
 if (($# == 2));then
-  if [[ "$1" == status ]];then
-    sudo systemctl -al status "$2"
-  fi
-    sudo systemctl "$1" "$2"
+	if [[ "$1" == status ]];then
+		sudo systemctl -al status "$2"
+	fi
+		sudo systemctl "$1" "$2"
 fi
 echo '$?':$?
 #apache2, same for httpd
@@ -295,15 +297,15 @@ echo '$?':$?
 
 function srvstr() {
 for srv in "$@";do
-  sudo service "$srv" start
-  echo '$?':$?
+	sudo service "$srv" start
+	echo '$?':$?
 done
 }
 
 function srvstp() {
 for srv in "$@";do
-  sudo service "$srv" stop
-  echo '$?':$?
+	sudo service "$srv" stop
+	echo '$?':$?
 done
 }
 
@@ -311,14 +313,14 @@ done
 #Shift JIS to utf8
 function sjis2utf8() {
 if (($# == 1));then
-  basename=${1%\.*}
-  extension=${1##*\.}
-  echo 'file base name:${file%\.*}':$basename
-  echo 'file extension:${file##*\.}':$extension
-  iconv -f shift-JIS -t utf8 "$1" > "${basename}_utf8.${extension}"
-#  iconv -f SHIFT-JIS -t UTF-8 "$1" > "${basename}_UTF-8.${extension}"
-#  iconv -f shift-JIS -t utf-8 "$1" > "${basename}_utf-8.${extension}"
-  echo '$?':$?
+	basename=${1%\.*}
+	extension=${1##*\.}
+	echo 'file base name:${file%\.*}':$basename
+	echo 'file extension:${file##*\.}':$extension
+	iconv -f shift-JIS -t utf8 "$1" > "${basename}_utf8.${extension}"
+#	iconv -f SHIFT-JIS -t UTF-8 "$1" > "${basename}_UTF-8.${extension}"
+#	iconv -f shift-JIS -t utf-8 "$1" > "${basename}_utf-8.${extension}"
+	echo '$?':$?
 fi
 }
 
@@ -330,11 +332,11 @@ LC_COLLATE=C
 
 local length="${#1}"
 for (( i = 0; i < length; ++i ));do
-  local c="${1:i:1}"
-  case $c in
-    [a-zA-Z0-9.~_-]) printf "$c" ;;
-    *) printf '%%%02X' "'$c" ;;
-  esac
+	local c="${1:i:1}"
+	case $c in
+		[a-zA-Z0-9.~_-]) printf "$c" ;;
+		*) printf '%%%02X' "'$c" ;;
+	esac
 done
 echo '$?':$?
 LC_COLLATE=$old_lc_collate
@@ -350,121 +352,121 @@ echo '$?':$?
 
 function wttr() {
 if (($# == 0));then
-  curl wttr.in
-  echo '$?':$?
+	curl wttr.in
+	echo '$?':$?
 else
-  for arg in "$@";do
-    if [[ $arg =~ [a-zA-Z0-9.]*[a-zA-Z]+ ]];then
-      curl wttr.in/@$arg
-    elif [[ $arg =~ [a-zA-Z0-9]* ]];then
-      curl wttr.in/$arg
-    elif [[ $arg =~ [/-]h ]];then
-      curl wttr.in/:help
-    fi
-    echo '$?':$?
-  done
+	for arg in "$@";do
+		if [[ $arg =~ [a-zA-Z0-9.]*[a-zA-Z]+ ]];then
+			curl wttr.in/@$arg
+		elif [[ $arg =~ [a-zA-Z0-9]* ]];then
+			curl wttr.in/$arg
+		elif [[ $arg =~ [/-]h ]];then
+			curl wttr.in/:help
+		fi
+		echo '$?':$?
+	done
 fi
 }
 
 #primitive
 function avrwndff() {
-if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then  # { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?  http://unix.stackexchange.com/questions/88850/precedence-of-the-shell-logical-operators
-  if (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
-    echo '※[debug] hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
-  fi
-  echo "usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
+if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then	# { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?	http://unix.stackexchange.com/questions/88850/precedence-of-the-shell-logical-operators
+	if (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
+		echo '※[debug] hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
+	fi
+	echo "usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
 #define EX_USAGE 64 /* command line usage error */
-  return 64
+	return 64
 fi
 
 echo '$#':$#
 idx=0
 for arg in "$@";do
-  echo '$'$((++idx)):'['$arg']'
+	echo '$'$((++idx)):'['$arg']'
 done
 
 infile=""
 outfile=""
 
 if [[ ! -f $1 ]];then
-  echo "please specify a valid local file name, and try again."
-  return 113
+	echo "please specify a valid local file name, and try again."
+	return 113
 else
-  infile="$1"
-  if (($# == 1));then
-    factor="2"  #default
-    outfile="${infile%.*}"
-    outfile+="_spdx"
-    outfile+=$factor
-    outfile+="."
-    suffix="${infile##*.}"
-    outfile+=$suffix
-  fi
+	infile="$1"
+	if (($# == 1));then
+		factor="2"	#default
+		outfile="${infile%.*}"
+		outfile+="_spdx"
+		outfile+=$factor
+		outfile+="."
+		suffix="${infile##*.}"
+		outfile+=$suffix
+	fi
 fi
 
 if (($# == 2));then
 #if [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]];then #parse error near `|'
-  if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then #http://www.regular-expressions.info/floatingpoint.html
-    echo '[debug] hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
-    factor="$2"
-    outfile="${infile%.*}"
-    outfile+="_spdx"
-    outfile+=$factor
-    outfile+="."
-    suffix="${infile##*.}"
-    outfile+=$suffix
-  elif [[ -e $2 ]];then
-    echo "error: destination/output file already exist, please specify other name for output, and try again."
-    return 113
-  else
-    outfile="$2"
-    outfile+="_spdx"
-    factor="2"  #default
-    outfile+=$factor
-    outfile+="."
-    suffix="${infile##*.}"
-    outfile+=$suffix
-  fi
+	if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then #http://www.regular-expressions.info/floatingpoint.html
+		echo '[debug] hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+		factor="$2"
+		outfile="${infile%.*}"
+		outfile+="_spdx"
+		outfile+=$factor
+		outfile+="."
+		suffix="${infile##*.}"
+		outfile+=$suffix
+	elif [[ -e $2 ]];then
+		echo "error: destination/output file already exist, please specify other name for output, and try again."
+		return 113
+	else
+		outfile="$2"
+		outfile+="_spdx"
+		factor="2"	#default
+		outfile+=$factor
+		outfile+="."
+		suffix="${infile##*.}"
+		outfile+=$suffix
+	fi
 fi
 
 if (($# == 3));then
 #if [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]];then #parse error near `|'
-  if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-    if [[ -e $3 ]];then
-      echo "error: destination/output file already exist, please specify other name for output, and try again."
-      return 113
-    fi
-    echo '[debug] hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
-    factor="$2"
-    outfile="$3"
-    outfile+="_spdx"
-    outfile+=$factor
-    outfile+="."
-    suffix="${infile##*.}"
-    outfile+=$suffix
-  else  #? redundant as already checked at function start
-    echo "usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
-    #define EX_USAGE 64 /* command line usage error */
-    return 64
-  fi
+	if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
+		if [[ -e $3 ]];then
+			echo "error: destination/output file already exist, please specify other name for output, and try again."
+			return 113
+		fi
+		echo '[debug] hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+		factor="$2"
+		outfile="$3"
+		outfile+="_spdx"
+		outfile+=$factor
+		outfile+="."
+		suffix="${infile##*.}"
+		outfile+=$suffix
+	else	#? redundant as already checked at function start
+		echo "usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
+		#define EX_USAGE 64 /* command line usage error */
+		return 64
+	fi
 fi
 
 echo "#test<"
 if (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-  echo '[debug] hit (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+	echo '[debug] hit (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 fi
 
 # [[ != ]] literal string comparison?
 if (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-  echo '[debug] ERRONEOUS/WRONG! hit (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]], [[ != ]] literal string comparison?'
+	echo '[debug] ERRONEOUS/WRONG! hit (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]], [[ != ]] literal string comparison?'
 fi
 
 if (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
-  echo '[debug] hit (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] #"[[ ! (xpr) ]]'
+	echo '[debug] hit (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] #"[[ ! (xpr) ]]'
 fi
 
 if (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]];then
-  echo '[debug] hit (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]] #"[[ ! ( xpr ) ]]'
+	echo '[debug] hit (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]] #"[[ ! ( xpr ) ]]'
 fi
 echo "#test>"
 
@@ -480,8 +482,8 @@ echo '"${infile_singlequoted}"':"${infile_singlequoted}"
 echo '"${outfile_singlequoted}"':"${outfile_singlequoted}"
 
 if [[ -e ${outfile_singlequoted} ]];then
-  echo "error: destination/output file already exist, please specify other name for output, and try again."
-  return 113
+	echo "error: destination/output file already exist, please specify other name for output, and try again."
+	return 113
 fi
 
 cmd='ffmpeg -i '
@@ -509,7 +511,7 @@ gdb --version
 gcc --version
 g++ --version
 git --version
-as --version  #GNU assembler
+as --version	#GNU assembler
 openssl version
 ssh -V
 libreoffice --version
@@ -521,7 +523,7 @@ xmllint --version
 echo "node --version":$(node --version)
 echo "youtube-dl --version":$(youtube-dl --version)
 #echo "python --version":$(python --version) #python outputs its name automatically!
-echo $(python --version)  #'echo' spaces with an empty line
+echo $(python --version)	#'echo' spaces with an empty line
 perl --version
 }
 
@@ -532,14 +534,14 @@ nohup libreoffice --calc "$@" &> /dev/null & disown
 function wrtr() {
 args=""
 for file in "$@";do
-  if [[ -d $file ]];then
-    echo "error: directory with name \`$file' already exist, unable to edit directories, please specify other file name, and try again."
-    return 113
-  elif [[ ! -e $file ]];then
-    touch $file
-  fi
-  
-  args+="$file "
+	if [[ -d $file ]];then
+		echo "error: directory with name \`$file' already exist, unable to edit directories, please specify other file name, and try again."
+		return 113
+	elif [[ ! -e $file ]];then
+		touch $file
+	fi
+	
+	args+="$file "
 done
 args=${args%% }
 nohup libreoffice --writer "$args" &> /dev/null & disown
@@ -561,28 +563,28 @@ nohup evince "$@" &> /dev/null & disown
 
 function mkcd() {
 if [[ -z $1 ]] || [[ ! -n $1 ]];then
-  echo "error: please specify a valid directory name and try again."
-  return 113
+	echo "error: please specify a valid directory name and try again."
+	return 113
 elif [[ -d $1 ]];then
-  echo "error: destination directory \`$1' already exist, please specify other name and try again."
-  return 113
+	echo "error: destination directory \`$1' already exist, please specify other name and try again."
+	return 113
 else
-  mkdir -p -- "$1" &&
-  cd -P -- "$1"
-  #BASH BUILTIN COMMANDS
-  #Unless otherwise noted, each builtin command documented in this section as accepting options preceded by - accepts -- to signify the end of the options.
-  #mkdir -p "$1" &&
-  #cd "$1"  #cd: line number : no such file or directory
-  echo '$?':$?
-  echo -n 'pwd:'
-  pwd
+	mkdir -p -- "$1" &&
+	cd -P -- "$1"
+	#BASH BUILTIN COMMANDS
+	#Unless otherwise noted, each builtin command documented in this section as accepting options preceded by - accepts -- to signify the end of the options.
+	#mkdir -p "$1" &&
+	#cd "$1"	#cd: line number : no such file or directory
+	echo '$?':$?
+	echo -n 'pwd:'
+	pwd
 fi
 }
 
 function dlchk() {
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 urls_whitespaced=""
-errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"  #use variable to hold complex regxpr!
+errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"	#use variable to hold complex regxpr!
 dllst_file="dllst"
 
 while getopts "t" opt; do
@@ -602,24 +604,24 @@ shift $((OPTIND-1))
 blankline_rexpr="^[ \t\u3000]*$"
 
 for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
-#  if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then  #error: condition expected: $file  #stderr inaccessible this way!
-  if [[ ! $file =~ $errmsg ]];then  #stderr inaccessible this way!
-    echo $file:
-    more $file
-  fi
-  while read -r line;do
-    if [[ ! $line =~ $blankline_rexpr ]];then
-	urls_whitespaced+="\"$line\" "  #urls_whitespaced+=("$line"+" ")?
-	#urls_whitespaced+="$line "  #urls_whitespaced+=("$line"+" ")?
-    fi
-  done < "$file"
-  echo '$urls_whitespaced:['$urls_whitespaced']'
-#  IFS=' ' read -a urls_whitespaced_arr <<<"$urls_whitespaced"  #bad option: -a
-#  \? "$urls_whitespaced_arr"  #wrong!
-#  \? $urls_whitespaced  #wrong!
-  cmd="\? $urls_whitespaced"
-  eval ${cmd}
-  urls_whitespaced=""
+#	if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then	#error: condition expected: $file	#stderr inaccessible this way!
+	if [[ ! $file =~ $errmsg ]];then	#stderr inaccessible this way!
+		echo $file:
+		more $file
+	fi
+	while read -r line;do
+		if [[ ! $line =~ $blankline_rexpr ]];then
+			urls_whitespaced+="\"$line\" "	#urls_whitespaced+=("$line"+" ")?
+			#urls_whitespaced+="$line "	#urls_whitespaced+=("$line"+" ")?
+		fi
+	done < "$file"
+	echo '$urls_whitespaced:['$urls_whitespaced']'
+#	IFS=' ' read -a urls_whitespaced_arr <<<"$urls_whitespaced"	#bad option: -a
+#	\? "$urls_whitespaced_arr"	#wrong!
+#	\? $urls_whitespaced	#wrong!
+	cmd="\? $urls_whitespaced"
+	eval ${cmd}
+	urls_whitespaced=""
 done
 echo '$?':$?
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
@@ -628,35 +630,35 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #append to youtube download file
 function dl+() {
 for url in "$@";do
-  url="${url%&list=*}"
-  url="${url%&index=*}"
-  echo "$url" >> dllst
+	url="${url%&list=*}"
+	url="${url%&index=*}"
+	echo "$url" >> dllst
 done
 echo '$?':$?
 }
 
 function 0() {
 for file in "$@";do
-  if [[ -f $file ]];then
-    mv "$file" "$file.bak"
-    echo -n > "$file"
-  fi
+	if [[ -f $file ]];then
+		mv "$file" "$file.bak"
+		echo -n > "$file"
+	fi
 done
 echo '$?':$?
 }
 
 function scrshot() {
 if ((1 == $#)) && [[ ! -d $1 ]];then
-#  scrot -q 100 -d 5 -c -s "$1"  #faulty
-  gnome-screenshot -w -p -d 5 -f "$1"
-  echo '$?':$?
-  nohup eog "$1" &> /dev/null & disown
+#	scrot -q 100 -d 5 -c -s "$1"	#faulty
+	gnome-screenshot -w -p -d 5 -f "$1"
+	echo '$?':$?
+	nohup eog "$1" &> /dev/null & disown
 else
-#  scrot -q 100 -d 5 -c -s -e 'eog $f'  #faulty
-  filename=$(\date +"%Y%m%d%H%M%S%::z").jpg
-  gnome-screenshot -w -p -d 5 -f "$HOME/$filename"
-  echo '$?':$?
-  nohup eog "$HOME/$filename" &> /dev/null & disown
+#	scrot -q 100 -d 5 -c -s -e 'eog $f'	#faulty
+	filename=$(\date +"%Y%m%d%H%M%S%::z").jpg
+	gnome-screenshot -w -p -d 5 -f "$HOME/$filename"
+	echo '$?':$?
+	nohup eog "$HOME/$filename" &> /dev/null & disown
 fi
 }
 
