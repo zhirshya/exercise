@@ -4,7 +4,7 @@
 #find /mnt/0 ~ -type f -iname '*.part' -execdir youtube-dl --youtube-skip-dash-manifest -a {} +
 #extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
-exec  &>> /home/r/utv.sh.log
+#exec  &>> /home/r/utv.sh.log  #throttled with ^M
 
 typeset -F SECONDS
 echo "(start)«$(\date)»"
@@ -26,7 +26,6 @@ shift $((OPTIND-1))
 if [[ -z $lockpoweroff_screen ]] || [[ -n $lockpoweroff_screen ]];then
 #if ! ( [[ $lockpoweroff_screen == off ]] || [[ $lockpoweroff_screen == 0 ]] || (($lockpoweroff_screen == 0)) );then #NOT work!
 	dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
-	xset dpms force off
 fi
 
 xt_code=-1
