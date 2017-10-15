@@ -54,7 +54,6 @@ X11-clipboard support in terminal
 Getting Vim to work with the X11 clipboard can be a struggle, at least when you like to run Vim in a terminal. The GUI version of Vim always has clipboard support, however, if you like to use Vim from a terminal, you will have to check for X11-clipboard support.
 
 From the console, type:
-
 % vim --version
 If you see "+xterm_clipboard", you are good to go. If it's "-xterm_clipboard", you will need to look for a version of Vim that was compiled with clipboard support.
 
