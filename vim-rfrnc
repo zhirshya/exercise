@@ -182,3 +182,14 @@ iabbrev utf# # -*- coding: utf-8 -*-
 Search for Russian letter range `[а-яА-Я ]` misses the letters `ё` and `Ё`
 https://github.com/vim/vim/issues/1751
 
+edit multiple files in Vim:
+vim file1, :e file2, :bn, :bn, :bw
+Commands to switch between buffers:
+:bf            # Go to first file.
+:bl            # Go to last file
+:bn            # Go to next file.
+:bp            # Go to previous file.
+:bw            # Close file.
+:help buffer to find more information
+To know filename use Ctrl+G,:file or :f
+
