@@ -593,7 +593,7 @@ sudo freshclam;sudo clamscan --exclude-dir="^/sys" -i --bell -r /;echo '$?':$?
 {echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)} &>> /mnt/0/workspace/test.log ; s0
 (echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)) &>> /mnt/0/workspace/test.log ; s0
 
-(echo $(date);wget -i dllst;echo $(date);s0) &> ~/dl.log &
+(echo $(date);utv;wget -i dllst;echo $(date);s0) &> ~/dl.log &
 
 #docker
 Hello from Docker!
