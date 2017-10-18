@@ -7,6 +7,7 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #https://youtu.be/oYtGrCP_n0k?t=329
 #https://www.youtube.com/watch?v=VPInIrd5Hqc#t=35s
 #https://codek.tv/v/6MaOPdQPvow
+#http://video.ch9.ms/ch9/3306/0e92ae7f-7b06-4a08-a2a0-e80545733306/DefragTools179_high.mp4
 #https://video.xx.fbcdn.net/v/t43.1792-2/14018597_941915082602721_1324838905_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=588&oh=37f5d4bd4e3b3de99d2f0093c17a69d0&oe=57CBD2F3
 #https://www.facebook.com/ehbichig/videos/991876094204055/
 #https://vimeo.com/115796769
@@ -18,6 +19,7 @@ utvList_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/playlist\\\\?\?list\\\\?=[-
 #utvSingl_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+([\&#]list=[-_.a-zA-Z0-9]+)?([-_.a-zA-Z0-9\&#=]+)*$"
 utvSingl_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+([\&#]list=[-_.a-zA-Z0-9]+)?[-_.a-zA-Z0-9\&#=]*$"
 codek_regxpr="^https?://(www\.)?codek\.tv/v/[-_a-zA-Z0-9]+$"
+knl9_regxpr="^https?://video\.ch9\.ms/[-_a-zA-Z0-9/.]+[-_a-zA-Z0-9.]+$"
 vimeo_regxpr="^https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+$"
 facebook_regxpr="^https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%=&]*$"
 idx=0
@@ -39,6 +41,9 @@ for str in "$@";do
 	elif [[ $str =~ $codek_regxpr ]];then
 		echo "[debug]:[$str] match [$codek_regxpr]"
 		str="${str##*codek.tv/v/}"
+	elif [[ $str =~ $knl9_regxpr ]];then
+		echo "[debug]:[$str] match [$knl9_regxpr]"
+		str="${str##*video.ch9.ms/[-_a-zA-Z0-9/.]*/}"
 	elif [[ $str =~ $vimeo_regxpr ]];then
 		echo "[debug]:[$str] match [$vimeo_regxpr]"
 		str="${str##*vimeo.com/}"
@@ -56,6 +61,7 @@ for str in "$@";do
 	str="${str%%\?*}"
 	str="${str%%&*}"
 	str="${str%%#*}"
+	str="${str%\.*}"  #strip extension
 	cmd+="-iname \"*$str*\" -o "
 done
 
