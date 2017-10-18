@@ -4,7 +4,7 @@
 #find /mnt/0 ~ -type f -iname '*.part' -execdir youtube-dl --youtube-skip-dash-manifest -a {} +
 #extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
-#exec  &>> /home/r/utv.sh.log  #flooded with ^M (i.e. carriage return, keyboard equivalent to \r)
+#exec  &>> /home/r/utv.sh.log  #littered with tons of ^M(i.e. CTRL-M:carriage return, keyboard equivalent to \r), better log only errors with '2>>'
 
 typeset -F SECONDS
 echo "(start)«$(\date)»"
