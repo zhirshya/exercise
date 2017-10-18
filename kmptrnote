@@ -130,8 +130,8 @@ DEVICES_TO_DISABLE_ON_STARTUP="bluetooth"
 sudo ln -s /mnt/0/gthb/xrcs/utv.sh /usr/local/bin/utv
 
 grep -Ril "2>&1" .
-grep -Hinr "usermod -aG" /mnt/0/gthb/xrcs/
-alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} -Hinr'
+grep -HinR "usermod -aG" /mnt/0/gthb/xrcs/
+alias grep='grep --color=auto -R -n -H -C 5 -i --exclude-dir={.git,.svn,.hg,.bzr,CVS}'
 
 #sed, vim
 sed -i.bak "s/\"\\\\n\"/'\\\\n'/g" *.cpp /* cout << "\n" --> cout << '\n' (see Effective Modern C++ by Scott Meyer) */
@@ -593,7 +593,10 @@ sudo freshclam;sudo clamscan --exclude-dir="^/sys" -i --bell -r /;echo '$?':$?
 {echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)} &>> /mnt/0/workspace/test.log ; s0
 (echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)) &>> /mnt/0/workspace/test.log ; s0
 
-(echo $(date);utv;wget -i dllst;echo $(date);s0) &> ~/dl.log &
+# '&>' litter log files with tons of progress string(CTRL-M (^M))! Log only errors instead!
+# keep track of wget's input file dir and CD to there if execute other commands and scripts first!
+(echo $(date);wget -i dllst;utv;echo $(date);s0) 2>> ~/dl.log &  # shutdown didn't perform successfully when put in background!
+(echo $(date);wget -i dllst;utv;echo $(date)) 2>> ~/dl.log ; s0 &
 
 #docker
 Hello from Docker!
