@@ -760,4 +760,7 @@ sudo find /mnt/0 ~ -xdev -user root -o -group root -execdir sudo chown -R r:adm 
 sudo find /mnt/0 ~ -xdev -user root -group root
 sudo find /mnt/0 ~ -xdev -user root -o -group root
 
+#gawk
+#output only distinct lines
+gawk '!x[toupper($0)]++ {printf "%s ", $0} END {print ""}' dllst
 
