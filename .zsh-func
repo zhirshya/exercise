@@ -68,7 +68,7 @@ done
 if [[ $cmd =~ -iname ]];then
 	cmd=${cmd% -o }
 	cmd+=' \) -exec ls -alFt {} \;'
-	echo '$cmd':$cmd
+	echo '$cmd:['$cmd']'
 	eval ${cmd}
 	echo '$?':$?
 else
@@ -626,7 +626,7 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 #	\? "$urls_whitespaced_arr"	#wrong!
 #	\? $urls_whitespaced	#wrong!
 #	cmd="\? $urls_whitespaced"
-	cmd="\? $(gawk '!x[toupper($0)]++ {printf "%s ", $0} END {print ""}' $file)"
+	cmd="\? $(gawk '!seen[toupper($0)]++ {printf "%s ", $0} END {print ""}' $file)"
 	echo 'cmd:['$cmd']'
 	eval ${cmd}
 #	urls_whitespaced=""
@@ -637,11 +637,15 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 
 #append to youtube download file
 function dl+() {
-for url in "$@";do
+#for url in "$@";do
 #	url="${url%&list=*}"
 #	url="${url%&index=*}"
-	echo "$url" >> dllst
-done
+#	echo "$url" >> dllst
+	#gawk '!seen[toupper($0)]++ {printf "%s\n", $0} END {print ""}' <<< $url >> dllst
+#done
+	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++' <<< "$@" >> dllst
+#	gawk 'BEGIN {IRS=" ";ORS="\n"} !seen[toupper($0)]++ END {print ""}' <<< "$@" >> dllst
+#							 ^ syntax error
 echo '$?':$?
 }
 
