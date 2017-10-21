@@ -68,7 +68,7 @@ done
 if [[ $cmd =~ -iname ]];then
 	cmd=${cmd% -o }
 	cmd+=' \) -exec ls -alFt {} \;'
-	echo '$cmd:['$cmd']'
+	echo '$cmd(\?(){}):['$cmd']'
 	eval ${cmd}
 	echo '$?':$?
 else
@@ -627,7 +627,7 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 #	\? $urls_whitespaced	#wrong!
 #	cmd="\? $urls_whitespaced"
 	cmd="\? $(gawk '!seen[toupper($0)]++ {printf "%s ", $0} END {print ""}' $file)"
-	echo 'cmd:['$cmd']'
+	echo 'cmd(dlchk(){}):['$cmd']'
 	eval ${cmd}
 #	urls_whitespaced=""
 done
@@ -641,9 +641,9 @@ function dl+() {
 #	url="${url%&list=*}"
 #	url="${url%&index=*}"
 #	echo "$url" >> dllst
-	#gawk '!seen[toupper($0)]++ {printf "%s\n", $0} END {print ""}' <<< $url >> dllst
 #done
-	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++' <<< "$@" >> dllst
+	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s\n", $1}' <<< "$@" >> dllst
+#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%s\n", $0}' <<< "$@" >> dllst  #last line won't be appended with spaces, so always unique, hence faulty!
 #	gawk 'BEGIN {IRS=" ";ORS="\n"} !seen[toupper($0)]++ END {print ""}' <<< "$@" >> dllst
 #							 ^ syntax error
 echo '$?':$?
