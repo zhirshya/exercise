@@ -6,6 +6,9 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #https://www.youtube.com/watch?v=fDoYwL90WUg&list=PLS1QulWo1RIaJECMeUT4LFwJ-ghgoSH6n&index=8
 #https://youtu.be/oYtGrCP_n0k?t=329
 #https://www.youtube.com/watch?v=VPInIrd5Hqc#t=35s
+
+#https://www.youtube.com/watch?v=M8Bd7uHH4Yg&feature=youtu.be
+
 #https://codek.tv/v/6MaOPdQPvow
 #http://video.ch9.ms/ch9/3306/0e92ae7f-7b06-4a08-a2a0-e80545733306/DefragTools179_high.mp4
 #https://video.xx.fbcdn.net/v/t43.1792-2/14018597_941915082602721_1324838905_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=588&oh=37f5d4bd4e3b3de99d2f0093c17a69d0&oe=57CBD2F3
@@ -288,7 +291,7 @@ nohup firefox --ssl-version-min=tls1.1 -private "$@" &> /dev/null & disown
 }
 
 function krm() {
-nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com/search\?hl=en\&as_q=python+3+book https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+hashset+hashmap https://unix.stackexchange.com/questions/48505/how-to-make-sure-only-one-instance-of-a-bash-script-runs   "$@" &> /dev/null & disown
+nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com/search\?hl=en\&as_q=python+3+book https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+hashset+hashmap https://unix.stackexchange.com/questions/48505/how-to-make-sure-only-one-instance-of-a-bash-script-runs https://www.youtube.com/watch\?v=hXZrGh9kCVs  "$@" &> /dev/null & disown
 #https://stackoverflow.com/questions/16807011/python-how-to-identify-if-a-variable-is-an-array-or-a-scalar http://bisqwit.iki.fi/ http://docs.python-guide.org/en/latest http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask https://www.reddit.com/r/learnpython/comments/264ffw/what_is_the_pythonic_way_of_storing_credentials https://docs.python.org/3/library/email.examples.html https://docs.python.org/2/library/email-examples.html https://stackoverflow.com/questions/34668240/email-an-attachment-with-non-ascii-filename-with-python-email https://developers.google.com/gmail/api/guides/sending https://encrypted.google.com/search\?hl=en\&as_q=programming+loop+unroll https://en.wikipedia.org/wiki/Loop_unrolling
 #nohup google-chrome-stable --ssl-version-min=tls1.1 http://www.thechessdrum.net/chessacademy/index.html http://www.thechessdrum.net/65thSquare/65_janfeb04.html http://www.cppsamples.com http://docs.python-guide.org/en/latest https://github.com/line/line-bot-sdk-python http://python-future.org/automatic_conversion.html http://python-future.org/compatible_idioms.html#compatible-idioms http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask "$@" &> /dev/null & disown
 }
