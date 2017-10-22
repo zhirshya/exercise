@@ -751,10 +751,11 @@ echo ------
 diff ~/.zshrc /mnt/0/gthb/xrcs/.zshrc
 }
 
-function psrepos() {
+function psrpos() {
 	curdir=$PWD
-	cd /mnt/0/gthb
-	for repo in xrcs note;do cd /mnt/0/gthb/$repo && git push origin $(git_current_branch);done
+	gthbdir="/mnt/0/gthb"
+	gthbRepodirs='"xrcs" "note"'
+	for repo in $gthbRepodirs;do cd $gthbdir/$repo && git push origin $(git_current_branch);done
 	cd $curdir
 }
 
