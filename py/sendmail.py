@@ -29,7 +29,13 @@ from email import Charset
 from email.generator import Generator
 from io import StringIO
 
-# todo: reset vim tabwidth to 8 or default and use default tabwidth to indent!
+#smtp-mail.outlook.com:587 ⇒ for res in getaddrinfo(host, port, 0, SOCK_STREAM): socket.gaierror: [Errno -2] Name or service not known
+#smtp-mail.outlook.com:25 ⇒ for res in getaddrinfo(host, port, 0, SOCK_STREAM): socket.gaierror: [Errno -2] Name or service not known
+#smtp.gmail.com:25 ⇒ File "/usr/lib64/python2.7/socket.py", line 575, in create_connection: raise err: socket.error: [Errno 101] Network is unreachable
+#smtp.gmail.com:587 ⇒ OK
+#20171022 170722.683753052+09:00:00JST Sunday
+
+#todo: reset vim tabwidth to 8 or default and use default tabwidth to indent!
 
 def send_email(mailInfoFile,cnfGroup):
 #    if os.path.exists(mailInfoFile):  #'infile', type=argparse.FileType('r'), default=sys.stdin,... check for validity in the beginning?
@@ -48,18 +54,18 @@ def send_email(mailInfoFile,cnfGroup):
         smtpServer = config[cnfGroup]['smtpServer']
         port = config[cnfGroup]['port']
 
-        print('from_emails:[', from_emails, ']')
-        print('to_emails:[', to_emails, ']')
-        print('cc_emails:[', cc_emails, ']')
-        print('bcc_emails:[', bcc_emails, ']')
-        print('subject:[', subject.encode('utf-8'), ']')
-        print('body:[', body.encode('utf-8'), ']')
-        print('attachments:[', attachments.encode('utf-8'), ']')
-    #        print('body:[', repr(body), ']')
-    #        print('attachments:[', repr(attachments), ']')
-        print('passwd:[', passwd, ']')
-        print('smtpServer:[', smtpServer, ']')
-        print('port:[', port, ']')
+        print('(trace)from_emails:[', from_emails, ']')
+        print('(trace)to_emails:[', to_emails, ']')
+        print('(trace)cc_emails:[', cc_emails, ']')
+        print('(trace)bcc_emails:[', bcc_emails, ']')
+        print('(trace)subject:[', subject.encode('utf-8'), ']')
+        print('(trace)body:[', body.encode('utf-8'), ']')
+        print('(trace)attachments:[', attachments.encode('utf-8'), ']')
+    #        print('(trace)body:[', repr(body), ']')
+    #        print('(trace)attachments:[', repr(attachments), ']')
+        print('(trace)passwd:[', passwd, ']')
+        print('(trace)smtpServer:[', smtpServer, ']')
+        print('(trace)port:[', port, ']')
 
         msg = MIMEMultipart()
     #        msg = EmailMessage()  #python3
@@ -131,25 +137,38 @@ def send_email(mailInfoFile,cnfGroup):
                         msg.attach(msgAttachment)
             except IOError as xpt:
                 # todo2: better detailed exception info
-                print('except xpt:', xpt)
-                print('Error opening attachment file "{}"'.format(filename.encode('utf-8')))
-                print('os.path.basename(filename):{}'.format(os.path.basename(filename).encode('utf-8')))
+                print('(trace)except xpt:', xpt)
+                print('(trace)Error opening attachment file "{}"'.format(filename.encode('utf-8')))
+                print('(trace)os.path.basename(filename):{}'.format(os.path.basename(filename).encode('utf-8')))
                 sys.exit(1)
 
-        print('type(port):', type(port))
+        print('(trace)type(port):', type(port))
+
         smtpObj = smtplib.SMTP(smtpServer, port.encode('ascii', 'ignore'))
+        smtpObj.set_debuglevel(1)
+        #Set the debug output level. A value of 1 or True for level results in debug messages for connection and for all messages sent to and received from the server. A value of 2 for level results in these messages being timestamped.
+        #Changed in version 3.5: Added debuglevel 2.
+        #https://docs.python.org/3/library/smtplib.html
+
         smtpObj.ehlo()
         smtpObj.starttls()
+        #SMTP.starttls([keyfile[, certfile]])
+        #Put the SMTP connection in TLS (Transport Layer Security) mode. All SMTP commands that follow will be encrypted. You should then call ehlo() again.
+        #https://docs.python.org/2/library/smtplib.html
+        #SMTP.starttls(keyfile=None, certfile=None, context=None)
+        #Put the SMTP connection in TLS (Transport Layer Security) mode. All SMTP commands that follow will be encrypted. You should then call ehlo() again.
+        #https://docs.python.org/3/library/smtplib.html
+
+        smtpObj.ehlo()
         smtpObj.login(from_emails, passwd)
         smtpObj.sendmail(from_emails, emails, msg.as_string())
         smtpObj.quit()
     else:
-        print('Config file not found! Exiting!')
+        print('(trace)Config file not found! Exiting!')
         sys.exit(1)
 
-
 if __name__ == '__main__':
-    print('sys.argv:{}'.format(sys.argv))
+    print('(trace)sys.argv:{}'.format(sys.argv))
     
     parser = argparse.ArgumentParser(prog='PROG', description='Send(New) email using Python Smtplib by reading mail headers from files specified on command line.', add_help=True)
     group = parser.add_argument_group('group')
@@ -159,13 +178,13 @@ if __name__ == '__main__':
     #parser.add_argument('-g', required=True, action='store', dest='group', help='receive configparser section/group name(ASCII alphanumeric)')
     parser.add_argument('--version', action='version', version='%(prog)s 1.0')
 
-    print('parser.parse_args():{}'.format(parser.parse_args()))
+    print('(trace)parser.parse_args():{}'.format(parser.parse_args()))
     args = parser.parse_args()
 
     #cnfGroup = "'{}'".format(args.cnfgrp)
     cnfGroup = args.cnfgrp
     cnfFile = args.infile
-    print('(local var)cnfGroup:{}'.format(cnfGroup))
-    print('(local var)cnfFile:{}'.format(cnfFile))
+    print('(trace)(local var)cnfGroup:{}'.format(cnfGroup))
+    print('(trace)(local var)cnfFile:{}'.format(cnfFile))
     
     send_email(cnfFile, cnfGroup)
