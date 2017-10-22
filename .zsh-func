@@ -759,7 +759,7 @@ echo '(trace):original/default $IFS:['$IFS']'
 IFS=" " gthbRepodirs=("xrcs" "note")
 echo '(trace):temporarily set $IFS:['$IFS']'
 IFS="$saveIFS"
-for repo in "${gthbRepodirs[@]}";do cd $gthbdir/$repo && echo '$PWD':$PWD ; git push origin $(git_current_branch);done
+for repo in "${gthbRepodirs[@]}";do cd $gthbdir/$repo && (echo '$PWD':$PWD ; git push origin $(git_current_branch));done
 cd $curdir
 echo '$?':$?
 }
