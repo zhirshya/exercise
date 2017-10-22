@@ -80,7 +80,7 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #append to todo file
 function +() {
 if (($# > 0));then
-	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
+	uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[toupper($0)]++ {print $0}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	outfile="/mnt/0/gthb/note/.todo"
 	echo '(trace):outfile:['$outfile']'
@@ -159,11 +159,13 @@ fi
 
 function utlsfrm() {
 if (($# > 0));then
-	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
+#	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
+	uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[toupper($0)]++ {print $0} END {print ""}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
-	for url in "$uniq_args";do
-		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
-	done
+#	for url in "$uniq_args";do
+#		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
+#	done
+	youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $uniq_args
 	echo '$?':$?
 fi
 }
