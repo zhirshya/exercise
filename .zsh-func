@@ -29,31 +29,31 @@ idx=0
 cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 for str in "$@";do
 	if [[ $str =~ $utvList_regxpr ]];then
-		echo "[debug]:[$str] match [$utvList_regxpr]"
+		echo "(trace):[$str] match [$utvList_regxpr]"
 		echo '$'$((++idx)):'['$str']'
 		echo "playlist (contained) item(s) search is currently not supported!"
 		continue
 	elif [[ $str =~ $utvSingl_regxpr ]];then
-		echo "[debug]:[$str] match [$utvSingl_regxpr]"
+		echo "(trace):[$str] match [$utvSingl_regxpr]"
 		str="${str##*youtu*be*/}"
 		str="${str##watch\?v=}"
 		str="${str%% *}"
 	elif [[ $str =~ $codek_regxpr ]];then
-		echo "[debug]:[$str] match [$codek_regxpr]"
+		echo "(trace):[$str] match [$codek_regxpr]"
 		str="${str##*codek.tv/v/}"
 	elif [[ $str =~ $knl9_regxpr ]];then
-		echo "[debug]:[$str] match [$knl9_regxpr]"
+		echo "(trace):[$str] match [$knl9_regxpr]"
 		str="${str##*video.ch9.ms/[-_a-zA-Z0-9/.]*/}"
 	elif [[ $str =~ $vimeo_regxpr ]];then
-		echo "[debug]:[$str] match [$vimeo_regxpr]"
+		echo "(trace):[$str] match [$vimeo_regxpr]"
 		str="${str##*vimeo.com/}"
 	elif [[ $str =~ $facebook_regxpr ]];then
-		echo "[debug]:[$str] match [$facebook_regxpr]"
+		echo "(trace):[$str] match [$facebook_regxpr]"
 #		str="${str##*video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/}"
 		str="${str##*video.*fbcdn.net/v/*/}"
 	else
 		echo '$'$((++idx)):'['$str']'
-		echo "[debug]:unknown pattern found, specified argument will be applied without any modification, may result in unexpected behavior!"
+		echo "(trace):unknown pattern found, specified argument will be applied without any modification, may result in unexpected behavior!"
 	fi
 	str="${str%&index=*}"
 	str="${str%&list=*}"
@@ -77,11 +77,95 @@ fi
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 }
 
+#append to todo file
+function +() {
+if (($# > 0));then
+	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
+	echo '(trace):uniq_args:['$uniq_args']'
+	outfile="/mnt/0/gthb/note/.todo"
+	echo '(trace):outfile:['$outfile']'
+	command cp -f "$outfile" "$outfile.bk"
+	#https://unix.stackexchange.com/questions/39291/run-a-command-that-is-shadowed-by-an-alias
+
+	echo "$uniq_args" >> "$outfile"
+	cat -n "$outfile" | sort -k2 -k1n  | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$outfile"
+	#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
+
+	#echo -e "$@" >> /mnt/0/gthb/note/.todo
+
+	echo '$?':$?
+fi
+}
+
+#append to youtube download file
+function dl+() {
+if (($# > 0));then
+	#⓪ 
+	#uniq_args=$(gawk 'BEGIN {RS=" "} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
+	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
+	echo '(trace):uniq_args:['$uniq_args']'
+	#①
+	if [[ -f dllst ]];then
+	#	gawk '!seen[toupper($0)]++{exit 1}' dllst || (
+	#		echo 'dl+(){} found duplicate lines, remove duplicates now.'
+	#		gawk '!seen[toupper($0)]++' dllst > ._tmp_ && command mv -f ._tmp_ dllst
+	#		)
+	#②
+		echo "$uniq_args" >> dllst
+	#③
+		cat -n dllst | sort -k2 -k1n  | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ dllst
+		#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
+		#https://unix.stackexchange.com/questions/39291/run-a-command-that-is-shadowed-by-an-alias
+
+	#	for url in "$uniq_args";do
+	#	#	url="${url%&list=*}"
+	#	#	url="${url%&index=*}"
+	#		command grep -F "$url" dllst || echo "$url" >> dllst
+	#		#command grep -qF "$url" dllst || echo "$url" >> dllst
+	#	done
+
+	#https://stackoverflow.com/questions/46408707/fastest-way-appending-a-line-to-a-file-only-if-it-does-not-already-exist
+	#	gawk 'FNR==NR {uniq_args[$0]; next}
+	#		$0 in uniq_args{delete uniq_args[$0]}
+	#		1
+	#		END{for (line in uniq_args) print line >> FILENAME}' <<< $uniq_args dllst
+	else
+	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1}' <<< $uniq_args >> dllst
+	#④
+		gawk 'BEGIN {RS=ORS="\n"} !seen[toupper($1)]++ {print $1}' <<< "$uniq_args" >> dllst
+	fi
+
+	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s\n", $1}' <<< "$@" >> dllst
+	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%s\n", $0}' <<< "$@" >> dllst  #last line won't be appended with spaces, so always unique, hence faulty!
+	#	gawk 'BEGIN {IRS=" ";ORS="\n"} !seen[toupper($0)]++ END {print ""}' <<< "$@" >> dllst
+	#							 ^ syntax error
+	echo '$?':$?
+fi
+}
+
+function 0() {
+if (($# > 0));then
+	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
+	echo '(trace):uniq_args:['$uniq_args']'
+	for file in "$uniq_args";do
+		if [[ -f $file ]];then
+			command mv -f "$file" "$file.bk"
+			echo -n > "$file"
+		fi
+	done
+	echo '$?':$?
+fi
+}
+
 function utlsfrm() {
-	for url in "$@";do
+if (($# > 0));then
+	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
+	echo '(trace):uniq_args:['$uniq_args']'
+	for url in "$uniq_args";do
 		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
 	done
 	echo '$?':$?
+fi
 }
 
 function dprx() {
@@ -89,19 +173,19 @@ setopt nocasematch
 
 if (($# == 1));then
 	if [[ "$1" == http ]];then
-		echo "[debug] hit regex \"== http\""
+		echo "(trace) hit regex \"== http\""
 		unset http_proxy
 		unset HTTP_PROXY
 	elif [[ "$1" == https ]];then
-		echo "[debug] hit regex \"== https\""
+		echo "(trace) hit regex \"== https\""
 		unset https_proxy
 		unset HTTPS_PROXY
 	elif [[ "$1" == ftp ]];then
-		echo "[debug] hit regex \"== ftp\""
+		echo "(trace) hit regex \"== ftp\""
 		unset ftp_proxy
 		unset FTP_PROXY
 	elif [[ $1 =~ sock* ]];then
-		echo "[debug] hit regex \"=~ sock\""
+		echo "(trace) hit regex \"=~ sock\""
 		unset socks_proxy
 		unset SOCKS_PROXY
 	fi
@@ -142,19 +226,6 @@ sudo dnf autoremove #many times faultily automatically remove kernel-modules-ext
 echo '$?':$?
 }
 
-function +() { #append to todo file
-if (($# > 0));then
-	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
-	echo '(trace)uniq_args:['$uniq_args']'
-	outfile="/mnt/0/gthb/note/.todo"
-	echo '(trace)outfile:['$outfile']'
-	echo "$uniq_args" >> "$outfile"
-	cat -n "$outfile" | sort -k2 -k1n  | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$outfile"
-	#echo -e "$@" >> /mnt/0/gthb/note/.todo
-fi
-echo '$?':$?
-}
-
 function upgrlog() { #view cron job upgrade cmd log
 if [[ -f /var/log/sys_upgrade.log ]];then
 	less /var/log/sys_upgrade.log
@@ -170,11 +241,11 @@ wndw_pos=""
 #if [[ $* =~ mp3\|flac\|aac\|wav ]];then
 if [[ $* =~ (mp3|flac|aac|wav)* ]];then
 	audio_only_flg="--qt-start-minimized"
-	echo '[debug] hit [[ $* =~ (mp3|flac|aac|wav)* ]]'
+	echo '(trace) hit [[ $* =~ (mp3|flac|aac|wav)* ]]'
 #elif [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]];then
 elif [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]];then
 	#wndw_pos="--video-x 0 --video-y 0" #place VLC in top left corner
-	echo '[debug] hit [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]]'
+	echo '(trace) hit [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]]'
 else
 	echo "error: invalid input files, please specify valid media files, and try again."
 	return 113
@@ -222,7 +293,7 @@ nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com
 
 function s0() {
 if (($# == 1)) && [[ $1 =~ [0-9]+ ]];then
-	echo '[debug] hit (($# == 1)) && [[ $1 =~ [0-9]+ ]] and $1':$1
+	echo '(trace) hit (($# == 1)) && [[ $1 =~ [0-9]+ ]] and $1':$1
 	sudo shutdown -P -f "$1"
 else
 	sudo shutdown -P -f 0
@@ -384,7 +455,7 @@ fi
 function avrwndff() {
 if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then	# { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?	http://unix.stackexchange.com/questions/88850/precedence-of-the-shell-logical-operators
 	if (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
-		echo '※[debug] hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
+		echo '※(trace) hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
 	fi
 	echo "usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
 #define EX_USAGE 64 /* command line usage error */
@@ -419,7 +490,7 @@ fi
 if (($# == 2));then
 #if [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]];then #parse error near `|'
 	if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then #http://www.regular-expressions.info/floatingpoint.html
-		echo '[debug] hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+		echo '(trace) hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 		factor="$2"
 		outfile="${infile%.*}"
 		outfile+="_spdx"
@@ -448,7 +519,7 @@ if (($# == 3));then
 			echo "error: destination/output file already exist, please specify other name for output, and try again."
 			return 113
 		fi
-		echo '[debug] hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+		echo '(trace) hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 		factor="$2"
 		outfile="$3"
 		outfile+="_spdx"
@@ -465,20 +536,20 @@ fi
 
 echo "#test<"
 if (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-	echo '[debug] hit (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+	echo '(trace) hit (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 fi
 
 # [[ != ]] literal string comparison?
 if (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-	echo '[debug] ERRONEOUS/WRONG! hit (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]], [[ != ]] literal string comparison?'
+	echo '(trace) ERRONEOUS/WRONG! hit (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]], [[ != ]] literal string comparison?'
 fi
 
 if (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
-	echo '[debug] hit (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] #"[[ ! (xpr) ]]'
+	echo '(trace) hit (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] #"[[ ! (xpr) ]]'
 fi
 
 if (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]];then
-	echo '[debug] hit (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]] #"[[ ! ( xpr ) ]]'
+	echo '(trace) hit (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]] #"[[ ! ( xpr ) ]]'
 fi
 echo "#test>"
 
@@ -566,7 +637,7 @@ nohup libreoffice --impress "$@" &> /dev/null & disown
 
 function scrblk() {
 dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
-xset dpms force off
+#xset dpms force off
 }
 
 function vns() {
@@ -639,55 +710,6 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 done
 echo '$?':$?
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
-}
-
-#append to youtube download file
-function dl+() {
-#uniq_args=$(gawk 'BEGIN {RS=" "} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
-uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
-echo '(trace)uniq_args:['$uniq_args']'
-if [[ -f dllst ]];then
-#	gawk '!seen[toupper($0)]++{exit 1}' dllst || (
-#		echo 'dl+(){} found duplicate lines, remove duplicates now.'
-#		gawk '!seen[toupper($0)]++' dllst > ._tmp_ && command mv -f ._tmp_ dllst
-#		)
-
-	echo "$uniq_args" >> dllst
-	cat -n dllst | sort -k2 -k1n  | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ dllst
-	#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
-
-#	for url in "$uniq_args";do
-#	#	url="${url%&list=*}"
-#	#	url="${url%&index=*}"
-#		command grep -F "$url" dllst || echo "$url" >> dllst
-#		#command grep -qF "$url" dllst || echo "$url" >> dllst
-#	done
-
-#https://stackoverflow.com/questions/46408707/fastest-way-appending-a-line-to-a-file-only-if-it-does-not-already-exist
-#	gawk 'FNR==NR {uniq_args[$0]; next}
-#		$0 in uniq_args{delete uniq_args[$0]}
-#		1
-#		END{for (line in uniq_args) print line >> FILENAME}' <<< $uniq_args dllst
-else
-#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1}' <<< $uniq_args >> dllst
-	gawk 'BEGIN {RS=ORS="\n"} !seen[toupper($1)]++ {print $1}' <<< "$uniq_args" >> dllst
-fi
-
-#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s\n", $1}' <<< "$@" >> dllst
-#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%s\n", $0}' <<< "$@" >> dllst  #last line won't be appended with spaces, so always unique, hence faulty!
-#	gawk 'BEGIN {IRS=" ";ORS="\n"} !seen[toupper($0)]++ END {print ""}' <<< "$@" >> dllst
-#							 ^ syntax error
-echo '$?':$?
-}
-
-function 0() {
-for file in "$@";do
-	if [[ -f $file ]];then
-		mv "$file" "$file.bak"
-		echo -n > "$file"
-	fi
-done
-echo '$?':$?
 }
 
 function skrsht() {
