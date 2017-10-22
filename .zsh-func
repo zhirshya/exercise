@@ -757,6 +757,9 @@ gthbdir="/mnt/0/gthb"
 saveIFS="$IFS"
 echo '(trace):original/default $IFS:['$IFS']'
 IFS=" " gthbRepodirs=("xrcs" "note")
+#https://stackoverflow.com/questions/18383291/loop-over-set-of-strings-containing-spaces
+#https://superuser.com/questions/781766/ifs-separated-items-in-loop
+#https://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters
 echo '(trace):temporarily set $IFS:['$IFS']'
 IFS="$saveIFS"
 for repo in "${gthbRepodirs[@]}";do cd $gthbdir/$repo && (echo '$PWD':$PWD ; git push origin $(git_current_branch));done
