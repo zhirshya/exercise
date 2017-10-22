@@ -183,7 +183,10 @@ alias guillemet='echo ‹ › « »'
 alias notesin='echo ※'
 alias apprxeq='echo ≈'
 alias cfmrk='echo ↔ ⇔'
-alias laro='echo → '
+alias laro='echo ← ⇐'
+alias raro='echo → ⇒'
+alias uaro='echo ↑ ⇑'
+alias daro='echo ↓ ⇓'
 alias tik='echo ✓ ✔'
 alias crs='echo ✗ ✘'
 alias ruclean='echo убирать' #clean up, tidy up
@@ -195,6 +198,7 @@ alias mglkrl='echo а б в г д е ё ж з и й к л м н о ө п р с �
 alias grkusegt='echo Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω'
 alias grkuseg='echo α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ/ς τ υ φ χ ψ ω'
 #https://en.wikipedia.org/wiki/Greek_language
+alias unikCircledNum='echo ⓪ ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳'
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 #setopt noglob #turn off globbing(wildcard expansion)
