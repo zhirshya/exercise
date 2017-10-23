@@ -71,7 +71,7 @@ done
 if [[ $cmd =~ -iname ]];then
 	cmd=${cmd% -o }
 	cmd+=' \) -exec ls -alFt {} \;'
-	echo '$cmd(\?(){}):['$cmd']'
+	echo '(trace):$cmd(\?(){}):['$cmd']'
 	eval ${cmd}
 	echo '$?':$?
 else
@@ -83,7 +83,7 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #append to todo file
 function +() {
 if (($# > 0));then
-	uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[toupper($0)]++ {print $0}' <<< "$@")
+	uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[toupper($0)]++ {printf "%q\n", $0}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	outfile="/mnt/0/gthb/note/.todo"
 	echo '(trace):outfile:['$outfile']'
@@ -104,8 +104,8 @@ fi
 function dl+() {
 if (($# > 0));then
 	#⓪ 
-	#uniq_args=$(gawk 'BEGIN {RS=" "} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
-	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
+	#uniq_args=$(gawk 'BEGIN {RS=" "} !seen[toupper($1)]++ {printf "%q\n", $1} END {print ""}' <<< "$@")
+	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1} END {print ""}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	#①
 	if [[ -f dllst ]];then
@@ -133,13 +133,13 @@ if (($# > 0));then
 	#		1
 	#		END{for (line in uniq_args) print line >> FILENAME}' <<< $uniq_args dllst
 	else
-	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1}' <<< $uniq_args >> dllst
+	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1}' <<< $uniq_args >> dllst
 	#④
-		gawk 'BEGIN {RS=ORS="\n"} !seen[toupper($1)]++ {print $1}' <<< "$uniq_args" >> dllst
+		gawk 'BEGIN {RS=ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1}' <<< "$uniq_args" >> dllst
 	fi
 
-	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s\n", $1}' <<< "$@" >> dllst
-	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%s\n", $0}' <<< "$@" >> dllst  #last line won't be appended with spaces, so always unique, hence faulty!
+	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1}' <<< "$@" >> dllst
+	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%q\n", $0}' <<< "$@" >> dllst  #last line won't be appended with spaces, so always unique, hence faulty!
 	#	gawk 'BEGIN {IRS=" ";ORS="\n"} !seen[toupper($0)]++ END {print ""}' <<< "$@" >> dllst
 	#							 ^ syntax error
 	echo '$?':$?
@@ -148,7 +148,7 @@ fi
 
 function 0() {
 if (($# > 0));then
-	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
+	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1} END {print ""}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	for file in "$uniq_args";do
 		if [[ -f $file ]];then
@@ -162,8 +162,8 @@ fi
 
 function utlsfrm() {
 if (($# > 0));then
-#	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {print $1} END {print ""}' <<< "$@")
-	uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[toupper($0)]++ {print $0} END {print ""}' <<< "$@")
+#	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1} END {print ""}' <<< "$@")
+	uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[toupper($0)]++ {printf "%q\n", $0} END {print ""}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 #	for url in "$uniq_args";do
 #		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
@@ -708,8 +708,8 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 #	\? "$urls_whitespaced_arr"	#wrong!
 #	\? $urls_whitespaced	#wrong!
 #	cmd="\? $urls_whitespaced"
-	cmd="\? $(gawk '!seen[toupper($0)]++ {printf "%s ", $0} END {print ""}' $file)"
-	echo 'cmd(dlchk(){}):['$cmd']'
+	cmd="\? $(gawk '!seen[toupper($0)]++ {printf "%q ", $0} END {print ""}' $file)"
+	echo '(trace):cmd(dlchk(){}):['$cmd']'
 	eval ${cmd}
 #	urls_whitespaced=""
 done
