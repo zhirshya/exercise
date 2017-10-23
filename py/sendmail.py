@@ -54,18 +54,18 @@ def send_email(mailInfoFile,cnfGroup):
         smtpServer = config[cnfGroup]['smtpServer']
         port = config[cnfGroup]['port']
 
-        print('(trace)from_emails:[', from_emails, ']')
-        print('(trace)to_emails:[', to_emails, ']')
-        print('(trace)cc_emails:[', cc_emails, ']')
-        print('(trace)bcc_emails:[', bcc_emails, ']')
-        print('(trace)subject:[', subject.encode('utf-8'), ']')
-        print('(trace)body:[', body.encode('utf-8'), ']')
-        print('(trace)attachments:[', attachments.encode('utf-8'), ']')
-    #        print('(trace)body:[', repr(body), ']')
-    #        print('(trace)attachments:[', repr(attachments), ']')
-        print('(trace)passwd:[', passwd, ']')
-        print('(trace)smtpServer:[', smtpServer, ']')
-        print('(trace)port:[', port, ']')
+        print('(trace):from_emails:[', from_emails, ']')
+        print('(trace):to_emails:[', to_emails, ']')
+        print('(trace):cc_emails:[', cc_emails, ']')
+        print('(trace):bcc_emails:[', bcc_emails, ']')
+        print('(trace):subject:[', subject.encode('utf-8'), ']')
+        print('(trace):body:[', body.encode('utf-8'), ']')
+        print('(trace):attachments:[', attachments.encode('utf-8'), ']')
+    #        print('(trace):body:[', repr(body), ']')
+    #        print('(trace):attachments:[', repr(attachments), ']')
+        print('(trace):passwd:[', passwd, ']')
+        print('(trace):smtpServer:[', smtpServer, ']')
+        print('(trace):port:[', port, ']')
 
         msg = MIMEMultipart()
     #        msg = EmailMessage()  #python3
@@ -137,12 +137,12 @@ def send_email(mailInfoFile,cnfGroup):
                         msg.attach(msgAttachment)
             except IOError as xpt:
                 # todo2: better detailed exception info
-                print('(trace)except xpt:', xpt)
-                print('(trace)Error opening attachment file "{}"'.format(filename.encode('utf-8')))
-                print('(trace)os.path.basename(filename):{}'.format(os.path.basename(filename).encode('utf-8')))
+                print('(trace):except xpt:', xpt)
+                print('(trace):Error opening attachment file "{}"'.format(filename.encode('utf-8')))
+                print('(trace):os.path.basename(filename):{}'.format(os.path.basename(filename).encode('utf-8')))
                 sys.exit(1)
 
-        print('(trace)type(port):', type(port))
+        print('(trace):type(port):', type(port))
 
         smtpObj = smtplib.SMTP(smtpServer, port.encode('ascii', 'ignore'))
         smtpObj.set_debuglevel(1)
@@ -164,11 +164,11 @@ def send_email(mailInfoFile,cnfGroup):
         smtpObj.sendmail(from_emails, emails, msg.as_string())
         smtpObj.quit()
     else:
-        print('(trace)Config file not found! Exiting!')
+        print('(trace):Config file not found! Exiting!')
         sys.exit(1)
 
 if __name__ == '__main__':
-    print('(trace)sys.argv:{}'.format(sys.argv))
+    print('(trace):sys.argv:{}'.format(sys.argv))
     
     parser = argparse.ArgumentParser(prog='PROG', description='Send(New) email using Python Smtplib by reading mail headers from files specified on command line.', add_help=True)
     group = parser.add_argument_group('group')
@@ -178,13 +178,13 @@ if __name__ == '__main__':
     #parser.add_argument('-g', required=True, action='store', dest='group', help='receive configparser section/group name(ASCII alphanumeric)')
     parser.add_argument('--version', action='version', version='%(prog)s 1.0')
 
-    print('(trace)parser.parse_args():{}'.format(parser.parse_args()))
+    print('(trace):parser.parse_args():{}'.format(parser.parse_args()))
     args = parser.parse_args()
 
     #cnfGroup = "'{}'".format(args.cnfgrp)
     cnfGroup = args.cnfgrp
     cnfFile = args.infile
-    print('(trace)(local var)cnfGroup:{}'.format(cnfGroup))
-    print('(trace)(local var)cnfFile:{}'.format(cnfFile))
+    print('(trace):(local var)cnfGroup:{}'.format(cnfGroup))
+    print('(trace):(local var)cnfFile:{}'.format(cnfFile))
     
     send_email(cnfFile, cnfGroup)
