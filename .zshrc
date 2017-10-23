@@ -180,7 +180,8 @@ alias section='echo § '
 alias xclam='echo ! '
 alias question='echo ? '
 alias guillemet='echo ‹ › « » '
-alias notesin='echo ※ '
+alias notemrk='echo ※ '
+#alias rfrmrk='echo ※ '
 alias apprxeq='echo ≈ '
 alias cfmrk='echo ↔ ⇔ '
 alias laro='echo ← ⇐ '
@@ -188,7 +189,7 @@ alias raro='echo → ⇒ '
 alias uaro='echo ↑ ⇑ '
 alias daro='echo ↓ ⇓ '
 alias tik='echo ✓ ✔ '
-alias crs='echo ✗ ✘ '
+alias krs='echo ✗ ✘ '
 alias ruclean='echo убирать ' #clean up, tidy up
 #alias orsuseg='echo А а, Б б, В в, Г г, Д д, Е е, Ё ё, Ж ж, З з, И и, Й й, К к, Л л, М м, Н н, О о, П п, Р р, С с, Т т, У у, Ф ф, Х х, Ц ц, Ч ч, Ш ш, Щ щ, Ъ ъ, Ы ы, Ь ь, Э э, Ю ю, Я я '
 alias orsusegt='echo А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я '
@@ -198,7 +199,7 @@ alias mglkrl='echo а б в г д е ё ж з и й к л м н о ө п р с �
 alias grkusegt='echo Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω '
 alias grkuseg='echo α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ/ς τ υ φ χ ψ ω '
 #https://en.wikipedia.org/wiki/Greek_language
-alias unikCircledNum='echo ⓪ ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳ '
+alias circldNum='echo ⓪ ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳ '
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 #setopt noglob #turn off globbing(wildcard expansion)
