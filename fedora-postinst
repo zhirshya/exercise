@@ -25,7 +25,7 @@ sudo rpm -e --nodeps gedit totem totem-devel totem-pl-parser totem-pl-parser-dev
 
 dnf upgrade -y
 
-dnf install -y glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb ccache valgrind anki tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins bzip2 lzip evince zsh vlc gimp ffmpeg lynx java-1.8.0-openjdk-devel gnome-sudoku gnuchess xboard 
+dnf install -y glibc binutils autoconf gcc gcc-c++ libstdc++ libstdc++-devel gdb ccache valgrind anki tlp tlp-rdw htop wireshark gnome-tweak-tool vim vim-enhanced tmux p7zip p7zip-plugins bzip2 lzip evince zsh vlc gimp ffmpeg lynx java-1.8.0-openjdk-devel gnome-sudoku gnuchess xboard ShellCheck
 
 #mosh zbar
 
