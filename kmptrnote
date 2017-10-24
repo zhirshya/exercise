@@ -773,3 +773,8 @@ cat -n infile.txt | sort -k2 -k1n  | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ 
 The $$ variable is the PID (Process IDentifier) of the currently running shell. This can be useful for creating temporary files, such as /tmp/my-script.$$ which is useful if many instances of the script could be run at the same time, and they all need their own temporary files.
 The $! variable is the PID of the last run background process. This is useful to keep track of the process as it gets on with its job.
 
+ll (*|.)vim*
+-rw-r--r--. 1 r adm 2766 Oct 25 06:24 vimrc_etc
+-rw-r-----+ 1 r r   7562 Oct 15 09:50 vim-rfrnc
+-rw-r-----+ 1 r r   2785 Sep 10 21:55 .vimrc
+
