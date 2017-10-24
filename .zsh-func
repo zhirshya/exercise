@@ -6,9 +6,7 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #https://www.youtube.com/watch?v=fDoYwL90WUg&list=PLS1QulWo1RIaJECMeUT4LFwJ-ghgoSH6n&index=8
 #https://youtu.be/oYtGrCP_n0k?t=329
 #https://www.youtube.com/watch?v=VPInIrd5Hqc#t=35s
-
 #https://www.youtube.com/watch?v=M8Bd7uHH4Yg&feature=youtu.be
-
 #https://codek.tv/v/6MaOPdQPvow
 #http://video.ch9.ms/ch9/3306/0e92ae7f-7b06-4a08-a2a0-e80545733306/DefragTools179_high.mp4
 #https://video.xx.fbcdn.net/v/t43.1792-2/14018597_941915082602721_1324838905_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=588&oh=37f5d4bd4e3b3de99d2f0093c17a69d0&oe=57CBD2F3
@@ -83,7 +81,7 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #append to todo file
 function +() {
 if (($# > 0));then
-	uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[toupper($0)]++ {printf "%q\n", $0}' <<< "$@")
+	uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=ORS="\n"} !seen[toupper($0)]++ {printf "%s%s%s\n", singlqt, $0, singlqt}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	outfile="/mnt/0/gthb/note/.todo"
 	echo '(trace):outfile:['$outfile']'
@@ -94,8 +92,6 @@ if (($# > 0));then
 	cat -n "$outfile" | sort -k2 -k1n  | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$outfile"
 	#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
 
-	#echo -e "$@" >> /mnt/0/gthb/note/.todo
-
 	echo '$?':$?
 fi
 }
@@ -104,8 +100,8 @@ fi
 function dl+() {
 if (($# > 0));then
 	#⓪ 
-	#uniq_args=$(gawk 'BEGIN {RS=" "} !seen[toupper($1)]++ {printf "%q\n", $1} END {print ""}' <<< "$@")
-	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1} END {print ""}' <<< "$@")
+	#uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=" "} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt} END {print ""}' <<< "$@")
+	uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt} END {print ""}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	#①
 	if [[ -f dllst ]];then
@@ -133,13 +129,13 @@ if (($# > 0));then
 	#		1
 	#		END{for (line in uniq_args) print line >> FILENAME}' <<< $uniq_args dllst
 	else
-	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1}' <<< $uniq_args >> dllst
+	#	gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt}' <<< $uniq_args >> dllst
 	#④
-		gawk 'BEGIN {RS=ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1}' <<< "$uniq_args" >> dllst
+		gawk -v singlqt="'" 'BEGIN {RS=ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt}' <<< "$uniq_args" >> dllst
 	fi
 
-	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1}' <<< "$@" >> dllst
-	#	gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%q\n", $0}' <<< "$@" >> dllst  #last line won't be appended with spaces, so always unique, hence faulty!
+	#	gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt}' <<< "$@" >> dllst
+	#	gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%s%s%s\n", singlqt, $0, singlqt}' <<< "$@" >> dllst  #last line won't be appended with spaces, so always unique, hence faulty!
 	#	gawk 'BEGIN {IRS=" ";ORS="\n"} !seen[toupper($0)]++ END {print ""}' <<< "$@" >> dllst
 	#							 ^ syntax error
 	echo '$?':$?
@@ -148,7 +144,7 @@ fi
 
 function 0() {
 if (($# > 0));then
-	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1} END {print ""}' <<< "$@")
+	uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt} END {print ""}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	for file in "$uniq_args";do
 		if [[ -f $file ]];then
@@ -162,8 +158,8 @@ fi
 
 function utlsfrm() {
 if (($# > 0));then
-#	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%q\n", $1} END {print ""}' <<< "$@")
-	uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[toupper($0)]++ {printf "%q\n", $0} END {print ""}' <<< "$@")
+#	uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt} END {print ""}' <<< "$@")
+	uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=ORS=" "} !seen[toupper($0)]++ {printf "%s%s%s\n", singlqt, $0, singlqt} END {print ""}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 #	for url in "$uniq_args";do
 #		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
@@ -278,10 +274,10 @@ while (($return_code != 0)) || [[ $out_msg =~ error* ]];do #1.ERROR: can't find 
 	fi
 	out_msg=$(sudo youtube-dl -U)
 	return_code=$?
-	echo "#debug:err_counter:$err_counter"
-	echo '#debug:regxpr:$match:['$match'],$MATCH:['$MATCH']'
-	echo "#debug:youtube-dl -U:RC:$return_code"
-	echo "#debug:youtube-dl -U:output message:$out_msg"
+	echo "(trace):err_counter:$err_counter"
+	echo '(trace):regxpr:$match:['$match'],$MATCH:['$MATCH']'
+	echo "(trace):youtube-dl -U:RC:$return_code"
+	echo "(trace):youtube-dl -U:output message:$out_msg"
 done
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 }
@@ -291,7 +287,7 @@ nohup firefox --ssl-version-min=tls1.1 -private "$@" &> /dev/null & disown
 }
 
 function krm() {
-nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com/search\?hl=en\&as_q=python+3+book https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+hashset+hashmap https://unix.stackexchange.com/questions/48505/how-to-make-sure-only-one-instance-of-a-bash-script-runs https://www.youtube.com/watch\?v=hXZrGh9kCVs  "$@" &> /dev/null & disown
+nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com/search\?hl=en\&as_q=python+3+book https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+hashset+hashmap https://unix.stackexchange.com/questions/48505/how-to-make-sure-only-one-instance-of-a-bash-script-runs https://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters http://users.cs.fiu.edu/~weiss/dsaa_c++4/errata.html https://www.youtube.com/watch\?v=hXZrGh9kCVs  "$@" &> /dev/null & disown
 #https://stackoverflow.com/questions/16807011/python-how-to-identify-if-a-variable-is-an-array-or-a-scalar http://bisqwit.iki.fi/ http://docs.python-guide.org/en/latest http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask https://www.reddit.com/r/learnpython/comments/264ffw/what_is_the_pythonic_way_of_storing_credentials https://docs.python.org/3/library/email.examples.html https://docs.python.org/2/library/email-examples.html https://stackoverflow.com/questions/34668240/email-an-attachment-with-non-ascii-filename-with-python-email https://developers.google.com/gmail/api/guides/sending https://encrypted.google.com/search\?hl=en\&as_q=programming+loop+unroll https://en.wikipedia.org/wiki/Loop_unrolling
 #nohup google-chrome-stable --ssl-version-min=tls1.1 http://www.thechessdrum.net/chessacademy/index.html http://www.thechessdrum.net/65thSquare/65_janfeb04.html http://www.cppsamples.com http://docs.python-guide.org/en/latest https://github.com/line/line-bot-sdk-python http://python-future.org/automatic_conversion.html http://python-future.org/compatible_idioms.html#compatible-idioms http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask "$@" &> /dev/null & disown
 }
@@ -329,7 +325,7 @@ if (($# == 1));then
 	curl -F "file=@$1" 'https://file.io/?expires=3d'
 	echo '$?':$?
 elif (($# == 2)) && [[ $2 =~ [1-9][0-9]{0,2}[dmwDMW] ]];then
-	echo '#debug: =~ [1-9][0-9]{0,2}[dmwDMW] :$MATCH:['$MATCH'],array $match:['$match']'
+	echo '(trace): =~ [1-9][0-9]{0,2}[dmwDMW] :$MATCH:['$MATCH'],array $match:['$match']'
 	curl -F "file=@$1" "https://file.io/?expires=$2"
 	echo '$?':$?
 else
@@ -708,7 +704,7 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 #	\? "$urls_whitespaced_arr"	#wrong!
 #	\? $urls_whitespaced	#wrong!
 #	cmd="\? $urls_whitespaced"
-	cmd="\? $(gawk '!seen[toupper($0)]++ {printf "%q ", $0} END {print ""}' $file)"
+	cmd="\? $(gawk -v singlqt="'" '!seen[toupper($0)]++ {printf "%s%s%s ", singlqt, $0, singlqt} END {print ""}' $file)"
 	echo '(trace):cmd(dlchk(){}):['$cmd']'
 	eval ${cmd}
 #	urls_whitespaced=""
