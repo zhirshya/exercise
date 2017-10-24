@@ -170,50 +170,38 @@ fi
 }
 
 function dprx() {
-setopt nocasematch
-
-if (($# == 1));then
-	if [[ "$1" == http ]];then
-		echo "(trace) hit regex \"== http\""
+#setopt nocasematch
+if (($# >= 1));then
+	if [[ $1 =~ (http|HTTP)[s]? ]];then
+		echo '(trace):$1:['$1'] hit regex =~ (http|HTTP)[s]?'
 		unset http_proxy
 		unset HTTP_PROXY
-	elif [[ "$1" == https ]];then
-		echo "(trace) hit regex \"== https\""
-		unset https_proxy
-		unset HTTPS_PROXY
-	elif [[ "$1" == ftp ]];then
-		echo "(trace) hit regex \"== ftp\""
+	elif [[ $1 =~ (ftp|FTP) ]];then
+		echo '(trace):$1:['$1'] hit =~ (ftp|FTP)'
 		unset ftp_proxy
 		unset FTP_PROXY
-	elif [[ $1 =~ sock* ]];then
-		echo "(trace) hit regex \"=~ sock\""
+	elif [[ $1 =~ (sock|SOCK).* ]];then
+		echo '(trace):$1:['$1'] hit =~ (sock|SOCK).*'
 		unset socks_proxy
 		unset SOCKS_PROXY
+	else
+		echo 'unrecognized protocol!'
 	fi
-elif (($# == 0));then
-	unset http_proxy
-	unset HTTP_PROXY
-	unset https_proxy
-	unset HTTPS_PROXY
-	unset ftp_proxy
-	unset FTP_PROXY
-	unset socks_proxy
-	unset SOCKS_PROXY
 fi
 prprx
 }
 
 function prprx() { 
-echo "http_proxy:$http_proxy"
-echo "https_proxy:$https_proxy"
-echo "ftp_proxy:$ftp_proxy"
-echo "socks_proxy:$socks_proxy"
-echo "no_proxy:$no_proxy"
-echo "HTTP_PROXY:$HTTP_PROXY"
-echo "HTTPS_PROXY:$HTTPS_PROXY"
-echo "FTP_PROXY:$FTP_PROXY"
-echo "SOCKS_PROXY:$SOCKS_PROXY"
-echo "NO_PROXY:$NO_PROXY"
+echo "http_proxy:[$http_proxy]"
+echo "https_proxy:[$https_proxy]"
+echo "ftp_proxy:[$ftp_proxy]"
+echo "socks_proxy:[$socks_proxy]"
+echo "no_proxy:[$no_proxy]"
+echo "HTTP_PROXY:[$HTTP_PROXY]"
+echo "HTTPS_PROXY:[$HTTPS_PROXY]"
+echo "FTP_PROXY:[$FTP_PROXY]"
+echo "SOCKS_PROXY:[$SOCKS_PROXY]"
+echo "NO_PROXY:[$NO_PROXY]"
 }
 
 function --() {
@@ -242,11 +230,11 @@ wndw_pos=""
 #if [[ $* =~ mp3\|flac\|aac\|wav ]];then
 if [[ $* =~ (mp3|flac|aac|wav)* ]];then
 	audio_only_flg="--qt-start-minimized"
-	echo '(trace) hit [[ $* =~ (mp3|flac|aac|wav)* ]]'
+	echo '(trace):hit [[ $* =~ (mp3|flac|aac|wav)* ]]'
 #elif [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]];then
 elif [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]];then
 	#wndw_pos="--video-x 0 --video-y 0" #place VLC in top left corner
-	echo '(trace) hit [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]]'
+	echo '(trace):hit [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]]'
 else
 	echo "error: invalid input files, please specify valid media files, and try again."
 	return 113
@@ -294,7 +282,7 @@ nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com
 
 function s0() {
 if (($# == 1)) && [[ $1 =~ [0-9]+ ]];then
-	echo '(trace) hit (($# == 1)) && [[ $1 =~ [0-9]+ ]] and $1':$1
+	echo '(trace):hit (($# == 1)) && [[ $1 =~ [0-9]+ ]] and $1':$1
 	sudo shutdown -P -f "$1"
 else
 	sudo shutdown -P -f 0
@@ -456,7 +444,7 @@ fi
 function avrwndff() {
 if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then	# { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?	http://unix.stackexchange.com/questions/88850/precedence-of-the-shell-logical-operators
 	if (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
-		echo '※(trace) hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
+		echo '※(trace):hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
 	fi
 	echo "usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
 #define EX_USAGE 64 /* command line usage error */
@@ -491,7 +479,7 @@ fi
 if (($# == 2));then
 #if [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]];then #parse error near `|'
 	if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then #http://www.regular-expressions.info/floatingpoint.html
-		echo '(trace) hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+		echo '(trace):hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 		factor="$2"
 		outfile="${infile%.*}"
 		outfile+="_spdx"
@@ -520,7 +508,7 @@ if (($# == 3));then
 			echo "error: destination/output file already exist, please specify other name for output, and try again."
 			return 113
 		fi
-		echo '(trace) hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+		echo '(trace):hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 		factor="$2"
 		outfile="$3"
 		outfile+="_spdx"
@@ -537,20 +525,20 @@ fi
 
 echo "#test<"
 if (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-	echo '(trace) hit (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+	echo '(trace):hit (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 fi
 
 # [[ != ]] literal string comparison?
 if (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-	echo '(trace) ERRONEOUS/WRONG! hit (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]], [[ != ]] literal string comparison?'
+	echo '(trace):ERRONEOUS/WRONG! hit (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]], [[ != ]] literal string comparison?'
 fi
 
 if (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
-	echo '(trace) hit (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] #"[[ ! (xpr) ]]'
+	echo '(trace):hit (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] #"[[ ! (xpr) ]]'
 fi
 
 if (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]];then
-	echo '(trace) hit (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]] #"[[ ! ( xpr ) ]]'
+	echo '(trace):hit (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]] #"[[ ! ( xpr ) ]]'
 fi
 echo "#test>"
 
