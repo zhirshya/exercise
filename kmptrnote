@@ -763,6 +763,7 @@ sudo find /mnt/0 ~ -xdev -user root -o -group root
 #gawk
 #output only distinct lines
 gawk '!x[toupper($0)]++ {printf "%s ", $0} END {print ""}' dllst
+cmd="\? $(gawk -v singlqt="'" '!seen[toupper($0)]++ {printf "%s%s%s ", singlqt, $0, singlqt} END {print ""}' $file)"
 
 #Remove duplicate lines while keeping the order of the lines
 #https://en.wikipedia.org/wiki/Schwartzian_transform
