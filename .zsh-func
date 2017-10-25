@@ -81,7 +81,7 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #append to todo file
 function +() {
 if (($# > 0));then
-	uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=ORS="\n"} !seen[toupper($0)]++ {printf "%s%s%s\n", singlqt, $0, singlqt}' <<< "$@")
+	uniq_args=$(gawk -v quot="'" 'BEGIN {RS=ORS="\n"} !seen[$0]++ {printf "%s%s%s\n", quot, $0, quot}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	outfile="/mnt/0/gthb/note/.todo"
 	echo '(trace):outfile:['$outfile']'
@@ -100,8 +100,8 @@ fi
 function dl+() {
 if (($# > 0));then
 	#⓪ 
-	#uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=" "} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt} END {print ""}' <<< "$@")
-	uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt} END {print ""}' <<< "$@")
+	#uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" "} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
+	uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	#①
 	if [[ -f dllst ]];then
@@ -129,13 +129,13 @@ if (($# > 0));then
 	#		1
 	#		END{for (line in uniq_args) print line >> FILENAME}' <<< $uniq_args dllst
 	else
-	#	gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt}' <<< $uniq_args >> dllst
+	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot}' <<< $uniq_args >> dllst
 	#④
-		gawk -v singlqt="'" 'BEGIN {RS=ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt}' <<< "$uniq_args" >> dllst
+		gawk -v quot="'" 'BEGIN {RS=ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$uniq_args" >> dllst
 	fi
 
-	#	gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt}' <<< "$@" >> dllst
-	#	gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%s%s%s\n", singlqt, $0, singlqt}' <<< "$@" >> dllst  #last line won't be appended with spaces, so always unique, hence faulty!
+	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@" >> dllst
+	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%s%s%s\n", quot, $0, quot}' <<< "$@" >> dllst  #last line won't be appended with spaces, so always unique, hence faulty!
 	#	gawk 'BEGIN {IRS=" ";ORS="\n"} !seen[toupper($0)]++ END {print ""}' <<< "$@" >> dllst
 	#							 ^ syntax error
 	echo '$?':$?
@@ -144,7 +144,7 @@ fi
 
 function 0() {
 if (($# > 0));then
-	uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt} END {print ""}' <<< "$@")
+	uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	for file in "$uniq_args";do
 		if [[ -f $file ]];then
@@ -158,8 +158,8 @@ fi
 
 function utlsfrm() {
 if (($# > 0));then
-#	uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", singlqt, $1, singlqt} END {print ""}' <<< "$@")
-	uniq_args=$(gawk -v singlqt="'" 'BEGIN {RS=ORS=" "} !seen[toupper($0)]++ {printf "%s%s%s\n", singlqt, $0, singlqt} END {print ""}' <<< "$@")
+#	uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
+	uniq_args=$(gawk -v quot="'" 'BEGIN {RS=ORS=" "} !seen[$0]++ {printf "%s%s%s\n", quot, $0, quot}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 #	for url in "$uniq_args";do
 #		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
@@ -170,23 +170,30 @@ fi
 }
 
 function dprx() {
-#setopt nocasematch
-if (($# >= 1));then
-	if [[ $1 =~ (http|HTTP)[s]? ]];then
-		echo '(trace):$1:['$1'] hit regex =~ (http|HTTP)[s]?'
-		unset http_proxy
-		unset HTTP_PROXY
-	elif [[ $1 =~ (ftp|FTP) ]];then
-		echo '(trace):$1:['$1'] hit =~ (ftp|FTP)'
-		unset ftp_proxy
-		unset FTP_PROXY
-	elif [[ $1 =~ (sock|SOCK).* ]];then
-		echo '(trace):$1:['$1'] hit =~ (sock|SOCK).*'
-		unset socks_proxy
-		unset SOCKS_PROXY
-	else
-		echo 'unrecognized protocol!'
-	fi
+if (($# > 0));then
+	uniq_args=$(gawk -v quot="\"" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
+	echo '(trace):uniq_args:['$uniq_args']'
+
+	for arg in "$uniq_args";do
+		#if [[ $arg =~ ^(http|HTTP)s?$ ]];then
+		if [[ $arg =~ (http|HTTP)s? ]];then
+			echo '(trace):$arg:['$arg'] hit regex =~ (http|HTTP)[s]?'
+			unset http_proxy
+			unset HTTP_PROXY
+		#elif [[ $arg =~ ^(ftp|FTP)$ ]];then
+		elif [[ $arg =~ (ftp|FTP) ]];then
+			echo '(trace):$arg:['$arg'] hit =~ (ftp|FTP)'
+			unset ftp_proxy
+			unset FTP_PROXY
+		#elif [[ $arg =~ ^(sock|SOCK).*$ ]];then
+		elif [[ $arg =~ (sock|SOCK).* ]];then
+			echo '(trace):$arg:['$arg'] hit =~ (sock|SOCK).*'
+			unset socks_proxy
+			unset SOCKS_PROXY
+		else
+			echo '(trace):$arg:['$arg'] unrecognized protocol!'
+		fi
+	done
 fi
 prprx
 }
@@ -570,7 +577,7 @@ cmd+="${outfile_singlequoted}" #"$outfile_singlequoted"
 #cmd=${cmd//\'/\\\'} #eval: unmatched '
 #cmd=${cmd//*/\*}
 
-echo "#avrwndff":$cmd
+echo "(trace):avrwndff":$cmd
 eval ${cmd}
 echo '$?':$?
 }
@@ -692,7 +699,8 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 #	\? "$urls_whitespaced_arr"	#wrong!
 #	\? $urls_whitespaced	#wrong!
 #	cmd="\? $urls_whitespaced"
-	cmd="\? $(gawk -v singlqt="'" '!seen[toupper($0)]++ {printf "%s%s%s ", singlqt, $0, singlqt} END {print ""}' $file)"
+	#cmd="\? $(gawk -v quot="'" '!seen[toupper($0)]++ {printf "%s%s%s ", quot, $0, quot} END {print ""}' $file)"
+	cmd="\? $(gawk -v quot="'" '!seen[$0]++ {printf "%s%s%s ", quot, $0, quot}' $file)"
 	echo '(trace):cmd(dlchk(){}):['$cmd']'
 	eval ${cmd}
 #	urls_whitespaced=""
