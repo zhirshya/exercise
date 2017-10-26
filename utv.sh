@@ -62,7 +62,7 @@ while [[ $xt_code -ne 0 ]];do
 		find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
 	fi
 	xt_code=$?
-	echo "exit code(find...-execdir youtube-dl...{} +):$xt_code"
+	echo "(trace):exit code(find...-execdir youtube-dl...{} +):$xt_code"
 done
 
 echo "(end)«$(\date)»"
