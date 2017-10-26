@@ -100,8 +100,15 @@ fi
 function dl+() {
 if (($# > 0));then
 	#⓪ 
+	#Don't quote args
+	#WARNING: The url doesn't specify the protocol, trying with http
+	#[generic] watch?v=B2XtqVZcSdM': Requesting header
+	#WARNING: Could not send HEAD request to http://'https://www.youtube.com/watch?v=B2XtqVZcSdM': <urlopen error [Errno -2] Name or service not known>
+	#[generic] watch?v=B2XtqVZcSdM': Downloading webpage
+	#ERROR: Unable to download webpage: <urlopen error [Errno -2] Name or service not known> (caused by URLError(gaierror(-2, 'Name or service not known'),))
+
 	#uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" "} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
-	uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
+	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	#①
 	if [[ -f dllst ]];then
@@ -110,7 +117,7 @@ if (($# > 0));then
 	#		gawk '!seen[toupper($0)]++' dllst > ._tmp_ && command mv -f ._tmp_ dllst
 	#		)
 	#②
-		echo "$uniq_args" >> dllst
+		echo $uniq_args >> dllst
 	#③
 		cat -n dllst | sort -k2 -k1n  | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ dllst
 		#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
@@ -129,9 +136,9 @@ if (($# > 0));then
 	#		1
 	#		END{for (line in uniq_args) print line >> FILENAME}' <<< $uniq_args dllst
 	else
-	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot}' <<< $uniq_args >> dllst
 	#④
-		gawk -v quot="'" 'BEGIN {RS=ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$uniq_args" >> dllst
+	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot}' <<< $uniq_args >> dllst
+		gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$uniq_args" >> dllst  #already quoted in $uniq_args
 	fi
 
 	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@" >> dllst
