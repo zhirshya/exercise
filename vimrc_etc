@@ -72,6 +72,7 @@ iabbrev guleml ‹
 iabbrev gulemr ›
 iabbrev gulem2l «
 iabbrev gulem2r »
+iabbrev gulem2p » « 
 iabbrev rfrmrk ※
 "iabbrev crsdot# ※
 iabbrev laro  ← ⇐ 
