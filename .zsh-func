@@ -81,7 +81,14 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #append to todo file
 function +() {
 if (($# > 0));then
-	uniq_args=$(gawk -v quot="'" 'BEGIN {RS=ORS="\n"} !seen[$0]++ {printf "%s%s%s\n", quot, $0, quot}' <<< "$@")
+	#Don't quote args
+	#WARNING: The url doesn't specify the protocol, trying with http
+	#[generic] watch?v=B2XtqVZcSdM': Requesting header
+	#WARNING: Could not send HEAD request to http://'https://www.youtube.com/watch?v=B2XtqVZcSdM': <urlopen error [Errno -2] Name or service not known>
+	#[generic] watch?v=B2XtqVZcSdM': Downloading webpage
+	#ERROR: Unable to download webpage: <urlopen error [Errno -2] Name or service not known> (caused by URLError(gaierror(-2, 'Name or service not known'),))
+	#uniq_args=$(gawk -v quot="'" 'BEGIN {RS=ORS="\n"} !seen[$0]++ {printf "%s%s%s\n", quot, $0, quot}' <<< "$@")
+	uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	outfile="/mnt/0/gthb/note/.todo"
 	echo '(trace):outfile:['$outfile']'
