@@ -46,7 +46,7 @@ while [[ $xt_code -ne 0 ]];do
 	fi
 
 	if [[ -z $bandwidth_rate ]];then
-		echo '#hit [[ -z $bandwidth_rate ]]'
+		echo '(trace):hit [[ -z $bandwidth_rate ]]'
 		#find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} \;
 		find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -a {} \;
 	else
@@ -57,7 +57,7 @@ while [[ $xt_code -ne 0 ]];do
 				bandwidth_rate='75k'
 			fi
 		fi
-		echo "#bandwidth_rate":$bandwidth_rate
+		echo "(trace):bandwidth_rate":$bandwidth_rate
 		#find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
 		find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
 	fi
