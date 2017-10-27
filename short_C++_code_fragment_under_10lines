@@ -1,0 +1,134 @@
+https://isocpp.org/wiki/faq/wg21
+⓪
+// Not C++ yet, but am committed to being able to do in a future version of C++ efficiently, and with no extra copies.
+vector<tuple<Machine, Job>> pickMachines(vector<Machine>&& machines,
+                                         vector<Job>&& jobs) {
+  return zip(reverse(sort(machines, by([](const Machine& m) { return m.load(); }))),
+             sort(jobs, by([](const Job& j) { return j.cost(); })));
+}
+①
+void run_threads() {
+    std::thread t1(f1,100);
+    std::thread t2([](){ f1(200); });
+    t1.join();
+    t2.join();
+}
+②
+template <typename T> inline T minimum(const T& t) { return t; }
+template <typename T, typename ...P>
+inline auto minimum(const T& t, const P& ...p)
+{
+    using res_type= std::common_type_t<T, P...>;
+    return std::min(res_type(t), res_type(minimum(p...)));
+}
+This little function template allows us to compute the minimum of an arbitrary number of values of different types. This is not rocket science but a cute example of how C++11 is more powerful than (most?) other languages and C++03. You are invited to try it. Unlike C++11, in C++14 we no longer need the redundant declaration of the result type and the more cumbersome common_type trait which we replaced thanks to auto return type deduction and common_type_t in C++14.”
+③
+I would like to standardize shared (read/write) locking and I/O for the chrono durations.
+std::shared_mutex mut;                          // proposed
+std::condition_variable_any cv;
+...
+void get_data() {
+    std::shared_lock<shared_mutex> sl(mut);     // proposed
+    // mut is locked here
+    // ...
+    while (not_ready_to_proceed()) cv.wait(sl); // mut unlocked while waiting
+    // mut is locked here
+    // ...
+} // mut.unlock_shared()
+The above code is locking a read/write mutex in read mode and then waiting on a condition variable with that read/write mutex. Try doing that in POSIX! And yet this is all implemented on top of POSIX mutexes and condition variables, and is exception-safe as well.
+④
+class Stopwatch {
+    using clock = std::chrono::high_resolution_clock;
+    bool is_running() const { return stop_time_ == clock::time_point::min(); }
+    clock::time_point end_time() const { return is_running() ? clock::now() : stop_time_; }
+    clock::time_point begin_time_{clock::now()}, stop_time_{clock::time_point::min()};
+public:
+    void stop() { if (is_running()) stop_time_ = clock::now(); }
+    clock::duration elapsed() const { return end_time() - begin_time_; }
+};
+⑤
+template<typename T, size_t Size> T* begin(T (& array)[Size]) { return array; }
+template<typename T, size_t Size> T* end  (T (& array)[Size]) { return array + Size; }
+This is just a lovely way to get hold of iterators for built-in arrays.
+⑥
+result_type function_name( parameter_list... )
+{
+   claim proper( parameters... );
+   // No undefined behavior so far!
+   implementation;
+   claim proper( parameters... );
+   claim proper( result );
+   claim destructible( result );      // When result_type is an object type
+   // No undefined behavior so far!
+}
+That’s not C++ yet. It’s an abbreviated version of my candidate for the basic interface to a function; for details, you can look up my lecture “What is the basic interface?”
+⑦
+The following is a trivial use of my Boost.Proto library for building Domain-Specific Languages in C++. It builds a tree representing an expression, and then pretty-prints the tree to the standard output stream.
+#include <iostream>
+#include <boost/proto/proto.hpp>
+namespace proto = boost::proto;
+int main()
+{
+    // Create a Proto terminal that wraps a string.
+    // Let's be cheeky and call it "cout_".
+    proto::literal< char const * > cout_( "cout" );
+    // Create an expression tree and pass it to display_expr
+    // for pretty-printing.
+    proto::display_expr(
+        cout_ << "hello" << ' ' << "proto!"
+    );
+}
+Expression templates don’t seem so hard now, do they?
+⑧
+This is the inner loop for Intro Sort, using integer arithmetic to test for deviation from logarithmic complexity:
+for (; _ISORT_MAX < (_Count = _Last - _First) && 0 < _Ideal; ) {
+    pair<_RanIt, _RanIt> _Mid = _Unguarded_partition(_First, _Last);
+    _Ideal /= 2, _Ideal += _Ideal / 2; // allow 1.5 log2(N) divisions
+    if (_Mid.first - _First < _Last - _Mid.second) {
+        _Sort(_First, _Mid.first, _Ideal);
+        _First = _Mid.second;
+    } else {
+        _Sort(_Mid.second, _Last, _Ideal);
+        _Last = _Mid.first;
+    }
+}
+⑨
+#include "cute.h"
+#include "ide_listener.h"
+#include "cute_runner.h"
+void thisIsATest() {
+    ASSERTM("start writing tests", false);
+}
+⑩
+This implements a complete reference-counted object cache and leverages at least five different C++11 features or conveniences – thread-safe initialization of function local statics, std::mutex, std::shared_ptr, std::weak_ptr thread-safe .lock, and std::map auto-insertion – only that last one was available in C++98, all the rest are new in C++11.
+
+shared_ptr<widget> get_widget( int id ) {
+    static map<int, weak_ptr<widget>> cache;
+    static mutex mut_cache;
+    lock_guard<mutex> hold( mut_cache );
+    auto sp = cache[id].lock();
+    if( !sp ) cache[id] = sp = load_widget( id );
+    return sp;
+}
+⑪
+A declaration of the distance algorithm using Concepts Lite (including features not yet proposed). Assume that Signed and Input_iterator are previously defined concepts:
+template<typename I>
+  concept bool In = Input_iterator<I>;
+// Distance algorithm
+Signed distance(In first, In last);
+⑫
+This is part of an implementation of a switch-case-like construct that can switch on anything that’s comparable with operator==, using variadic templates and lambdas. The bit shown does the recursive walking of cases, carrying the value to switch, the case value, and the case body into the recursion terminator function. The terminator simply invokes the case-body lambda (or any function object type, for that matter) if the comparison is true.
+template <class X, class T, class U>
+void super_case_impl(X val, T val2, U y)
+{
+  if (val == val2) {
+    y();
+  }
+}
+template <class X, class T, class U, class ...Pairs>
+void super_case_impl(X val, T val2, U func, Pairs... case_pairs) {
+  super_case_impl(val, val2, func);
+  super_case_impl(val, case_pairs...);
+}
+
+
