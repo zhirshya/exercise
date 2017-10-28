@@ -62,7 +62,7 @@ for str in "$@";do
 	str="${str%%\?*}"
 	str="${str%%&*}"
 	str="${str%%#*}"
-	str="${str%\.*}"  #strip extension
+#	str="${str%\.*}"  #strip extension
 	cmd+="-iname \"*$str*\" -o "
 done
 
