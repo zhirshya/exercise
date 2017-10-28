@@ -68,6 +68,8 @@ nnoremap : ;
 
 iabbrev py# #!/usr/bin/python -tt
 iabbrev utf# # -*- coding: utf-8 -*-
+iabbrev zurh ♥ 
+iabbrev soyomb � 
 iabbrev guleml ‹
 iabbrev gulemr ›
 iabbrev gulem2l «
