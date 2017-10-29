@@ -1,0 +1,44 @@
+maximum sub-array
+The whole point is deciding whether a negative number somewhere (or a chunk of those) that separates two positive chunks is worth including or not... so just omitting the negative chunks is gonna take you nowhere. Imagine you have a data set of 1 million entries and just one negative number somewhere in the middle. Your "solution" would omit the negative part separating the rest into two chunks whereas clearly the total sum would be bigger, including the negative number. This holds true for any subset from npNpn (where n and p refer to a chunk of neg or pos numbers), clearly you can see that it's possible for pNp to be larger than either p. That's the whole point of thinking about the code, whether and when to include any negative numbers, not just omitting them. The task is to find "maximum sub-array, not maximum contiguous positive numbers.
+
+#include<iostream>
+#include<climits>
+using namespace std;
+
+int maxSubArraySum(int a[], int size)
+{
+    int max_so_far = INT_MIN, max_ending_here = 0,
+       start =0, end = 0, s=0;
+
+    for (int i=0; i< size; i++ )
+    {
+        max_ending_here += a[i];
+
+        if (max_so_far < max_ending_here)
+        {
+            max_so_far = max_ending_here;
+            start = s;
+            end = i;
+        }
+
+        if (max_ending_here < 0)
+        {
+            max_ending_here = 0;
+            s = i+1;
+        }
+    }
+    cout << "Maximum contiguous sum is "
+        << max_so_far << endl;
+    cout << "Starting index "<< start
+        << endl << "Ending index "<< end << endl;
+}
+
+/*Driver program to test maxSubArraySum*/
+int main()
+{
+    int a[] = {-2, -3, 4, -1, -2, 1, 5, -3};
+    int n = sizeof(a)/sizeof(a[0]);
+    int max_sum = maxSubArraySum(a, n);
+    return 0;
+}
+
