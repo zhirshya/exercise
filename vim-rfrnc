@@ -178,7 +178,7 @@ nnoremap : ;
 iabbrev py# #!/usr/bin/python -tt
 iabbrev utf# # -*- coding: utf-8 -*-
 
-:s/\('[- a-zA-Zа-яА-ЯёЁ]\+'\):\(\d\+\)/\2:[\1,,]/gc
+:s/\('[- a-zA-Zа-яА-ЯёЁөӨүҮ]\+'\):\(\d\+\)/\2:[\1,,]/gc
 Search for Russian letter range `[а-яА-Я ]` misses the letters `ё` and `Ё`
 https://github.com/vim/vim/issues/1751
 
