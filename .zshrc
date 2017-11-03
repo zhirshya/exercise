@@ -169,6 +169,7 @@ alias lynx='lynx -cookies=off'
 alias rtkod='echo "\$\?":$? '
 alias grep='grep --color=auto -R -n -H -C 5 -i --exclude-dir={.git,.svn,.hg,.bzr,CVS} '
 #alias grp='grep --color=auto -R -n -H -C 5 -i --exclude-dir={.git,.svn,.hg,.bzr,CVS} '
+alias gtpl='git pull'
 alias src='source ~/.zshrc'
 
 #punctuation,symbol,rus word
