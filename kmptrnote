@@ -783,3 +783,7 @@ ll {.,*}vim*
 -rw-r-----+ 1 r r   7562 Oct 15 09:50 vim-rfrnc
 -rw-r-----+ 1 r r   2785 Sep 10 21:55 .vimrc
 
+#algorithm-mnemonics.vim
+#https://github.com/dawikur/algorithm-mnemonics.vim
+g:algorithm_mnemonics_const_return="Left"
+
