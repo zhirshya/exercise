@@ -292,6 +292,7 @@ usermod -g adm r
 print - $((524288000/1024/1024))
 
 find /mnt/0 ~ ! -path "/mnt/0/linux/*" ! -path "/mnt/0/linux-insides/*" -type f -iname "*debug*" -exec ls -alF {} \;
+sudo find / -xdev -path /mnt -prune -o -iname 'algorithm' -exec ls -alF {} \; ;echo '$?':$?
 
 #shell single quote file name with single quote and space
 infile_quoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
