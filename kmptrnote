@@ -301,6 +301,14 @@ f /usr/include/c++/7/parallel/algorithm
 d /usr/share/perl5/vendor_perl/Algorithm
 f /usr/lib64/clang/4.0.1/include/cuda_wrappers/algorithm
 $?:0
+sudo find / -xdev -path /mnt -prune -o -iname 'algorithm' -exec grep -HiRn "stl_algo" {} \; ;echo '$?':$?
+/usr/include/c++/7/algorithm:61:#include <bits/stl_algobase.h>
+/usr/include/c++/7/algorithm:62:#include <bits/stl_algo.h>
+$?:0
+
+/usr/include/c++/7/parallel/algorithm:35:#include <parallel/algorithmfwd.h>
+/usr/include/c++/7/parallel/algorithm:36:#include <parallel/algobase.h>
+/usr/include/c++/7/parallel/algorithm:37:#include <parallel/algo.h>
 
 #shell single quote file name with single quote and space
 infile_quoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
