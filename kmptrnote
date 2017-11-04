@@ -293,6 +293,14 @@ print - $((524288000/1024/1024))
 
 find /mnt/0 ~ ! -path "/mnt/0/linux/*" ! -path "/mnt/0/linux-insides/*" -type f -iname "*debug*" -exec ls -alF {} \;
 sudo find / -xdev -path /mnt -prune -o -iname 'algorithm' -exec ls -alF {} \; ;echo '$?':$?
+sudo find / -xdev -path /mnt -prune -o -iname 'algorithm' -printf "%y %p\n";echo '$?':$?
+f /usr/include/c++/7/algorithm
+f /usr/include/c++/7/ext/algorithm
+f /usr/include/c++/7/experimental/algorithm
+f /usr/include/c++/7/parallel/algorithm
+d /usr/share/perl5/vendor_perl/Algorithm
+f /usr/lib64/clang/4.0.1/include/cuda_wrappers/algorithm
+$?:0
 
 #shell single quote file name with single quote and space
 infile_quoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
