@@ -707,23 +707,23 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 		cat -n $file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ $file
 		echo $file:
 		more $file
-	fi
-#	while read -r line;do
-#		if [[ ! $line =~ $blankline_rexpr ]];then
-#			urls_whitespaced+="\"$line\" "	#urls_whitespaced+=("$line"+" ")?
-#			#urls_whitespaced+="$line "	#urls_whitespaced+=("$line"+" ")?
-#		fi
-#	done < "$file"
-#	echo '$urls_whitespaced:['$urls_whitespaced']'
-#	IFS=' ' read -a urls_whitespaced_arr <<<"$urls_whitespaced"	#bad option: -a
-#	\? "$urls_whitespaced_arr"	#wrong!
-#	\? $urls_whitespaced	#wrong!
-#	cmd="\? $urls_whitespaced"
+	#while read -r line;do
+	#	if [[ ! $line =~ $blankline_rexpr ]];then
+	#		urls_whitespaced+="\"$line\" "	#urls_whitespaced+=("$line"+" ")?
+	#		#urls_whitespaced+="$line "	#urls_whitespaced+=("$line"+" ")?
+	#	fi
+	#done < "$file"
+	#echo '$urls_whitespaced:['$urls_whitespaced']'
+	#IFS=' ' read -a urls_whitespaced_arr <<<"$urls_whitespaced"	#bad option: -a
+	#\? "$urls_whitespaced_arr"	#wrong!
+	#\? $urls_whitespaced	#wrong!
+	#cmd="\? $urls_whitespaced"
 	#cmd="\? $(gawk -v quot="'" '!seen[toupper($0)]++ {printf "%s%s%s ", quot, $0, quot} END {print ""}' $file)"
 	cmd="\? $(gawk -v quot="'" '!seen[$0]++ {printf "%s%s%s ", quot, $0, quot}' $file)"
 	echo '(trace):cmd(dlchk(){}):['$cmd']'
 	eval ${cmd}
 #	urls_whitespaced=""
+	fi
 done
 echo '$?':$?
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
