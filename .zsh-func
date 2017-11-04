@@ -100,7 +100,7 @@ if (($# > 0));then
 	#https://unix.stackexchange.com/questions/39291/run-a-command-that-is-shadowed-by-an-alias
 
 	echo "$uniq_args" >> "$outfile"
-	cat -n "$outfile" | sort -k2 -k1n  | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$outfile"
+	cat -n "$outfile" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$outfile"
 	#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
 
 	echo '$?':$?
@@ -110,6 +110,7 @@ fi
 #append to youtube download file
 function dl+() {
 if (($# > 0));then
+	dllst_file="dllst"
 	#⓪ 
 	#Don't quote args
 	#WARNING: The url doesn't specify the protocol, trying with http
@@ -122,39 +123,39 @@ if (($# > 0));then
 	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	#①
-	if [[ -f dllst ]];then
-	#	gawk '!seen[toupper($0)]++{exit 1}' dllst || (
+	if [[ -f $dllst_file ]];then
+	#	gawk '!seen[toupper($0)]++{exit 1}' $dllst_file || (
 	#		echo 'dl+(){} found duplicate lines, remove duplicates now.'
-	#		gawk '!seen[toupper($0)]++' dllst > ._tmp_ && command mv -f ._tmp_ dllst
+	#		gawk '!seen[toupper($0)]++' $dllst_file > ._tmp_ && command mv -f ._tmp_ $dllst_file
 	#		)
 	#②
-		echo $uniq_args >> dllst
+		echo $uniq_args >> $dllst_file
 	#③
-		cat -n dllst | sort -k2 -k1n  | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ dllst
+		cat -n $dllst_file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ $dllst_file
 		#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
 		#https://unix.stackexchange.com/questions/39291/run-a-command-that-is-shadowed-by-an-alias
 
 	#	for url in "$uniq_args";do
 	#	#	url="${url%&list=*}"
 	#	#	url="${url%&index=*}"
-	#		command grep -F "$url" dllst || echo "$url" >> dllst
-	#		#command grep -qF "$url" dllst || echo "$url" >> dllst
+	#		command grep -F "$url" $dllst_file || echo "$url" >> $dllst_file
+	#		#command grep -qF "$url" $dllst_file || echo "$url" >> $dllst_file
 	#	done
 
 	#https://stackoverflow.com/questions/46408707/fastest-way-appending-a-line-to-a-file-only-if-it-does-not-already-exist
 	#	gawk 'FNR==NR {uniq_args[$0]; next}
 	#		$0 in uniq_args{delete uniq_args[$0]}
 	#		1
-	#		END{for (line in uniq_args) print line >> FILENAME}' <<< $uniq_args dllst
+	#		END{for (line in uniq_args) print line >> FILENAME}' <<< $uniq_args $dllst_file
 	else
 	#④
-	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot}' <<< $uniq_args >> dllst
-		gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$uniq_args" >> dllst  #already quoted in $uniq_args
+	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot}' <<< $uniq_args >> $dllst_file
+		gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$uniq_args" >> $dllst_file  #already quoted in $uniq_args
 	fi
 
-	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@" >> dllst
-	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%s%s%s\n", quot, $0, quot}' <<< "$@" >> dllst  #last line won't be appended with spaces, so always unique, hence faulty!
-	#	gawk 'BEGIN {IRS=" ";ORS="\n"} !seen[toupper($0)]++ END {print ""}' <<< "$@" >> dllst
+	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@" >> $dllst_file
+	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($0)]++{printf "%s%s%s\n", quot, $0, quot}' <<< "$@" >> $dllst_file  #last line won't be appended with spaces, so always unique, hence faulty!
+	#	gawk 'BEGIN {IRS=" ";ORS="\n"} !seen[toupper($0)]++ END {print ""}' <<< "$@" >> $dllst_file
 	#							 ^ syntax error
 	echo '$?':$?
 fi
@@ -702,7 +703,8 @@ blankline_rexpr="^[ \t\u3000]*$"
 
 for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 #	if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then	#error: condition expected: $file	#stderr inaccessible this way!
-	if [[ ! $file =~ $errmsg ]];then	#stderr inaccessible this way!
+	if [[ ! $file =~ $errmsg && -f $file ]];then	#stderr inaccessible this way!
+		cat -n $file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ $file
 		echo $file:
 		more $file
 	fi
