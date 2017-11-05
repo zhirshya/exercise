@@ -83,6 +83,7 @@ iabbrev uaro  ↑ ⇑
 iabbrev daro  ↓ ⇓ 
 iabbrev tik  ✓ ✔ 
 iabbrev krs  ✗ ✘ 
+iabbrev no# №
 iabbrev circld0 ⓪
 iabbrev circld1 ①
 iabbrev circld2 ②
@@ -104,4 +105,7 @@ iabbrev circld17 ⑰
 iabbrev circld18 ⑱
 iabbrev circld19 ⑲
 iabbrev circld20 ⑳ 
+iabbrev rd# РД, Ракетный Двигатель
+iabbrev glns# ГЛОНАСС; Глобальная навигационная спутниковая система
+iabbrev uaz# УАЗ: Ульяновский Автомобильный Завод
 
