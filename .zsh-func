@@ -720,6 +720,13 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 	#cmd="\? $urls_whitespaced"
 	#cmd="\? $(gawk -v quot="'" '!seen[toupper($0)]++ {printf "%s%s%s ", quot, $0, quot} END {print ""}' $file)"
 	cmd="\? $(gawk -v quot="'" '!seen[$0]++ {printf "%s%s%s ", quot, $0, quot}' $file)"
+	
+	#https://unix.stackexchange.com/questions/102008/how-do-i-trim-leading-and-trailing-whitespace-from-each-line-of-some-output
+	#shopt -s extglob  #setopt: no such option: extglob
+	#cmd=${cmd##+([[:space:]])}
+	#cmd=${cmd%%+([[:space:]])}
+	cmd=${cmd##[[:space:]]}
+	cmd=${cmd%%[[:space:]]}
 	echo '(trace):cmd(dlchk(){}):['$cmd']'
 	eval ${cmd}
 #	urls_whitespaced=""
