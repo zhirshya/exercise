@@ -301,7 +301,7 @@ nohup firefox --ssl-version-min=tls1.1 -private "$@" &> /dev/null & disown
 }
 
 function krm() {
-nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+hashset+hashmap https://unix.stackexchange.com/questions/48505/how-to-make-sure-only-one-instance-of-a-bash-script-runs http://users.cs.fiu.edu/~weiss/dsaa_c++4/errata.html https://github.com/fffaraz/awesome-cpp https://gist.github.com/TSiege/cbb0507082bb18ff7e4b https://github.com/tommybennett/algorithm-mnemonics/blob/master/algorithm_mnemonics.xml https://www.youtube.com/watch\?v=dN_gQYo9Uf8 https://www.youtube.com/watch\?v=5dJSZLmDsxk https://www.youtube.com/watch\?v=i-xqRDwpilM https://encrypted.google.com/search\?hl=en\&q=c%2B%2B+input+sanitization https://encrypted.google.com/search\?hl=en\&q=c%2B%2B+macro https://github.com/ben-strasser/fast-cpp-csv-parser https://www.rosettacode.org/wiki/Web_scraping  "$@" &> /dev/null & disown
+nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+hashset+hashmap https://unix.stackexchange.com/questions/48505/how-to-make-sure-only-one-instance-of-a-bash-script-runs http://users.cs.fiu.edu/~weiss/dsaa_c++4/errata.html https://github.com/fffaraz/awesome-cpp https://gist.github.com/TSiege/cbb0507082bb18ff7e4b https://github.com/tommybennett/algorithm-mnemonics/blob/master/algorithm_mnemonics.xml https://www.youtube.com/watch\?v=dN_gQYo9Uf8 https://www.youtube.com/watch\?v=5dJSZLmDsxk https://www.youtube.com/watch\?v=i-xqRDwpilM https://encrypted.google.com/search\?hl=en\&q=c%2B%2B+input+sanitization https://encrypted.google.com/search\?hl=en\&q=c%2B%2B+macro https://github.com/ben-strasser/fast-cpp-csv-parser https://www.rosettacode.org/wiki/Web_scraping http://www.bfilipek.com/2014/12/top-5-beautiful-c-std-algorithms.html https://channel9.msdn.com/Events/GoingNative/2013/Cpp-Seasoning  "$@" &> /dev/null & disown
 #https://isocpp.org/faq https://encrypted.google.com/search\?hl=en\&as_q=python+3+book https://stackoverflow.com/questions/16807011/python-how-to-identify-if-a-variable-is-an-array-or-a-scalar https://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters http://bisqwit.iki.fi/ http://docs.python-guide.org/en/latest http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask https://www.reddit.com/r/learnpython/comments/264ffw/what_is_the_pythonic_way_of_storing_credentials https://docs.python.org/3/library/email.examples.html https://docs.python.org/2/library/email-examples.html https://stackoverflow.com/questions/34668240/email-an-attachment-with-non-ascii-filename-with-python-email https://developers.google.com/gmail/api/guides/sending https://encrypted.google.com/search\?hl=en\&as_q=programming+loop+unroll https://en.wikipedia.org/wiki/Loop_unrolling
 #nohup google-chrome-stable --ssl-version-min=tls1.1 http://www.thechessdrum.net/chessacademy/index.html http://www.thechessdrum.net/65thSquare/65_janfeb04.html http://www.cppsamples.com http://docs.python-guide.org/en/latest https://github.com/line/line-bot-sdk-python http://python-future.org/automatic_conversion.html http://python-future.org/compatible_idioms.html#compatible-idioms http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask "$@" &> /dev/null & disown
 }
@@ -779,6 +779,39 @@ echo '(trace):temporarily set $IFS:['$IFS']'
 IFS="$saveIFS"
 for repo in "${gthbRepodirs[@]}";do cd $gthbdir/$repo && (echo '$PWD':$PWD ; git push origin $(git_current_branch));done
 cd $curdir
+echo '$?':$?
+}
+
+function swpfile() {
+#if [[ $# -ne 2 ]];then
+if (( $# != 2 ));then
+  echo "(trace):Syntax: $(basename $0) <FILE 1> <FILE 2>"
+  return -1
+fi
+
+if [[ ! -f $1 ]]; then
+  echo "(trace):File \`$1' does not exist!"
+  return -1
+fi
+
+if [[ ! -f $2 ]]; then
+  echo "(trace):File \`$2' does not exist!"
+  return -1
+fi
+
+#https://stackoverflow.com/questions/1115904/shortest-way-to-swap-two-files-in-bash
+#⓪
+#local TMPFILE=tmp.$$
+#mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
+
+#①
+tmpfile=$(mktemp $(dirname "$1")/_XXXXXX_)
+if [[ ! -f $tmpfile ]]; then
+  echo "(trace):Could not create temporary intermediate file!"
+  return -1
+fi
+
+command mv -f "$1" "$tmpfile" && mv -f "$2" "$1" && mv -f "$tmpfile" "$2"
 echo '$?':$?
 }
 
