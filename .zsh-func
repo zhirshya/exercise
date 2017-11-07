@@ -35,7 +35,7 @@ for str in "$@";do
 		echo "playlist (contained) item(s) search is currently not supported!"
 		continue
 	elif [[ $str =~ $utvSingl_regxpr ]];then
-		echo "(trace):[$str] match [$utvSingl_regxpr]"
+#		echo "(trace):[$str] match [$utvSingl_regxpr]"
 		str="${str##*youtu*be*/}"
 		str="${str##watch\?v=}"
 		str="${str%% *}"
