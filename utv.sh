@@ -9,10 +9,19 @@
 typeset -F SECONDS
 echo "(start)«$(\date)»"
 
-while getopts "st:b:" opt; do
+#https://stackoverflow.com/questions/43158140/way-to-create-multiline-comments-in-bash
+: <<'COMMENT'
+format code: 43,18,22,36
+22 best but too big
+COMMENT
+
+#http://www.bahmanm.com/blogs/command-line-options-how-to-parse-in-bash-using-getopt
+
+while getopts "st:f:b:" opt; do
 	case "$opt" in
 	s) lockpoweroff_screen="NoLockPoweroffScreen";;
 	t) shutdown_timeout="$OPTARG";;
+	f) format_num="$OPTARG";;
 	b) bandwidth_rate="$OPTARG";;
 	\?) # unknown flag
 		#echo >&2 \
