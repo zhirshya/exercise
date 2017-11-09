@@ -29,6 +29,16 @@ idx=0
 #for str in "${str_array[@]}";do	#unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
 cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 for str in "$@";do
+#	str=$(tr -s "[:blank:]" <<<$str)
+	str=$(tr -s " \t\f\v" <<<$str)
+#	echo '$str:['$str']'
+	#https://stackoverflow.com/questions/369758/how-to-trim-whitespace-from-a-bash-variable
+	# remove leading whitespace characters
+	str="${str#"${str%%[![:space:]]*}"}"
+	# remove trailing whitespace characters
+	str="${str%"${str##*[![:space:]]}"}"
+#	echo '$str:['$str']'
+
 	if [[ $str =~ $utvList_regxpr ]];then
 		echo "(trace):[$str] match [$utvList_regxpr]"
 		echo '$'$((++idx)):'['$str']'
@@ -54,7 +64,6 @@ for str in "$@";do
 		str="${str##*video.*fbcdn.net/v/*/}"
 	else
 		echo '$'$((++idx)):'['$str']'
-		echo "(trace):unknown pattern found, specified argument will be applied without any modification, may result in unexpected behavior!"
 	fi
 	str="${str%&index=*}"
 	str="${str%&list=*}"
@@ -62,6 +71,12 @@ for str in "$@";do
 	str="${str%%\?*}"
 	str="${str%%&*}"
 	str="${str%%#*}"
+
+#	str="${str##( |\t|\f|\v)}"
+#	str="${str%%( |\t|\f|\v)}"
+#	str="${str// \t\f\v/*}"
+	str="${str// /*}"
+
 #todo:strip extension except .todo
 #https://fileinfo.com/filetypes/common
 #	str="${str%\.*}"
@@ -74,7 +89,7 @@ if [[ $cmd =~ -iname ]];then
 	cmd=${cmd% -o }
 	cmd+=' \) -exec ls -alFt {} \;'
 	echo '(trace):$cmd(\?(){}):['$cmd']'
-	eval ${cmd}
+#	eval ${cmd}
 	echo '$?':$?
 else
 	return 113	#can't be reflected on(passed to) outer/upper level!
