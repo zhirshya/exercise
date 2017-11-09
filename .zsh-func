@@ -767,7 +767,7 @@ function volut() {
 nohup evolution &> /dev/null & disown
 }
 
-function shdff() {
+function zrcdf() {
 diff ~/.zsh-func /mnt/0/gthb/xrcs/.zsh-func
 echo ------
 diff ~/.zshrc /mnt/0/gthb/xrcs/.zshrc
