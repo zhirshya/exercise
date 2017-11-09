@@ -89,7 +89,7 @@ if [[ $cmd =~ -iname ]];then
 	cmd=${cmd% -o }
 	cmd+=' \) -exec ls -alFt {} \;'
 	echo '(trace):$cmd(\?(){}):['$cmd']'
-#	eval ${cmd}
+	eval ${cmd}
 	echo '$?':$?
 else
 	return 113	#can't be reflected on(passed to) outer/upper level!
