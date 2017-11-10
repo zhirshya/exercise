@@ -68,6 +68,9 @@ nnoremap : ;
 
 iabbrev py# #!/usr/bin/python -tt
 iabbrev utf# # -*- coding: utf-8 -*-
+iabbrev e6# ө
+iabbrev e7# ɯ
+iabbrev e2# э
 iabbrev zurh ♥ 
 iabbrev soyomb � 
 iabbrev guleml ‹
@@ -108,5 +111,4 @@ iabbrev circld20 ⑳
 iabbrev rd# РД, Ракетный Двигатель
 iabbrev glns# ГЛОНАСС; Глобальная навигационная спутниковая система
 iabbrev uaz# УАЗ: Ульяновский Автомобильный Завод
-iabbrev mchs# MChS, МЧС России:Министерство Российской Федерации по делам гражданской обороны, чрезвычайным ситуациям и ликвидации последствий стихийных бедствий
 
