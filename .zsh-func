@@ -43,7 +43,7 @@ for str in "$@";do
 #	str="${str%"${str##*[![:space:]]}"}"
 #	echo '$str:['$str']'
 	str=$(trmsp $str)
-    	echo -n "(trace):input arg after func trmsp() called:[$str]"
+    	echo "(trace):input arg after func trmsp() called:[$str]"
 	
 	if [[ $str =~ $utvList_regxpr ]];then
 		echo "(trace):[$str] match [$utvList_regxpr]"
@@ -695,8 +695,7 @@ else
 	#mkdir -p "$1" &&
 	#cd "$1"	#cd: line number : no such file or directory
 	echo '$?':$?
-	echo -n 'pwd:'
-	pwd
+	echo 'pwd':$(pwd)
 fi
 }
 
