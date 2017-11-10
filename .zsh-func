@@ -34,14 +34,17 @@ for str in "$@";do
 #	str="${str%%( |\t|\f|\v)}"
 #	str=$(tr -s "[:blank:]" <<<$str)
 	str=$(tr -s " \t\f\v" <<<$str)
+
 #	echo '$str:['$str']'
 	#https://stackoverflow.com/questions/369758/how-to-trim-whitespace-from-a-bash-variable
 	# remove leading whitespace characters
-	str="${str#"${str%%[![:space:]]*}"}"
+#	str="${str#"${str%%[![:space:]]*}"}"
 	# remove trailing whitespace characters
-	str="${str%"${str##*[![:space:]]}"}"
+#	str="${str%"${str##*[![:space:]]}"}"
 #	echo '$str:['$str']'
-
+	str=$(trmsp $str)
+    	echo -n "(trace):input arg after func trmsp() called:[$str]"
+	
 	if [[ $str =~ $utvList_regxpr ]];then
 		echo "(trace):[$str] match [$utvList_regxpr]"
 		echo '$'$((++idx)):'['$str']'
@@ -79,7 +82,7 @@ for str in "$@";do
 #	str="${str// \t\f\v/*}"
 	str="${str// /*}"
 
-#todo:strip extension except .todo
+#strip extension except .todo
 #https://fileinfo.com/filetypes/common
 #	str="${str%\.*}"
 #	str="${str%?\.(mp4|mp3|mkv|mpg|mpeg|webm|m4a|aac|flac|rmvb|avi|opus|dvi|wav)}"  #non greedy
@@ -110,7 +113,8 @@ if (($# > 0));then
 	#ERROR: Unable to download webpage: <urlopen error [Errno -2] Name or service not known> (caused by URLError(gaierror(-2, 'Name or service not known'),))
 	#uniq_args=$(gawk -v quot="'" 'BEGIN {RS=ORS="\n"} !seen[$0]++ {printf "%s%s%s\n", quot, $0, quot}' <<< "$@")
 	uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$@")
-	echo '(trace):uniq_args:['$uniq_args']'
+	uniq_args=$(trmsp $uniq_args)
+	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
 	outfile="/mnt/0/gthb/note/.todo"
 	echo '(trace):outfile:['$outfile']'
 	#command cp -f "$outfile" "$outfile.bk"  #unnecessary because of github
@@ -284,8 +288,8 @@ else
 fi
 #todo
 #$* or $@ find substr("--rate[ \t]1") ? (NO "--rate 1.5" && pass on everything else ) : $@
-nohup vlc --no-metadata-network-access --rate 1.5 --qt-start-minimized "$@" &> /dev/null & disown	#work in pair?: --one-instance --playlist-enqueue
-#nohup vlc --no-metadata-network-access --rate 1.3 "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
+nohup vlc --no-metadata-network-access --rate 1.3 --qt-start-minimized "$@" &> /dev/null & disown	#work in pair?: --one-instance --playlist-enqueue
+#nohup vlc --no-metadata-network-access --rate 1.5 "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
 }
 
 function vlopt() {
@@ -837,5 +841,15 @@ fi
 
 command mv -f "$1" "$tmpfile" && mv -f "$2" "$1" && mv -f "$tmpfile" "$2"
 echo '$?':$?
+}
+
+#https://stackoverflow.com/questions/369758/how-to-trim-whitespace-from-a-bash-variable
+function trmsp() {
+    local var="$*"
+    # remove leading whitespace characters
+    var="${var#"${var%%[![:space:]]*}"}"
+    # remove trailing whitespace characters
+    var="${var%"${var##*[![:space:]]}"}"   
+    echo -n "$var"
 }
 
