@@ -66,49 +66,51 @@ let &guicursor = &guicursor . ",a:blinkon0"
 nnoremap ; :
 nnoremap : ;
 
-iabbrev py# #!/usr/bin/python -tt
-iabbrev utf# # -*- coding: utf-8 -*-
-iabbrev e6# ө
-iabbrev e7# ɯ
-iabbrev e2# э
-iabbrev zurh ♥ 
-iabbrev soyomb � 
-iabbrev guleml ‹
-iabbrev gulemr ›
-iabbrev gulem2l «
-iabbrev gulem2r »
-iabbrev gulem2p » « 
-iabbrev rfrmrk ※
-"iabbrev crsdot# ※
-iabbrev laro  ← ⇐ 
-iabbrev raro  → ⇒ 
-iabbrev uaro  ↑ ⇑ 
-iabbrev daro  ↓ ⇓ 
-iabbrev tik  ✓ ✔ 
-iabbrev krs  ✗ ✘ 
-iabbrev no# №
-iabbrev circld0 ⓪
-iabbrev circld1 ①
-iabbrev circld2 ②
-iabbrev circld3 ③
-iabbrev circld4 ④
-iabbrev circld5 ⑤
-iabbrev circld6 ⑥
-iabbrev circld7 ⑦
-iabbrev circld8 ⑧
-iabbrev circld9 ⑨
-iabbrev circld10 ⑩
-iabbrev circld11 ⑪
-iabbrev circld12 ⑫
-iabbrev circld13 ⑬
-iabbrev circld14 ⑭
-iabbrev circld15 ⑮
-iabbrev circld16 ⑯
-iabbrev circld17 ⑰
-iabbrev circld18 ⑱
-iabbrev circld19 ⑲
-iabbrev circld20 ⑳ 
-iabbrev rd# РД, Ракетный Двигатель
-iabbrev glns# ГЛОНАСС; Глобальная навигационная спутниковая система
-iabbrev uaz# УАЗ: Ульяновский Автомобильный Завод
+iabbrev py` #!/usr/bin/python -tt
+iabbrev utf` # -*- coding: utf-8 -*-
+iabbrev e6` ө
+iabbrev e7` ɯ
+iabbrev e2` э
+iabbrev zurh` ♥ 
+iabbrev soyomb` � 
+iabbrev guleml` ‹
+iabbrev gulemr` ›
+iabbrev gulem2l` «
+iabbrev gulem2r` »
+iabbrev gulem2p` » « 
+iabbrev rfrmrk` ※
+"iabbrev crsdot` ※
+iabbrev laro`  ← ⇐ 
+iabbrev raro`  → ⇒ 
+iabbrev uaro`  ↑ ⇑ 
+iabbrev daro`  ↓ ⇓ 
+iabbrev chk`  ✓ ✔ 🗸 ✅ 
+iabbrev krs`  ✗ ✘ x × X ✕ ☓ ✖
+iabbrev crcl` ⃝  ○
+iabbrev bult` •
+iabbrev no` №
+iabbrev circld0` ⓪
+iabbrev circld1` ①
+iabbrev circld2` ②
+iabbrev circld3` ③
+iabbrev circld4` ④
+iabbrev circld5` ⑤
+iabbrev circld6` ⑥
+iabbrev circld7` ⑦
+iabbrev circld8` ⑧
+iabbrev circld9` ⑨
+iabbrev circld10` ⑩
+iabbrev circld11` ⑪
+iabbrev circld12` ⑫
+iabbrev circld13` ⑬
+iabbrev circld14` ⑭
+iabbrev circld15` ⑮
+iabbrev circld16` ⑯
+iabbrev circld17` ⑰
+iabbrev circld18` ⑱
+iabbrev circld19` ⑲
+iabbrev circld20` ⑳ 
+iabbrev rd` РД, Ракетный Двигатель
+iabbrev glns` ГЛОНАСС; Глобальная навигационная спутниковая система
+iabbrev uaz` УАЗ: Ульяновский Автомобильный Завод
 
