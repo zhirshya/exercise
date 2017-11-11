@@ -4,9 +4,12 @@
 #find /mnt/0 ~ -type f -iname '*.part' -execdir youtube-dl --youtube-skip-dash-manifest -a {} +
 #extract the substring of 11 characters between last/penultimate hyphen/dash(-) and the first period(.) after that
 
-#exec  &>> /home/r/utv.sh.log  #littered with tons of ^M(i.e. CTRL-M:carriage return, keyboard equivalent to \r), better log only errors with '2>>'
+#http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
+trap time EXIT
 
-typeset -F SECONDS
+#setup logging; todo: littered with tons of ^M(i.e. CTRL-M:carriage return, keyboard equivalent to \r), better log only errors with '2>>'
+#exec  &>> /home/r/utv.sh.log
+
 echo "(start)«$(\date)»"
 
 #https://stackoverflow.com/questions/43158140/way-to-create-multiline-comments-in-bash
@@ -75,14 +78,9 @@ while [[ $xt_code -ne 0 ]];do
 done
 
 echo "(end)«$(\date)»"
-echo '$(time)':$(time)
-echo '$(times)':$(times)
-#or add a trap on EXIT, that way, times will be called whenever the shell exits and the exit status will be preserved.
-#trap times EXIT
 #bash, ksh and zsh have a $SECONDS special variable that counts the number of seconds since the shell was started. In both zsh and ksh93, that variable can also be made floating point (with typeset -F SECONDS) to get more precision. This is only wall clock time, not CPU time.
-#typeset -F SECONDS
-echo '$SECONDS':$SECONDS
-#http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
+typeset -F SECONDS
+echo '(trace):$SECONDS(⃝  typeset -F SECONDS)':$SECONDS
 
 if [[ $shutdown_timeout =~ ^[nN][oO][wW]$ ]];then
 	echo 'true:[[ $shutdown_timeout =~ ^[nN][oO][wW]$ ]], exec:sudo shutdown -P -f +0'
