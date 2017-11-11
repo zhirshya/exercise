@@ -11,7 +11,6 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #http://video.ch9.ms/ch9/3306/0e92ae7f-7b06-4a08-a2a0-e80545733306/DefragTools179_high.mp4
 #https://video.xx.fbcdn.net/v/t43.1792-2/14018597_941915082602721_1324838905_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6MTAyNCwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=588&oh=37f5d4bd4e3b3de99d2f0093c17a69d0&oe=57CBD2F3
 #https://www.facebook.com/ehbichig/videos/991876094204055/
-#https://vimeo.com/115796769
 
 #use variables to hold regxprs to avoid: parse error near `&'
 #"dl+"(echo "$url" >> dllst for url in "$@") automatically escape ? and = in output file! e.g. https://www.youtube.com/playlist\?list\=PLKK11Ligqitg9MOX3-0tFT1Rmh3uJp7kA
@@ -262,7 +261,10 @@ sudo dnf autoremove #many times faultily automatically remove kernel-modules-ext
 echo '$?':$?
 }
 
-function upgrlog() { #view cron job upgrade cmd log
+function upgrlog() {
+#todo:
+#⓪ display systemd upgrade cmd/script log: failed to get non-admin user and root systemd service to run OS update cmd/script while SELinux is enforced!
+#① display cron job upgrade cmd/script log: unfavorable and inflexible because system login event is undeterministic! 
 if [[ -f /var/log/sys_upgrade.log ]];then
 	less /var/log/sys_upgrade.log
 elif [[ -f /var/log/youtube-dl_upgrade.log ]];then
@@ -322,7 +324,7 @@ nohup firefox --ssl-version-min=tls1.1 -private "$@" &> /dev/null & disown
 }
 
 function krm() {
-nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+hashset+hashmap https://unix.stackexchange.com/questions/48505/how-to-make-sure-only-one-instance-of-a-bash-script-runs http://users.cs.fiu.edu/~weiss/dsaa_c++4/errata.html https://github.com/fffaraz/awesome-cpp https://gist.github.com/TSiege/cbb0507082bb18ff7e4b https://github.com/tommybennett/algorithm-mnemonics/blob/master/algorithm_mnemonics.xml https://www.youtube.com/watch\?v=dN_gQYo9Uf8 https://www.youtube.com/watch\?v=5dJSZLmDsxk https://www.youtube.com/watch\?v=i-xqRDwpilM https://encrypted.google.com/search\?hl=en\&q=c%2B%2B+input+sanitization https://encrypted.google.com/search\?hl=en\&q=c%2B%2B+macro https://github.com/ben-strasser/fast-cpp-csv-parser https://www.rosettacode.org/wiki/Web_scraping http://www.bfilipek.com/2014/12/top-5-beautiful-c-std-algorithms.html https://channel9.msdn.com/Events/GoingNative/2013/Cpp-Seasoning https://encrypted.google.com/search\?hl=en\&q=torrent+C%2B%2B17+STL+Cookbook https://www.youtube.com/watch\?v=Az0J2UHbNCI  "$@" &> /dev/null & disown
+nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+hashset+hashmap https://unix.stackexchange.com/questions/48505/how-to-make-sure-only-one-instance-of-a-bash-script-runs http://users.cs.fiu.edu/~weiss/dsaa_c++4/errata.html https://github.com/fffaraz/awesome-cpp https://gist.github.com/TSiege/cbb0507082bb18ff7e4b https://github.com/tommybennett/algorithm-mnemonics/blob/master/algorithm_mnemonics.xml https://www.youtube.com/watch\?v=dN_gQYo9Uf8 https://www.youtube.com/watch\?v=5dJSZLmDsxk https://www.youtube.com/watch\?v=i-xqRDwpilM https://encrypted.google.com/search\?hl=en\&q=c%2B%2B+input+sanitization https://encrypted.google.com/search\?hl=en\&q=c%2B%2B+macro https://github.com/ben-strasser/fast-cpp-csv-parser https://www.rosettacode.org/wiki/Web_scraping http://www.bfilipek.com/2014/12/top-5-beautiful-c-std-algorithms.html https://channel9.msdn.com/Events/GoingNative/2013/Cpp-Seasoning https://encrypted.google.com/search\?hl=en\&q=torrent+C%2B%2B17+STL+Cookbook https://www.youtube.com/watch\?v=Az0J2UHbNCI https://www.youtube.com/watch\?v=WDn-htpBlnU "$@" &> /dev/null & disown
 #https://isocpp.org/faq https://encrypted.google.com/search\?hl=en\&as_q=python+3+book https://stackoverflow.com/questions/16807011/python-how-to-identify-if-a-variable-is-an-array-or-a-scalar https://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters http://bisqwit.iki.fi/ http://docs.python-guide.org/en/latest http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask https://www.reddit.com/r/learnpython/comments/264ffw/what_is_the_pythonic_way_of_storing_credentials https://docs.python.org/3/library/email.examples.html https://docs.python.org/2/library/email-examples.html https://stackoverflow.com/questions/34668240/email-an-attachment-with-non-ascii-filename-with-python-email https://developers.google.com/gmail/api/guides/sending https://encrypted.google.com/search\?hl=en\&as_q=programming+loop+unroll https://en.wikipedia.org/wiki/Loop_unrolling
 #nohup google-chrome-stable --ssl-version-min=tls1.1 http://www.thechessdrum.net/chessacademy/index.html http://www.thechessdrum.net/65thSquare/65_janfeb04.html http://www.cppsamples.com http://docs.python-guide.org/en/latest https://github.com/line/line-bot-sdk-python http://python-future.org/automatic_conversion.html http://python-future.org/compatible_idioms.html#compatible-idioms http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask "$@" &> /dev/null & disown
 }
@@ -337,22 +339,37 @@ fi
 }
 
 function ss() {
-#detect OS(Ubuntu, Debian, Mint, kali, RHEL, Centos, Fedora, Suse, etc.)
-#sudo apt update && sudo apt upgrade -y
+#trap on EXIT, that way, time(s) will be called whenever the shell exits and the exit status will be preserved.
+#http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
+trap time EXIT
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
-sudo dnf upgrade -y #Fedora
+#sudo apt update && sudo apt upgrade -y
+sudo dnf upgrade -y
 echo '$?':$?
 #youtube-dl upgrade
 utup
-return_code=$?
-echo '$return_code':$return_code
-#trap on EXIT, that way, times will be called whenever the shell exits and the exit status will be preserved.
-#http://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
-echo 'trap times EXIT'
-trap times EXIT
-echo '$(time) after "trap times EXIT"':$(time)
-echo '$(times) after "trap times EXIT"':$(times)
 echo '$?':$?
+}
+
+function detectOS() {
+#todo: detect OS(Ubuntu, Debian, Mint, kali, RHEL, Centos, Fedora, Suse, etc.)
+#https://github.com/dmytro/sherlock_os/blob/master/bin/sherlock
+#https://danielgibbs.co.uk/2013/04/bash-how-to-detect-os/
+arch=$(uname -m)
+kernel=$(uname -r)
+if [ -n "$(command -v lsb_release)" ]; then
+	distroname=$(lsb_release -s -d)
+elif [ -f "/etc/os-release" ]; then
+	distroname=$(grep PRETTY_NAME /etc/os-release | sed 's/PRETTY_NAME=//g' | tr -d '="')
+elif [ -f "/etc/debian_version" ]; then
+	distroname="Debian $(cat /etc/debian_version)"
+elif [ -f "/etc/redhat-release" ]; then
+	distroname=$(cat /etc/redhat-release)
+else
+	distroname="$(uname -s) $(uname -r)"
+fi
+
+echo "(trace):distroname:${distroname}"
 }
 
 function putfio() {
