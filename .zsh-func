@@ -24,6 +24,9 @@ vimeo_regxpr="^https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+$"
 facebook_regxpr="^https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%=&]*$"
 idx=0
 
+audiofrmt="(mp3|flac|m4a|opus|aac|wav)"
+videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb|avi|dvi|ogg)"
+
 #IFS=' ' read -a str_array <<< "$@"	#bad option: -a
 #for str in "${str_array[@]}";do	#unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
 cmd='sudo find /mnt/0 ~ -xdev -type f \( '
@@ -83,9 +86,9 @@ for str in "$@";do
 
 #strip extension except .todo
 #https://fileinfo.com/filetypes/common
-#	str="${str%\.*}"
 #	str="${str%?\.(mp4|mp3|mkv|mpg|mpeg|webm|m4a|aac|flac|rmvb|avi|opus|dvi|wav)}"  #non greedy
-	str="${str%\.(mp4|mp3|mkv|mpg|mpeg|webm|m4a|aac|flac|rmvb|avi|opus|dvi|wav)}"
+	str="${str%\.audiofrmt}"
+	str="${str%\.videofrmt}"
 	cmd+="-iname \"*$str*\" -o "
 done
 
@@ -273,24 +276,26 @@ fi
 }
 
 function vln() {
-#unfixed window position setting
+#todo: window position setting (minimize or maximize) based on file type or pass as args together with playback speed
 audio_only_flg=""
 wndw_pos=""
+audiofrmt="(mp3|flac|m4a|opus|aac|wav)"
+videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb|avi|dvi|ogg)"
 #if [[ $* =~ mp3\|flac\|aac\|wav ]];then
-if [[ $* =~ (mp3|flac|aac|wav)* ]];then
+if [[ $* =~ $audiofrmt ]];then
 	audio_only_flg="--qt-start-minimized"
-	echo '(trace):hit [[ $* =~ (mp3|flac|aac|wav)* ]]'
+	echo "(trace):hit [[ $* =~ $audiofrmt ]]"
 #elif [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]];then
-elif [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]];then
+elif [[ $* =~ $videofrmt ]];then
 	#wndw_pos="--video-x 0 --video-y 0" #place VLC in top left corner
-	echo '(trace):hit [[ $* =~ (mp4|mkv|webm|mpg|avi)* ]]'
-else
-	echo "error: invalid input files, please specify valid media files, and try again."
-	return 113
+	echo "(trace):hit [[ $* =~ $videofrmt ]]"
+#todo: return immediately when hit non-av file
+#else
+#	echo "error: invalid input files, please specify valid media files, and try again."
+#	return 113
 fi
-#todo
-#$* or $@ find substr("--rate[ \t]1") ? (NO "--rate 1.5" && pass on everything else ) : $@
-nohup vlc --no-metadata-network-access --rate 1.3 --qt-start-minimized "$@" &> /dev/null & disown	#work in pair?: --one-instance --playlist-enqueue
+
+nohup vlc --no-metadata-network-access --rate 1.3 --qt-start-minimized "$@" &> /dev/null & disown
 #nohup vlc --no-metadata-network-access --rate 1.5 "$audio_only_flg" "$wndw_pos" "$@" &> /dev/null & disown
 }
 
