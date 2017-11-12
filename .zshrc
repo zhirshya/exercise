@@ -149,8 +149,8 @@ alias cp='cp -i'
 alias date='date +"%Y%m%d %H%M%S.%N%::z%Z %A"'
 alias bc='bc -l' #echo "scale=3; 30000/7" | bc -l
 
-alias gcc='ccache gcc -std=c11 -Wall -Wextra -pedantic -ggdb3 -O0'
-alias gxx='ccache g++ -std=c++14 -Wall -Wextra -pedantic -ggdb3 -O0'
+alias gcc='ccache gcc -std=c11 -Wall -Wextra -pedantic -ggdb3 -Og'
+alias gc+='ccache g++ -std=c++17 -Wall -Wextra -pedantic -ggdb3 -Og'
 alias vgr='valgrind --leak-check=yes'
 
 alias vlc='vlc --no-metadata-network-access --one-instance --playlist-enqueue --qt-start-minimized'
