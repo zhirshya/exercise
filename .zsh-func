@@ -15,38 +15,40 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #use variables to hold regxprs to avoid: parse error near `&'
 #"dl+"(echo "$url" >> dllst for url in "$@") automatically escape ? and = in output file! e.g. https://www.youtube.com/playlist\?list\=PLKK11Ligqitg9MOX3-0tFT1Rmh3uJp7kA
 #utvList_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/playlist[\]?\?list[\]?=[-_a-zA-Z0-9]+$"
-utvList_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/playlist\\\\?\?list\\\\?=[-_a-zA-Z0-9]+$"
+local utvList_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/playlist\\\\?\?list\\\\?=[-_a-zA-Z0-9]+$"
 #utvSingl_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+([\&#]list=[-_.a-zA-Z0-9]+)?([-_.a-zA-Z0-9\&#=]+)*$"
-utvSingl_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+([\&#]list=[-_.a-zA-Z0-9]+)?[-_.a-zA-Z0-9\&#=]*$"
-codek_regxpr="^https?://(www\.)?codek\.tv/v/[-_a-zA-Z0-9]+$"
-knl9_regxpr="^https?://video\.ch9\.ms/[-_a-zA-Z0-9/.]+[-_a-zA-Z0-9.]+$"
-vimeo_regxpr="^https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+$"
-facebook_regxpr="^https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%=&]*$"
-idx=0
+local utvSingl_regxpr="^https?://(www\.)?youtu\.?be(\.com)?/(watch\?v=)?[-_a-zA-Z0-9]+([\&#]list=[-_.a-zA-Z0-9]+)?[-_.a-zA-Z0-9\&#=]*$"
+local codek_regxpr="^https?://(www\.)?codek\.tv/v/[-_a-zA-Z0-9]+$"
+local knl9_regxpr="^https?://video\.ch9\.ms/[-_a-zA-Z0-9/.]+[-_a-zA-Z0-9.]+$"
+local vimeo_regxpr="^https?://(www\.)?vimeo\.com/[-_a-zA-Z0-9]+$"
+local facebook_regxpr="^https?://video\.[.a-zA-Z0-9]*fbcdn\.net/v/[-_.a-zA-Z0-9]+/[-_.a-zA-Z0-9]+(mp4|webm|mkv)[-_.a-zA-Z0-9?%=&]*$"
+local idx=0
 
-audiofrmt="(mp3|flac|m4a|opus|aac|wav)"
-videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb|avi|dvi|ogg)"
+local audiofrmt="(mp3|flac|m4a|opus|aac|wav)"
+local videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb|avi|dvi|ogg)"
+local arg_list_file="._arg_$(command date +"%Y%m%d%H%M%S").tmp"
 
+local cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 #IFS=' ' read -a str_array <<< "$@"	#bad option: -a
 #for str in "${str_array[@]}";do	#unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
-cmd='sudo find /mnt/0 ~ -xdev -type f \( '
-for str in "$@";do
+
+local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
+echo '(trace):uniq_args:['$uniq_args']'
+local IFS=$'\n'
+for str in "$uniq_args";do
+#for str in "$@";do
 #trim spaces at both ends
 #	str="${str##( |\t|\f|\v)}"
 #	str="${str%%( |\t|\f|\v)}"
 #	str=$(tr -s "[:blank:]" <<<$str)
 	str=$(tr -s " \t\f\v" <<<$str)
 
-#	echo '$str:['$str']'
 	#https://stackoverflow.com/questions/369758/how-to-trim-whitespace-from-a-bash-variable
-	# remove leading whitespace characters
-#	str="${str#"${str%%[![:space:]]*}"}"
-	# remove trailing whitespace characters
-#	str="${str%"${str##*[![:space:]]}"}"
-#	echo '$str:['$str']'
 	str=$(trmsp $str)
     	echo "(trace):input arg after func trmsp() called:[$str]"
 	
+	echo "$str" >> $arg_list_file
+
 	if [[ $str =~ $utvList_regxpr ]];then
 		echo "(trace):[$str] match [$utvList_regxpr]"
 		echo '$'$((++idx)):'['$str']'
@@ -86,7 +88,7 @@ for str in "$@";do
 
 #strip extension except .todo
 #https://fileinfo.com/filetypes/common
-#	str="${str%?\.(mp4|mp3|mkv|mpg|mpeg|webm|m4a|aac|flac|rmvb|avi|opus|dvi|wav)}"  #non greedy
+#	str="${str%?\.(mp4|mp3|mkv|mpg|mpeg|webm|m4a|aac|flac|rmvb|avi|opus|dvi|wav)}"  #?:non greedy
 	str="${str%\.audiofrmt}"
 	str="${str%\.videofrmt}"
 	cmd+="-iname \"*$str*\" -o "
@@ -94,9 +96,25 @@ done
 
 if [[ $cmd =~ -iname ]];then
 	cmd=${cmd% -o }
-	cmd+=' \) -exec ls -alFt {} \;'
+#	cmd+=' \) -exec ls -alFt {} \;'
+#	cmd+=" \) -exec ls -alFt {} \; | gawk '{print $9}' | sed 's/\'\|\"//g' >> ._find_out.tmp"
+	cmd+=" \) -exec ls -alFt {} \; >> ._find_out.tmp"
+
 	echo '(trace):$cmd(\?(){}):['$cmd']'
 	eval ${cmd}
+
+#	gawk '{print $9}' ._find_out.tmp | sed 's/\'\|"//g;s/^.*\([-_a-zA-Z0-9]\{11\}\)\.[a-zA-Z0-9]\+$/\1/' > ._avID_find_out.tmp
+#	gawk '{print $9}' ._find_out.tmp | sed 's/^.\+\([-_a-zA-Z0-9]\{11\}\)\.[a-zA-Z0-9]\+(\x22\|\x27)\?$/\1/' > ._avID_find_out.tmp
+	gawk '{print $9}' ._find_out.tmp | sed 's/^.\+\([-_a-zA-Z0-9]\{11\}\)\..\+$/\1/' > ._avID_find_out.tmp
+	command grep -v -F -f ._avID_find_out.tmp $arg_list_file >> dllst
+	echo '(trace):already downloaded:'
+	more ._find_out.tmp
+	echo '(trace):already downloaded ID:'
+	more ._avID_find_out.tmp
+	echo '(trace):download list:'
+	more dllst
+	rm ._*arg*.tmp ._*find_out.tmp
+
 	echo '$?':$?
 else
 	return 113	#can't be reflected on(passed to) outer/upper level!
@@ -114,10 +132,10 @@ if (($# > 0));then
 	#[generic] watch?v=B2XtqVZcSdM': Downloading webpage
 	#ERROR: Unable to download webpage: <urlopen error [Errno -2] Name or service not known> (caused by URLError(gaierror(-2, 'Name or service not known'),))
 	#uniq_args=$(gawk -v quot="'" 'BEGIN {RS=ORS="\n"} !seen[$0]++ {printf "%s%s%s\n", quot, $0, quot}' <<< "$@")
-	uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$@")
+	local uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$@")
 	uniq_args=$(trmsp $uniq_args)
 	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
-	outfile="/mnt/0/gthb/note/.todo"
+	local outfile="/mnt/0/gthb/note/.todo"
 	echo '(trace):outfile:['$outfile']'
 	#command cp -f "$outfile" "$outfile.bk"  #unnecessary because of github
 	#https://unix.stackexchange.com/questions/39291/run-a-command-that-is-shadowed-by-an-alias
@@ -133,7 +151,7 @@ fi
 #append to youtube download file
 function dl+() {
 if (($# > 0));then
-	dllst_file="dllst"
+	local dllst_file="dllst"
 	#⓪ 
 	#Don't quote args
 	#WARNING: The url doesn't specify the protocol, trying with http
@@ -143,7 +161,7 @@ if (($# > 0));then
 	#ERROR: Unable to download webpage: <urlopen error [Errno -2] Name or service not known> (caused by URLError(gaierror(-2, 'Name or service not known'),))
 
 	#uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" "} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
-	uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
+	local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	#①
 	if [[ -f $dllst_file ]];then
@@ -158,6 +176,7 @@ if (($# > 0));then
 		#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
 		#https://unix.stackexchange.com/questions/39291/run-a-command-that-is-shadowed-by-an-alias
 
+	#	local IFS=$'\n'
 	#	for url in "$uniq_args";do
 	#	#	url="${url%&list=*}"
 	#	#	url="${url%&index=*}"
@@ -186,8 +205,9 @@ fi
 
 function 0() {
 if (($# > 0));then
-	uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
+	local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
+	local IFS=$'\n'
 	for file in "$uniq_args";do
 		if [[ -f $file ]];then
 			command mv -f "$file" "$file.bk"
@@ -201,21 +221,23 @@ fi
 function utlsfrm() {
 if (($# > 0));then
 #	uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
-	uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
+	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
-#	for url in "$uniq_args";do
-#		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
-#	done
-	youtube-dl --youtube-skip-dash-manifest --list-formats $uniq_args
+	local IFS=$'\n'
+	for url in "$uniq_args";do
+		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
+	done
+#	youtube-dl --youtube-skip-dash-manifest --list-formats $uniq_args
 	echo '$?':$?
 fi
 }
 
 function dprx() {
 if (($# > 0));then
-	uniq_args=$(gawk -v quot="\"" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
+	local uniq_args=$(gawk -v quot="\"" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 
+	local IFS=$'\n'
 	for arg in "$uniq_args";do
 		#if [[ $arg =~ ^(http|HTTP)s?$ ]];then
 		if [[ $arg =~ (http|HTTP)s? ]];then
@@ -277,10 +299,10 @@ fi
 
 function vln() {
 #todo: window position setting (minimize or maximize) based on file type or pass as args together with playback speed
-audio_only_flg=""
-wndw_pos=""
-audiofrmt="(mp3|flac|m4a|opus|aac|wav)"
-videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb|avi|dvi|ogg)"
+local audio_only_flg=""
+local wndw_pos=""
+local audiofrmt="(mp3|flac|m4a|opus|aac|wav)"
+local videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb|avi|dvi|ogg)"
 #if [[ $* =~ mp3\|flac\|aac\|wav ]];then
 if [[ $* =~ $audiofrmt ]];then
 	audio_only_flg="--qt-start-minimized"
@@ -306,9 +328,9 @@ vlc --longhelp --advanced | less
 function utup() {
 setopt nocasematch
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
-return_code=113
-out_msg="error"
-err_counter=0
+local return_code=113
+local out_msg="error"
+local err_counter=0
 while (($return_code != 0)) || [[ $out_msg =~ error* ]];do #1.ERROR: can't find the current version. Please try again later. 2.Updating to version 2016.08.22 ...\nERROR: unable to download latest version (for error 2,better to detect network connection and return if connection lost)
 #while (($return_code <> 0)) || [[ $out_msg =~ error ]];do #bad math expression: operand expected at `> 0'
 	if ((err_counter++ > 9));then
@@ -360,8 +382,9 @@ function detectOS() {
 #todo: detect OS(Ubuntu, Debian, Mint, kali, RHEL, Centos, Fedora, Suse, etc.)
 #https://github.com/dmytro/sherlock_os/blob/master/bin/sherlock
 #https://danielgibbs.co.uk/2013/04/bash-how-to-detect-os/
-arch=$(uname -m)
-kernel=$(uname -r)
+local arch=$(uname -m)
+local kernel=$(uname -r)
+local distroname=""
 if [ -n "$(command -v lsb_release)" ]; then
 	distroname=$(lsb_release -s -d)
 elif [ -f "/etc/os-release" ]; then
@@ -454,8 +477,8 @@ done
 #Shift JIS to utf8
 function sjis2utf8() {
 if (($# == 1));then
-	basename=${1%\.*}
-	extension=${1##*\.}
+	local basename=${1%\.*}
+	local extension=${1##*\.}
 	echo 'file base name:${file%\.*}':$basename
 	echo 'file extension:${file##*\.}':$extension
 	iconv -f shift-JIS -t utf8 "$1" > "${basename}_utf8.${extension}"
@@ -468,8 +491,8 @@ fi
 #erroneous
 function urlencode() {
 # urlencode <string>
-old_lc_collate=$LC_COLLATE
-LC_COLLATE=C
+local old_lc_collate=$LC_COLLATE
+local LC_COLLATE=C
 
 local length="${#1}"
 for (( i = 0; i < length; ++i ));do
@@ -521,13 +544,14 @@ if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2
 fi
 
 echo '$#':$#
-idx=0
+local idx=0
 for arg in "$@";do
 	echo '$'$((++idx)):'['$arg']'
 done
 
-infile=""
-outfile=""
+local infile=""
+local outfile=""
+local factor=""
 
 if [[ ! -f $1 ]];then
 	echo "please specify a valid local file name, and try again."
@@ -617,8 +641,8 @@ echo "#test>"
 
 #'How'\''s Do One-Way Mirrors Work-4kKL32opewI.mp4' #output by ll on Fedora24+
 
-infile_singlequoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
-outfile_singlequoted=$(printf \'%s\' "$(printf %s "$outfile" | sed "s/'/'\\\\''/g")")
+local infile_singlequoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
+local outfile_singlequoted=$(printf \'%s\' "$(printf %s "$outfile" | sed "s/'/'\\\\''/g")")
 echo '"${infile_singlequoted}"':"${infile_singlequoted}"
 echo '"${outfile_singlequoted}"':"${outfile_singlequoted}"
 
@@ -627,7 +651,7 @@ if [[ -e ${outfile_singlequoted} ]];then
 	return 113
 fi
 
-cmd='ffmpeg -i '
+local cmd='ffmpeg -i '
 cmd+="${infile_singlequoted}" #"$infile_singlequoted"
 cmd+=' -filter:v "setpts=PTS/'
 cmd+=$factor
@@ -673,7 +697,7 @@ nohup libreoffice --calc "$@" &> /dev/null & disown
 }
 
 function wrtr() {
-args=""
+local args=""
 for file in "$@";do
 	if [[ -d $file ]];then
 		echo "error: directory with name \`$file' already exist, unable to edit directories, please specify other file name, and try again."
@@ -723,9 +747,9 @@ fi
 
 function dlchk() {
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
-urls_whitespaced=""
-errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"	#use variable to hold complex regxpr!
-dllst_file="dllst"
+local urls_whitespaced=""
+local errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"	#use variable to hold complex regxpr!
+local dllst_file="dllst"
 
 while getopts "t" opt; do
 	case "$opt" in
@@ -741,7 +765,7 @@ shift $((OPTIND-1))
 
 #Note: For those dealing with CJK text (Chinese, Japanese, and Korean), the double-byte space (Unicode \u3000) is not included in \s for any implementation I've tried so far (Perl, .NET, PCRE, Python). You'll need to either normalize your strings first (such as by replacing all \u3000 with \u0020), or you'll have to use a character set that includes this codepoint in addition to whatever other whitespace you're targeting, such as [ \t\u3000].
 #https://stackoverflow.com/questions/3583111/regular-expression-find-spaces-tabs-space-but-not-newlines
-blankline_rexpr="^[ \t\u3000]*$"
+local blankline_rexpr="^[ \t\u3000]*$"
 
 for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 #	if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then	#error: condition expected: $file	#stderr inaccessible this way!
@@ -761,7 +785,7 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 	#\? $urls_whitespaced	#wrong!
 	#cmd="\? $urls_whitespaced"
 	#cmd="\? $(gawk -v quot="'" '!seen[toupper($0)]++ {printf "%s%s%s ", quot, $0, quot} END {print ""}' $file)"
-	cmd="\? $(gawk -v quot="'" '!seen[$0]++ {printf "%s%s%s ", quot, $0, quot}' $file)"
+	local cmd="\? $(gawk -v quot="'" '!seen[$0]++ {printf "%s%s%s ", quot, $0, quot}' $file)"
 	
 	#https://unix.stackexchange.com/questions/102008/how-do-i-trim-leading-and-trailing-whitespace-from-each-line-of-some-output
 	#shopt -s extglob  #setopt: no such option: extglob
@@ -816,11 +840,11 @@ diff ~/.zshrc /mnt/0/gthb/xrcs/.zshrc
 }
 
 function gtps() {
-curdir=$PWD
-gthbdir="/mnt/0/gthb"
-saveIFS="$IFS"
+local curdir="$PWD"
+local gthbdir="/mnt/0/gthb"
+local saveIFS="$IFS"
 echo '(trace):original/default $IFS:['$IFS']'
-IFS=" " gthbRepodirs=("xrcs" "note")
+local IFS=" " gthbRepodirs=("xrcs" "note")
 #https://stackoverflow.com/questions/18383291/loop-over-set-of-strings-containing-spaces
 #https://superuser.com/questions/781766/ifs-separated-items-in-loop
 #https://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters
@@ -854,7 +878,7 @@ fi
 #mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
 
 #①
-tmpfile=$(mktemp $(dirname "$1")/_XXXXXX_)
+local tmpfile=$(mktemp $(dirname "$1")/_XXXXXX_)
 if [[ ! -f $tmpfile ]]; then
   echo "(trace):Could not create temporary intermediate file!"
   return -1
