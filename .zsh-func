@@ -35,6 +35,7 @@ local cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
 echo '(trace):uniq_args:['$uniq_args']'
 local IFS=$'\n'
+local str=""
 for str in "$uniq_args";do
 #for str in "$@";do
 #trim spaces at both ends
@@ -177,6 +178,7 @@ if (($# > 0));then
 		#https://unix.stackexchange.com/questions/39291/run-a-command-that-is-shadowed-by-an-alias
 
 	#	local IFS=$'\n'
+	#	local url=""
 	#	for url in "$uniq_args";do
 	#	#	url="${url%&list=*}"
 	#	#	url="${url%&index=*}"
@@ -208,6 +210,7 @@ if (($# > 0));then
 	local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	local IFS=$'\n'
+	local file=""
 	for file in "$uniq_args";do
 		if [[ -f $file ]];then
 			command mv -f "$file" "$file.bk"
@@ -224,6 +227,7 @@ if (($# > 0));then
 	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 	local IFS=$'\n'
+	local url=""
 	for url in "$uniq_args";do
 		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
 	done
@@ -238,6 +242,7 @@ if (($# > 0));then
 	echo '(trace):uniq_args:['$uniq_args']'
 
 	local IFS=$'\n'
+	local arg=""
 	for arg in "$uniq_args";do
 		#if [[ $arg =~ ^(http|HTTP)s?$ ]];then
 		if [[ $arg =~ (http|HTTP)s? ]];then
@@ -460,6 +465,7 @@ echo '$?':$?
 }
 
 function srvstr() {
+local srv=""
 for srv in "$@";do
 	sudo service "$srv" start
 	echo '$?':$?
@@ -467,6 +473,7 @@ done
 }
 
 function srvstp() {
+local srv=""
 for srv in "$@";do
 	sudo service "$srv" stop
 	echo '$?':$?
@@ -495,6 +502,7 @@ local old_lc_collate=$LC_COLLATE
 local LC_COLLATE=C
 
 local length="${#1}"
+local i=0 
 for (( i = 0; i < length; ++i ));do
 	local c="${1:i:1}"
 	case $c in
@@ -519,6 +527,7 @@ if (($# == 0));then
 	curl wttr.in
 	echo '$?':$?
 else
+	local arg=""
 	for arg in "$@";do
 		if [[ $arg =~ [a-zA-Z0-9.]*[a-zA-Z]+ ]];then
 			curl wttr.in/@$arg
@@ -545,6 +554,7 @@ fi
 
 echo '$#':$#
 local idx=0
+local arg=""
 for arg in "$@";do
 	echo '$'$((++idx)):'['$arg']'
 done
@@ -766,7 +776,7 @@ shift $((OPTIND-1))
 #Note: For those dealing with CJK text (Chinese, Japanese, and Korean), the double-byte space (Unicode \u3000) is not included in \s for any implementation I've tried so far (Perl, .NET, PCRE, Python). You'll need to either normalize your strings first (such as by replacing all \u3000 with \u0020), or you'll have to use a character set that includes this codepoint in addition to whatever other whitespace you're targeting, such as [ \t\u3000].
 #https://stackoverflow.com/questions/3583111/regular-expression-find-spaces-tabs-space-but-not-newlines
 local blankline_rexpr="^[ \t\u3000]*$"
-
+local file=""
 for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 #	if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then	#error: condition expected: $file	#stderr inaccessible this way!
 	if [[ ! $file =~ $errmsg && -f $file ]];then	#stderr inaccessible this way!
@@ -850,6 +860,7 @@ local IFS=" " gthbRepodirs=("xrcs" "note")
 #https://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters
 echo '(trace):temporarily set $IFS:['$IFS']'
 IFS="$saveIFS"
+local repo=""
 for repo in "${gthbRepodirs[@]}";do cd $gthbdir/$repo && (echo '$PWD':$PWD ; git push origin $(git_current_branch));done
 cd $curdir
 echo '$?':$?
