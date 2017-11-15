@@ -123,7 +123,7 @@ if [[ $cmd =~ -iname ]];then
 	if ([[ $uniq_args =~ $wanurl_EscapeBraces ]] && echo "(trace):match regxpr \`$wanurl_EscapeBraces' in args") || ([[ $uniq_args =~ $wanurl_NoEscapeBraces ]] && echo "(trace):match regxpr \`$wanurl_NoEscapeBraces' in args");then
 	#	echo "(trace):match regxpr \`$wanurl_NoEscapeBraces' in args"
 		eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
-		echo '(trace):ID(last 5 char of main part) of already downloaded:'
+		echo -e '(trace):ID(last 5 char of names\x27 main part) of already downloaded:'
 		more "$dnldd_file"
 
 		command grep -v -F -f "$dnldd_file" <<< $uniq_args > "$dllst_file"
