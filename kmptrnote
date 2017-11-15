@@ -134,6 +134,7 @@ grep -HinR "usermod -aG" /mnt/0/gthb/xrcs/
 alias grep='grep --color=auto -R -n -H -C 5 -i --exclude-dir={.git,.svn,.hg,.bzr,CVS}'
 
 #sed, vim
+sed 's/\x22\|\x27//g'  #' "
 sed -i.bak "s/\"\\\\n\"/'\\\\n'/g" *.cpp /* cout << "\n" --> cout << '\n' (see Effective Modern C++ by Scott Meyer) */
 %s/\(>\s*[/\w.+~-]\+\)\s\+2>&1/\&\1/gc #pattern not found
 g/\(>\s*[/\w.-]\+\)\s\+2>&1/s//\&\1/gc #pattern not found
