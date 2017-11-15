@@ -116,11 +116,12 @@ if [[ $cmd =~ -iname ]];then
 #	cmd+=" \) -exec ls -alFt {} \; | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > $dnldd_file"  #zsh: NF-1: command not found...
 	echo '(trace):$cmd(\?(){}):['$cmd']'
 
-	local wanurl_NoBackSlash="[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,3}/[a-zA-Z0-9]+"
-	local wanurl_BackSlash="[a-zA-Z0-9]+\.[a-zA-Z0-9]\{2,3\}/[a-zA-Z0-9]+"
-	#todo: jump statement in shell script
-	if [[ $uniq_args =~ $wanurl_NoBackSlash ]];then
-		echo "(trace):match regxpr \`$wanurl_NoBackSlash' in args"
+	local wanurl_NoEscapeBraces="[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,3}/[a-zA-Z0-9]+"
+	local wanurl_EscapeBraces="[a-zA-Z0-9]+\.[a-zA-Z0-9]\{2,3\}/[a-zA-Z0-9]+"
+	#todo: jump statement in shell script  #unnecessary because of if(... && ...) || (... && ...)
+	#if [[ $uniq_args =~ $wanurl_NoEscapeBraces ]];then
+	if ([[ $uniq_args =~ $wanurl_EscapeBraces ]] && echo "(trace):match regxpr \`$wanurl_EscapeBraces' in args") || ([[ $uniq_args =~ $wanurl_NoEscapeBraces ]] && echo "(trace):match regxpr \`$wanurl_NoEscapeBraces' in args");then
+	#	echo "(trace):match regxpr \`$wanurl_NoEscapeBraces' in args"
 		eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
 		echo '(trace):ID(last 5 char of main part) of already downloaded:'
 		more "$dnldd_file"
@@ -129,16 +130,16 @@ if [[ $cmd =~ -iname ]];then
 		
 		echo '(trace):download list:'
 		more "$dllst_file"
-	elif [[ $uniq_args =~ $wanurl_BackSlash ]];then
-		echo "(trace):match regxpr \`$wanurl_BackSlash' in args"
-		eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
-		echo '(trace):ID(last 5 char of main part) of already downloaded:'
-		more "$dnldd_file"
-
-		command grep -v -F -f "$dnldd_file" <<< $uniq_args > "$dllst_file"
-		
-		echo '(trace):download list:'
-		more "$dllst_file"
+#	elif [[ $uniq_args =~ $wanurl_EscapeBraces ]];then
+#		echo "(trace):match regxpr \`$wanurl_EscapeBraces' in args"
+#		eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
+#		echo '(trace):ID(last 5 char of main part) of already downloaded:'
+#		more "$dnldd_file"
+#
+#		command grep -v -F -f "$dnldd_file" <<< $uniq_args > "$dllst_file"
+#		
+#		echo '(trace):download list:'
+#		more "$dllst_file"
 	else
 		eval ${cmd}
 	fi
