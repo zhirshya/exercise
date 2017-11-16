@@ -32,7 +32,8 @@ local videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb
 local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
 echo '(trace):uniq_args:['$uniq_args']'
 
-local dnldd_file="/tmp/._downloaded.ID.tmp"
+local dnldd_file="/tmp/._downloaded.tmp"
+local dnldd_ID="/tmp/._downloaded.ID.tmp"
 local dllst_file="dllst"
 
 local cmd='sudo find /mnt/0 ~ -xdev -type f \( '
@@ -122,14 +123,20 @@ if [[ $cmd =~ -iname ]];then
 	#if [[ $uniq_args =~ $wanurl_NoEscapeBraces ]];then
 	if ([[ $uniq_args =~ $wanurl_EscapeBraces ]] && echo "(trace):match regxpr \`$wanurl_EscapeBraces' in args") || ([[ $uniq_args =~ $wanurl_NoEscapeBraces ]] && echo "(trace):match regxpr \`$wanurl_NoEscapeBraces' in args");then
 	#	echo "(trace):match regxpr \`$wanurl_NoEscapeBraces' in args"
-		eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
-		echo -e '(trace):ID(last 5 char of names\x27 main part) of already downloaded:'
-		more "$dnldd_file"
+	#	eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
+		eval ${cmd} | tee "$dnldd_file" 2>&1
 
-		command grep -v -F -f "$dnldd_file" <<< $uniq_args > "$dllst_file"
-		
-		echo '(trace):download list:'
-		more "$dllst_file"
+	#	echo -e '(trace):ID(last 5 char of names\x27 main part) of already downloaded:'
+	#	more "$dnldd_file"
+
+	#	if (( $(wc -l "$dnldd_file") < $(wc -l <<< $uniq_args) ));then  #?:129: division by zero
+		if (( $(wc -l "$dnldd_file") < $(echo -n $uniq_args | wc -l) ));then  #?:130: division by zero
+			gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' "$dnldd_file" > "$dnldd_ID"
+			command grep -v -F -f "$dnldd_ID" <<< $uniq_args > "$dllst_file"
+			echo '(trace):download list:'
+			more "$dllst_file"
+		fi
+
 #	elif [[ $uniq_args =~ $wanurl_EscapeBraces ]];then
 #		echo "(trace):match regxpr \`$wanurl_EscapeBraces' in args"
 #		eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
