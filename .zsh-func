@@ -32,10 +32,6 @@ local videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb
 local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
 echo '(trace):uniq_args:['$uniq_args']'
 
-local dnldd_file="/tmp/._downloaded.tmp"
-local dnldd_ID="/tmp/._downloaded.ID.tmp"
-local dllst_file="dllst"
-
 local cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 
 #https://unix.stackexchange.com/questions/275794/iterating-over-multiple-line-string-stored-in-variable
@@ -123,6 +119,8 @@ if [[ $cmd =~ -iname ]];then
 	#if [[ $uniq_args =~ $wanurl_NoEscapeBraces ]];then
 	if ([[ $uniq_args =~ $wanurl_EscapeBraces ]] && echo "(trace):match regxpr \`$wanurl_EscapeBraces' in args") || ([[ $uniq_args =~ $wanurl_NoEscapeBraces ]] && echo "(trace):match regxpr \`$wanurl_NoEscapeBraces' in args");then
 	#	echo "(trace):match regxpr \`$wanurl_NoEscapeBraces' in args"
+
+		local dnldd_file="/tmp/._downloaded.tmp"
 	#	eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
 		eval ${cmd} | tee "$dnldd_file" 2>&1
 
@@ -137,12 +135,13 @@ if [[ $cmd =~ -iname ]];then
 		if (( $(wc -l < "$dnldd_file") < $(wc -l <<< $uniq_args) ));then
 	#	if (( $(wc -l "$dnldd_file") < $(wc -l <<< $uniq_args) ));then  #?:LnNum: division by zero
 	#	if (( $(wc -l "$dnldd_file") < $(echo -n $uniq_args | wc -l) ));then  #?:LnNum: division by zero
+			local dnldd_ID="/tmp/._downloaded.ID.tmp"
+			local dllst_file="dllst"
 			gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' "$dnldd_file" > "$dnldd_ID"
 			command grep -v -F -f "$dnldd_ID" <<< $uniq_args > "$dllst_file"
 			echo '(trace):download list:'
 			more "$dllst_file"
 		fi
-
 #	elif [[ $uniq_args =~ $wanurl_EscapeBraces ]];then
 #		echo "(trace):match regxpr \`$wanurl_EscapeBraces' in args"
 #		eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
@@ -264,11 +263,15 @@ if (($# > 0));then
 #	local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
 	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
+setopt sh_word_split
+setopt SH_WORD_SPLIT
 	local IFS=$'\n'
 	local url=""
 	for url in "$uniq_args";do
 		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
 	done
+unsetopt sh_word_split
+unsetopt SH_WORD_SPLIT
 #	youtube-dl --youtube-skip-dash-manifest --list-formats $uniq_args  #only first arg get handled
 	echo '$?':$?
 fi
@@ -279,6 +282,8 @@ if (($# > 0));then
 	local uniq_args=$(gawk -v quot="\"" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
 
+setopt sh_word_split
+setopt SH_WORD_SPLIT
 	local IFS=$'\n'
 	local arg=""
 	for arg in "$uniq_args";do
@@ -301,6 +306,8 @@ if (($# > 0));then
 			echo '(trace):$arg:['$arg'] unrecognized protocol!'
 		fi
 	done
+unsetopt sh_word_split
+unsetopt SH_WORD_SPLIT
 fi
 prprx
 }
