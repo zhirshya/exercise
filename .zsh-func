@@ -406,13 +406,24 @@ nohup google-chrome-stable --ssl-version-min=tls1.1 https://encrypted.google.com
 function s0() {
 if ((0 < $#));then
 	local uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$@")
-	uniq_args=$(trmsp $uniq_args)
+	#https://stackoverflow.com/questions/15108229/how-to-count-number-of-words-from-string-using-shell
+	#https://stackoverflow.com/questions/1469849/how-to-split-one-string-into-multiple-strings-separated-by-at-least-one-space-in
+	#https://stackoverflow.com/questions/1975849/how-to-split-a-line-into-words-separated-by-one-or-more-spaces-in-bash
+	uniq_args=($(trmsp $uniq_args))
 
-	echo '${#uniq_args[@]}':${#uniq_args[@]}
+	echo '${uniq_args[@]}:['${uniq_args[@]}']'
+	echo '$uniq_args[@]:['$uniq_args[@]']'
+	echo '${#uniq_args[@]}:['${#uniq_args[@]}']'
+	echo '${uniq_args[@]:-1}:['${uniq_args[@]:-1}']'
+	echo '$#':$#
+	echo '$0:['$0']'
+	#https://stackoverflow.com/questions/1975849/how-to-split-a-line-into-words-separated-by-one-or-more-spaces-in-bash
+	#use for value in "${var[@]}" in this context instead of an index variable. While in this case the array may be contiguous, Bash supports sparse arrays and ${#var[@]} may not be the last entry (although ${var[@]: -1} will be and indices=(${!a[@]}); count=${#indices[@]} will give the list of indices and the correct count)
 	local i=${#uniq_args[@]}
 	for ((; 0 < i; --i));do
 		if [[ $i =~ [0-9]+ ]];then
-			sudo shutdown -P -f $i
+			echo 'sudo shutdown -P -f ${uniq_args[i]}:['${uniq_args[i]}']'
+			sudo shutdown -P -f ${uniq_args[i]}
 			break
 		fi
 	done
