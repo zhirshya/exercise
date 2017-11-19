@@ -22,10 +22,10 @@ COMMENT
 
 while getopts "st:f:b:" opt; do
 	case "$opt" in
-	s) lockpoweroff_screen="NoLockPoweroffScreen";;
-	t) shutdown_timeout="$OPTARG";;
-	f) format_num="$OPTARG";;
-	b) bandwidth_rate="$OPTARG";;
+	s) local lockpoweroff_screen="NoLockPoweroffScreen";;
+	t) local shutdown_timeout="$OPTARG";;
+	f) local format_num="$OPTARG";;
+	b) local bandwidth_rate="$OPTARG";;
 	\?) # unknown flag
 		#echo >&2 \
 		echo "usage: $0 [-s] [-t positive_integer] [-b positive_integer[kKmM]]"
@@ -40,8 +40,8 @@ if [[ -z $lockpoweroff_screen ]] || [[ -n $lockpoweroff_screen ]];then
 	dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 fi
 
-xt_code=-1
-err_counter=0
+local xt_code=-1
+local err_counter=0
 while [[ $xt_code -ne 0 ]];do
 	#https://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions
 	#-v varname: True if the shell variable varname is set (has been assigned a value).
