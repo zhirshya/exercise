@@ -139,7 +139,7 @@ if [[ $cmd =~ -iname ]];then
 			local dllst_file="dllst"
 			gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' "$dnldd_file" > "$dnldd_ID"
 			command grep -v -F -f "$dnldd_ID" <<< $uniq_args >> "$dllst_file"
-			cat -n <<< "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$dllst_file"
+			cat -n < "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$dllst_file"
 			echo '(trace):download list:'
 			more "$dllst_file"
 		fi
@@ -169,8 +169,6 @@ if (($# > 0));then
 	local outfile="/mnt/0/gthb/note/.todo"
 	echo '(trace):outfile:['$outfile']'
 
-	#echo "$uniq_args" >> "$outfile"
-	#cat -n "$outfile" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$outfile"
 	cat -n <<< "$uniq_args" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$outfile"
 	#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
 
