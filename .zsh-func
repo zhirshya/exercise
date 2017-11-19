@@ -52,7 +52,7 @@ for str in $uniq_args;do
 #	str="${str##( |\t|\f|\v)}"
 #	str="${str%%( |\t|\f|\v)}"
 #	str=$(tr -s "[:blank:]" <<<$str)
-	str=$(tr -s " \t\f\v" <<<$str)
+	str=$(tr -s " \t\f\v" <<< $str)
 
 	#https://stackoverflow.com/questions/369758/how-to-trim-whitespace-from-a-bash-variable
 	str=$(trmsp $str)
@@ -139,7 +139,8 @@ if [[ $cmd =~ -iname ]];then
 			local dllst_file="dllst"
 			gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' "$dnldd_file" > "$dnldd_ID"
 			command grep -v -F -f "$dnldd_ID" <<< $uniq_args >> "$dllst_file"
-			cat -n < "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$dllst_file"
+			#cat -n < "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$dllst_file"
+			cat -n "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$dllst_file"
 			echo '(trace):download list:'
 			more "$dllst_file"
 		fi
@@ -180,7 +181,6 @@ fi
 function dl+() {
 if (($# > 0));then
 	local dllst_file="dllst"
-	#⓪ 
 	#Don't quote args
 	#WARNING: The url doesn't specify the protocol, trying with http
 	#[generic] watch?v=B2XtqVZcSdM': Requesting header
@@ -191,16 +191,13 @@ if (($# > 0));then
 	#local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" "} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
 	local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
 	echo '(trace):uniq_args:['$uniq_args']'
-	#①
+
 	if [[ -f $dllst_file ]];then
 	#	gawk '!seen[toupper($0)]++{exit 1}' $dllst_file || (
 	#		echo 'dl+(){} found duplicate lines, remove duplicates now.'
 	#		gawk '!seen[toupper($0)]++' $dllst_file > ._tmp_ && command mv -f ._tmp_ $dllst_file
 	#		)
-	#②
-		#echo $uniq_args >> $dllst_file
-	#③
-		#cat -n $dllst_file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ $dllst_file
+
 		cat -n <<< $uniq_args | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ $dllst_file
 		#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
 		#https://unix.stackexchange.com/questions/39291/run-a-command-that-is-shadowed-by-an-alias
@@ -220,7 +217,6 @@ if (($# > 0));then
 	#		1
 	#		END{for (line in uniq_args) print line >> FILENAME}' <<< $uniq_args $dllst_file
 	else
-	#④
 	#	gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot}' <<< $uniq_args >> $dllst_file
 		gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$uniq_args" >> $dllst_file  #already quoted in $uniq_args
 	fi
