@@ -805,3 +805,7 @@ ll {.,*}vim*
 #https://github.com/dawikur/algorithm-mnemonics.vim
 g:algorithm_mnemonics_const_return="Left"
 
+#chatbot
+#http://itchat.readthedocs.io/zh/latest/
+pip install --user --upgrade itchat
+
