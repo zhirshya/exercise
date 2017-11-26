@@ -925,7 +925,7 @@ echo ------
 diff ~/.zshrc /mnt/0/gthb/xrcs/.zshrc
 }
 
-function gtps() {
+function psgt() {
 local curdir="$PWD"
 local gthbdir="/mnt/0/gthb"
 local saveIFS="$IFS"
