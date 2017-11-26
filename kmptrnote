@@ -809,3 +809,5 @@ g:algorithm_mnemonics_const_return="Left"
 #http://itchat.readthedocs.io/zh/latest/
 pip install --user --upgrade itchat
 
+tr -t '[:upper:]' '[:lower:]' <<< $tst_var
+
