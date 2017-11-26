@@ -989,3 +989,25 @@ function prntenv() {
 	echo 'function prntenv:(Env):$SHELL':$SHELL';$shell':$shell
 	echo 'function prntenv:(Env):$IFS:['$IFS']'
 }
+
+function 2locase() {
+if (($# > 0));then
+	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
+	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	uniq_args=$(trmsp $uniq_args)
+	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo $uniq_args | tr '[:upper:]' '[:lower:]'
+	echo '$?':$?
+fi
+}
+
+function 2upcase() {
+if (($# > 0));then
+	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
+	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	uniq_args=$(trmsp $uniq_args)
+	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo $uniq_args | tr '[:lower:]' '[:upper:]'
+	echo '$?':$?
+fi
+}
