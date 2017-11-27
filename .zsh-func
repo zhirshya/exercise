@@ -29,7 +29,8 @@ local audiofrmt="(mp3|flac|m4a|opus|aac|wav)"
 local videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb|avi|dvi|ogg)"
 
 #1 input sanitization
-local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
+#local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
+local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
 echo '(trace):uniq_args:['$uniq_args']'
 
 local cmd='sudo find /mnt/0 ~ -xdev -type f \( '
@@ -188,7 +189,7 @@ if (($# > 0));then
 	#ERROR: Unable to download webpage: <urlopen error [Errno -2] Name or service not known> (caused by URLError(gaierror(-2, 'Name or service not known'),))
 
 	#local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" "} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
-	local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
+	local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
 	uniq_args=$(trmsp $uniq_args)
 	echo '(trace):uniq_args:['$uniq_args']'
 
@@ -231,6 +232,7 @@ fi
 
 function 0() {
 if (($# > 0));then
+	#$(gawk -v quot="'" 'BEGIN {RS=" "} !seen[$1]++ {print quot$1quot}' <<< "$@")
 	local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
 	uniq_args=$(trmsp $uniq_args)
 	echo '(trace):uniq_args:['$uniq_args']'
@@ -249,7 +251,7 @@ fi
 function utlsfrm() {
 if (($# > 0));then
 #	local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
-	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
+	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
 	uniq_args=$(trmsp $uniq_args)
 	echo '(trace):uniq_args:['$uniq_args']'
 setopt sh_word_split
@@ -992,7 +994,8 @@ function prntenv() {
 
 function 2locase() {
 if (($# > 0));then
-	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
+	#local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
+	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
 	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
 	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
@@ -1003,7 +1006,8 @@ fi
 
 function 2upcase() {
 if (($# > 0));then
-	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
+	#local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
+	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
 	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
 	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
