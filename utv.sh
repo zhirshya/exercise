@@ -35,6 +35,7 @@ while getopts "st:f:b:" opt; do
 done
 shift $((OPTIND-1))
 
+#todo: Fedora poweroff and lock screen
 if [[ -z $lockpoweroff_screen ]] || [[ -n $lockpoweroff_screen ]];then
 #if ! ( [[ $lockpoweroff_screen == off ]] || [[ $lockpoweroff_screen == 0 ]] || (($lockpoweroff_screen == 0)) );then #NOT work!
 	dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
@@ -43,47 +44,54 @@ fi
 local xt_code=-1
 local err_counter=0
 local cmd_fnd_exc="find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest "
-#local cmd_exc=" -execdir youtube-dl --youtube-skip-dash-manifest -a {} \;"
 local cmd_exc_fileopt=" -a {} \;"
 
-while [[ $xt_code -ne 0 ]];do
-	#https://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions
-	#-v varname: True if the shell variable varname is set (has been assigned a value).
-	#-z string: True if the length of string is zero.
-	#-n string:
-	#   string: True if the length of string is non-zero.
+#https://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions
+#-v varname: True if the shell variable varname is set (has been assigned a value).
+#-z string: True if the length of string is zero.
+#-n string:
+#   string: True if the length of string is non-zero.
 
-	#http://zsh.sourceforge.net/Doc/Release/Conditional-Expressions.html
-	#if [[ ! -v bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
-	#if [[ ! -v $bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
-	if ((err_counter++ > 9));then
-		shutdown_timeout=0
-		break
-	fi
+#http://zsh.sourceforge.net/Doc/Release/Conditional-Expressions.html
+#if [[ ! -v bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
+#if [[ ! -v $bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
 
-	if [[ ! -z $bandwidth_rate ]];then
-		echo "(trace):bandwidth_rate":$bandwidth_rate
-		if [[ ! $bandwidth_rate =~ ^[0-9]+[kKmM]$ ]];then
-			if [[ $bandwidth_rate =~ ^[0-9]+$ ]];then
-				bandwidth_rate+='k'
-			else
-				bandwidth_rate='75k'
-			fi
+if [[ ! -z $bandwidth_rate ]];then
+	echo "(trace):bandwidth_rate":$bandwidth_rate
+	if [[ ! $bandwidth_rate =~ ^[0-9]+[kKmM]$ ]];then
+		if [[ $bandwidth_rate =~ ^[0-9]+$ ]];then
+			bandwidth_rate+='k'
+		else
+			bandwidth_rate='75k'
 		fi
-		#find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
-		#find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest -r ${bandwidth_rate} -a {} \;
-		cmd_fnd_exc+=" -r ${bandwidth_rate} "
 	fi
-	if [[ ! -z $format_num ]];then
-		echo "(trace):format_num":$format_num
-		cmd_fnd_exc+=" -f ${format_num} "
-	fi
+	#find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
+	#find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest -r ${bandwidth_rate} -a {} \;
+	cmd_fnd_exc+=" -r ${bandwidth_rate} "
+fi
 
-	cmd_fnd_exc+=cmd_exc_fileopt
-	echo '(trace):cmd to exc:['$cmd_fnd']'
-	eval ${cmd_fnd}
+if [[ ! -z $format_num ]];then
+	echo "(trace):format_num":$format_num
+	cmd_fnd_exc+=" -f ${format_num} "
+fi
+
+cmd_fnd_exc+=${cmd_exc_fileopt}
+
+#https://stackoverflow.com/questions/16489809/emulating-a-do-while-loop-in-bash
+while
+	echo '(trace):cmd to exc:['$cmd_fnd_exc']'
+	eval ${cmd_fnd_exc}
 	xt_code=$?
 	echo "(trace):exit code(find...-execdir youtube-dl...{} +):$xt_code"
+	(( $xt_code != 0 ));
+do
+	#;
+	#continue
+	
+	if ((err_counter++ > 9));then
+	#	shutdown_timeout=0
+		break
+	fi
 done
 
 echo "(end)«$(\date)»"
