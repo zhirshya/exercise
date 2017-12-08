@@ -83,7 +83,7 @@ while
 	eval ${cmd_fnd_exc}
 	xt_code=$?
 	echo "(trace):exit code(find...-execdir youtube-dl...{} +):$xt_code"
-	(( $xt_code != 0 ));
+	(( $xt_code != 0 ))
 do
 	#;
 	#continue
