@@ -114,12 +114,13 @@ if [[ $cmd =~ -iname ]];then
 #	cmd+=" \) -exec ls -alFt {} \; | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > $dnldd_file"  #zsh: NF-1: command not found...
 	echo '(trace):$cmd(\?(){}):['$cmd']'
 
-	local wanurl_NoEscapeBraces="[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,3}/[a-zA-Z0-9]+"
-	local wanurl_EscapeBraces="[a-zA-Z0-9]+\.[a-zA-Z0-9]\{2,3\}/[a-zA-Z0-9]+"
+	#find $uniq_args in other "download list files", save only when not downloaded and not listed in other download list files!
+	local url_NoEscapeBraces="[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,3}/[a-zA-Z0-9]+"
+	local url_EscapeBraces="[a-zA-Z0-9]+\.[a-zA-Z0-9]\{2,3\}/[a-zA-Z0-9]+"
 	#todo: jump statement in shell script  #unnecessary because of if(... && ...) || (... && ...)
-	#if [[ $uniq_args =~ $wanurl_NoEscapeBraces ]];then
-	if ([[ $uniq_args =~ $wanurl_EscapeBraces ]] && echo "(trace):match regxpr \`$wanurl_EscapeBraces' in args") || ([[ $uniq_args =~ $wanurl_NoEscapeBraces ]] && echo "(trace):match regxpr \`$wanurl_NoEscapeBraces' in args");then
-	#	echo "(trace):match regxpr \`$wanurl_NoEscapeBraces' in args"
+	#if [[ $uniq_args =~ $url_NoEscapeBraces ]];then
+	if ([[ $uniq_args =~ $url_EscapeBraces ]] && echo "(trace):match regxpr \`$url_EscapeBraces' in args") || ([[ $uniq_args =~ $url_NoEscapeBraces ]] && echo "(trace):match regxpr \`$url_NoEscapeBraces' in args");then
+	#	echo "(trace):match regxpr \`$url_NoEscapeBraces' in args"
 
 		local dnldd_file="/tmp/._downloaded.tmp"
 	#	eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
@@ -136,18 +137,28 @@ if [[ $cmd =~ -iname ]];then
 		if (( $(wc -l < "$dnldd_file") < $(wc -l <<< $uniq_args) ));then
 	#	if (( $(wc -l "$dnldd_file") < $(wc -l <<< $uniq_args) ));then  #?:LnNum: division by zero
 	#	if (( $(wc -l "$dnldd_file") < $(echo -n $uniq_args | wc -l) ));then  #?:LnNum: division by zero
-	#
-		#lookup file content, find $uniq_args in other "download list file", save only when not downloaded and not listed in other download list files!
 			local dnldd_ID="/tmp/._downloaded.ID.tmp"
 			local dllst_file="dllst"
+
+			#todo: hard to extract ideal safe common substr
 			gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' "$dnldd_file" > "$dnldd_ID"
-			command grep -v -F -f "$dnldd_ID" <<< $uniq_args >> "$dllst_file"
+			
+			#crux of version 1
+			#command grep -v -F -f "$dnldd_ID" <<< $uniq_args >> "$dllst_file"
+			#cat -n "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/._tmp_ && command mv -f /tmp/._tmp_ "$dllst_file"
+			
+			#crux of version 2
+			command grep -v -F -f "$dnldd_ID" <<< $uniq_args >> /tmp/._tmp_
+			cat -n /tmp/._tmp_ | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/._tmp2_
 			
 			#todo: find other "download list file", diff and save entries only in $uniq_args
-			
-			cat -n "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$dllst_file"
-			echo '(trace):download list:'
-			more "$dllst_file"
+			echo '$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)':$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')
+			command grep -v -F -f /tmp/._tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/._tmp3_
+			if [[ -s /tmp/._tmp3_ ]];then
+				command mv -f /tmp/._tmp3_ "$dllst_file"
+				echo '(trace):download list:'
+				more "$dllst_file"
+			fi
 		fi
 	else
 		eval ${cmd}
@@ -156,6 +167,63 @@ if [[ $cmd =~ -iname ]];then
 else
 	return 113	#can't be reflected on(passed to) outer/upper level!
 fi
+echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
+}
+
+function dlchk() {
+echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
+local urls_whitespaced=""
+local errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"	#use variable to hold complex regxpr!
+local dllst_file="dllst"
+
+while getopts "t" opt; do
+	case "$opt" in
+	t) dllst_file="dllst*";;
+	\?) # unknown flag
+		#echo >&2 \
+		echo "usage: $0 [-t]"
+		return 1;;
+	*) echo "default case of getopts, nothing special.";;
+	esac
+done
+shift $((OPTIND-1))
+
+#Note: For those dealing with CJK text (Chinese, Japanese, and Korean), the double-byte space (Unicode \u3000) is not included in \s for any implementation I've tried so far (Perl, .NET, PCRE, Python). You'll need to either normalize your strings first (such as by replacing all \u3000 with \u0020), or you'll have to use a character set that includes this codepoint in addition to whatever other whitespace you're targeting, such as [ \t\u3000].
+#https://stackoverflow.com/questions/3583111/regular-expression-find-spaces-tabs-space-but-not-newlines
+local blankline_rexpr="^[ \t\u3000]*$"
+local file=""
+for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
+#	if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then	#error: condition expected: $file	#stderr inaccessible this way!
+	if [[ ! $file =~ $errmsg && -f $file ]];then	#stderr inaccessible this way!
+		cat -n $file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ $file
+		echo $file:
+		more $file
+	#while read -r line;do
+	#	if [[ ! $line =~ $blankline_rexpr ]];then
+	#		urls_whitespaced+="\"$line\" "	#urls_whitespaced+=("$line"+" ")?
+	#		#urls_whitespaced+="$line "	#urls_whitespaced+=("$line"+" ")?
+	#	fi
+	#done < "$file"
+	#echo '$urls_whitespaced:['$urls_whitespaced']'
+	#IFS=' ' read -a urls_whitespaced_arr <<<"$urls_whitespaced"	#bad option: -a
+	#\? "$urls_whitespaced_arr"	#wrong!
+	#\? $urls_whitespaced	#wrong!
+	#cmd="\? $urls_whitespaced"
+	#cmd="\? $(gawk -v quot="'" '!seen[toupper($0)]++ {printf "%s%s%s ", quot, $0, quot} END {print ""}' $file)"
+	local cmd="\? $(gawk -v quot="'" '!seen[$0]++ {printf "%s%s%s ", quot, $0, quot}' $file)"
+	
+	#https://unix.stackexchange.com/questions/102008/how-do-i-trim-leading-and-trailing-whitespace-from-each-line-of-some-output
+	#shopt -s extglob  #setopt: no such option: extglob
+	#cmd=${cmd##+([[:space:]])}
+	#cmd=${cmd%%+([[:space:]])}
+	cmd=${cmd##[[:space:]]}
+	cmd=${cmd%%[[:space:]]}
+	echo '(trace):cmd(dlchk(){}):['$cmd']'
+	eval ${cmd}
+#	urls_whitespaced=""
+	fi
+done
+echo '$?':$?
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 }
 
@@ -837,63 +905,6 @@ else
 	echo '$?':$?
 	echo 'pwd':$(pwd)
 fi
-}
-
-function dlchk() {
-echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
-local urls_whitespaced=""
-local errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"	#use variable to hold complex regxpr!
-local dllst_file="dllst"
-
-while getopts "t" opt; do
-	case "$opt" in
-	t) dllst_file="dllst*";;
-	\?) # unknown flag
-		#echo >&2 \
-		echo "usage: $0 [-t]"
-		return 1;;
-	*) echo "default case of getopts, nothing special.";;
-	esac
-done
-shift $((OPTIND-1))
-
-#Note: For those dealing with CJK text (Chinese, Japanese, and Korean), the double-byte space (Unicode \u3000) is not included in \s for any implementation I've tried so far (Perl, .NET, PCRE, Python). You'll need to either normalize your strings first (such as by replacing all \u3000 with \u0020), or you'll have to use a character set that includes this codepoint in addition to whatever other whitespace you're targeting, such as [ \t\u3000].
-#https://stackoverflow.com/questions/3583111/regular-expression-find-spaces-tabs-space-but-not-newlines
-local blankline_rexpr="^[ \t\u3000]*$"
-local file=""
-for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
-#	if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then	#error: condition expected: $file	#stderr inaccessible this way!
-	if [[ ! $file =~ $errmsg && -f $file ]];then	#stderr inaccessible this way!
-		cat -n $file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ $file
-		echo $file:
-		more $file
-	#while read -r line;do
-	#	if [[ ! $line =~ $blankline_rexpr ]];then
-	#		urls_whitespaced+="\"$line\" "	#urls_whitespaced+=("$line"+" ")?
-	#		#urls_whitespaced+="$line "	#urls_whitespaced+=("$line"+" ")?
-	#	fi
-	#done < "$file"
-	#echo '$urls_whitespaced:['$urls_whitespaced']'
-	#IFS=' ' read -a urls_whitespaced_arr <<<"$urls_whitespaced"	#bad option: -a
-	#\? "$urls_whitespaced_arr"	#wrong!
-	#\? $urls_whitespaced	#wrong!
-	#cmd="\? $urls_whitespaced"
-	#cmd="\? $(gawk -v quot="'" '!seen[toupper($0)]++ {printf "%s%s%s ", quot, $0, quot} END {print ""}' $file)"
-	local cmd="\? $(gawk -v quot="'" '!seen[$0]++ {printf "%s%s%s ", quot, $0, quot}' $file)"
-	
-	#https://unix.stackexchange.com/questions/102008/how-do-i-trim-leading-and-trailing-whitespace-from-each-line-of-some-output
-	#shopt -s extglob  #setopt: no such option: extglob
-	#cmd=${cmd##+([[:space:]])}
-	#cmd=${cmd%%+([[:space:]])}
-	cmd=${cmd##[[:space:]]}
-	cmd=${cmd%%[[:space:]]}
-	echo '(trace):cmd(dlchk(){}):['$cmd']'
-	eval ${cmd}
-#	urls_whitespaced=""
-	fi
-done
-echo '$?':$?
-echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 }
 
 function skrsht() {
