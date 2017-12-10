@@ -205,5 +205,6 @@ alias circldNum='echo ⓪ ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ �
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 #setopt noglob #turn off globbing(wildcard expansion)
 
-. ~/.zsh-func
+#. ~/.zsh-func
+source ~/.zsh-func
 #. ~/.nvm/nvm.sh #https://github.com/creationix/nvm, Node Version Manager - Simple bash script to manage multiple active node.js versions
