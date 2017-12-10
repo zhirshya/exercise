@@ -137,6 +137,7 @@ if [[ $cmd =~ -iname ]];then
 		if (( $(wc -l < "$dnldd_file") < $(wc -l <<< $uniq_args) ));then
 	#	if (( $(wc -l "$dnldd_file") < $(wc -l <<< $uniq_args) ));then  #?:LnNum: division by zero
 	#	if (( $(wc -l "$dnldd_file") < $(echo -n $uniq_args | wc -l) ));then  #?:LnNum: division by zero
+			echo '(trace):$(wc -l < "$dnldd_file") < $(wc -l <<< $uniq_args):true'
 			local dnldd_ID="/tmp/._downloaded.ID.tmp"
 			local dllst_file="dllst"
 
@@ -158,6 +159,14 @@ if [[ $cmd =~ -iname ]];then
 			#command grep -q '[^ \t\v\n\u3000]' $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') && {  #(
 			local spaces_rexpr='^[ \t\v\n\u3000]*$'
 			local dllstfiles=$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')
+			if [[ -n $dllstfiles ]];then
+				echo '(trace):[[ -n $dllstfiles ]]:true'
+			fi
+
+			if [[ ! $dllstfiles =~ $spaces_rexpr ]];then
+				echo '(trace):[[ ! $dllstfiles =~ $spaces_rexpr ]]:true'
+			fi
+
 			if [[ -n $dllstfiles ]] && [[ ! $dllstfiles =~ $spaces_rexpr ]];then
 				#command grep -v -F -f /tmp/._tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/._tmp3_
 				#command grep -v -F -f /tmp/._tmp2_ $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/._tmp3_
@@ -201,6 +210,7 @@ if [[ $cmd =~ -iname ]];then
 			more "$dllst_file"
 		fi
 	else
+		echo '(trace):$cmd(\?(){}):['$cmd']'
 		eval ${cmd}
 	fi
 	echo '$?':$?
