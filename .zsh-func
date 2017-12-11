@@ -39,7 +39,7 @@ local cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 #https://superuser.com/questions/284187/bash-iterating-over-lines-in-a-variable
 local str=""
 #IFS=' ' read -a str_array <<< "$@"	#bad option: -a
-#for str in "${str_array[@]}";do	#unnecessary because of cmd="\? $urls_whitespaced" && eval ${cmd}
+#for str in "${str_array[@]}";do	#unnecessary because of cmd="\? $urls_whitespaced" && eval " $cmd"
 
 #http://www.refining-linux.org/archives/38/ZSH-Gem-3-No-automatic-word-split/
 #https://unix.stackexchange.com/questions/128985/why-not-parse-ls
@@ -123,8 +123,8 @@ if [[ $cmd =~ -iname ]];then
 	#	echo "(trace):match regxpr \`$url_NoEscapeBraces' in args"
 
 		local dnldd_file="/tmp/._downloaded.tmp"
-	#	eval ${cmd} | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
-		eval ${cmd} | tee "$dnldd_file" 2>&1
+	#	eval " $cmd" | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
+		eval " $cmd" | tee "$dnldd_file" 2>&1
 
 	#	echo -e '(trace):ID(last 5 char of names\x27 main part) of already downloaded:'
 	#	more "$dnldd_file"
@@ -211,7 +211,15 @@ if [[ $cmd =~ -iname ]];then
 		fi
 	else
 		echo '(trace):$cmd(\?(){}):['$cmd']'
-		eval ${cmd}
+
+		#http://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#eval
+		#The eval utility shall construct a command by concatenating arguments together, separating each with a <space> character. The constructed command shall be read and executed by the shell.
+		#SYNOPSIS:eval [argument...]
+		#Since eval is not required to recognize the "--" end of options delimiter, in cases where the argument(s) to eval might begin with '-' it is recommended that the first argument is prefixed by a string that will not alter the commands to be executed, such as a <space> character:
+		#eval " $commands"
+		#or:
+		#eval " $(some_command)"
+		eval " $cmd"
 	fi
 	echo '$?':$?
 else
@@ -269,7 +277,7 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 	cmd=${cmd##[[:space:]]}
 	cmd=${cmd%%[[:space:]]}
 	echo '(trace):cmd(dlchk(){}):['$cmd']'
-	eval ${cmd}
+	eval " $cmd"
 #	urls_whitespaced=""
 	fi
 done
@@ -848,7 +856,7 @@ cmd+="${outfile_singlequoted}" #"$outfile_singlequoted"
 #cmd=${cmd//*/\*}
 
 echo "(trace):avrwndff":$cmd
-eval ${cmd}
+eval " $cmd"
 echo '$?':$?
 }
 
