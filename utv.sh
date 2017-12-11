@@ -65,22 +65,22 @@ if [[ ! -z $bandwidth_rate ]];then
 			bandwidth_rate='75k'
 		fi
 	fi
-	#find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r ${bandwidth_rate} -a {} \;
-	#find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest -r ${bandwidth_rate} -a {} \;
-	cmd_fnd_exc+=" -r ${bandwidth_rate} "
+	#find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r $bandwidth_rate -a {} \;
+	#find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest -r $bandwidth_rate -a {} \;
+	cmd_fnd_exc+=" -r $bandwidth_rate "
 fi
 
 if [[ ! -z $format_num ]];then
 	echo "(trace):format_num":$format_num
-	cmd_fnd_exc+=" -f ${format_num} "
+	cmd_fnd_exc+=" -f $format_num "
 fi
 
-cmd_fnd_exc+=${cmd_exc_fileopt}
+cmd_fnd_exc+="$cmd_exc_fileopt"
 
 #https://stackoverflow.com/questions/16489809/emulating-a-do-while-loop-in-bash
 while
 	echo '(trace):cmd to exc:['$cmd_fnd_exc']'
-	eval ${cmd_fnd_exc}
+	eval " $cmd_fnd_exc"
 	xt_code=$?
 	echo "(trace):exit code(find...-execdir youtube-dl...{} +):$xt_code"
 	(( $xt_code != 0 ))
