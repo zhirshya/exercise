@@ -3,3 +3,34 @@
 #python to c++17 converter
 
 #Rang:Minimal, Header only Modern c++ library for colors in your terminal
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <cstdlib> #std::strtof, std::strtod, std::strtold
+
+/*
+std::wcstof, std::wcstod, std::wcstold
+  C++  Strings library  Null-terminated wide strings 
+Defined in header <cwchar>
+float       wcstof( const wchar_t* str, wchar_t** str_end ); (since C++11)
+double      wcstod( const wchar_t* str, wchar_t** str_end );
+long double wcstold( const wchar_t* str, wchar_t** str_end ); (since C++11)
+*/
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	vector<string> argvVectrErr{argv+1, argv+argc};
+#https://www.codeproject.com/Questions/164306/convert-argv-to-something-and-back
+	vector<string> argvVectr{argv, argv+argc};
+
+#https://stackoverflow.com/questions/6361606/save-argv-to-vector-or-string
+	vector<string> args;
+	args.insert(args.end(), argv+1, argv+argc);
+
+#https://stackoverflow.com/questions/21807658/check-if-the-input-is-a-number-or-string-in-c
+
+}
