@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <vector>
 #include <string>
-#include <sstream>
+#include <sstream> // for istringstream
 #include <cstdlib> #std::strtof, std::strtod, std::strtold
 
 /*
@@ -32,5 +32,24 @@ int main(int argc, char** argv) {
 	args.insert(args.end(), argv+1, argv+argc);
 
 #https://stackoverflow.com/questions/21807658/check-if-the-input-is-a-number-or-string-in-c
+/*
+#include <sstream>
+
+template<typename T>
+bool isNumber(T x){
+   std::string s;
+   std::stringstream ss;
+   ss << x;
+   ss >>s;
+   if(s.empty() || std::isspace(s[0]) || std::isalpha(s[0])) return false ;
+   char * p ;
+   strtod(s.c_str(), &p) ;
+   return (*p == 0) ;
+}
+*/
+
+	stringstream ss;
+
+#https://rosettacode.org/wiki/Determine_if_a_string_is_numeric#C.2B.2B
 
 }
