@@ -119,9 +119,9 @@ alias utlscvr='youtube-dl --youtube-skip-dash-manifest --list-thumbnails'
 
 alias or='cd /mnt/0/dnld/tor-browser_en-US && ./start-tor-browser.desktop && -'
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 
 alias txz='tar xvJf'
 alias clr=clear
