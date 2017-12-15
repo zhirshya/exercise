@@ -30,7 +30,8 @@ local videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb
 
 #1 input sanitization
 #local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
-local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
+#local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
+local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
 echo '(trace):uniq_args:['$uniq_args']'
 
 local cmd='sudo find /mnt/0 ~ -xdev -type f \( '
@@ -47,8 +48,11 @@ setopt sh_word_split
 setopt SH_WORD_SPLIT
 #local IFS='
 #'
-local IFS=$'\n'
+#local IFS=$'\n'
+local IFS=' '
 for str in $uniq_args;do
+#todo: treat quoted string as single arg e.g. ? "Clean C++"
+#for str in $@;do
 #trim spaces at both ends
 #	str="${str##( |\t|\f|\v)}"
 #	str="${str%%( |\t|\f|\v)}"
