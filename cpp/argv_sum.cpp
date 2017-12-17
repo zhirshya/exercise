@@ -82,13 +82,20 @@ bool isNumber(T x){
 	float parsedArg=0;
 	float subProduct=0;
 	float sumArgv=0;
-	char* end; //std::strtof, std::strtod, std::strtold //todo
+	//todo meaningful pointer initialization
+	char* end/* = argv[1]*/; //std::strtof, std::strtod, std::strtold
+	const char* p/* = argv[1]*/;
 	float previousNum=0;
 	unsigned char noNumeric=0;
-	const char* p; //todo
 	float f=0;
 
 	cout << "(trace):const char* p; p==nullptr:[" << (p==nullptr) << "], char* end; end==nullptr:[" << (end==nullptr) << "]\n";
+	/*
+	 cpp/argv_sum.cpp:93:44: error: invalid operands of types ‘char’ and ‘std::nullptr_t’ to binary ‘operator==’
+	 cout << "(trace):'\0'==nullptr:[" << ('\0'==nullptr) << "], 0==nullptr:[" << (0==nullptr) << "]\n";
+	 */ 
+	//cout << "(trace):'\0'==nullptr:[" << ('\0'==nullptr) << "], 0==nullptr:[" << (0==nullptr) << "]\n";
+	cout << "(trace): 0==nullptr:[" << (0==nullptr) << "]\n";
 	
 	for(int i = 1; i < argc; ++i){
 		parsedArg=strtof(argv[i],&end);
@@ -139,9 +146,13 @@ Floating point value corresponding to the contents of str on success. If the con
 					cout << "(trace):end-argv[i] < string(argv[i]).length():true; p and *p after *p non-numeric test for loop: p:[" << p << "], *p:[" << *p << "]\n";
 					f=strtof(p,&end);
 					cout << "(trace):f=strtof(p,&end); f:[" << f << "]\n";
-					if(arglen >= end-argv[i] && 0 != f){ //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
+					if(arglen >= end-argv[i]){ //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
+						if(0 != f){
 						//cout << "(trace):f=strtof(p,&end); f:[" << f << "]\n";
-						parsedArg*=f;
+							parsedArg*=f;
+						}
+					}else{
+						break;
 					}
 				}
 				noNumeric=0; //important!
