@@ -82,17 +82,27 @@ bool isNumber(T x){
 	float parsedArg=0;
 	float subProduct=0;
 	float sumArgv=0;
-	char* end; //std::strtof, std::strtod, std::strtold
+	char* end; //std::strtof, std::strtod, std::strtold //todo
 	float previousNum=0;
 	unsigned char noNumeric=0;
+	const char* p; //todo
+	float f=0;
+
+	cout << "(trace):const char* p; p==nullptr:[" << (p==nullptr) << "], char* end; end==nullptr:[" << (end==nullptr) << "]\n";
+	
 	for(int i = 1; i < argc; ++i){
 		parsedArg=strtof(argv[i],&end);
 		cout << "(trace):parsedArg=strtof(argv[i],&end);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
 		//http://en.cppreference.com/w/cpp/types/numeric_limits/epsilon
 		//if(0 == parsedArg && 0 == strcmp(end,argv[i])){
 		//todo: ./argvsumc++  90 81 83X2 280 158x2 54\*2
-		if(almost_equal(0.0f,parsedArg,2) && 0 == strcmp(end,argv[i])){  //0 == string(end).compare(argv[i])
-			cout << "(trace):almost_equal(0.0f,parsedArg,2) && 0 == strcmp(end,argv[i]);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
+/*
+http://en.cppreference.com/w/cpp/string/byte/strtof
+Return value:
+Floating point value corresponding to the contents of str on success. If the converted value falls out of range of corresponding return type, range error occurs and HUGE_VAL, HUGE_VALF or HUGE_VALL is returned. If no conversion can be performed, ​0​ is returned and *str_end is set to str.
+*/
+		if(almost_equal(0.0f,parsedArg,3) && 0 == strcmp(end,argv[i])){  //0 == string(end).compare(argv[i])
+			cout << "(trace):almost_equal(0.0f,parsedArg,3) && 0 == strcmp(end,argv[i]);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
 			if(1 == i)
 				continue;
 			if(argc -1 == i)
@@ -102,17 +112,47 @@ bool isNumber(T x){
 			}
 		}else{
 			//if(0.0f == parsedArg)
-			if(almost_equal(0.0f,parsedArg,2)){
-				cout << "(trace):almost_equal(0.0f,parsedArg,2);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
+			if(almost_equal(0.0f,parsedArg,3)){
+				cout << "(trace):almost_equal(0.0f,parsedArg,3);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
 				noNumeric=0;
 				continue;
 			}
+
+			//substitute 96.3x3 37.9X6 63.9*3*7 with their product
+			//./argvsumc++  90 81 83 X 2 2\*xXxx2\*\*\*\*xXxXx\*xXxXXxx7x2X5 79X2 x 2 54 \* 2 7\*137xxXXX\*\*
+			cout << "(trace):&(argv[i]):[" << &(argv[i]) << "], &argv[i]:[" << &argv[i] << "], argv+i:[" << argv+i << "]\n";
+			//todo: boolean literal
+			cout << "(trace):&(argv[i])==&argv[i]:[" << (&(argv[i])==&argv[i]) << "], &argv[i]==argv+i:[" << (&argv[i]==argv+i) << "]\n";
+			/*
+			 error: invalid operands of types ‘char*’ and ‘char**’ to binary ‘operator-’
+				if(end-&(argv[i]) < string(argv[i]).length()){
+			*/
+			//if(end-&(argv[i]) < string(argv[i]).length()){
+			int arglen = string(argv[i]).length();
+			if(end-argv[i] < arglen ){
+				cout << "(trace):end-argv[i] < string(argv[i]).length():true; end-argv[i]:[" << end-argv[i] << "]\n";
+				//for(p = argv[i]; p != end;){
+				for(p = argv[i]; arglen > p-argv[i];){
+					p = end;
+					for(; 43 > *p || 47 == *p || 57 < *p; ++p); // + , - . (recognize signs, Decimal and Thousands Separators)
+					//for(; 48 > *p || *p > 57; ++p);
+					cout << "(trace):end-argv[i] < string(argv[i]).length():true; p and *p after *p non-numeric test for loop: p:[" << p << "], *p:[" << *p << "]\n";
+					f=strtof(p,&end);
+					cout << "(trace):f=strtof(p,&end); f:[" << f << "]\n";
+					if(arglen >= end-argv[i] && 0 != f){ //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
+						//cout << "(trace):f=strtof(p,&end); f:[" << f << "]\n";
+						parsedArg*=f;
+					}
+				}
+				noNumeric=0; //important!
+				cout << "(trace):end-argv[i] < string(argv[i]).length():true; argv[i]:[" << argv[i] << "], parsedArg:[" << parsedArg << "]\n";
+			}
 			//if(0 != noNumeric && 0 != previousNum){
-			//if(0 != noNumeric && !almost_equal(0.0f,previousNum,2)){
+			//if(0 != noNumeric && !almost_equal(0.0f,previousNum,3)){
 			if(0 != noNumeric && '\0' != noNumeric){
 				//if(0 == subProduct){
-				if(almost_equal(0.0f,subProduct,2)){
-					if(!almost_equal(0.0f,previousNum,2)){
+				if(almost_equal(0.0f,subProduct,3)){
+					if(!almost_equal(0.0f,previousNum,3)){
 						subProduct=previousNum*parsedArg;
 						cout << "(trace):subProduct=(previousNum*parsedArg);[" << subProduct << "]\n";
 //						previousNum=0;
@@ -125,18 +165,18 @@ bool isNumber(T x){
 //					previousNum=0;
 				}
 
-				if(argc-1 == i && !almost_equal(0.0f,subProduct,2)){
+				if(argc-1 == i && !almost_equal(0.0f,subProduct,3)){
 					parsedVct.push_back(subProduct);
 					cout << "(trace):parsedVct.push_back(subProduct);[" << subProduct << "]\n";
 //					subProduct=0;
 				}
 			}else{
 				//if(0 != subProduct){
-				if(!almost_equal(0.0f,subProduct,2)){
+				if(!almost_equal(0.0f,subProduct,3)){
 					parsedVct.push_back(subProduct);
 					cout << "(trace):parsedVct.push_back(subProduct);[" << subProduct << "]\n";
 					subProduct=0;
-				}else if(!almost_equal(0.0f,previousNum,2)){
+				}else if(!almost_equal(0.0f,previousNum,3)){
 					parsedVct.push_back(previousNum);
 					cout << "(trace):parsedVct.push_back(previousNum);[" << previousNum << "]\n";
 				}
