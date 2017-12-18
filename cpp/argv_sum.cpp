@@ -202,21 +202,27 @@ Floating point value corresponding to the contents of str on success. If the con
 		}
 		noNumeric=*end;
 	}
-	//sumArgv = accumulate(begin(parsedVct),end(parsedVct),0);
-	sumArgv = accumulate(parsedVct.begin(),parsedVct.end(),0);
-	float sumArgv8prcnt = sumArgv*1.08;
-	float sumArgv10prcnt = sumArgv*1.1;
-	float sumArgv12prcnt = sumArgv*1.12;
-	float sumArgv15prcnt = sumArgv*1.15;
-	float sumArgv18prcnt = sumArgv*1.18;
-	float sumArgv20prcnt = sumArgv*1.2;
-	float sumArgv25prcnt = sumArgv*1.25;
-	cout << "sumArgv:[" << sumArgv << "]\n";
-	cout << "sumArgv*1.08:[" << sumArgv8prcnt << "], round:[" << round(sumArgv8prcnt) << "], floor:[" << floor(sumArgv8prcnt) << "]\n";
-	cout << "sumArgv*1.1:[" << sumArgv10prcnt << "], round:[" << round(sumArgv10prcnt) << "], floor:[" << floor(sumArgv10prcnt) << "]\n";
-	cout << "sumArgv*1.12:[" << sumArgv12prcnt << "], round:[" << round(sumArgv12prcnt) << "], floor:[" << floor(sumArgv12prcnt) << "]\n";
-	cout << "sumArgv*1.15:[" << sumArgv15prcnt << "], round:[" << round(sumArgv15prcnt) << "], floor:[" << floor(sumArgv15prcnt) << "]\n";
-	cout << "sumArgv*1.18:[" << sumArgv18prcnt << "], round:[" << round(sumArgv18prcnt) << "], floor:[" << floor(sumArgv18prcnt) << "]\n";
-	cout << "sumArgv*1.2:[" << sumArgv20prcnt << "], round:[" << round(sumArgv20prcnt) << "], floor:[" << floor(sumArgv20prcnt) << "]\n";
-	cout << "sumArgv*1.25:[" << sumArgv25prcnt << "], round:[" << round(sumArgv25prcnt) << "], floor:[" << floor(sumArgv25prcnt) << "]\n";
+	
+	cout << "before accumulating float vector, previousNum:[" << previousNum << "]\n";
+	if(!almost_equal(0.0f,previousNum,3)){
+		//sumArgv = accumulate(begin(parsedVct),end(parsedVct),0);
+		sumArgv = accumulate(parsedVct.begin(),parsedVct.end(),0);
+		float sumArgv8prcnt = sumArgv*1.08;
+		float sumArgv10prcnt = sumArgv*1.1;
+		float sumArgv12prcnt = sumArgv*1.12;
+		float sumArgv15prcnt = sumArgv*1.15;
+		float sumArgv18prcnt = sumArgv*1.18;
+		float sumArgv20prcnt = sumArgv*1.2;
+		float sumArgv25prcnt = sumArgv*1.25;
+		cout << "sumArgv:[" << sumArgv << "]\n";
+		cout << "sumArgv*1.08:[" << sumArgv8prcnt << "], round:[" << round(sumArgv8prcnt) << "], floor:[" << floor(sumArgv8prcnt) << "]\n";
+		cout << "sumArgv*1.1:[" << sumArgv10prcnt << "], round:[" << round(sumArgv10prcnt) << "], floor:[" << floor(sumArgv10prcnt) << "]\n";
+		cout << "sumArgv*1.12:[" << sumArgv12prcnt << "], round:[" << round(sumArgv12prcnt) << "], floor:[" << floor(sumArgv12prcnt) << "]\n";
+		cout << "sumArgv*1.15:[" << sumArgv15prcnt << "], round:[" << round(sumArgv15prcnt) << "], floor:[" << floor(sumArgv15prcnt) << "]\n";
+		cout << "sumArgv*1.18:[" << sumArgv18prcnt << "], round:[" << round(sumArgv18prcnt) << "], floor:[" << floor(sumArgv18prcnt) << "]\n";
+		cout << "sumArgv*1.2:[" << sumArgv20prcnt << "], round:[" << round(sumArgv20prcnt) << "], floor:[" << floor(sumArgv20prcnt) << "]\n";
+		cout << "sumArgv*1.25:[" << sumArgv25prcnt << "], round:[" << round(sumArgv25prcnt) << "], floor:[" << floor(sumArgv25prcnt) << "]\n";
+	}else{
+		cout << "Nothing to sum. Goodbye.\n";
+	}
 }
