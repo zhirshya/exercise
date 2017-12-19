@@ -171,7 +171,8 @@ if [[ $cmd =~ -iname ]];then
 				echo '(trace):[[ ! $dllstfiles =~ $spaces_rexpr ]]:true'
 			fi
 
-			if [[ -n $dllstfiles ]] && [[ ! $dllstfiles =~ $spaces_rexpr ]];then
+			#if [[ -n $dllstfiles ]] && [[ ! $dllstfiles =~ $spaces_rexpr ]];then
+			if [[ ! $dllstfiles =~ $spaces_rexpr ]];then
 				#command grep -v -F -f /tmp/._tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/._tmp3_
 				#command grep -v -F -f /tmp/._tmp2_ $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/._tmp3_
 				#1 #erroneous: file name interpreted as literal string
@@ -204,11 +205,19 @@ if [[ $cmd =~ -iname ]];then
 				#command grep -q '[^ \t\v\n\u3000]' /tmp/._tmp3_ && (
 				#	command mv -f /tmp/._tmp3_ "$dllst_file"
 				command grep -q '[^ \t\v\n\u3000]' /tmp/._tmp34_ && (
-					command mv -f /tmp/._tmp34_ "$dllst_file"
+					#command mv -f /tmp/._tmp34_ "$dllst_file"
+					#command cp -i /tmp/._tmp34_ "$dllst_file"
+					#cat /tmp/._tmp34_ >> "$dllst_file"
 				)
+				#cat /tmp/._tmp2_ >> "$dllst_file"
+				cat -n /tmp/._tmp34_ /tmp/._tmp2_ "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/._tmpMerge_ && command mv -f /tmp/._tmpMerge_ "$dllst_file"
 			else
-				command mv -f /tmp/._tmp2_ "$dllst_file"
+				#command mv -f /tmp/._tmp2_ "$dllst_file"
+				#command cp -i /tmp/._tmp2_ "$dllst_file"
+				#cat /tmp/._tmp2_ >> "$dllst_file"
+				cat -n /tmp/._tmp2_ "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/._tmpMerge_ && command mv -f /tmp/._tmpMerge_ "$dllst_file"
 			fi
+
 			#} #)
 			echo -e "(trace):download list:file \x22$dllst_file\x22:"
 			more "$dllst_file"
