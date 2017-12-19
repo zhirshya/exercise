@@ -79,6 +79,7 @@ bool isNumber(T x){
 //https://rosettacode.org/wiki/Determine_if_a_string_is_numeric#C.2B.2B
 
 	vector<float> parsedVct;
+	cout << "(trace):vector<float> parsedVct; parsedVct.empty():[" << parsedVct.empty() << "]\n";
 	float parsedArg=0;
 	float subProduct=0;
 	float sumArgv=0;
@@ -112,8 +113,13 @@ Floating point value corresponding to the contents of str on success. If the con
 			cout << "(trace):almost_equal(0.0f,parsedArg,3) && 0 == strcmp(end,argv[i]);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
 			if(1 == i)
 				continue;
-			if(argc -1 == i)
+			if(argc -1 == i){
+				if(!almost_equal(0.0f,previousNum,3)){
+					parsedVct.push_back(previousNum);
+					cout << "(trace):parsedVct.push_back(previousNum);[" << previousNum << "]\n";
+				}
 				break;
+			}
 			if(0 == noNumeric || '\0' == noNumeric){
 				noNumeric=*end;
 			}
@@ -203,8 +209,9 @@ Floating point value corresponding to the contents of str on success. If the con
 		noNumeric=*end;
 	}
 	
-	cout << "before accumulating float vector, previousNum:[" << previousNum << "]\n";
-	if(!almost_equal(0.0f,previousNum,3)){
+	cout << "before accumulating parsed arguments' vector, previousNum:[" << previousNum << "]\n";
+	//if(!almost_equal(0.0f,previousNum,3)){
+	if(!parsedVct.empty()){
 		//sumArgv = accumulate(begin(parsedVct),end(parsedVct),0);
 		sumArgv = accumulate(parsedVct.begin(),parsedVct.end(),0);
 		float sumArgv8prcnt = sumArgv*1.08;
