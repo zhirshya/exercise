@@ -580,13 +580,18 @@ if ((0 < $#));then
 	#https://stackoverflow.com/questions/1975849/how-to-split-a-line-into-words-separated-by-one-or-more-spaces-in-bash
 	#use for value in "${var[@]}" in this context instead of an index variable. While in this case the array may be contiguous, Bash supports sparse arrays and ${#var[@]} may not be the last entry (although ${var[@]: -1} will be and indices=(${!a[@]}); count=${#indices[@]} will give the list of indices and the correct count)
 	#local i=${#uniq_args[@]} #wrong! 90 -> [9] [0] -> take 0 and shutdown immediately!
-	local i=$#
-	for ((; 0 < i; --i));do
-		if [[ $i =~ [0-9]+ ]];then
+	#local i=$#
+	#for ((; 0 < i; --i));do
+	local IFS=' '
+	for tm in $uniq_args;do
+		#if [[ $i =~ [0-9]+ ]];then
+		if [[ $tm =~ [0-9]+ ]];then
 			#echo 'sudo shutdown -P -f ${uniq_args[i]}:['${uniq_args[i]}']'
 			#sudo shutdown -P -f ${uniq_args[i]}
-			echo 'sudo shutdown -P -f $i:['$i']'
-			sudo shutdown -P -f $i
+			#echo 'sudo shutdown -P -f $i:['$i']'
+			#sudo shutdown -P -f $i
+			echo 'sudo shutdown -P -f $tm:['$tm']'
+			sudo shutdown -P -f $tm
 			break
 		fi
 	done
