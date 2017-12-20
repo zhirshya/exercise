@@ -425,8 +425,8 @@ if (($# > 0));then
 
 setopt sh_word_split
 setopt SH_WORD_SPLIT
-	local IFS=$'\n'
 	local arg=""
+	local IFS=$'\n'
 	for arg in "$uniq_args";do
 		#if [[ $arg =~ ^(http|HTTP)s?$ ]];then
 		if [[ $arg =~ (http|HTTP)s? ]];then
@@ -563,7 +563,8 @@ nohup google-chrome-stable --ssl-version-min=tls1.1 https://medium.com/@abhimura
 
 function s0() {
 if ((0 < $#));then
-	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
+	#local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
+	local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
 	#https://stackoverflow.com/questions/15108229/how-to-count-number-of-words-from-string-using-shell
 	#https://stackoverflow.com/questions/1469849/how-to-split-one-string-into-multiple-strings-separated-by-at-least-one-space-in
 	#https://stackoverflow.com/questions/1975849/how-to-split-a-line-into-words-separated-by-one-or-more-spaces-in-bash
@@ -577,15 +578,24 @@ if ((0 < $#));then
 	echo '${uniq_args[@]:-1}:['${uniq_args[@]:-1}']'
 	echo '$#':$#
 	echo '$0:['$0']'
+
+	local noNumber_rexpr="^[^0-9]*$"
+	
 	#https://stackoverflow.com/questions/1975849/how-to-split-a-line-into-words-separated-by-one-or-more-spaces-in-bash
 	#use for value in "${var[@]}" in this context instead of an index variable. While in this case the array may be contiguous, Bash supports sparse arrays and ${#var[@]} may not be the last entry (although ${var[@]: -1} will be and indices=(${!a[@]}); count=${#indices[@]} will give the list of indices and the correct count)
 	#local i=${#uniq_args[@]} #wrong! 90 -> [9] [0] -> take 0 and shutdown immediately!
 	#local i=$#
 	#for ((; 0 < i; --i));do
-	local IFS=' '
+	#todo: Failed to parse time specification: 99 50 a
+#http://www.refining-linux.org/archives/38/ZSH-Gem-3-No-automatic-word-split/
+setopt sh_word_split
+setopt SH_WORD_SPLIT
+	#local IFS=' '
+	local IFS=$'\n'
+	#todo: backward for-each
 	for tm in $uniq_args;do
 		#if [[ $i =~ [0-9]+ ]];then
-		if [[ $tm =~ [0-9]+ ]];then
+		if [[ ! $tm =~ $noNumber_rexpr ]];then
 			#echo 'sudo shutdown -P -f ${uniq_args[i]}:['${uniq_args[i]}']'
 			#sudo shutdown -P -f ${uniq_args[i]}
 			#echo 'sudo shutdown -P -f $i:['$i']'
@@ -595,6 +605,8 @@ if ((0 < $#));then
 			break
 		fi
 	done
+unsetopt sh_word_split
+unsetopt SH_WORD_SPLIT
 else
 	sudo shutdown -P -f 0
 fi
