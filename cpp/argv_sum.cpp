@@ -47,7 +47,7 @@ using namespace std;
 int main(int argc, char** argv){
 	cout << "argc:[" << argc << "]\n";
 	if(1 == argc){
-		cout << "Здравствуйте, nothing to do. До свидания!\n";
+		cout << "Здравствуйте, no numbers given, nothing to do. До свидания!\n";
 		return 0;
 	}
 /*
@@ -94,7 +94,8 @@ bool isNumber(T x){
 	//todo: doesn't reflect double's precision!
 	//http://en.cppreference.com/w/cpp/io/manip/setprecision
 	//https://stackoverflow.com/questions/554063/how-do-i-print-a-double-value-with-full-precision-using-cout
-	cout.precision(std::numeric_limits<double>::digits10 + 2);
+//	std::cout.precision(std::numeric_limits<double>::digits10 + 2);
+	std::cout << std::setprecision(std::numeric_limits<long double>::digits10 + 2);
 
 	cout << "(trace):const char* p; p==nullptr:[" << (p==nullptr) << "], char* end; end==nullptr:[" << (end==nullptr) << "]\n";
 	/*
@@ -226,6 +227,6 @@ Floating point value corresponding to the contents of str on success. If the con
 		cout << "sumArgv*1.2:[" << sumArgv20prcnt << "], round:[" << round(sumArgv20prcnt) << "], floor:[" << floor(sumArgv20prcnt) << "]\n";
 		cout << "sumArgv*1.25:[" << sumArgv25prcnt << "], round:[" << round(sumArgv25prcnt) << "], floor:[" << floor(sumArgv25prcnt) << "]\n";
 	}else{
-		cout << "Nothing to sum. Goodbye.\n";
+		cout << "Found vector is empty, nothing to sum. До свидания.\n";
 	}
 }
