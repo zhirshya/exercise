@@ -91,10 +91,15 @@ bool isNumber(T x){
 	unsigned char noNumeric=0;
 	double dbl=0.0;
 
-	//todo: doesn't reflect double's precision!
 	//http://en.cppreference.com/w/cpp/io/manip/setprecision
 	//https://stackoverflow.com/questions/554063/how-do-i-print-a-double-value-with-full-precision-using-cout
+	//todo: doesn't reflect double's precision!
 	std::cout.precision(std::numeric_limits<double>::digits10 + 2);
+/*
+	max_digits10 is the number of digits that are necessary to uniquely represent all distinct double values. max_digits10 represents the number of digits before and after the decimal point.
+
+	set_precision() with fixed specifier sets the number of digits only after the decimal point.
+*/
 //	std::cout << std::setprecision(std::numeric_limits<long double>::digits10 + 2);
 
 	cout << "(trace):const char* p; p==nullptr:[" << (p==nullptr) << "], char* end; end==nullptr:[" << (end==nullptr) << "]\n";
