@@ -756,7 +756,7 @@ else
 fi
 }
 
-#primitive ffmpeg av file fast-wind?
+#primitive ffmpeg av rewind fast-forward
 function avrwndff() {
 if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then	# { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?	http://unix.stackexchange.com/questions/88850/precedence-of-the-shell-logical-operators
 	if (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
@@ -888,7 +888,7 @@ cmd+="${outfile_singlequoted}" #"$outfile_singlequoted"
 #cmd=${cmd//\'/\\\'} #eval: unmatched '
 #cmd=${cmd//*/\*}
 
-echo "(trace):avrwndff":$cmd
+echo '(trace):$cmd:['$cmd']'
 eval " $cmd"
 echo '$?':$?
 }
