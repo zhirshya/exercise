@@ -94,8 +94,8 @@ bool isNumber(T x){
 	//todo: doesn't reflect double's precision!
 	//http://en.cppreference.com/w/cpp/io/manip/setprecision
 	//https://stackoverflow.com/questions/554063/how-do-i-print-a-double-value-with-full-precision-using-cout
-//	std::cout.precision(std::numeric_limits<double>::digits10 + 2);
-	std::cout << std::setprecision(std::numeric_limits<long double>::digits10 + 2);
+	std::cout.precision(std::numeric_limits<double>::digits10 + 2);
+//	std::cout << std::setprecision(std::numeric_limits<long double>::digits10 + 2);
 
 	cout << "(trace):const char* p; p==nullptr:[" << (p==nullptr) << "], char* end; end==nullptr:[" << (end==nullptr) << "]\n";
 	/*
