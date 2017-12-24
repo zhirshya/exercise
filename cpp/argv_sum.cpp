@@ -13,7 +13,6 @@
 #include <type_traits>
 #include <vector>
 #include <string>
-#include <cstring>
 #include <sstream> // for istringstream
 #include <cstdlib> //std::strtof, std::strtod, std::strtold
 
@@ -45,7 +44,7 @@ typename std::enable_if<!std::numeric_limits<T>::is_integer, bool>::type
 using namespace std;
 
 int main(int argc, char** argv){
-	cout << "argc:[" << argc << "]\n";
+	cout << "argc:[" << argc << "], argv[0]:[" << argv[0] << "]\n";
 	if(1 == argc){
 		cout << "Здравствуйте, no numbers given, nothing to do. До свидания!\n";
 		return 0;
@@ -109,17 +108,21 @@ bool isNumber(T x){
 	 */ 
 	//cout << "(trace):'\0'==nullptr:[" << ('\0'==nullptr) << "], 0==nullptr:[" << (0==nullptr) << "]\n";
 	cout << "(trace): 0==nullptr:[" << (0==nullptr) << "]\n";
+	//todo: C null in C++
+	cout << "(trace): '\0'==0:[" << ('\0'==0) << "]\n"; //output: '1]
 	
 	for(int i = 1; i < argc; ++i){
 		parsedArg=strtod(argv[i],&end);
-		cout << "(trace):parsedArg=strtod(argv[i],&end);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
+		cout << "(trace):parsedArg=strtod(argv[i],&end); {argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
 /*
 http://en.cppreference.com/w/cpp/string/byte/strtof
 Return value:
 Floating point value corresponding to the contents of str on success. If the converted value falls out of range of corresponding return type, range error occurs and HUGE_VAL, HUGE_VALF or HUGE_VALL is returned. If no conversion can be performed, ​0​ is returned and *str_end is set to str.
 */
-		if(almost_equal(0.0,parsedArg,1) && 0 == strcmp(end,argv[i])){  //0 == string(end).compare(argv[i])
-			cout << "(trace):almost_equal(0.0,parsedArg,1) && 0 == strcmp(end,argv[i]);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
+		//treat anything other than numbers as multiplication signs
+//		if(almost_equal(0.0,parsedArg,1) && 0 == strcmp(end,argv[i])){
+		if(almost_equal(0.0,parsedArg,1) && 0 == string(end).compare(argv[i])){
+			cout << "(trace):almost_equal(0.0,parsedArg,1) && 0 == string(end).compare(argv[i]); {argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
 			if(1 == i)
 				continue;
 			if(argc -1 == i){
@@ -139,8 +142,8 @@ Floating point value corresponding to the contents of str on success. If the con
 				continue;
 			}
 
-			//substitute 96.3x3 37.9X6 63.9*3*7 with their product
-			//./argvsumc++ 90 81 75.5 \*\*\* 5 83 X 2 2\*xXxx2\*\*\*\*xXxXx\*xXxXXxx7x2X5 xxxx\*XXXXX\*\*xxxxxxxXX 79X2 x 2 54 \* 2 124.5 XXX 5 7\*137xxXXX\*\*   xxxx\*XXXXX
+			//substitute 96.3x3 37.9X6 63.9*3x7X9.9 with multiplication result
+			//./argvsumc++ 90  0  81 0  75.5 \*\*\* 5  0  83 X 2  0  2\*xXxx2\*\*\*\*xXxXx\*xXxXXxx7x2X5  0  xxxx\*XXXXX\*\*xxxxxxxXX  0  79X2 x 2  0  54 \* 2  0  124.5 XXX 5  0  7\*137xxXXX\*\*  xxxx\*XXXXX  \*xxxXXXX\*  0  X\*x
 			cout << "(trace):&(argv[i]):[" << &(argv[i]) << "], &argv[i]:[" << &argv[i] << "], argv+i:[" << argv+i << "]\n";
 			//todo: boolean literal
 			cout << "(trace):&(argv[i])==&argv[i]:[" << (&(argv[i])==&argv[i]) << "], &argv[i]==argv+i:[" << (&argv[i]==argv+i) << "]\n";
@@ -152,15 +155,14 @@ Floating point value corresponding to the contents of str on success. If the con
 			int arglen = string(argv[i]).length();
 			if(end-argv[i] < arglen ){
 				cout << "(trace):end-argv[i] < string(argv[i]).length():true; end-argv[i]:[" << end-argv[i] << "]\n";
-				for(p = argv[i]; arglen > p-argv[i];){
-					p = end;
-					for(; 43 > *p || 47 == *p || 57 < *p; ++p); // + , - . (recognize signs, Decimal and Thousands Separators)
+				for(p = end; arglen > p-argv[i];){
+					for(p = end; 43 > *p || 47 == *p || 57 < *p; ++p); // + , - . (recognize signs, Decimal and Thousands Separators)
 					//for(; 48 > *p || *p > 57; ++p);
-					cout << "(trace):end-argv[i] < string(argv[i]).length():true; p and *p after *p non-numeric test dblor loop: p:[" << p << "], *p:[" << *p << "]\n";
+					cout << "(trace):end-argv[i] < string(argv[i]).length():true; p and *p after '*p non-numeric test' for loop: p:[" << p << "], *p:[" << *p << "]\n";
 					dbl=strtod(p,&end);
 					cout << "(trace):dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
 					if(arglen >= end-argv[i]){ //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
-						if(0 != dbl){
+						if(!almost_equal(0.0,dbl,1)){
 						//cout << "(trace):dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
 							parsedArg*=dbl;
 						}
@@ -183,23 +185,23 @@ Floating point value corresponding to the contents of str on success. If the con
 				}else{
 					subProduct*=parsedArg;
 					cout << "(trace):subProduct*=parsedArg;[" << subProduct << "]\n";
-				}
 
-				if(argc-1 == i && !almost_equal(0.0,subProduct,1)){
-					parsedVct.push_back(subProduct);
-					cout << "(trace):parsedVct.push_back(subProduct);[" << subProduct << "]\n";
+					if(argc-1 == i){
+						parsedVct.push_back(subProduct);
+						cout << "(trace):parsedVct.push_back(subProduct);[" << subProduct << "]\n";
+					}
 				}
 			}else{
 				if(!almost_equal(0.0,subProduct,1)){
 					parsedVct.push_back(subProduct);
 					cout << "(trace):parsedVct.push_back(subProduct);[" << subProduct << "]\n";
-					subProduct=0;
+					subProduct=0.0;
 				}else if(!almost_equal(0.0,previousNum,1)){
 					parsedVct.push_back(previousNum);
 					cout << "(trace):parsedVct.push_back(previousNum);[" << previousNum << "]\n";
 				}
 
-				if(argc-1 == i){
+				if(argc-1 == i && !almost_equal(0.0,parsedArg,1)){
 					parsedVct.push_back(parsedArg);
 					cout << "(trace):parsedVct.push_back(parsedArg);[" << parsedArg << "]\n";
 				}
@@ -207,11 +209,10 @@ Floating point value corresponding to the contents of str on success. If the con
 				previousNum=parsedArg;
 			}
 		}
-		noNumeric=*end;
+		noNumeric=*end; //unnecessary?
 	}
 	
-	cout << "before accumulating parsed arguments' vector, previousNum:[" << previousNum << "]\n";
-	//if(!almost_equal(0.0,previousNum,1)){
+	//cout << "before accumulating parsed arguments' vector, previousNum:[" << previousNum << "]\n";
 	if(!parsedVct.empty()){
 		//https://stackoverflow.com/questions/22448747/using-stdaccumulate-to-add-floats-with-best-precision
 		//sumArgv = accumulate(begin(parsedVct),end(parsedVct),0.0);
@@ -232,6 +233,6 @@ Floating point value corresponding to the contents of str on success. If the con
 		cout << "sumArgv*1.2:[" << sumArgv20prcnt << "], round:[" << round(sumArgv20prcnt) << "], floor:[" << floor(sumArgv20prcnt) << "]\n";
 		cout << "sumArgv*1.25:[" << sumArgv25prcnt << "], round:[" << round(sumArgv25prcnt) << "], floor:[" << floor(sumArgv25prcnt) << "]\n";
 	}else{
-		cout << "Found vector is empty, nothing to sum. До свидания.\n";
+		cout << "Found vector empty, nothing to sum. До свидания.\n";
 	}
 }
