@@ -126,7 +126,8 @@ if [[ $cmd =~ -iname ]];then
 	if ([[ $uniq_args =~ $url_EscapeBraces ]] && echo "(trace):match regxpr \`$url_EscapeBraces' in args") || ([[ $uniq_args =~ $url_NoEscapeBraces ]] && echo "(trace):match regxpr \`$url_NoEscapeBraces' in args");then
 	#	echo "(trace):match regxpr \`$url_NoEscapeBraces' in args"
 
-		local dnldd_file="/tmp/._downloaded.tmp"
+		#todo: save and resume partially downloaded files, e.g. ".part" files
+		local dnldd_file="/tmp/_downloaded.find_avfiles_"
 	#	eval " $cmd" | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
 		eval " $cmd" | tee "$dnldd_file" 2>&1
 
@@ -142,20 +143,14 @@ if [[ $cmd =~ -iname ]];then
 	#	if (( $(wc -l "$dnldd_file") < $(wc -l <<< $uniq_args) ));then  #?:LnNum: division by zero
 	#	if (( $(wc -l "$dnldd_file") < $(echo -n $uniq_args | wc -l) ));then  #?:LnNum: division by zero
 			echo '(trace):$(wc -l < "$dnldd_file") < $(wc -l <<< $uniq_args):true'
-			local dnldd_ID="/tmp/._downloaded.ID.tmp"
+			local dnldd_ID="/tmp/_downloaded_ID.find_avfiles_"
 			local dllst_file="dllst"
 
 			#todo: hard to extract ideal safe common substr
 			gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' "$dnldd_file" > "$dnldd_ID"
 			
-			#crux of version 1
-			#command grep -v -F -f "$dnldd_ID" <<< $uniq_args > "$dllst_file"
-			#cat -n "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/._tmp_ && command mv -f /tmp/._tmp_ "$dllst_file"
-			
 			#todo: find other "download list file", diff and save entries only in $uniq_args
-			#crux of version 2
-			command grep -v -F -f "$dnldd_ID" <<< $uniq_args > /tmp/._tmp_
-			cat -n /tmp/._tmp_ | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/._tmp2_
+			command grep -v -F -f "$dnldd_ID" <<< $uniq_args > /tmp/_not_downloaded.find_avfiles_
 			
 			echo -e '$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27):['$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')']'
 
@@ -173,52 +168,52 @@ if [[ $cmd =~ -iname ]];then
 
 			#if [[ -n $dllstfiles ]] && [[ ! $dllstfiles =~ $spaces_rexpr ]];then
 			if [[ ! $dllstfiles =~ $spaces_rexpr ]];then
-				#command grep -v -F -f /tmp/._tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/._tmp3_
-				#command grep -v -F -f /tmp/._tmp2_ $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/._tmp3_
+				cat -n $dllstfiles | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/_not_downloaded_but_listed_in_dllst_files.find_avfiles_
+				command grep -v -F -f /tmp/_not_downloaded_but_listed_in_dllst_files.find_avfiles_  /tmp/_not_downloaded.find_avfiles_ > "$dllst_file"
+
+#https://stackoverflow.com/questions/32126653/how-does-end-work-in-bash-to-create-a-multi-line-comment-block?noredirect=1&lq=1
+: <<'HEREDOC:BLOCK_COMMENT'
+				#command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp3_
+				#command grep -v -F -f /tmp/_tmp2_ $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp3_
 				#1 #erroneous: file name interpreted as literal string
-				echo 'eval $(command grep -v -F -f /tmp/._tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27) > /tmp/._tmp31_) : /tmp/._tmp31_ :'
-				eval $(command grep -v -F -f /tmp/._tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/._tmp31_)
-				echo "[$(more /tmp/._tmp31_)]"
+				echo 'eval $(command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27) > /tmp/_tmp31_) : /tmp/_tmp31_ :'
+				eval $(command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp31_)
+				echo "[$(more /tmp/_tmp31_)]"
 				
 				#2
-				echo 'eval $(command grep -v -F -f /tmp/._tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) > /tmp/._tmp32_) : /tmp/._tmp32_ :'
-				eval $(command grep -v -F -f /tmp/._tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')) > /tmp/._tmp32_)
-				echo "[$(more /tmp/._tmp32_)]"
+				echo 'eval $(command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) > /tmp/_tmp32_) : /tmp/_tmp32_ :'
+				eval $(command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')) > /tmp/_tmp32_)
+				echo "[$(more /tmp/_tmp32_)]"
 				
 				#3 #erroneous: file name interpreted as literal string
-				echo 'eval command grep -v -F -f /tmp/._tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27) > /tmp/._tmp33_ : /tmp/._tmp33_ :'
-				eval command grep -v -F -f /tmp/._tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/._tmp33_
-				echo "[$(more /tmp/._tmp33_)]"
+				echo 'eval command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27) > /tmp/_tmp33_ : /tmp/_tmp33_ :'
+				eval command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp33_
+				echo "[$(more /tmp/_tmp33_)]"
 				
 				#4
-				echo 'eval command grep -v -F -f /tmp/._tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) > /tmp/._tmp34_ : /tmp/._tmp34_ :'
-				eval command grep -v -F -f /tmp/._tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')) > /tmp/._tmp34_
-				echo "[$(more /tmp/._tmp34_)]"
-
+				echo 'eval command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) > /tmp/_tmp34_ : /tmp/_tmp34_ :'
+				eval command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')) > /tmp/_tmp34_
+				echo "[$(more /tmp/_tmp34_)]"
 				#find: paths must precede expression: x27
 				#Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
-				#echo 'eval $(echo -en $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) | command grep -v -F -f /tmp/._tmp2_ > /tmp/._tmp3_) : /tmp/._tmp3_ :'
-				#eval $(echo -en $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) | command grep -v -F -f /tmp/._tmp2_ > /tmp/._tmp3_)
-				#more /tmp/._tmp3_
+				#echo 'eval $(echo -en $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) | command grep -v -F -f /tmp/_tmp2_ > /tmp/_tmp3_) : /tmp/_tmp3_ :'
+				#eval $(echo -en $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) | command grep -v -F -f /tmp/_tmp2_ > /tmp/_tmp3_)
+				#more /tmp/_tmp3_
 
 				#https://unix.stackexchange.com/questions/386499/how-to-check-if-file-is-empty-or-it-has-only-blank-characters
-				#command grep -q '[^ \t\v\n\u3000]' /tmp/._tmp3_ && (
-				#	command mv -f /tmp/._tmp3_ "$dllst_file"
-				command grep -q '[^ \t\v\n\u3000]' /tmp/._tmp34_ && (
-					#command mv -f /tmp/._tmp34_ "$dllst_file"
-					#command cp -i /tmp/._tmp34_ "$dllst_file"
-					#cat /tmp/._tmp34_ >> "$dllst_file"
+				command grep -q '[^ \t\v\n\u3000]' /tmp/_tmp34_ && (
+					#command mv -f /tmp/_tmp34_ "$dllst_file"
+					#command cp -i /tmp/_tmp34_ "$dllst_file"
+					#cat /tmp/_tmp34_ >> "$dllst_file"
 				)
-				#cat /tmp/._tmp2_ >> "$dllst_file"
-				cat -n /tmp/._tmp34_ /tmp/._tmp2_ "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/._tmpMerge_ && command mv -f /tmp/._tmpMerge_ "$dllst_file"
+HEREDOC:BLOCK_COMMENT
 			else
-				#command mv -f /tmp/._tmp2_ "$dllst_file"
-				#command cp -i /tmp/._tmp2_ "$dllst_file"
-				#cat /tmp/._tmp2_ >> "$dllst_file"
-				cat -n /tmp/._tmp2_ "$dllst_file" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/._tmpMerge_ && command mv -f /tmp/._tmpMerge_ "$dllst_file"
+				#unnecessary because gotten from $uniq_args
+				#cat -n /tmp/_not_downloaded.find_avfiles_ | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > "$dllst_file"
+				command mv -f /tmp/_not_downloaded.find_avfiles_ "$dllst_file"
 			fi
-
 			#} #)
+
 			echo -e "(trace):download list:file \x22$dllst_file\x22:"
 			more "$dllst_file"
 		fi
@@ -236,12 +231,12 @@ if [[ $cmd =~ -iname ]];then
 	fi
 	echo '$?':$?
 else
-	return 113	#can't be reflected on(passed to) outer/upper level!
+	return 113 #can't be passed on to outer/upper levels!
 fi
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 }
 
-function dlchk() {
+function dnldck() {
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 local urls_whitespaced=""
 local errmsg="[fF]ind.*[pP]ermission[s ]*[dD]enied"	#use variable to hold complex regxpr!
@@ -266,7 +261,7 @@ local file=""
 for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 #	if [[ ! ( $file =~ [fF]ind.*[pP]ermission[s ]*[dD]enied ) ]];then	#error: condition expected: $file	#stderr inaccessible this way!
 	if [[ ! $file =~ $errmsg && -f $file ]];then	#stderr inaccessible this way!
-		cat -n $file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ $file
+		cat -n $file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > _tmp.dnldck_ && command mv -f _tmp.dnldck_ $file
 		echo $file:
 		more $file
 	#while read -r line;do
@@ -289,7 +284,7 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 	#cmd=${cmd%%+([[:space:]])}
 	cmd=${cmd##[[:space:]]}
 	cmd=${cmd%%[[:space:]]}
-	echo '(trace):cmd(dlchk(){}):['$cmd']'
+	echo '(trace):cmd(dnldck(){}):['$cmd']'
 	eval " $cmd"
 #	urls_whitespaced=""
 	fi
@@ -316,7 +311,7 @@ if (($# > 0));then
 	echo '(trace):outfile:['$outfile']'
 	echo "$uniq_args" >> "$outfile"
 	#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
-	cat -n < "$outfile" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ "$outfile"
+	cat -n < "$outfile" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > _tmp.todo_ && command mv -f _tmp.todo_ "$outfile"
 
 	echo '$?':$?
 fi
@@ -342,10 +337,10 @@ if (($# > 0));then
 	if [[ -f $dllst_file ]];then
 	#	gawk '!seen[toupper($0)]++{exit 1}' $dllst_file || (
 	#		echo 'dl+(){} found duplicate lines, remove duplicates now.'
-	#		gawk '!seen[toupper($0)]++' $dllst_file > ._tmp_ && command mv -f ._tmp_ $dllst_file
+	#		gawk '!seen[toupper($0)]++' $dllst_file > _tmp.dnld_append_ && command mv -f _tmp.dnld_append_ $dllst_file
 	#		)
 
-		cat -n <<< $uniq_args | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ $dllst_file
+		cat -n <<< $uniq_args | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > _tmp.dnld_append_ && command mv -f _tmp.dnld_append_ $dllst_file
 		#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
 		#https://unix.stackexchange.com/questions/39291/run-a-command-that-is-shadowed-by-an-alias
 
