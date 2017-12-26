@@ -128,6 +128,8 @@ if [[ $cmd =~ -iname ]];then
 
 		#todo: save and resume partially downloaded files, e.g. ".part" files
 		local dnldd_file="/tmp/_downloaded.find_avfiles_"
+
+		#todo: hard to extract ideal safe common substr
 	#	eval " $cmd" | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
 		eval " $cmd" | tee "$dnldd_file" 2>&1
 
@@ -157,7 +159,7 @@ if [[ $cmd =~ -iname ]];then
 			#https://unix.stackexchange.com/questions/386499/how-to-check-if-file-is-empty-or-it-has-only-blank-characters
 			#command grep -q '[^ \t\v\n\u3000]' $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') && {  #(
 			local spaces_rexpr='^[ \t\v\n\u3000]*$'
-			local dllstfiles=$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')
+			local dllstfiles=$(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p '))
 			if [[ -n $dllstfiles ]];then
 				echo '(trace):[[ -n $dllstfiles ]]:true'
 			fi
@@ -169,7 +171,9 @@ if [[ $cmd =~ -iname ]];then
 			#if [[ -n $dllstfiles ]] && [[ ! $dllstfiles =~ $spaces_rexpr ]];then
 			if [[ ! $dllstfiles =~ $spaces_rexpr ]];then
 				cat -n $dllstfiles | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/_not_downloaded_but_listed_in_dllst_files.find_avfiles_
-				command grep -v -F -f /tmp/_not_downloaded_but_listed_in_dllst_files.find_avfiles_  /tmp/_not_downloaded.find_avfiles_ > "$dllst_file"
+				#those not downloaded may already be listded in PWD, so append not overwrite
+				command grep -v -F -f /tmp/_not_downloaded_but_listed_in_dllst_files.find_avfiles_  /tmp/_not_downloaded.find_avfiles_ >> "$dllst_file"
+				cat -n $dllst_file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/_unik_dllst_file.find_avfiles_ && command mv -f /tmp/_unik_dllst_file.find_avfiles_ $dllst_file
 
 #https://stackoverflow.com/questions/32126653/how-does-end-work-in-bash-to-create-a-multi-line-comment-block?noredirect=1&lq=1
 : <<'HEREDOC:BLOCK_COMMENT'
