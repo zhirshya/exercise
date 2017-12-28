@@ -57,7 +57,7 @@ local cmd_exc_fileopt=" -a {} \;"
 #if [[ ! -v $bandwidth_rate ]] || [[ -z $bandwidth_rate ]];then  #unknown condition: -v #zsh 5.2 (x86_64-redhat-linux-gnu)
 
 if [[ ! -z $bandwidth_rate ]];then
-	echo "(trace):bandwidth_rate":$bandwidth_rate
+	echo "bandwidth_rate":$bandwidth_rate
 	if [[ ! $bandwidth_rate =~ ^[0-9]+[kKmM]$ ]];then
 		if [[ $bandwidth_rate =~ ^[0-9]+$ ]];then
 			bandwidth_rate+='k'
@@ -71,7 +71,7 @@ if [[ ! -z $bandwidth_rate ]];then
 fi
 
 if [[ ! -z $format_num ]];then
-	echo "(trace):format_num":$format_num
+	echo "format_num":$format_num
 	cmd_fnd_exc+=" -f $format_num "
 fi
 
@@ -79,10 +79,10 @@ cmd_fnd_exc+="$cmd_exc_fileopt"
 
 #https://stackoverflow.com/questions/16489809/emulating-a-do-while-loop-in-bash
 while
-	echo '(trace):cmd to exc:['$cmd_fnd_exc']'
+	echo 'cmd to exc:['$cmd_fnd_exc']'
 	eval " $cmd_fnd_exc"
 	xt_code=$?
-	echo "(trace):exit code(find...-execdir youtube-dl...{} +):$xt_code"
+	echo "exit code(find...-execdir youtube-dl...{} +):$xt_code"
 	(( $xt_code != 0 ))
 do
 	#;
@@ -97,7 +97,7 @@ done
 echo "(end)«$(\date)»"
 #bash, ksh and zsh have a $SECONDS special variable that counts the number of seconds since the shell was started. In both zsh and ksh93, that variable can also be made floating point (with typeset -F SECONDS) to get more precision. This is only wall clock time, not CPU time.
 typeset -F SECONDS
-echo '(trace):$SECONDS(⃝  typeset -F SECONDS)':$SECONDS
+echo '$SECONDS(⃝  typeset -F SECONDS)':$SECONDS
 
 if [[ $shutdown_timeout =~ ^[nN][oO][wW]$ ]];then
 	echo 'true:[[ $shutdown_timeout =~ ^[nN][oO][wW]$ ]], exec:sudo shutdown -P -f +0'

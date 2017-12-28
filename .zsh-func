@@ -32,7 +32,7 @@ local videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb
 #local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s\n", $1}' <<< "$@")
 local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
 #local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
-echo '(trace):uniq_args:['$uniq_args']'
+echo 'uniq_args:['$uniq_args']'
 
 local cmd='sudo find /mnt/0 ~ -xdev -type f \( '
 
@@ -61,29 +61,29 @@ for str in $uniq_args;do
 
 	#https://stackoverflow.com/questions/369758/how-to-trim-whitespace-from-a-bash-variable
 	str=$(trmsp $str)
-    	echo "(trace):input arg after func trmsp() called:[$str]"
+    	echo "input arg after func trmsp() called:[$str]"
 
 	if [[ $str =~ $utvList_regxpr ]];then
-		echo "(trace):[$str] match [$utvList_regxpr]"
+		echo "[$str] match [$utvList_regxpr]"
 		echo '$'$((++idx)):'['$str']'
 		echo "playlist (contained) item(s) search is currently not supported!"
 		continue
 	elif [[ $str =~ $utvSingl_regxpr ]];then
-#		echo "(trace):[$str] match [$utvSingl_regxpr]"
+#		echo "[$str] match [$utvSingl_regxpr]"
 		str="${str##*youtu*be*/}"
 		str="${str##watch\?v=}"
 		str="${str%% *}"
 	elif [[ $str =~ $codek_regxpr ]];then
-		echo "(trace):[$str] match [$codek_regxpr]"
+		echo "[$str] match [$codek_regxpr]"
 		str="${str##*codek.tv/v/}"
 	elif [[ $str =~ $knl9_regxpr ]];then
-		echo "(trace):[$str] match [$knl9_regxpr]"
+		echo "[$str] match [$knl9_regxpr]"
 		str="${str##*video.ch9.ms/[-_a-zA-Z0-9/.]*/}"
 	elif [[ $str =~ $vimeo_regxpr ]];then
-		echo "(trace):[$str] match [$vimeo_regxpr]"
+		echo "[$str] match [$vimeo_regxpr]"
 		str="${str##*vimeo.com/}"
 	elif [[ $str =~ $facebook_regxpr ]];then
-		echo "(trace):[$str] match [$facebook_regxpr]"
+		echo "[$str] match [$facebook_regxpr]"
 #		str="${str##*video.*fbcdn.net/v/[-_.a-zA-Z0-9]*/}"
 		str="${str##*video.*fbcdn.net/v/*/}"
 	else
@@ -116,15 +116,15 @@ if [[ $cmd =~ -iname ]];then
 	cmd=${cmd% -o }
 	cmd+=' \) -exec ls -alFt {} \;'
 #	cmd+=" \) -exec ls -alFt {} \; | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > $dnldd_file"  #zsh: NF-1: command not found...
-	echo '(trace):$cmd(\?(){}):['$cmd']'
+	echo '$cmd(\?(){}):['$cmd']'
 
 	#find $uniq_args in other "download list files", save only when not downloaded and not listed in other download list files!
 	local url_NoEscapeBraces="[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,3}/[a-zA-Z0-9]+"
 	local url_EscapeBraces="[a-zA-Z0-9]+\.[a-zA-Z0-9]\{2,3\}/[a-zA-Z0-9]+"
 	#todo: jump statement in shell script  #unnecessary because of if(... && ...) || (... && ...)
 	#if [[ $uniq_args =~ $url_NoEscapeBraces ]];then
-	if ([[ $uniq_args =~ $url_EscapeBraces ]] && echo "(trace):match regxpr \`$url_EscapeBraces' in args") || ([[ $uniq_args =~ $url_NoEscapeBraces ]] && echo "(trace):match regxpr \`$url_NoEscapeBraces' in args");then
-	#	echo "(trace):match regxpr \`$url_NoEscapeBraces' in args"
+	if ([[ $uniq_args =~ $url_EscapeBraces ]] && echo "match regxpr \`$url_EscapeBraces' in args") || ([[ $uniq_args =~ $url_NoEscapeBraces ]] && echo "match regxpr \`$url_NoEscapeBraces' in args");then
+	#	echo "match regxpr \`$url_NoEscapeBraces' in args"
 
 		#todo: save and resume partially downloaded files, e.g. ".part" files
 		local dnldd_file="/tmp/_downloaded.find_avfiles_"
@@ -133,18 +133,18 @@ if [[ $cmd =~ -iname ]];then
 	#	eval " $cmd" | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > "$dnldd_file"
 		eval " $cmd" | tee "$dnldd_file" 2>&1
 
-	#	echo -e '(trace):ID(last 5 char of names\x27 main part) of already downloaded:'
+	#	echo -e 'ID(last 5 char of names\x27 main part) of already downloaded:'
 	#	more "$dnldd_file"
-		echo '(trace):$(echo -n $uniq_args | wc -l)':$(echo -n $uniq_args | wc -l)
-		echo '(trace):$(echo $uniq_args | wc -l)':$(echo $uniq_args | wc -l)
-		echo '(trace):$(wc -l <<< $uniq_args)':$(wc -l <<< $uniq_args)
+		echo '$(echo -n $uniq_args | wc -l)':$(echo -n $uniq_args | wc -l)
+		echo '$(echo $uniq_args | wc -l)':$(echo $uniq_args | wc -l)
+		echo '$(wc -l <<< $uniq_args)':$(wc -l <<< $uniq_args)
 		#https://unix.stackexchange.com/questions/343053/bash-test-wc-with-ge-division-by-0-error/343055
-		#echo '(trace):$(wc -l "$dnldd_file")':$(wc -l "$dnldd_file")  #LnNum filename
-		echo '(trace):$(wc -l < "$dnldd_file")':$(wc -l < "$dnldd_file")
+		#echo '$(wc -l "$dnldd_file")':$(wc -l "$dnldd_file")  #LnNum filename
+		echo '$(wc -l < "$dnldd_file")':$(wc -l < "$dnldd_file")
 		if (( $(wc -l < "$dnldd_file") < $(wc -l <<< $uniq_args) ));then
 	#	if (( $(wc -l "$dnldd_file") < $(wc -l <<< $uniq_args) ));then  #?:LnNum: division by zero
 	#	if (( $(wc -l "$dnldd_file") < $(echo -n $uniq_args | wc -l) ));then  #?:LnNum: division by zero
-			echo '(trace):$(wc -l < "$dnldd_file") < $(wc -l <<< $uniq_args):true'
+			echo '$(wc -l < "$dnldd_file") < $(wc -l <<< $uniq_args):true'
 			local dnldd_ID="/tmp/_downloaded_ID.find_avfiles_"
 			local dllst_file="dllst"
 
@@ -161,11 +161,11 @@ if [[ $cmd =~ -iname ]];then
 			local spaces_rexpr='^[ \t\v\n\u3000]*$'
 			local dllstfiles=$(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p '))
 			if [[ -n $dllstfiles ]];then
-				echo '(trace):[[ -n $dllstfiles ]]:true'
+				echo '[[ -n $dllstfiles ]]:true'
 			fi
 
 			if [[ ! $dllstfiles =~ $spaces_rexpr ]];then
-				echo '(trace):[[ ! $dllstfiles =~ $spaces_rexpr ]]:true'
+				echo '[[ ! $dllstfiles =~ $spaces_rexpr ]]:true'
 			fi
 
 			#if [[ -n $dllstfiles ]] && [[ ! $dllstfiles =~ $spaces_rexpr ]];then
@@ -218,11 +218,11 @@ HEREDOC:BLOCK_COMMENT
 			fi
 			#} #)
 
-			echo -e "(trace):download list:file \x22$dllst_file\x22:"
+			echo -e "download list:file \x22$dllst_file\x22:"
 			more "$dllst_file"
 		fi
 	else
-		echo '(trace):$cmd(\?(){}):['$cmd']'
+		echo '$cmd(\?(){}):['$cmd']'
 
 		#http://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#eval
 		#The eval utility shall construct a command by concatenating arguments together, separating each with a <space> character. The constructed command shall be read and executed by the shell.
@@ -288,7 +288,7 @@ for file in $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file);do
 	#cmd=${cmd%%+([[:space:]])}
 	cmd=${cmd##[[:space:]]}
 	cmd=${cmd%%[[:space:]]}
-	echo '(trace):cmd(dnldck(){}):['$cmd']'
+	echo 'cmd(dnldck(){}):['$cmd']'
 	eval " $cmd"
 #	urls_whitespaced=""
 	fi
@@ -308,11 +308,11 @@ if (($# > 0));then
 	#ERROR: Unable to download webpage: <urlopen error [Errno -2] Name or service not known> (caused by URLError(gaierror(-2, 'Name or service not known'),))
 	#local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=ORS="\n"} !seen[$0]++ {printf "%s%s%s\n", quot, $0, quot}' <<< "$@")
 	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1} END {print "\n"}' <<< "$@")
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 	local outfile="/mnt/0/gthb/note/.todo"
-	echo '(trace):outfile:['$outfile']'
+	echo 'outfile:['$outfile']'
 	echo "$uniq_args" >> "$outfile"
 	#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
 	cat -n < "$outfile" | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > _tmp.todo_ && command mv -f _tmp.todo_ "$outfile"
@@ -334,9 +334,9 @@ if (($# > 0));then
 
 	#local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" "} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
 	local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 
 	if [[ -f $dllst_file ]];then
 	#	gawk '!seen[toupper($0)]++{exit 1}' $dllst_file || (
@@ -379,9 +379,9 @@ function 0() {
 if (($# > 0));then
 	#$(gawk -v quot="'" 'BEGIN {RS=" "} !seen[$1]++ {print quot$1quot}' <<< "$@")
 	local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 	local IFS=$'\n'
 	local file=""
 	for file in "$uniq_args";do
@@ -398,9 +398,9 @@ function utlsfrm() {
 if (($# > 0));then
 #	local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[toupper($1)]++ {printf "%s%s%s\n", quot, $1, quot} END {print ""}' <<< "$@")
 	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 setopt sh_word_split
 setopt SH_WORD_SPLIT
 	local IFS=$'\n'
@@ -418,9 +418,9 @@ fi
 function dprx() {
 if (($# > 0));then
 	local uniq_args=$(gawk -v quot="\"" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 
 setopt sh_word_split
 setopt SH_WORD_SPLIT
@@ -429,21 +429,21 @@ setopt SH_WORD_SPLIT
 	for arg in "$uniq_args";do
 		#if [[ $arg =~ ^(http|HTTP)s?$ ]];then
 		if [[ $arg =~ (http|HTTP)s? ]];then
-			echo '(trace):$arg:['$arg'] hit regex =~ (http|HTTP)[s]?'
+			echo '$arg:['$arg'] hit regex =~ (http|HTTP)[s]?'
 			unset http_proxy
 			unset HTTP_PROXY
 		#elif [[ $arg =~ ^(ftp|FTP)$ ]];then
 		elif [[ $arg =~ (ftp|FTP) ]];then
-			echo '(trace):$arg:['$arg'] hit =~ (ftp|FTP)'
+			echo '$arg:['$arg'] hit =~ (ftp|FTP)'
 			unset ftp_proxy
 			unset FTP_PROXY
 		#elif [[ $arg =~ ^(sock|SOCK).*$ ]];then
 		elif [[ $arg =~ (sock|SOCK).* ]];then
-			echo '(trace):$arg:['$arg'] hit =~ (sock|SOCK).*'
+			echo '$arg:['$arg'] hit =~ (sock|SOCK).*'
 			unset socks_proxy
 			unset SOCKS_PROXY
 		else
-			echo '(trace):$arg:['$arg'] unrecognized protocol!'
+			echo '$arg:['$arg'] unrecognized protocol!'
 		fi
 	done
 unsetopt sh_word_split
@@ -489,9 +489,9 @@ fi
 
 function vln() {
 local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
-echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+echo 'uniq_args before func trmsp() called:['$uniq_args']'
 uniq_args=$(trmsp $uniq_args)
-echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+echo 'uniq_args after func trmsp() called:['$uniq_args']'
 
 #todo: window position setting (minimize or maximize) based on file type or pass as args together with playback speed
 local audio_only_flg=""
@@ -501,11 +501,11 @@ local videofrmt="(mp4|mkv|webm|mpg|mpeg|m2ts|MTS|CPI|clpi|MPL|mpls|BDM|bdmv|rmvb
 #if [[ $* =~ mp3\|flac\|aac\|wav ]];then
 if [[ $* =~ $audiofrmt ]];then
 	audio_only_flg="--qt-start-minimized"
-	echo "(trace):hit [[ $* =~ $audiofrmt ]]"
+	echo "hit [[ $* =~ $audiofrmt ]]"
 #elif [[ $* =~ mp4\|mkv\|webm\|mpg\|avi ]];then
 elif [[ $* =~ $videofrmt ]];then
 	#wndw_pos="--video-x 0 --video-y 0" #place VLC in top left corner
-	echo "(trace):hit [[ $* =~ $videofrmt ]]"
+	echo "hit [[ $* =~ $videofrmt ]]"
 #todo: return immediately when hit non-av file
 #else
 #	echo "error: invalid input files, please specify valid media files, and try again."
@@ -533,27 +533,27 @@ while (($return_code != 0)) || [[ $out_msg =~ error* ]];do #1.ERROR: can't find 
 	fi
 	out_msg=$(sudo youtube-dl -U)
 	return_code=$?
-	echo "(trace):err_counter:$err_counter"
-	echo '(trace):regxpr:$match:['$match'],$MATCH:['$MATCH']'
-	echo "(trace):youtube-dl -U:RC:$return_code"
-	echo "(trace):youtube-dl -U:output message:$out_msg"
+	echo "err_counter:$err_counter"
+	echo 'regxpr:$match:['$match'],$MATCH:['$MATCH']'
+	echo "youtube-dl -U:RC:$return_code"
+	echo "youtube-dl -U:output message:$out_msg"
 done
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 }
 
 function fx() {
 local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
-echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+echo 'uniq_args before func trmsp() called:['$uniq_args']'
 uniq_args=$(trmsp $uniq_args)
-echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+echo 'uniq_args after func trmsp() called:['$uniq_args']'
 nohup firefox --ssl-version-min=tls1.1 -private $uniq_args &> /dev/null & disown
 }
 
 function krm() {
 local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
-echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+echo 'uniq_args before func trmsp() called:['$uniq_args']'
 uniq_args=$(trmsp $uniq_args)
-echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+echo 'uniq_args after func trmsp() called:['$uniq_args']'
 nohup google-chrome-stable --ssl-version-min=tls1.1 https://medium.com/@abhimuralidharan/functional-swift-all-about-closures-310bc8af31dd https://medium.com/@abhimuralidharan/higher-order-functions-in-swift-filter-map-reduce-flatmap-1837646a63e8 https://medium.com/@Dougly/higher-order-functions-in-swift-sorted-map-filter-reduce-dff60b5b6adf https://encrypted.google.com/search\?hl=en\&as_q=c%2B%2B+17+parse+command+line+arguments+as+float https://github.com/fffaraz/awesome-cpp https://gist.github.com/TSiege/cbb0507082bb18ff7e4b https://github.com/tommybennett/algorithm-mnemonics/blob/master/algorithm_mnemonics.xml https://encrypted.google.com/search\?hl=en\&q=c%2B%2B+input+sanitization https://encrypted.google.com/search\?hl=en\&q=c%2B%2B+macro https://github.com/ben-strasser/fast-cpp-csv-parser https://www.rosettacode.org/wiki/Web_scraping http://www.bfilipek.com/2014/12/top-5-beautiful-c-std-algorithms.html https://channel9.msdn.com/Events/GoingNative/2013/Cpp-Seasoning $uniq_args &> /dev/null & disown
 # https://www.youtube.com/watch\?v=dN_gQYo9Uf8 https://www.youtube.com/watch\?v=5dJSZLmDsxk https://www.youtube.com/watch\?v=i-xqRDwpilM https://www.youtube.com/watch\?v=Az0J2UHbNCI https://www.youtube.com/watch\?v=WDn-htpBlnU
 #https://encrypted.google.com/search\?hl=en\&as_q=bash+zsh+hashset+hashmap https://unix.stackexchange.com/questions/48505/how-to-make-sure-only-one-instance-of-a-bash-script-runs https://isocpp.org/faq https://encrypted.google.com/search\?hl=en\&as_q=python+3+book https://stackoverflow.com/questions/16807011/python-how-to-identify-if-a-variable-is-an-array-or-a-scalar http://bisqwit.iki.fi/ http://docs.python-guide.org/en/latest http://python-future.org/what_else.html#what-else https://dzone.com/articles/writing-a-web-service-using-python-flask https://www.reddit.com/r/learnpython/comments/264ffw/what_is_the_pythonic_way_of_storing_credentials https://docs.python.org/3/library/email.examples.html https://docs.python.org/2/library/email-examples.html https://stackoverflow.com/questions/34668240/email-an-attachment-with-non-ascii-filename-with-python-email https://developers.google.com/gmail/api/guides/sending https://encrypted.google.com/search\?hl=en\&as_q=programming+loop+unroll https://en.wikipedia.org/wiki/Loop_unrolling
@@ -567,9 +567,9 @@ if ((0 < $#));then
 	#https://stackoverflow.com/questions/15108229/how-to-count-number-of-words-from-string-using-shell
 	#https://stackoverflow.com/questions/1469849/how-to-split-one-string-into-multiple-strings-separated-by-at-least-one-space-in
 	#https://stackoverflow.com/questions/1975849/how-to-split-a-line-into-words-separated-by-one-or-more-spaces-in-bash
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 
 	echo '${uniq_args[@]}:['${uniq_args[@]}']'
 	echo '$uniq_args[@]:['$uniq_args[@]']'
@@ -644,7 +644,7 @@ elif [ -f "/etc/redhat-release" ]; then
 else
 	distroname="$(uname -s) $(uname -r)"
 fi
-echo "(trace):distroname:${distroname}"
+echo "distroname:${distroname}"
 }
 
 function putfio() {
@@ -652,7 +652,7 @@ if (($# == 1));then
 	curl -F "file=@$1" 'https://file.io/?expires=3d'
 	echo '$?':$?
 elif (($# == 2)) && [[ $2 =~ [1-9][0-9]{0,2}[dmwDMW] ]];then
-	echo '(trace): =~ [1-9][0-9]{0,2}[dmwDMW] :$MATCH:['$MATCH'],array $match:['$match']'
+	echo ' =~ [1-9][0-9]{0,2}[dmwDMW] :$MATCH:['$MATCH'],array $match:['$match']'
 	curl -F "file=@$1" "https://file.io/?expires=$2"
 	echo '$?':$?
 else
@@ -708,9 +708,9 @@ echo '$?':$?
 
 function srvstr() {
 local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
-echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+echo 'uniq_args before func trmsp() called:['$uniq_args']'
 uniq_args=$(trmsp $uniq_args)
-echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+echo 'uniq_args after func trmsp() called:['$uniq_args']'
 local srv=""
 for srv in $uniq_args;do
 	sudo service "$srv" start
@@ -720,9 +720,9 @@ done
 
 function srvstp() {
 local uniq_args=$(gawk -v quot="'" 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {printf "%s%s%s\n", quot, $1, quot}' <<< "$@")
-echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+echo 'uniq_args before func trmsp() called:['$uniq_args']'
 uniq_args=$(trmsp $uniq_args)
-echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+echo 'uniq_args after func trmsp() called:['$uniq_args']'
 local srv=""
 for srv in $uniq_args;do
 	sudo service "$srv" stop
@@ -734,9 +734,9 @@ done
 function wttr() {
 if ((0 < $#));then
 	local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 
 	local arg=""
 	for arg in $uniq_args;do
@@ -759,9 +759,9 @@ fi
 function avrwndff() {
 if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then	# { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?	http://unix.stackexchange.com/questions/88850/precedence-of-the-shell-logical-operators
 	if (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
-		echo '※(trace):hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
+		echo '※hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
 	fi
-	echo "(trace):usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
+	echo "usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
 #define EX_USAGE 64 /* command line usage error */
 	return 64
 fi
@@ -778,7 +778,7 @@ local outfile=""
 local factor=""
 
 if [[ ! -f $1 ]];then
-	echo "(trace):please specify a valid local file name, and try again."
+	echo "please specify a valid local file name, and try again."
 	return 113
 else
 	infile="$1"
@@ -796,7 +796,7 @@ fi
 if (($# == 2));then
 #if [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]];then #parse error near `|'
 	if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then #http://www.regular-expressions.info/floatingpoint.html
-		echo '(trace):hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+		echo 'hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 		factor="$2"
 		outfile="${infile%.*}"
 		outfile+="_spdx"
@@ -805,7 +805,7 @@ if (($# == 2));then
 		suffix="${infile##*.}"
 		outfile+=$suffix
 	elif [[ -e $2 ]];then
-		echo "(trace):error: destination/output file already exist, please specify other name for output, and try again."
+		echo "error: destination/output file already exist, please specify other name for output, and try again."
 		return 113
 	else
 		outfile="$2"
@@ -822,10 +822,10 @@ if (($# == 3));then
 #if [[ $2 =~ (^[-+]?[0-9]?[.,][1-9]{1,2}$)|(^[-+]?[1-9]$) ]];then #parse error near `|'
 	if [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
 		if [[ -e $3 ]];then
-			echo "(trace):error: destination/output file already exist, please specify other name for output, and try again."
+			echo "error: destination/output file already exist, please specify other name for output, and try again."
 			return 113
 		fi
-		echo '(trace):hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+		echo 'hit [[ $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 		factor="$2"
 		outfile="$3"
 		outfile+="_spdx"
@@ -834,30 +834,30 @@ if (($# == 3));then
 		suffix="${infile##*.}"
 		outfile+=$suffix
 	else	#? redundant as already checked at function start
-		echo "(trace):usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
+		echo "usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
 		#define EX_USAGE 64 /* command line usage error */
 		return 64
 	fi
 fi
 
-echo "(trace):#test<"
+echo "#test<"
 if (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-	echo '(trace):hit (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
+	echo 'hit (($# == 2)) && [[ $2 == ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]]'
 fi
 
 # [[ != ]] literal string comparison?
 if (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]];then
-	echo '(trace):ERRONEOUS/WRONG! hit (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]], [[ != ]] literal string comparison?'
+	echo 'ERRONEOUS/WRONG! hit (($# == 2)) && [[ $2 != ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ]], [[ != ]] literal string comparison?'
 fi
 
 if (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
-	echo '(trace):hit (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] #"[[ ! (xpr) ]]'
+	echo 'hit (($# == 2)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] #"[[ ! (xpr) ]]'
 fi
 
 if (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]];then
-	echo '(trace):hit (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]] #"[[ ! ( xpr ) ]]'
+	echo 'hit (($# == 2)) && [[ ! ( $2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$ ) ]] #"[[ ! ( xpr ) ]]'
 fi
-echo "(trace):#test>"
+echo "#test>"
 
 #http://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters
 #infile_singlequoted=$(printf %s. "$infile" | sed "s/'/'\\\\''/g")
@@ -867,11 +867,11 @@ echo "(trace):#test>"
 
 local infile_singlequoted=$(printf \'%s\' "$(printf %s "$infile" | sed "s/'/'\\\\''/g")")
 local outfile_singlequoted=$(printf \'%s\' "$(printf %s "$outfile" | sed "s/'/'\\\\''/g")")
-echo '(trace):"${infile_singlequoted}"':"${infile_singlequoted}"
-echo '(trace):"${outfile_singlequoted}"':"${outfile_singlequoted}"
+echo '"${infile_singlequoted}"':"${infile_singlequoted}"
+echo '"${outfile_singlequoted}"':"${outfile_singlequoted}"
 
 if [[ -e ${outfile_singlequoted} ]];then
-	echo "(trace):error: destination/output file already exist, please specify other name for output, and try again."
+	echo "error: destination/output file already exist, please specify other name for output, and try again."
 	return 113
 fi
 
@@ -887,7 +887,7 @@ cmd+="${outfile_singlequoted}" #"$outfile_singlequoted"
 #cmd=${cmd//\'/\\\'} #eval: unmatched '
 #cmd=${cmd//*/\*}
 
-echo '(trace):$cmd:['$cmd']'
+echo '$cmd:['$cmd']'
 eval " $cmd"
 echo '$?':$?
 }
@@ -909,8 +909,8 @@ gimp --version
 vlc --version
 google-chrome-stable --version
 xmllint --version
-echo "(trace):node --version":$(node --version)
-echo "(trace):youtube-dl --version":$(youtube-dl --version)
+echo "node --version":$(node --version)
+echo "youtube-dl --version":$(youtube-dl --version)
 #echo "python --version":$(python --version) #python outputs its name automatically!
 echo $(python --version)	#'echo' spaces with an empty line
 perl --version
@@ -919,9 +919,9 @@ perl --version
 # ≈ MS Word
 function wrtr() {
 local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
-echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+echo 'uniq_args before func trmsp() called:['$uniq_args']'
 uniq_args=$(trmsp $uniq_args)
-echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+echo 'uniq_args after func trmsp() called:['$uniq_args']'
 local args=""
 local file=""
 for file in $uniq_args;do
@@ -941,9 +941,9 @@ nohup libreoffice --writer $args &> /dev/null & disown
 function sprsht() {
 #local uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$@")
 local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
-echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+echo 'uniq_args before func trmsp() called:['$uniq_args']'
 uniq_args=$(trmsp $uniq_args)
-echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+echo 'uniq_args after func trmsp() called:['$uniq_args']'
 nohup libreoffice --calc $uniq_args &> /dev/null & disown
 }
 
@@ -951,18 +951,18 @@ nohup libreoffice --calc $uniq_args &> /dev/null & disown
 function slid() {
 #local uniq_args=$(gawk 'BEGIN {RS=ORS="\n"} !seen[$0]++ {print $0}' <<< "$@")
 local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
-echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+echo 'uniq_args before func trmsp() called:['$uniq_args']'
 uniq_args=$(trmsp $uniq_args)
-echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+echo 'uniq_args after func trmsp() called:['$uniq_args']'
 nohup libreoffice --impress $uniq_args &> /dev/null & disown
 }
 
 #view pdf
 function vns() {
 local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
-echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+echo 'uniq_args before func trmsp() called:['$uniq_args']'
 uniq_args=$(trmsp $uniq_args)
-echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+echo 'uniq_args after func trmsp() called:['$uniq_args']'
 nohup evince $uniq_args &> /dev/null & disown
 }
 
@@ -1026,12 +1026,12 @@ function psgt() {
 local curdir="$PWD"
 local gthbdir="/mnt/0/gthb"
 local saveIFS="$IFS"
-echo '(trace):original/default $IFS:['$IFS']'
+echo 'original/default $IFS:['$IFS']'
 local IFS=" " gthbRepodirs=("xrcs" "note")
 #https://stackoverflow.com/questions/18383291/loop-over-set-of-strings-containing-spaces
 #https://superuser.com/questions/781766/ifs-separated-items-in-loop
 #https://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters
-echo '(trace):temporarily set $IFS:['$IFS']'
+echo 'temporarily set $IFS:['$IFS']'
 IFS="$saveIFS"
 local repo=""
 for repo in "${gthbRepodirs[@]}";do cd $gthbdir/$repo && (echo '$PWD':$PWD ; git push origin $(git_current_branch));done
@@ -1042,17 +1042,17 @@ echo '$?':$?
 function swpfile() {
 #if [[ $# -ne 2 ]];then
 if (( $# != 2 ));then
-  echo "(trace):Syntax: $(basename $0) <FILE 1> <FILE 2>"
+  echo "Syntax: $(basename $0) <FILE 1> <FILE 2>"
   return -1
 fi
 
 if [[ ! -f $1 ]]; then
-  echo "(trace):File \`$1' does not exist!"
+  echo "File \`$1' does not exist!"
   return -1
 fi
 
 if [[ ! -f $2 ]]; then
-  echo "(trace):File \`$2' does not exist!"
+  echo "File \`$2' does not exist!"
   return -1
 fi
 
@@ -1064,7 +1064,7 @@ fi
 #①
 local tmpfile=$(mktemp $(dirname "$1")/_XXXXXX_)
 if [[ ! -f $tmpfile ]]; then
-  echo "(trace):Could not create temporary intermediate file!"
+  echo "Could not create temporary intermediate file!"
   return -1
 fi
 
@@ -1085,18 +1085,18 @@ function trmsp() {
 #get space separated uniq args
 function uniksp() {
 	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 	return $uniq_args
 }
 
 #get newline separated uniq args
 function uniklb() {
 	local uniq_args=$(gawk 'BEGIN {RS=" ";ORS="\n"} !seen[$1]++ {print $1}' <<< "$@")
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 	return $uniq_args
 }
 
@@ -1109,9 +1109,9 @@ function 2locase() {
 if (($# > 0));then
 	#local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
 	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 	echo $uniq_args | tr '[:upper:]' '[:lower:]'
 	echo '$?':$?
 fi
@@ -1121,9 +1121,9 @@ function 2upcase() {
 if (($# > 0));then
 	#local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {printf "%s ", $1}' <<< "$@")
 	local uniq_args=$(gawk 'BEGIN {RS=ORS=" "} !seen[$1]++ {print $1}' <<< "$@")
-	echo '(trace):uniq_args before func trmsp() called:['$uniq_args']'
+	echo 'uniq_args before func trmsp() called:['$uniq_args']'
 	uniq_args=$(trmsp $uniq_args)
-	echo '(trace):uniq_args after func trmsp() called:['$uniq_args']'
+	echo 'uniq_args after func trmsp() called:['$uniq_args']'
 	echo $uniq_args | tr '[:lower:]' '[:upper:]'
 	echo '$?':$?
 fi

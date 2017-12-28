@@ -79,7 +79,7 @@ bool isNumber(T x){
 //https://rosettacode.org/wiki/Determine_if_a_string_is_numeric#C.2B.2B
 
 	vector<double> parsedVct;
-	cout << "(trace):vector<double> parsedVct; parsedVct.empty():[" << parsedVct.empty() << "]\n";
+	cout << "vector<double> parsedVct; parsedVct.empty():[" << parsedVct.empty() << "]\n";
 	double parsedArg=0.0;
 	double subProduct=0.0;
 	double sumArgv=0.0;
@@ -101,19 +101,19 @@ bool isNumber(T x){
 */
 //	std::cout << std::setprecision(std::numeric_limits<long double>::digits10 + 2);
 
-	cout << "(trace):const char* p; p==nullptr:[" << (p==nullptr) << "], char* end; end==nullptr:[" << (end==nullptr) << "]\n";
+	cout << "const char* p; p==nullptr:[" << (p==nullptr) << "], char* end; end==nullptr:[" << (end==nullptr) << "]\n";
 	/*
 	 cpp/argv_sum.cpp:93:44: error: invalid operands of types ‘char’ and ‘std::nullptr_t’ to binary ‘operator==’
-	 cout << "(trace):'\0'==nullptr:[" << ('\0'==nullptr) << "], 0==nullptr:[" << (0==nullptr) << "]\n";
+	 cout << "'\0'==nullptr:[" << ('\0'==nullptr) << "], 0==nullptr:[" << (0==nullptr) << "]\n";
 	 */ 
-	//cout << "(trace):'\0'==nullptr:[" << ('\0'==nullptr) << "], 0==nullptr:[" << (0==nullptr) << "]\n";
-	cout << "(trace): 0==nullptr:[" << (0==nullptr) << "]\n";
+	//cout << "'\0'==nullptr:[" << ('\0'==nullptr) << "], 0==nullptr:[" << (0==nullptr) << "]\n";
+	cout << " 0==nullptr:[" << (0==nullptr) << "]\n";
 	//todo: C null in C++
-	cout << "(trace): '\0'==0:[" << ('\0'==0) << "]\n"; //output: '1]
+	cout << " '\0'==0:[" << ('\0'==0) << "]\n"; //output: '1]
 	
 	for(int i = 1; i < argc; ++i){
 		parsedArg=strtod(argv[i],&end);
-		cout << "(trace):parsedArg=strtod(argv[i],&end); {argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
+		cout << "parsedArg=strtod(argv[i],&end); {argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
 /*
 http://en.cppreference.com/w/cpp/string/byte/strtof
 Return value:
@@ -122,13 +122,13 @@ Floating point value corresponding to the contents of str on success. If the con
 		//treat anything other than numbers as multiplication signs
 //		if(almost_equal(0.0,parsedArg,1) && 0 == strcmp(end,argv[i])){
 		if(almost_equal(0.0,parsedArg,1) && 0 == string(end).compare(argv[i])){
-			cout << "(trace):almost_equal(0.0,parsedArg,1) && 0 == string(end).compare(argv[i]); {argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
+			cout << "almost_equal(0.0,parsedArg,1) && 0 == string(end).compare(argv[i]); {argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
 			if(1 == i)
 				continue;
 			if(argc -1 == i){
 				if(!almost_equal(0.0,previousNum,1)){
 					parsedVct.push_back(previousNum);
-					cout << "(trace):parsedVct.push_back(previousNum);[" << previousNum << "]\n";
+					cout << "parsedVct.push_back(previousNum);[" << previousNum << "]\n";
 				}
 				break;
 			}
@@ -137,16 +137,16 @@ Floating point value corresponding to the contents of str on success. If the con
 			}
 		}else{
 			if(almost_equal(0.0,parsedArg,1)){
-				cout << "(trace):almost_equal(0.0,parsedArg,1);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
+				cout << "almost_equal(0.0,parsedArg,1);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
 				noNumeric=0;
 				continue;
 			}
 
 			//substitute 96.3x3 37.9X6 63.9*3x7X9.9 with multiplication result
 			//./argvsumc++ 90  0  81 0  75.5 \*\*\* 5  0  83 X 2  0  2\*xXxx2\*\*\*\*xXxXx\*xXxXXxx7x2X5  0  xxxx\*XXXXX\*\*xxxxxxxXX  0  79X2 x 2  0  54 \* 2  0  124.5 XXX 5  0  7\*137xxXXX\*\*  xxxx\*XXXXX  \*xxxXXXX\*  0  X\*x
-			cout << "(trace):&(argv[i]):[" << &(argv[i]) << "], &argv[i]:[" << &argv[i] << "], argv+i:[" << argv+i << "]\n";
+			cout << "&(argv[i]):[" << &(argv[i]) << "], &argv[i]:[" << &argv[i] << "], argv+i:[" << argv+i << "]\n";
 			//todo: boolean literal
-			cout << "(trace):&(argv[i])==&argv[i]:[" << (&(argv[i])==&argv[i]) << "], &argv[i]==argv+i:[" << (&argv[i]==argv+i) << "]\n";
+			cout << "&(argv[i])==&argv[i]:[" << (&(argv[i])==&argv[i]) << "], &argv[i]==argv+i:[" << (&argv[i]==argv+i) << "]\n";
 			/*
 			 error: invalid operands of types ‘char*’ and ‘char**’ to binary ‘operator-’
 				if(end-&(argv[i]) < string(argv[i]).length()){
@@ -154,16 +154,16 @@ Floating point value corresponding to the contents of str on success. If the con
 			//if(end-&(argv[i]) < string(argv[i]).length()){
 			int arglen = string(argv[i]).length();
 			if(end-argv[i] < arglen ){
-				cout << "(trace):end-argv[i] < string(argv[i]).length():true; end-argv[i]:[" << end-argv[i] << "]\n";
+				cout << "end-argv[i] < string(argv[i]).length():true; end-argv[i]:[" << end-argv[i] << "]\n";
 				for(p = end; arglen > p-argv[i];){
 					for(p = end; 43 > *p || 47 == *p || 57 < *p; ++p); // + , - . (recognize signs, Decimal and Thousands Separators)
 					//for(; 48 > *p || *p > 57; ++p);
-					cout << "(trace):end-argv[i] < string(argv[i]).length():true; p and *p after '*p non-numeric test' for loop: p:[" << p << "], *p:[" << *p << "]\n";
+					cout << "end-argv[i] < string(argv[i]).length():true; p and *p after '*p non-numeric test' for loop: p:[" << p << "], *p:[" << *p << "]\n";
 					dbl=strtod(p,&end);
-					cout << "(trace):dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
+					cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
 					if(arglen >= end-argv[i]){ //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
 						if(!almost_equal(0.0,dbl,1)){
-						//cout << "(trace):dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
+						//cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
 							parsedArg*=dbl;
 						}
 					}else{
@@ -171,39 +171,39 @@ Floating point value corresponding to the contents of str on success. If the con
 					}
 				}
 				noNumeric=0; //important!
-				cout << "(trace):end-argv[i] < string(argv[i]).length():true; argv[i]:[" << argv[i] << "], parsedArg:[" << parsedArg << "]\n";
+				cout << "end-argv[i] < string(argv[i]).length():true; argv[i]:[" << argv[i] << "], parsedArg:[" << parsedArg << "]\n";
 			}
 			//if(0 != noNumeric && !almost_equal(0.0,previousNum,1)){
 			if(0 != noNumeric && '\0' != noNumeric){
 				if(almost_equal(0.0,subProduct,1)){
 					if(!almost_equal(0.0,previousNum,1)){
 						subProduct=previousNum*parsedArg;
-						cout << "(trace):subProduct=(previousNum*parsedArg);[" << subProduct << "]\n";
+						cout << "subProduct=(previousNum*parsedArg);[" << subProduct << "]\n";
 					}else{
 						previousNum=parsedArg;
 					}
 				}else{
 					subProduct*=parsedArg;
-					cout << "(trace):subProduct*=parsedArg;[" << subProduct << "]\n";
+					cout << "subProduct*=parsedArg;[" << subProduct << "]\n";
 
 					if(argc-1 == i){
 						parsedVct.push_back(subProduct);
-						cout << "(trace):parsedVct.push_back(subProduct);[" << subProduct << "]\n";
+						cout << "parsedVct.push_back(subProduct);[" << subProduct << "]\n";
 					}
 				}
 			}else{
 				if(!almost_equal(0.0,subProduct,1)){
 					parsedVct.push_back(subProduct);
-					cout << "(trace):parsedVct.push_back(subProduct);[" << subProduct << "]\n";
+					cout << "parsedVct.push_back(subProduct);[" << subProduct << "]\n";
 					subProduct=0.0;
 				}else if(!almost_equal(0.0,previousNum,1)){
 					parsedVct.push_back(previousNum);
-					cout << "(trace):parsedVct.push_back(previousNum);[" << previousNum << "]\n";
+					cout << "parsedVct.push_back(previousNum);[" << previousNum << "]\n";
 				}
 
 				if(argc-1 == i && !almost_equal(0.0,parsedArg,1)){
 					parsedVct.push_back(parsedArg);
-					cout << "(trace):parsedVct.push_back(parsedArg);[" << parsedArg << "]\n";
+					cout << "parsedVct.push_back(parsedArg);[" << parsedArg << "]\n";
 				}
 
 				previousNum=parsedArg;
