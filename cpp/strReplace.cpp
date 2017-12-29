@@ -3,6 +3,9 @@
 #include <vector>
 #include <string>
 
+//better with
+//http://thispointer.com/find-and-replace-all-occurrences-of-a-sub-string-in-c/
+
 /*
 	argv -> vector
 	filter and transform: escape special characters, e.g. & ! ? * ->  \& \! \? \*
