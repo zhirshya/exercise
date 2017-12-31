@@ -811,3 +811,5 @@ pip install --user --upgrade itchat
 
 tr -t '[:upper:]' '[:lower:]' <<< $tst_var
 
+cd ~otherUsrName
+
