@@ -606,10 +606,12 @@ sudo freshclam;sudo clamscan --exclude-dir="^/sys" -i --bell -r /;echo '$?':$?
 #braced group logging
 #shell group output redirection
 {echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)} &>> /mnt/0/workspace/test.log && s0
-(echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)) &>> /mnt/0/workspace/test.log && s0
+(echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)) &>> /mnt/0/workspace/test.log && s0  #execute in subshell
 
 {echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)} &>> /mnt/0/workspace/test.log ; s0
-(echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)) &>> /mnt/0/workspace/test.log ; s0
+(echo $(date) ; /mnt/0/gthb/xrcs/py/sendmail.py /mnt/0/workspace/mail.txt ; echo $(date)) &>> /mnt/0/workspace/test.log ; s0  #execute in subshell
+
+&>> |
 
 # '&>' litter log files with tons of progress string(CTRL-M (^M))! Log only errors instead!
 # keep track of wget's input file dir and CD to there if execute other commands and scripts first!
