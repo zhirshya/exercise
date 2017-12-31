@@ -1101,8 +1101,11 @@ function uniklb() {
 }
 
 function prntenv() {
-	echo 'function prntenv:(Env):$SHELL':$SHELL';$shell':$shell
-	echo 'function prntenv:(Env):$IFS:['$IFS']'
+	echo '$SHELL':$SHELL';$shell':$shell
+	echo '$IFS:['$IFS']'
+	echo '$PS1:['$PS1']'
+	echo '$HISTSIZE:['$HISTSIZE']'
+	echo '$HISTFILESIZE:['$HISTFILESIZE']'
 }
 
 function 2locase() {
