@@ -815,3 +815,18 @@ tr -t '[:upper:]' '[:lower:]' <<< $tst_var
 
 cd ~otherUsrName
 
+ctrl-\
+coredump analysis
+program record replay toolkit
+pinplay Dr debug
+
+time {cmd1 ; cmd2 ...}
+
+#macOS
+sw_vers
+hostinfo
+ls $(dirname $(whereis cat))
+basename
+PPID: ps -jp PID
+history
+
