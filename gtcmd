@@ -38,7 +38,8 @@ git clone from bitbucket.org is not working by https
 #diff file in local and remote repo
 git diff origin/master -- <file>
 
-git checkout -- strt.sh #accidentally deleted 
+#accidentally deleted 
+git checkout -- strt.sh
 
 #git empty file bad file descriptor
 git fsck --full
@@ -59,4 +60,11 @@ git add -A
 git commit
 git push --set-upstream origin newbranch
 
+git show --pretty=fuller
+
+git log -S<search_str> --pretty=oneline --abbrev-commit <file>
+
+git diff --cached
+
+gitk
 
