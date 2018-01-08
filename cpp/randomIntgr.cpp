@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
  
+//https://www.geeksforgeeks.org/writing-cc-code-efficiently-in-competitive-programming/
 //https://www.geeksforgeeks.org/random-header-c-set-1generators/
 //https://www.geeksforgeeks.org/c-program-generate-random-number/
 
