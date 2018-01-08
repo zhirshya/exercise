@@ -110,6 +110,10 @@ int main(int argc, char** argv){
 		 ./strrpl Learn Node.js by building Udemy: Stripe + MailChimp + Wistia
 		Learn Node.js by building Udemy: Stripe + MailChimp + Wistia
 		Learn_Node.js_by_building:Udemy:_Stripe_MailChimp_Wistia
+
+		./strrpl Complete Node.js Developer Course \(2nd Edition\)
+		Complete Node.js Developer Course (2nd Edition)
+		Complete_Node.js_Developer_Course_Edition)
 		*/ 
 
 		if(1 < i)
