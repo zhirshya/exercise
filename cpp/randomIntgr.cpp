@@ -21,7 +21,7 @@ int randomNoGenerator(int limit)
 // Driver Code
 int main()
 {
-    int limit = 19937;
+    int limit = 19938;
     cout << randomNoGenerator(limit) << '\n';
     return 0;
 }
