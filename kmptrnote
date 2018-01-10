@@ -107,13 +107,13 @@ find /mnt/0 -type f -iname 'dwn.wait' -execdir rename -v 's/\.wait/\.todo/' {} \
 find /mnt/0 ~ -xdev -type f -iname 'dwn*' -execdir rename -v dwn dl '{}' \;
 find /mnt/0 ~ -xdev -type f \( -iname 'dl' -o -iname 'dl.todo' \) -execdir rename -v dl dllst '{}' \;
 
-find . -type f -exec chmod 644 {} \;
+find . -type f -exec chmod 644 {} +
 find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} ";"
 find -type f \( -name "*" -or -name ".*" \) -execdir wc -l {} \;
-find /mnt/0 ~ -type f \( -iname "*07n*" -o -iname "*0n7*" -o -iname "*0o7*" -o -iname "*07o*" \) -exec ls -alF {} \;
-find /mnt/0 ~ -xdev -type f -iname 'dwn' -execdir rm {} \; && echo '$?':$?
+find /mnt/0 ~ -type f \( -iname "*07n*" -o -iname "*0n7*" -o -iname "*0o7*" -o -iname "*07o*" \) -exec ls -alF {} +
+find /mnt/0 ~ -xdev -type f -iname 'dwn' -execdir rm {} + && echo '$?':$?
 #find output redirection works
-find /mnt/0 ~ -xdev -type f -iname '*.py' -exec ls -alF {} \; > outfile
+find /mnt/0 ~ -xdev -type f -iname '*.py' -exec ls -alF {} + > outfile
 
 #http://stackoverflow.com/questions/6844785/how-to-use-regex-with-find-command
 find /mnt/0 ~ -xdev -type f -regextype posix-extended -regex '.*node.*(\.(pdf|epub|(ppt|doc|xls)x?)?)?' -print
@@ -292,8 +292,8 @@ usermod -g adm r
 #shell cmd
 print - $((524288000/1024/1024))
 
-find /mnt/0 ~ ! -path "/mnt/0/linux/*" ! -path "/mnt/0/linux-insides/*" -type f -iname "*debug*" -exec ls -alF {} \;
-sudo find / -xdev -path /mnt -prune -o -iname 'algorithm' -exec ls -alF {} \; ;echo '$?':$?
+find /mnt/0 ~ ! -path "/mnt/0/linux/*" ! -path "/mnt/0/linux-insides/*" -type f -iname "*debug*" -exec ls -alF {} +
+sudo find / -xdev -path /mnt -prune -o -iname 'algorithm' -exec ls -alF {} + ;echo '$?':$?
 sudo find / -xdev -path /mnt -prune -o -iname 'algorithm' -printf "%y %p\n";echo '$?':$?
 f /usr/include/c++/7/algorithm
 f /usr/include/c++/7/ext/algorithm
@@ -302,7 +302,7 @@ f /usr/include/c++/7/parallel/algorithm
 d /usr/share/perl5/vendor_perl/Algorithm
 f /usr/lib64/clang/4.0.1/include/cuda_wrappers/algorithm
 $?:0
-sudo find / -xdev -path /mnt -prune -o -iname 'algorithm' -exec grep -HiRn "stl_algo" {} \; ;echo '$?':$?
+sudo find / -xdev -path /mnt -prune -o -iname 'algorithm' -exec grep -HiRn "stl_algo" {} + ;echo '$?':$?
 /usr/include/c++/7/algorithm:61:#include <bits/stl_algobase.h>
 /usr/include/c++/7/algorithm:62:#include <bits/stl_algo.h>
 $?:0
