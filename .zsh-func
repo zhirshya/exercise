@@ -114,8 +114,8 @@ unsetopt SH_WORD_SPLIT
 
 if [[ $cmd =~ -iname ]];then
 	cmd=${cmd% -o }
-	cmd+=' \) -exec ls -alFt {} \;'
-#	cmd+=" \) -exec ls -alFt {} \; | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > $dnldd_file"  #zsh: NF-1: command not found...
+	cmd+=' \) -exec ls -alFt {} +'
+#	cmd+=" \) -exec ls -alFt {} + | gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' > $dnldd_file"  #zsh: NF-1: command not found...
 	echo '$cmd(\?(){}):['$cmd']'
 
 	#find $uniq_args in other "download list files", save only when not downloaded and not listed in other download list files!
@@ -148,78 +148,93 @@ if [[ $cmd =~ -iname ]];then
 			local dnldd_ID="/tmp/_downloaded_ID.find_avfiles_"
 			local dllst_file="dllst"
 
-			#todo: hard to extract ideal safe common substr
+			#todo: hard to extract ideal safe common substr, may not work for URLs others than youtube's!
 			gawk -F'.' '{print substr($(NF-1),length($(NF-1))-4)}' "$dnldd_file" > "$dnldd_ID"
 			
 			#todo: find other "download list file", diff and save entries only in $uniq_args
-			command grep -v -F -f "$dnldd_ID" <<< $uniq_args > /tmp/_not_downloaded.find_avfiles_
-			
-			echo -e '$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27):['$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')']'
+			local varNotDnldd=$(command grep -v -F -f "$dnldd_ID" <<< $uniq_args)
+			if [[ -n ${varNotDnldd// \t\v\n\u3000} ]];then
+				echo "$varNotDnldd" > /tmp/_not_downloaded.find_avfiles_
 
-			#https://unix.stackexchange.com/questions/386499/how-to-check-if-file-is-empty-or-it-has-only-blank-characters
-			#command grep -q '[^ \t\v\n\u3000]' $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') && {  #(
-			local spaces_rexpr='^[ \t\v\n\u3000]*$'
-			local dllstfiles=$(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p '))
-			if [[ -n $dllstfiles ]];then
-				echo '[[ -n $dllstfiles ]]:true'
-			fi
-
-			if [[ ! $dllstfiles =~ $spaces_rexpr ]];then
-				echo '[[ ! $dllstfiles =~ $spaces_rexpr ]]:true'
-			fi
-
-			#if [[ -n $dllstfiles ]] && [[ ! $dllstfiles =~ $spaces_rexpr ]];then
-			if [[ ! $dllstfiles =~ $spaces_rexpr ]];then
-				cat -n $dllstfiles | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/_not_downloaded_but_listed_in_dllst_files.find_avfiles_
-				#those not downloaded may already be listded in PWD, so append not overwrite
-				command grep -v -F -f /tmp/_not_downloaded_but_listed_in_dllst_files.find_avfiles_  /tmp/_not_downloaded.find_avfiles_ >> "$dllst_file"
-				cat -n $dllst_file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/_unik_dllst_file.find_avfiles_ && command mv -f /tmp/_unik_dllst_file.find_avfiles_ $dllst_file
-
-#https://stackoverflow.com/questions/32126653/how-does-end-work-in-bash-to-create-a-multi-line-comment-block?noredirect=1&lq=1
-: <<'HEREDOC:BLOCK_COMMENT'
-				#command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp3_
-				#command grep -v -F -f /tmp/_tmp2_ $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp3_
-				#1 #erroneous: file name interpreted as literal string
-				echo 'eval $(command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27) > /tmp/_tmp31_) : /tmp/_tmp31_ :'
-				eval $(command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp31_)
-				echo "[$(more /tmp/_tmp31_)]"
-				
-				#2
-				echo 'eval $(command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) > /tmp/_tmp32_) : /tmp/_tmp32_ :'
-				eval $(command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')) > /tmp/_tmp32_)
-				echo "[$(more /tmp/_tmp32_)]"
-				
-				#3 #erroneous: file name interpreted as literal string
-				echo 'eval command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27) > /tmp/_tmp33_ : /tmp/_tmp33_ :'
-				eval command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp33_
-				echo "[$(more /tmp/_tmp33_)]"
-				
-				#4
-				echo 'eval command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) > /tmp/_tmp34_ : /tmp/_tmp34_ :'
-				eval command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')) > /tmp/_tmp34_
-				echo "[$(more /tmp/_tmp34_)]"
-				#find: paths must precede expression: x27
-				#Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
-				#echo 'eval $(echo -en $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) | command grep -v -F -f /tmp/_tmp2_ > /tmp/_tmp3_) : /tmp/_tmp3_ :'
-				#eval $(echo -en $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) | command grep -v -F -f /tmp/_tmp2_ > /tmp/_tmp3_)
-				#more /tmp/_tmp3_
+				echo -e '$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27):['$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')']'
 
 				#https://unix.stackexchange.com/questions/386499/how-to-check-if-file-is-empty-or-it-has-only-blank-characters
-				command grep -q '[^ \t\v\n\u3000]' /tmp/_tmp34_ && (
-					#command mv -f /tmp/_tmp34_ "$dllst_file"
-					#command cp -i /tmp/_tmp34_ "$dllst_file"
-					#cat /tmp/_tmp34_ >> "$dllst_file"
-				)
-HEREDOC:BLOCK_COMMENT
-			else
-				#unnecessary because gotten from $uniq_args
-				#cat -n /tmp/_not_downloaded.find_avfiles_ | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > "$dllst_file"
-				command mv -f /tmp/_not_downloaded.find_avfiles_ "$dllst_file"
-			fi
-			#} #)
+				#command grep -q '[^ \t\v\n\u3000]' $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') && {  #(
+				local spaces_rexpr='^[ \t\v\n\u3000]*$'
+				local dllstfiles=$(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -print0)  #find ... -print0 | xargs -0 cat
+				if [[ -n ${dllstfiles// \t\v\n\u3000} ]];then
+					echo '[[ -n ${dllstfiles// \t\v\n\u3000} ]]:true'
+				fi
 
-			echo -e "download list:file \x22$dllst_file\x22:"
-			more "$dllst_file"
+				if [[ ! $dllstfiles =~ $spaces_rexpr ]];then
+					echo '[[ ! $dllstfiles =~ $spaces_rexpr ]]:true'
+				fi
+
+				#if [[ -n $dllstfiles ]] && [[ ! $dllstfiles =~ $spaces_rexpr ]];then
+				#if [[ -n ${dllstfiles// \t\v\n\u3000} ]];then
+				if [[ ! $dllstfiles =~ $spaces_rexpr ]];then
+					#https://stackoverflow.com/questions/864316/how-to-pipe-list-of-files-returned-by-find-command-to-cat-to-view-all-the-files
+					echo -n $dllstfiles | xargs -0 cat -n | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/_not_downloaded_but_listed_in_dllst_files.find_avfiles_
+					#those not downloaded may already be listded in PWD, so append not overwrite
+					local varDllstFoundDiff=$(command grep -v -F -f /tmp/_not_downloaded_but_listed_in_dllst_files.find_avfiles_  /tmp/_not_downloaded.find_avfiles_)
+					#https://www.gnu.org/software/bash/manual/bashref.html#Shell-Parameter-Expansion
+					#https://unix.stackexchange.com/questions/146942/how-can-i-test-if-a-variable-is-empty-or-contains-only-spaces
+					if [[ -n ${varDllstFoundDiff// \t\v\n\u3000} ]];then  #local spaces_rexpr='^[ \t\v\n\u3000]*$'
+						if [[ -f $dllst_file ]];then
+							echo "$varDllstFoundDiff" >> $dllst_file
+							cat -n $dllst_file | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > /tmp/_unik_dllst_file.find_avfiles_ && command mv -f /tmp/_unik_dllst_file.find_avfiles_ $dllst_file
+						else
+							echo -n $varDllstFoundDiff | cat -n | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > $dllst_file
+
+						fi
+						echo -e "download list:file \x22$dllst_file\x22:"
+						more "$dllst_file"
+	#https://stackoverflow.com/questions/32126653/how-does-end-work-in-bash-to-create-a-multi-line-comment-block?noredirect=1&lq=1
+: <<'HEREDOC:BLOCK_COMMENT'
+					#command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp3_
+					#command grep -v -F -f /tmp/_tmp2_ $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp3_
+					#1 #erroneous: file name interpreted as literal string
+					echo 'eval $(command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27) > /tmp/_tmp31_) : /tmp/_tmp31_ :'
+					eval $(command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp31_)
+					echo "[$(more /tmp/_tmp31_)]"
+					
+					#2
+					echo 'eval $(command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) > /tmp/_tmp32_) : /tmp/_tmp32_ :'
+					eval $(command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')) > /tmp/_tmp32_)
+					echo "[$(more /tmp/_tmp32_)]"
+					
+					#3 #erroneous: file name interpreted as literal string
+					echo 'eval command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27) > /tmp/_tmp33_ : /tmp/_tmp33_ :'
+					eval command grep -v -F -f /tmp/_tmp2_ <<< $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ') > /tmp/_tmp33_
+					echo "[$(more /tmp/_tmp33_)]"
+					
+					#4
+					echo 'eval command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) > /tmp/_tmp34_ : /tmp/_tmp34_ :'
+					eval command grep -v -F -f /tmp/_tmp2_ $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf '%p ')) > /tmp/_tmp34_
+					echo "[$(more /tmp/_tmp34_)]"
+					#find: paths must precede expression: x27
+					#Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
+					#echo 'eval $(echo -en $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) | command grep -v -F -f /tmp/_tmp2_ > /tmp/_tmp3_) : /tmp/_tmp3_ :'
+					#eval $(echo -en $(trmsp $(sudo find /mnt/0 ~ -xdev -type f -iname $dllst_file -printf \x27%p \x27)) | command grep -v -F -f /tmp/_tmp2_ > /tmp/_tmp3_)
+					#more /tmp/_tmp3_
+
+					#https://unix.stackexchange.com/questions/386499/how-to-check-if-file-is-empty-or-it-has-only-blank-characters
+					command grep -q '[^ \t\v\n\u3000]' /tmp/_tmp34_ && (
+						#command mv -f /tmp/_tmp34_ "$dllst_file"
+						#command cp -i /tmp/_tmp34_ "$dllst_file"
+						#cat /tmp/_tmp34_ >> "$dllst_file"
+					)
+HEREDOC:BLOCK_COMMENT
+					fi
+				else
+					#unnecessary because gotten from $uniq_args
+					#cat -n /tmp/_not_downloaded.find_avfiles_ | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > "$dllst_file"
+					command mv -f /tmp/_not_downloaded.find_avfiles_ "$dllst_file"
+					echo -e "download list:file \x22$dllst_file\x22:"
+					more "$dllst_file"
+				fi
+				#} #)
+			fi
 		fi
 	else
 		echo '$cmd(\?(){}):['$cmd']'
@@ -467,7 +482,7 @@ echo "NO_PROXY:[$NO_PROXY]"
 
 function --() {
 rm -rf ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
-sudo find /var/cache/PackageKit/ -name "*.rpm" -execdir rm {} \; #probably Fedora only
+sudo find /var/cache/PackageKit/ -name "*.rpm" -execdir rm {} + #probably Fedora only
 sudo dnf autoremove #many times faultily automatically remove kernel-modules-extra which will be reinstalled on next system upgrade!
 #sudo apt autoremove -y; sudo apt autoclean; sudo apt clean
 #E: encountered a section with no package: header
