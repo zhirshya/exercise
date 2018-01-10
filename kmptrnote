@@ -830,3 +830,6 @@ basename
 PPID: ps -jp PID
 history
 
+https://stackoverflow.com/questions/864316/how-to-pipe-list-of-files-returned-by-find-command-to-cat-to-view-all-the-files
+find ... -print0 | xargs -0 cat -n
+
