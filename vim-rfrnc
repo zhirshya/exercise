@@ -196,3 +196,6 @@ To know filename use Ctrl+G,:file or :f
 #https://stackoverflow.com/questions/1305853/how-can-i-make-my-match-non-greedy-in-vim
 :%s/\(eval\)[ \t\v\u3000]*\$\=[{(]\(.\{-}\)[})]/\1 " \$\2"/gc
 
+#find ... -exec ... {} \; -> {} +
+:%s/{}\s*\\\=;/{} +/gc
+
