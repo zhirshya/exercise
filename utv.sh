@@ -44,7 +44,7 @@ fi
 local xt_code=-1
 local err_counter=0
 local cmd_fnd_exc="find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest "
-local cmd_exc_fileopt=" -a {} \;"
+local cmd_exc_fileopt=" -a {} +"
 
 #https://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions
 #-v varname: True if the shell variable varname is set (has been assigned a value).
@@ -65,8 +65,8 @@ if [[ ! -z $bandwidth_rate ]];then
 			bandwidth_rate='75k'
 		fi
 	fi
-	#find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r $bandwidth_rate -a {} \;
-	#find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest -r $bandwidth_rate -a {} \;
+	#find /mnt/0 ~ -xdev -type f -iname 'dllst' -o -iname 'dllst.todo' -execdir youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg -r $bandwidth_rate -a {} +
+	#find /mnt/0 ~ -xdev -type f -iname 'dllst' -execdir youtube-dl --youtube-skip-dash-manifest -r $bandwidth_rate -a {} +
 	cmd_fnd_exc+=" -r $bandwidth_rate "
 fi
 
