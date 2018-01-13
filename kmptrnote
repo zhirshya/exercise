@@ -45,6 +45,9 @@ width=960
 height=640
 
 #trim/clip, strip off audio/video
+#https://gist.github.com/protrolium/e0dbd4bb0f1a396fcb55
+ffmpeg -codecs
+ffmpeg -formats
 #https://trac.ffmpeg.org/wiki/Encode/HighQualityAudio
 ffmpeg -i InputFile -c copy -ss 00:00:00 -t <duration> OutPutFile
 ffmpeg -i InputFile  -vn -acodec copy -ss 00:00:00 -t <duration> OutPutFile
