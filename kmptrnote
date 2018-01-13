@@ -833,3 +833,9 @@ history
 https://stackoverflow.com/questions/864316/how-to-pipe-list-of-files-returned-by-find-command-to-cat-to-view-all-the-files
 find ... -print0 | xargs -0 cat -n
 
+#for each (for-each) in zsh
+#http://improve-future.com/en/for-each-in-bash-sh-and-zsh.html
+local varZip=($(ls *Code.zip))
+echo $varZip
+for varZ in $varZip;do unzip -d /mnt/0/kod_coderprog $varZ;echo '$?':$?;done
+
