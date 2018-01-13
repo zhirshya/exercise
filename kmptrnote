@@ -51,6 +51,7 @@ ffmpeg -i InputFile  -vn -acodec copy -ss 00:00:00 -t <duration> OutPutFile
 ffmpeg -i MGTOW\ Reason\ \#13\ -\ Aftershock\ From\ The\ Wedding-A17CBtwEmcE.webm -an -vcodec copy aftershock\ marriage-A17CBtwEmcE.webm
 ffmpeg -i How\ to\ lace\ dress\ shoes\ ·\ Carmina\ shoemaker-L3p_jjYKImc.mkv -an -vcodec copy -ss 0:0:7 -t 0:0:39 lace_dress_shoe-L3p_jjYKImc.mkv
 ffmpeg -i 21\ дарь\ эхийн\ ачлал.mkv -vn -c:a libmp3lame -aq 0 21\ дарь\ эхийн\ ачлал_aq_0.mp3
+ffmpeg -i \'In\ Out\'\ Нэвтрүүлэг\ -\ Эдийн\ засгийн\ ухааны\ доктор\ Холбоос\ овогт\ Т.Баярхүү-xfJYJlSfRWM.webm -ss 0:0:15 -vn -c:a libopus -aq 0 -t 0:46:33 Т.Баярхүү2-xfJYJlSfRWM.opus;echo $?
 
 #speed up av
 ffmpeg -i Russian\ numbers\ 2\ 10\ 20\ 30,\ 100,\ 1000-vFlzWw62XQo.mp4 -filter:v "setpts=PTS/1.5" -filter:a "atempo=1.5" rus_num_1000-vFlzWw62XQo_1.5spd.mp4
