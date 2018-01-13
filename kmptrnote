@@ -841,6 +841,7 @@ for varZ in $varZip;do unzip -d /mnt/0/kod_coderprog $varZ;echo '$?':$?;done
 
 #Linux Unix: Find Files Modified On Specific Date
 #https://www.cyberciti.biz/faq/unix-linux-list-all-files-modified-on-given-date/
+find . -type f -iname "*.rar" -newerct 2017/11/1 ! -newerct 2017/12/25;echo $?
 {find . -type f -iname "*.rar" -newerct "2017/12/01" ! -newerct "2017/12/20";echo $?} > 01.txt
 {find . -type f -iname "*.rar" -newerct "2017/12/1" ! -newerct "2017/12/20";echo $?} > 1.txt
 
