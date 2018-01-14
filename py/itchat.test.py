@@ -66,9 +66,6 @@ contactinfo = itchat.search_friends(name='aduuchin11.8')[0]
 #contactinfo.send_msg(u'4.日立 メンズシェーバー ロータリージーソード チタニウムシルバー RM-LX6D S:')
 #contactinfo.send_image(u'/home/r/Downloads/日立 メンズシェーバー ロータリージーソード チタニウムシルバー RM-LX6D S.jpg')  # NOT work
 #contactinfo.send_image('/home/r/Downloads/4.jpg')
-contactinfo.send_image('/home/r/Downloads/4-1.jpg')
-contactinfo.send_image('/home/r/Downloads/4-2.jpg')
-contactinfo.send_image('/home/r/Downloads/4-3.jpg')
 
 #contactinfo = itchat.search_friends(name='jrmt_Jirem')[0]
 #itchat.download_files('/home/r/Downloads/mglbichig_Delkhii.rar',contactinfo[0]['UserName'])
