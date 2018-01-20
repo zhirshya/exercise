@@ -199,3 +199,7 @@ To know filename use Ctrl+G,:file or :f
 #find ... -exec ... {} \; -> {} +
 :%s/{}\s*\\\=;/{} +/gc
 
+https://stackoverflow.com/questions/12010308/how-can-i-replace-a-pattern-only-on-lines-that-do-or-do-not-contain-another-patt
+#find..."" -> find...''
+:g/find /s/"/'/g
+
