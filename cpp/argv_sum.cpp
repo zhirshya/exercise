@@ -10,6 +10,7 @@
 #include <type_traits>
 #include <vector>
 #include <string>
+//#include <string.h>
 #include <cstring> //std::strlen
 #include <sstream> //istringstream
 #include <cstdlib> //std::strtof, std::strtod, std::strtold
@@ -81,7 +82,12 @@ bool isNumber(T x){
 	double sumArgv=0.0;
 	//todo meaningful pointer initialization
 	char* end/* = argv[1]*/; //std::strtof, std::strtod, std::strtold
-	const char* p/* = argv[1]*/;
+	//const char* p/* = argv[1]*/;
+	char* p/* = argv[1]*/;
+	//todo: c c++ maximum length of command line argument
+	char numStr[256];
+	char* pNumStrArray = numStr;
+	char* pNumPart;
 	double previousNum=0.0;
 	unsigned char noNumeric=0;
 	double dbl=0.0;
@@ -115,8 +121,8 @@ http://en.cppreference.com/w/cpp/string/byte/strtof
 Return value:
 Floating point value corresponding to the contents of str on success. If the converted value falls out of range of corresponding return type, range error occurs and HUGE_VAL, HUGE_VALF or HUGE_VALL is returned. If no conversion can be performed, 0 is returned and *str_end is set to str.
 */
-//		if(almost_equal(0.0,parsedArg,1) && 0 == strcmp(end,argv[i])){
-		if(almost_equal(0.0,parsedArg,1) && 0 == std::string(end).compare(argv[i])){
+		if(almost_equal(0.0,parsedArg,1) && 0 == strcmp(end,argv[i])){
+//		if(almost_equal(0.0,parsedArg,1) && 0 == std::string(end).compare(argv[i])){
 			std::cout << "almost_equal(0.0,parsedArg,1) && 0 == std::string(end).compare(argv[i]); {argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
 			if(1 == i)
 				continue;
@@ -147,42 +153,98 @@ Floating point value corresponding to the contents of str on success. If the con
 			 error: invalid operands of types ‘char*’ and ‘char**’ to binary ‘operator-’
 				if(end-&(argv[i]) < std::string(argv[i]).length()){
 			*/
-			//if(end-&(argv[i]) < std::string(argv[i]).length()){
 			//int arglen = std::string(argv[i]).length();
 			int arglen = strlen(argv[i]);
 			if(end-argv[i] < arglen ){
-				std::cout << "end-argv[i] < std::string(argv[i]).length():true; end-argv[i]:[" << end-argv[i] << "]\n";
-				for(p = end; arglen > p-argv[i];/* p is updated below in "dbl=strtod(p,&end)"*/){ //'p' is already updated at "parsedArg=strtod(argv[i],&end);" in the beginning
-					if(43 > *p || 47 == *p || 57 < *p){
-						std::cout << "argument \x027" << argv[i] << "\x027 is not a valid number, though partially convertible, better try again than continue with faulty (partial) conversion.\n";
+				pNumPart=argv[i];
+				std::cout << "end-argv[i] < strlen(argv[i]):true; end-argv[i]:[" << end-argv[i] << "]\n";
+				for(p = end; arglen > p-argv[i]; p = end){
+					if(42 > *p || 47 == *p || (57 < *p && 88 != *p && 120 != *p)){
+						std::cout << "argument \x027" << argv[i] << "\x027 is not a valid number,/* though partially convertible,*/ better try again than continue with faulty (partial) conversion.\n";
 						continue;
-					}
+					}else if(42 == *p || 88 == *p || 120 == *p){
+						std::cout << "multiplication sign:'" << *p << "' found. ※multiply inplace!\n";
+						do ++p; while(48 > *p || 57 < *p);
+						dbl=strtod(p,&end);
+						std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
+						if(arglen >= end-argv[i]){  //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
+							if(!almost_equal(0.0,dbl,1) && !almost_equal(0.0,parsedArg,1)){
+								parsedArg*=dbl;
+							}
+						}else{
+							break;
+						}
+					//}else if(44 == *p){
+					}else{
 					/*
+					http://defindit.com/ascii.html
+					 	 *   \x2a \052  42
 						 +   \x2b \053  43
 						 ,   \x2c \054  44
 						 -   \x2d \055  45
 						 .   \x2e \056  46
+						 X   \x58 \130  88
+						 x   \x78 \170 120
 					 */ 
 /* todo
 ./argvsumc++ 9,,,876,,,543,,,219,,, XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxx\*\*\*xX\* 3
 ./argvsumc++ 9,,,876,,,543,,,219    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxx\*\*\*xX\* 3
 */
+						std::cout << "44==',':" << (44==',') << "\n";
+						std::cout << "\x22while(44 == *p++);\x22 increment p?! (before while) p==end:" << (p==end) << "\n";
+						while(44 == *p++); //Decimal and Thousands Separators
+						std::cout << "\x22while(44 == *p++);\x22 increment p?! (after while) p==end:" << (p==end) << "\n";
+						/*
+						void *memcpy(void *s1, const void *s2, size_t n);
+						Copies n bytes from the object pointed to by s2 into the object
+						pointed to by s1 . A pointer to the resulting object is returned.
+						 */ 
+						//memcpy(numStr,p,end-p);
+						memcpy(pNumStrArray,pNumPart,end-pNumPart);
+						std::cout << "memcpy(numStr,pNumPart,end-pNumPart); numStr:[" << numStr << "]\n";
+						/*
+						error: incompatible types in assignment of ‘long int’ to ‘char [256]’
+						numStr+=end-pNumPart;
 
-					while(44 == *p++); //Decimal and Thousands Separators
+						error: incompatible types in assignment of ‘int’ to ‘char [256]’
+						numStr+=(int)(end-pNumPart);
 
-					std::cout << "end-argv[i] < std::string(argv[i]).length():true; p and *p after '*p non-numeric test' for loop: p:[" << p << "], *p:[" << *p << "]\n";
+						error: invalid operands of types ‘char [256]’ and ‘char*’ to binary ‘operator+’
+						numStr+=(char*)(end-pNumPart);
+						 */
+						//http://www.cs.bu.edu/teaching/cpp/string/array-vs-ptr/
+						pNumStrArray+=end-pNumPart;  // error: incompatible types in assignment of ‘long int’ to ‘char [256]’
+						pNumPart=p;
+
+						dbl=strtod(p,&end);
+						std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
+						if(arglen >= end-argv[i]){  //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
+							if(!almost_equal(0.0,dbl,1) && !almost_equal(0.0,parsedArg,1)){
+								parsedArg*=dbl;
+							}
+						}else{
+							break;
+						}
+					}
+					std::cout << "end-argv[i] < strlen(argv[i]):true; p and *p inside 'non-numeric(*p) test' for loop before 'strtod(p,&end)': p:[" << p << "], *p:[" << *p << "]\n";
+					/* 63.9*3*7x or 63.9*3*7X or 63.9*3*7*
 					dbl=strtod(p,&end);
 					std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
-					if(arglen >= end-argv[i]){ //63.9*3*7x or 63.9*3*7X or 63.9*3*7* ?!
+					if(arglen >= end-argv[i]){  //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
 						if(!almost_equal(0.0,dbl,1) && !almost_equal(0.0,parsedArg,1)){
 							parsedArg*=dbl;
 						}
 					}else{
 						break;
 					}
+					*/
 				}
+
+				memset(numStr,0,sizeof(numStr));
+//				memset(pNumStrArray,0,sizeof(pNumStrArray));
+
 				noNumeric=0; //important!
-				std::cout << "end-argv[i] < std::string(argv[i]).length():true; argv[i]:[" << argv[i] << "], parsedArg:[" << parsedArg << "]\n";
+				std::cout << "end-argv[i] < strlen(argv[i]):true; argv[i]:[" << argv[i] << "], parsedArg:[" << parsedArg << "]\n";
 			}
 			//if(0 != noNumeric && !almost_equal(0.0,previousNum,1)){
 			if(0 != noNumeric && '\0' != noNumeric){
