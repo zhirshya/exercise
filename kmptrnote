@@ -102,7 +102,7 @@ PATH=/usr/sbin:/usr/bin:/sbin:/bin
 #Remove Cron Jobs
 crontab -ir
 
-sudo find /mnt/0 ~ -xdev -regextype posix-extended -iregex ".+\.(opus|aac|m4a|flac|mp3|wav)$"
+sudo find /mnt/0 ~ -xdev -regextype posix-extended -iregex '.+\.(opus|aac|m4a|flac|mp3|wav)$'
 
 #rename files in respective directories
 #find /mnt/0 -type f -iname 'dwn.wait' -execdir mv {} dwn.todo +
