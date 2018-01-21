@@ -54,8 +54,6 @@ itchat.auto_login(hotReload=True, enableCmdQR=2)  # need to zoom out:Ctrl-
 #print download_files
 
 contactinfo = itchat.search_friends(name='aduuchin11.8')[0]
-#contactinfo.send_msg(u'1.日立 HITACHI 日本製 海外向け マルチ電圧 100-240V 充電式 電動シェーバー 1枚刃 RM-1850UD:')
-#contactinfo.send_image(u'/home/r/Downloads/日立 HITACHI 日本製 海外向け マルチ電圧 100-240V 充電式 電動シェーバー 1枚刃 RM-1850UD.jpg')  # NOT work
 #contactinfo.send_image('/home/r/Downloads/1.jpg')
 #contactinfo.send_msg(u'2.日立 メンズシェーバー レッド RM-T348 R:')
 #contactinfo.send_image(u'/home/r/Downloads/日立 メンズシェーバー レッド RM-T348 R.jpg')  # NOT work
