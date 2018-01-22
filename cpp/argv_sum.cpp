@@ -87,10 +87,27 @@ bool isNumber(T x){
 	//todo: c c++ maximum length of command line argument
 	char numStr[256];
 	char* pNumStrArray = numStr;
+	
+	/*
+	std::cout << "\x022char numStr[256];\x022 before main part: numStr:[" << numStr << "], numStr==nullptr:[" << (numStr==nullptr) << "], numStr=='\0':[" << (numStr=='\0') << "], numStr=='\\0':[" << (numStr=='\\0') << "], *numStr:[" << *numStr << "], memcmp(numStr,\"\",sizeof(numStr)):[" << memcmp(numStr,"",sizeof(numStr)) << "]\n";
+
+	 /mnt/0/gthb/xrcs/cpp/argv_sum.cpp:90:15: warning: hex escape sequence out of range
+  std::cout << "\x022char numStr[256];\x022 before main part: numStr:[" << numStr << "], numStr==nullptr:[" << (numStr==nullptr) << "], numStr=='\0':[" << (numStr=='\0') << "], numStr=='\\0':[" << (numStr=='\\0') << "], *numStr:[" << *numStr << "], memcmp(numStr,\"\",sizeof(numStr)):[" << memcmp(numStr,"",sizeof(numStr)) << "]\n";
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/0/gthb/xrcs/cpp/argv_sum.cpp:90:164: error: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+ cout << "\x022char numStr[256];\x022 before main part: numStr:[" << numStr << "], numStr==nullptr:[" << (numStr==nullptr) << "], numStr=='\0':[" << (numStr=='\0') << "], numStr=='\\0':[" << (numStr=='\\0') << "], *numStr:[" << *numStr << "], memcmp(numStr,\"\",sizeof(numStr)):[" << memcmp(numStr,"",sizeof(numStr)) << "]\n";
+                                                                                                                                                              ^~~~
+/mnt/0/gthb/xrcs/cpp/argv_sum.cpp:90:206: error: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+ e main part: numStr:[" << numStr << "], numStr==nullptr:[" << (numStr==nullptr) << "], numStr=='\0':[" << (numStr=='\0') << "], numStr=='\\0':[" << (numStr=='\\0') << "], *numStr:[" << *numStr << "], memcmp(numStr,\"\",sizeof(numStr)):[" << memcmp(numStr,"",sizeof(numStr)) << "]\n";
+                                                                                                                                                              ^~~~~
+	 */
+
+	std::cout << "\x022char numStr[256];\x022 before main part: numStr:[" << numStr << "], numStr==nullptr:[" << (numStr==nullptr) << "], *numStr:[" << *numStr << "], memcmp(numStr,\"\",sizeof(numStr)):[" << memcmp(numStr,"",sizeof(numStr)) << "]\n";
 	char* pNumPart;
 	double previousNum=0.0;
 	unsigned char noNumeric=0;
 	double dbl=0.0;
+	int memcpyCnt=0;
 
 	//http://en.cppreference.com/w/cpp/io/manip/setprecision
 	//https://stackoverflow.com/questions/554063/how-do-i-print-a-double-value-with-full-precision-using-std::cout
@@ -155,10 +172,24 @@ Floating point value corresponding to the contents of str on success. If the con
 			*/
 			//int arglen = std::string(argv[i]).length();
 			int arglen = strlen(argv[i]);
-			if(end-argv[i] < arglen ){
+			if(end-argv[i] < arglen){
 				pNumPart=argv[i];
 				std::cout << "end-argv[i] < strlen(argv[i]):true; end-argv[i]:[" << end-argv[i] << "]\n";
-				for(p = end; arglen > p-argv[i]; p = end){
+				/*
+				http://defindit.com/ascii.html
+					 *   \x2a \052  42
+					 +   \x2b \053  43
+					 ,   \x2c \054  44
+					 -   \x2d \055  45
+					 .   \x2e \056  46
+					 X   \x58 \130  88
+					 x   \x78 \170 120
+				 */
+/* todo long double for big numbers?
+./argvsumc++ 9,,,876,,,543,,,219,,, XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxx\*\*\*xX\* 3
+./argvsumc++ 9,,,876,,,543,,,219    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxx\*\*\*xX\* 3
+*/
+				for(p = end; arglen > p-argv[i]; p = end){ //faulty for loop condition and iteration_expression?
 					if(42 > *p || 47 == *p || (57 < *p && 88 != *p && 120 != *p)){
 						std::cout << "argument \x027" << argv[i] << "\x027 is not a valid number,/* though partially convertible,*/ better try again than continue with faulty (partial) conversion.\n";
 						continue;
@@ -171,59 +202,55 @@ Floating point value corresponding to the contents of str on success. If the con
 							if(!almost_equal(0.0,dbl,1) && !almost_equal(0.0,parsedArg,1)){
 								parsedArg*=dbl;
 							}
-						}else{
+						}/*else{
 							break;
-						}
+						}*/
 					//}else if(44 == *p){
 					}else{
-					/*
-					http://defindit.com/ascii.html
-					 	 *   \x2a \052  42
-						 +   \x2b \053  43
-						 ,   \x2c \054  44
-						 -   \x2d \055  45
-						 .   \x2e \056  46
-						 X   \x58 \130  88
-						 x   \x78 \170 120
-					 */ 
-/* todo
-./argvsumc++ 9,,,876,,,543,,,219,,, XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxx\*\*\*xX\* 3
-./argvsumc++ 9,,,876,,,543,,,219    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxx\*\*\*xX\* 3
-*/
-						std::cout << "44==',':" << (44==',') << "\n";
-						std::cout << "\x22while(44 == *p++);\x22 increment p?! (before while) p==end:" << (p==end) << "\n";
-						while(44 == *p++); //Decimal and Thousands Separators
-						std::cout << "\x22while(44 == *p++);\x22 increment p?! (after while) p==end:" << (p==end) << "\n";
-						/*
-						void *memcpy(void *s1, const void *s2, size_t n);
-						Copies n bytes from the object pointed to by s2 into the object
-						pointed to by s1 . A pointer to the resulting object is returned.
-						 */ 
-						//memcpy(numStr,p,end-p);
-						memcpy(pNumStrArray,pNumPart,end-pNumPart);
-						std::cout << "memcpy(numStr,pNumPart,end-pNumPart); numStr:[" << numStr << "]\n";
-						/*
-						error: incompatible types in assignment of ‘long int’ to ‘char [256]’
-						numStr+=end-pNumPart;
+						if(44 == *p){
+							std::cout << "44==',':" << (44==',') << "\n";
+							//std::cout << "\x22while(44 == *p++);\x22 increment p?! (before while) p==end:" << (p==end) << "\n";
+							//while(44 == *p++); //error! increment 1 more! //Decimal and Thousands Separators
+							while(44 == *p) //Decimal and Thousands Separators
+								++p;
+							//std::cout << "\x22while(44 == *p++);\x22 increment p?! (after while) p==end:" << (p==end) << "\n";
+							/*
+							void *memcpy(void *s1, const void *s2, size_t n);
+							Copies n bytes from the object pointed to by s2 into the object
+							pointed to by s1 . A pointer to the resulting object is returned.
+							 */ 
+							//memcpy(numStr,p,end-p);
+							memcpyCnt=end-pNumPart;
+							memcpy(pNumStrArray,pNumPart,memcpyCnt/*end-pNumPart*/);
+							std::cout << "memcpy(numStr,pNumPart,end-pNumPart); numStr:[" << numStr << "], memcpyCnt=end-pNumPart:[" << memcpyCnt << "]\n";
+							/*
+							error: incompatible types in assignment of ‘long int’ to ‘char [256]’
+							numStr+=end-pNumPart;
 
-						error: incompatible types in assignment of ‘int’ to ‘char [256]’
-						numStr+=(int)(end-pNumPart);
+							error: incompatible types in assignment of ‘int’ to ‘char [256]’
+							numStr+=(int)(end-pNumPart);
 
-						error: invalid operands of types ‘char [256]’ and ‘char*’ to binary ‘operator+’
-						numStr+=(char*)(end-pNumPart);
-						 */
-						//http://www.cs.bu.edu/teaching/cpp/string/array-vs-ptr/
-						pNumStrArray+=end-pNumPart;  // error: incompatible types in assignment of ‘long int’ to ‘char [256]’
-						pNumPart=p;
+							error: invalid operands of types ‘char [256]’ and ‘char*’ to binary ‘operator+’
+							numStr+=(char*)(end-pNumPart);
+							 */
+							//http://www.cs.bu.edu/teaching/cpp/string/array-vs-ptr/
+							pNumStrArray+=memcpyCnt/*end-pNumPart*/;  // error: incompatible types in assignment of ‘long int’ to ‘char [256]’
+							pNumPart=p;
 
-						dbl=strtod(p,&end);
-						std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
-						if(arglen >= end-argv[i]){  //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
-							if(!almost_equal(0.0,dbl,1) && !almost_equal(0.0,parsedArg,1)){
-								parsedArg*=dbl;
-							}
+							dbl=strtod(p,&end);
+							std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
 						}else{
-							break;
+							dbl=strtod(p,&end);
+							std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
+							if(arglen >= end-argv[i]){  //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
+								if(!almost_equal(0.0,dbl,1) && !almost_equal(0.0,parsedArg,1)){
+									parsedArg*=dbl;
+								}
+							}else{
+								break;
+							}/*else{
+								break;
+							}*/
 						}
 					}
 					std::cout << "end-argv[i] < strlen(argv[i]):true; p and *p inside 'non-numeric(*p) test' for loop before 'strtod(p,&end)': p:[" << p << "], *p:[" << *p << "]\n";
@@ -240,6 +267,18 @@ Floating point value corresponding to the contents of str on success. If the con
 					*/
 				}
 
+				std::cout << "After for loop: memcpy(numStr,pNumPart,end-pNumPart); numStr:[" << numStr << "], memcpyCnt=end-pNumPart:[" << memcpyCnt << "]\n";
+//https://www.copypastecharacter.com/arrows
+//↓ crucial, faulty for loop condition and iteration_expression
+				memcpyCnt=end-pNumPart;
+				memcpy(pNumStrArray,pNumPart,memcpyCnt/*end-pNumPart*/);
+				std::cout << "memcpy(numStr,pNumPart,end-pNumPart); numStr:[" << numStr << "], memcpyCnt=end-pNumPart:[" << memcpyCnt << "]\n";
+//↑ crucial, faulty for loop condition and iteration_expression
+
+				std::cout << "\x022char numStr[256];\x022 After for loop: numStr:[" << numStr << "], *numStr:[" << *numStr << "], memcmp(numStr,\"\",sizeof(numStr)):[" << memcmp(numStr,"",sizeof(numStr)) << "]\n";
+				if(memcmp(numStr,"",sizeof(numStr))){
+					parsedArg=strtod(numStr,&end);
+				}
 				memset(numStr,0,sizeof(numStr));
 //				memset(pNumStrArray,0,sizeof(pNumStrArray));
 
