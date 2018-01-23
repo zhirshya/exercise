@@ -191,12 +191,12 @@ Floating point value corresponding to the contents of str on success. If the con
 ./argvsumc++ 9,,,876,,,543,,,219    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxx\*\*\*xX\* 3
 */
 				for(p = end; arglen > p-argv[i]; p = end){ //faulty for loop condition and iteration_expression?
-					if(42 > *p || 47 == *p || (57 < *p && 88 != *p && 120 != *p)){
+					if((42 > *p && 39 != *p) || 47 == *p || (57 < *p && 88 != *p && 120 != *p)){ //apostrophe(') as Thousands Separators
 						std::cout << "argument \x027" << argv[i] << "\x027 is not a valid number,/* though partially convertible,*/ better try again than continue with faulty (partial) conversion.\n";
 						continue;
 					}else if(42 == *p || 88 == *p || 120 == *p){
 						std::cout << "multiplication sign:'" << *p << "' found. ※multiply inplace!\n";
-						do ++p; while(48 > *p || 57 < *p);
+						do ++p; while(48 > *p || 57 < *p);  //assume ('x','\*','X') and other non-numbers won't mix!
 						dbl=strtod(p,&end);
 						std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
 						if(arglen >= end-argv[i]){  //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
@@ -239,7 +239,7 @@ Floating point value corresponding to the contents of str on success. If the con
 
 							dbl=strtod(p,&end);
 							std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
-						}else{
+						}else{  //todo: invalid path?
 							dbl=strtod(p,&end);
 							std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
 							if(arglen >= end-argv[i]){  //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
