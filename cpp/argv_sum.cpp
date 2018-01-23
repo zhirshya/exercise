@@ -177,6 +177,7 @@ Floating point value corresponding to the contents of str on success. If the con
 				std::cout << "end-argv[i] < strlen(argv[i]):true; end-argv[i]:[" << end-argv[i] << "]\n";
 				/*
 				http://defindit.com/ascii.html
+					 '   \x27 \047  39
 					 *   \x2a \052  42
 					 +   \x2b \053  43
 					 ,   \x2c \054  44
@@ -205,13 +206,12 @@ Floating point value corresponding to the contents of str on success. If the con
 						}/*else{
 							break;
 						}*/
-					//}else if(44 == *p){
 					}else{
-						if(44 == *p){
-							std::cout << "44==',':" << (44==',') << "\n";
+						if(44 == *p || 39 == *p){ //apostrophe(') as Thousands Separators
+							std::cout << "44==',':" << (44==',') << "; 39=='\'':" << (39=='\'') << "\n";
 							//std::cout << "\x22while(44 == *p++);\x22 increment p?! (before while) p==end:" << (p==end) << "\n";
 							//while(44 == *p++); //error! increment 1 more! //Decimal and Thousands Separators
-							while(44 == *p) //Decimal and Thousands Separators
+							while(44 == *p || 39 == *p) //Decimal and Thousands Separators
 								++p;
 							//std::cout << "\x22while(44 == *p++);\x22 increment p?! (after while) p==end:" << (p==end) << "\n";
 							/*
@@ -278,9 +278,9 @@ Floating point value corresponding to the contents of str on success. If the con
 				std::cout << "\x022char numStr[256];\x022 After for loop: numStr:[" << numStr << "], *numStr:[" << *numStr << "], memcmp(numStr,\"\",sizeof(numStr)):[" << memcmp(numStr,"",sizeof(numStr)) << "]\n";
 				if(memcmp(numStr,"",sizeof(numStr))){
 					parsedArg=strtod(numStr,&end);
+					memset(numStr,0,sizeof(numStr));
+	//				memset(pNumStrArray,0,sizeof(pNumStrArray));
 				}
-				memset(numStr,0,sizeof(numStr));
-//				memset(pNumStrArray,0,sizeof(pNumStrArray));
 
 				noNumeric=0; //important!
 				std::cout << "end-argv[i] < strlen(argv[i]):true; argv[i]:[" << argv[i] << "], parsedArg:[" << parsedArg << "]\n";
