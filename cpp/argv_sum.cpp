@@ -13,7 +13,13 @@
 //#include <string.h>
 #include <cstring> //std::strlen
 #include <sstream> //istringstream
-#include <cstdlib> //std::strtof, std::strtod, std::strtold
+#include <cstdlib> //std::strtof, std::strtod, std::strtold, std::system
+
+/*
+todo:
+ C++ program that compiles and runs another C++
+ https://www.geeksforgeeks.org/system-call-in-c/
+ */
 
 //http://en.cppreference.com/w/cpp/numeric/math/round
 #pragma STDC FENV_ACCESS ON
@@ -326,6 +332,42 @@ Floating point value corresponding to the contents of str on success. If the con
 	
 	//std::cout << "before accumulating parsed arguments' std::vector, previousNum:[" << previousNum << "]\n";
 	if(!parsedVct.empty()){
+		/*
+		int vctSz=parsedVct.size();
+		std::cout << "parsed arguments' std::vector:{";
+		for(int i=0; i < vctSz; ++i){
+			std::cout << parsedVct[i];
+			if(vctSz-1 > i)
+				std::cout << " ";
+		}
+		*/
+		std::cout << "parsed arguments' std::vector:{";
+		for(const auto& elem : parsedVct){
+			if(&elem != &parsedVct[0])
+				std::cout << " ";
+			std::cout << elem;
+		}
+		std::cout << "}\n";
+
+		//https://stackoverflow.com/questions/9277906/stdvector-to-string-with-custom-delimiter
+		std::string cmdSys = "bc <<< " + std::accumulate(std::next(std::begin(parsedVct)),std::end(parsedVct),std::to_string(parsedVct[0]),[](std::string& a, double dVal){return a + "+" + std::to_string(dVal);});
+		std::cout << "system command to invoke:cmdSys:{" << cmdSys << "}\n";
+		//https://www.geeksforgeeks.org/system-call-in-c/
+		if(system(nullptr)){
+		/*
+		http://en.cppreference.com/w/cpp/utility/program/system
+		Return value: Implementation-defined value. If command is a null pointer, returns a nonzero value if and only if the command processor exists.
+
+		std::system("ls -l >test.txt"); // execute the UNIX command "ls -l >test.txt"
+		std::cout << std::ifstream("test.txt").rdbuf();
+		 */ 
+			system(cmdSys.c_str());
+		}
+
+		/*
+		../argvsumc++ 90  0  81 0  75.5 \*\*\* 5  0  83 X 2  0  2\*xXxx2\*\*\*\*xXxXx\*xXxXXxx7x2X5  0  xxxx\*XXXXX\*\*xxxxxxxXX  0  79X2 x 2  0  54 \* 2  0  124.5 XXX 5  0  7\*137xxXXX\*\*  xxxx\*XXXXX  \*xxxXXXX\*  0  X\*x 1,,,,,,,,,1,,,,,,1,,,,1
+		*/
+
 		//https://stackoverflow.com/questions/22448747/using-stdaccumulate-to-add-floats-with-best-precision
 		sumArgv = std::accumulate(std::begin(parsedVct),std::end(parsedVct),0.0);
 		double sumArgv8prcnt = sumArgv*1.08;
