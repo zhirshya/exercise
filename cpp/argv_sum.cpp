@@ -196,6 +196,9 @@ Floating point value corresponding to the contents of str on success. If the con
 ./argvsumc++ 9,,,876,,,543,,,219,,, XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxx\*\*\*xX\* 3
 ./argvsumc++ 9,,,876,,,543,,,219    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxx\*\*\*xX\* 3
 */
+				/*todo: 3,971,586.98 → 3971586.98
+					3'971'586.98 → 3971586.98
+				*/
 				for(p = end; arglen > p-argv[i]; p = end){ //faulty for loop condition and iteration_expression?
 					if((42 > *p && 39 != *p) || 47 == *p || (57 < *p && 88 != *p && 120 != *p)){ //apostrophe(') as Thousands Separators
 						std::cout << "argument \x027" << argv[i] << "\x027 is not a valid number,/* though partially convertible,*/ better try again than continue with faulty (partial) conversion.\n";
@@ -349,11 +352,11 @@ Floating point value corresponding to the contents of str on success. If the con
 		}
 		std::cout << "}\n";
 
-		//https://stackoverflow.com/questions/9277906/stdvector-to-string-with-custom-delimiter
-		std::string cmdSys = "bc <<< " + std::accumulate(std::next(std::begin(parsedVct)),std::end(parsedVct),std::to_string(parsedVct[0]),[](std::string& a, double dVal){return a + "+" + std::to_string(dVal);});
-		std::cout << "system command to invoke:cmdSys:{" << cmdSys << "}\n";
 		//https://www.geeksforgeeks.org/system-call-in-c/
 		if(system(nullptr)){
+			//https://stackoverflow.com/questions/9277906/stdvector-to-string-with-custom-delimiter
+			std::string cmdSys = "bc <<< " + std::accumulate(std::next(std::begin(parsedVct)),std::end(parsedVct),std::to_string(parsedVct[0]),[](std::string& a, double dVal){return a + "+" + std::to_string(dVal);});
+			std::cout << "system command to invoke:cmdSys:{" << cmdSys << "}\n";
 		/*
 		http://en.cppreference.com/w/cpp/utility/program/system
 		Return value: Implementation-defined value. If command is a null pointer, returns a nonzero value if and only if the command processor exists.
