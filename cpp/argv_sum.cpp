@@ -202,19 +202,23 @@ Floating point value corresponding to the contents of str on success. If the con
 				for(p = end; arglen > p-argv[i]; p = end){ //faulty for loop condition and iteration_expression?
 					if((42 > *p && 39 != *p) || 47 == *p || (57 < *p && 88 != *p && 120 != *p)){ //apostrophe(') as Thousands Separators
 						std::cout << "argument \x027" << argv[i] << "\x027 is not a valid number,/* though partially convertible,*/ better try again than continue with faulty (partial) conversion.\n";
-						continue;
+						std::cout << "Attention! break out from inner for loop:{for(p = end; arglen > p-argv[i]; p = end)}\n";
+						break;
+						//std::cout << "Attention! continue from inner for loop:{for(p = end; arglen > p-argv[i]; p = end)}\n";
+						//continue;
 					}else if(42 == *p || 88 == *p || 120 == *p){
 						std::cout << "multiplication sign:'" << *p << "' found. ※multiply inplace!\n";
-						do ++p; while(48 > *p || 57 < *p);  //assume ('x','\*','X') and other non-numbers won't mix!
+						do ++p; while(48 > *p || 57 < *p);  //assume ('x','\*','X') and other non-numbers won't happen together in the same argument!
 						dbl=strtod(p,&end);
 						std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
-						if(arglen >= end-argv[i]){  //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
+						if(arglen >= end-argv[i]){  //why include '='? 63.9*3*7x or 63.9*3*7X or 63.9*3*7*
 							if(!almost_equal(0.0,dbl,1) && !almost_equal(0.0,parsedArg,1)){
 								parsedArg*=dbl;
 							}
-						}/*else{
+						}else{
+							std::cout << "strtod() to end of argument, should exit inner for loop:{for(p = end; arglen > p-argv[i]; p = end)} immediately!\n";
 							break;
-						}*/
+						}
 					}else{
 						if(44 == *p || 39 == *p){ //apostrophe(') as Thousands Separators
 							std::cout << "44==',':" << (44==',') << "; 39=='\'':" << (39=='\'') << "\n";
@@ -249,6 +253,7 @@ Floating point value corresponding to the contents of str on success. If the con
 							dbl=strtod(p,&end);
 							std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
 						}else{  //todo: invalid path?
+							std::cout << "Attention! entered probably invalid path inside for loop:{for(p = end; arglen > p-argv[i]; p = end)}?!\n";
 							dbl=strtod(p,&end);
 							std::cout << "dbl=strtod(p,&end); dbl:[" << dbl << "]\n";
 							if(arglen >= end-argv[i]){  //63.9*3*7x or 63.9*3*7X or 63.9*3*7*
@@ -256,10 +261,9 @@ Floating point value corresponding to the contents of str on success. If the con
 									parsedArg*=dbl;
 								}
 							}else{
+							std::cout << "Attention! entered probably invalid path! strtod() to end of argument, should exit inner for loop:{for(p = end; arglen > p-argv[i]; p = end)} immediately!\n";
 								break;
-							}/*else{
-								break;
-							}*/
+							}
 						}
 					}
 					std::cout << "end-argv[i] < strlen(argv[i]):true; p and *p inside 'non-numeric(*p) test' for loop before 'strtod(p,&end)': p:[" << p << "], *p:[" << *p << "]\n";
@@ -356,7 +360,7 @@ Floating point value corresponding to the contents of str on success. If the con
 		if(system(nullptr)){
 			//https://stackoverflow.com/questions/9277906/stdvector-to-string-with-custom-delimiter
 			std::string cmdSys = "bc <<< " + std::accumulate(std::next(std::begin(parsedVct)),std::end(parsedVct),std::to_string(parsedVct[0]),[](std::string& a, double dVal){return a + "+" + std::to_string(dVal);});
-			std::cout << "system command to invoke:cmdSys:{" << cmdSys << "}\n";
+			std::cout << "system command to invoke:cmdSys:{" << cmdSys << "}, output:{";
 		/*
 		http://en.cppreference.com/w/cpp/utility/program/system
 		Return value: Implementation-defined value. If command is a null pointer, returns a nonzero value if and only if the command processor exists.
@@ -365,6 +369,7 @@ Floating point value corresponding to the contents of str on success. If the con
 		std::cout << std::ifstream("test.txt").rdbuf();
 		 */ 
 			system(cmdSys.c_str());
+			std::cout << "}\n";
 		}
 
 		/*
