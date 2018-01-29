@@ -53,7 +53,18 @@ itchat.auto_login(hotReload=True, enableCmdQR=2)  # need to zoom out:Ctrl-
 #
 #print download_files
 
-contactinfo = itchat.search_friends(name='aduuchin11.8')[0]
+#todo: send msg to oneself: oneself
+#contactinfo = itchat.search_friends(name='prsvrr')[0]
+contactinfo = itchat.search_friends(name='oneself')[0]  #not tested!
+#contactinfo = itchat.search_friends(name='filehelper')[0]
+contactinfo.send_msg('https://wx2.qq.com/?&lang=en_US')
+contactinfo.send_msg('http://hu.58.com/xinchengqu/zufang/b2/?PGTID=0d300008-0032-e5ce-80e8-66bf65b53133')
+contactinfo.send_msg('http://hu.58.com/saihan/zufang/b2/?PGTID=0d300008-0032-f5d3-ea6c-2455096a4767')
+contactinfo.send_msg('https://encrypted.google.com/maps/place/Inner+Mongolia+Uiles+Hotel/@40.8310827,111.7134143,16z/data=!4m5!3m4!1s0x0:0x935a0354a70ee6ed!8m2!3d40.831862!4d111.711054?hl=en')
+contactinfo.send_msg('https://github.com/Chatie/wechaty')
+
+
+#contactinfo = itchat.search_friends(name='aduuchin11.8')[0]
 #contactinfo.send_image('/home/r/Downloads/1.jpg')
 #contactinfo.send_msg(u'2.日立 メンズシェーバー レッド RM-T348 R:')
 #contactinfo.send_image(u'/home/r/Downloads/日立 メンズシェーバー レッド RM-T348 R.jpg')  # NOT work
