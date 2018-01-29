@@ -45,10 +45,10 @@ width=960
 height=640
 
 #trim/clip, strip off audio/video
-#https://gist.github.com/protrolium/e0dbd4bb0f1a396fcb55
+https://gist.github.com/protrolium/e0dbd4bb0f1a396fcb55
 ffmpeg -codecs
 ffmpeg -formats
-#https://trac.ffmpeg.org/wiki/Encode/HighQualityAudio
+https://trac.ffmpeg.org/wiki/Encode/HighQualityAudio
 ffmpeg -i InputFile -c copy -ss 00:00:00 -t <duration> OutPutFile
 ffmpeg -i InputFile  -vn -acodec copy -ss 00:00:00 -t <duration> OutPutFile
 ffmpeg -i MGTOW\ Reason\ \#13\ -\ Aftershock\ From\ The\ Wedding-A17CBtwEmcE.webm -an -vcodec copy aftershock\ marriage-A17CBtwEmcE.webm
@@ -119,12 +119,12 @@ find /mnt/0 ~ -xdev -type f -iname 'dwn' -execdir rm {} + && echo '$?':$?
 #find output redirection works
 find /mnt/0 ~ -xdev -type f -iname '*.py' -exec ls -alF {} + > outfile
 
-#http://stackoverflow.com/questions/6844785/how-to-use-regex-with-find-command
+http://stackoverflow.com/questions/6844785/how-to-use-regex-with-find-command
 find /mnt/0 ~ -xdev -type f -regextype posix-extended -regex '.*node.*(\.(pdf|epub|(ppt|doc|xls)x?)?)?' -print
 find /mnt/0 ~ -xdev -type f -regextype posix-egrep -regex '.*node.*(\.(pdf|epub|(ppt|doc|xls)x?)?)?' -print
 sudo find /mnt/0 ~ -xdev -regextype posix-extended -iregex '.+\.(opus|aac|m4a|flac|mp3|wav)$'
 
-#http://askubuntu.com/questions/419115/make-bluetooth-disabled-by-default
+http://askubuntu.com/questions/419115/make-bluetooth-disabled-by-default
 rfkill unblock bluetooth
 sudo systemctl disable bluetooth.service
 
@@ -235,7 +235,7 @@ gsettings set com.canonical.indicator.datetime custom-time-format '%A %B %d %Y %
 curl wttr.in/hailar
 curl wttr.in/st.petersburg
 
-#https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB#quickstarts
+https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB#quickstarts
 sudo dd if=/path/to/image.iso of=/dev/sdX bs=8M status=progress oflag=direct
 
 #ACL
@@ -336,7 +336,7 @@ $?:0
 scrub -p dod /dev/sdb1...
 
 #Find Out What Version of Linux You Are Running
-#http://www.tecmint.com/find-linux-kernel-version-distribution-name-version-number/
+http://www.tecmint.com/find-linux-kernel-version-distribution-name-version-number/
 cat /proc/version
 cat /etc/os-release
 lsb_release -a
@@ -347,7 +347,7 @@ lscpu
 #Detach a Linux Processes From Controlling Terminal
 #to completely detach a process from a controlling terminal, use the command format below, this is more effective for graphical user interface (GUI) applications such as firefox:
 firefox </dev/null &>/dev/null &
-#http://www.tecmint.com/run-linux-command-process-in-background-detach-process/
+http://www.tecmint.com/run-linux-command-process-in-background-detach-process/
 
 #list all open ports or currently running ports including TCP and UDP
 cat /etc/services | less
@@ -381,7 +381,7 @@ dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver
 #Linux Unified Key Setup (LUKS)
 #The security issue relies due to a vulnerability (CVE-2016-4484) in the implementation of the Cryptsetup utility used for encrypting hard drives via Linux Unified Key Setup (LUKS), which is the standard implementation of disk encryption on a Linux-based operating system.
 #modify the cryptroot file to stop the boot sequence when the number of password attempts has been exhausted.
-#http://thehackernews.com/2016/11/hacking-linux-system.html
+http://thehackernews.com/2016/11/hacking-linux-system.html
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="/GRUB_CMDLINE_LINUX_DEFAULT="panic=5 /' /etc/default/grub grub-install
 
 #UEFI
@@ -542,7 +542,7 @@ firefox-esr -private
 http://c.learncodethehardway.org/book/ex20.html
 
 #Systemd
-#http://www.howtogeek.com/216454/how-to-manage-systemd-services-on-a-linux-system/
+http://www.howtogeek.com/216454/how-to-manage-systemd-services-on-a-linux-system/
 systemd --version
 
 systemctl status cups.service
@@ -659,10 +659,10 @@ ffmpeg -f pulse -i alsa_input.pci-0000_00_1b.0.analog-stereo -c:a libmp3lame Nat
 #ll ~/.local/lib/
 #ll ~/.local/bin/
 #set one virtualenv per user:group and give proper system permissions to the folder containing python package? installed with pip install --user <EOL>
-#https://stackoverflow.com/questions/33412974/how-to-uninstall-a-package-installed-with-pip-install-user
+https://stackoverflow.com/questions/33412974/how-to-uninstall-a-package-installed-with-pip-install-user
 pip install --user -U pip setuptools
-#https://docs.python.org/3/howto/pyporting.html
-#http://python-future.org/automatic_conversion.html
+https://docs.python.org/3/howto/pyporting.html
+http://python-future.org/automatic_conversion.html
 
 #futurize
 pip install coverage future pylint caniusepython3 tox six configparser --user
@@ -692,7 +692,7 @@ pip install --user lxml requests
 python -m site
 
 #python interpreter
-#http://docs.python-guide.org/en/latest/dev/virtualenvs/#lower-level-virtualenv
+http://docs.python-guide.org/en/latest/dev/virtualenvs/#lower-level-virtualenv
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 1. pip install --user pipenv
@@ -702,7 +702,7 @@ pipenv run python main.py
 2. Lower level: virtualenv
 virtualenv -p /usr/bin/python3 py-prj_vrtenv
 
-#http://docs.python-guide.org/en/latest/writing/style/#general-concepts
+http://docs.python-guide.org/en/latest/writing/style/#general-concepts
 pip install --user pycodestyle autopep8
 pycodestyle optparse.py
 autopep8 --in-place optparse.py
@@ -710,7 +710,7 @@ autopep8 --in-place optparse.py
 autopep8 --in-place --aggressive --aggressive <filename>
 
 #fedora Reinstalling packages with missing/corrupt files
-#https://unix.stackexchange.com/questions/216697/reinstalling-packages-with-missing-corrupt-files?rq=1
+https://unix.stackexchange.com/questions/216697/reinstalling-packages-with-missing-corrupt-files?rq=1
 rpm -qf $(rpm -Va 2>&1 | grep -vE '^$|prelink:' | sed 's|.* /|/|') | sort -u
 
 #ll
@@ -723,12 +723,12 @@ sudo systemctl status sysupdate.service
 sudo journalctl -o verbose -u sysupdate.service
 journalctl -xe
 
-##https://superuser.com/questions/476379/how-do-i-setup-a-systemd-service-to-be-started-by-a-non-root-user-as-a-user-daem
+https://superuser.com/questions/476379/how-do-i-setup-a-systemd-service-to-be-started-by-a-non-root-user-as-a-user-daem
 Systemd normally does not allow ordinary users to start system services. While it does support giving access via polkit, that part is still somewhat lacking, and you cannot yet allow only one specific service.
 Since rtorrent is not actually a system service, and because you want every user to have their own instance of rtorrent, experiment with systemd's "user" mode.
 When you log in, the system will start a user@<uid>.service system unit for you, which will launch a separate "--user" instance of systemd. The new user-systemd will read unit files (starting with default.target) from ~/.config/systemd/user/, /etc/systemd/user/ and /usr/lib/systemd/user/.
 
-#https://www.brendanlong.com/systemd-user-services-are-amazing.html
+https://www.brendanlong.com/systemd-user-services-are-amazing.html
 Auto-start and lingering
 To enable autostart, I just had to run:
 systemctl --user enable moin # or ghost or whatever
@@ -753,14 +753,14 @@ journalctl -xe
 last reboot
 who -b
 
-#http://www.diveintopython.net/power_of_introspection/filtering_lists.html
+http://www.diveintopython.net/power_of_introspection/filtering_lists.html
 Python list filtering syntax:
 [mapping-expression for element in source-list if filter-expression]
 methodList = [method for method in dir(object) if callable(getattr(object, method))]
 
 #Python Flatten list of lists
 #Python convert nested list into one-dimensional list
-#https://stackoverflow.com/questions/17485747/how-to-convert-a-nested-list-into-a-one-dimensional-list-in-python
+https://stackoverflow.com/questions/17485747/how-to-convert-a-nested-list-into-a-one-dimensional-list-in-python
 The way to do nested list comprehensions is to put the for statements in the same order as they would go in regular nested for statements.
 [... for inner_list in outer_list for item in inner_list]
 flattened = [val for sublist in list_of_lists for val in sublist]
@@ -791,8 +791,8 @@ gawk '!x[toupper($0)]++ {printf "%s ", $0} END {print ""}' dllst
 cmd="\? $(gawk -v singlqt="'" '!seen[toupper($0)]++ {printf "%s%s%s ", singlqt, $0, singlqt} END {print ""}' $file)"
 
 #Remove duplicate lines while keeping the order of the lines
-#https://en.wikipedia.org/wiki/Schwartzian_transform
-#https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
+https://en.wikipedia.org/wiki/Schwartzian_transform
+https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
 cat -n infile.txt | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > ._tmp_ && command mv -f ._tmp_ infile.txt
 
 #shell Internal Variables: $$ $!
@@ -809,11 +809,11 @@ ll {.,*}vim*
 -rw-r-----+ 1 r r   2785 Sep 10 21:55 .vimrc
 
 #algorithm-mnemonics.vim
-#https://github.com/dawikur/algorithm-mnemonics.vim
+https://github.com/dawikur/algorithm-mnemonics.vim
 g:algorithm_mnemonics_const_return="Left"
 
 #chatbot
-#http://itchat.readthedocs.io/zh/latest/
+http://itchat.readthedocs.io/zh/latest/
 pip install --user --upgrade itchat
 
 tr -t '[:upper:]' '[:lower:]' <<< $tst_var
@@ -839,14 +839,18 @@ https://stackoverflow.com/questions/864316/how-to-pipe-list-of-files-returned-by
 find ... -print0 | xargs -0 cat -n
 
 #for each (for-each) in zsh
-#http://improve-future.com/en/for-each-in-bash-sh-and-zsh.html
+http://improve-future.com/en/for-each-in-bash-sh-and-zsh.html
 local varZip=($(ls *Code.zip))
 echo $varZip
 for varZ in $varZip;do unzip -d /mnt/0/kod_coderprog $varZ;echo '$?':$?;done
 
 #Linux Unix: Find Files Modified On Specific Date
-#https://www.cyberciti.biz/faq/unix-linux-list-all-files-modified-on-given-date/
+https://www.cyberciti.biz/faq/unix-linux-list-all-files-modified-on-given-date/
 find . -type f -iname '*.rar' -newerct 2017/11/1 ! -newerct 2017/12/25;echo $?
 {find . -type f -iname '*.rar' -newerct '2017/12/01' ! -newerct '2017/12/20';echo $?} > 01.txt
 {find . -type f -iname '*.rar' -newerct '2017/12/1' ! -newerct '2017/12/20';echo $?} > 1.txt
+
+#mv/cp create destination directory if not exist?
+https://stackoverflow.com/questions/547719/is-there-a-way-to-make-mv-create-the-directory-to-be-moved-to-if-it-doesnt-exis
+mkdir -p angular-best-practice && mv angular-best-practices.part*rar $_ && cd $_ ; echo '$?':$?
 
