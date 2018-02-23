@@ -1,3 +1,3 @@
 exercise
 ========
-primitive programming exercise
+simple primitive programming exercise
