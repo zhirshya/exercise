@@ -854,4 +854,5 @@ find . -type f -iname '*.rar' -newerct 2017/11/1 ! -newerct 2017/12/25;echo $?
 #mv/cp create destination directory if not exist?
 https://stackoverflow.com/questions/547719/is-there-a-way-to-make-mv-create-the-directory-to-be-moved-to-if-it-doesnt-exis
 mkdir -p angular-best-practice && mv angular-best-practices.part*rar $_ && cd $_ ; echo '$?':$?
+mkdir /mnt/0/essential-git && mv essential-git*rar $_ && cd $_ && ll
 
