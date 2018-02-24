@@ -480,10 +480,10 @@ echo "SOCKS_PROXY:[$SOCKS_PROXY]"
 echo "NO_PROXY:[$NO_PROXY]"
 }
 
-function --() {
-rm -rf ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
+function klnsys() {
 sudo find /var/cache/PackageKit/ -name '*.rpm' -execdir rm {} + #probably Fedora only
-sudo dnf autoremove #many times faultily automatically remove kernel-modules-extra which will be reinstalled on next system upgrade!
+rm -rf ~/.Trash ~/.thumbnails ~/.Thumbnails ~/.local/share/Trash ~/.local/share/trash 
+#sudo dnf autoremove #many times faultily prompt to remove kernel-modules-extra which will be reinstalled on next system upgrade!
 #sudo apt autoremove -y; sudo apt autoclean; sudo apt clean
 #E: encountered a section with no package: header
 #E: problem with Mergelist/var/lib/apt/lists
