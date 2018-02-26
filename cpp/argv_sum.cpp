@@ -111,7 +111,7 @@ bool isNumber(T x){
 	std::cout << "\x022char numStr[256];\x022 before main part: numStr:[" << numStr << "], numStr==nullptr:[" << (numStr==nullptr) << "], *numStr:[" << *numStr << "], memcmp(numStr,\"\",sizeof(numStr)):[" << memcmp(numStr,"",sizeof(numStr)) << "]\n";
 	char* pNumPart;
 	double previousNum=0.0;
-	unsigned char noNumeric=0;
+	unsigned char notNumeric=0;
 	double dbl=0.0;
 	int memcpyCnt=0;
 
@@ -156,14 +156,14 @@ Floating point value corresponding to the contents of str on success. If the con
 				}
 				break;
 			}
-			if(0 == noNumeric || '\0' == noNumeric){
-				noNumeric=*end;
+			if(0 == notNumeric || '\0' == notNumeric){
+				notNumeric=*end;
 			}
 		}else{
 			//skip 0, 0.0f, 0.0, etc.
 			if(almost_equal(0.0,parsedArg,1)){
 				std::cout << "almost_equal(0.0,parsedArg,1);{argv[i]:[" << argv[i] << "], *end:[" << *end << "], parsedArg:[" << parsedArg << "]}\n";
-				noNumeric=0;
+				notNumeric=0;
 				continue;
 			}
 
@@ -183,10 +183,10 @@ Floating point value corresponding to the contents of str on success. If the con
 				std::cout << "end-argv[i] < strlen(argv[i]):true; end-argv[i]:[" << end-argv[i] << "]\n";
 				/*
 				http://defindit.com/ascii.html
-					 '   \x27 \047  39
+					 '   \x27 \047  39 //apostrophe
 					 *   \x2a \052  42
 					 +   \x2b \053  43
-					 ,   \x2c \054  44
+					 ,   \x2c \054  44 //comma
 					 -   \x2d \055  45
 					 .   \x2e \056  46
 					 X   \x58 \130  88
@@ -280,26 +280,30 @@ Floating point value corresponding to the contents of str on success. If the con
 					*/
 				}
 
-				std::cout << "After for loop: memcpy(numStr,pNumPart,end-pNumPart); numStr:[" << numStr << "], memcpyCnt=end-pNumPart:[" << memcpyCnt << "]\n";
-//https://www.copypastecharacter.com/arrows
-//↓ crucial, faulty for loop condition and iteration_expression
-				memcpyCnt=end-pNumPart;
-				memcpy(pNumStrArray,pNumPart,memcpyCnt/*end-pNumPart*/);
-				std::cout << "memcpy(numStr,pNumPart,end-pNumPart); numStr:[" << numStr << "], memcpyCnt=end-pNumPart:[" << memcpyCnt << "]\n";
-//↑ crucial, faulty for loop condition and iteration_expression
+				/*
+				 Function strchr searches for the first occurrence of a character in a string. If the character is found, strchr returns a pointer to the character in the string; otherwise, strchr returns NULL .
+				 */ 
+				if(strchr(argv[i],'\'') || strchr(argv[i],',')){ // 98,765,321 or 98'765'321
+					std::cout << "After for loop: memcpy(numStr,pNumPart,end-pNumPart); numStr:[" << numStr << "], memcpyCnt=end-pNumPart:[" << memcpyCnt << "]\n";
+	//https://www.copypastecharacter.com/arrows
+	//↓ crucial, faulty for loop condition and iteration_expression
+					memcpyCnt=end-pNumPart;
+					memcpy(pNumStrArray,pNumPart,memcpyCnt/*end-pNumPart*/);
+					std::cout << "memcpy(numStr,pNumPart,end-pNumPart); numStr:[" << numStr << "], memcpyCnt=end-pNumPart:[" << memcpyCnt << "]\n";
+	//↑ crucial, faulty for loop condition and iteration_expression
 
-				std::cout << "\x022char numStr[256];\x022 After for loop: numStr:[" << numStr << "], *numStr:[" << *numStr << "], memcmp(numStr,\"\",sizeof(numStr)):[" << memcmp(numStr,"",sizeof(numStr)) << "]\n";
-				if(memcmp(numStr,"",sizeof(numStr))){
-					parsedArg=strtod(numStr,&end);
-					memset(numStr,0,sizeof(numStr));
-	//				memset(pNumStrArray,0,sizeof(pNumStrArray));
+					std::cout << "\"char numStr[256];\" After for loop: numStr:[" << numStr << "], *numStr:[" << *numStr << "], memcmp(numStr,\"\",sizeof(numStr)):[" << memcmp(numStr,"",sizeof(numStr)) << "]\n";
+					if(memcmp(numStr,"",sizeof(numStr))){
+						parsedArg=strtod(numStr,&end);
+						memset(numStr,0,sizeof(numStr));
+		//				memset(pNumStrArray,0,sizeof(pNumStrArray));
+					}
 				}
-
-				noNumeric=0; //important!
+				notNumeric=0; //important!
 				std::cout << "end-argv[i] < strlen(argv[i]):true; argv[i]:[" << argv[i] << "], parsedArg:[" << parsedArg << "]\n";
 			}
-			//if(0 != noNumeric && !almost_equal(0.0,previousNum,1)){
-			if(0 != noNumeric && '\0' != noNumeric){
+			//if(0 != notNumeric && !almost_equal(0.0,previousNum,1)){
+			if(0 != notNumeric && '\0' != notNumeric){
 				if(almost_equal(0.0,subProduct,1)){
 					if(!almost_equal(0.0,previousNum,1)){
 						subProduct=previousNum*parsedArg;
@@ -334,7 +338,7 @@ Floating point value corresponding to the contents of str on success. If the con
 				previousNum=parsedArg;
 			}
 		}
-		noNumeric=*end; //unnecessary?
+		notNumeric=*end; //unnecessary?
 	}
 	
 	//std::cout << "before accumulating parsed arguments' std::vector, previousNum:[" << previousNum << "]\n";
