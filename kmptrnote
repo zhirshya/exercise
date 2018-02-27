@@ -856,3 +856,14 @@ https://stackoverflow.com/questions/547719/is-there-a-way-to-make-mv-create-the-
 mkdir -p angular-best-practice && mv angular-best-practices.part*rar $_ && cd $_ ; echo '$?':$?
 mkdir /mnt/0/essential-git && mv essential-git*rar $_ && cd $_ && ll
 
+DNS settings Linux
+r:/etc/resolv.conf
+/var/run/NetworkManager/resolv.conf
+0. browser: Firefox about:config media.peerconnection.enabled:false, restart Firefox.
+1. Open DNS
+w:/etc/dhcp/dhclient.conf
+exc:service network-manager restart
+r:/etc/resolv.conf
+2. OpenVPN: vpnbook.com/freevpn
+3. DNS leak test: dnsleaktest.com
+
