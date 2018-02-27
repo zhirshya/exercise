@@ -1200,3 +1200,10 @@ function fnd(){
 	#sudo find /mnt/0 ~ -xdev -regextype posix-extended -iregex '.+\.(opus|aac|m4a|flac|mp3)$'
 	sudo find /mnt/0 ~ -regextype posix-extended -iregex $@
 }
+
+#delete all backslashes from arguments, e.g. https://www.youtube.com/watch\?v\=QSPaL4aVjRo -> https://www.youtube.com/watch?v=QSPaL4aVjRo
+function delBkslsh(){
+	tr -d '\\' <<< $@
+	#sed 's/\\//g' <<< $@
+}
+
