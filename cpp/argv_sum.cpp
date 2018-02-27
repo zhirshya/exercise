@@ -283,7 +283,7 @@ Floating point value corresponding to the contents of str on success. If the con
 				/*
 				 Function strchr searches for the first occurrence of a character in a string. If the character is found, strchr returns a pointer to the character in the string; otherwise, strchr returns NULL .
 				 */ 
-				if(strchr(argv[i],'\'') || strchr(argv[i],',')){ // 98,765,321 or 98'765'321
+				if(strchr(argv[i],',') || strchr(argv[i],'\'')){ // 98,765,321 or 98'765'321
 					std::cout << "After for loop: memcpy(numStr,pNumPart,end-pNumPart); numStr:[" << numStr << "], memcpyCnt=end-pNumPart:[" << memcpyCnt << "]\n";
 	//https://www.copypastecharacter.com/arrows
 	//↓ crucial, faulty for loop condition and iteration_expression
@@ -361,6 +361,7 @@ Floating point value corresponding to the contents of str on success. If the con
 		std::cout << "}\n";
 
 		//https://www.geeksforgeeks.org/system-call-in-c/
+		std::cout << "nullptr==NULL:[" << (nullptr==NULL) << "]\n";
 		if(system(nullptr)){
 			//https://stackoverflow.com/questions/9277906/stdvector-to-string-with-custom-delimiter
 			std::string cmdSys = "bc <<< " + std::accumulate(std::next(std::begin(parsedVct)),std::end(parsedVct),std::to_string(parsedVct[0]),[](std::string& a, double dVal){return a + "+" + std::to_string(dVal);});
