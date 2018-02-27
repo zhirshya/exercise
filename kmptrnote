@@ -867,3 +867,7 @@ r:/etc/resolv.conf
 2. OpenVPN: vpnbook.com/freevpn
 3. DNS leak test: dnsleaktest.com
 
+*nix shell:
+<< : heredoc>
+<<< : here string
+
