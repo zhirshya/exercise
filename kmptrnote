@@ -880,3 +880,5 @@ sed 's/\\//g' <<< [https://www.youtube.com/watch\?v\=QSPaL4aVjRo]
 tr -d '\\' <<< [https://www.youtube.com/watch\?v\=QSPaL4aVjRo]
 [https://www.youtube.com/watch?v=QSPaL4aVjRo]
 
+declare -f delBkslsh
+
