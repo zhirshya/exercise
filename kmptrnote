@@ -871,3 +871,12 @@ r:/etc/resolv.conf
 << : heredoc>
 <<< : here string
 
+tr -d '\\' <<< '[https://www.youtube.com/watch\?v\=QSPaL4aVjRo]'
+[https://www.youtube.com/watch?v=QSPaL4aVjRo]
+sed 's/\\//g' <<< '[https://www.youtube.com/watch\?v\=QSPaL4aVjRo]'
+[https://www.youtube.com/watch?v=QSPaL4aVjRo]
+sed 's/\\//g' <<< [https://www.youtube.com/watch\?v\=QSPaL4aVjRo]
+[https://www.youtube.com/watch?v=QSPaL4aVjRo]
+tr -d '\\' <<< [https://www.youtube.com/watch\?v\=QSPaL4aVjRo]
+[https://www.youtube.com/watch?v=QSPaL4aVjRo]
+
