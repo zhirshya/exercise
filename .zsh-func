@@ -635,6 +635,7 @@ echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 #sudo apt update && sudo apt upgrade -y
 #Skipping packages with conflicts: (add '--best --allowerasing' to command line to force their upgrade)
 sudo dnf upgrade --best --allowerasing -y
+upgrade_oh_my_zsh
 echo '$?':$?
 #youtube-dl upgrade
 utup
