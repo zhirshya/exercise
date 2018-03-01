@@ -898,8 +898,17 @@ Add SSH key to the ssh-agent
 ssh-add -l
 ssh-add -L
 
-Set SSH configuration file (~/.ssh/config) so SSH knows which key to be used for which server.
 https://superuser.com/questions/380432/git-permission-denied-public-key-error
+Set SSH configuration file (~/.ssh/config) so SSH knows which key to be used for which server.
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/<prvt-key-file>
+
+Host github-client
+  HostName github.com
+  User git
+  IdentityFile /Users/XXXUser/.ssh/id_rsa_XXXSECONDUSER
 
 https://superuser.com/questions/421074/ssh-the-authenticity-of-host-host-cant-be-established
 ➜ ssh-keyscan -t RSA github.com                                          
