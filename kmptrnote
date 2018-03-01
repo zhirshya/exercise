@@ -882,3 +882,30 @@ tr -d '\\' <<< [https://www.youtube.com/watch\?v\=QSPaL4aVjRo]
 
 declare -f delBkslsh
 
+github https -> ssh
+ll ktnwr/.git/config; less ktnwr/.git/config
+➜  ktnwr git:(master) git remote set-url origin git@github.com:rrrgh/ktnwr.git
+
+SSH
+https://superuser.com/questions/421074/ssh-the-authenticity-of-host-host-cant-be-established
+ssh-keyscan -t RSA github.com                                          
+# github.com:22 SSH-2.0-libssh_0.7.0
+github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==
+➜ rtvl 
+$?:0
+➜ ssh-keyscan -t RSA github.com | ssh-keygen -lv -f -
+# github.com:22 SSH-2.0-libssh_0.7.0
+2048 SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8 github.com (RSA)
++---[RSA 2048]----+
+| =+o...+=o..     |
+|o++... *o .      |
+|*.o.  *o.        |
+|oo.  ..o.= .     |
+|.+o. .. S =      |
+|*=+ .  o = .     |
+|OE .  . o        |
+| o     .         |
+|                 |
++----[SHA256]-----+
+
+
