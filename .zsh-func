@@ -421,11 +421,11 @@ setopt SH_WORD_SPLIT
 	local IFS=$'\n'
 	local url=""
 	for url in "$uniq_args";do
-		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
+		youtube-dl -v --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
 	done
 unsetopt sh_word_split
 unsetopt SH_WORD_SPLIT
-#	youtube-dl --youtube-skip-dash-manifest --list-formats $uniq_args  #only first arg get handled
+#	youtube-dl -v --youtube-skip-dash-manifest --list-formats $uniq_args  #only first arg get handled
 	echo '$?':$?
 fi
 }
