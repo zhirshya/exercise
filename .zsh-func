@@ -1230,3 +1230,7 @@ function cflagsr(){
 	echo '$cxxflags:['$cxxflags']'
 	echo '$cppflags:['$cppflags']'
 }
+
+function prndt(){
+	printf '$(date +"%%Y%%m%%d-%%H:%%M:%%S"):%s\n' $(date +"%Y%m%d-%H:%M:%S")
+}
