@@ -1216,3 +1216,17 @@ function utfunc(){
 	fi
 }
 
+function cflagsr(){
+	echo '$CC:['$CC']'
+	echo '$CXX:['$CXX']'
+	echo '$CPP:['$CPP']'
+	echo '$CFLAGS:['$CFLAGS']'
+	echo '$CXXFLAGS:['$CXXFLAGS']'
+	echo '$CPPFLAGS:['$CPPFLAGS']'
+	echo '$cc:['$cc']'
+	echo '$cxx:['$cxx']'
+	echo '$cpp:['$cpp']'
+	echo '$cflags:['$cflags']'
+	echo '$cxxflags:['$cxxflags']'
+	echo '$cppflags:['$cppflags']'
+}
