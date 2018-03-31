@@ -1,6 +1,19 @@
+#LO MacOS
+#export CFLAGS="-stdlib=libc++ -std=c++1z"
+#export CXXFLAGS="-stdlib=libc++ -std=c++1z"
+#export CPPFLAGS="-stdlib=libc++ -std=c++1z"
+#export CC="clang"
+#export CXX="clang++"
+#export CPP=""
+export CCACHE_CPP2=YES
+export LODE_HOME=$HOME/lode
+#export JAVA_HOME=`/usr/libexec/java_home`
+#export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:${PATH}:/usr/local/bin:/usr/local/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
+export PATH="${LODE_HOME}/opt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/r/.oh-my-zsh
 
@@ -61,7 +74,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -112,13 +125,13 @@ alias vrs='whereis'
 alias vch='which'
 alias dfz='sudo df -h /var/log /mnt /'
 alias duz='sudo du -sh /var/log /mnt /'
-#alias ut='youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg'
-alias ut='youtube-dl --youtube-skip-dash-manifest'
-alias utf='youtube-dl --youtube-skip-dash-manifest -a dllst'
-alias utl='youtube-dl --youtube-skip-dash-manifest -ci'
-alias utcap='youtube-dl --youtube-skip-dash-manifest --write-sub --sub-lang ru,en --sub-format best --embed-subs'
-alias utlscap='youtube-dl --youtube-skip-dash-manifest --list-subs'
-alias utlscvr='youtube-dl --youtube-skip-dash-manifest --list-thumbnails'
+#alias ut='youtube-dl -v --youtube-skip-dash-manifest --prefer-ffmpeg'
+alias ut='youtube-dl -v --youtube-skip-dash-manifest'
+alias utf='youtube-dl -v --youtube-skip-dash-manifest -a dllst'
+alias utl='youtube-dl -v --youtube-skip-dash-manifest -ci'
+alias utcap='youtube-dl -v --youtube-skip-dash-manifest --write-sub --sub-lang ru,en --sub-format best --embed-subs'
+alias utlscap='youtube-dl -v --youtube-skip-dash-manifest --list-subs'
+alias utlscvr='youtube-dl -v --youtube-skip-dash-manifest --list-thumbnails'
 
 alias or='cd /mnt/0/dnld/tor-browser_en-US && ./start-tor-browser.desktop && -'
 

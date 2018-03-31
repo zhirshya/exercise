@@ -421,11 +421,11 @@ setopt SH_WORD_SPLIT
 	local IFS=$'\n'
 	local url=""
 	for url in "$uniq_args";do
-		youtube-dl --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
+		youtube-dl -v --youtube-skip-dash-manifest --prefer-ffmpeg --list-formats $url
 	done
 unsetopt sh_word_split
 unsetopt SH_WORD_SPLIT
-#	youtube-dl --youtube-skip-dash-manifest --list-formats $uniq_args  #only first arg get handled
+#	youtube-dl -v --youtube-skip-dash-manifest --list-formats $uniq_args  #only first arg get handled
 	echo '$?':$?
 fi
 }
@@ -1199,7 +1199,9 @@ dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver
 
 function fnd(){
 	#sudo find /mnt/0 ~ -xdev -regextype posix-extended -iregex '.+\.(opus|aac|m4a|flac|mp3)$'
-	sudo find /mnt/0 ~ -regextype posix-extended -iregex ".+$@.+"
+	local cmd="sudo find /mnt/0 ~ -regextype posix-extended -iregex \".+$@.+\""
+	printf '(cmd):%s\n' "$cmd"
+	eval "$cmd"
 }
 
 #delete all backslashes from arguments, e.g. https://www.youtube.com/watch\?v\=QSPaL4aVjRo -> https://www.youtube.com/watch?v=QSPaL4aVjRo
@@ -1208,3 +1210,27 @@ function delBkslsh(){
 	#sed 's/\\//g' <<< $@
 }
 
+function utfunc(){
+	if ((0 < $#));then
+		youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest $@
+	fi
+}
+
+function cflagsr(){
+	echo '$CC:['$CC']'
+	echo '$CXX:['$CXX']'
+	echo '$CPP:['$CPP']'
+	echo '$CFLAGS:['$CFLAGS']'
+	echo '$CXXFLAGS:['$CXXFLAGS']'
+	echo '$CPPFLAGS:['$CPPFLAGS']'
+	echo '$cc:['$cc']'
+	echo '$cxx:['$cxx']'
+	echo '$cpp:['$cpp']'
+	echo '$cflags:['$cflags']'
+	echo '$cxxflags:['$cxxflags']'
+	echo '$cppflags:['$cppflags']'
+}
+
+function prndt(){
+	printf '$(date +"%%Y%%m%%d-%%H:%%M:%%S"):%s\n' $(date +"%Y%m%d-%H:%M:%S")
+}
