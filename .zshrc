@@ -2,8 +2,8 @@
 #export CFLAGS="-stdlib=libc++ -std=c++1z"
 #export CXXFLAGS="-stdlib=libc++ -std=c++1z"
 #export CPPFLAGS="-stdlib=libc++ -std=c++1z"
-#export CC=""
-#export CXX=""
+#export CC="clang"
+#export CXX="clang++"
 #export CPP=""
 export CCACHE_CPP2=YES
 export LODE_HOME=$HOME/lode
