@@ -5,7 +5,7 @@
 #export CC="clang"
 #export CXX="clang++"
 #export CPP=""
-export CCACHE_CPP2=YES
+#export CCACHE_CPP2=YES
 export LODE_HOME=$HOME/lode
 #export JAVA_HOME=`/usr/libexec/java_home`
 #export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:${PATH}:/usr/local/bin:/usr/local/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
