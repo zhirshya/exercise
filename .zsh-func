@@ -1223,12 +1223,16 @@ function cflagsr(){
 	echo '$CFLAGS:['$CFLAGS']'
 	echo '$CXXFLAGS:['$CXXFLAGS']'
 	echo '$CPPFLAGS:['$CPPFLAGS']'
+	echo '$CCACHE_CPP2:['$CCACHE_CPP2']'
+	echo '$CCACHE_CPP:['$CCACHE_CPP']'
 	echo '$cc:['$cc']'
 	echo '$cxx:['$cxx']'
 	echo '$cpp:['$cpp']'
 	echo '$cflags:['$cflags']'
 	echo '$cxxflags:['$cxxflags']'
 	echo '$cppflags:['$cppflags']'
+	echo '$ccache_cpp2:['$ccache_cpp2']'
+	echo '$ccache_cpp:['$ccache_cpp']'
 }
 
 function prndt(){
