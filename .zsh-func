@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# Most w sounds v, replaced all w with v throughout my simple primitive dot files
+
 function \?() {
 echo «$(\date +"%Y%m%d %H%M%S.%N%::z%Z %A")»
 prntenv
