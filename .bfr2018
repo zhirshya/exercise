@@ -344,6 +344,8 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn:
+anemia
+devise algorithm
 anti snoring jaw supporter (chin strap)
 snore reliever chin strap
 bellwether
@@ -668,6 +670,8 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+Хөвсгөл -> Хөгсгөл (Traditional Mongolian Script)
+
 Залхуу Арчаагүй Анхиагүй
 Арчаагүй Анхиагүй шинж
 Ахуй төрхөөрөө тэнэгэрхүү Ах дуудээ хэдэр ядар
@@ -1275,7 +1279,7 @@ autogen.input:
 --enable-symbols
 --disable-cve-tests
 --with-build-version=$(date +"MacD%Y-%m-%d")
---with-vendor="ALMAS"
+--with-vendor=Almas Inc.
 
 --enable-epm
 --enable-scripting-beanshell
@@ -1306,8 +1310,8 @@ $LODE_HOME/opt/bin/make verbose=t 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S")
 $LODE_HOME/opt/bin/make verbose=t build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
 ${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' verbose=t build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
 ${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+
+${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make -s ENABLE_SYMBOLS=true dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
 
 ${LODE_HOME}/opt/bin/make -j 4 VERBOSE=1 -f ${LODE_HOME}/dev/core/Makefile.gbuild all
 
@@ -1413,7 +1417,8 @@ Using an interactive debugger
 Logging
 Code Review
 
-[debug] ffmpeg command line: ffmpeg -y -i 'file:Threads in C++-wXBcwHwIt_I.f137.mp4' -i 'file:Threads in C++-wXBcwHwIt_I.f251.webm' -c copy -map '0:v:0' -map '1:a:0' 'file:Threads in C++-wXBcwHwIt_I.temp.mkv'
+ffmpeg command line: ffmpeg -y -i 'file:Threads in C++-wXBcwHwIt_I.f137.mp4' -i 'file:Threads in C++-wXBcwHwIt_I.f251.webm' -c copy -map '0:v:0' -map '1:a:0' 'file:Threads in C++-wXBcwHwIt_I.temp.mkv'
+ffmpeg -i '21darieh__дарь_эх-VPInIrd5Hqc.opus' -filter:v "setpts=PTS/1.25" -filter:a "atempo=1.25" '21darieh__дарь_эх-VPInIrd5Hqc_spdx1.25.opus'
 
 ﹖(https://unicodelookup.com/#question/1)
 
@@ -1550,6 +1555,7 @@ cd /usr/local/Cellar/gcc/7.3.0_1/bin && ln -s gcc-7 gcc && ln -s g++-7 g++
 
 https://passport.ganji.com/login.php
 tutorhohhot .d*5(!#)?
+短信锁定账号:发送短信“SD”或“JS”到106900329288，完成对账号的锁定和解锁
 
 cat -etv Makefile
 https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop
@@ -1657,4 +1663,33 @@ Qagan -> Chagan
 
 北垣街 大将作北 铁路小区1楼2居室
 临近北垣小学 33路，2路
+
+Dealing with line endings and Git's autocrlf
+If autogen.sh produces output like the following:
+
+./autogen.sh: line 1: $':\r': command not found
+' '--srcdir=/home/user/libreoffice' '--enable-option-checking=fatal'
+configure: WARNING: you should use --build, --host, --target
+configure: WARNING: invalid host type: 
+********************************************************************
+*
+*   Running LibreOffice build configuration.
+*
+********************************************************************
+
+' not recognizedystem type... Invalid configuration `
+ failedre: error: /bin/bash ./config.sub 
+Error running configure at ./autogen.sh line 241.
+... then you probably have line ending problems. This might occur if you mistakenly set Git's core.autocrlf=true.
+
+To fix the issue, run these commands (WARNING: uncommitted changes will be lost!):
+
+git config --unset core.autocrlf
+git rm --cached -r .
+git reset --hard
+git clean -x -f
+./autogen.sh
+
+brilliant.org
+McGraw Hill dictionary of science and engineering
 

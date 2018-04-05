@@ -771,13 +771,13 @@ else
 fi
 }
 
-#primitive ffmpeg av rewind fast-forward
-function avrwndff() {
+#primitive ffmpeg av rewind fast-forward: w->v, "rvndff" may imply "rvn"+"dff"
+function avrvnff() {
 if (($# < 1 || $# > 3)) || (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then	# { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?	http://unix.stackexchange.com/questions/88850/precedence-of-the-shell-logical-operators
 	if (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]];then
 		echo '※hit "...|| (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]]" #better { (($# == 3)) && [[ ! ($2 =~ ^[-+]?[0-9]?[.,]?[1-9]{1,2}$) ]] }?'
 	fi
-	echo "usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
+	echo "usage: avrvnff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
 #define EX_USAGE 64 /* command line usage error */
 	return 64
 fi
@@ -850,7 +850,7 @@ if (($# == 3));then
 		suffix="${infile##*.}"
 		outfile+=$suffix
 	else	#? redundant as already checked at function start
-		echo "usage: avrwndff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
+		echo "usage: avrvnff input_file [(optional)speed factor(2.0(default) 1.75 2.25 2.5...)] [(optional)output file name prefix]"
 		#define EX_USAGE 64 /* command line usage error */
 		return 64
 	fi
@@ -1225,6 +1225,7 @@ function cflagsr(){
 	echo '$CPPFLAGS:['$CPPFLAGS']'
 	echo '$CCACHE_CPP2:['$CCACHE_CPP2']'
 	echo '$CCACHE_CPP:['$CCACHE_CPP']'
+	echo '$CCACHE:['$CCACHE']'
 	echo '$cc:['$cc']'
 	echo '$cxx:['$cxx']'
 	echo '$cpp:['$cpp']'
@@ -1233,6 +1234,7 @@ function cflagsr(){
 	echo '$cppflags:['$cppflags']'
 	echo '$ccache_cpp2:['$ccache_cpp2']'
 	echo '$ccache_cpp:['$ccache_cpp']'
+	echo '$ccache:['$ccache']'
 }
 
 function prndt(){
