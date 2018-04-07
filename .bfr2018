@@ -172,6 +172,13 @@ make: *** [build] Error 2
 
 almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
 
+c++:
+arrow operator (->)
+reference return to create lvalue
+prefix increment: Obj& Obj::operator++();
+
+postfix increment: Obj Obj::operator++(int);
+
 c++ check update: https://github.com/txthinking/brook
 c++ linux service to backup folder
 c++ linux service to monitor folder
