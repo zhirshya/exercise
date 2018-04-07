@@ -1246,8 +1246,6 @@ Deploy your application to a cloud host
 Secure your application with a solid token-based authentication system
 
 
-お疲れ様です。お先に失礼致します。
-
 http://www.11185.cn/
 RR466716049CN
 
@@ -1261,6 +1259,7 @@ because macOS already provides this software and installing another version in
 parallel can cause all kinds of trouble.
 
 cn2en:
+按揭贷款
 言者无心，听者有意
 琢磨
 懵 měng:本意是指昏昧无知的样子，也指一时的心乱迷糊，还指无知、欺骗。
@@ -1270,13 +1269,6 @@ cn2en:
 
 
 lo:
-CFLAGS="-mmacosx-version-min=10.9 -stdlib=libc++ -std=c++14"
-echo $CFLAGS
-CXXFLAGS="-mmacosx-version-min=10.9 -stdlib=libc++ -std=c++14"
-echo $CXXFLAGS
-CPPFLAGS="-mmacosx-version-min=10.9 -stdlib=libc++ -std=c++14"
-echo $CPPFLAGS
-
 https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install
 
 http://devcentral.libreoffice.org/devguide.html
@@ -1309,18 +1301,13 @@ LibreOffice:
 https://wiki.documentfoundation.org/Development/EasyHacks
 https://wiki.documentfoundation.org/CoreHacks
 
-./autogen.sh 2>&1 | tee autogen_LO_$(date +"%Y%m%d-%H:%M:%S").log
-
-/usr/bin/make -j4 2>&1 | tee build.log
-
-${LODE_HOME}/opt/bin/make dbglevel=2 verbose=t 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-$LODE_HOME/opt/bin/make verbose=t 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-$LODE_HOME/opt/bin/make verbose=t build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' verbose=t build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-
-${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make -s ENABLE_SYMBOLS=true dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-
+/*Clearly nobody has built with a good compiler that is eager to generate warnings, dbglevel=2, and --enable-werror in a while, if ever. One more reason for us to get rid of the dbglevel crack.*/
+#${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' verbose=t build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+#${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+#${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make -s ENABLE_SYMBOLS=true dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make -j4 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+${LODE_HOME}/opt/bin/make -j4 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+make -f <make_build_file>
 ${LODE_HOME}/opt/bin/make -j 4 VERBOSE=1 -f ${LODE_HOME}/dev/core/Makefile.gbuild all
 
 xcode-ide-integration:
