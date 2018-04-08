@@ -25,10 +25,21 @@ int rdn2(int y, int m, int d) { /* Rata Die day one is 0001-01-01 */
 }
 
 int main(int argc, char** argv){
+//todo: input sanitization and validation: 2017-2-29, 2018-13-1, 2018-4-31
+	if(3 > argc){
+		std::cout << "Error: No start day(YYYY-mm-dd) and end day(YYYY-mm-dd) specified. Try again having them specified.\n";
+		return -1;
+	}
+
+	std::string sDateStr(argv[1]);
+	std::string eDateStr(argv[2]);
+/*
 	std::cout << "Type start day(YYYY-mm-dd), space and end day(YYYY-mm-dd), then Enter:";
 	std::string sDateStr;
 	std::string eDateStr;
 	std::cin >> sDateStr >> eDateStr;
+*/	
+
 /*
 	int sYear = 0;
 	int sMonth = 0;
