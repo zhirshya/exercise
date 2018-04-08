@@ -1275,6 +1275,7 @@ cn2en:
 
 
 lo:
+Sh*H*d*l*le!*9 also for: AskLibO: https://ask.libreoffice.org/en/questions/
 https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install
 
 http://devcentral.libreoffice.org/devguide.html
@@ -1634,6 +1635,10 @@ http://nmg.ganji.com/jiajiao/2997882357x.htm
 title: 周末辅导:蒙英日语 数学 物理 编程 Excel Mac
 教授课程:英语 日语 蒙语 数学 物理 编程 Excel Mac
 
+irc://chat.freenode.net/libreoffice-dev
+#libreoffice-dev
+BgnrPrgrmr
+
 body:
 我是呼伦贝尔巴日古人。具有很好的蒙语发音及语法(懂竖写及西里尔蒙古文)，通过大学英语6级考试，英语托业考试(TOEIC)875分，日语能力考试(JLPT)N1级，计算机科学与技术专业本科毕业，并具备多年软件开发经验：掌握C, C++, C#, Java, Python, SQL等编程语言以及Excel, Word, PowerPoint等办公软件及Mac操作系统。
 
@@ -1695,3 +1700,13 @@ McGraw Hill dictionary of science and engineering
 
 couresra Machine Learning Andrew Ng
 
+Hello, my first time build/make of Libreoffice clone from official repo failed with 2 errors: "Run: 88   Failure total: 2   Failures: 2   Errors: 0", I didn't use "build-nocheck", I found other person was suggested to build with "build-nocheck" option.
+But https://wiki.documentfoundation.org/Development/GenericBuildingHints#Build_system_internals says:"make performs a number of checks (e.g. unit tests). That is a subset make check tests. There is a build-nocheck switch that disables the checks when building. It may speed up the build considerably. However, it should definitely not be used when building for the first time, because otherwise you may miss a problem with your setup that will give you a build with strange behavior that nobody else sees."
+I can't build/make with no errors on MacBook Pro2011/macOS 10.13.4 with latest Xcode and its commandline tools.
+Commands I used was:"${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make -s ENABLE_SYMBOLS=true 2>&1"
+autogen.input:
+#--enable-debug
+--enable-dbgutil
+--enable-symbols
+--disable-cve-tests
+--without-junit
