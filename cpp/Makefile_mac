@@ -1,0 +1,10 @@
+CXX = clang++
+CXXFLAGS = -std=c++17 -O0 -g
+RM = rm -i
+
+all: $(TARGET)
+	$(TARGET): $(TARGET).cpp
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(TARGET).cpp
+
+clean:
+	$(RM) $(TARGET)
