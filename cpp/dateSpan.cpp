@@ -10,14 +10,14 @@
 //https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c/14266139
 
 //https://yvdinesh.quora.com/Rata-Die-Algorithm
-int rdn(int y, int m, int d) { /* Rata Die day one is 0001-01-01 */
+long rdn(int y, int m, int d) { /* Rata Die day one is 0001-01-01 */
 	std::cout << "entered rdn():passed in year:" << y << ",month:" << m << ",day:" << d << '\n';
 	if (m < 3)
 		y--, m += 12; // --y is better here?
 	return 365*y + y/4 - y/100 + y/400 + (153*m - 457)/5 + d - 306;
 }
 
-int rdn2(int y, int m, int d) { /* Rata Die day one is 0001-01-01 */
+long rdn2(int y, int m, int d) { /* Rata Die day one is 0001-01-01 */
 	std::cout << "entered rdn2():passed in year:" << y << ",month:" << m << ",day:" << d << '\n';
 	if (m < 3)
 		--y, m += 12;
@@ -71,8 +71,8 @@ int main(int argc, char** argv){
 	eDay = stoi(eDateStr.substr(idxStart));
 
 	//int days = rdn(2018, 4, 5) - rdn(2018, 2, 5);
-	int days = rdn(eYear, eMonth, eDay) - rdn(sYear, sMonth, sDay);
-	int days2 = rdn2(eYear, eMonth, eDay) - rdn2(sYear, sMonth, sDay);
+	long days = rdn(eYear, eMonth, eDay) - rdn(sYear, sMonth, sDay);
+	long days2 = rdn2(eYear, eMonth, eDay) - rdn2(sYear, sMonth, sDay);
 	std::cout << "rdn(i)Number of days between " << sDateStr << " and " << eDateStr << " is:[" << days << "]\n";
 	std::cout << "rdn2(i)Number of days between " << sDateStr << " and " << eDateStr << " is:[" << days2 << "]\n";
 }
