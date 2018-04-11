@@ -263,9 +263,9 @@ case-bound possessive case 所有格
 
 
 https://brew.sh/
-brew install cmake ccache automake node gpg wget nmap libpcap 7z gcc gdb git-flow
+brew install cmake ccache automake node gpg wget nmap libpcap 7z git-flow colordiff
 npm install -g nodemon
-brew install --with-clang llvm lldb
+brew install --with-toolchain --with-clang llvm lldb
 
 brew install macvim --with-override-system-vim
 /usr/local/bin needs to be first in your PATH
@@ -274,11 +274,7 @@ brew doctor should notify you of any PATH or configuration issues for brew.
 brew install ffmpeg --with-chromaprint --with-fdk-aac --with-libass --with-librsvg --with-libsoxr --with-libssh --with-tesseract --with-libvidstab --with-opencore-amr --with-openh264 --with-openjpeg --with-openssl --with-rtmpdump --with-rubberband --with-sdl2 --with-snappy --with-tools --with-webp --with-x265 --with-xz --with-zeromq --with-zimg --with-ffplay --with-freetype --with-libquvi --with-libvorbis --with-libvpx --with-opus
 
 update:
-brew update && brew upgrade
-
-brew install --with-toolchain llvm
-
-brew upgrade python git sourcetree make cmake node youtube-dl 
+brew update && brew upgrade && brew upgrade python git sourcetree make cmake node youtube-dl 
 
 sudo softwareupdate -ia --verbose
 
@@ -1281,6 +1277,8 @@ because macOS already provides this software and installing another version in
 parallel can cause all kinds of trouble.
 
 cn2en:
+刚性需求 rigid demand
+柔性需求 flexible demand
 按揭贷款
 言者无心，听者有意
 琢磨
@@ -1604,7 +1602,34 @@ https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop
 23.) Create Your FavIcon - 01:25:00
 24.) Logout - 01:27:39
 
+https://stackoverflow.com/questions/5648266/comparing-two-directory-recursively-copy-content-of-directory-to-third-director
+#!/usr/bin/env bash
+
+# Setup for testing:
+# mkdir -p A/l1-{1,2,3}/l2-{4,5,6}
+# mkdir -p B/l1-{2,3,4,5}/l2-{1,2,3,4}
+# touch B/l1-{3,4,5}/l2-{2,3,4}/file-${RANDOM}
+# touch {A,B}/l1-2/l2-4/never_goes_to_C
+
+mkdir -p "C/$d"
+
+while read f d _; do 
+  if [ -e "A/$f" ]; then 
+    echo "---> FOUND: A/$f"
+  else
+    echo "---> NOT FOUND: A/$f, moving to C"
+    cp -a "B/$f" "C/$d"
+  fi;
+done < <(cd B; find . -printf "%p %h\n")
+#EOF
+
 todo:
+https://superuser.com/questions/125376/how-do-i-compare-binary-files-in-linux
+xxddiff() ( f() ( xxd "$1" ; ); diff -y <(f "$1") <(f "$2") | colordiff; )  # Are () eligible for shell function body encloser?
+If you just want to know whether both files are the same or not, you can use the -q or --brief switch, which will only show output when the files differ.
+
+Understanding Text using Cognitive Services
+
 ffmpeg amplify volume of audio video files
 
 Buy wholegrain oats rather than crushed ones!
@@ -1729,4 +1754,11 @@ autogen.input:
 --enable-symbols
 --disable-cve-tests
 --without-junit
+
+utv:
+yandex c++
+economy finance ICO IPO
+
+shft-i,h,shft-g,shft-i
+shft-i,h,shft-f,shft-i
 
