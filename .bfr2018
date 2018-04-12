@@ -1288,6 +1288,53 @@ cn2en:
 光彩熠熠(yì) [bright] 闪烁的样子
 海参崴
 
+js:
+const sortedCompanies = companies.sort((a,b) => a.start - b.start);
+https://www.youtube.com/watch?v=rRgD1yVwIvE
+Filter is used to SKIP unwanted items, and might return with less items or even NO items.
+Map modifies the items, and will always return the same amount of items.
+>filter returns ONLY the items that meet the criteria you specify in the callback. It's sort of like .map + an if statement.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to sort the array in ascending order.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+
+function myFunction() {
+    points.sort(function(a, b){return a-b});
+    document.getElementById("demo").innerHTML = points;
+}
+</script>
+
+</body>
+</html>
+
+const companies = [
+  {name: "Company One", category: "Finance", start: 1981, end: 2003},
+  {name: "Company Two", category: "Retail", start: 1992, end: 2008},
+  {name: "Company Three", category: "Auto", start: 1999, end: 2007},
+  {name: "Company Four", category: "Retail", start: 1989, end: 2010},
+  {name: "Company Five", category: "Technology", start: 2009, end: 2014},
+  {name: "Company Six", category: "Finance", start: 1987, end: 2010},
+  {name: "Company Seven", category: "Auto", start: 1986, end: 1996},
+  {name: "Company Eight", category: "Technology", start: 2011, end: 2016},
+  {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
+];
+
+const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+
+https://sdras.github.io/array-explorer/
+JavaScript Array Explorer
+Find the array method you need without digging through the docs
 
 lo:
 Sh*H*d*l*le!*9 also for: AskLibO: https://ask.libreoffice.org/en/questions/
@@ -1672,6 +1719,8 @@ VPS: KVM: google BBR, OVZ
 
 visit badral.net @Apr.15
 
+javascript pitfalls gotcha
+
 http://nmg.ganji.com/jiajiao/2997882357x.htm
 信息编号:15010009008250018
 title: 周末辅导:蒙英日语 数学 物理 编程 Excel Mac
@@ -1700,7 +1749,6 @@ Elementary to High School Math & Physics. (小学-->高中数学，初高中物�
 Boris Khereid
 
 asuult:
-c++ is std the global namespace? (::var)
 Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
 
 入网证号:02-5043-171159
