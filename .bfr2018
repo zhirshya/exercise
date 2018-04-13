@@ -360,6 +360,7 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn:
+cash in
 unanimously
 exceptional quality and performance
 electrolyte
@@ -1503,6 +1504,19 @@ git:
 HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
 
+$git branch -D func_addition
+Deleted branch func_addition (was aed18c8).
+$git push origin :func_addition
+To github.com:zhirshya/exercise.git
+ - [deleted]         func_addition
+$diff -r . ~/bkup/xrs
+Only in /Users/almas/bkup/xrs/.git/logs/refs/heads: func_addition
+Only in /Users/almas/bkup/xrs/.git/logs/refs/remotes/origin: func_addition
+Only in ./.git/logs/refs/remotes/origin: note_bfr
+Only in /Users/almas/bkup/xrs/.git/refs/heads: func_addition
+Only in /Users/almas/bkup/xrs/.git/refs/remotes/origin: func_addition
+Only in ./.git/refs/remotes/origin: note_bfr
+
 https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/
 
 https://gist.github.com/m14t/3056747
@@ -1671,6 +1685,8 @@ while read f d _; do
 done < <(cd B; find . -printf "%p %h\n")
 #EOF
 
+Natsagnyam NAMKHAI
+
 todo:
 https://superuser.com/questions/125376/how-do-i-compare-binary-files-in-linux
 xxddiff() ( f() ( xxd "$1" ; ); diff -y <(f "$1") <(f "$2") | colordiff; )  # Are () eligible for shell function body encloser?
@@ -1747,6 +1763,14 @@ Elementary to High School Math & Physics. (小学-->高中数学，初高中物�
 青工程师
 
 Boris Khereid
+
+We're rapidly headed toward the next 2008 financial implosion. In 3 years real estate will probably be about half what it currently is. Last time around I held off on buying a house and instead I doubled down and paid off my old condo. Then in 2012 when the recession bottomed out I cashed in silver for a down payment on my current house, which I got for 160k and now it's worth about 300k. Then I waited for the market to recover and sold my condo in 2015 and knocked out half the house mortgage. Also I started buying bitcoins during the horrible bitcoin bear market of 2014 and 2015 and tucked away a nice stash of bitcoins. I cashed in bitcoins last year and paid off the house.
+I'd stay out of stocks and real estate right now and instead go into silver and bitcoins. Then when the panic of this next big economic implosion drives the prices of those assets up (and drives the price of stocks and real estate dramatically down) then I'll sell some of those assets to move into stocks. I own my house mortgage free so it's a nice low cost base of operations while I stack bitcoins before the next big run-up.
+>VERY good point on SLV. The GLD/SLV ratio is '81' which historically is VERY high. SLV should rally versus GLD thus balancing it out. Example: Buying 100oz bars for less than $1900 probably have a low downside and nice upside.
++MGTOW Mone
+>SLV should rally versus GLD thus balancing it out. Example: Buying 100oz bars for less than $1900 probably have a low downside and nice upside
+Yeah, silver is still close to the bottom of it's cycle. The downside risk is almost nonexistent. I have an ammo box full of silver and I'm holing onto it. Last time around my gold gained 70% while my silver gained 260%. If I choose to keep precious metals once this next recession bottoms out I'll flip it over to gold. Once we moved into the recovery portion of the business cycle, in 2012 and later, the price of silver dropped back to it's pre-2008 price while gold maintained more of it's value.
+Next time the bitcoin price goes nuts I'll start moving my surplus monthly income into silver.
 
 asuult:
 Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
