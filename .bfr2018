@@ -1,16 +1,18 @@
 milidustrplex: military industrial complex
 Money is power. Power to do whatever whenever with whomever for however long you want.
 
-Чинбат
-青巴图
-+86 15354836589
 010010
 呼和浩特市新华东街89号维力斯酒店13F西
 内蒙古德力海信息技术有限公司
+青巴图
+Чинбат
 
+Qingbatu
 Delehi Information Technology Co. Ltd.
+010010
+West 13F, Uiles Hotel, No.89 East Xinhua Street, Hohhot, P.R.China
 
-DelkhiOffice
+DelkhiOffice vs DelehiOffice
 
 https://encrypted.google.com/webhp?hl=en&gl=en#safe=active&hl=en&gl=en&q=%s
 
@@ -105,14 +107,12 @@ java -version
 /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -version
 https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-macos.htm#JSJIG-GUID-7EB4F697-F3D1-40EA-ACDF-07FA90F02D57
 
-export CCACHE_CPP2=YES
-
 WARNING : no suitable nasm (Netwide Assembler) found for internal libjpeg-turbo
 
 kali <<<dfrrd*9
 
 prsvrrgtd@outlook.com
-apple: strategyrr@outlook.com outlook_passwd
+apple id: strategyrr@outlook.com outlook_passwd
 
 https://exmail.qq.com/cgi-bin/loginpage
 qingbatu@delehi.com .d*G*1*5
@@ -121,11 +121,33 @@ qingbatu@delehi.com .d*G*1*5
 呼格吉乐（ᠬᠦᠭᠵᠢᠯ）: 密码：15848393927
 
 book:
+Mathematics & Physics for Programmers
+
+Discovering Modern C++: An Intensive Course for Scientists, Engineers, and Programmers
+
+Busy Coder’s Guide to Android Development by Mark L. Murphy
+
+Networking All-in-One For Dummies
+
 Inside Radio: An Attack and Defense Guide by Qing Yang, Lin Huang 
 English | 2018 | ISBN: 9811084461 | 369 Pages | True PDF, EPUB | 55 MB
 
 This book discusses the security issues in a wide range of wireless devices and systems, such as RFID, Bluetooth, ZigBee, GSM, LTE, and GPS. It collects the findings of recent research by the UnicornTeam at 360 Technology, and reviews the state-of-the-art literature on wireless security. The book also offers detailed case studies and theoretical treatments – specifically it lists numerous laboratory procedures, results, plots, commands and screenshots from real-world experiments. It is a valuable reference guide for practitioners and researchers who want to learn more about the advanced research findings and use the off-the-shelf tools to explore the wireless world.
 
+Programming with STM32: Getting Started with the Nucleo Board and C/C++ by Donald Norris 
+English | 2018 | ISBN: 1260031317 | 304 Pages | EPUB | 21 MB
+
+Get up and running programming the STM32 line of microcontrollers from STMicroelectronics using the hands-on information contained in this easy-to-follow guide. Written by an experienced electronics hobbyist and author, Programming with STM32: Getting Started with the Nucleo Board and C/C++ features start-to-finish projects that clearly demonstrate each technique. Discover how to set up a stable development toolchain, write custom programs, download your programs to the development board, and execute them. You will even learn how to work with external servos and LED displays!
+
+Explore the features of STM32 microcontrollers from STMicroelectonics
+Configure your Nucleo-64 Microcontroller development board
+Establish a toolchain and start developing interesting applications
+Add specialized code and create cool custom functions
+Automatically generate C code using the STM32CubeMX application
+Work with the ARM Cortex Microcontroller Software Interface Standard and the STM hardware abstraction layer (HAL).
+Control servos, LEDs, and other hardware using PWM
+Transfer data to and from peripheral devices using DMA
+Generate waveforms and pulses through your microcontroller’s DAC
 
 CoreText c++
 https://developer.apple.com/documentation/coretext
@@ -153,6 +175,24 @@ Makefile:276: recipe for target 'build' failed
 make: *** [build] Error 2
 
 almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
+
+c++:
+Number of days between two dates C++
+https://stackoverflow.com/questions/14218894/number-of-days-between-two-dates-c/14219008
+chrono-Compatible Low-Level Date Algorithms
+
+http://howardhinnant.github.io/date_algorithms.html
+https://howardhinnant.github.io/date/date.html
+
+https://github.com/HowardHinnant/date
+
+arrow operator (->)
+reference return to create lvalue
+prefix increment: Obj& Obj::operator++();
+
+postfix increment: Obj Obj::operator++(int);
+
+c++ equivalent of strtok
 
 c++ check update: https://github.com/txthinking/brook
 c++ linux service to backup folder
@@ -223,9 +263,9 @@ case-bound possessive case 所有格
 
 
 https://brew.sh/
-brew install cmake ccache automake node gpg wget nmap libpcap 7z gcc gdb git-flow
+brew install cmake ccache automake node gpg wget nmap libpcap 7z git-flow colordiff
 npm install -g nodemon
-brew install --with-clang llvm lldb
+brew install --with-toolchain --with-clang llvm lldb
 
 brew install macvim --with-override-system-vim
 /usr/local/bin needs to be first in your PATH
@@ -234,11 +274,7 @@ brew doctor should notify you of any PATH or configuration issues for brew.
 brew install ffmpeg --with-chromaprint --with-fdk-aac --with-libass --with-librsvg --with-libsoxr --with-libssh --with-tesseract --with-libvidstab --with-opencore-amr --with-openh264 --with-openjpeg --with-openssl --with-rtmpdump --with-rubberband --with-sdl2 --with-snappy --with-tools --with-webp --with-x265 --with-xz --with-zeromq --with-zimg --with-ffplay --with-freetype --with-libquvi --with-libvorbis --with-libvpx --with-opus
 
 update:
-brew update && brew upgrade
-
-brew install --with-toolchain llvm
-
-brew upgrade python git sourcetree make cmake node youtube-dl 
+brew update && brew upgrade && brew upgrade python git sourcetree make cmake node youtube-dl 
 
 sudo softwareupdate -ia --verbose
 
@@ -324,6 +360,17 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn:
+cash in
+unanimously
+exceptional quality and performance
+electrolyte
+spout
+homogeneous
+anemia
+devise algorithm
+anti snoring jaw supporter (chin strap)
+snore reliever chin strap
+bellwether
 Vacuum Insulated Bottle, Sport Water Bottle with Suction Base, Twin Wall Stainless Steel Cup, Office/Home/Car/travel Coffee Tea Bottle, Fall-Over Prevention Anti-Scald Bottle, 14OZ 
 crochet
 crochet water bottle pouch
@@ -645,6 +692,14 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+ШӨХТГ-н дарга асан Т.Аюурсайхан
+
+https://www.facebook.com/groups/MongolianWikipedia/
+
+Мазаалай:[ᠮᠠᠵᠠᠭᠠᠯᠠᠢ] http://wikibilig.mn/index.php/%E1%A0%AE%E1%A0%A0%E1%A0%B5%E1%A0%A0%E1%A0%AD%E1%A0%A0%E1%A0%AF%E1%A0%A0%E1%A0%A2
+
+Хөвсгөл -> Хөгсгөл (Traditional Mongolian Script)
+
 Залхуу Арчаагүй Анхиагүй
 Арчаагүй Анхиагүй шинж
 Ахуй төрхөөрөө тэнэгэрхүү Ах дуудээ хэдэр ядар
@@ -674,6 +729,30 @@ https://www.youtube.com/watch?v=ZXvxtKie40Y
 
 влог
 Танилцсаны дараах паянгууд
+
+https://www.facebook.com/groups/zugaatai.hel.shinjlel/permalink/789153364601081/
+Ъ бол үнэндээ " а, о " эгшиг юм.
+Үгийн үндсэн хэзээ ч хатуугийн тэмдэг орохгүй. Томьёо, авьяас, гавьяат, адьяа, сумьяа гэх мэтэд үгийн үндсэнд нь зөөлний тэмдэг ордог(ь тэмдэг үнэндээ и,э,ө эгшиг юм). Барь, тавь, боль, хорь гэдэгтэй адилхан
+Монгол бичиг сурахад хэрэгтэй учраас дараах үгсийг латин галигаар бичээрэй.
+Жишээ: Авъя away
+Уралдъя uralday
+Уучилъя uuchilay
+Оръё oroy
+
+Эхний үедээ а у эгшиг орсон бол хатуугийн тэмдгийг а аар
+Эхний үед о эгшиг орсон бол хатуугийн тэмдгийг o аар орлуулж латин үсгээр галиглаарай.
+
+Кирил бичгийн ъ үсгийг монгол бичигт хэрхэн бичихийг тайлбарлахын тулд латин галиг хэрэглэж буйг ойлгоорой.
+Даалгавар : Латинаар галиглаарай
+Амсъя
+Тасдъя
+Аргалъя
+Удъя
+Уръя
+Унтъя
+Очъё
+Олъё
+Одъё
 
 «END of mgl»
 
@@ -1187,8 +1266,6 @@ Deploy your application to a cloud host
 Secure your application with a solid token-based authentication system
 
 
-お疲れ様です。お先に失礼致します。
-
 http://www.11185.cn/
 RR466716049CN
 
@@ -1202,6 +1279,9 @@ because macOS already provides this software and installing another version in
 parallel can cause all kinds of trouble.
 
 cn2en:
+刚性需求 rigid demand
+柔性需求 flexible demand
+按揭贷款
 言者无心，听者有意
 琢磨
 懵 měng:本意是指昏昧无知的样子，也指一时的心乱迷糊，还指无知、欺骗。
@@ -1209,15 +1289,56 @@ cn2en:
 光彩熠熠(yì) [bright] 闪烁的样子
 海参崴
 
+js:
+const sortedCompanies = companies.sort((a,b) => a.start - b.start);
+https://www.youtube.com/watch?v=rRgD1yVwIvE
+Filter is used to SKIP unwanted items, and might return with less items or even NO items.
+Map modifies the items, and will always return the same amount of items.
+>filter returns ONLY the items that meet the criteria you specify in the callback. It's sort of like .map + an if statement.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to sort the array in ascending order.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+
+function myFunction() {
+    points.sort(function(a, b){return a-b});
+    document.getElementById("demo").innerHTML = points;
+}
+</script>
+
+</body>
+</html>
+
+const companies = [
+  {name: "Company One", category: "Finance", start: 1981, end: 2003},
+  {name: "Company Two", category: "Retail", start: 1992, end: 2008},
+  {name: "Company Three", category: "Auto", start: 1999, end: 2007},
+  {name: "Company Four", category: "Retail", start: 1989, end: 2010},
+  {name: "Company Five", category: "Technology", start: 2009, end: 2014},
+  {name: "Company Six", category: "Finance", start: 1987, end: 2010},
+  {name: "Company Seven", category: "Auto", start: 1986, end: 1996},
+  {name: "Company Eight", category: "Technology", start: 2011, end: 2016},
+  {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
+];
+
+const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+
+https://sdras.github.io/array-explorer/
+JavaScript Array Explorer
+Find the array method you need without digging through the docs
 
 lo:
-CFLAGS="-mmacosx-version-min=10.9 -stdlib=libc++ -std=c++14"
-echo $CFLAGS
-CXXFLAGS="-mmacosx-version-min=10.9 -stdlib=libc++ -std=c++14"
-echo $CXXFLAGS
-CPPFLAGS="-mmacosx-version-min=10.9 -stdlib=libc++ -std=c++14"
-echo $CPPFLAGS
-
+Sh*H*d*l*le!*9 also for: AskLibO: https://ask.libreoffice.org/en/questions/
 https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install
 
 http://devcentral.libreoffice.org/devguide.html
@@ -1228,7 +1349,7 @@ autogen.input:
 --enable-symbols
 --disable-cve-tests
 --with-build-version=$(date +"MacD%Y-%m-%d")
---with-vendor="ALMAS"
+--with-vendor=Almas Inc.
 
 --enable-epm
 --enable-scripting-beanshell
@@ -1250,18 +1371,13 @@ LibreOffice:
 https://wiki.documentfoundation.org/Development/EasyHacks
 https://wiki.documentfoundation.org/CoreHacks
 
-./autogen.sh 2>&1 | tee autogen_LO_$(date +"%Y%m%d-%H:%M:%S").log
-
-/usr/bin/make -j4 2>&1 | tee build.log
-
-${LODE_HOME}/opt/bin/make dbglevel=2 verbose=t 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-$LODE_HOME/opt/bin/make verbose=t 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-$LODE_HOME/opt/bin/make verbose=t build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' verbose=t build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
-
+/*Clearly nobody has built with a good compiler that is eager to generate warnings, dbglevel=2, and --enable-werror in a while, if ever. One more reason for us to get rid of the dbglevel crack.*/
+#${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' verbose=t build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+#${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' build-nocheck 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+#${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make -s ENABLE_SYMBOLS=true dbglevel=2 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make -j4 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+${LODE_HOME}/opt/bin/make -j4 GMAKE_OPTIONS='VERBOSE=1' 2>&1 | tee build_LO_$(date +"%Y%m%d-%H:%M:%S").log
+make -f <make_build_file>
 ${LODE_HOME}/opt/bin/make -j 4 VERBOSE=1 -f ${LODE_HOME}/dev/core/Makefile.gbuild all
 
 xcode-ide-integration:
@@ -1366,14 +1482,15 @@ Using an interactive debugger
 Logging
 Code Review
 
-[debug] ffmpeg command line: ffmpeg -y -i 'file:Threads in C++-wXBcwHwIt_I.f137.mp4' -i 'file:Threads in C++-wXBcwHwIt_I.f251.webm' -c copy -map '0:v:0' -map '1:a:0' 'file:Threads in C++-wXBcwHwIt_I.temp.mkv'
+ffmpeg command line: ffmpeg -y -i 'file:Threads in C++-wXBcwHwIt_I.f137.mp4' -i 'file:Threads in C++-wXBcwHwIt_I.f251.webm' -c copy -map '0:v:0' -map '1:a:0' 'file:Threads in C++-wXBcwHwIt_I.temp.mkv'
+ffmpeg -i '21darieh__дарь_эх-VPInIrd5Hqc.opus' -filter:v "setpts=PTS/1.25" -filter:a "atempo=1.25" '21darieh__дарь_эх-VPInIrd5Hqc_spdx1.25.opus'
 
 ﹖(https://unicodelookup.com/#question/1)
 
 http://mongoliankeyboardformac.blogspot.jp/
 
 shell single-line while loop
-i=0; while ((i<11)); do utf -r 350k; ((++i)); done
+i=0; while ((i<11)); do utf -r 500k; ((++i)); done
 
 Netfilter is a framework provided by Linux that allows various networking-related operations to be implemented in the form of customized handlers. Netfilter offers various functions and operations for packet filtering, network address translation, and port translation, which provide the functionality required for directing packets through a network, as well as for providing ability to prohibit packets from reaching sensitive locations within a computer network.
 
@@ -1386,6 +1503,19 @@ https://cpplang.slack.com/ outlook(usr/passwd)
 git:
 HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
+
+$git branch -D func_addition
+Deleted branch func_addition (was aed18c8).
+$git push origin :func_addition
+To github.com:zhirshya/exercise.git
+ - [deleted]         func_addition
+$diff -r . ~/bkup/xrs
+Only in /Users/almas/bkup/xrs/.git/logs/refs/heads: func_addition
+Only in /Users/almas/bkup/xrs/.git/logs/refs/remotes/origin: func_addition
+Only in ./.git/logs/refs/remotes/origin: note_bfr
+Only in /Users/almas/bkup/xrs/.git/refs/heads: func_addition
+Only in /Users/almas/bkup/xrs/.git/refs/remotes/origin: func_addition
+Only in ./.git/refs/remotes/origin: note_bfr
 
 https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/
 
@@ -1501,7 +1631,78 @@ gcc --version
 which g++: /usr/local/opt/ccache/libexec/g++
 cd /usr/local/Cellar/gcc/7.3.0_1/bin && ln -s gcc-7 gcc && ln -s g++-7 g++
 
+https://my.58.com
+DeveloprHohhot .d*5
+https://passport.ganji.com/login.php
+tutorhohhot .d*5
+短信锁定账号:发送短信“SD”或“JS”到106900329288，完成对账号的锁定和解锁
+
+cat -etv Makefile
+https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop
+
+2.) Get Domain Name & Hosting - 00:07:08   (use savecode on checkout)
+3.) Install WordPress - 00:12:38
+4.) Login To WordPress - 00:15:08
+5.) Change Password - 00:16:00
+6.) Delete Plugins - 00:16:23
+7.) Change Permalinks - 00:17:28
+8.) Update WordPress - 00:18:53
+9.) Install Theme - 00:19:22
+10.) Delete Pages & Posts - 00:21:28
+11.) Change Title & Tagline - 00:22:33
+12.) Add Pages To Website - 00:23:47
+13.) Edit Navigation Menu - 00:24:59
+14.) Set Homepage To Home - 00:30:12
+15.) Add Content The Old Way - 00:31:15
+16.) Install Elementor Plugin - 00:32:03
+17.) Create Your Home Page - 00:33:16
+18.) Create Your About Page - 00:53:20
+19.) Create Your Services Page - 00:57:39
+20.) Create Your Contact Page - 01:10:28
+21.) Create Your Logo - 01:17:01
+22.) Create Your Footer - 01:19:50
+23.) Create Your FavIcon - 01:25:00
+24.) Logout - 01:27:39
+
+https://stackoverflow.com/questions/5648266/comparing-two-directory-recursively-copy-content-of-directory-to-third-director
+#!/usr/bin/env bash
+
+# Setup for testing:
+# mkdir -p A/l1-{1,2,3}/l2-{4,5,6}
+# mkdir -p B/l1-{2,3,4,5}/l2-{1,2,3,4}
+# touch B/l1-{3,4,5}/l2-{2,3,4}/file-${RANDOM}
+# touch {A,B}/l1-2/l2-4/never_goes_to_C
+
+mkdir -p "C/$d"
+
+while read f d _; do 
+  if [ -e "A/$f" ]; then 
+    echo "---> FOUND: A/$f"
+  else
+    echo "---> NOT FOUND: A/$f, moving to C"
+    cp -a "B/$f" "C/$d"
+  fi;
+done < <(cd B; find . -printf "%p %h\n")
+#EOF
+
+Natsagnyam NAMKHAI
+
 todo:
+https://superuser.com/questions/125376/how-do-i-compare-binary-files-in-linux
+xxddiff() ( f() ( xxd "$1" ; ); diff -y <(f "$1") <(f "$2") | colordiff; )  # Are () eligible for shell function body encloser?
+If you just want to know whether both files are the same or not, you can use the -q or --brief switch, which will only show output when the files differ.
+
+Understanding Text using Cognitive Services
+
+ffmpeg amplify volume of audio video files
+
+Buy wholegrain oats rather than crushed ones!
+
+College Test Preparation:Cracking the SAT Physics Subject Test 15th Edition
+College Test Preparation:Cracking the SAT Physics Subject Test
+College Test Preparation:Cracking the SAT Math Subject Test
+
+automate launching and clicking in android app from command line -> Carrefour android app 
 access android app from command line app
 access android app from terminal app
 app to automate launching Carrefour android app and clicking buttons
@@ -1518,18 +1719,131 @@ https://translate.yandex.com/?lang=ru-zh&textv=Сделать%20это%20сам�
 buy cryptocurrency in china in 2018
 cryptocurrency investment 2018
 
-MacOS setup OpenGL
+decode %5C %2F -> decode \ /
 
 c++ algorithm contest screen cast
 
 best russian english dictionary
-TORFL guids tips
 
-git squash multiple commits
-git multiple commits in single pull request
+Rssian proficiency test preparation guids tips
 
 macos what does "No such keg" mean?
 
-北垣街 大将作北 铁路小区1楼2居室
-临近北垣小学 33路，2路
+macos safari take snapshot of webpage
 
+VPS: KVM: google BBR, OVZ
+
+visit badral.net @Apr.15
+
+javascript pitfalls gotcha
+
+http://nmg.ganji.com/jiajiao/2997882357x.htm
+信息编号:15010009008250018
+title: 周末辅导:蒙英日语 数学 物理 编程 Excel Mac
+教授课程:英语 日语 蒙语 数学 物理 编程 Excel Mac
+
+irc://chat.freenode.net/libreoffice-dev
+#libreoffice-dev
+BgnrPrgrmr
+
+body:
+我是呼伦贝尔巴日古人。具有很好的蒙语发音及语法(懂竖写及西里尔蒙古文)，通过大学英语6级考试，英语托业考试(TOEIC)875分，日语能力考试(JLPT)N1级，计算机科学与技术专业本科毕业，并具备多年软件开发经验：掌握C, C++, C#, Java, Python, SQL等编程语言以及Excel, Word, PowerPoint等办公软件及Mac操作系统。
+
+我能辅导的科目如下：
+Elementary to High School English(小学-->高中英语),
+
+Mongolian language (Traditional Vertical Script and Cyrillic)：蒙语辅导及蒙汉英3语翻译,
+
+Elementary to High School Math & Physics. (小学-->高中数学，初高中物理),
+
+日语，
+
+以及办公软件使用，程序编程，Excel, Word, PowerPoint, Mac系统使用方法。
+
+青工程师
+
+Boris Khereid
+
+We're rapidly headed toward the next 2008 financial implosion. In 3 years real estate will probably be about half what it currently is. Last time around I held off on buying a house and instead I doubled down and paid off my old condo. Then in 2012 when the recession bottomed out I cashed in silver for a down payment on my current house, which I got for 160k and now it's worth about 300k. Then I waited for the market to recover and sold my condo in 2015 and knocked out half the house mortgage. Also I started buying bitcoins during the horrible bitcoin bear market of 2014 and 2015 and tucked away a nice stash of bitcoins. I cashed in bitcoins last year and paid off the house.
+I'd stay out of stocks and real estate right now and instead go into silver and bitcoins. Then when the panic of this next big economic implosion drives the prices of those assets up (and drives the price of stocks and real estate dramatically down) then I'll sell some of those assets to move into stocks. I own my house mortgage free so it's a nice low cost base of operations while I stack bitcoins before the next big run-up.
+>VERY good point on SLV. The GLD/SLV ratio is '81' which historically is VERY high. SLV should rally versus GLD thus balancing it out. Example: Buying 100oz bars for less than $1900 probably have a low downside and nice upside.
++MGTOW Mone
+>SLV should rally versus GLD thus balancing it out. Example: Buying 100oz bars for less than $1900 probably have a low downside and nice upside
+Yeah, silver is still close to the bottom of it's cycle. The downside risk is almost nonexistent. I have an ammo box full of silver and I'm holing onto it. Last time around my gold gained 70% while my silver gained 260%. If I choose to keep precious metals once this next recession bottoms out I'll flip it over to gold. Once we moved into the recovery portion of the business cycle, in 2012 and later, the price of silver dropped back to it's pre-2008 price while gold maintained more of it's value.
+Next time the bitcoin price goes nuts I'll start moving my surplus monthly income into silver.
+
+asuult:
+Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
+
+入网证号:02-5043-171159
+
+Which image formats preserve resolution while zooming?
+
+HawangPua MongolHawangPua.ttf
+Havan
+Pua
+Qagan -> Chagan
+
+这字是正字吗？若是，什么意思？
+
+Dealing with line endings and Git's autocrlf
+If autogen.sh produces output like the following:
+
+./autogen.sh: line 1: $':\r': command not found
+' '--srcdir=/home/user/libreoffice' '--enable-option-checking=fatal'
+configure: WARNING: you should use --build, --host, --target
+configure: WARNING: invalid host type: 
+********************************************************************
+*
+*   Running LibreOffice build configuration.
+*
+********************************************************************
+
+' not recognizedystem type... Invalid configuration `
+ failedre: error: /bin/bash ./config.sub 
+Error running configure at ./autogen.sh line 241.
+... then you probably have line ending problems. This might occur if you mistakenly set Git's core.autocrlf=true.
+
+To fix the issue, run these commands (WARNING: uncommitted changes will be lost!):
+
+git config --unset core.autocrlf
+git rm --cached -r .
+git reset --hard
+git clean -x -f
+./autogen.sh
+
+brilliant.org
+McGraw Hill dictionary of science and engineering
+
+couresra Machine Learning Andrew Ng
+
+https://ask.libreoffice.org/en/question/136821/unit-test-fails-while-building-libreoffice/?answer=151690#post-id-151690
+Hello, my first time build/make of Libreoffice clone from official repo failed with 2 errors: "Run: 88   Failure total: 2   Failures: 2   Errors: 0", I didn't use "build-nocheck", I found other person was suggested to build with "build-nocheck" option.
+But https://wiki.documentfoundation.org/Development/GenericBuildingHints#Build_system_internals says:"make performs a number of checks (e.g. unit tests). That is a subset make check tests. There is a build-nocheck switch that disables the checks when building. It may speed up the build considerably. However, it should definitely not be used when building for the first time, because otherwise you may miss a problem with your setup that will give you a build with strange behavior that nobody else sees."
+I can't build/make with no errors on MacBook Pro2011/macOS 10.13.4 with latest Xcode and its commandline tools.
+Commands I used was:"${LODE_HOME}/opt/bin/make clean && ${LODE_HOME}/opt/bin/make -s ENABLE_SYMBOLS=true 2>&1"
+autogen.input:
+#--enable-debug
+--enable-dbgutil
+--enable-symbols
+--disable-cve-tests
+--without-junit
+
+utv:
+yandex c++
+
+mgl input:
+shft-i,h,shft-g,shft-i
+shft-i,h,shft-f,shft-i
+
+Putty pronunciation
+
+Ajax in 2018 and future
+Grid CSS
+Fetch API
+REST API
+vanilla JavaScript
+
+buy in jd.com pay with alipay
+buy black umbrella at jd.com pay with alipay
+online shopping from china with alipay best practice
