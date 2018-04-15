@@ -1694,6 +1694,7 @@ done < <(cd B; find . -printf "%p %h\n")
 Natsagnyam NAMKHAI
 
 todo:
+lyrics: Прощание славянки
 https://superuser.com/questions/125376/how-do-i-compare-binary-files-in-linux
 xxddiff() ( f() ( xxd "$1" ; ); diff -y <(f "$1") <(f "$2") | colordiff; )  # Are () eligible for shell function body encloser?
 If you just want to know whether both files are the same or not, you can use the -q or --brief switch, which will only show output when the files differ.
