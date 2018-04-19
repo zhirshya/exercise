@@ -1,6 +1,8 @@
 milidustrplex: military industrial complex
 Money is power. Power to do whatever whenever with whomever for however long you want.
 
+The longer you hang in there, the greater the chance that something will happen in your favor. No matter how hard it seems, the longer you persist, the more likely your success.
+
 010010
 呼和浩特市新华东街89号维力斯酒店13F西
 内蒙古德力海信息技术有限公司
@@ -180,6 +182,13 @@ make: *** [build] Error 2
 almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
 
 c++:
+operator precedence live example:
+editeng/source/editeng/impedit3.cxx
+pTP = &pParaPortion->GetTextPortions()[ nPortion ];
+
+const long* pDXArray = nullptr;
+std::unique_ptr<long[]> pTmpDXArray;
+
 Number of days between two dates C++
 https://stackoverflow.com/questions/14218894/number-of-days-between-two-dates-c/14219008
 chrono-Compatible Low-Level Date Algorithms
@@ -223,6 +232,19 @@ c++ programmatically click "Read more", "View reply" and "View all xyz replies" 
 https://www.youtube.com/watch?v=vsMydMDi3rI
 
 apple CoreText tutorial
+
+eecs,ict:
+SOLID (object-oriented design)
+Single responsibility principle[4]
+a class should have only a single responsibility (i.e. changes to only one part of the software's specification should be able to affect the specification of the class).
+Open/closed principle[5]
+"software entities … should be open for extension, but closed for modification."
+Liskov substitution principle[6]
+"objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program." See also design by contract.
+Interface segregation principle[7]
+"many client-specific interfaces are better than one general-purpose interface."[8]
+Dependency inversion principle[9]
+one should "depend upon abstractions, [not] concretions."
 
 «kjellkod»
 
@@ -363,6 +385,10 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
+irrefutable evidence
+subsidized meals
+pastime
+Kubernetes is Greek for “helmsman,” your guide through unknown waters. The Kubernetes container orchestration system safely manages the structure and flow of a distributed application, organizing containers and services for maximum efficiency.
 Daigous: personal re-sellers
 hectic
 input method editor
@@ -1536,6 +1562,18 @@ git:
 HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
 
+git remote -v show origin
+
+https://stackoverflow.com/questions/21101572/git-diff-between-file-in-local-repo-and-origin
+To view the differences going from the remote file to the local file:
+	git diff remotename/branchname:remote/path/file1.txt local/path/file1.txt
+To view the differences in the other direction:
+	git diff HEAD:local/path/file1.txt remotename/branchname:remote/path/file1.txt
+Basically you can diff any two files anywhere using this notation:
+	git diff ref1:path/to/file1 ref2:path/to/file2
+As usual, ref1 and ref2 could be branch names, remotename/branchname, commit SHAs, etc.
+>>git diff Almas/DelehiOffice2015:editeng/source/editeng/impedit3.cxx editeng/source/editeng/impedit3.cxx
+
 https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
 $git branch -D func_addition
 Deleted branch func_addition (was aed18c8).
@@ -1805,6 +1843,19 @@ I'd stay out of stocks and real estate right now and instead go into silver and 
 Yeah, silver is still close to the bottom of it's cycle. The downside risk is almost nonexistent. I have an ammo box full of silver and I'm holing onto it. Last time around my gold gained 70% while my silver gained 260%. If I choose to keep precious metals once this next recession bottoms out I'll flip it over to gold. Once we moved into the recovery portion of the business cycle, in 2012 and later, the price of silver dropped back to it's pre-2008 price while gold maintained more of it's value.
 Next time the bitcoin price goes nuts I'll start moving my surplus monthly income into silver.
 
+communication:
+Pause :  
+ -- Pause for 3 to 5 seconds before interrupting the speaker
+Question :
+ -- Ask for clarification, never assume that  you have fully understood
+Paraphrasing :
+-- Paraphrase the speakers words in your words  to reflect that you are genuinely listening and understanding.
+
+Book no 1 : Unshakeable by Tony Robbins
+Book no 2 : Automatic millionaire by david bach
+Book no 3 : Rule Number 1 by Phil Town
+
+
 asuult:
 Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
 
@@ -1883,9 +1934,8 @@ Ant Financial
 Yu’e Bao
 lyrics: Прощание славянки
 
-remote part-time job stackoverflow
-
 北京社保 公积金转出
 
-Richard Ishida -> r12a
+4PAC4xqouCA
+zero to successful salesman
 
