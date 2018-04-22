@@ -181,6 +181,11 @@ make: *** [build] Error 2
 
 almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
 
+vs code:
+includePath:
+"${workspaceRoot}/workdir/UnoApiHeadersTarget/offapi/comprehensive",
+"${workspaceRoot}/workdir/UnoApiHeadersTarget/offapi/normal"
+
 c++:
 operator precedence live example:
 editeng/source/editeng/impedit3.cxx
@@ -385,6 +390,7 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
+self-confidence <> self-efficacy
 irrefutable evidence
 subsidized meals
 pastime
@@ -436,6 +442,8 @@ gross merchandise volume (GMV)
 It’s safer not to have a box with cash around and you can transfer money instantly without commission even to your bank account.
 
 Consumers already use Alipay in 28 countries and that number will rise if Ant Financial succeeds in its current bid to acquire MoneyGram, one of the world’s leading money-transfer companies. 
+
+Down payment (or downpayment, also called a deposit in British English), is a payment used in the context of the purchase of expensive items such as a car and a house, whereby the payment is the initial upfront portion of the total amount due and it is usually given in cash at the time of finalizing the transaction. A loan or the amount in cash is then required to make the full payment.
 
 «END of en2mn2rus»
 
@@ -813,6 +821,17 @@ https://www.facebook.com/groups/zugaatai.hel.shinjlel/permalink/789153364601081/
 Одъё
 
 «END of mgl»
+
+macos:
+To inspect the ACL, you can run the ls command with the -e flag. For example:
+ls -aleF /Volumes
+
+https://apple.stackexchange.com/questions/31438/how-do-i-use-chmod-on-a-mac-to-make-new-files-inherit-parent-directory-permissio
+chmod +a "group:examplegroup allow list,add_file,search,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,file_inherit,directory_inherit" /path/to/folder
+
+macos what does "No such keg" mean?
+
+macos safari take snapshot of webpage
 
 Sleep or Hibernate Mac:
 Press the Command-Option and Media key simultaneously
@@ -1798,10 +1817,6 @@ best russian english dictionary
 
 Rssian proficiency test preparation guids tips
 
-macos what does "No such keg" mean?
-
-macos safari take snapshot of webpage
-
 VPS: KVM: google BBR, OVZ
 
 visit badral.net @Apr.15
@@ -1855,6 +1870,8 @@ Book no 1 : Unshakeable by Tony Robbins
 Book no 2 : Automatic millionaire by david bach
 Book no 3 : Rule Number 1 by Phil Town
 
+Chingis Gant
+Borts Maker
 
 asuult:
 Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
@@ -1926,8 +1943,6 @@ Fetch API
 REST API
 vanilla JavaScript
 
-buy in jd.com pay with alipay
-buy black umbrella at jd.com pay with alipay
 online shopping from china with alipay best practice
 
 Ant Financial
@@ -1936,6 +1951,9 @@ lyrics: Прощание славянки
 
 北京社保 公积金转出
 
-4PAC4xqouCA
-zero to successful salesman
+How to read a book
+A Mind for Numbers, How to Excel at Math and Science (even if you flunked at algebra) by Barbara Oakley
+
+what does "403 Forbidden" mean?
+embed pictures into audio file for youtube
 
