@@ -123,6 +123,9 @@ qingbatu@delehi.com .d*G*1*5
 呼格吉乐（ᠬᠦᠭᠵᠢᠯ）: 密码：15848393927
 
 book:
+Deep Belief Nets in C++ and CUDA C: Volume 1: Restricted Boltzmann Machines and Supervised Feedforward Networks by Timothy Masters 
+English | 2018 | ISBN: 1484235904 | 219 Pages
+
 Bayesian Methods for Hackers: Probabilistic Programming and Bayesian Inference by Cameron Davidson-Pilon 
 English | 2015 | ISBN: 0133902839 | 256 Pages | True PDF, EPUB | 39 MB
 
@@ -390,7 +393,9 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
-self-confidence <> self-efficacy
+A was deprecated in favor of B.
+self-confidence
+self-efficacy: Psychologist Albert Bandura has defined self-efficacy as one's belief in one's ability to succeed in specific situations or accomplish a task. One's sense of self-efficacy can play a major role in how one approaches goals, tasks, and challenges.
 irrefutable evidence
 subsidized meals
 pastime
@@ -828,6 +833,7 @@ ls -aleF /Volumes
 
 https://apple.stackexchange.com/questions/31438/how-do-i-use-chmod-on-a-mac-to-make-new-files-inherit-parent-directory-permissio
 chmod +a "group:examplegroup allow list,add_file,search,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,file_inherit,directory_inherit" /path/to/folder
+sudo chmod -R +a "user:almas allow list,add_file,search,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,file_inherit,directory_inherit" /Volumes
 
 macos what does "No such keg" mean?
 
@@ -1778,11 +1784,13 @@ done < <(cd B; find . -printf "%p %h\n")
 Natsagnyam NAMKHAI
 
 todo:
+Understanding Text using Cognitive Services
+
+tms/vms/cms,imimh(http://www.gjmyy.cn/): ML, DL, AI
+
 https://superuser.com/questions/125376/how-do-i-compare-binary-files-in-linux
 xxddiff() ( f() ( xxd "$1" ; ); diff -y <(f "$1") <(f "$2") | colordiff; )  # Are () eligible for shell function body encloser?
 If you just want to know whether both files are the same or not, you can use the -q or --brief switch, which will only show output when the files differ.
-
-Understanding Text using Cognitive Services
 
 ffmpeg amplify volume of audio video files
 
@@ -1957,3 +1965,24 @@ A Mind for Numbers, How to Excel at Math and Science (even if you flunked at alg
 what does "403 Forbidden" mean?
 embed pictures into audio file for youtube
 
+.hpp .hdl generated when build c++ project
+/Users/almas/lode/dev/core/xmloff/source/draw/sdpropls.cxx:569:32: error: unexpected namespace name 'WritingMode2': expected expression
+    { XML_TOKEN_INVALID, text::WritingMode2(0) }
+
+$LODE_HOME/dev/core/xmloff/source/draw/sdpropls.cxx
+//static SvXMLEnumMapEntry<text::WritingMode> const aXML_WritingMode_EnumMap[] =
+static SvXMLEnumMapEntry const aXML_WritingMode_EnumMap[] =
+{
+    { XML_TB_RL,        text::WritingMode2::TB_RL },
+    { XML_LR_TB,        text::WritingMode2::LR_TB },
+    { XML_TB_LR,        text::WritingMode2::TB_LR },
+    { XML_TOKEN_INVALID, -1 }
+};
+
+tools::Rectangle
+
+macos high sierra remove user and guest from command line
+
+windows c++ healthcare medical software best practices guides tips tricks
+
+build libreoffice using VS Code compile_commands.json 
