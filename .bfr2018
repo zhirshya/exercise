@@ -1831,6 +1831,8 @@ done < <(cd B; find . -printf "%p %h\n")
 Natsagnyam NAMKHAI
 
 todo:
+golang: gRPC and Protocol Buffers
+
 Understanding Text using Cognitive Services
 
 tms/vms/cms,imimh(http://www.gjmyy.cn/): ML, DL, AI
@@ -2037,4 +2039,5 @@ build libreoffice using VS Code compile_commands.json
 vs code c++ include compile_commands.json
 
 red blue red square
+Hire a Mgtow C++/Java/JavaScript/SQL/Linux programmer who speaks English,汉语(Mandarin Chinese),Монгол Хэл(literate in both Cyrillic and traditional vertical Mongolian script),日本語(Japanese:JLPT N1)!
 Hire a Mgtow C++/Java/JavaScript/SQL/Linux programmer who speaks English,汉语(Mandarin Chinese),Монгол Хэл(literate in both Cyrillic and traditional vertical Mongolian script),日本語(Japanese:JLPT N1) and a little bit Русский язык(Russian)!
