@@ -1636,6 +1636,12 @@ origin/HEAD -> origin/master
 
 git remote -v show origin
 
+copy the content of a branch to a new local branch:
+https://stackoverflow.com/questions/14998923/how-can-i-copy-the-content-of-a-branch-to-a-new-local-branch
+git checkout -b new_branch old_branch
+Or even shorter git checkout -b new_branch (when you're already on old_branch). 
+>>I think if one creates a new branch like this one doesn't instantly have a copy of the old branch but simply a new pointer at the head of the old branch. But when you now do something like rebasing the new branch you should see that the old branch is still in its original state while the new branch is modified. So I think that does what the OP wants.
+
 https://stackoverflow.com/questions/21101572/git-diff-between-file-in-local-repo-and-origin
 To view the differences going from the remote file to the local file:
 	git diff remotename/branchname:remote/path/file1.txt local/path/file1.txt
@@ -1807,6 +1813,7 @@ https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop
 23.) Create Your FavIcon - 01:25:00
 24.) Logout - 01:27:39
 
+shell:
 https://stackoverflow.com/questions/5648266/comparing-two-directory-recursively-copy-content-of-directory-to-third-director
 #!/usr/bin/env bash
 
@@ -1827,6 +1834,8 @@ while read f d _; do
   fi;
 done < <(cd B; find . -printf "%p %h\n")
 #EOF
+
+mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
 
 Natsagnyam NAMKHAI
 
