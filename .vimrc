@@ -97,3 +97,9 @@ iabbrev gulem2l «
 iabbrev gulem2r »
 iabbrev rfrmrk ※
 
+
+"https://stackoverflow.com/questions/41518011/vim-insert-timestamp-in-the-current-line-after-some-words
+inoremap <special> <F3> <c-r>=strftime('%Y-%m-%d %H:%M:%S')<CR>
+"even works for MacVim('mvim -v')
+
+set statusline+=%F
