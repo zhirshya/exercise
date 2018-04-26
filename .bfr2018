@@ -189,6 +189,30 @@ includePath:
 "${workspaceRoot}/workdir/UnoApiHeadersTarget/offapi/comprehensive",
 "${workspaceRoot}/workdir/UnoApiHeadersTarget/offapi/normal"
 
+here document
+http://tldp.org/LDP/abs/html/here-docs.html
+Example 19-8. A script that generates another script
+
+: <<COMMENTBLOCK
+COMMENTBLOCK
+
+cat > $Newfile <<End-of-message
+This is line 1 of the message.
+This is line 2 of the message.
+This is line 3 of the message.
+This is line 4 of the message.
+This is the last line of the message.
+End-of-message
+
+The - option to mark a here document limit string (<<-LimitString) suppresses leading tabs (but not spaces) in the output. This may be useful in making a script more readable.
+
+vim:
+cat >> ~/.vimrc <<End-of-message
+"https://stackoverflow.com/questions/41518011/vim-insert-timestamp-in-the-current-line-after-some-words
+inoremap <special> <F3> <c-r>=strftime('%Y-%m-%d %H:%M:%S')<CR>
+"even works for MacVim('mvim -v')
+End-of-message
+
 c++:
 operator precedence live example:
 editeng/source/editeng/impedit3.cxx
@@ -393,6 +417,7 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
+What can I do to help?
 A was deprecated in favor of B.
 self-confidence
 self-efficacy: Psychologist Albert Bandura has defined self-efficacy as one's belief in one's ability to succeed in specific situations or accomplish a task. One's sense of self-efficacy can play a major role in how one approaches goals, tasks, and challenges.
@@ -1420,9 +1445,31 @@ https://sdras.github.io/array-explorer/
 JavaScript Array Explorer
 Find the array method you need without digging through the docs
 
+vs code:
+"compileCommands": "${workspaceRoot}/build/compile_commands.json"
+
+compile_commands.json:
+[
+{
+  "directory": "C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/bin",
+  "command": "C:/Strawberry/c/bin/c++.exe   @CMakeFiles/CMakeHelloWorld.dir/includes_CXX.rsp   -o CMakeFiles/CMakeHelloWorld.dir/HelloWorld.cpp.obj -c C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/HelloWorld.cpp",
+  "file": "C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/HelloWorld.cpp"
+},
+{
+  "directory": "C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/bin/Hello",
+  "command": "C:/Strawberry/c/bin/c++.exe      -o CMakeFiles/Hello.dir/Speaker.cpp.obj -c C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/Hello/Speaker.cpp",
+  "file": "C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/Hello/Speaker.cpp"
+}
+]
+
+sudo find / -not \( -path /private -prune \) -not \( -path /dev -prune \) -type f -iname "WritingMode2.h*" -exec ls -lAhF {} +
+
 lo:
 Sh*H*d*l*le!*9 also for: AskLibO: https://ask.libreoffice.org/en/questions/
 https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install
+
+build err:
+I/O error : Too many open files in system
 
 http://devcentral.libreoffice.org/devguide.html
 autogen.input:
@@ -1881,6 +1928,9 @@ Book no 3 : Rule Number 1 by Phil Town
 Chingis Gant
 Borts Maker
 
+coding habit:
+delete -> /* */
+
 asuult:
 Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
 
@@ -1951,8 +2001,6 @@ Fetch API
 REST API
 vanilla JavaScript
 
-online shopping from china with alipay best practice
-
 Ant Financial
 Yu’e Bao
 lyrics: Прощание славянки
@@ -1986,3 +2034,7 @@ macos high sierra remove user and guest from command line
 windows c++ healthcare medical software best practices guides tips tricks
 
 build libreoffice using VS Code compile_commands.json 
+vs code c++ include compile_commands.json
+
+red blue red square
+Hire a Mgtow C++/Java/JavaScript/SQL/Linux programmer who speaks English,汉语(Mandarin Chinese),Монгол Хэл(literate in both Cyrillic and traditional vertical Mongolian script),日本語(Japanese:JLPT N1) and a little bit Русский язык(Russian)!
