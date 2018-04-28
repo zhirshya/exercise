@@ -1,6 +1,8 @@
 milidustrplex: military industrial complex
 Money is power. Power to do whatever whenever with whomever for however long you want.
 
+I must lose myself in action, lest I wither in despair.
+
 The longer you hang in there, the greater the chance that something will happen in your favor. No matter how hard it seems, the longer you persist, the more likely your success.
 
 010010
@@ -417,7 +419,9 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
+addendum
 What can I do to help?
+parametricity
 A was deprecated in favor of B.
 self-confidence
 self-efficacy: Psychologist Albert Bandura has defined self-efficacy as one's belief in one's ability to succeed in specific situations or accomplish a task. One's sense of self-efficacy can play a major role in how one approaches goals, tasks, and challenges.
@@ -859,6 +863,11 @@ ls -aleF /Volumes
 https://apple.stackexchange.com/questions/31438/how-do-i-use-chmod-on-a-mac-to-make-new-files-inherit-parent-directory-permissio
 chmod +a "group:examplegroup allow list,add_file,search,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,file_inherit,directory_inherit" /path/to/folder
 sudo chmod -R +a "user:almas allow list,add_file,search,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,file_inherit,directory_inherit" /Volumes
+
+Moderate the UI experience:
+The steps to follow to turn off UI effects in the macOS High Sierra are:
+a. Go to “Settings” then “Accessibility” then “Display”
+b. Turn on the “Reduce Transparency” and “Reduce Motion” features.
 
 macos what does "No such keg" mean?
 
@@ -1470,6 +1479,8 @@ libreoffice@lists.freedesktop.org
 $LODE_HOME/dev/core/solenv/Makefile*
 https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install
 
+$LODE_HOME/dev/core/solenv/gbuild/LinkTarget.mk
+
 Sh*H*d*l*le!*9 also for: AskLibO: https://ask.libreoffice.org/en/questions/
 
 #no result
@@ -1639,11 +1650,14 @@ iptables MacOS
 
 https://cpplang.slack.com/ outlook(usr/passwd)
 
+https://github.com/agnoster/agnoster-zsh-theme
+echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
+
 git:
 HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
 
-git remote -v show origin
+git remote -v show origin (gr -v show origin)
 
 git Add all modified files but not untracked files
 git ls-files --modified | xargs git add
@@ -1857,6 +1871,11 @@ golang: gRPC and Protocol Buffers
 
 Understanding Text using Cognitive Services
 
+WeChat Marketing Tips for eCommerce Business
+WeChat Tips to Sell Products and Services
+
+shortcut keys to quote text in web outlook
+
 tms/vms/cms,imimh(http://www.gjmyy.cn/): ML, DL, AI
 
 https://superuser.com/questions/125376/how-do-i-compare-binary-files-in-linux
@@ -2064,8 +2083,10 @@ red blue red square
 Hire a Mgtow C++/Java/JavaScript/SQL/Linux programmer who speaks English,汉语(Mandarin Chinese),Монгол Хэл(literate in both Cyrillic and traditional vertical Mongolian script),日本語(Japanese:JLPT N1)!
 Hire a Mgtow C++/Java/JavaScript/SQL/Linux programmer who speaks English,汉语(Mandarin Chinese),Монгол Хэл(literate in both Cyrillic and traditional vertical Mongolian script),日本語(Japanese:JLPT N1) and a little bit Русский язык(Russian)!
 
-macos high sierra speedup high performace tips tricks
-Bolor spellcheck
-PrgrmrRusenthusiast SkypeMail
+badral@bolorsoft.com
+info@bolorsoft.com
+ask badral: picture:3x10^7 apple pear disabled hospital 10000 
+PrgrmrRusenthusiast SkypeMail:
 
+guids tips tricks to buy domain name using Alipay in china
 
