@@ -223,6 +223,18 @@ pTP = &pParaPortion->GetTextPortions()[ nPortion ];
 const long* pDXArray = nullptr;
 std::unique_ptr<long[]> pTmpDXArray;
 
+#include <iostream>
+// uncomment to disable assert()
+// #define NDEBUG
+#include <cassert>
+ int main()
+{
+    assert(2+2==4);
+    std::cout << "Execution continues past the first assert\n";
+    assert(2+2==5);
+    std::cout << "Execution continues past the second assert\n";
+}
+
 Number of days between two dates C++
 https://stackoverflow.com/questions/14218894/number-of-days-between-two-dates-c/14219008
 chrono-Compatible Low-Level Date Algorithms
@@ -237,6 +249,13 @@ reference return to create lvalue
 prefix increment: Obj& Obj::operator++();
 
 postfix increment: Obj Obj::operator++(int);
+
+Build enhanced applications by using hashtables, dictionaries, and sets
+Implement searching algorithms such as linear search, binary search, jump search, exponential search, and more
+Have a positive impact on the efficiency of applications with tree traversal
+Explore the design used in sorting algorithms like Heap sort, Quick sort, Merge sort and Radix sort
+Implement various common algorithms in string data types
+Find out how to design an algorithm for a specific task using the common algorithm paradigms
 
 c++ equivalent of strtok
 
@@ -419,6 +438,12 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
+outright lie/fraud
+YMMV:your mileage may vary
+unfilial
+stymied: recent scams have stymied people’s willingness to adopt the technology
+borne: Alipay and WeChat Pay have invariably borne the blame whenever a QR code scam has occurred.
+malevolent
 addendum
 What can I do to help?
 parametricity
@@ -789,6 +814,8 @@ For phones without built-in FM radio, there is always the option to purchase a s
 
 mgl:
 Муйхар
+
+БНН-н Дарга Б.ЖАРГАЛСАЙХАН
 
 ШӨХТГ-н дарга асан Т.Аюурсайхан
 
@@ -1457,6 +1484,7 @@ Find the array method you need without digging through the docs
 vs code:
 "compileCommands": "${workspaceRoot}/build/compile_commands.json"
 
+CMAKE_EXPORT_COMPILE_COMMANDS
 compile_commands.json:
 [
 {
@@ -1658,6 +1686,29 @@ HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
 
 git remote -v show origin (gr -v show origin)
+
+1.git cherry-pick -x <sha>
+2.gcp --continue
+U	sw/uiconfig/swriter/ui/frmaddpage.ui
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+ ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  gst
+On branch DelehiOffice2018
+You are currently cherry-picking commit 0dd3e068dd9e.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   sw/uiconfig/swriter/ui/frmaddpage.ui
+3.https://stackoverflow.com/questions/4556315/git-commit-you-have-some-suspicious-patch-lines/4583972
+git commit You have some suspicious patch lines
+verified with "cat -etv <file>(.ui(LO, sw/uiconfig/swriter/ui/frmaddpage.ui)/.xml)", not trailing whitespaces, but indentations!
+ga -u && gcmsg "<msg>" --no-verify
+#resolved conflict!
 
 git Add all modified files but not untracked files
 git ls-files --modified | xargs git add
@@ -2085,8 +2136,11 @@ Hire a Mgtow C++/Java/JavaScript/SQL/Linux programmer who speaks English,汉语(
 
 badral@bolorsoft.com
 info@bolorsoft.com
-ask badral: picture:3x10^7 apple pear disabled hospital 10000 
-PrgrmrRusenthusiast SkypeMail:
+PrgrmrRusenthusiast bolorsoft.com SkypeMail:
 
 guids tips tricks to buy domain name using Alipay in china
 
+dependency injection inversion of control
+major system long numbers
+
+brightside
