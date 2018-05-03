@@ -375,7 +375,8 @@ Developed jointly by Adobe and Microsoft, OpenType (.otf, .ttf, .ttc) fonts impr
 Hard water furred the kettle.
 
 ±
-
+⇅
+⇄
 The symbol, which I can never find on Microsoft Word's symbol list, is a hollow square with a single, vertical line through the middle. It's placed at the end of a number, such as 2,550[I] but imagine the box/line as intersecting and the top/bottom of the vertical line extending outside the box at both top and bottom. (I had to play with brackets, here) and either the same size font of the numbers or smaller, but never larger (not meant to overshadow the numbers). It's very common in the construction and architecture industry- especially when handwriting instructions or notes in order to avoid having to 'read' someone's handwriting (plus, it takes up slightly less space). For whatever reason, it's not available in most font/symbol options.
 
 http://monscript.blogger.com/
@@ -503,6 +504,8 @@ It’s safer not to have a box with cash around and you can transfer money insta
 Consumers already use Alipay in 28 countries and that number will rise if Ant Financial succeeds in its current bid to acquire MoneyGram, one of the world’s leading money-transfer companies. 
 
 Down payment (or downpayment, also called a deposit in British English), is a payment used in the context of the purchase of expensive items such as a car and a house, whereby the payment is the initial upfront portion of the total amount due and it is usually given in cash at the time of finalizing the transaction. A loan or the amount in cash is then required to make the full payment.
+
+self-explanatory: Title Case, Sentence case, UPPERCASE, lowercase
 
 «END of en2mn2rus»
 
@@ -1685,10 +1688,16 @@ git:
 HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
 
+glgga: git log --graph --decorate --all
+
 git remote -v show origin (gr -v show origin)
 
-1.git cherry-pick -x <sha>
-2.gcp --continue
+git issue:
+1.
+1).git cherry-pick -x <sha>
+>>If you cherry-pick from a public branch, you should consider using git cherry-pick -x <commit-hash>. This will generate a standardized commit message. This way, you (and your co-workers) can still keep track of the origin of the commit and may avoid merge conflicts in the future.
+e.g. (cherry picked from commit b6a248ecdfde791325e39251e14d531f0e57f918)
+2).gcp --continue
 U	sw/uiconfig/swriter/ui/frmaddpage.ui
 error: Committing is not possible because you have unmerged files.
 hint: Fix them up in the work tree, and then use 'git add/rm <file>'
@@ -1704,11 +1713,35 @@ Unmerged paths:
   (use "git add <file>..." to mark resolution)
 
 	both modified:   sw/uiconfig/swriter/ui/frmaddpage.ui
-3.https://stackoverflow.com/questions/4556315/git-commit-you-have-some-suspicious-patch-lines/4583972
-git commit You have some suspicious patch lines
-verified with "cat -etv <file>(.ui(LO, sw/uiconfig/swriter/ui/frmaddpage.ui)/.xml)", not trailing whitespaces, but indentations!
-ga -u && gcmsg "<msg>" --no-verify
-#resolved conflict!
+3). --no-verify: ga -u && gcmsg "<msg>" --no-verify  #resolved conflict! and need not run "gcp --continue"!
+https://stackoverflow.com/questions/4556315/git-commit-you-have-some-suspicious-patch-lines/4583972
+git commit You have some suspicious patch lines:
+>>verified with "cat -etv <file>(.ui(LO, sw/uiconfig/swriter/ui/frmaddpage.ui)/.xml)", not trailing whitespaces, but indentations!
+
+2.
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ✚  gcp -x b6a248ecdfde
+warning: inexact rename detection was skipped due to too many files.
+warning: you may want to set your merge.renamelimit variable to at least 18369 and retry the command.
+error: could not apply b6a248ecdfde... add new uno command.
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  gst
+On branch DelehiOffice2018
+You are currently cherry-picking commit b6a248ecdfde.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Changes to be committed:
+
+	modified:   officecfg/registry/data/org/openoffice/Office/UI/GenericCommands.xcu
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+
+	deleted by us:   configmgr/qa/unit/data.xcd
+
+«END of git issue»
 
 git Add all modified files but not untracked files
 git ls-files --modified | xargs git add
@@ -1743,6 +1776,12 @@ Only in ./.git/logs/refs/remotes/origin: note_bfr
 Only in /Users/almas/bkup/xrs/.git/refs/heads: func_addition
 Only in /Users/almas/bkup/xrs/.git/refs/remotes/origin: func_addition
 Only in ./.git/refs/remotes/origin: note_bfr
+
+https://stackoverflow.com/questions/5096268/how-to-get-a-list-of-all-files-that-changed-between-two-git-commits
+HEAD^
+HEAD~
+grp "<<<<<<" $(git diff --name-only --staged)
+{ git diff --name-only ; git diff --name-only --staged ; } | sort | uniq
 
 https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/
 
@@ -1916,6 +1955,34 @@ done < <(cd B; find . -printf "%p %h\n")
 mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
 
 Natsagnyam NAMKHAI
+
+For your channel, if you need FREE softwares for editing your own videos, adding overlays, text, etc, consider those shown far below. They are all free and downloadable from their official websites. For those softwares, there are plentiful tutorials here in Youtube. 
+For video editing: Openshot, Shotcut, Hitfilm 4 Express (my favourite) 
+For graphic design: Inkscape, Gimp, etc. 
+For photo editing: Gimp. 
+For screencasting your works on monitor: OBS.
+
+https://www.youtube.com/watch?v=Dk9mcJtIuCs
+Business Books Mentioned in this video:
+1.Napoleon Hill: Think and Grow Rich - http://amzn.to/2zr0Hck
+2. The Secret - http://amzn.to/2Bn8xVA
+3. Rich Dad Poor Dad by Robert T. Kiyosaki - http://amzn.to/2hVXSIR
+4. The Intelligent Investor by Benjamin Graham - http://amzn.to/2Bml23D
+5. Money Master The Game by Tony Robbins - http://amzn.to/2A9ll4k
+6. The 4 Hour Work Week by Tim Ferris - http://amzn.to/2iQBSjE
+7. The Millionaire Fastlane by MJ DeMarco - http://amzn.to/2k2EluD
+8. The Power of Habit by Charles Duhigg - http://amzn.to/2zsdKKx
+9. Atlas Shrugged by Ayn Rand - http://amzn.to/2iQCplE
+10. How to Win Friends & Influence People by Dale Carnegie - http://amzn.to/2zp5Xx4
+Bonus: How to Win Friends in the Digital Age by Dale Carnegie - http://amzn.to/2A9ZrxO
+11. The $100 Start-Up by Chris Guillebeau - http://amzn.to/2zpymDa
+12. The Monk Who Sold His Ferrari by Robin Sharma - http://amzn.to/2hQnVkW
+13. E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It - http://amzn.to/2hQokUu
+14. The 10X Rule: The Only Difference Between Success and Failure by Grant Cardone - http://amzn.to/2zDNCQX
+15. Zero to One by Peter Thiel - http://amzn.to/2iTWHee
+
+defaults write com.apple.screencapture type jpg
+killall SystemUIServer
 
 todo:
 golang: gRPC and Protocol Buffers
@@ -2141,6 +2208,12 @@ PrgrmrRusenthusiast bolorsoft.com SkypeMail:
 guids tips tricks to buy domain name using Alipay in china
 
 dependency injection inversion of control
-major system long numbers
 
+major system Loci method Memory Palace
 brightside
+london real
+a-DUUfCuIKc
+mgtowmoney ytb fortune:
+How do you record your voice with slideshows?
+On which OS with which software?
+git interview questions and answers
