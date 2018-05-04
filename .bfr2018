@@ -1757,6 +1757,7 @@ Unmerged paths:
   (use "git add/rm <file>..." as appropriate to mark resolution)
 
 	deleted by us:   configmgr/qa/unit/data.xcd
+3. deleted by us:   registry/tools/regcompare.cxx
 
 «END of git issue»
 
