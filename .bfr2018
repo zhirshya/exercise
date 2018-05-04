@@ -159,6 +159,9 @@ Control servos, LEDs, and other hardware using PWM
 Transfer data to and from peripheral devices using DMA
 Generate waveforms and pulses through your microcontroller’s DAC
 
+Real-Time C++: Efficient Object-Oriented and Template Microcontroller Programming, 3rd Edition by Christopher Kormanyos 
+English | 2018 | ISBN: 3662567173 | 428 Pages | PDF | 10 MB
+
 CoreText c++
 https://developer.apple.com/documentation/coretext
 
@@ -373,7 +376,8 @@ AAT font features do not alter the underlying typed text; they only affect the c
 Developed jointly by Adobe and Microsoft, OpenType (.otf, .ttf, .ttc) fonts improves upon Microsoft's TrueType fonts, by incorporating a greater extension of the basic character set, adding a more robust data structure for prescribing better typographic behavior. This includes small capitalization, old-style numerals, and more detailed shapes, such as glyphs and ligatures. OpenType fonts are single files that can also be scaled to any size, are clear and readable in all sizes, and can be used on both Macintosh and Windows platforms without conversion. Designers will benefit from OpenType over previous formats due to the much larger character set and for the programs that support it: automatic alternative character and ligature support.
 
 Hard water furred the kettle.
-
+symbol:
+🔥
 ±
 ⇅
 ⇄
@@ -439,6 +443,15 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
+Discrete Math
+fully convolutional neural networks (FCNN)
+Generative Adversarial Neural networks (GANs)
+residual neural networks (ResNets)
+convolution
+character action objects
+major system
+Loci method
+Memory Palace
 outright lie/fraud
 YMMV:your mileage may vary
 unfilial
@@ -816,6 +829,8 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+https://youtu.be/kMA9iKvG4i8
+
 Муйхар
 
 БНН-н Дарга Б.ЖАРГАЛСАЙХАН
@@ -1688,6 +1703,8 @@ git:
 HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
 
+Difference between git merge vs rebase
+
 glgga: git log --graph --decorate --all
 
 git remote -v show origin (gr -v show origin)
@@ -1985,6 +2002,33 @@ defaults write com.apple.screencapture type jpg
 killall SystemUIServer
 
 todo:
+periodic tables of elements in russian -> mgl
+
+Periodic Table of Elements Explained - Metals, Nonmetals, Valence Electrons, Charges
+https://www.youtube.com/watch?v=N8PaCCDplRw
+1.  Alkali Metals - Li, Na, K, Rb - Reactivity With Water
+2.  Alkaline Earth Metals - Be, Ca, Mg, Sr, and Ba +2 Charge
+3.  Valence Electrons, Core Electrons, and Charges
+4.  Transition Metals - Variable Charge
+5.  Metals, Nonmetals, and Metalloids
+6.  Electrical Conductivity of Metals, Malleable & Ductile
+7.  Characteristics of Metalloids Such as Si and Ge
+8.  Chalcogens - O, S, Se - 6 Valence Electrons
+9.  Valence Electrons vs Core Electrons
+10.  Halogens - Most  Reactive Nonmetals - F, Br, Cl, I
+11.  Noble Gases - Chemically Inert - Nonreactive - He, Ne, Ar, Kr, and Xe
+12.  Inner Transition Metals - Lanthanides and Actinides
+13.  Representative Elements Group 1, 2, and 13-18
+14.  Atomic Structure - Protons, Neutrons, and Electrons
+15.  The Nucleus of an atom
+16.  Electromagnetic Force vs Strong Nuclear Force
+17.  Atoms vs Ions
+18.  Atomic Mass vs Atomic Number
+19.  How To Calculate The Number of Protons, Neutrons, and Electrons inside an atom or ion.
+
+How to record own voice with slideshows?
+https://www.youtube.com/watch?v=aPu_ttOGcJg
+
 golang: gRPC and Protocol Buffers
 
 Understanding Text using Cognitive Services
@@ -2092,6 +2136,29 @@ Borts Maker
 coding habit:
 delete -> /* */
 
+learning:
+How to study effectively with 6 essential skills. Boost your study performance with strategies recommended by science - The ANSWER Method.
+Imagine you are studying neural communication, maybe in a biology, neuroscience, or psychology class. 
+
+How does neural communication work? If we look at one neuron, the dendrites receive messages from many other neurons, and then the messages converge in the soma. If there is enough of a positive charge within the soma, then an action potential will occur, and an electrical signal goes down the axon. When the signal reaches the terminal buttons, neurotransmitters release into the synapse where they communicate with the dendrites of the next neuron.
+
+Why does this happen? The neurotransmitters are chemicals that allow neurons to communicate with one another. The pattern of activation among different neurons (which neurons fire, how quickly, what neurotransmitters they release) determines the message in your brain. 
+
+You might then ask, how does the axon work? The axon is a long tail-like structure that produces the electrical signal. 
+
+How does the signal travel? The axon is covered in myelin sheath, a fatty substance that insulates the axon. The myelin sheath works like the rubber around the cord of an electrical appliance, and it serves to make the electricity travel faster.
+
+Why have myelin sheath? Because we need our neurons to be able to send signals fast, since we need to be able to react, make decisions, move quickly, perceive feeling in our skin instantly, etc.
+
+Make sure to compare ideas to learn how they are similar and different. For example, an axon and terminal buttons are both parts of a neuron; but, the axon sends an electrical signal while the terminal buttons release chemicals. Both Schizophrenia and Parkinson’s disease are related to the neurotransmitter dopamine, but Schizophrenia is the result of too much dopamine while Parkinson’s disease is the result of too little dopamine. 
+
+Also, try to make connections to your own memories or experiences, and compare ideas to learn how they are similar and different. We already made the connection from myelin sheath on axons to the rubber on cords to electrical appliances. 
+
+Here is another example: a family member or close friend who suffers from Schizophrenia disease is suffering from too much dopamine. This means that too much dopamine is being released, by the terminal buttons, into the synapse. A doctor could give them a drug to reduce the dopamine in their brain, called a dopamine antagonist. If too much of this drug is used, the patient might begin developing symptoms similar to Parkinson’s disease. 
+
+How would a dopamine antagonist work? … continue asking yourself elaborative questions!
+
+
 asuult:
 Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
 
@@ -2197,7 +2264,7 @@ windows c++ healthcare medical software best practices guides tips tricks
 build libreoffice using VS Code compile_commands.json 
 vs code c++ include compile_commands.json
 
-red blue red square
+on red blue red square (headshot/avatar)
 Hire a Mgtow C++/Java/JavaScript/SQL/Linux programmer who speaks English,汉语(Mandarin Chinese),Монгол Хэл(literate in both Cyrillic and traditional vertical Mongolian script),日本語(Japanese:JLPT N1)!
 Hire a Mgtow C++/Java/JavaScript/SQL/Linux programmer who speaks English,汉语(Mandarin Chinese),Монгол Хэл(literate in both Cyrillic and traditional vertical Mongolian script),日本語(Japanese:JLPT N1) and a little bit Русский язык(Russian)!
 
@@ -2210,10 +2277,5 @@ guids tips tricks to buy domain name using Alipay in china
 dependency injection inversion of control
 
 major system Loci method Memory Palace
-brightside
-london real
-a-DUUfCuIKc
-mgtowmoney ytb fortune:
-How do you record your voice with slideshows?
-On which OS with which software?
-git interview questions and answers
+pte in mgl (ref books in bookstores)
+
