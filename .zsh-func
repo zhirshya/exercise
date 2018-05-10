@@ -1242,3 +1242,8 @@ function cflagsr(){
 function prndt(){
 	printf '$(date +"%%Y%%m%%d-%%H:%%M:%%S"):%s\n' $(date +"%Y%m%d-%H:%M:%S")
 }
+
+function wala(){
+	printf "%s\n" "Voilà, "
+}
+
