@@ -125,6 +125,8 @@ qingbatu@delehi.com .d*G*1*5
 呼格吉乐（ᠬᠦᠭᠵᠢᠯ）: 密码：15848393927
 
 book:
+Hexaflexagons, probability paradoxes, and the tower of Hanoi by Martin Gardner
+
 Deep Belief Nets in C++ and CUDA C: Volume 1: Restricted Boltzmann Machines and Supervised Feedforward Networks by Timothy Masters 
 English | 2018 | ISBN: 1484235904 | 219 Pages
 
@@ -219,12 +221,19 @@ inoremap <special> <F3> <c-r>=strftime('%Y-%m-%d %H:%M:%S')<CR>
 End-of-message
 
 c++:
+'register' storage class specifier is deprecated and incompatible with C++17
+
 operator precedence live example:
 editeng/source/editeng/impedit3.cxx
 pTP = &pParaPortion->GetTextPortions()[ nPortion ];
 
 const long* pDXArray = nullptr;
 std::unique_ptr<long[]> pTmpDXArray;
+
+it = std::find_if(it, aAttribs.end(), [](const std::unique_ptr<EditCharAttrib>& aAttrib) { return aAttrib->IsFeature(); } );
+return it == aAttribs.end() ? nullptr : it->get();
+
+aAttribs.erase( std::remove_if(aAttribs.begin(), aAttribs.end(), [](const std::unique_ptr<EditCharAttrib>& aAttrib) { return aAttrib->IsEmpty(); } ), aAttribs.end() );
 
 #include <iostream>
 // uncomment to disable assert()
@@ -443,8 +452,10 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
+overridden <- override
+dividend distribution
 equilibrium
-Discrete Math
+discrete math
 fully convolutional neural networks (FCNN)
 Generative Adversarial Neural networks (GANs)
 residual neural networks (ResNets)
@@ -453,6 +464,7 @@ character action objects
 major system
 Loci method
 Memory Palace
+PoC (proof of concept)
 outright lie/fraud
 YMMV:your mileage may vary
 unfilial
@@ -831,6 +843,8 @@ For phones without built-in FM radio, there is always the option to purchase a s
 
 mgl:
 https://youtu.be/kMA9iKvG4i8
+
+татаадаг гарууд
 
 Муйхар
 
@@ -1442,6 +1456,7 @@ because macOS already provides this software and installing another version in
 parallel can cause all kinds of trouble.
 
 cn2en:
+转正申请
 刚性需求 rigid demand
 柔性需求 flexible demand
 按揭贷款
@@ -1695,7 +1710,7 @@ Netfilter represents a set of hooks inside the Linux kernel, allowing specific k
 
 iptables MacOS
 
-https://cpplang.slack.com/ outlook(usr/passwd)
+https://cpplang.slack.com/ (outlook/.d*G*5*!)
 
 https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
@@ -1759,6 +1774,7 @@ Unmerged paths:
 
 	deleted by us:   configmgr/qa/unit/data.xcd
 3. deleted by us:   registry/tools/regcompare.cxx
+deleted by us:   editeng/source/editeng/editdoc.hxx
 
 «END of git issue»
 
@@ -2030,6 +2046,7 @@ https://www.youtube.com/watch?v=N8PaCCDplRw
 
 How to record own voice with slideshows?
 https://www.youtube.com/watch?v=aPu_ttOGcJg
+Record with Audacity (WMV). Use 'free slideshow maker' for slides which automatically adds them to the WMV.
 
 golang: gRPC and Protocol Buffers
 
@@ -2279,8 +2296,19 @@ guids tips tricks to buy domain name using Alipay in china
 dependency injection inversion of control
 
 major system Loci method Memory Palace
+19: tip, tap, top
+
 pte in mgl (ref books in bookstores)
 
 cashflow quadrant
+TensorFlow.js
+
+chess traps pitfalls
+
+declare class inside unnamed namespace inside another class's source file
+
 2018网购火车票支付宝
 
+网购京东vs淘宝
+hair clay black umbrella
+github.com/adrianco/spigo
