@@ -452,6 +452,7 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
+no time to slowly grind through a formal course
 overridden <- override
 dividend distribution
 equilibrium
@@ -1719,6 +1720,10 @@ git:
 HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
 
+https://stackoverflow.com/questions/53569/how-to-get-the-changes-on-a-branch-in-git
+git diff HEAD..branch is identical to git diff HEAD branch. The key thing to remember here is that log takes a list/range of revisions, while diff doesn't.
+git log HEAD..branch
+
 Difference between git merge vs rebase
 
 glgga: git log --graph --decorate --all
@@ -1775,6 +1780,9 @@ Unmerged paths:
 	deleted by us:   configmgr/qa/unit/data.xcd
 3. deleted by us:   registry/tools/regcompare.cxx
 deleted by us:   editeng/source/editeng/editdoc.hxx
+
+vcl/source/window/btndlg.cxx
+include/vcl/btndlg.hxx
 
 «END of git issue»
 
@@ -2312,3 +2320,6 @@ declare class inside unnamed namespace inside another class's source file
 网购京东vs淘宝
 hair clay black umbrella
 github.com/adrianco/spigo
+slack mac app
+https://cpplang.slack.com/downloads
+
