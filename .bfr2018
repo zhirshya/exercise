@@ -223,6 +223,46 @@ End-of-message
 c++:
 'register' storage class specifier is deprecated and incompatible with C++17
 
+`ComPtr() throw() : ptr_(nullptr) { }`
+What does throw() do in this context?
+>without a list of potential exception types, it's the pre-c++11 equivalent of `noexcept` http://en.cppreference.com/w/cpp/language/except_spec
+
+With a function prototype like this: `foo(AType *&OutParam);`, what exactly is `*&` mean?
+>a pointer passed by ref
+>Reference to a pointer to AType (edited)
+>`AType *outParam` would be passing a pointer by value (copied), `AType *&outParam` would be passing a reference to it, so you can modify the value in the caller
+>hm, so if I pass `AType *outParam`, i get a copy of that pointer in my function.  So if I pass in `AType *arg`, the function creates a local copy called `outParam`.  So `arg`->address123 and `outParam`->address123.
+but `arg` and `outParam` are two separate pointers stored in different areas of memory
+vs if I pass the pointer by reference
+`arg` and `outParam` reference the same pointer in the memory location where `arg` is stored?
+
+>in both cases `arg->var` will point to the same `var` instance
+
+```void ptr(AType *p) { 
+    p->val = 34;
+    p = 0;
+}
+
+void ref(AType *&r) {
+    r->val = 42;
+    r = 0;
+}
+
+void caller() {
+    AType *t = new AType;
+
+    ptr(t); // t->val is now 32, t is still what it used to be
+
+    ref(t); // t->val is now 42, but t is now 0
+}```
+
+>got it, that makes sense
+I guess, that's like the double pointer convention in C
+
+>yeah, a ref is just a pointer you can’t change, with cleaner syntax (edited)
+
+>Thinking of references as "alternate name for" is easier than "self-dereferencing pointer that is const" unless you've known pointers for years before you heard of references.
+
 operator precedence live example:
 editeng/source/editeng/impedit3.cxx
 pTP = &pParaPortion->GetTextPortions()[ nPortion ];
@@ -2317,9 +2357,11 @@ declare class inside unnamed namespace inside another class's source file
 
 2018网购火车票支付宝
 
-网购京东vs淘宝
 hair clay black umbrella
-github.com/adrianco/spigo
-slack mac app
-https://cpplang.slack.com/downloads
+
+>I would try `git clone libreofficeurl --recursive` and hope it pulls all required submodules.
+There is probably a way to do that without cloning again, but I don't know how. `git submodule init --recursive` would be too obvious.
+>I think you have to do `git submodule init` and `git submodule update`. And maybe stick recursive somewhere in there
+
+Jonathan Muller's C++Now 2018 talk on "Rethinking Pointers"
 
