@@ -492,6 +492,9 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
+The pH of expressed prostatic secretion was measured in men with and without inflammatory prostatic disease.
+strike a chord with/among: His speech struck a sympathetic chord among business leaders.
+copulation
 no time to slowly grind through a formal course
 overridden <- override
 dividend distribution
@@ -1770,6 +1773,21 @@ glgga: git log --graph --decorate --all
 
 git remote -v show origin (gr -v show origin)
 
+https://stackoverflow.com/questions/53569/how-to-get-the-changes-on-a-branch-in-git
+gd DelehiOffice2015 master > ~/bkup/git_diff_DelehiOffice2015_master
+warning: inexact rename detection was skipped due to too many files.
+warning: you may want to set your diff.renameLimit variable to at least 25812 and retry the command.
+ ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git config --list > ~/bkup/git_config_--list
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  rtvl
+$?:0
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  grp renamelimit  ~/bkup/git_config_--list
+ ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git config --global diff.renameLimit 4294967295
+fatal: bad numeric config value '4294967295' for 'diff.renamelimit': out of range
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●  git config --global diff.renameLimit 2147483647
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  rtvl
+$?:0
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git config --global merge.renameLimit 2147483647
+
 git issue:
 1.
 1).git cherry-pick -x <sha>
@@ -2364,4 +2382,24 @@ There is probably a way to do that without cloning again, but I don't know how. 
 >I think you have to do `git submodule init` and `git submodule update`. And maybe stick recursive somewhere in there
 
 Jonathan Muller's C++Now 2018 talk on "Rethinking Pointers"
+
+https://bit.ly/swedencpp-cmake-workshop
+https://bit.ly/swedencpp-cmake-slides
+
+vs code multi-cursor (Cmd-lclick?)
+
+lo:
+make[1]: *** No rule to make target 'vcl/vcl.common.component', needed by 'workdir/ComponentTarget/vcl/vcl.common.component'.
+
+https://boldanddetermined.com/quit-masturbating/#comment-1676016
+First time I heard about pornography from friends was around 8. 
+Since 10, I watched a lot upper-body-naked copulation scenes (mostly western, Hong Kong, Taiwan and Japanese) which were prevalent in TV dramas and movies.
+Even erotic writings and passionate-kissing-only scenes have always caused small amount of urine or prostatic fluid discharge on me. I don't know whether it's normal or not.
+Neither my parents, relatives, friends nor schools educated me about sex and reproductive health.
+Since 2004, I noticed I urinate more frequently than other men.
+My left testicle is little bit larger. Even worse, I have experienced most of symptoms stated by "Eminent doctors of the West" and described in this article.
+I have always been skinny, weak and cold(flu)-prone.
+I'm 34 now, virgin and have no girlfriend.
+I'm concerned whether I'm able to father a child if I can get married.
+Do I need to see urologist?
 
