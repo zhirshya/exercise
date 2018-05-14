@@ -8,23 +8,26 @@
 #export CCACHE_CPP2=YES
 export LODE_HOME=$HOME/lode
 #export JAVA_HOME=`/usr/libexec/java_home`
+export GOPATH=$HOME/go-workspace
+export GOROOT=/usr/local/opt/go/libexec
 #export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:${PATH}:/usr/local/bin:/usr/local/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="${LODE_HOME}/opt/bin:${PATH}:/usr/local/bin:/usr/local/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$GOROOT/bin:$GOPATH/bin"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="${LODE_HOME}/opt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/r/.oh-my-zsh
-
-#python interpreter
-#http://docs.python-guide.org/en/latest/dev/virtualenvs/#lower-level-virtualenv
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
+
+#python interpreter
+#http://docs.python-guide.org/en/latest/dev/virtualenvs/#lower-level-virtualenv
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -110,6 +113,7 @@ else
 	alias vm=vim
 fi
 
+#alias vm='mvim -v'
 alias nvm=nvim
 alias ll='ls -alFt' #Pass the -r option to reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size)
 alias lls='ls -alFt | less'
@@ -132,6 +136,10 @@ alias utl='youtube-dl -v --youtube-skip-dash-manifest -ci'
 alias utcap='youtube-dl -v --youtube-skip-dash-manifest --write-sub --sub-lang ru,en --sub-format best --embed-subs'
 alias utlscap='youtube-dl -v --youtube-skip-dash-manifest --list-subs'
 alias utlscvr='youtube-dl -v --youtube-skip-dash-manifest --list-thumbnails'
+#SS proxy
+alias ut='youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest'
+alias utf='youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest -a dnld'
+alias utlf='youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest --list-formats'
 
 alias or='cd /mnt/0/dnld/tor-browser_en-US && ./start-tor-browser.desktop && -'
 
@@ -140,7 +148,7 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 
 alias txz='tar xvJf'
-alias clr=clear
+alias klr=clear
 alias tl=tail
 alias hd=head
 alias lss=less
@@ -222,5 +230,7 @@ alias circldNum='echo ⓪ ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ �
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 #setopt noglob #turn off globbing(wildcard expansion)
 
-. ~/.zsh-func
+#. ~/.zsh-func
+source ~/.zsh-func
 #. ~/.nvm/nvm.sh #https://github.com/creationix/nvm, Node Version Manager - Simple bash script to manage multiple active node.js versions
+

@@ -1,6 +1,10 @@
 milidustrplex: military industrial complex
 Money is power. Power to do whatever whenever with whomever for however long you want.
 
+I must lose myself in action, lest I wither in despair.
+
+The longer you hang in there, the greater the chance that something will happen in your favor. No matter how hard it seems, the longer you persist, the more likely your success.
+
 010010
 呼和浩特市新华东街89号维力斯酒店13F西
 内蒙古德力海信息技术有限公司
@@ -121,6 +125,14 @@ qingbatu@delehi.com .d*G*1*5
 呼格吉乐（ᠬᠦᠭᠵᠢᠯ）: 密码：15848393927
 
 book:
+Hexaflexagons, probability paradoxes, and the tower of Hanoi by Martin Gardner
+
+Deep Belief Nets in C++ and CUDA C: Volume 1: Restricted Boltzmann Machines and Supervised Feedforward Networks by Timothy Masters 
+English | 2018 | ISBN: 1484235904 | 219 Pages
+
+Bayesian Methods for Hackers: Probabilistic Programming and Bayesian Inference by Cameron Davidson-Pilon 
+English | 2015 | ISBN: 0133902839 | 256 Pages | True PDF, EPUB | 39 MB
+
 Mathematics & Physics for Programmers
 
 Discovering Modern C++: An Intensive Course for Scientists, Engineers, and Programmers
@@ -149,6 +161,9 @@ Control servos, LEDs, and other hardware using PWM
 Transfer data to and from peripheral devices using DMA
 Generate waveforms and pulses through your microcontroller’s DAC
 
+Real-Time C++: Efficient Object-Oriented and Template Microcontroller Programming, 3rd Edition by Christopher Kormanyos 
+English | 2018 | ISBN: 3662567173 | 428 Pages | PDF | 10 MB
+
 CoreText c++
 https://developer.apple.com/documentation/coretext
 
@@ -176,7 +191,104 @@ make: *** [build] Error 2
 
 almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
 
+vs code:
+includePath:
+"${workspaceRoot}/workdir/UnoApiHeadersTarget/offapi/comprehensive",
+"${workspaceRoot}/workdir/UnoApiHeadersTarget/offapi/normal"
+
+here document
+http://tldp.org/LDP/abs/html/here-docs.html
+Example 19-8. A script that generates another script
+
+: <<COMMENTBLOCK
+COMMENTBLOCK
+
+cat > $Newfile <<End-of-message
+This is line 1 of the message.
+This is line 2 of the message.
+This is line 3 of the message.
+This is line 4 of the message.
+This is the last line of the message.
+End-of-message
+
+The - option to mark a here document limit string (<<-LimitString) suppresses leading tabs (but not spaces) in the output. This may be useful in making a script more readable.
+
+vim:
+cat >> ~/.vimrc <<End-of-message
+"https://stackoverflow.com/questions/41518011/vim-insert-timestamp-in-the-current-line-after-some-words
+inoremap <special> <F3> <c-r>=strftime('%Y-%m-%d %H:%M:%S')<CR>
+"even works for MacVim('mvim -v')
+End-of-message
+
 c++:
+I'd like to parse unicode strings, where characters stored in more than 1 bytes are represented with "\uXXXX". Is there a RTL_TEXTENCODING or something else to parse that to OUString? e.g. "Tamás" == "Tam\u00e1s" ?
+
+'register' storage class specifier is deprecated and incompatible with C++17
+
+`ComPtr() throw() : ptr_(nullptr) { }`
+What does throw() do in this context?
+>without a list of potential exception types, it's the pre-c++11 equivalent of `noexcept` http://en.cppreference.com/w/cpp/language/except_spec
+
+With a function prototype like this: `foo(AType *&OutParam);`, what exactly is `*&` mean?
+>a pointer passed by ref
+>Reference to a pointer to AType (edited)
+>`AType *outParam` would be passing a pointer by value (copied), `AType *&outParam` would be passing a reference to it, so you can modify the value in the caller
+>hm, so if I pass `AType *outParam`, i get a copy of that pointer in my function.  So if I pass in `AType *arg`, the function creates a local copy called `outParam`.  So `arg`->address123 and `outParam`->address123.
+but `arg` and `outParam` are two separate pointers stored in different areas of memory
+vs if I pass the pointer by reference
+`arg` and `outParam` reference the same pointer in the memory location where `arg` is stored?
+
+>in both cases `arg->var` will point to the same `var` instance
+
+```void ptr(AType *p) { 
+    p->val = 34;
+    p = 0;
+}
+
+void ref(AType *&r) {
+    r->val = 42;
+    r = 0;
+}
+
+void caller() {
+    AType *t = new AType;
+
+    ptr(t); // t->val is now 32, t is still what it used to be
+
+    ref(t); // t->val is now 42, but t is now 0
+}```
+
+>got it, that makes sense
+I guess, that's like the double pointer convention in C
+
+>yeah, a ref is just a pointer you can’t change, with cleaner syntax (edited)
+
+>Thinking of references as "alternate name for" is easier than "self-dereferencing pointer that is const" unless you've known pointers for years before you heard of references.
+
+operator precedence live example:
+editeng/source/editeng/impedit3.cxx
+pTP = &pParaPortion->GetTextPortions()[ nPortion ];
+
+const long* pDXArray = nullptr;
+std::unique_ptr<long[]> pTmpDXArray;
+
+it = std::find_if(it, aAttribs.end(), [](const std::unique_ptr<EditCharAttrib>& aAttrib) { return aAttrib->IsFeature(); } );
+return it == aAttribs.end() ? nullptr : it->get();
+
+aAttribs.erase( std::remove_if(aAttribs.begin(), aAttribs.end(), [](const std::unique_ptr<EditCharAttrib>& aAttrib) { return aAttrib->IsEmpty(); } ), aAttribs.end() );
+
+#include <iostream>
+// uncomment to disable assert()
+// #define NDEBUG
+#include <cassert>
+ int main()
+{
+    assert(2+2==4);
+    std::cout << "Execution continues past the first assert\n";
+    assert(2+2==5);
+    std::cout << "Execution continues past the second assert\n";
+}
+
 Number of days between two dates C++
 https://stackoverflow.com/questions/14218894/number-of-days-between-two-dates-c/14219008
 chrono-Compatible Low-Level Date Algorithms
@@ -191,6 +303,13 @@ reference return to create lvalue
 prefix increment: Obj& Obj::operator++();
 
 postfix increment: Obj Obj::operator++(int);
+
+Build enhanced applications by using hashtables, dictionaries, and sets
+Implement searching algorithms such as linear search, binary search, jump search, exponential search, and more
+Have a positive impact on the efficiency of applications with tree traversal
+Explore the design used in sorting algorithms like Heap sort, Quick sort, Merge sort and Radix sort
+Implement various common algorithms in string data types
+Find out how to design an algorithm for a specific task using the common algorithm paradigms
 
 c++ equivalent of strtok
 
@@ -220,6 +339,19 @@ c++ programmatically click "Read more", "View reply" and "View all xyz replies" 
 https://www.youtube.com/watch?v=vsMydMDi3rI
 
 apple CoreText tutorial
+
+eecs,ict:
+SOLID (object-oriented design)
+Single responsibility principle[4]
+a class should have only a single responsibility (i.e. changes to only one part of the software's specification should be able to affect the specification of the class).
+Open/closed principle[5]
+"software entities … should be open for extension, but closed for modification."
+Liskov substitution principle[6]
+"objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program." See also design by contract.
+Interface segregation principle[7]
+"many client-specific interfaces are better than one general-purpose interface."[8]
+Dependency inversion principle[9]
+one should "depend upon abstractions, [not] concretions."
 
 «kjellkod»
 
@@ -295,9 +427,11 @@ AAT font features do not alter the underlying typed text; they only affect the c
 Developed jointly by Adobe and Microsoft, OpenType (.otf, .ttf, .ttc) fonts improves upon Microsoft's TrueType fonts, by incorporating a greater extension of the basic character set, adding a more robust data structure for prescribing better typographic behavior. This includes small capitalization, old-style numerals, and more detailed shapes, such as glyphs and ligatures. OpenType fonts are single files that can also be scaled to any size, are clear and readable in all sizes, and can be used on both Macintosh and Windows platforms without conversion. Designers will benefit from OpenType over previous formats due to the much larger character set and for the programs that support it: automatic alternative character and ligature support.
 
 Hard water furred the kettle.
-
+symbol:
+🔥
 ±
-
+⇅
+⇄
 The symbol, which I can never find on Microsoft Word's symbol list, is a hollow square with a single, vertical line through the middle. It's placed at the end of a number, such as 2,550[I] but imagine the box/line as intersecting and the top/bottom of the vertical line extending outside the box at both top and bottom. (I had to play with brackets, here) and either the same size font of the numbers or smaller, but never larger (not meant to overshadow the numbers). It's very common in the construction and architecture industry- especially when handwriting instructions or notes in order to avoid having to 'read' someone's handwriting (plus, it takes up slightly less space). For whatever reason, it's not available in most font/symbol options.
 
 http://monscript.blogger.com/
@@ -359,8 +493,60 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 
 «END of en»
 
-en2mn:
+en2mn2rus:
+put foot down: to refuse very firmly to do or accept something; to use your authority to stop something happening.
+"The first time I heard about something" is subject, but the verb is not transitive ("be" is intransitive) so there is no object. What follows "be" is obligatory, and obligatory items are always complements, and hence "when I was around 8 years' old" is a complement. (https://english.stackexchange.com/questions/445930/is-abbreviating-the-object-clause-in-this-sentence-grammatically-correct)
+>The verb is "was" and it will not take an object. Whereas, It has the complement (when I was around 8 years old.) You can reduce the complement-clause as: The first time I heard about it was at the age of eight. BTW 8 years old, not 8 years' old.
+>A further point about the complement: some people analyse "when" as a subordinator and thus the complement as a subordinate clause. Others follow some modern grammars and take "when" as a preposition, and the complement thus a PP. The latter analysis (which I prefer) can be paraphrased as "at the time when I was around 8 years old".
+
+The pH of expressed prostatic secretion was measured in men with and without inflammatory prostatic disease.
+strike a chord with/among: His speech struck a sympathetic chord among business leaders.
+copulation
+no time to slowly grind through a formal course
+overridden <- override
+dividend distribution
+equilibrium
+discrete math
+fully convolutional neural networks (FCNN)
+Generative Adversarial Neural networks (GANs)
+residual neural networks (ResNets)
+convolution
+character action objects
+major system
+Loci method
+Memory Palace
+PoC (proof of concept)
+outright lie/fraud
+YMMV:your mileage may vary
+unfilial
+stymied: recent scams have stymied people’s willingness to adopt the technology
+borne: Alipay and WeChat Pay have invariably borne the blame whenever a QR code scam has occurred.
+malevolent
+addendum
+What can I do to help?
+parametricity
+A was deprecated in favor of B.
+self-confidence
+self-efficacy: Psychologist Albert Bandura has defined self-efficacy as one's belief in one's ability to succeed in specific situations or accomplish a task. One's sense of self-efficacy can play a major role in how one approaches goals, tasks, and challenges.
+irrefutable evidence
+subsidized meals
+pastime
+Kubernetes is Greek for “helmsman,” your guide through unknown waters. The Kubernetes container orchestration system safely manages the structure and flow of a distributed application, organizing containers and services for maximum efficiency.
+Daigous: personal re-sellers
+hectic
+input method editor
+glyph shaping rules (http://bolor-toli.com/dictionary/word?search=glyph)
+stylistic variants
+Script Encoding Initiative
+unicode consortium
+liaison relationship
+Unicode Consortium Liaison to SC2/WG2
+visual guide
+to that end (formal, conjunctive, idiomatic) For that reason
+Chief Executive Officer
+individual member of Unicode Consortium
 cash in
+grassroot
 unanimously
 exceptional quality and performance
 electrolyte
@@ -386,7 +572,21 @@ mouse
 
 Fear, uncertainty and doubt (often shortened to FUD) is a disinformation strategy used in sales, marketing, public relations, talk radio, politics, religious organizations, and propaganda. FUD is generally a strategy to influence perception by disseminating negative and dubious or false information and a manifestation of the appeal to fear.
 
-«END of en2mn»
+taxi-hailing apps such as Didi. In a cab, you can still pay the old-fashioned way, but in Uber-esque shared cars, it’s mobile payment only.
+
+gross merchandise volume (GMV)
+
+It’s safer not to have a box with cash around and you can transfer money instantly without commission even to your bank account.
+
+Consumers already use Alipay in 28 countries and that number will rise if Ant Financial succeeds in its current bid to acquire MoneyGram, one of the world’s leading money-transfer companies. 
+
+Down payment (or downpayment, also called a deposit in British English), is a payment used in the context of the purchase of expensive items such as a car and a house, whereby the payment is the initial upfront portion of the total amount due and it is usually given in cash at the time of finalizing the transaction. A loan or the amount in cash is then required to make the full payment.
+
+self-explanatory: Title Case, Sentence case, UPPERCASE, lowercase
+
+«END of en2mn2rus»
+
+Him speaking about this as if he's actually giving a scientific lecture in an auditorium is what makes this perfect. He's not laughing or anything, he looks so dead serious the whole time: "If you find a unicorn, please capture it safely, keep it alive. We'd like to study it and maybe look at how to replicate that."
 
 High Performance Computing in Science and Engineering ‘ 17 by Wolfgang E. Nagel 
 English | 2018 | ISBN: 3319683935 | 529 Pages | True PDF, EPUB | 50 MB
@@ -465,6 +665,9 @@ quit
 
 «rus:»
 Ой цветет калина
+
+Чистая архитектура. Искусство разработки программного обеспечения
+https://coderprog.com/chistaya-arhitektura/
 
 "в основном виноват ты сам" means "You yourself are mainly to blame".
 
@@ -692,7 +895,17 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+https://youtu.be/kMA9iKvG4i8
+
+татаадаг гарууд
+
+Муйхар
+
+БНН-н Дарга Б.ЖАРГАЛСАЙХАН
+
 ШӨХТГ-н дарга асан Т.Аюурсайхан
+
+юу яриад байгааг нь ч бүрэн ойлгоогүй байж өөрсдийн тархины хэмжээгээрээ л доромжлох юм.
 
 https://www.facebook.com/groups/MongolianWikipedia/
 
@@ -755,6 +968,23 @@ https://www.facebook.com/groups/zugaatai.hel.shinjlel/permalink/789153364601081/
 Одъё
 
 «END of mgl»
+
+macos:
+To inspect the ACL, you can run the ls command with the -e flag. For example:
+ls -aleF /Volumes
+
+https://apple.stackexchange.com/questions/31438/how-do-i-use-chmod-on-a-mac-to-make-new-files-inherit-parent-directory-permissio
+chmod +a "group:examplegroup allow list,add_file,search,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,file_inherit,directory_inherit" /path/to/folder
+sudo chmod -R +a "user:almas allow list,add_file,search,add_subdirectory,delete_child,readattr,writeattr,readextattr,writeextattr,readsecurity,file_inherit,directory_inherit" /Volumes
+
+Moderate the UI experience:
+The steps to follow to turn off UI effects in the macOS High Sierra are:
+a. Go to “Settings” then “Accessibility” then “Display”
+b. Turn on the “Reduce Transparency” and “Reduce Motion” features.
+
+macos what does "No such keg" mean?
+
+macos safari take snapshot of webpage
 
 Sleep or Hibernate Mac:
 Press the Command-Option and Media key simultaneously
@@ -1278,7 +1508,16 @@ This formula is keg-only, which means it was not symlinked into /usr/local,
 because macOS already provides this software and installing another version in
 parallel can cause all kinds of trouble.
 
+jp:
+ブログで稼げる人と稼げない人の差はどこにあるか。
+もっとも大きいのは「自分のやり方を見つけられるか否か」だと感じています。
+稼げない人って、オリジナルな方法を開発せず、当たり障りのない猿真似に終始しているんですよね。
+猿真似はすぐに陳腐化するので、努力が資産になりにくい。
+
+残業続きなのはもちろん、毎日会社の成績のことばかりで頭がいっぱい、緊張状態を強いれられているようでは、副業はおろか、プライベートな活動を楽しむ余裕すらなくなります。
+
 cn2en:
+转正申请
 刚性需求 rigid demand
 柔性需求 flexible demand
 按揭贷款
@@ -1337,9 +1576,43 @@ https://sdras.github.io/array-explorer/
 JavaScript Array Explorer
 Find the array method you need without digging through the docs
 
+vs code:
+"compileCommands": "${workspaceRoot}/build/compile_commands.json"
+
+CMAKE_EXPORT_COMPILE_COMMANDS
+compile_commands.json:
+[
+{
+  "directory": "C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/bin",
+  "command": "C:/Strawberry/c/bin/c++.exe   @CMakeFiles/CMakeHelloWorld.dir/includes_CXX.rsp   -o CMakeFiles/CMakeHelloWorld.dir/HelloWorld.cpp.obj -c C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/HelloWorld.cpp",
+  "file": "C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/HelloWorld.cpp"
+},
+{
+  "directory": "C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/bin/Hello",
+  "command": "C:/Strawberry/c/bin/c++.exe      -o CMakeFiles/Hello.dir/Speaker.cpp.obj -c C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/Hello/Speaker.cpp",
+  "file": "C:/Data/rupires/Desktop/dev/sample_cmake/cmake-hello-world/Hello/Speaker.cpp"
+}
+]
+
+sudo find / -not \( -path /private -prune \) -not \( -path /dev -prune \) -type f -iname "WritingMode2.h*" -exec ls -lAhF {} +
+
 lo:
-Sh*H*d*l*le!*9 also for: AskLibO: https://ask.libreoffice.org/en/questions/
+libreoffice@lists.freedesktop.org
+
+$LODE_HOME/dev/core/solenv/Makefile*
 https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install
+
+$LODE_HOME/dev/core/solenv/gbuild/LinkTarget.mk
+
+Sh*H*d*l*le!*9 also for: AskLibO: https://ask.libreoffice.org/en/questions/
+
+#no result
+find $LODE_HOME/dev/core -type f -iregex ".*\.c[xp][xp]" -exec grp -w main {} +
+#no result
+find $LODE_HOME/dev/core -type f -iregex ".*\.c[xp]{,2}" -exec grp -w main {} +
+
+build err:
+I/O error : Too many open files in system
 
 http://devcentral.libreoffice.org/devguide.html
 autogen.input:
@@ -1498,12 +1771,117 @@ Netfilter represents a set of hooks inside the Linux kernel, allowing specific k
 
 iptables MacOS
 
-https://cpplang.slack.com/ outlook(usr/passwd)
+https://cpplang.slack.com/ (outlook/.d*G*5*!)
+
+https://github.com/agnoster/agnoster-zsh-theme
+echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
 HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
 
+https://stackoverflow.com/questions/53569/how-to-get-the-changes-on-a-branch-in-git
+git diff HEAD..branch is identical to git diff HEAD branch. The key thing to remember here is that log takes a list/range of revisions, while diff doesn't.
+git log HEAD..branch
+
+Difference between git merge vs rebase
+
+glgga: git log --graph --decorate --all
+
+git remote -v show origin (gr -v show origin)
+
+https://stackoverflow.com/questions/53569/how-to-get-the-changes-on-a-branch-in-git
+gd DelehiOffice2015 master > ~/bkup/git_diff_DelehiOffice2015_master
+warning: inexact rename detection was skipped due to too many files.
+warning: you may want to set your diff.renameLimit variable to at least 25812 and retry the command.
+ ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git config --list > ~/bkup/git_config_--list
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  rtvl
+$?:0
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  grp renamelimit  ~/bkup/git_config_--list
+ ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git config --global diff.renameLimit 4294967295
+fatal: bad numeric config value '4294967295' for 'diff.renamelimit': out of range
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●  git config --global diff.renameLimit 2147483647
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  rtvl
+$?:0
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git config --global merge.renameLimit 2147483647
+
+git issue:
+1.
+1).git cherry-pick -x <sha>
+>>If you cherry-pick from a public branch, you should consider using git cherry-pick -x <commit-hash>. This will generate a standardized commit message. This way, you (and your co-workers) can still keep track of the origin of the commit and may avoid merge conflicts in the future.
+e.g. (cherry picked from commit b6a248ecdfde791325e39251e14d531f0e57f918)
+2).gcp --continue
+U	sw/uiconfig/swriter/ui/frmaddpage.ui
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+ ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  gst
+On branch DelehiOffice2018
+You are currently cherry-picking commit 0dd3e068dd9e.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   sw/uiconfig/swriter/ui/frmaddpage.ui
+3). --no-verify: ga -u && gcmsg "<msg>" --no-verify  #resolved conflict! and need not run "gcp --continue"!
+https://stackoverflow.com/questions/4556315/git-commit-you-have-some-suspicious-patch-lines/4583972
+git commit You have some suspicious patch lines:
+>>verified with "cat -etv <file>(.ui(LO, sw/uiconfig/swriter/ui/frmaddpage.ui)/.xml)", not trailing whitespaces, but indentations!
+
+2.
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ✚  gcp -x b6a248ecdfde
+warning: inexact rename detection was skipped due to too many files.
+warning: you may want to set your merge.renamelimit variable to at least 18369 and retry the command.
+error: could not apply b6a248ecdfde... add new uno command.
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  gst
+On branch DelehiOffice2018
+You are currently cherry-picking commit b6a248ecdfde.
+  (fix conflicts and run "git cherry-pick --continue")
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Changes to be committed:
+
+	modified:   officecfg/registry/data/org/openoffice/Office/UI/GenericCommands.xcu
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+
+	deleted by us:   configmgr/qa/unit/data.xcd
+3. deleted by us:   registry/tools/regcompare.cxx
+deleted by us:   editeng/source/editeng/editdoc.hxx
+
+vcl/source/window/btndlg.cxx
+include/vcl/btndlg.hxx
+
+«END of git issue»
+
+git Add all modified files but not untracked files
+git ls-files --modified | xargs git add
+or shorter: git add -u
+
+copy the content of a branch to a new local branch:
+https://stackoverflow.com/questions/14998923/how-can-i-copy-the-content-of-a-branch-to-a-new-local-branch
+git checkout -b new_branch old_branch
+Or even shorter git checkout -b new_branch (when you're already on old_branch). 
+>>I think if one creates a new branch like this one doesn't instantly have a copy of the old branch but simply a new pointer at the head of the old branch. But when you now do something like rebasing the new branch you should see that the old branch is still in its original state while the new branch is modified. So I think that does what the OP wants.
+
+https://stackoverflow.com/questions/21101572/git-diff-between-file-in-local-repo-and-origin
+To view the differences going from the remote file to the local file:
+	git diff remotename/branchname:remote/path/file1.txt local/path/file1.txt
+To view the differences in the other direction:
+	git diff HEAD:local/path/file1.txt remotename/branchname:remote/path/file1.txt
+Basically you can diff any two files anywhere using this notation:
+	git diff ref1:path/to/file1 ref2:path/to/file2
+As usual, ref1 and ref2 could be branch names, remotename/branchname, commit SHAs, etc.
+>>git diff Almas/DelehiOffice2015:editeng/source/editeng/impedit3.cxx editeng/source/editeng/impedit3.cxx
+
+https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
 $git branch -D func_addition
 Deleted branch func_addition (was aed18c8).
 $git push origin :func_addition
@@ -1516,6 +1894,12 @@ Only in ./.git/logs/refs/remotes/origin: note_bfr
 Only in /Users/almas/bkup/xrs/.git/refs/heads: func_addition
 Only in /Users/almas/bkup/xrs/.git/refs/remotes/origin: func_addition
 Only in ./.git/refs/remotes/origin: note_bfr
+
+https://stackoverflow.com/questions/5096268/how-to-get-a-list-of-all-files-that-changed-between-two-git-commits
+HEAD^
+HEAD~
+grp "<<<<<<" $(git diff --name-only --staged)
+{ git diff --name-only ; git diff --name-only --staged ; } | sort | uniq
 
 https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/
 
@@ -1664,6 +2048,7 @@ https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop
 23.) Create Your FavIcon - 01:25:00
 24.) Logout - 01:27:39
 
+shell:
 https://stackoverflow.com/questions/5648266/comparing-two-directory-recursively-copy-content-of-directory-to-third-director
 #!/usr/bin/env bash
 
@@ -1685,14 +2070,81 @@ while read f d _; do
 done < <(cd B; find . -printf "%p %h\n")
 #EOF
 
+mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
+
 Natsagnyam NAMKHAI
 
+For your channel, if you need FREE softwares for editing your own videos, adding overlays, text, etc, consider those shown far below. They are all free and downloadable from their official websites. For those softwares, there are plentiful tutorials here in Youtube. 
+For video editing: Openshot, Shotcut, Hitfilm 4 Express (my favourite) 
+For graphic design: Inkscape, Gimp, etc. 
+For photo editing: Gimp. 
+For screencasting your works on monitor: OBS.
+
+https://www.youtube.com/watch?v=Dk9mcJtIuCs
+Business Books Mentioned in this video:
+1.Napoleon Hill: Think and Grow Rich - http://amzn.to/2zr0Hck
+2. The Secret - http://amzn.to/2Bn8xVA
+3. Rich Dad Poor Dad by Robert T. Kiyosaki - http://amzn.to/2hVXSIR
+4. The Intelligent Investor by Benjamin Graham - http://amzn.to/2Bml23D
+5. Money Master The Game by Tony Robbins - http://amzn.to/2A9ll4k
+6. The 4 Hour Work Week by Tim Ferris - http://amzn.to/2iQBSjE
+7. The Millionaire Fastlane by MJ DeMarco - http://amzn.to/2k2EluD
+8. The Power of Habit by Charles Duhigg - http://amzn.to/2zsdKKx
+9. Atlas Shrugged by Ayn Rand - http://amzn.to/2iQCplE
+10. How to Win Friends & Influence People by Dale Carnegie - http://amzn.to/2zp5Xx4
+Bonus: How to Win Friends in the Digital Age by Dale Carnegie - http://amzn.to/2A9ZrxO
+11. The $100 Start-Up by Chris Guillebeau - http://amzn.to/2zpymDa
+12. The Monk Who Sold His Ferrari by Robin Sharma - http://amzn.to/2hQnVkW
+13. E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It - http://amzn.to/2hQokUu
+14. The 10X Rule: The Only Difference Between Success and Failure by Grant Cardone - http://amzn.to/2zDNCQX
+15. Zero to One by Peter Thiel - http://amzn.to/2iTWHee
+
+defaults write com.apple.screencapture type jpg
+killall SystemUIServer
+
 todo:
+periodic tables of elements in russian -> mgl
+
+Periodic Table of Elements Explained - Metals, Nonmetals, Valence Electrons, Charges
+https://www.youtube.com/watch?v=N8PaCCDplRw
+1.  Alkali Metals - Li, Na, K, Rb - Reactivity With Water
+2.  Alkaline Earth Metals - Be, Ca, Mg, Sr, and Ba +2 Charge
+3.  Valence Electrons, Core Electrons, and Charges
+4.  Transition Metals - Variable Charge
+5.  Metals, Nonmetals, and Metalloids
+6.  Electrical Conductivity of Metals, Malleable & Ductile
+7.  Characteristics of Metalloids Such as Si and Ge
+8.  Chalcogens - O, S, Se - 6 Valence Electrons
+9.  Valence Electrons vs Core Electrons
+10.  Halogens - Most  Reactive Nonmetals - F, Br, Cl, I
+11.  Noble Gases - Chemically Inert - Nonreactive - He, Ne, Ar, Kr, and Xe
+12.  Inner Transition Metals - Lanthanides and Actinides
+13.  Representative Elements Group 1, 2, and 13-18
+14.  Atomic Structure - Protons, Neutrons, and Electrons
+15.  The Nucleus of an atom
+16.  Electromagnetic Force vs Strong Nuclear Force
+17.  Atoms vs Ions
+18.  Atomic Mass vs Atomic Number
+19.  How To Calculate The Number of Protons, Neutrons, and Electrons inside an atom or ion.
+
+How to record own voice with slideshows?
+https://www.youtube.com/watch?v=aPu_ttOGcJg
+Record with Audacity (WMV). Use 'free slideshow maker' for slides which automatically adds them to the WMV.
+
+golang: gRPC and Protocol Buffers
+
+Understanding Text using Cognitive Services
+
+WeChat Marketing Tips for eCommerce Business
+WeChat Tips to Sell Products and Services
+
+shortcut keys to quote text in web outlook
+
+tms/vms/cms,imimh(http://www.gjmyy.cn/): ML, DL, AI
+
 https://superuser.com/questions/125376/how-do-i-compare-binary-files-in-linux
 xxddiff() ( f() ( xxd "$1" ; ); diff -y <(f "$1") <(f "$2") | colordiff; )  # Are () eligible for shell function body encloser?
 If you just want to know whether both files are the same or not, you can use the -q or --brief switch, which will only show output when the files differ.
-
-Understanding Text using Cognitive Services
 
 ffmpeg amplify volume of audio video files
 
@@ -1726,10 +2178,6 @@ c++ algorithm contest screen cast
 best russian english dictionary
 
 Rssian proficiency test preparation guids tips
-
-macos what does "No such keg" mean?
-
-macos safari take snapshot of webpage
 
 VPS: KVM: google BBR, OVZ
 
@@ -1771,6 +2219,47 @@ I'd stay out of stocks and real estate right now and instead go into silver and 
 >SLV should rally versus GLD thus balancing it out. Example: Buying 100oz bars for less than $1900 probably have a low downside and nice upside
 Yeah, silver is still close to the bottom of it's cycle. The downside risk is almost nonexistent. I have an ammo box full of silver and I'm holing onto it. Last time around my gold gained 70% while my silver gained 260%. If I choose to keep precious metals once this next recession bottoms out I'll flip it over to gold. Once we moved into the recovery portion of the business cycle, in 2012 and later, the price of silver dropped back to it's pre-2008 price while gold maintained more of it's value.
 Next time the bitcoin price goes nuts I'll start moving my surplus monthly income into silver.
+
+communication:
+Pause :  
+ -- Pause for 3 to 5 seconds before interrupting the speaker
+Question :
+ -- Ask for clarification, never assume that  you have fully understood
+Paraphrasing :
+-- Paraphrase the speakers words in your words  to reflect that you are genuinely listening and understanding.
+
+Book no 1 : Unshakeable by Tony Robbins
+Book no 2 : Automatic millionaire by david bach
+Book no 3 : Rule Number 1 by Phil Town
+
+Chingis Gant
+Borts Maker
+
+coding habit:
+delete -> /* */
+
+learning:
+How to study effectively with 6 essential skills. Boost your study performance with strategies recommended by science - The ANSWER Method.
+Imagine you are studying neural communication, maybe in a biology, neuroscience, or psychology class. 
+
+How does neural communication work? If we look at one neuron, the dendrites receive messages from many other neurons, and then the messages converge in the soma. If there is enough of a positive charge within the soma, then an action potential will occur, and an electrical signal goes down the axon. When the signal reaches the terminal buttons, neurotransmitters release into the synapse where they communicate with the dendrites of the next neuron.
+
+Why does this happen? The neurotransmitters are chemicals that allow neurons to communicate with one another. The pattern of activation among different neurons (which neurons fire, how quickly, what neurotransmitters they release) determines the message in your brain. 
+
+You might then ask, how does the axon work? The axon is a long tail-like structure that produces the electrical signal. 
+
+How does the signal travel? The axon is covered in myelin sheath, a fatty substance that insulates the axon. The myelin sheath works like the rubber around the cord of an electrical appliance, and it serves to make the electricity travel faster.
+
+Why have myelin sheath? Because we need our neurons to be able to send signals fast, since we need to be able to react, make decisions, move quickly, perceive feeling in our skin instantly, etc.
+
+Make sure to compare ideas to learn how they are similar and different. For example, an axon and terminal buttons are both parts of a neuron; but, the axon sends an electrical signal while the terminal buttons release chemicals. Both Schizophrenia and Parkinson’s disease are related to the neurotransmitter dopamine, but Schizophrenia is the result of too much dopamine while Parkinson’s disease is the result of too little dopamine. 
+
+Also, try to make connections to your own memories or experiences, and compare ideas to learn how they are similar and different. We already made the connection from myelin sheath on axons to the rubber on cords to electrical appliances. 
+
+Here is another example: a family member or close friend who suffers from Schizophrenia disease is suffering from too much dopamine. This means that too much dopamine is being released, by the terminal buttons, into the synapse. A doctor could give them a drug to reduce the dopamine in their brain, called a dopamine antagonist. If too much of this drug is used, the patient might begin developing symptoms similar to Parkinson’s disease. 
+
+How would a dopamine antagonist work? … continue asking yourself elaborative questions!
+
 
 asuult:
 Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
@@ -1836,14 +2325,105 @@ mgl input:
 shft-i,h,shft-g,shft-i
 shft-i,h,shft-f,shft-i
 
-Putty pronunciation
-
 Ajax in 2018 and future
 Grid CSS
 Fetch API
 REST API
 vanilla JavaScript
 
-buy in jd.com pay with alipay
-buy black umbrella at jd.com pay with alipay
-online shopping from china with alipay best practice
+Ant Financial
+Yu’e Bao
+lyrics: Прощание славянки
+
+北京社保 公积金转出
+
+How to read a book
+A Mind for Numbers, How to Excel at Math and Science (even if you flunked at algebra) by Barbara Oakley
+
+what does "403 Forbidden" mean?
+embed pictures into audio file for youtube
+
+.hpp .hdl generated when build c++ project
+/Users/almas/lode/dev/core/xmloff/source/draw/sdpropls.cxx:569:32: error: unexpected namespace name 'WritingMode2': expected expression
+    { XML_TOKEN_INVALID, text::WritingMode2(0) }
+
+$LODE_HOME/dev/core/xmloff/source/draw/sdpropls.cxx
+//static SvXMLEnumMapEntry<text::WritingMode> const aXML_WritingMode_EnumMap[] =
+static SvXMLEnumMapEntry const aXML_WritingMode_EnumMap[] =
+{
+    { XML_TB_RL,        text::WritingMode2::TB_RL },
+    { XML_LR_TB,        text::WritingMode2::LR_TB },
+    { XML_TB_LR,        text::WritingMode2::TB_LR },
+    { XML_TOKEN_INVALID, -1 }
+};
+
+tools::Rectangle
+
+macos high sierra remove user and guest from command line
+
+windows c++ healthcare medical software best practices guides tips tricks
+
+build libreoffice using VS Code compile_commands.json 
+vs code c++ include compile_commands.json
+
+on red blue red square (headshot/avatar)
+Hire a Mgtow C++/Java/JavaScript/SQL/Linux programmer who speaks English,汉语(Mandarin Chinese),Монгол Хэл(literate in both Cyrillic and traditional vertical Mongolian script),日本語(Japanese:JLPT N1)!
+Hire a Mgtow C++/Java/JavaScript/SQL/Linux programmer who speaks English,汉语(Mandarin Chinese),Монгол Хэл(literate in both Cyrillic and traditional vertical Mongolian script),日本語(Japanese:JLPT N1) and a little bit Русский язык(Russian)!
+
+badral@bolorsoft.com
+info@bolorsoft.com
+PrgrmrRusenthusiast bolorsoft.com SkypeMail:
+
+guids tips tricks to buy domain name using Alipay in china
+
+dependency injection inversion of control
+
+major system Loci method Memory Palace
+19: tip, tap, top
+
+pte in mgl (ref books in bookstores)
+
+cashflow quadrant
+TensorFlow.js
+
+chess traps pitfalls
+
+declare class inside unnamed namespace inside another class's source file
+
+2018网购火车票支付宝
+
+hair clay black umbrella
+
+>I would try `git clone libreofficeurl --recursive` and hope it pulls all required submodules.
+There is probably a way to do that without cloning again, but I don't know how. `git submodule init --recursive` would be too obvious.
+>I think you have to do `git submodule init` and `git submodule update`. And maybe stick recursive somewhere in there
+
+Jonathan Muller's C++Now 2018 talk on "Rethinking Pointers"
+
+https://bit.ly/swedencpp-cmake-workshop
+https://bit.ly/swedencpp-cmake-slides
+
+vs code multi-cursor (Cmd-lclick?)
+
+lo:
+make[1]: *** No rule to make target 'vcl/vcl.common.component', needed by 'workdir/ComponentTarget/vcl/vcl.common.component'.
+
+b&d:
+1.https://boldanddetermined.com/quit-masturbating/#comment-1676016
+First time I heard about pornography from friends was around 8. 
+Since 10, I watched a lot upper-body-naked copulation scenes (mostly western, Hong Kong, Taiwan and Japanese) which were prevalent in TV dramas and movies.
+Even erotic writings and passionate-kissing-only scenes have always caused small amount of urine or prostatic fluid discharge on me. I don't know whether it's normal or not.
+Neither my parents, relatives, friends nor schools educated me about sex and reproductive health.
+Since 2004, I noticed I urinate more frequently than other men.
+My left testicle is little bit larger. Even worse, I have experienced most of symptoms stated by "Eminent doctors of the West" and described in this article.
+I have always been skinny, weak and cold(flu)-prone.
+I'm 34 now, virgin and have no girlfriend.
+I'm concerned whether I'm able to father a child if I can get married.
+Do I need to see urologist?
+2.
+Hello Victor, I want to start a blog after reading your "blog business" for getting out of chronically underpaid and unstable job. Would you tell me how to receive blogging income if the contents, layouts, hostname, SEO, ads and traffic etc are done correctly? Even worse, I'm inside the GFW(Great Fire Wall of China),  more and more personal VPNs and other circumvention tools have been blocked every year. I look forward to your answers.
+
+contrarian
+ut: bench press
+微信小程序
+tms website: wordpress and TMS compatibility
