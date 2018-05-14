@@ -221,6 +221,8 @@ inoremap <special> <F3> <c-r>=strftime('%Y-%m-%d %H:%M:%S')<CR>
 End-of-message
 
 c++:
+I'd like to parse unicode strings, where characters stored in more than 1 bytes are represented with "\uXXXX". Is there a RTL_TEXTENCODING or something else to parse that to OUString? e.g. "Tamás" == "Tam\u00e1s" ?
+
 'register' storage class specifier is deprecated and incompatible with C++17
 
 `ComPtr() throw() : ptr_(nullptr) { }`
@@ -492,6 +494,11 @@ Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 «END of en»
 
 en2mn2rus:
+put foot down: to refuse very firmly to do or accept something; to use your authority to stop something happening.
+"The first time I heard about something" is subject, but the verb is not transitive ("be" is intransitive) so there is no object. What follows "be" is obligatory, and obligatory items are always complements, and hence "when I was around 8 years' old" is a complement. (https://english.stackexchange.com/questions/445930/is-abbreviating-the-object-clause-in-this-sentence-grammatically-correct)
+>The verb is "was" and it will not take an object. Whereas, It has the complement (when I was around 8 years old.) You can reduce the complement-clause as: The first time I heard about it was at the age of eight. BTW 8 years old, not 8 years' old.
+>A further point about the complement: some people analyse "when" as a subordinator and thus the complement as a subordinate clause. Others follow some modern grammars and take "when" as a preposition, and the complement thus a PP. The latter analysis (which I prefer) can be paraphrased as "at the time when I was around 8 years old".
+
 The pH of expressed prostatic secretion was measured in men with and without inflammatory prostatic disease.
 strike a chord with/among: His speech struck a sympathetic chord among business leaders.
 copulation
@@ -1501,6 +1508,14 @@ This formula is keg-only, which means it was not symlinked into /usr/local,
 because macOS already provides this software and installing another version in
 parallel can cause all kinds of trouble.
 
+jp:
+ブログで稼げる人と稼げない人の差はどこにあるか。
+もっとも大きいのは「自分のやり方を見つけられるか否か」だと感じています。
+稼げない人って、オリジナルな方法を開発せず、当たり障りのない猿真似に終始しているんですよね。
+猿真似はすぐに陳腐化するので、努力が資産になりにくい。
+
+残業続きなのはもちろん、毎日会社の成績のことばかりで頭がいっぱい、緊張状態を強いれられているようでは、副業はおろか、プライベートな活動を楽しむ余裕すらなくなります。
+
 cn2en:
 转正申请
 刚性需求 rigid demand
@@ -2393,7 +2408,8 @@ vs code multi-cursor (Cmd-lclick?)
 lo:
 make[1]: *** No rule to make target 'vcl/vcl.common.component', needed by 'workdir/ComponentTarget/vcl/vcl.common.component'.
 
-https://boldanddetermined.com/quit-masturbating/#comment-1676016
+b&d:
+1.https://boldanddetermined.com/quit-masturbating/#comment-1676016
 First time I heard about pornography from friends was around 8. 
 Since 10, I watched a lot upper-body-naked copulation scenes (mostly western, Hong Kong, Taiwan and Japanese) which were prevalent in TV dramas and movies.
 Even erotic writings and passionate-kissing-only scenes have always caused small amount of urine or prostatic fluid discharge on me. I don't know whether it's normal or not.
@@ -2404,4 +2420,10 @@ I have always been skinny, weak and cold(flu)-prone.
 I'm 34 now, virgin and have no girlfriend.
 I'm concerned whether I'm able to father a child if I can get married.
 Do I need to see urologist?
+2.
+Hello Victor, I want to start a blog after reading your "blog business" for getting out of chronically underpaid and unstable job. Would you tell me how to receive blogging income if the contents, layouts, hostname, SEO, ads and traffic etc are done correctly? Even worse, I'm inside the GFW(Great Fire Wall of China),  more and more personal VPNs and other circumvention tools have been blocked every year. I look forward to your answers.
 
+contrarian
+ut: bench press
+微信小程序
+tms website: wordpress and TMS compatibility
