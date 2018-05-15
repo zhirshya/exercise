@@ -1,7 +1,7 @@
 #!/bin/sh
 brew update && brew upgrade && brew upgrade git python3 python node youtube-dl code
 npm i npm
-sudo pip install --upgrade pip
+sudo pip install --upgrade pip pip3
 pip install --upgrade virtualenv
 #pip install --upgrade tensorflow      # for Python 2.7
 pip3 install --upgrade tensorflow keras
