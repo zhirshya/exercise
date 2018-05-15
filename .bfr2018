@@ -221,6 +221,15 @@ inoremap <special> <F3> <c-r>=strftime('%Y-%m-%d %H:%M:%S')<CR>
 End-of-message
 
 c++:
+Graph algorithms with C++ 
+Graph theory hold corner stone of modern computer science, extending its tentacles to social networks to neural networks to finding paths in maps. In this course we are looking at graph theory by computer science prospective. We are going to start our discussion by looking at the basic terms of graph theory and them jump on to discuss graph theory related algorithms and then implement those with c++. Following are the types of algorithms we are going to discuss in this course.
+Graph traversing.
+Topological sorting and strongly connected component associated algorithms
+Shortest paths.
+Finding minimum spanning trees.
+Maximum flow.
+NP complete algorithms such as graph coloring, traveling salesman problem etc.
+
 I'd like to parse unicode strings, where characters stored in more than 1 bytes are represented with "\uXXXX". Is there a RTL_TEXTENCODING or something else to parse that to OUString? e.g. "Tamás" == "Tam\u00e1s" ?
 
 'register' storage class specifier is deprecated and incompatible with C++17
@@ -1508,7 +1517,11 @@ This formula is keg-only, which means it was not symlinked into /usr/local,
 because macOS already provides this software and installing another version in
 parallel can cause all kinds of trouble.
 
-jp:
+ja:
+個に根ざした活動をするときに、ブログは最良のPRツールになります。What does PR mean?
+オウンビジネス（Own Business）」
+https://note.mu/ihayato/n/nc851aa610fa4
+挫折
 ブログで稼げる人と稼げない人の差はどこにあるか。
 もっとも大きいのは「自分のやり方を見つけられるか否か」だと感じています。
 稼げない人って、オリジナルな方法を開発せず、当たり障りのない猿真似に終始しているんですよね。
@@ -2405,6 +2418,18 @@ https://bit.ly/swedencpp-cmake-slides
 
 vs code multi-cursor (Cmd-lclick?)
 
+npm:
+npm install -g npm
+/usr/local/bin/npm -> /usr/local/lib/node_modules/npm/bin/npm-cli.js
+/usr/local/bin/npx -> /usr/local/lib/node_modules/npm/bin/npx-cli.js
++ npm@6.0.1
+   ╭─────────────────────────────────────╮
+   │                                     │
+   │   Update available 5.6.0 → 6.0.1    │
+   │       Run npm i npm to update       │
+   │                                     │
+   ╰─────────────────────────────────────╯
+
 lo:
 make[1]: *** No rule to make target 'vcl/vcl.common.component', needed by 'workdir/ComponentTarget/vcl/vcl.common.component'.
 
@@ -2427,3 +2452,5 @@ contrarian
 ut: bench press
 微信小程序
 tms website: wordpress and TMS compatibility
+广告联盟
+Google Analytics
