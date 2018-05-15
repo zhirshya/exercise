@@ -1,9 +1,13 @@
 #!/bin/sh
 brew update && brew upgrade && brew upgrade git python3 python node youtube-dl code
 npm i npm
+npm update -g wepy-cli typescript coffeescript 
+
 sudo pip install --upgrade pip pip3
 pip install --upgrade virtualenv
 #pip install --upgrade tensorflow      # for Python 2.7
 pip3 install --upgrade tensorflow keras
-#https://keras.io/#installation
+
+#https://pypi.org/project/itchat/
+pip install --upgrade itchat
 
