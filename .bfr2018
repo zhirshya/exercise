@@ -32,7 +32,7 @@ Cloning into '/Users/almas/dev/core/dictionaries'...
 
 alias ping='ping -c 6 -i 1.5 '
 
-~/dlof/core   master  git remote -v
+$git remote -v
 github	https://github.com/LibreOffice/core.git (fetch)
 github	https://github.com/LibreOffice/core.git (push)
 origin	ssh://git@almas.dip.jp:40022/cvs/git/DelehiOffice/core.git (fetch)
@@ -176,18 +176,18 @@ checking for bogus pkg-config... configure: error: yes, from unknown origin. Thi
 Error running configure at $LODE_HOME/dev/core/autogen.sh line 293.
 make: *** [$LODE_HOME/dev/core/config_host.mk] Error 2
 
-almas@3c2d3e26252423  ~/lode/dev/core   master  which pkg-config
+~/lode/dev/core   master  which pkg-config
 /usr/local/bin/pkg-config
-almas@3c2d3e26252423  ~/lode/dev/core   master  mv /usr/local/bin/pkg-config /usr/local/bin/pkg-config.restore-after-build
+~/lode/dev/core   master  mv /usr/local/bin/pkg-config /usr/local/bin/pkg-config.restore-after-build
 
-almas@3c2d3e26252423  ~/lode/dev/core   master  open instdir/LibreOfficeDev.app
+~/lode/dev/core   master  open instdir/LibreOfficeDev.app
 
 $LODE_HOME/opt/bin/make -j 4 -rs -f $LODE_HOME/dev/core/Makefile.gbuild build
 ./configure with '--enable-debug --srcdir=$LODE_HOME/dev/core --enable-option-checking=fatal'
 Makefile:276: recipe for target 'build' failed
 make: *** [build] Error 2
 
-almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
+~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
 
 vs code:
 includePath:
@@ -1146,7 +1146,7 @@ Host *
 /usr/bin/ssh-add -K ~/.ssh/id_ed25519
 
 git remote add Almas ssh://git@almas.dip.jp:40022/cvs/git/DelehiOffice/core.git
-almas@3c2d3e26252423  ~/lode/dev/core   master  git fetch Almas
+~/lode/dev/core   master  git fetch Almas
 ssh git@almas.dip.jp -p 40022
 git remote add Almas ssh://git@almas.dip.jp:40022/cvs/git/DelehiOffice/core.git
 git clone ssh://git@alams.dip.jp:40022/cvs/git/DelehiOffice/core.git
@@ -1199,62 +1199,62 @@ printf $(date +"%Y%m%d-%H:%M:%S")
 git -c diff.mnemonicprefix=false -c core.quotepath=false -c credential.helper=sourcetree checkout DelehiOffice2015
 
 <<
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  git commit --amend
+~/lode/dev/core   master ✚  git commit --amend
 *
 * You have some suspicious patch lines:
 *
 * In sw/source/core/crsr/crsrsh.cxx
 * trailing whitespace (line 3123)
 sw/source/core/crsr/crsrsh.cxx:3123:    // Is not it Vertical_RL_TB ?
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  git commit --help
- almas@3c2d3e26252423  ~/lode/dev/core   master ✚  git commit --amend
+~/lode/dev/core   master ✚  git commit --help
+~/lode/dev/core   master ✚  git commit --amend
 *
 * You have some suspicious patch lines:
 *
 * In sw/source/core/crsr/crsrsh.cxx
 * trailing whitespace (line 3123)
 sw/source/core/crsr/crsrsh.cxx:3123:    // Is not it Vertical_RL_TB ?
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  vi sw/source/core/crsr/crsrsh.cxx:3123
- almas@3c2d3e26252423  ~/lode/dev/core   master ✚  vi sw/source/core/crsr/crsrsh.cxx
- almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
+~/lode/dev/core   master ✚  vi sw/source/core/crsr/crsrsh.cxx:3123
+~/lode/dev/core   master ✚  vi sw/source/core/crsr/crsrsh.cxx
+~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
 zsh: command not found: subl
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  /Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text /bin/subl
+~/lode/dev/core   master ✚  /Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text /bin/subl
 ^C
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  ln -s "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl" /usr/opt/bin/
+~/lode/dev/core   master ✚  ln -s "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl" /usr/opt/bin/
 # Host *
 ln: /usr/opt/bin/: No such file or directory
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  ln -s "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/
- almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl
+~/lode/dev/core   master ✚  ln -s "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/
+~/lode/dev/core   master ✚  subl
 zsh: command not found: subl
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+~/lode/dev/core   master ✚  "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 zsh: no such file or directory: /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
- almas@3c2d3e26252423  ~/lode/dev/core   master ✚  ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/
+~/lode/dev/core   master ✚  /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
+~/lode/dev/core   master ✚  ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/
 ln: /usr/local/bin//subl: File exists
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  ln -sf /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/
- almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl
- almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
- almas@3c2d3e26252423  ~/lode/dev/core   master ✚  git commit --amend
+~/lode/dev/core   master ✚  ln -sf /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/
+~/lode/dev/core   master ✚  subl
+~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
+~/lode/dev/core   master ✚  git commit --amend
 *
 * You have some suspicious patch lines:
 *
 * In sw/source/core/crsr/crsrsh.cxx
 * trailing whitespace (line 3123)
 sw/source/core/crsr/crsrsh.cxx:3123:    // Is not it Vertical_RL_TB ?
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ●✚  git commit --amend
+~/lode/dev/core   master ●✚  git commit --amend
 *
 * You have some suspicious patch lines:
 *
 * In sw/source/core/crsr/crsrsh.cxx
 * trailing whitespace (line 3123)
 sw/source/core/crsr/crsrsh.cxx:3123:    // Is not it Vertical_RL_TB ?
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ●✚  git add sw/source/core/crsr/crsrsh.cxx
- almas@3c2d3e26252423  ~/lode/dev/core   master ✚  git commit --amend
+~/lode/dev/core   master ●✚  git add sw/source/core/crsr/crsrsh.cxx
+~/lode/dev/core   master ✚  git commit --amend
 [master 023535fdbda6] fix arrow key bug for sw text frame
  Author: Aronsoyol <aronsoyol@gmail.com>
  Date: Tue Sep 1 16:12:02 2015 +0900
  4 files changed, 17 insertions(+), 5 deletions(-)
- almas@3c2d3e26252423  ~/lode/dev/core   master  git status
+~/lode/dev/core   master  git status
 On branch master
 Your branch and 'origin/master' have diverged,
 and have 1 and 2908 different commits each, respectively.
@@ -1267,15 +1267,15 @@ Untracked files:
 	debug.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
- almas@3c2d3e26252423  ~/lode/dev/core   master  git push Almas
+~/lode/dev/core   master  git push Almas
 /Users/almas/.ssh/config: line 3: Bad configuration option: usekeychain
 /Users/almas/.ssh/config: terminating, 1 bad configuration options
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master  vi ~/.ssh/config
- almas@3c2d3e26252423  ~/lode/dev/core   master  git push Almas
+~/lode/dev/core   master  vi ~/.ssh/config
+~/lode/dev/core   master  git push Almas
 Enter passphrase for key '/Users/almas/.ssh/id_rsa':
 Enter passphrase for key '/Users/almas/.ssh/id_rsa':
 Enter passphrase for key '/Users/almas/.ssh/id_rsa':
@@ -1286,31 +1286,31 @@ Writing objects: 100% (269343/269343), 82.45 MiB | 1.65 MiB/s, done.
 Total 269343 (delta 223054), reused 239693 (delta 195833)
 To ssh://almas.dip.jp:40022/cvs/git/DelehiOffice/core.git
    bcdaa1ffb5d8..023535fdbda6  master -> master
- almas@3c2d3e26252423  ~/lode/dev/core   master  git checkout -b DelehiOffice2018
+~/lode/dev/core   master  git checkout -b DelehiOffice2018
 Switched to a new branch 'DelehiOffice2018'
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018  git push Almas DelehiOffice2018
+~/lode/dev/core   DelehiOffice2018  git push Almas DelehiOffice2018
 Enter passphrase for key '/Users/almas/.ssh/id_rsa':
 Enter passphrase for key '/Users/almas/.ssh/id_rsa':
 Total 0 (delta 0), reused 0 (delta 0)
 To ssh://almas.dip.jp:40022/cvs/git/DelehiOffice/core.git
  * [new branch]                DelehiOffice2018 -> DelehiOffice2018
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018  git checkout master
+~/lode/dev/core   DelehiOffice2018  git checkout master
 Switched to branch 'master'
 Your branch and 'origin/master' have diverged,
 and have 1 and 2908 different commits each, respectively.
   (use "git pull" to merge the remote branch into yours)
- almas@3c2d3e26252423  ~/lode/dev/core   master  git log
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master  git checkout DelehiOffice2018
+~/lode/dev/core   master  git log
+~/lode/dev/core   master  git checkout DelehiOffice2018
 Switched to branch 'DelehiOffice2018'
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018  git log
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018  git checkout master
+~/lode/dev/core   DelehiOffice2018  git log
+~/lode/dev/core   DelehiOffice2018  git checkout master
 Switched to branch 'master'
 Your branch and 'origin/master' have diverged,
 and have 1 and 2908 different commits each, respectively.
   (use "git pull" to merge the remote branch into yours)
- almas@3c2d3e26252423  ~/lode/dev/core   master  git reset --hard HEAD^
+~/lode/dev/core   master  git reset --hard HEAD^
 HEAD is now at 0e0eff230958 lok: send modified status when applying cell-formula before saving
- almas@3c2d3e26252423  ~/lode/dev/core   master  git status
+~/lode/dev/core   master  git status
 On branch master
 Your branch is behind 'origin/master' by 2908 commits, and can be fast-forwarded.
   (use "git pull" to update your local branch)
@@ -1322,26 +1322,26 @@ Untracked files:
 	debug.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
- almas@3c2d3e26252423  ~/lode/dev/core   master  git checkout DelehiOffice2018
+~/lode/dev/core   master  git checkout DelehiOffice2018
 Switched to branch 'DelehiOffice2018'
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018  git log
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018  git checkout master
+~/lode/dev/core   DelehiOffice2018  git log
+~/lode/dev/core   DelehiOffice2018  git checkout master
 Switched to branch 'master'
 Your branch is behind 'origin/master' by 2908 commits, and can be fast-forwarded.
   (use "git pull" to update your local branch)
- almas@3c2d3e26252423  ~/lode/dev/core   master  git push -f Almas
+~/lode/dev/core   master  git push -f Almas
 Enter passphrase for key '/Users/almas/.ssh/id_rsa':
 Total 0 (delta 0), reused 0 (delta 0)
 To ssh://almas.dip.jp:40022/cvs/git/DelehiOffice/core.git
  + 023535fdbda6...0e0eff230958 master -> master (forced update)
- almas@3c2d3e26252423  ~/lode/dev/core   master 
+~/lode/dev/core   master 
 >>
 
 <<
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018  pwd
+~/lode/dev/core   DelehiOffice2018  pwd
 $LODE_HOME/dev/core
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  vm xmloff/source/draw/sdpropls.cxx
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git status
+~/lode/dev/core   DelehiOffice2018 ●✚  vm xmloff/source/draw/sdpropls.cxx
+~/lode/dev/core   DelehiOffice2018 ●✚  git status
 On branch DelehiOffice2018
 You are currently cherry-picking commit d9b23c7af8ce.
   (fix conflicts and run "git cherry-pick --continue")
@@ -1359,13 +1359,13 @@ Untracked files:
 	debug.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git cherry-pick --continue
+~/lode/dev/core   DelehiOffice2018 ●✚  git cherry-pick --continue
 U	xmloff/source/draw/sdpropls.cxx
 error: Committing is not possible because you have unmerged files.
 hint: Fix them up in the work tree, and then use 'git add/rm <file>'
 hint: as appropriate to mark resolution and make a commit.
 fatal: Exiting because of an unresolved conflict.
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git status
+~/lode/dev/core   DelehiOffice2018 ●✚  git status
 On branch DelehiOffice2018
 You are currently cherry-picking commit d9b23c7af8ce.
   (fix conflicts and run "git cherry-pick --continue")
@@ -1383,8 +1383,8 @@ Untracked files:
 	debug.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  vm xmloff/source/draw/sdpropls.cxx
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git status
+~/lode/dev/core   DelehiOffice2018 ●✚  vm xmloff/source/draw/sdpropls.cxx
+~/lode/dev/core   DelehiOffice2018 ●✚  git status
 On branch DelehiOffice2018
 You are currently cherry-picking commit d9b23c7af8ce.
   (fix conflicts and run "git cherry-pick --continue")
@@ -1402,9 +1402,9 @@ Untracked files:
 	debug.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git log
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git add xmloff/source/draw/sdpropls.cxx
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ✚  git status
+~/lode/dev/core   DelehiOffice2018 ●✚  git log
+~/lode/dev/core   DelehiOffice2018 ●✚  git add xmloff/source/draw/sdpropls.cxx
+~/lode/dev/core   DelehiOffice2018 ✚  git status
 On branch DelehiOffice2018
 You are currently cherry-picking commit d9b23c7af8ce.
   (all conflicts fixed: run "git cherry-pick --continue")
@@ -1420,12 +1420,12 @@ Untracked files:
 	build.log
 	debug.txt
 
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ✚  git commit -m "writing mode"
+~/lode/dev/core   DelehiOffice2018 ✚  git commit -m "writing mode"
 [DelehiOffice2018 05e033823504] writing mode
  Author: Aronsoyol <aronsoyol@gmail.com>
  Date: Tue Sep 1 12:38:30 2015 +0900
  1 file changed, 4 insertions(+), 3 deletions(-)
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018  git status
+~/lode/dev/core   DelehiOffice2018  git status
 On branch DelehiOffice2018
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
@@ -1434,7 +1434,7 @@ Untracked files:
 	debug.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 
+~/lode/dev/core   DelehiOffice2018 
 >>
 
 sourcetree dblclk branch:
@@ -1804,16 +1804,16 @@ https://stackoverflow.com/questions/53569/how-to-get-the-changes-on-a-branch-in-
 gd DelehiOffice2015 master > ~/bkup/git_diff_DelehiOffice2015_master
 warning: inexact rename detection was skipped due to too many files.
 warning: you may want to set your diff.renameLimit variable to at least 25812 and retry the command.
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git config --list > ~/bkup/git_config_--list
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  rtvl
+~/lode/dev/core   DelehiOffice2018 ●✚  git config --list > ~/bkup/git_config_--list
+~/lode/dev/core   DelehiOffice2018 ●✚  rtvl
 $?:0
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  grp renamelimit  ~/bkup/git_config_--list
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git config --global diff.renameLimit 4294967295
+~/lode/dev/core   DelehiOffice2018 ●✚  grp renamelimit  ~/bkup/git_config_--list
+~/lode/dev/core   DelehiOffice2018 ●✚  git config --global diff.renameLimit 4294967295
 fatal: bad numeric config value '4294967295' for 'diff.renamelimit': out of range
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●  git config --global diff.renameLimit 2147483647
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  rtvl
+~/lode/dev/core   DelehiOffice2018 ●  git config --global diff.renameLimit 2147483647
+~/lode/dev/core   DelehiOffice2018 ●✚  rtvl
 $?:0
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  git config --global merge.renameLimit 2147483647
+~/lode/dev/core   DelehiOffice2018 ●✚  git config --global merge.renameLimit 2147483647
 
 git issue:
 1.
@@ -1826,7 +1826,7 @@ error: Committing is not possible because you have unmerged files.
 hint: Fix them up in the work tree, and then use 'git add/rm <file>'
 hint: as appropriate to mark resolution and make a commit.
 fatal: Exiting because of an unresolved conflict.
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  gst
+~/lode/dev/core   DelehiOffice2018 ●✚  gst
 On branch DelehiOffice2018
 You are currently cherry-picking commit 0dd3e068dd9e.
   (fix conflicts and run "git cherry-pick --continue")
@@ -1842,14 +1842,14 @@ git commit You have some suspicious patch lines:
 >>verified with "cat -etv <file>(.ui(LO, sw/uiconfig/swriter/ui/frmaddpage.ui)/.xml)", not trailing whitespaces, but indentations!
 
 2.
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ✚  gcp -x b6a248ecdfde
+~/lode/dev/core   DelehiOffice2018 ✚  gcp -x b6a248ecdfde
 warning: inexact rename detection was skipped due to too many files.
 warning: you may want to set your merge.renamelimit variable to at least 18369 and retry the command.
 error: could not apply b6a248ecdfde... add new uno command.
 hint: after resolving the conflicts, mark the corrected paths
 hint: with 'git add <paths>' or 'git rm <paths>'
 hint: and commit the result with 'git commit'
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  gst
+~/lode/dev/core   DelehiOffice2018 ●✚  gst
 On branch DelehiOffice2018
 You are currently cherry-picking commit b6a248ecdfde.
   (fix conflicts and run "git cherry-pick --continue")
@@ -1960,15 +1960,6 @@ aReturn <<= WritingMode2::CONTEXT
 
 /Applications/Visual Studio Code.app/Contents/MacOS/Electron
 
-brew uninstall gcc g++
-Error: No such keg: /usr/local/Cellar/g++
- ✘ almas@3c2d3e26252423  /Volumes/DATA/av  brew remove gcc g++
-Error: No such keg: /usr/local/Cellar/g++
- ✘ almas@3c2d3e26252423  /Volumes/DATA/av  brew unlink gcc
-Unlinking /usr/local/Cellar/gcc/7.3.0... 33 symlinks removed
- almas@3c2d3e26252423  /Volumes/DATA/av  brew unlink g++
-Error: No such keg: /usr/local/Cellar/g++
-
 What chemical elements do human bodies comprise of?
 Almost 99% of the mass of the human body is made up of six elements: oxygen, carbon, hydrogen, nitrogen, calcium, and phosphorus. Only about 0.85% is composed of another five elements: potassium, sulfur, sodium, chlorine, and magnesium. All 11 are necessary for life. The remaining elements are trace elements, of which more than a dozen are thought on the basis of good evidence to be necessary for life. All of the mass of the trace elements put together (less than 10 grams for a human body) do not add up to the body mass of magnesium, the least common of the 11 non-trace elements.
 
@@ -2017,7 +2008,7 @@ It is this method that enables you recall information because you make it apart 
 So, separate the actions of reading and note taking.
 Read, write, Think or Read, Think, and reformulate the sentence.
 
-almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●  git rev-parse --symbolic-full-name --abbrev-ref @{u}
+~/lode/dev/core   DelehiOffice2018 ●  git rev-parse --symbolic-full-name --abbrev-ref @{u}
 fatal: no upstream configured for branch 'DelehiOffice2018'
 
 cpp -v
@@ -2272,6 +2263,8 @@ How would a dopamine antagonist work? … continue asking yourself elaborative q
 
 
 asuult:
+c++ declare class inside unnamed namespace inside another class's source file
+
 Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
 
 Which image formats preserve resolution while zooming?
@@ -2385,11 +2378,6 @@ major system Loci method Memory Palace
 pte in mgl (ref books in bookstores)
 
 cashflow quadrant
-TensorFlow.js
-
-chess traps pitfalls
-
-declare class inside unnamed namespace inside another class's source file
 
 2018网购火车票支付宝
 
@@ -2415,9 +2403,9 @@ npm install -g npm
    │       Run npm i npm to update       │
    │                                     │
    ╰─────────────────────────────────────╯
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018-Dev ●✚ >M<  which npm
+~/lode/dev/core   DelehiOffice2018-Dev ●✚ >M<  which npm
 /usr/local/bin/npm
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018-Dev ●✚ >M<  npm i npm
+~/lode/dev/core   DelehiOffice2018-Dev ●✚ >M<  npm i npm
 npm WARN saveError ENOENT: no such file or directory, open '/Users/almas/lode/dev/core/package.json'
 npm notice created a lockfile as package-lock.json. You should commit this file.
 npm WARN enoent ENOENT: no such file or directory, open '/Users/almas/lode/dev/core/package.json'
