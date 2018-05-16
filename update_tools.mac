@@ -1,4 +1,5 @@
 #!/bin/sh
+
 #brew update && brew upgrade && brew upgrade git python3 python node youtube-dl code
 #Error: No available formula with the name "code"
 
