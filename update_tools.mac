@@ -28,12 +28,15 @@ npm update -g wepy-cli typescript coffeescript vue
 #  Could not find a version that satisfies the requirement pip3 (from versions: )
 #No matching distribution found for pip3
 
-sudo pip install --upgrade pip
+#https://github.com/Homebrew/legacy-homebrew/issues/50607
+#python3 -m pip install -U --force-reinstall pip
 
-pip install --upgrade virtualenv
-#pip install --upgrade tensorflow      # for Python 2.7
-pip3 install --upgrade tensorflow keras
+python3 -m pip install -U pip
+#$which pip3
+#/usr/local/bin/pip3
+#$pip3 -V
+#pip 10.0.1 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
+#$pip -V
+#pip 10.0.1 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
 
-#https://pypi.org/project/itchat/
-pip install --upgrade itchat
-
+pip3 install --upgrade virtualenv tensorflow keras itchat
