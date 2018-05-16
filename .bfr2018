@@ -1199,7 +1199,7 @@ printf $(date +"%Y%m%d-%H:%M:%S")
 
 git -c diff.mnemonicprefix=false -c core.quotepath=false -c credential.helper=sourcetree checkout DelehiOffice2015
 
-<<<<<<<HEAD
+<<
  ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  git commit --amend
 *
 * You have some suspicious patch lines:
@@ -1219,8 +1219,6 @@ sw/source/core/crsr/crsrsh.cxx:3123:    // Is not it Vertical_RL_TB ?
  almas@3c2d3e26252423  ~/lode/dev/core   master ✚  vi sw/source/core/crsr/crsrsh.cxx
  almas@3c2d3e26252423  ~/lode/dev/core   master ✚  subl sw/source/core/crsr/crsrsh.cxx
 zsh: command not found: subl
- ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  /Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text /bin/subl
-^C
  ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  /Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text /bin/subl
 ^C
  ✘ almas@3c2d3e26252423  ~/lode/dev/core   master ✚  ln -s "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl" /usr/opt/bin/
@@ -1267,8 +1265,6 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	build.log
-	build1.log
-	build2.log
 	debug.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
@@ -1324,8 +1320,6 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	build.log
-	build1.log
-	build2.log
 	debug.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
@@ -1342,9 +1336,9 @@ Total 0 (delta 0), reused 0 (delta 0)
 To ssh://almas.dip.jp:40022/cvs/git/DelehiOffice/core.git
  + 023535fdbda6...0e0eff230958 master -> master (forced update)
  almas@3c2d3e26252423  ~/lode/dev/core   master 
->>>>>>>
+>>
 
-<<<<<<<
+<<
  almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018  pwd
 $LODE_HOME/dev/core
  almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ●✚  vm xmloff/source/draw/sdpropls.cxx
@@ -1363,8 +1357,6 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	build.log
-	build1.log
-	build2.log
 	debug.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -1389,8 +1381,6 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	build.log
-	build1.log
-	build2.log
 	debug.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -1410,8 +1400,6 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	build.log
-	build1.log
-	build2.log
 	debug.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -1431,8 +1419,6 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	build.log
-	build1.log
-	build2.log
 	debug.txt
 
  almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 ✚  git commit -m "writing mode"
@@ -1446,13 +1432,11 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
 	build.log
-	build1.log
-	build2.log
 	debug.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
  almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018 
->>>>>>>
+>>
 
 sourcetree dblclk branch:
 Create a commit even if merge resolved via fast-forward option.
@@ -1720,7 +1704,7 @@ error: invalid value 'gnu++17' in '-std=gnu++17'
 |     Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
 |     <limits.h> exists even on freestanding compilers.  */
 
-<<<<<<<
+<<
 configure:24702: checking Python.h usability
 configure:24702: $LODE_HOME/opt/bin/ccache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -m64  -mmacosx-version-min=10.9 -isysr
 oot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -c   -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/D
@@ -1767,7 +1751,7 @@ $LODE_HOME/opt/bin/make check
 
 'register' storage class specifier is deprecated and incompatible with C++1z [-Wdeprecated-r
 egister]
->>>>>>>
+>>
 
 https://www.youtube.com/watch?v=04paHt9xG9U
 In this tutorial, participants will learn strategies for systematically debugging Python programs. We will work through a series of examples, each with a different kind of bug and with increasing difficulty. The training will be interactive, combining one-person and group activities, to improve your debugging skills in an entertaining way.
