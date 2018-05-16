@@ -1793,6 +1793,10 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+Updates were rejected because the remote contains work that you do not have:
+https://stackoverflow.com/questions/18328800/github-updates-were-rejected-because-the-remote-contains-work-that-you-do-not-h
+gl origin note_bfr --allow-unrelated-histories
+
 HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
 
