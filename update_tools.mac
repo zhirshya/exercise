@@ -1,9 +1,35 @@
 #!/bin/sh
-brew update && brew upgrade && brew upgrade git python3 python node youtube-dl code
-npm i npm
-npm update -g wepy-cli typescript coffeescript 
+#brew update && brew upgrade && brew upgrade git python3 python node youtube-dl code
+#Error: No available formula with the name "code"
 
-sudo pip install --upgrade pip pip3
+brew update && brew upgrade && brew upgrade git python3 python node youtube-dl
+
+#npm i npm
+#npm WARN saveError ENOENT: no such file or directory, open '/Volumes/DATA/package.json'
+#npm notice created a lockfile as package-lock.json. You should commit this file.
+#npm WARN enoent ENOENT: no such file or directory, open '/Volumes/DATA/package.json'
+#npm WARN DATA No description
+#npm WARN DATA No repository field.
+#npm WARN DATA No README data
+#npm WARN DATA No license field.
+#
+#+ npm@6.0.1
+#added 682 packages from 744 contributors in 18.943s
+#[!] 4 vulnerabilities found [5049 packages audited]
+#    Severity: 2 Low | 2 High
+#    Run `npm audit` for more detail
+
+npm install -g npm@latest
+npm update -g wepy-cli typescript coffeescript vue 
+
+#todo: macos upgrde pip3
+#sudo pip install --upgrade pip pip3
+#Collecting pip3
+#  Could not find a version that satisfies the requirement pip3 (from versions: )
+#No matching distribution found for pip3
+
+sudo pip install --upgrade pip
+
 pip install --upgrade virtualenv
 #pip install --upgrade tensorflow      # for Python 2.7
 pip3 install --upgrade tensorflow keras
