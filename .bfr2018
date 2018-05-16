@@ -16,8 +16,6 @@ Delehi Information Technology Co. Ltd.
 010010
 West 13F, Uiles Hotel, No.89 East Xinhua Street, Hohhot, P.R.China
 
-DelkhiOffice vs DelehiOffice
-
 https://encrypted.google.com/webhp?hl=en&gl=en#safe=active&hl=en&gl=en&q=%s
 
 windows10+7 optimized activated iso
@@ -500,9 +498,10 @@ beef bone broth
 Goat-boodog
 Guess how much noise does an empty piggy bank with 1 coin make, vs. a full one.
 
-«END of en»
+«end of en»
 
 en2mn2rus:
+contrarian
 put foot down: to refuse very firmly to do or accept something; to use your authority to stop something happening.
 "The first time I heard about something" is subject, but the verb is not transitive ("be" is intransitive) so there is no object. What follows "be" is obligatory, and obligatory items are always complements, and hence "when I was around 8 years' old" is a complement. (https://english.stackexchange.com/questions/445930/is-abbreviating-the-object-clause-in-this-sentence-grammatically-correct)
 >The verb is "was" and it will not take an object. Whereas, It has the complement (when I was around 8 years old.) You can reduce the complement-clause as: The first time I heard about it was at the age of eight. BTW 8 years old, not 8 years' old.
@@ -593,7 +592,7 @@ Down payment (or downpayment, also called a deposit in British English), is a pa
 
 self-explanatory: Title Case, Sentence case, UPPERCASE, lowercase
 
-«END of en2mn2rus»
+«end of en2mn2rus»
 
 Him speaking about this as if he's actually giving a scientific lecture in an auditorium is what makes this perfect. He's not laughing or anything, he looks so dead serious the whole time: "If you find a unicorn, please capture it safely, keep it alive. We'd like to study it and maybe look at how to replicate that."
 
@@ -787,7 +786,7 @@ Plus, when learning new words, you realize that stress sometimes influences mean
 
 https://www.youtube.com/watch?v=80qyK_mGSWw
 
-«END of rus»
+«end of rus»
 
 rus2en:
 орех кедровый cedar nut
@@ -796,7 +795,7 @@ rus2en:
 Embed advanced machine intelligence into a chatbot for social media App WeChat, using Google cloud and machine learning APIs
 https://github.com/telescopeuser/workshop_blog
 
-«END of rus2en»
+«end of rus2en»
 
 15:22 Node Module System
 15:52 Global Object
@@ -987,7 +986,7 @@ https://www.facebook.com/groups/zugaatai.hel.shinjlel/permalink/789153364601081/
 Олъё
 Одъё
 
-«END of mgl»
+«end of mgl»
 
 macos:
 To inspect the ACL, you can run the ls command with the -e flag. For example:
@@ -1536,6 +1535,9 @@ cn2en:
 光彩熠熠(yì) [bright] 闪烁的样子
 海参崴
 
+en2cn:
+hair clay 发泥?
+
 js:
 const sortedCompanies = companies.sort((a,b) => a.start - b.start);
 https://www.youtube.com/watch?v=rRgD1yVwIvE
@@ -1676,7 +1678,7 @@ error:libreoffice lode make output Too many open files
 c++ .hdl file
 $LODE_HOME/dev/core/workdir/UnoApiHeadersTarget/offapi/comprehensive/com/sun/star/text/WritingMode2.hdl
 
-«END of lo»
+«end of lo»
 
 youtube window: get list of all youtube shortcuts according to your player by pressing shift + ?.
 
@@ -1867,7 +1869,7 @@ deleted by us:   editeng/source/editeng/editdoc.hxx
 vcl/source/window/btndlg.cxx
 include/vcl/btndlg.hxx
 
-«END of git issue»
+«end of git issue»
 
 git Add all modified files but not untracked files
 git ls-files --modified | xargs git add
@@ -2272,16 +2274,7 @@ How would a dopamine antagonist work? … continue asking yourself elaborative q
 asuult:
 Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
 
-入网证号:02-5043-171159
-
 Which image formats preserve resolution while zooming?
-
-HawangPua MongolHawangPua.ttf
-Havan
-Pua
-Qagan -> Chagan
-
-这字是正字吗？若是，什么意思？
 
 Dealing with line endings and Git's autocrlf
 If autogen.sh produces output like the following:
@@ -2400,8 +2393,6 @@ declare class inside unnamed namespace inside another class's source file
 
 2018网购火车票支付宝
 
-hair clay black umbrella
-
 >I would try `git clone libreofficeurl --recursive` and hope it pulls all required submodules.
 There is probably a way to do that without cloning again, but I don't know how. `git submodule init --recursive` would be too obvious.
 >I think you have to do `git submodule init` and `git submodule update`. And maybe stick recursive somewhere in there
@@ -2459,12 +2450,16 @@ Do I need to see urologist?
 2.
 Hello Victor, I want to start a blog after reading your "blog business" for getting out of chronically underpaid and unstable job. Would you tell me how to receive blogging income if the contents, layouts, hostname, SEO, ads and traffic etc are done correctly? Even worse, I'm inside the GFW(Great Fire Wall of China),  more and more personal VPNs and other circumvention tools have been blocked every year. I look forward to your answers.
 
-contrarian
 ut: bench press
-微信小程序
 tms website: wordpress and TMS compatibility
 广告联盟
 Google Analytics
 
 http://trans.mglip.com/EnglishC2T.aspx
+
+copypaste:
+这字是正字吗？若是，什么意思？
+微信小程序
+DelkhiOffice
+DelehiOffice
 
