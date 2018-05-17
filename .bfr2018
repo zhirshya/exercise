@@ -221,6 +221,31 @@ inoremap <special> <F3> <c-r>=strftime('%Y-%m-%d %H:%M:%S')<CR>
 End-of-message
 
 c++:
+A few resources for benchmarks, comparisons, and implementations:
+- CppCon 2017: Matt Kulukundis “Designing a Fast, Efficient, Cache-friendly Hash Table, Step by Step”
+ https://www.youtube.com/watch?v=ncHmEUmJZf4
+- libcuckoo: A high-performance, concurrent hash table
+ https://github.com/efficient/libcuckoo
+- hash-function-benchmark
+ https://lonewolfer.wordpress.com/2015/01/05/benchmarking-hash-functions/
+ https://github.com/fredrikwidlund/hash-function-benchmark
+- Benchmark of major hash maps implementations
+ https://tessil.github.io/2016/08/29/benchmark-hopscotch-map.html
+- Hash Table Benchmarks
+ http://incise.org/hash-table-benchmarks.html
+- C++ associative containers
+ "All these implementation use a hashtable with internal quadratic probing.  This method is space-efficient -- there is no pointer overhead -- and time-efficient for good hash functions."
+https://github.com/sparsehash/sparsehash
+- Hash Functions all the way down: https://aras-p.info/blog/2016/08/02/Hash-Functions-all-the-way-down/
+- More Hash Function Tests: https://aras-p.info/blog/2016/08/09/More-Hash-Function-Tests/
+- SMHasher: a test suite designed to test the distribution, collision, and performance properties of non-cryptographic hash functions.
+ https://github.com/aappleby/smhasher
+ Improved fork: https://github.com/rurban/smhasher
+- Sparsepp: A fast, memory efficient hash map for C++
+ https://github.com/greg7mdp/sparsepp
+- xxHash: extremely fast non-cryptographic hash function.
+ http://cyan4973.github.io/xxHash/
+
 Graph algorithms with C++ 
 Graph theory hold corner stone of modern computer science, extending its tentacles to social networks to neural networks to finding paths in maps. In this course we are looking at graph theory by computer science prospective. We are going to start our discussion by looking at the basic terms of graph theory and them jump on to discuss graph theory related algorithms and then implement those with c++. Following are the types of algorithms we are going to discuss in this course.
 Graph traversing.
@@ -2460,4 +2485,13 @@ copypaste:
 微信小程序
 DelkheiOffice
 DelehiOffice
+
+SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world, or upload your own. Start listening now!
+
+macos upgrade ruby
+
+m-w: lodging
+
+vim:
+"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
 
