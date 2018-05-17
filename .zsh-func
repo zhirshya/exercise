@@ -1178,7 +1178,7 @@ for (( i = 0; i < length; ++i ));do
 	local c="${1:i:1}"
 	case $c in
 		[a-zA-Z0-9.~_-]) printf "$c" ;;
-		*) printf '%%%02X' "'$c" ;;
+		*) env printf '%%%02X' "'$c" ;;
 	esac
 done
 echo '$?':$?
@@ -1189,7 +1189,7 @@ LC_COLLATE=$old_lc_collate
 function urldecode() {
 # urldecode <string>
 local url_encoded="${1//+/ }"
-printf '%b' "${url_encoded//%/\\x}"
+env printf '%b' "${url_encoded//%/\\x}"
 echo '$?':$?
 }
 
@@ -1202,7 +1202,7 @@ dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver
 function fnd(){
 	#sudo find /mnt/0 ~ -xdev -regextype posix-extended -iregex '.+\.(opus|aac|m4a|flac|mp3)$'
 	local cmd="sudo find /mnt/0 ~ -regextype posix-extended -iregex \".+$@.+\""
-	printf '(cmd):%s\n' "$cmd"
+	env printf '(cmd):%s\n' "$cmd"
 	eval "$cmd"
 }
 
@@ -1240,10 +1240,28 @@ function cflagsr(){
 }
 
 function prndt(){
-	printf '$(date +"%%Y%%m%%d-%%H:%%M:%%S"):%s\n' $(date +"%Y%m%d-%H:%M:%S")
+#https://unix.stackexchange.com/questions/444298/date-illegal-time-format-when-invoked-from-zsh-function
+	type -a date
+#Due to shell aliases and built-in printf functions, using an unadorned printf interactively or in a script may get you different functionality than that described here. Invoke it via env (i.e., env printf …) to avoid interference from the shell.
+#http://www.gnu.org/software/coreutils/manual/html_node/printf-invocation.html#printf-invocation
+
+	env printf '$(env date +"%%Y%%m%%d %%H:%%M:%%S"):%s\n' "$(env date +"%Y%m%d %H:%M:%S")"
+	env printf '$(env date +"%%Y%%m%%d-%%H:%%M:%%S"):%s\n' "$(env date +"%Y%m%d-%H:%M:%S")"
+	env printf '$(env date +"%%Y-%%m-%%d %%H:%%M:%%S"):%s\n' "$(env date +"%Y-%m-%d %H:%M:%S")"
+	env printf '$(env date +"%%Y/%%m/%%d %%H:%%M:%%S"):%s\n' "$(env date +"%Y/%m/%d %H:%M:%S")"
+
+	env printf '$(env date +"%%m%%d%%Y %%H:%%M:%%S"):%s\n' "$(env date +"%m%d%Y %H:%M:%S")"
+	env printf '$(env date +"%%m%%d%%Y-%%H:%%M:%%S"):%s\n' "$(env date +"%m%d%Y-%H:%M:%S")"
+	env printf '$(env date +"%%m-%%d-%%Y %%H:%%M:%%S"):%s\n' "$(env date +"%m-%d-%Y %H:%M:%S")"
+	env printf '$(env date +"%%m/%%d/%%Y %%H:%%M:%%S"):%s\n' "$(env date +"%m/%d/%Y %H:%M:%S")"
+
+	env printf '$(env date +"%%d%%m%%Y %%H:%%M:%%S"):%s\n' "$(env date +"%d%m%Y %H:%M:%S")"
+	env printf '$(env date +"%%d%%m%%Y-%%H:%%M:%%S"):%s\n' "$(env date +"%d%m%Y-%H:%M:%S")"
+	env printf '$(env date +"%%d-%%m-%%Y %%H:%%M:%%S"):%s\n' "$(env date +"%d-%m-%Y %H:%M:%S")"
+	env printf '$(env date +"%%d/%%m/%%Y %%H:%%M:%%S"):%s\n' "$(env date +"%d/%m/%Y %H:%M:%S")"
 }
 
 function wala(){
-	printf "%s\n" "Voilà, "
+	env printf "%s\n" "Voilà, "
 }
 
