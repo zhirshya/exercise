@@ -34,7 +34,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -118,6 +118,8 @@ alias nvm=nvim
 alias ll='ls -alFt' #Pass the -r option to reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size)
 alias lls='ls -alFt | less'
 alias 0s0='sudo shutdown -c'
+#alias s0='sudo shutdown -h +0'
+alias s1='sudo shutdown -r now'
 alias rbt='sudo reboot -f'
 alias ins='sudo dnf --best --allowerasing install'
 #alias ins='sudo apt install'
@@ -137,12 +139,9 @@ alias utcap='youtube-dl -v --youtube-skip-dash-manifest --write-sub --sub-lang r
 alias utlscap='youtube-dl -v --youtube-skip-dash-manifest --list-subs'
 alias utlscvr='youtube-dl -v --youtube-skip-dash-manifest --list-thumbnails'
 #SS proxy
-alias ut='youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest'
-alias utf='youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest -a dnld'
-alias utlf='youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest --list-formats'
-
-alias or='cd /mnt/0/dnld/tor-browser_en-US && ./start-tor-browser.desktop && -'
-
+alias utss='youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest'
+alias utfss='youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest -a dllst'
+alias utlfss='youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest --list-formats'
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -232,4 +231,3 @@ unsetopt CASE_GLOB # match case insensitive patterns with ls
 #. ~/.zsh-func
 source ~/.zsh-func
 #. ~/.nvm/nvm.sh #https://github.com/creationix/nvm, Node Version Manager - Simple bash script to manage multiple active node.js versions
-
