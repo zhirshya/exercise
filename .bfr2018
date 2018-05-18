@@ -220,6 +220,18 @@ inoremap <special> <F3> <c-r>=strftime('%Y-%m-%d %H:%M:%S')<CR>
 "even works for MacVim('mvim -v')
 End-of-message
 
+sh:
+rename multiple files by replacing string in file name
+https://unix.stackexchange.com/questions/175135/how-to-rename-multiple-files-by-replacing-string-in-file-name-this-string-conta
+find /Volumes/DATA ~ -type f -iname "*dnld*" -exec zsh -c 'mv $0 ${0/dnld/dllst}' {} \;
+err:
+$find /Volumes/DATA ~ -type f -iname "*dnld*" -exec zsh -c 'mv $0 ${0/dnld/dllst}' {} +
+find: fts_read: Invalid argument
+$find /Volumes/DATA ~ -type f -iname "*dnld*" -exec zsh -c 'mv $0 ${0/dnld/dllst}' {} ;
+find: -exec: no terminating ";" or "+"
+$find /Volumes/DATA ~ -type f -iname "*dnld*" -exec zsh -c 'mv $0 ${0/dnld/dllst}' {};
+find: -exec: no terminating ";" or "+"
+
 c++:
 A few resources for benchmarks, comparisons, and implementations:
 - CppCon 2017: Matt Kulukundis “Designing a Fast, Efficient, Cache-friendly Hash Table, Step by Step”
