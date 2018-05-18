@@ -40,6 +40,6 @@ python3 -m pip install -U pip
 #$pip -V
 #pip 10.0.1 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
 
-pip3 install --upgrade virtualenv tensorflow keras itchat
+pip3 install --upgrade virtualenv tensorflow keras cppman itchat
 
 upgrade_oh_my_zsh
