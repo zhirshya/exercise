@@ -374,6 +374,10 @@ https://www.youtube.com/watch?v=vsMydMDi3rI
 
 apple CoreText tutorial
 
+ACCU (Association of C and C++ Users)
+
+«end of c++»
+
 eecs,ict:
 SOLID (object-oriented design)
 Single responsibility principle[4]
@@ -2488,10 +2492,7 @@ DelehiOffice
 
 SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world, or upload your own. Start listening now!
 
-macos upgrade ruby
-
-m-w: lodging
-
 vim:
 "   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
 
+jekyll serve --livereload
