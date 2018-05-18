@@ -1265,3 +1265,8 @@ function wala(){
 	env printf "%s\n" "Voilà, "
 }
 
+function onrtr(){
+#todo: Does "find -exec cd && <cmd>" work? 
+	#find / -type d -iname "*tor*browser*" -execdir cd {} && ./start-tor-browser.desktop 
+	find / -type d -iname "*tor*browser*" -exec cd {} && ./start-tor-browser.desktop 
+}
