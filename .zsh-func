@@ -1270,3 +1270,10 @@ function onrtr(){
 	#find / -type d -iname "*tor*browser*" -execdir cd {} && ./start-tor-browser.desktop 
 	find / -type d -iname "*tor*browser*" -exec cd {} && ./start-tor-browser.desktop 
 }
+
+function bc(){
+#todo: scale, round up...
+#https://stackoverflow.com/questions/37403950/round-up-the-bc-scale-instead-of-round-down-with-scale-or-printf
+#	scale=5;bc
+	bc -l
+}
