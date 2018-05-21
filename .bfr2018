@@ -398,6 +398,10 @@ ACCU (Association of C and C++ Users)
 «end of c++»
 
 eecs,ict:
+evolutionary algorithms
+fuzzy logic
+swarm intelligence
+artificial neural networks
 SOLID (object-oriented design)
 Single responsibility principle[4]
 a class should have only a single responsibility (i.e. changes to only one part of the software's specification should be able to affect the specification of the class).
@@ -574,6 +578,8 @@ You need the right 401k.... Better off investing in a Roth IRA... Right now wher
 «end of retirement»
 
 en2mn2rus:
+parody
+Psoriasis
 skipping rope
 plyometric
 posthumous
@@ -672,6 +678,12 @@ Down payment (or downpayment, also called a deposit in British English), is a pa
 self-explanatory: Title Case, Sentence case, UPPERCASE, lowercase
 
 «end of en2mn2rus»
+
+rus:
+программист
+
+
+«end of rus»
 
 Him speaking about this as if he's actually giving a scientific lecture in an auditorium is what makes this perfect. He's not laughing or anything, he looks so dead serious the whole time: "If you find a unicorn, please capture it safely, keep it alive. We'd like to study it and maybe look at how to replicate that."
 
@@ -2190,6 +2202,8 @@ defaults write com.apple.screencapture type jpg
 killall SystemUIServer
 
 todo:
+wordpress Traditional Mongolian Script
+
 periodic tables of elements in russian -> mgl
 
 Periodic Table of Elements Explained - Metals, Nonmetals, Valence Electrons, Charges
@@ -2524,9 +2538,6 @@ Do I need to see urologist?
 2.
 Hello Victor, I want to start a blog after reading your "blog business" for getting out of chronically underpaid and unstable job. Would you tell me how to receive blogging income if the contents, layouts, hostname, SEO, ads and traffic etc are done correctly? Even worse, I'm inside the GFW(Great Fire Wall of China),  more and more personal VPNs and other circumvention tools have been blocked every year. I look forward to your answers.
 
-ut: bench press
-tms website: wordpress and TMS compatibility
-
 广告联盟
 Google Analytics
 
@@ -2535,8 +2546,7 @@ http://trans.mglip.com/EnglishC2T.aspx
 copypaste:
 这字是正字吗？若是，什么意思？
 微信小程序
-DelkheiOffice
-DelehiOffice
+Delkhei <> Delehi
 
 SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world, or upload your own. Start listening now!
 
@@ -2544,3 +2554,6 @@ vim:
 "   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
 
 jekyll serve --livereload
+ut: bench press
+	psoriasis
+
