@@ -496,6 +496,17 @@ symbol:
 ⇄
 The symbol, which I can never find on Microsoft Word's symbol list, is a hollow square with a single, vertical line through the middle. It's placed at the end of a number, such as 2,550[I] but imagine the box/line as intersecting and the top/bottom of the vertical line extending outside the box at both top and bottom. (I had to play with brackets, here) and either the same size font of the numbers or smaller, but never larger (not meant to overshadow the numbers). It's very common in the construction and architecture industry- especially when handwriting instructions or notes in order to avoid having to 'read' someone's handwriting (plus, it takes up slightly less space). For whatever reason, it's not available in most font/symbol options.
 
+ɵ: Latin Small Letter Barred O
+	Unicode number: U+0275
+	HTML-code: &#629;
+Ɵ: Unicode number: U+019F
+	HTML-code: &#415;
+ʉ:Latin Small Letter U Bar
+	Unicode number: U+0289
+	HTML-code: &#649;
+Ʉ:Unicode number: U+0244
+	HTML-code: &#580;
+
 http://monscript.blogger.com/
 
 CPU Info via Command Line in Mac OS X
@@ -995,6 +1006,7 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+бүдэг бадаг ᠪᠦᠳᠡᠭᠢ ᠪᠠᠳᠠᠭ
 Угийн бичиг, удмын түүх
 Үндэсний эрх ашиг, тусгаар тогтнол, цэцэглэж мандахын хувь заяанд Монгол улсын иргэн бүр хувь нэмэрээ оруулах учиртай. Жинхэнэ эх оронч үзэл хэмээх нь угийн бичиг, удмын түүхээ хөтлөхөөс эхэлмүй.
 http://urgiinbichig.mn/
