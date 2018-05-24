@@ -1721,6 +1721,13 @@ sudo find / -not \( -path /private -prune \) -not \( -path /dev -prune \) -type 
 lo:
 libreoffice@lists.freedesktop.org
 
+Why not ::LR_TB?
+css::text::WritingMode
+css::text::WritingMode_LR_TB
+
+com::sun::star::text::WritingMode
+com::sun::star::text::WritingMode_TB_LR
+
 $LODE_HOME/dev/core/solenv/Makefile*
 https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install
 
@@ -2595,7 +2602,6 @@ jekyll serve --livereload
 
 ut: bench press
 parallel parking
-human eyes blind spot
 
 163.139.169.92:9999
 
