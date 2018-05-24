@@ -21,7 +21,7 @@ brew update && brew upgrade && brew upgrade git python3 python node youtube-dl r
 #    Run `npm audit` for more detail
 
 npm install -g npm@latest
-npm update -g wepy-cli typescript coffeescript vue 
+npm update -g wepy-cli typescript coffeescript vue d3 three p5 periodic-table
 
 #todo: macos upgrde pip3
 #sudo pip install --upgrade pip pip3
