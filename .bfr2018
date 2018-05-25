@@ -398,6 +398,7 @@ ACCU (Association of C and C++ Users)
 «end of c++»
 
 eecs,ict:
+leap motion controller (Actions like rotating, zooming/scaling and panning are supported. Gestures are customizable)
 evolutionary algorithms
 fuzzy logic
 swarm intelligence
@@ -1010,6 +1011,7 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+нүглээ наманчлах ᠨᠢᠭᠦᠯ ᠢᠶᠡᠨ ᠨᠠᠮᠠᠨᠴᠢᠯᠠᠬᠤ
 бүдэг бадаг ᠪᠦᠳᠡᠭᠢ ᠪᠠᠳᠠᠭ
 Угийн бичиг, удмын түүх
 Үндэсний эрх ашиг, тусгаар тогтнол, цэцэглэж мандахын хувь заяанд Монгол улсын иргэн бүр хувь нэмэрээ оруулах учиртай. Жинхэнэ эх оронч үзэл хэмээх нь угийн бичиг, удмын түүхээ хөтлөхөөс эхэлмүй.
@@ -1623,6 +1625,9 @@ This formula is keg-only, which means it was not symlinked into /usr/local,
 because macOS already provides this software and installing another version in
 parallel can cause all kinds of trouble.
 
+ja2en2mn:
+お見合い
+
 ja:
 個に根ざした活動をするときに、ブログは最良のPRツールになります。What does PR mean?
 オウンビジネス（Own Business）」
@@ -1886,6 +1891,8 @@ Code Review
 
 ffmpeg command line: ffmpeg -y -i 'file:Threads in C++-wXBcwHwIt_I.f137.mp4' -i 'file:Threads in C++-wXBcwHwIt_I.f251.webm' -c copy -map '0:v:0' -map '1:a:0' 'file:Threads in C++-wXBcwHwIt_I.temp.mkv'
 ffmpeg -i '21darieh__дарь_эх-VPInIrd5Hqc.opus' -filter:v "setpts=PTS/1.25" -filter:a "atempo=1.25" '21darieh__дарь_эх-VPInIrd5Hqc_spdx1.25.opus'
+
+mov -> mp4: ffmpeg -i correction_proposal_for_6_Mongolian_words.mov -vcodec h264 -acodec aac correction_proposal_for_6_Mongolian_words.mp4
 
 ﹖(https://unicodelookup.com/#question/1)
 
@@ -2327,8 +2334,6 @@ Rssian proficiency test preparation guids tips
 
 VPS: KVM: google BBR, OVZ
 
-visit badral.net @Apr.15
-
 javascript pitfalls gotcha
 
 http://nmg.ganji.com/jiajiao/2997882357x.htm
@@ -2345,13 +2350,9 @@ body:
 
 我能辅导的科目如下：
 Elementary to High School English(小学-->高中英语),
-
 Mongolian language (Traditional Vertical Script and Cyrillic)：蒙语辅导及蒙汉英3语翻译,
-
 Elementary to High School Math & Physics. (小学-->高中数学，初高中物理),
-
 日语，
-
 以及办公软件使用，程序编程，Excel, Word, PowerPoint, Mac系统使用方法。
 
 青工程师
@@ -2520,8 +2521,6 @@ dependency injection inversion of control
 major system Loci method Memory Palace
 19: tip, tap, top
 
-pte in mgl (ref books in bookstores)
-
 cashflow quadrant
 
 2018网购火车票支付宝
@@ -2534,8 +2533,6 @@ Jonathan Muller's C++Now 2018 talk on "Rethinking Pointers"
 
 https://bit.ly/swedencpp-cmake-workshop
 https://bit.ly/swedencpp-cmake-slides
-
-vs code multi-cursor (Cmd-lclick?)
 
 npm:
 npm install -g npm
@@ -2605,5 +2602,7 @@ parallel parking
 
 163.139.169.92:9999
 
-1. console.log(pteJS.name) -> bolor-toli.com/dic.asuult.net; 2. check against Үелэх_систем.png & chemistry books; 3. Ordered Map(elemNameEng,elemNameMgl) -> pteTMS.json; 4. compile to visualization -> jpg; 5. record pronunciation -> mov
+accessing web request and response from inside c++ program:
+1. console.log(pteJS.name) -> bolor-toli.com / http://asuult.net/dic/; 2. check against Үелэх_систем.png & chemistry books; 3. Ordered Map(elemNameEng,elemNameMgl) -> pteTMS.json; 4. compile to visualization -> jpg; 5. record pronunciation: 118 opus/mp3/webm
 
+c++ bolor-toli dictionary API
