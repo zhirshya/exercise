@@ -170,7 +170,6 @@ alias 123='enable -p #'
 alias mv='mv -i'
 alias cp='cp -i'
 alias date='date +"%Y%m%d %H%M%S.%N%::z%Z %A"'
-alias bc='bc -l' #echo "scale=3; 30000/7" | bc -l
 
 alias gcc='ccache gcc -std=c11 -Wall -Wextra -pedantic -ggdb3 -Og'
 alias gc+='ccache g++ -std=c++17 -Wall -Wextra -pedantic -ggdb3 -Og'
@@ -191,7 +190,7 @@ alias utvsr='utv -s -b100'
 alias lynx='lynx -cookies=off'
 #alias rtvl='echo "\$\?":$?'
 alias rtvl='echo "\$?":$?'
-alias grep='grep --exclude-dir={.git,.svn,.hg,.bzr,cvs,CVS} --color=auto -r -n -H -C 3 -i'
+alias grp='grep --exclude-dir={.git,.svn,.hg,.bzr,cvs,CVS} --color=auto -r -n -H -C 3 -i'
 alias src='source ~/.zshrc'
 
 #punctuation,symbol,rus word
