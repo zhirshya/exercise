@@ -1275,5 +1275,6 @@ function bc(){
 #todo: scale, round up...
 #https://stackoverflow.com/questions/37403950/round-up-the-bc-scale-instead-of-round-down-with-scale-or-printf
 #	scale=5;bc
-	bc -l
+#alias bc='bc -l' #echo "scale=3; 30000/7" | bc -l
+	env bc -l
 }
