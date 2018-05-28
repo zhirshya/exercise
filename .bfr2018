@@ -398,6 +398,7 @@ ACCU (Association of C and C++ Users)
 «end of c++»
 
 eecs,ict:
+arrow function: () => {}
 leap motion controller (Actions like rotating, zooming/scaling and panning are supported. Gestures are customizable)
 evolutionary algorithms
 fuzzy logic
@@ -589,6 +590,12 @@ You need the right 401k.... Better off investing in a Roth IRA... Right now wher
 >Why not the guaranteed 'company match' (if you have one) AND the 'lower tax rates in the 401K'? Further, you CAN invest both your 401k AND a rIRA. I did.
 
 «end of retirement»
+
+abbreviation:
+TOC: Table of Contents
+
+
+«end of abbreviation»
 
 en2mn2rus:
 Red Dot Sight Calibration
@@ -2611,6 +2618,4 @@ parallel parking
 accessing web request and response from inside c++ program:
 1. console.log(pteJS.name) -> bolor-toli.com / http://asuult.net/dic/; 2. check against Үелэх_систем.png & chemistry books; 3. Ordered Map(elemNameEng,elemNameMgl) -> pteTMS.json; 4. compile to visualization -> jpg; 5. record pronunciation: 118 opus/mp3/webm
 
-c++ bolor-toli dictionary API
-ffmpeg opus to mp3
-
+differenece between binary-coded decimal (BCD) and hex
