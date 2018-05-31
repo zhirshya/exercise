@@ -102,4 +102,11 @@ iabbrev rfrmrk ※
 inoremap <special> <F3> <c-r>=strftime('%Y-%m-%d %H:%M:%S')<CR>
 "even works for MacVim('mvim -v')
 
+"problematic on MacVim
 set statusline+=%F
+
+"http://vim.wikia.com/wiki/Auto_save_files_when_focus_is_lost
+:au FocusLost * :wa
+"Ignore warnings from untitled buffers
+:au FocusLost * silent! wa
+
