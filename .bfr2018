@@ -41,6 +41,8 @@ Cloning into '/Users/almas/dev/core/dictionaries'...
 
 alias ping='ping -c 6 -i 1.5 '
 
+rsmnkpsstprsvrr@pm.me .Abrvm*CH1*5
+
 $git remote -v
 github	https://github.com/LibreOffice/core.git (fetch)
 github	https://github.com/LibreOffice/core.git (push)
@@ -416,6 +418,8 @@ Interface segregation principle[7]
 Dependency inversion principle[9]
 one should "depend upon abstractions, [not] concretions."
 
+ØMQ (pronounced “Zero-M-Q”)—a high-efficiency, low-latency library for developing networked applications
+
 «kjellkod»
 
 hak:
@@ -598,6 +602,9 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+affiliate commissions
+http://bolor-toli.com/dictionary/word?search=debugging&selected_lang=4-1&see_usages=true&see_variants=true
+http://bolor-toli.com/dictionary/word?search=debugger&selected_lang=4-1&see_usages=true&see_variants=true
 fission: атомын задрал ᠠᠲ᠋ᠣᠮ ᠤᠨ ᠵᠠᠳᠠᠷᠠᠯ, цөмийн хуваагдал ᠴᠥᠮ᠎ᠡ ᠶᠢᠨ ᠬᠤᠪᠢᠶᠠᠭᠳᠠᠯ
 fusion: атомын нэгдэл
 Red Dot Sight Calibration
@@ -1073,6 +1080,7 @@ http://monscript.blogspot.com/ (jp?)
 http://monscript2.blogspot.com/
 http://www.mongol-bichig.com/
 http://khumuunbichig.montsame.mn/
+http://mongolian-script.blogspot.com/ (Erdenechimeg Myatav)
 
 << Si& finDwrnwzn& >> |mpEnI
 http://khumuunbichig.montsame.mn/index.php?home&readnews=598
@@ -1703,9 +1711,18 @@ cn2en2mn:
 海参崴
 
 en2cn:
-hair clay 发泥?
+hair clay 发泥
 
 js:
+Try catch is synchronous.
+
+Packages provide convenient ways of enabling and disabling certain debug lines when you start the application. For example, with debug it is possible to prevent any debug lines from being printed to the terminal by not setting the DEBUG environment variable. Using it is simple:
+// app.js
+var debug = require(‘debug’)(‘app’)
+debug(’Hello, %s!’, ‘world’)
+To enable debug lines, simply run this code with the environment variable DEBUG set to “app” or “*”:
+DEBUG=app node app.js
+
 const sortedCompanies = companies.sort((a,b) => a.start - b.start);
 https://www.youtube.com/watch?v=rRgD1yVwIvE
 Filter is used to SKIP unwanted items, and might return with less items or even NO items.
@@ -1963,6 +1980,17 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+what does "git submodule update --init" do?
+
+https://stackoverflow.com/questions/24057871/git-submodule-update-init-recursive-vs-git-submodule-foreach-recursive
+git submodule update --init --recursive
+vs
+git submodule foreach --recursive git submodule update --init
+
+git submodule update --init
+not
+git submodule init --update
+
 Updates were rejected because the remote contains work that you do not have:
 https://stackoverflow.com/questions/18328800/github-updates-were-rejected-because-the-remote-contains-work-that-you-do-not-h
 gl origin note_bfr --allow-unrelated-histories
@@ -2508,6 +2536,8 @@ autogen.input:
 --disable-cve-tests
 --without-junit
 
+Can "let" be used in nodejs?
+
 utv:
 yandex c++
 
@@ -2522,8 +2552,7 @@ REST API
 vanilla JavaScript
 
 Ant Financial
-Yu’e Bao
-lyrics: Прощание славянки
+Yu’e Bao: leftover money?
 
 北京社保 公积金转出
 
@@ -2531,7 +2560,6 @@ How to read a book
 A Mind for Numbers, How to Excel at Math and Science (even if you flunked at algebra) by Barbara Oakley
 
 what does "403 Forbidden" mean?
-embed pictures into audio file for youtube
 
 .hpp .hdl generated when build c++ project
 /Users/almas/lode/dev/core/xmloff/source/draw/sdpropls.cxx:569:32: error: unexpected namespace name 'WritingMode2': expected expression
@@ -2546,8 +2574,6 @@ static SvXMLEnumMapEntry const aXML_WritingMode_EnumMap[] =
     { XML_TB_LR,        text::WritingMode2::TB_LR },
     { XML_TOKEN_INVALID, -1 }
 };
-
-tools::Rectangle
 
 macos high sierra remove user and guest from command line
 
@@ -2653,8 +2679,34 @@ parallel parking
 
 163.139.169.92:9999
 
+pte:
+https://www.youtube.com/watch?v=nPEYdw2Ssa8&google_comment_id=z12lu3vwcvezth4oh04cdt1g0qacwl4hwec
+The periodic table has issued as a 2D structure. The transition metals (d block) and espesially the lanthanides (f-block) technically slot in and expand the table in ways that make it less useful, ideally it needs a 3D treatment or perhaps an expandable view.
+One issue: The atomic numbers are incrementing by five for each element.  To fix this, in css3d_periodictable.html change:
+number.textContent = i + 1;
+to
+number.textContent = (i/5) + 1;
+
+http://threejs.org/examples/css3d_periodictable.html
+http://graphoverflow.com/graphs/3d-periodic-table.html
+
+Here's where I'm stuck "element.onclick=function() {console.log('x');}" works like a charm, no issues there, but if I assign an id to the element "element.id = i;" and then try "element.onclick=function() {console.log(element.id)}" it prints the last index of the array always, no matter on what element I click on. I even tried "object.element.onclick=function() {console.log(object.element.id)}", and it's the same. I maybe missing something very basic or I maybe not very good in understanding certain javascript concepts. Either which ways now I'm trying to cast a ray on mouse down and see if I can identify the CSS3DObject that intersects it and through that get access to the element inside it. What I'm basically trying to do is extending the demo, and trying to center and focus the camera on each item that was clicked on, of the periodic table and show a little tool tip.
+
+What about enabling right-clicking to help us open the web inspector in a desktop browser, by adding something like the following into your click/mousedown handlers:
+if (e.which !== 1 || e.ctrlKey || e.altKey) { return; } ?
+
+why do you use translate3d(-50%, -50%, 0px) in addition to matrix3d on each element? Doesn't it give browser more work to do?
+> to move the pivot of the object from top left to the  center.
+
 accessing web request and response from inside c++ program:
 1. console.log(pteJS.name) -> bolor-toli.com / http://asuult.net/dic/; 2. check against Үелэх_систем.png & chemistry books; 3. Ordered Map(elemNameEng,elemNameMgl) -> pteTMS.json; 4. compile to visualization -> jpg; 5. record pronunciation: 118 opus/mp3/webm
 
-differenece between binary-coded decimal (BCD) and hex
+delheioffice todo:
+instdir/DelehiOffice6.1_SDK -> instdir/DelehiOffice2018_SDK
+
 js map reduce filter
+js pluck
+js reverse collection
+
+differenece between binary-coded decimal (BCD) and hex
+
