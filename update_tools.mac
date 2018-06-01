@@ -3,7 +3,7 @@
 #brew update && brew upgrade && brew upgrade git python3 python node youtube-dl code
 #Error: No available formula with the name "code"
 
-brew update && brew upgrade && brew upgrade git python3 python node youtube-dl ruby
+brew update && brew upgrade && brew upgrade git python3 pipenv python node youtube-dl ruby openssl
 
 #npm i npm
 #npm WARN saveError ENOENT: no such file or directory, open '/Volumes/DATA/package.json'
