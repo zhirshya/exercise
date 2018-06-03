@@ -428,6 +428,9 @@ one should "depend upon abstractions, [not] concretions."
 
 «kjellkod»
 
+awk:
+env grep -i "t in our dictionary" webResponse.out | awk -F '(<b>)|(</b>)' '{print $2}'
+
 hak:
 http://download.delehi.com/d/fonts/mnglwhiteotf.ttf
 
@@ -2741,3 +2744,6 @@ differenece between binary-coded decimal (BCD) and hex
 
 macos high sierra upgrade SSL
 Reactive Programming vs RESTful
+energy psychology
+conscientious vs conscious
+affiliate marketing
