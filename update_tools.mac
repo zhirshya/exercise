@@ -1,24 +1,6 @@
 #!/bin/sh
 
-#brew update && brew upgrade && brew upgrade git python3 python node youtube-dl code
-#Error: No available formula with the name "code"
-
-brew update && brew upgrade && brew upgrade git python3 pipenv python node youtube-dl ruby openssl
-
-#npm i npm
-#npm WARN saveError ENOENT: no such file or directory, open '/Volumes/DATA/package.json'
-#npm notice created a lockfile as package-lock.json. You should commit this file.
-#npm WARN enoent ENOENT: no such file or directory, open '/Volumes/DATA/package.json'
-#npm WARN DATA No description
-#npm WARN DATA No repository field.
-#npm WARN DATA No README data
-#npm WARN DATA No license field.
-#
-#+ npm@6.0.1
-#added 682 packages from 744 contributors in 18.943s
-#[!] 4 vulnerabilities found [5049 packages audited]
-#    Severity: 2 Low | 2 High
-#    Run `npm audit` for more detail
+brew update && brew upgrade && brew upgrade git python3 pipenv node youtube-dl ruby openssl
 
 npm install -g npm@latest
 npm update -g nodemon
@@ -42,7 +24,8 @@ python3 -m pip install -U pip
 #$pip -V
 #pip 10.0.1 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
 
-pip3 install --upgrade virtualenvwrapper virtualenv Flask tensorflow keras cppman itchat
+#pip3 install --upgrade virtualenvwrapper virtualenv  #virtualenv is unnecessary because of pipenv, what about virtualenvwrapper?
+pip3 install --upgrade PySocks Flask tensorflow keras cppman itchat
 
 #$ZSH/tools/upgrade.sh #Permission denied
 #https://github.com/robbyrussell/oh-my-zsh/issues/4078
