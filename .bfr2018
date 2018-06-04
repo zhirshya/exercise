@@ -2024,6 +2024,8 @@ The amend flag tells git to commit again, but "merge" (not in the sense of mergi
 >* You have some suspicious patch lines:
 >* trailing whitespace
 4. git add .
+	https://stackoverflow.com/questions/38198165/when-to-use-git-add-and-when-git-add-a
+	git add . adds only the folder you're currently in, git add -A adds all the folders in the repository.
 5. git commit --no-verify
 
 https://stackoverflow.com/questions/24057871/git-submodule-update-init-recursive-vs-git-submodule-foreach-recursive
