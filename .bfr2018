@@ -2014,6 +2014,18 @@ echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 git:
 what does "git submodule update --init" do?
 
+git All conflicts fixed but you are still merging: + "--no-verify"
+https://stackoverflow.com/questions/12481639/remove-files-from-git-commit
+If you want to completely delete the files/dirs from your local and the remote repository, you can:
+1.remove the files/dirs: git rm -r <file/dir>
+2.commit with amend flag: git commit --amend
+The amend flag tells git to commit again, but "merge" (not in the sense of merging two branches) this commit with the last commit.
+3. git merge --continue
+>* You have some suspicious patch lines:
+>* trailing whitespace
+4. git add .
+5. git commit --no-verify
+
 https://stackoverflow.com/questions/24057871/git-submodule-update-init-recursive-vs-git-submodule-foreach-recursive
 git submodule update --init --recursive
 vs
@@ -2747,3 +2759,5 @@ Reactive Programming vs RESTful
 energy psychology
 conscientious vs conscious
 affiliate marketing
+obliterate
+
