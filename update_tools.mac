@@ -25,7 +25,7 @@ python3 -m pip install -U pip
 #pip 10.0.1 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
 
 #pip3 install --upgrade virtualenvwrapper virtualenv  #virtualenv is unnecessary because of pipenv, what about virtualenvwrapper?
-pip3 install --upgrade PySocks Flask tensorflow keras cppman itchat
+pip3 install --upgrade PySocks Flask tensorflow keras cppman itchat pylint
 
 #$ZSH/tools/upgrade.sh #Permission denied
 #https://github.com/robbyrussell/oh-my-zsh/issues/4078
