@@ -611,6 +611,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+debit note付款通知书
+Accounts payable (AP) is an accounting entry that represents a company's obligation to pay off a short-term debt to its creditors or suppliers. ... Another common usage of AP refers to a business department or division that is responsible for making payments owed by the company to suppliers and other creditors.
 Anterior Pelvic Tilt
 fanny pack or bum bag is a small fabric pouch usually secured with a zipper and worn by use of a strap around the hips or waist.
 take it behind the shed
@@ -2061,17 +2063,18 @@ gl origin note_bfr --allow-unrelated-histories
 HEAD -> master, origin/master, origin/HEAD
 origin/HEAD -> origin/master
 
-https://stackoverflow.com/questions/53569/how-to-get-the-changes-on-a-branch-in-git
-git diff HEAD..branch is identical to git diff HEAD branch. The key thing to remember here is that log takes a list/range of revisions, while diff doesn't.
-git log HEAD..branch
-
 Difference between git merge vs rebase
 
 glgga: git log --graph --decorate --all
 
+https://stackoverflow.com/questions/4950725/how-do-i-get-git-to-show-me-which-branches-are-tracking-what
+
 git remote -v show origin (gr -v show origin)
 
 https://stackoverflow.com/questions/53569/how-to-get-the-changes-on-a-branch-in-git
+git diff HEAD..branch is identical to git diff HEAD branch. The key thing to remember here is that log takes a list/range of revisions, while diff doesn't.
+git log HEAD..branch
+
 gd DelehiOffice2015 master > ~/bkup/git_diff_DelehiOffice2015_master
 warning: inexact rename detection was skipped due to too many files.
 warning: you may want to set your diff.renameLimit variable to at least 25812 and retry the command.
@@ -2789,9 +2792,19 @@ python3 modify json file add 'ProperTranslation':false to empty MglName record
 
 <a href="javascript:void(0)" onclick="searchThisWord('консервлох')" class = "link-string">консервлох</a> <span style="font-size: 12px; color: #8a6d3b" class="ms-font">ᠻᠣᠨᠰᠧᠷᠸᠯᠠᠬᠤ<sup>mb</sup></span><span style="font-size: 11px"> </span>
 
+nodejs:
+npm list -g --depth=0
+npm list --depth=0
+npm ls
 
 comment: S-Z_N7dAyi0
 comment: android gracefully decline calls Et--uvozgUM
 audiobook think and grow rich
 tim grover relentless
 javascript reverse object
+gb182c TMS
+best way to pack business suits
+
+{"atomicNumber":51,"symbol":"Sb","name":"Antimony","nameMgl":"ᠰᠣᠿᠮᠠ","atomicMass":"121.760(1)","cpkHexColor":"9E63B5","electronicConfiguration":"[Kr] 4d10 5s2 5p3","electronegativity":2.05,"atomicRadius":138,"ionRadius":"76 (+3)","vanDelWaalsRadius":"","ionizationEnergy":834,"electronAffinity":-103,"oxidationStates":"-3, 3, 5","standardState":"solid","bondingType":"metallic","meltingPoint":904,"boilingPoint":1860,"density":6.697,"groupBlock":"metalloid","yearDiscovered":"Ancient","origin":"Russian"},
+
+
