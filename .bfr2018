@@ -2050,6 +2050,8 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+git config --global --unset core.gitproxy
+
 what does "git submodule update --init" do?
 
 git All conflicts fixed but you are still merging: + "--no-verify"
