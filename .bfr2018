@@ -619,6 +619,7 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+close/exit the app
 blowdry
 conjugation
 declension
@@ -2845,10 +2846,15 @@ https://github.com/facebook/create-react-app
 https://dzone.com/articles/two-methods-for-building-your-first-mern-stack-app
 there is a lot of semi-advanced stuff in the starter project. If you don’t know Docker, it might be confusing. It also has several webpack configs that can be hard to follow if you’re not super familiar with webpack. There are util folders in the client and server of the application that can be hard to understand for those new to React, Node, or testing with JavaScript. There may also be things in the application template that you don’t need or want if you use a different testing framework, mocking library, or build service.
 
-technical proposal reference: https://da-14.com/blog/python-vs-nodejs-which-better-your-project
+technical proposal reference:
+https://da-14.com/blog/python-vs-nodejs-which-better-your-project
 https://daveceddia.com/create-react-app-express-backend/
 https://daveceddia.com/deploy-react-express-app-heroku/
 https://daveceddia.com/how-to-learn-react/
+
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+Express 是 Node.js 基金会的一个项目，是一种保持最低程度规模的灵活 Node.js Web 应用程序框架，为 Web 和移动应用程序提供一组强大的功能。
+
 
 How to Invest
 https://www.youtube.com/watch?v=QSmEJt2xMaI
@@ -2861,3 +2867,4 @@ https://www.youtube.com/watch?v=i5wfnGktm0o
 stone cold sober
 I want in a tall glass (regular screwdriver) orange juice on ice with a splash of water
 
+nodejs or python app to crawl youtube comments
