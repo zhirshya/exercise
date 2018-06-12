@@ -1,6 +1,6 @@
 #!/bin/sh
 
-brew update && brew upgrade && brew upgrade git python3 pipenv node youtube-dl ruby openssl
+brew update && brew upgrade && brew upgrade git python3 pipenv node youtube-dl ruby openssl mongodb
 
 npm install -g npm@latest
 npm update -g nodemon
