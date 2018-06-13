@@ -617,6 +617,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+liaison
+severance package
 close/exit the app
 blowdry
 conjugation
@@ -2847,6 +2849,7 @@ https://dzone.com/articles/two-methods-for-building-your-first-mern-stack-app
 there is a lot of semi-advanced stuff in the starter project. If you don’t know Docker, it might be confusing. It also has several webpack configs that can be hard to follow if you’re not super familiar with webpack. There are util folders in the client and server of the application that can be hard to understand for those new to React, Node, or testing with JavaScript. There may also be things in the application template that you don’t need or want if you use a different testing framework, mocking library, or build service.
 
 technical proposal reference:
+https://dzone.com/articles/kubernetes-and-mean-stack-for-microservices-develo
 https://da-14.com/blog/python-vs-nodejs-which-better-your-project
 https://daveceddia.com/create-react-app-express-backend/
 https://daveceddia.com/deploy-react-express-app-heroku/
@@ -2867,7 +2870,7 @@ https://www.youtube.com/watch?v=i5wfnGktm0o
 stone cold sober
 I want in a tall glass (regular screwdriver) orange juice on ice with a splash of water
 
-nodejs or python app to crawl youtube comments: https://www.youtube.com/watch?v=i5wfnGktm0o, https://www.youtube.com/watch?v=xNE3ymRlwdc, 
+nodejs or python app to crawl youtube comments: https://www.youtube.com/watch?v=i5wfnGktm0o, https://www.youtube.com/watch?v=xNE3ymRlwdc, https://www.youtube.com/watch?v=Zn9ejR2VW94
 
 technical proposal document for MERN web app
 docker kubernetes MERN架构应用程序方案
