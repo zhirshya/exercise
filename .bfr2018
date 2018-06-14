@@ -1881,7 +1881,8 @@ exclude directories in find command:
 sudo find / -not \( -path /private -prune \) -not \( -path /dev -prune \) -type f -iname "WritingMode2.h*" -exec ls -lAhF {} +
 https://stackoverflow.com/questions/4210042/how-to-exclude-a-directory-in-find-command/47341478#47341478
 find /Volumes/DATA -not \( -path '/Volumes/DATA/node_modules*' -prune \) -not \( -path '/Volumes/DATA/amule' -prune \) -not \( -path '/Volumes/DATA/tnsrfl' -prune \) -type f -iname "dl*" -o -iname "dn*"
-A more precise (and POSIX compatible) variation of this method: find searchdir \! \( -type d \( -path './excludedir/*' -o -path './excludedir2/*' -o -path './excludedir3/*' \) -prune \) followed by any conditions that should match what you are looking for.
+A more precise (and POSIX compatible) variation of this method: find searchdir \! \( -type d \( -path './excludedir/*' -o -path './excludedir2/*' -o -path './excludedir3/*' \) -prune \) followed by any conditions that should match what you are looking for:
+find /Volumes/DATA \! \( -type d \( -path '/Volumes/DATA/node_modules*' -o -path '/Volumes/DATA/amule' -o -path '/Volumes/DATA/tnsrfl' \) -prune \) -type f -iname "dl*" -o -iname "dn*"
 
 lo:
 libreoffice@lists.freedesktop.org
