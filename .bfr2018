@@ -390,7 +390,7 @@ compile debug c++ program using llvm lldb
 c++ programmatically click "Read more", "View reply" and "View all xyz replies" to expand comments
 https://www.youtube.com/watch?v=vsMydMDi3rI
 
-apple CoreText tutorial
+apple CoreText
 
 ACCU (Association of C and C++ Users)
 
@@ -418,6 +418,17 @@ Dependency inversion principle[9]
 one should "depend upon abstractions, [not] concretions."
 
 ØMQ (pronounced “Zero-M-Q”)—a high-efficiency, low-latency library for developing networked applications
+AMQP (Advanced Message Queueing Protocol)
+
+splice ( ≈ concat), pluck ( ≈ split)
+
+µservice
+microservice:
+Microservices also bring other problems, such as making it hard to debug and trace execution calls, because they span multiple processes and machines. Luckily, these problems are now being addressed with distributed tracing systems such as Zipkin.
+
+
+«end of microservice»
+
 
 «kjellkod»
 
@@ -613,6 +624,13 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+conscientious:
+1: meticulous, careful a conscientious listener.
+2: governed by or conforming to the dictates of conscience : scrupulous a conscientious public servant.
+conscience
+conscious vs conscience: Both words have to do with the mind, but it's more important to be conscious, or awake, than conscience, or aware of right and wrong. Remain conscious while listening to your friend's moral dilemma so you can use your conscience to give good advice.
+Conscience is a noun meaning “sense of the quality of one’s character and conduct,” “adherence to moral principles,” and “consideration of fairness and justice.” Confusion between conscience and conscious occurs because the latter word is sometimes used as a noun synonymous with consciousness, meaning “mental awareness,” though the longer form is usually employed.
+
 on-premises
 pilot
 helmsman
@@ -2805,7 +2823,6 @@ differenece between binary-coded decimal (BCD) and hex
 macos high sierra upgrade SSL
 Reactive Programming vs RESTful
 energy psychology
-conscientious vs conscious
 affiliate marketing
 obliterate
 
@@ -2877,3 +2894,5 @@ docker kubernetes MERN架构应用程序方案
 design and implement MERN app microservice docker kubernetes
 dokrkubrnetes .d*G*9 :https://www.docker.com
 
+merriam android app appbrain
+Microservice Architecture for the Enterprise
