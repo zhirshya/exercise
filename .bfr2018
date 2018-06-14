@@ -2896,3 +2896,5 @@ dokrkubrnetes .d*G*9 :https://www.docker.com
 
 merriam android app appbrain
 Microservice Architecture for the Enterprise
+Minikube also supports a –vm-driver=none option that runs the Kubernetes components on the host and not in a VM. Docker is required to use this driver but a hypervisor is not required.
+nodejs python3 youtube/bitchute new video {"title": , "postDate": , "length":}
