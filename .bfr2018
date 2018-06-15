@@ -626,6 +626,7 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+fasting: мацаг барих
 conscientious:
 1: meticulous, careful a conscientious listener.
 2: governed by or conforming to the dictates of conscience : scrupulous a conscientious public servant.
@@ -2897,6 +2898,10 @@ there is a lot of semi-advanced stuff in the starter project. If you don’t kno
 technical proposal reference:
 https://dzone.com/articles/kubernetes-and-mean-stack-for-microservices-develo
 https://da-14.com/blog/python-vs-nodejs-which-better-your-project
+
+Build a React Application with User Authentication in 15 Minutes
+https://developer.okta.com/blog/2017/03/30/react-okta-sign-in-widget
+
 https://daveceddia.com/create-react-app-express-backend/
 https://daveceddia.com/deploy-react-express-app-heroku/
 https://daveceddia.com/how-to-learn-react/
@@ -2949,3 +2954,4 @@ Pierre Bourdieu (1986) "The Forms of Capital"
 
 different types of capital that make up a balanced life: Personal capital, emotional capital, social capital and financial capital. 
 
+(详情可在查阅)
