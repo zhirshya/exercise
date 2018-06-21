@@ -1247,6 +1247,7 @@ function prndt(){
 
 	env printf '$(env date +"%%Y%%m%%d %%H:%%M:%%S"):%s\n' "$(env date +"%Y%m%d %H:%M:%S")"
 	env printf '$(env date +"%%Y%%m%%d-%%H:%%M:%%S"):%s\n' "$(env date +"%Y%m%d-%H:%M:%S")"
+	env printf '$(env date +"%%Y%%m%%d%%H:%%M:%%S"):%s\n' "$(env date +"%Y%m%d%H:%M:%S")"
 	env printf '$(env date +"%%Y-%%m-%%d %%H:%%M:%%S"):%s\n' "$(env date +"%Y-%m-%d %H:%M:%S")"
 	env printf '$(env date +"%%Y/%%m/%%d %%H:%%M:%%S"):%s\n' "$(env date +"%Y/%m/%d %H:%M:%S")"
 
