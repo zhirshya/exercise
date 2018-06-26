@@ -2296,7 +2296,7 @@ glgga: git log --graph --decorate --all
 
 https://stackoverflow.com/questions/4950725/how-do-i-get-git-to-show-me-which-branches-are-tracking-what
 
-git remote -v show origin (gr -v show origin)
+git remote -v show origin (gr -v show origin) # sometimes, checking content of ".git/config" may make things clear
 
 https://stackoverflow.com/questions/53569/how-to-get-the-changes-on-a-branch-in-git
 git diff HEAD..branch is identical to git diff HEAD branch. The key thing to remember here is that log takes a list/range of revisions, while diff doesn't.
@@ -3123,3 +3123,5 @@ remuneration
 brew tap caskroom/cask && brew cask install gimp
 
 berevment
+todo: learning to use crimp tool to make eth cable at work
+book: Enlightened Office Politics: Understanding, Coping With, and Winning the Game--without Losing Your Soul
