@@ -446,7 +446,7 @@ one should "depend upon abstractions, [not] concretions."
 ØMQ (pronounced “Zero-M-Q”)—a high-efficiency, low-latency library for developing networked applications
 AMQP (Advanced Message Queueing Protocol)
 
-splice ( ≈ concat), pluck ( ≈ split)
+SHA256SUMS.gpg file is the GnuPG signature for SHA256SUMS.
 
 µservice
 microservice:
