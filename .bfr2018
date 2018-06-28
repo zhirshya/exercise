@@ -35,6 +35,30 @@ This will make coping much easier. Social decorum dictates that most intimacy do
 Improve Your Home Life And/Or Add Extracurricular Activities:
 So many of us get absolutely absorbed in work. It is our lives. When this is the case it is perfectly natural to look for affection and intimacy at work. Make yourself and your social life outside of work a priority. Once other people enter your life, the attraction for that colleague often disappears.
 
+Reasons Why You Need To Engage In Office Politics:
+You start a new job. You’re getting to know your co-workers, sizing them up, learning everyone’s roles and positions at the company. You’re figuring out who you jive with, who you may butt heads with, who the office clown is. But then it happens: A co-worker makes a comment to you, outside the presence of other employees, about one of your co-workers.
+They’re waiting to see how you respond. Do you know how to handle yourself in this type of situation? You should probably have a plan, because chances are, it’s something you’ll encounter at some point—or, more likely, often—during your career. According to a recent study, 80% of people surveyed said they experience office politics, and gossip is the most common form.
+And the real kicker? Most respondents said that participating in office politics is necessary to advance your career.
+You want your colleagues to like you, so you don’t want to leave them hanging when they initiate the gossip, but you also don’t want to get involved in the drama that will likely ensue if you disparage a fellow employee. And gossip isn’t the only form of office politics to worry about—there’s the colleague who takes credit for everyone else’s work, the one who sabotages everyone else to get ahead, and the fake who uses incessant flattery to manipulate their colleagues.
+This is a lot to deal with, but there’s no need to fret.
+There are ways to get involved with office politics in a way that won’t tarnish your professional reputation and can even benefit your career.
+First off, make sure to always keep your radar on so that you detect the presence of negative office politics that may affect you early on and handle the situation before it’s too late. Is there a colleague who always disagrees with you or openly demeans you? Are you being left off of important correspondence or out of meetings? Watch out for the red flags—awareness is everything.
+...
+When dealing with an office gossip, always exercise tact.
+If your co-worker persists with the gossip, try to stay as diplomatic as possible, or attempt to politely end the conversation. One best practice here is to think about how you’re going to handle it in advance—what will you say?
+My recommendation? Saying “I’m so sorry you feel that way.” And then silence. When you respond empathetically, but without engaging, you’ve officially made yourself boring to gossip to. And that is ideal.
+If you’re dealing with more obvious, aggressive office politics, like an individual who is sabotaging you for their own benefit, you might need to take a more direct approach. Document your exchanges with this individual, and speak to them first (always). Prepare to approach the person in a non-personal, curious manner, saying something like: “Hey, can we talk for a moment? I noticed you did X, and I just wanted to see where you were coming from. For me, it appeared almost as if you were Y, but I know that’s not your character. Is this just a misinterpretation on my end?” By giving the person the benefit of the doubt, and bringing it to their attention, you’ve stood your ground without attacking their character. Avoid personal attacks at all costs, and if the circumstances continue to escalate, reaching out to a manager or member of HR might be necessary.
+On the flip side, make sure to proactively participate in positive office politics. Ask a superior to counsel or mentor you so that you have a trusted ally if an issue arises.
+Getting sucked into the negative office politics is a slippery slope that can have a major impact on your career, both short and long term. And remember: disengaging from all office politics is not the answer. As Buddha says: “Rule your mind, or it will rule you.” Those who excel in the workforce understand that they must effectively participate in the good, the bad and the ugly... And that means learning how to master office politics—when to empathize and remain neutral, when to stand up for yourself, and when to leverage the joys of positive politics.
+
+Keep Your Eyes on the Goal
+Remind yourself, as many times as it takes, that you’re not engaging in office politics for fun or to be one of “them;” you’re doing it for two reasons: career success and job fulfillment. When you get caught up emotionally, you run the risk of making decisions you’ll regret down the road. Gossiping, backstabbing, manipulating, and the rest are not needed to win at office politics. Keeping your eyes on the goal lets you develop and maintain a strategic approach for dealing with your workplace’s unique political atmosphere.
+Navigating office politics works best when you follow the golden rule of negotiating: end with everybody feeling like they won.
+Never Pit Rivals Against One Another:
+One situation that everybody dreads is getting caught between two warring parties. In a situation like that, it’s easy to tell each of them what they want to hear, even if that’s just nodding in agreement when they bad-mouth each other. But fake allegiances are always exposed in the long run, and then, neither of the people you were trying to impress will trust you again. Instead, steer your conversations back to the facts: What decisions need to be made? What are the next steps? What can I do to help improve this situation?
+It’s a lot better to be a competent, conscious player than to be a bystander or a pawn in the game.
+The key is to understand the players and the rules and then to play the game in a way that aligns with your personal values and principles. Don’t be fooled into compromising “just this once,” because once is all it takes to lose control.
+
 010010
 呼和浩特市新华东街89号维力斯酒店13F西
 内蒙古德力海信息技术有限公司
@@ -690,7 +714,9 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
-dead lift
+Peaceful coexistence ensures that you remain afloat when negative politics arise.
+
+deadlift
 bench press
 
 parallel parking
@@ -3173,3 +3199,13 @@ admin@emtrek.org outlook haven't received activation link email
 
 how many algorithms in C++ STL?
 git-hooks for lode dev only: install the necessary git-hooks to be able to push a commit to lode via gerrit.
+
+#using pre-existing lode on mac for windows build
+$ ./autogen.sh
+Can't locate Automake/Config.pm in @INC (you may need to install the Automake::Config module) (@INC contains: /Users/almas/lode/opt/share/automake-1.14 /usr/local/lib/perl5/site_perl/5.26/x86_64-cygwin-threads /usr/local/share/perl5/site_perl/5.26 /usr/lib/perl5/vendor_perl/5.26/x86_64-cygwin-threads /usr/share/perl5/vendor_perl/5.26 /usr/lib/perl5/5.26/x86_64-cygwin-threads /usr/share/perl5/5.26) at /cygdrive/e/opt/bin/aclocal line 37.
+BEGIN failed--compilation aborted at /cygdrive/e/opt/bin/aclocal line 37.
+Failed to run aclocal at ./autogen.sh line 185.
+
+javascript typescript tracing and debugging better than using alert
+Debugging JavaScript/TypeScript Node apps with Chrome DevTools, VS Code
+
