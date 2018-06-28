@@ -690,6 +690,9 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+dead lift
+bench press
+
 parallel parking
 
 breather ᠠᠮᠢᠰᠬᠣᠭᠣᠯᠣᠭᠴᠢ ?
@@ -3169,3 +3172,4 @@ book: Enlightened Office Politics: Understanding, Coping With, and Winning the G
 admin@emtrek.org outlook haven't received activation link email
 
 how many algorithms in C++ STL?
+git-hooks for lode dev only: install the necessary git-hooks to be able to push a commit to lode via gerrit.
