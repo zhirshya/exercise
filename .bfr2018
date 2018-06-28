@@ -457,9 +457,6 @@ Microservices also bring other problems, such as making it hard to debug and tra
 
 «end of microservice»
 
-
-«kjellkod»
-
 awk:
 env grep -i "t in our dictionary" webResponse.out | awk -F '(<b>)|(</b>)' '{print $2}'
 
@@ -468,14 +465,14 @@ http://download.delehi.com/d/fonts/mnglwhiteotf.ttf
 
 libreoffice how to mark annotate corrections
 
+du -sch ./workdir
+
 «EOF»
 
 apt update && apt full-upgrade
 Note that if you haven’t updated your Kali installation in some time (tsk2), you will like receive a GPG error about the repository key being expired. Fortunately, this issue is quickly resolved by running the following as root:
 
 wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add
-
-ээж
 
 grammar:
 nominative case =subject
@@ -693,6 +690,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+parallel parking
+
 breather ᠠᠮᠢᠰᠬᠣᠭᠣᠯᠣᠭᠴᠢ ?
 remuneration
 
@@ -3024,20 +3023,18 @@ Google Analytics
 http://trans.mglip.com/EnglishC2T.aspx
 
 copypaste:
+ээж
+
 这字是正字吗？若是，什么意思？
 微信小程序
 Delkhei
 
-SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world, or upload your own. Start listening now!
+SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world, or upload your own.
 
 vim:
 "   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
 
 jekyll serve --livereload
-
-ut: bench press
-parallel parking
-
 
 163.139.169.92:9999
 
