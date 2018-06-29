@@ -3211,3 +3211,6 @@ Debugging JavaScript/TypeScript Node apps with Chrome DevTools, VS Code
 
 solr search engine
 search engine: google vs yandex
+
+network proxy bypass address: *.local, 169.254/16
+
