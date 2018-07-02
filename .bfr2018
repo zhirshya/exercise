@@ -3253,4 +3253,13 @@ search engine: google vs yandex
 
 network proxy bypass address: *.local, 169.254/16
 
+c++ program to check encoding of file
+
+Determining File Encoding & Character Set via Command Line in Mac OS
+file -I (input file)
+relations of locale encoding and fonts
+see if changing encoding solve the following garble: ascii -> utf-8
+Tin ᠴᠠᠭᠠᠨ ᠲᠤᠭᠤᠯᠭ<U+180E>ᠠ
+Lead ᠬᠠᠷ<U+180E>ᠠ ᠲᠣᠭᠣᠯᠭ<U+180E>ᠠ
+Bismuth ᠪᠢᠰᠮᠦᠲ᠋",
 
