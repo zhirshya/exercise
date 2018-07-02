@@ -719,11 +719,14 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+Uruguay: Уругвай (Уруг¦вай)
 backhand spring
 backflip
 frontflip
 soccer flip throw
 sideflip
+
+sprain:	шөрмөс шидрэх ᠰᠢᠷᠪᠦᠰᠦ ᠰᠢᠳᠡᠷᠡᠬᠦ
 
 Peaceful coexistence ensures that you remain afloat when negative politics arise.
 
@@ -3262,4 +3265,6 @@ see if changing encoding solve the following garble: ascii -> utf-8
 Tin ᠴᠠᠭᠠᠨ ᠲᠤᠭᠤᠯᠭ<U+180E>ᠠ
 Lead ᠬᠠᠷ<U+180E>ᠠ ᠲᠣᠭᠣᠯᠭ<U+180E>ᠠ
 Bismuth ᠪᠢᠰᠮᠦᠲ᠋",
+
+iconv -f ISO-8859-1 -t UTF-8 < input.txt > output.txt
 
