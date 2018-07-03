@@ -1,6 +1,9 @@
-Money is power. Power to do whatever whenever with whomever for however long you want.
-
 I must lose myself in action, lest I wither in despair.
+
+It is extremely important to keep your biological age substantially younger than your chronological age.
+https://www.youtube.com/watch?v=XExB45GRrfc
+
+Money is power. Power to do whatever whenever with whomever for however long you want.
 
 Grind it out, push yourselft to finish the work! Espcially when you don't really feel like doing it! (https://www.youtube.com/watch?v=IpvMb4AZ4XI)
 
@@ -601,11 +604,14 @@ Data Structures and Network Algorithms (CBMS-NSF Regional Conference Series in A
 If you intend to place a wifi adapter in Monitor mode, you have got to have a primary network/Internet connection, either an ethernet adapter or another Wifi stick for both Internet access and not losing remote control of the VM/raspberry.
 
 difficult en:
+convolution
+Convolutional Neural Networks
 genesis
 anomaly
 false dichotomy
 affiliate commissions
 verdict
+liaison
 
 en:
 https://english.stackexchange.com/questions/452764/correct-prepositions-to-use-with-treat-and-hold
@@ -719,6 +725,9 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+redactor: эрхлэгч ᠡᠷᠬᠢᠯᠡᠭᠴᠢ, эмхэтгэгч ᠡᠮᠬᠢᠳᠬᠡᠭᠴᠢ : one who redacts a work; especially : editor.
+
+ACV: Apple Cider Vinegar
 Uruguay: Уругвай (Уруг¦вай)
 backhand spring
 backflip
@@ -2375,6 +2384,9 @@ echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 git:
 git config --global --unset core.gitproxy
 
+git fetch && git checkout origin/master -- <file>
+gf && gco origin/master -- <file>
+
 what does "git submodule update --init" do?
 
 git All conflicts fixed but you are still merging: + "--no-verify"
@@ -3260,6 +3272,8 @@ c++ program to check encoding of file
 
 Determining File Encoding & Character Set via Command Line in Mac OS
 file -I (input file)
+
+ask @ softwareengineering.stackexchange.com
 relations of locale encoding and fonts
 see if changing encoding solve the following garble: ascii -> utf-8
 Tin ᠴᠠᠭᠠᠨ ᠲᠤᠭᠤᠯᠭ<U+180E>ᠠ
@@ -3269,4 +3283,7 @@ Bismuth ᠪᠢᠰᠮᠦᠲ᠋",
 iconv -f ISO-8859-1 -t UTF-8 < input.txt > output.txt
 
 grep "deb-src http://archive.ubuntu.com/ubuntu" /etc/apt/sources.list
+
+https://stackoverflow.com/questions/7062698/data-structure-for-multi-language-dictionary
+Data structure for multi-language dictionary?
 
