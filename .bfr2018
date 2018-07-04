@@ -3312,3 +3312,8 @@ grep "deb-src http://archive.ubuntu.com/ubuntu" /etc/apt/sources.list
 https://stackoverflow.com/questions/7062698/data-structure-for-multi-language-dictionary
 Data structure for multi-language dictionary?
 
+https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-keeping-the-order-of-the-lines
+Schwartzian transform
+cat -n dllst | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > dllst_sort
+cat -n dllst | sort -uk2 | sort -nk1 | cut -f2- > dllst_sort_2
+
