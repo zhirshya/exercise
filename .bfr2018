@@ -614,6 +614,19 @@ verdict
 liaison
 
 en:
+You can breathe through your nose and have all of those problems, though. It's having your tongue slathered onto your palate that would have made the difference. You can breathe through your nose but still have your tongue sitting at the bottom of your mouth, which would still cause malocclusion and improper growth of the maxilla and mandibles.
+
+That would seem to be at the heart of a lot of cranio facial problems.  Nasal obstruction is not normal and should be addressed ASAP.
+
+wearing braces
+
+You mean the posterior third of the tongue? Try and say the word "wing", but holding the "NG" sound, that  will get your tongue up there.
+if you imagine getting the back of your tongue up as far posteriorly as your uvula you should hit the spot. I thought i had my posterior third up but i didnt realize how far posterior it needed to be. Huge difference now.
+
+Do NOT push it against teeth. Just palate. Pushing it against the teeth will push your teeth forward and might create an overbite or other nasty side effects.
+
+I just turned 20 two days ago. I have a severe underbite (like, my lower jaw isn't just pushed back, it's caved in when I bite down). I have been doing tongue posture for a few months now to the point that second nature, and I see positive changes like cheekbones growing. But my lower jaw is awfully narrow (my upper jaw was expanded years ago when I had braces) and still juts out. Do you think that this is because I don't bite down? What should I do?
+
 https://english.stackexchange.com/questions/452764/correct-prepositions-to-use-with-treat-and-hold
 A: Do you cook yourself? What did you cook last?
 B: I made salad, it's tasty, I will treat you to it later. ("I'll treat you to some of it later" sounds more natural.)
@@ -725,6 +738,17 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+Overbite is a type of malocclusion that occurs when the lower and upper jaws and/or teeth are not aligned, causing the upper front teeth to cover the lower front teeth. Most often an overbite is hereditary, but it can also be caused by the jaw not forming correctly. Childhood tendencies such as thumb-sucking or prolonged bottle-feeding or pacifier use can cause or worsen an overbite.
+
+https://dentagama.com/news/malocclusion-difference-between-overbite-overjet-and-open-bite
+malocclusion - difference between overbite, overjet and open bite
+
+orthodontics
+orthotropic
+plagiotropic
+
+maxilla
+
 redactor: эрхлэгч ᠡᠷᠬᠢᠯᠡᠭᠴᠢ, эмхэтгэгч ᠡᠮᠬᠢᠳᠬᠡᠭᠴᠢ : one who redacts a work; especially : editor.
 
 ACV: Apple Cider Vinegar
@@ -3275,7 +3299,8 @@ file -I (input file)
 
 ask @ softwareengineering.stackexchange.com
 relations of locale encoding and fonts
-see if changing encoding solve the following garble: ascii -> utf-8
+
+"editor.fontFamily": "Mongolian White"(command-, VS Code) make following 3 words display correctly(Tsatsulga garble).
 Tin ᠴᠠᠭᠠᠨ ᠲᠤᠭᠤᠯᠭ<U+180E>ᠠ
 Lead ᠬᠠᠷ<U+180E>ᠠ ᠲᠣᠭᠣᠯᠭ<U+180E>ᠠ
 Bismuth ᠪᠢᠰᠮᠦᠲ᠋",
