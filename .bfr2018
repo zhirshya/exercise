@@ -2406,6 +2406,11 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+User, Organization, and Project Pages: project -> user/organization
+https://help.github.com/articles/changing-a-remote-s-url/
+git remote set-url origin git@github.com:zhirshya/zhirshya.github.io.git
+No need to manually rename the repo via browser on github.com? Will only pushing from local repo after the above command automatically suffice?
+
 git config --global --unset core.gitproxy
 
 git fetch && git checkout origin/master -- <file>
