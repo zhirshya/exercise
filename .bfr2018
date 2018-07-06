@@ -163,6 +163,11 @@ Fn
 
 502 Bad Gateway
 
+set JAVA_HOME in Ubuntu:
+sudo update-alternatives --display java
+update-alternatives --config java
+/etc/environment
+
 javac -version
 java -version
 /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -version
