@@ -540,6 +540,10 @@ brew update && brew upgrade && brew upgrade python git sourcetree make cmake nod
 
 sudo softwareupdate -ia --verbose
 
+VirtualBox:
+sudo apt install build-essential module-assistant dkms
+sudo m-a prepare ?
+
 VirtualBox Guest Additions in Kali Rolling / Kali Linux 2016.2 / Kali 2017
 https://www.blackmoreops.com/2017/01/24/install-virtualbox-guest-additions-in-kali-linux/
 apt update & apt -y dist-upgrade
@@ -548,6 +552,10 @@ cat /proc/version
 apt -y install virtualbox-guest-x11
 
 Kali 2018.1 in VirtualBox: uncheck: 3D acceleration and EFI.
+
+How to add an existing user to an existing user group and verify it is added?
+sudo usermod -a -G group user
+groups
 
 aduqinnm@abchina.com
 
