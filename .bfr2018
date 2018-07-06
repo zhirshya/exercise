@@ -767,6 +767,7 @@ sprain:	шөрмөс шидрэх ᠰᠢᠷᠪᠦᠰᠦ ᠰᠢᠳᠡᠷᠡᠬᠦ
 
 Peaceful coexistence ensures that you remain afloat when negative politics arise.
 
+barbell
 deadlift
 bench press
 
@@ -2115,6 +2116,8 @@ https://note.mu/ihayato/n/nc851aa610fa4
 残業続きなのはもちろん、毎日会社の成績のことばかりで頭がいっぱい、緊張状態を強いれられているようでは、副業はおろか、プライベートな活動を楽しむ余裕すらなくなります。
 
 cn2en2mn:
+藤盒 rattan box
+藤垫 rattan mat
 叫外卖 order takeout?
 聚酯纤维 polyester
 聚乙烯 polyethylene
@@ -3325,4 +3328,6 @@ https://unix.stackexchange.com/questions/194780/remove-duplicate-lines-while-kee
 Schwartzian transform
 cat -n dllst | sort -k2 -k1n | uniq -f1 | sort -nk1,1 | cut -f2- > dllst_sort
 cat -n dllst | sort -uk2 | sort -nk1 | cut -f2- > dllst_sort_2
+
+libreoffice build in ubntu 18.04 error recipe for target libreoffice/instdir/program/libmsfilterlo.so failed
 
