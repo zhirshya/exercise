@@ -3017,10 +3017,15 @@ How would a dopamine antagonist work? … continue asking yourself elaborative q
 
 
 asuult:
-Cursive writing of Mongolian numbers
+ᠶᠢᠨ ᠢᠶᠡᠨ
+
+handwriting of Mongolian numbers
 
 ask @ softwareengineering.stackexchange.com
-relations of locale encoding and fonts
+relations of IME, fonts and rendering
+keyboard input => IME select glyphs or ligatures from font files => editors render?
+
+How input method editor works?
 
 c++ declare class inside unnamed namespace inside another class's source file
 
@@ -3398,5 +3403,7 @@ libreoffice build in ubntu 18.04 error recipe for target libreoffice/instdir/pro
 
 traditional Mongolian vertical letf-to-right writing support
 
-How input method editor works?
+bainu:
+ᠰᠢᠳᠦᠨ ᠤ ᠠᠪᠣᠴᠠᠯᠳᠣᠯ ᠢᠶᠡᠨ ᠲᠡᠭᠰᠢᠯᠡᠬᠦ
+meaningful uplifting neural pathways and muscle memories
 
