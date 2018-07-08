@@ -629,6 +629,9 @@ interpolate
 liaison
 
 en:
+Excuse me, hang on a second, I'll be with you in a second.
+Would you mind if I make a call, would it disturb you?
+
 palate:
 1 : the roof of the mouth separating the mouth from the nasal cavity — see hard palate, soft palate
 2 a : a usually intellectual taste or liking: too ornate for my palate
@@ -2691,13 +2694,17 @@ git checkout <stash@{n}> -- <file_path>
 Alternatives:
 git checkout stash@{0} -- <file_path>
 
+gitlab:
+git -cds .xml ?
+
+«end of gitlab»
+
 aReturn <<= WritingMode2::CONTEXT
 
 /Applications/Visual Studio Code.app/Contents/MacOS/Electron
 
 What chemical elements do human bodies comprise of?
 Almost 99% of the mass of the human body is made up of six elements: oxygen, carbon, hydrogen, nitrogen, calcium, and phosphorus. Only about 0.85% is composed of another five elements: potassium, sulfur, sodium, chlorine, and magnesium. All 11 are necessary for life. The remaining elements are trace elements, of which more than a dozen are thought on the basis of good evidence to be necessary for life. All of the mass of the trace elements put together (less than 10 grams for a human body) do not add up to the body mass of magnesium, the least common of the 11 non-trace elements.
-
 
 https://www.youtube.com/watch?v=ko282ZAZe5w
 5:00 "Area of a triangle is proportional to the square of its height"
