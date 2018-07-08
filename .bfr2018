@@ -621,9 +621,11 @@ convolution
 Convolutional Neural Networks
 genesis
 anomaly
-false dichotomy
-affiliate commissions
 verdict
+false dichotomy
+affiliate
+commission
+interpolate
 liaison
 
 en:
@@ -3015,6 +3017,11 @@ How would a dopamine antagonist work? … continue asking yourself elaborative q
 
 
 asuult:
+Cursive writing of Mongolian numbers
+
+ask @ softwareengineering.stackexchange.com
+relations of locale encoding and fonts
+
 c++ declare class inside unnamed namespace inside another class's source file
 
 Why function getline(http://en.cppreference.com/w/cpp/header/string) is not friend of std::string?
@@ -3369,9 +3376,6 @@ c++ program to check encoding of file
 
 Determining File Encoding & Character Set via Command Line in Mac OS
 file -I (input file)
-
-ask @ softwareengineering.stackexchange.com
-relations of locale encoding and fonts
 
 "editor.fontFamily": "Mongolian White"(command-, VS Code) make following 3 words display correctly(Tsatsulga garble).
 Tin ᠴᠠᠭᠠᠨ ᠲᠤᠭᠤᠯᠭ<U+180E>ᠠ
