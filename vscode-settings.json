@@ -22,8 +22,9 @@
     "files.encoding": "utf8",
     "editor.multiCursorModifier": "ctrlCmd",
     // "editor.fontFamily": "Mongolian White",
-    // "editor.fontFamily": "MongolQagan"
+    // "editor.fontFamily": "MongolQagan",
     // "editor.fontFamily": "Bichimel",
-    // "editor.fontFamily": "Chagan"
+    // "editor.fontFamily": "Chagan",
+    "terminal.integrated.shell.osx": "/bin/zsh",
 
 }
