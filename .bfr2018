@@ -769,6 +769,13 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+boot: савхин гутал ᠰᠠᠪᠢᠬᠢᠨ ᠭᠤᠲᠤᠯ
+rainboot
+rubber boot
+rubber band
+bulge
+Hamstring Strain
+roof decoration of Lamaist temples made of metals: ганжир ᠭᠠᠨᠵᠢᠷ᠎ᠠ
 sleep apnoea
 craniofacial dystrophy
 sidewalk
@@ -826,6 +833,8 @@ bench press
 
 parallel parking
 
+hamstring
+breath-taking
 breather ᠠᠮᠢᠰᠬᠣᠭᠣᠯᠣᠭᠴᠢ ?
 remuneration
 
@@ -1339,6 +1348,15 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+зэрэмдэг ᠵᠡᠷᠡᠮᠳᠡᠭ
+эрэмдэг ᠡᠷᠡᠮᠳᠡᠭ
+
+take away one's breath:	мэл гайхуулж цэл хөхрүүлэх ᠮᠡᠯ ᠭᠠᠶᠢᠬᠠᠭᠤᠯᠵᠤ ᠴᠡᠯ ᠬᠥᠬᠡᠷᠡᠭᠦᠯᠬᠦ, асар их гайхуулах ᠠᠰᠤᠷᠤ ᠶᠡᠬᠡ ᠭᠠᠶᠢᠬᠠᠭᠤᠯᠬᠤ
+
+ᠰᠢᠨᠠ
+1. Хүн, амьтны чихний доод эрүүний үзүүрийн орчин газар - Үрчийж арчийсан хар царайтай, өргөн шанаатай, үс нь их ургасан дөч гаруй насны эр байв. П.Лувсанцэрэн. Хөдөөгийн дуун., өргөн шанаатай хүн (эрүүний нь доод хэсэг өргөн хүн);
+2. Нүдний харалдаах хоёр хажуугийн хэсэг газар: шанааны үс (хүн, амьтны чихний доод хэсэгт ургасан үс) - Дорж дарга түүний шанаа уруу унжиж байгаа халимаг үсийг зөөлөн халуун гараараа илж зогсов. П.Хорлоо. Багш., *шанааны яс нь гозойх (маш их турж, эцэх) - Санааныхаа мууд, шанааны яс нь гозойх. ААЗ.
+
 http://medee.mn/mobile.php?eid=91534
 хар ухаан: Бидний нэрлэдэгээр “хар ухаан”-аар юмыг нэг удаа аргалж болно. Харин хөгжихөд энэ хангалтгүй юм. Нэг үгээр хэлбэл бид мэдлэг, чадвар 2-оо зэрэг ашиглаж байж бидний байнга ярьдаг шинэ технологи бүтээгч, үйлдвэрлэгч орон болох юм. Саяхан сенсаци болсон, МУИС-ийн физикийн ангид нэг ч оюутан элссэнгүй гэж нэг хэсэг бөөн яриа болсон. Энэ бидний эмгэнэл юм. Бидний арван жилийн системийн гажуудал ингэж илэрч байна. Энэ нь Монгол улсад физикч байхгүй болно гэсэн үг. Нэг ч физикч байхгүй бол ямар технологи хөгжүүлэх юм бэ? Тэгхээр яг одооноос суурь шинжлэх ухаандаа чин сэтгэлээсээ анхаарал хандуулахгүй бол бид удахгүй сүйрэх болно.
 
@@ -3041,7 +3059,7 @@ How would a dopamine antagonist work? … continue asking yourself elaborative q
 
 
 asuult:
-ᠶᠢᠨ ᠢᠶᠡᠨ
+How to be dead serious while telling joke, not laugh?
 
 handwriting of Mongolian numbers
 
@@ -3436,5 +3454,40 @@ It's better for VLC to have current playback speed shown on control bar or statu
 macbook => imac folder transfer error:
 You can’t copy “Python” because it has the same name as another item on the destination volume, and that volume doesn’t distinguish between upper- and lowercase letters in filenames.
 
-export https_proxy="socks5://127.0.0.1:1080"
+https://stackoverflow.com/questions/31034870/making-zsh-default-shell-in-macosx
+"which zsh" gives you your path to zsh
+Then "chsh -s /bin/zsh" or replace path to your zsh if different
+Restart the machine.
+Another relevant comment on the same older question that says to add /usr/bin/zsh to /etc/shells solves the problem.
+
+c++ output corresponding characters? glyphs? ligatures?
+\u202f
+\U202F
+\U202f
+\u202F
+
+How to set ZSH to be the default shell instead of bash in the Visual Code studio integrated terminal on Mac:
+"terminal.integrated.shell.osx": "/bin/zsh",
+
+BorIME
+
+MglEditor: show \u code for every glyph? ligature?
+
+ayi,eyi,oyi,uyi,ɵyi,ʉyi->ai,ei,oi,ui,ɵi,ʉi
+ɵ,ʉ
+ɵ,ʉ with silbi@Bainu
+
+tar -jxvf .tar.bz2
+
+export all_proxy="socks5://127.0.0.1:1080"
+python3 -m pip install -U pip
+Could not install packages due to an EnvironmentError: Missing dependencies for SOCKS support.
+
+export all_proxy="https://127.0.0.1:1080"
+python3 -m pip install -U pip
+Could not install packages due to an EnvironmentError: Missing dependencies for SOCKS support.
+
+<p>Magic! <g-emoji class="g-emoji" alias="tada" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji></p>
+
+word jumps (option + → or ←) and word deletions (option + backspace)
 
