@@ -2514,6 +2514,14 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+here is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+    git branch --set-upstream-to=origin/<branch> note_bfr
+
 User, Organization, and Project Pages: project -> user/organization
 https://help.github.com/articles/changing-a-remote-s-url/
 git remote set-url origin git@github.com:zhirshya/zhirshya.github.io.git
@@ -3490,4 +3498,23 @@ Could not install packages due to an EnvironmentError: Missing dependencies for 
 <p>Magic! <g-emoji class="g-emoji" alias="tada" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji></p>
 
 word jumps (option + → or ←) and word deletions (option + backspace)
+
+macbook => imac folder transfer error:
+You can’t copy “Python” because it has the same name as another item on the destination volume, and that volume doesn’t distinguish between upper- and lowercase letters in filenames.
+
+https://stackoverflow.com/questions/31034870/making-zsh-default-shell-in-macosx
+"which zsh" gives you your path to zsh
+Then "chsh -s /bin/zsh" or replace path to your zsh if different
+Restart the machine.
+Another relevant comment on the same older question that says to add /usr/bin/zsh to /etc/shells solves the problem.
+
+c++ output corresponding characters? glyphs? ligatures?
+\u202f
+\U202F
+\U202f
+\u202F
+
+How to set ZSH to be the default shell instead of bash in the Visual Code studio integrated terminal on Mac:
+"terminal.integrated.shell.osx": "/bin/zsh",
+
 

@@ -29,7 +29,4 @@
     "terminal.integrated.shell.osx": "/bin/zsh",
     "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
     "terminal.integrated.fontSize": 12,
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
 }
