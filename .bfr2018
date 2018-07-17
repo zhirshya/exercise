@@ -464,6 +464,8 @@ electrum: forgot electrum wallet generation key
 12gEgX9e5Bu86ASTTmvij3mDgqu82XyEh8 d*G*1*5!#
 
 eecs,ict:
+If you're using ./configure, you should run "make clean" prior to running configure again.
+
 splice ( ≈ concat), pluck ( ≈ split)
 
 arrow function: () => {}
@@ -773,6 +775,17 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+residential wiring
+complicity
+petting zoo
+
+prune:
+transitive verb
+1 a : to reduce especially by eliminating superfluous matter pruned the text prune the budget.
+b : to remove as superfluous prune away all ornamentation.
+2 : to cut off or cut back parts of for better shape or more fruitful growth prune the branches
+intransitive verb : to cut away what is unwanted or superfluous.
+
 cholecystitis: inflammation of the gallbladder. цөсний үрэвсэл ᠰᠥᠰᠦᠨ ᠦ ᠦᠷᠪᠢᠰᠦᠯ
 gallstone: цөсний чулуу ᠰᠥᠰᠦᠨ ᠦ ᠴᠢᠯᠠᠭᠤ
 boot: савхин гутал ᠰᠠᠪᠢᠬᠢᠨ ᠭᠤᠲᠤᠯ
@@ -1354,6 +1367,14 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+ᠣᠶᠢᠯᠠᠯᠭ᠎ᠠ ойллого:
+1. Ямар нэгэн юмны тухай тусгайлан тодорхойлон бичсэн тэмдэглэл: газар нутгийн ойллого (газар нутгийнхаа тухай тусгайлан бичсэн тэмдэглэл), олон монгол аймгийн ойллогын бичиг (монгол аймгуудын тухай тодорхойлон бичсэн тусгай тэмдэглэл), ойллого бичиг (нэгэн хэрэг явдлыг тусгай сэдвээр тодорхойлон тэмдэглэх бичиг), ойллого түүх [хоршоо] (он дараалан бичсэн түүхийн бичиг) - Монголын нууц товчоо бол нэг талаас ойллого түүх мөн боловч үүний зэрэгцээгээр бас уран зохиол юм. “Ардын эрх” сонин.
+2. Ухаж мэдсэн зүйл: ойллого ихтэй (ойлгож мэдсэн зүйл их байгаа нь).
+
+газар нутгийн ойллого - газар нутгийнхаа тухай тусгайлан бичсэн тэмдэглэл.
+ойллого бичиг: нэгэн хэрэг явдлыг тусгай сэдвээр тодорхойлон тэмдэглэх бичиг.
+ойллого түүх (хоршоо): он дараалан бичсэн түүхийн бичиг.
+
 ᠵᠢᠷᠭᠣᠭᠠᠳᠠᠢ ᠲᠠᠶᠠᠭ
 ᠳᠠᠮᠵᠢᠭ : Сэжиг, эргэлзээ, мадаг, омтгой - Надад дамжиг бүү сана. Яриа.
 ᠴᠠᠳᠢᠭ :
@@ -1706,7 +1727,11 @@ https://www.facebook.com/groups/zugaatai.hel.shinjlel/permalink/789153364601081/
 Олъё
 Одъё
 
+Энэ жил Өндөр гэгээн Занабазарын мэлмий гийсний 380 жилийн ой тохиож байгаа түүхэн жил билээ. “Их эзэн Чингис хааны хөшөө, Төрийн ёслол хүндэтгэлийн өргөө цогцолбор”-т байрладаг Монгол төрийн түүхийн музейгээс эрхлэн энэхүү түүхэн их ойг тохиолдуулан “Өндөр гэгээн Занабазар” номыг толилуулахаар болжээ.
+Өндөр гэгээн Занабазар нь төр-шашны нэрт зүтгэлтэн төдийгүй дундад зууны үеийн монголын үндэсний соёл урлагийг нэгэн үе гоо зүйн танигдашгүй өндөрлөгт хүргэж чадсан уран зураач, уран барималч, оточ, хэл шинжээч, яруу найрагч зэрэг тэнгэрлиг авьяас билигтэй хосгүй нэгэн байсныг гэрчлэх дахин давтагдашгүй урлагийн хосгүй бүтээлүүд үзэгчдийн мэлмийг мялаасаар байгаа билээ. Монгол хүний урлахуйн их эрдэм ухаанаар туурвин бүтээгдэж, он цагийн шалгарлыг даван туулсаар бидэнд уламжлагдан ирсэн түүх, соёлын дурсгалт зүйлсүүдээрээ дамжуулан монгол нутаг дахь хүний амьдралын түүх, соёл урлаг, ёс заншил, байгаль орчны түүхийг сурталчлан таниулах, улмаар тэдгээрийг унаган төрхөөр нь хадгалан хамгаалж, хойч үедээ өвлүүлэн үлдээх эрхэм хүндтэй үүргийг музейн ажилтнууд хүлээдэг юм. Эл номдоо 17 дугаар зууны үеийн монголын урлаг соёлын хөгжил дэвшил тэр дундаа хүрэл цутгамлын суурь урлаг хөгжлийнхөө өндөр төвшинд хүрснийг харуулах Өндөр гэгээний өөрийн мутраар урлан бүтээсэн алдарт бүтээлүүдийн тухай, бурхадын мутрын зангаа, барьц зэргийн тайлбар болон төвд хэлээр бичигдсэн Занабазарын намтрыг багтаажээ.
+
 «end of mgl»
+
 mglname:
 ᠲᠡᠭᠦᠰᠠᠯᠲᠠᠨᠬᠣᠶᠠᠭᠲᠣ
 ᠴᠡᠩᠭᠦᠨᠵᠠᠪ
@@ -3510,10 +3535,20 @@ How to set ZSH to be the default shell instead of bash in the Visual Code studio
 монгол ёс хүн нас барах д
 монгол оршуулгийн ёс
 
-mongolian telephone etiquette
-
 best guides and tips for Russian language self-study
 
 how to Delehi (IME) font code => Menksoft (IME) font code ?
 view-source:http://mongol-bichig.top/codeconvert
 
+Yellow Sect of Buddhism
+
+how web apps convert character codes
+Blackbox JavaScript Source Files
+android phone properly decline a phone call: the sleep or power button or the loudness button.
+comment orthotropics mike mew chew hard build better jawline: Even gums don't contain sugar, have xylitol instead, which isn't good for health I heard
+leap seal tape
+code point value of mgl text => c++ => mgl text?
+
+view-source:https://mongoltoli.mn/search.php?ug_id=67095&opt=1&word=%D0%9E%D0%99%D0%9B%D0%9B%D0%9E%D0%93%D0%9E#
+
+ttf-2-base64 + js:fontface? to be not restricted with system fonts
