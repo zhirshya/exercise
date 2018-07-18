@@ -498,13 +498,14 @@ Microservices also bring other problems, such as making it hard to debug and tra
 
 «end of microservice»
 
+grep:
+grep -v -e '^[[:space:]]*$' -e '^#' file will give you all non-blank, non-comment lines in a script or config file (or any file type that uses the hash character for comments).
+
 awk:
 env grep -i "t in our dictionary" webResponse.out | awk -F '(<b>)|(</b>)' '{print $2}'
 
 hak:
 http://download.delehi.com/d/fonts/mnglwhiteotf.ttf
-
-libreoffice how to mark annotate corrections
 
 du -sch ./workdir
 
@@ -3137,7 +3138,7 @@ How would a dopamine antagonist work? … continue asking yourself elaborative q
 
 
 asuult:
-How to be dead serious while telling joke, not laugh?
+libreoffice how to mark annotate corrections
 
 handwriting of Mongolian numbers
 
@@ -3564,3 +3565,21 @@ view-source:https://mongoltoli.mn/search.php?ug_id=67095&opt=1&word=%D0%9E%D0%99
 
 ttf-2-base64 + js:fontface? to be not restricted with system fonts
 https://github.com/accuBayArea/Slides
+
+Orthotropics:
+https://www.youtube.com/channel/UC6eh59CVGAMTjxo6q9gCMZA
+Mike, can you do a tutorial on how to achieve good lip seal and what good lip seal looks like compared  to bad lip seal?
+Since you've treated quite a few patients  now, I'm sure you've seen a pattern and I'm assuming good lip seal helps speed up the forward and upward maxillary rotation 
+Would highly appreciate if you could do a video specifically  on good lip seal (following on from  mackenzie tin chuck, shoulder and back posture etc).
+>I'd love to see it too.  The key idea though is to try to keep your lips shut with the minimal amount of effort from the surrounding muscles of the face to achieve it as possible.  That can be problematic depending on the length of your face, but the more you improve it the more forces you will prevent from counteracting the force of the tongue against the roof of the mouth and that can only help with jaw expansion and getting the maxilla to move in the right direction.
+So try to keep the lips definitely sealed so that there is a vacuum in your mouth, but make sure it's as light as possible and that your face is as relaxed as you can make it.
+
+medical tape
+Just use the 3M micropore tape that comes in inexpensive rolls.
+
+The neck doesn't support the jaw, the jaw supported the tongue. If you want to reverse the jaw sinking then you have to use your tongue to support your entire mid face by mewing. I'll link you a playlist for mewing and the correct sleeping position! https://www.youtube.com/watch?v=nCiZUKnDf0Y 
+https://www.youtube.com/playlist?list=PL-PUlLHndQMP9mmRQpJL6h1aFSxkV-6RT
+
+Another interesting bit was doing sets of tip of tongue to palate - 10 sec reps 10 reps is one set. Do five sets. Goal is to sleep with tongue on palate and wake up like that. Tongue push ups is another exercise. That sounds like Mew’s methods in a nutshell. Correct me if I am wrong.
+
+
