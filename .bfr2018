@@ -644,6 +644,8 @@ en:
 Excuse me, hang on a second, I'll be with you in a second.
 Would you mind if I make a call, would it disturb you?
 
+Yellow Sect of Buddhism
+
 palate:
 1 : the roof of the mouth separating the mouth from the nasal cavity — see hard palate, soft palate
 2 a : a usually intellectual taste or liking: too ornate for my palate
@@ -3561,10 +3563,12 @@ How to set ZSH to be the default shell instead of bash in the Visual Code studio
 
 best guides and tips for Russian language self-study
 
+codeconvert:
+GB: 
+Unicode: 1800-1842
+
 how to Delehi (IME) font code => Menksoft (IME) font code ?
 view-source:http://mongol-bichig.top/codeconvert
-
-Yellow Sect of Buddhism
 
 how web apps convert character codes
 Blackbox JavaScript Source Files
