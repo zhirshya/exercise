@@ -778,6 +778,7 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+standing desk
 deal breaker issues
 residential wiring
 complicity
@@ -2317,6 +2318,8 @@ hair clay 发泥
 js:
 Try catch is synchronous.
 
+Blackbox JavaScript Source Files
+
 Packages provide convenient ways of enabling and disabling certain debug lines when you start the application. For example, with debug it is possible to prevent any debug lines from being printed to the terminal by not setting the DEBUG environment variable. Using it is simple:
 // app.js
 var debug = require(‘debug’)(‘app’)
@@ -3571,9 +3574,8 @@ how to Delehi (IME) font code => Menksoft (IME) font code ?
 view-source:http://mongol-bichig.top/codeconvert
 
 how web apps convert character codes
-Blackbox JavaScript Source Files
+
 android phone properly decline a phone call: the sleep or power button or the loudness button.
-comment orthotropics mike mew chew hard build better jawline: Even gums don't contain sugar, have xylitol instead, which isn't good for health I heard
 
 code point value of mgl text => c++ => mgl text?
 
