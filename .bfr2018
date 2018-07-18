@@ -3517,4 +3517,8 @@ c++ output corresponding characters? glyphs? ligatures?
 How to set ZSH to be the default shell instead of bash in the Visual Code studio integrated terminal on Mac:
 "terminal.integrated.shell.osx": "/bin/zsh",
 
+copy a local Git Repository to a VM:
+LC_CTYPE=C && LANG=C && find . \! \( -type d -path '.git*' -prune \) -type f -print0 | xargs -0 sed -i '' 's/\<almas\>/dev/g'
+https://blog.openshift.com/clone-local-working-branch-git-repository-vm/
+
 
