@@ -769,6 +769,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+OPTP Resistance Band Wall Anchors by Bob and Brad: Space Saving Wall Mount Clips for Home Gym Workouts | For Strength Training, Fitness, and Physical Therapy Exercise.
+
 boot: савхин гутал ᠰᠠᠪᠢᠬᠢᠨ ᠭᠤᠲᠤᠯ
 rainboot
 rubber boot
@@ -2514,7 +2516,19 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
-here is no tracking information for the current branch.
+remote (branch) invisible to local repo:
+https://stackoverflow.com/questions/945654/git-checkout-updating-paths-is-incompatible-with-switching-branches/
+I believe this occurs when you are trying to checkout a remote branch that your local git repo is not aware of yet. Try:
+git remote show origin
+If the remote branch you want to checkout is under "New remote branches" and not "Tracked remote branches" then you need to fetch them first:
+git remote update
+git fetch
+Now it should work:
+git checkout -b local-name origin/remote-name
+Important Comment:
+If you are trying to do this for a remote that you explicitly added (so anything other than origin) you will need to do git remote update before your fetch will fetch that remote. Otherwise you get messages like: Did you intend to checkout 'upstream-repo/master' which can not be resolved as commit?
+
+Here is no tracking information for the current branch.
 Please specify which branch you want to merge with.
 See git-pull(1) for details.
     git pull <remote> <branch>
@@ -3521,4 +3535,32 @@ copy a local Git Repository to a VM:
 LC_CTYPE=C && LANG=C && find . \! \( -type d -path '.git*' -prune \) -type f -print0 | xargs -0 sed -i '' 's/\<almas\>/dev/g'
 https://blog.openshift.com/clone-local-working-branch-git-repository-vm/
 
+Fetching almas
+The authenticity of host '[almas.dip.jp]:40022 ([120.51.39.190]:40022)' can't be established.
+RSA key fingerprint is SHA256:o22lRyqLOUj5nCf+udfe1gYdlDwjWh/kXvyqTCk+vFU.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[almas.dip.jp]:40022,[120.51.39.190]:40022' (RSA) to the list of known hosts.
+remote: Counting objects: 203354, done.
+remote: Compressing objects: 100% (75676/75676), done.
+remote: Total 203354 (delta 151990), reused 162436 (delta 122492)
+Receiving objects: 100% (203354/203354), 175.34 MiB | 2.67 MiB/s, done.
+Resolving deltas: 100% (151990/151990), completed with 13919 local objects.
+From ssh://almas.dip.jp:40022/git/DelehiOffice/core
+ * [new branch]      DelehiOffice -> almas/DelehiOffice
+ * [new branch]      DelehiOffice2015 -> almas/DelehiOffice2015
+ * [new branch]      DelehiOffice2015-0-3 -> almas/DelehiOffice2015-0-3
+ * [new branch]      DelehiOffice2018 -> almas/DelehiOffice2018
+ * [new branch]      DelehiOffice2018-Dev -> almas/DelehiOffice2018-Dev
+ * [new branch]      NOTICE-FROM-ARON -> almas/NOTICE-FROM-ARON
+ * [new branch]      NOTICE-FROM-ARON2 -> almas/NOTICE-FROM-ARON2
+ * [new branch]      aoo/trunk  -> almas/aoo/trunk
+
+ dev@devuntu  ~/libreoffice   master  gco -b DelehiOffice2018-Dev almas/DelehiOffice2018-Dev 
+Branch DelehiOffice2018-Dev set up to track remote branch DelehiOffice2018-Dev from almas.
+Switched to a new branch 'DelehiOffice2018-Dev'
+warning: CRLF will be replaced by LF in sd/qa/unit/data/odp/BulletsAsImage.odp.                                                                                                
+The file will have its original line endings in your working directory.
+
+android:
+on Android phone, you have to enable USB Debugging. You do this in the Developer options, which are hidden by default. So, if you haven’t already, you need to show the Developer options by going to Settings > About phone and then tapping Build number seven times. Hit the back button and enter the newly accessible Developer options.
 
