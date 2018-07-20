@@ -81,6 +81,7 @@ West 13F, Uiles Hotel, No.89 East Xinhua Street, Hohhot, P.R.China
 入网证号 02-5043-171159
 suit size: 170/88A (46A)
 jd.com mindovrmatr .d*G*9
+https://disqus.com/ gh@gmail .d*1*!#
 
 https://encrypted.google.com/webhp?hl=en&gl=en#safe=active&hl=en&gl=en&q=%s
 
@@ -793,6 +794,12 @@ intransitive verb : to cut away what is unwanted or superfluous.
 
 cholecystitis: inflammation of the gallbladder. цөсний үрэвсэл ᠰᠥᠰᠦᠨ ᠦ ᠦᠷᠪᠢᠰᠦᠯ
 gallstone: цөсний чулуу ᠰᠥᠰᠦᠨ ᠦ ᠴᠢᠯᠠᠭᠤ
+
+make good posture a habit
+
+https://www.amazon.com/dp/B078WFFWR8
+OPTP Resistance Band Wall Anchors by Bob and Brad: Space Saving Wall Mount Clips for Home Gym Workouts | For Strength Training, Fitness, and Physical Therapy Exercise.
+
 boot: савхин гутал ᠰᠠᠪᠢᠬᠢᠨ ᠭᠤᠲᠤᠯ
 rainboot
 rubber boot
@@ -1131,14 +1138,10 @@ continue
 and exit GDB with:
 quit
 
-この強制的な行政措置に不満を抱く市民は、市長を出しにした小話を作ってやり返した。
+https://www.tecmint.com/debug-source-code-in-linux-using-gdb/
+I used to use the dbx debugger on AIX, and it had a really nice feature that I wish gdb had. There was a ‘call’ command that allowed you to call any function in the app from a breakpoint. I would add functions to my libraries specifically to allow printing out complex data in variables during debugging – and then use another nice dbx feature, macros, to define simple shortcuts to make it all easy. For example, the system in question used a weird binary date format, but the date library had a DisplayFormattedDate(mydate) function, and I set up a dd(x) alias to it to make this even easier. And of course there was more complex binary stuff similarly displayable. Of course, a nice graphical IDE that wrapped dbx might’ve been even nicer, but this call thing was really powerful. It’d be nice if gdb had something similar – and if IDE’s based on gdb gave you a way to access it (I think kdebug has a command window where you could do that).
 
-「北京市長春薬店」のという名の薬屋の看板撤去工事は、「北京」の二文字を撤去したところでストップがかかり、「市長春薬店」が残った。
-（注：中国語の「春薬」は「媚薬」の意味、残った看板は「市長の媚薬店」に変わった）。
-
-そのため店長への国内外のメディアのインタビューが殺到した。どのメディアも、「市長の媚薬店は一体いつ、どのような経緯で創業されたか？」と厳しく追及した。
-
-店長は困り果てて脳梗塞を起こし、現在病院で応急手当中・・・。
+«end of gdb»
 
 «rus:»
 Ой цветет калина
@@ -2593,6 +2596,26 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+remote (branch) invisible to local repo:
+https://stackoverflow.com/questions/945654/git-checkout-updating-paths-is-incompatible-with-switching-branches/
+I believe this occurs when you are trying to checkout a remote branch that your local git repo is not aware of yet. Try:
+git remote show origin
+If the remote branch you want to checkout is under "New remote branches" and not "Tracked remote branches" then you need to fetch them first:
+git remote update
+git fetch
+Now it should work:
+git checkout -b local-name origin/remote-name
+Important Comment:
+If you are trying to do this for a remote that you explicitly added (so anything other than origin) you will need to do git remote update before your fetch will fetch that remote. Otherwise you get messages like: Did you intend to checkout 'upstream-repo/master' which can not be resolved as commit?
+
+Here is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+    git branch --set-upstream-to=origin/<branch> note_bfr
+
 User, Organization, and Project Pages: project -> user/organization
 https://help.github.com/articles/changing-a-remote-s-url/
 git remote set-url origin git@github.com:zhirshya/zhirshya.github.io.git
@@ -3543,6 +3566,52 @@ traditional Mongolian vertical letf-to-right writing support
 
 It's better for VLC to have current playback speed shown on control bar or status bar or title bar.
 
+bainu:
+ᠰᠢᠳᠦᠨ ᠤ ᠠᠪᠣᠴᠠᠯᠳᠣᠯ ᠢᠶᠡᠨ ᠲᠡᠭᠰᠢᠯᠡᠬᠦ
+meaningful uplifting neural pathways and muscle memories
+
+It would be better for VLC to have current playback speed shown on control bar or status bar or title bar.
+
+macbook => imac folder transfer error (transfer instead the bzip2 compressed folders to avoid this error!):
+You can’t copy “Python” because it has the same name as another item on the destination volume, and that volume doesn’t distinguish between upper- and lowercase letters in filenames.
+
+https://stackoverflow.com/questions/31034870/making-zsh-default-shell-in-macosx
+"which zsh" gives you your path to zsh
+Then "chsh -s /bin/zsh" or replace path to your zsh if different
+Restart the machine.
+Another relevant comment on the same older question that says to add /usr/bin/zsh to /etc/shells solves the problem.
+
+c++ output corresponding characters? glyphs? ligatures?
+\u202f
+\U202F
+\U202f
+\u202F
+
+How to set ZSH to be the default shell instead of bash in the Visual Code studio integrated terminal on Mac:
+"terminal.integrated.shell.osx": "/bin/zsh",
+
+BorIME
+
+MglEditor: show \u code for every glyph? ligature?
+
+ayi,eyi,oyi,uyi,ɵyi,ʉyi->ai,ei,oi,ui,ɵi,ʉi
+ɵ,ʉ
+ɵ,ʉ with silbi@Bainu
+
+tar -jxvf .tar.bz2
+
+export all_proxy="socks5://127.0.0.1:1080"
+python3 -m pip install -U pip
+Could not install packages due to an EnvironmentError: Missing dependencies for SOCKS support.
+
+export all_proxy="https://127.0.0.1:1080"
+python3 -m pip install -U pip
+Could not install packages due to an EnvironmentError: Missing dependencies for SOCKS support.
+
+<p>Magic! <g-emoji class="g-emoji" alias="tada" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji></p>
+
+word jumps (option + → or ←) and word deletions (option + backspace)
+
 macbook => imac folder transfer error:
 You can’t copy “Python” because it has the same name as another item on the destination volume, and that volume doesn’t distinguish between upper- and lowercase letters in filenames.
 
@@ -3601,4 +3670,43 @@ Another interesting bit was doing sets of tip of tongue to palate - 10 sec reps 
 монгол ёс хүн нас барах д
 монгол оршуулгийн ёс
 
+copy a local Git Repository to a VM:
+LC_CTYPE=C && LANG=C && find . \! \( -type d -path '.git*' -prune \) -type f -print0 | xargs -0 sed -i '' 's/\<almas\>/dev/g'
+https://blog.openshift.com/clone-local-working-branch-git-repository-vm/
+
+Fetching almas
+The authenticity of host '[almas.dip.jp]:40022 ([120.51.39.190]:40022)' can't be established.
+RSA key fingerprint is SHA256:o22lRyqLOUj5nCf+udfe1gYdlDwjWh/kXvyqTCk+vFU.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[almas.dip.jp]:40022,[120.51.39.190]:40022' (RSA) to the list of known hosts.
+remote: Counting objects: 203354, done.
+remote: Compressing objects: 100% (75676/75676), done.
+remote: Total 203354 (delta 151990), reused 162436 (delta 122492)
+Receiving objects: 100% (203354/203354), 175.34 MiB | 2.67 MiB/s, done.
+Resolving deltas: 100% (151990/151990), completed with 13919 local objects.
+From ssh://almas.dip.jp:40022/git/DelehiOffice/core
+ * [new branch]      DelehiOffice -> almas/DelehiOffice
+ * [new branch]      DelehiOffice2015 -> almas/DelehiOffice2015
+ * [new branch]      DelehiOffice2015-0-3 -> almas/DelehiOffice2015-0-3
+ * [new branch]      DelehiOffice2018 -> almas/DelehiOffice2018
+ * [new branch]      DelehiOffice2018-Dev -> almas/DelehiOffice2018-Dev
+ * [new branch]      NOTICE-FROM-ARON -> almas/NOTICE-FROM-ARON
+ * [new branch]      NOTICE-FROM-ARON2 -> almas/NOTICE-FROM-ARON2
+ * [new branch]      aoo/trunk  -> almas/aoo/trunk
+
+dev@devuntu  ~/libreoffice   master  gco -b DelehiOffice2018-Dev almas/DelehiOffice2018-Dev 
+Branch DelehiOffice2018-Dev set up to track remote branch DelehiOffice2018-Dev from almas.
+Switched to a new branch 'DelehiOffice2018-Dev'
+warning: CRLF will be replaced by LF in sd/qa/unit/data/odp/BulletsAsImage.odp.                                                                                                
+The file will have its original line endings in your working directory.
+
+android:
+on Android phone, you have to enable USB Debugging. You do this in the Developer options, which are hidden by default. So, if you haven’t already, you need to show the Developer options by going to Settings > About phone and then tapping Build number seven times. Hit the back button and enter the newly accessible Developer options.
+
+jp:
+この強制的な行政措置に不満を抱く市民は、市長を出しにした小話を作ってやり返した。
+「北京市長春薬店」のという名の薬屋の看板撤去工事は、「北京」の二文字を撤去したところでストップがかかり、「市長春薬店」が残った。
+（注：中国語の「春薬」は「媚薬」の意味、残った看板は「市長の媚薬店」に変わった）。
+そのため店長への国内外のメディアのインタビューが殺到した。どのメディアも、「市長の媚薬店は一体いつ、どのような経緯で創業されたか？」と厳しく追及した。
+店長は困り果てて脳梗塞を起こし、現在病院で応急手当中・・・。
 
