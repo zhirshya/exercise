@@ -79,6 +79,7 @@ West 13F, Uiles Hotel, No.89 East Xinhua Street, Hohhot, P.R.China
 入网证号 02-5043-171159
 suit size: 170/88A (46A)
 jd.com mindovrmatr .d*G*9
+https://disqus.com/ gh@gmail .d*1*!#
 
 https://encrypted.google.com/webhp?hl=en&gl=en#safe=active&hl=en&gl=en&q=%s
 
@@ -1112,14 +1113,10 @@ continue
 and exit GDB with:
 quit
 
-この強制的な行政措置に不満を抱く市民は、市長を出しにした小話を作ってやり返した。
+https://www.tecmint.com/debug-source-code-in-linux-using-gdb/
+I used to use the dbx debugger on AIX, and it had a really nice feature that I wish gdb had. There was a ‘call’ command that allowed you to call any function in the app from a breakpoint. I would add functions to my libraries specifically to allow printing out complex data in variables during debugging – and then use another nice dbx feature, macros, to define simple shortcuts to make it all easy. For example, the system in question used a weird binary date format, but the date library had a DisplayFormattedDate(mydate) function, and I set up a dd(x) alias to it to make this even easier. And of course there was more complex binary stuff similarly displayable. Of course, a nice graphical IDE that wrapped dbx might’ve been even nicer, but this call thing was really powerful. It’d be nice if gdb had something similar – and if IDE’s based on gdb gave you a way to access it (I think kdebug has a command window where you could do that).
 
-「北京市長春薬店」のという名の薬屋の看板撤去工事は、「北京」の二文字を撤去したところでストップがかかり、「市長春薬店」が残った。
-（注：中国語の「春薬」は「媚薬」の意味、残った看板は「市長の媚薬店」に変わった）。
-
-そのため店長への国内外のメディアのインタビューが殺到した。どのメディアも、「市長の媚薬店は一体いつ、どのような経緯で創業されたか？」と厳しく追及した。
-
-店長は困り果てて脳梗塞を起こし、現在病院で応急手当中・・・。
+«end of gdb»
 
 «rus:»
 Ой цветет калина
@@ -3566,4 +3563,11 @@ The file will have its original line endings in your working directory.
 
 android:
 on Android phone, you have to enable USB Debugging. You do this in the Developer options, which are hidden by default. So, if you haven’t already, you need to show the Developer options by going to Settings > About phone and then tapping Build number seven times. Hit the back button and enter the newly accessible Developer options.
+
+jp:
+この強制的な行政措置に不満を抱く市民は、市長を出しにした小話を作ってやり返した。
+「北京市長春薬店」のという名の薬屋の看板撤去工事は、「北京」の二文字を撤去したところでストップがかかり、「市長春薬店」が残った。
+（注：中国語の「春薬」は「媚薬」の意味、残った看板は「市長の媚薬店」に変わった）。
+そのため店長への国内外のメディアのインタビューが殺到した。どのメディアも、「市長の媚薬店は一体いつ、どのような経緯で創業されたか？」と厳しく追及した。
+店長は困り果てて脳梗塞を起こし、現在病院で応急手当中・・・。
 
