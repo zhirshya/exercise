@@ -299,6 +299,79 @@ find: -exec: no terminating ";" or "+"
 $find /Volumes/DATA ~ -type f -iname "*dnld*" -exec zsh -c 'mv $0 ${0/dnld/dllst}' {};
 find: -exec: no terminating ";" or "+"
 
+finance:
+Net Present Value
+Internal Rate Return
+amortization 
+
+python:
+Personal Finance with Python: Using pandas, Requests, and Recurrent by Max Humber 
+	English | 2018 | ISBN: 1484238011 | 117 Pages | True PDF, EPUB | 11 MB
+Deal with data, build up financial formulas in code from scratch, and evaluate and think about money in your day-to-day life. This book is about Python and personal finance and how you can effectively mix the two together.
+In Personal Finance with Python you will learn Python and finance at the same time by creating a profit calculator, a currency converter, an amortization schedule, a budget, a portfolio rebalancer, and a purchase forecaster. Many of the examples use pandas, the main data manipulation tool in Python. Each chapter is hands-on, self-contained, and motivated by fun and interesting examples.
+Although this book assumes a minimal familiarity with programming and the Python language, if you don’t have any, don’t worry. Everything is built up piece-by-piece and the first chapters are conducted at a relaxed pace. You’ll need Python 3.6 (or above) and all of the setup details are included.
+What You’ll Learn:
+	Work with data in pandas
+	Calculate Net Present Value and Internal Rate Return
+	Query a third-party API with Requests
+	Manage secrets
+	Build efficient loops
+	Parse English sentences with Recurrent
+	Work with the YAML file format
+	Fetch stock quotes and use Prophet to forecast the future.
+
+Data Analysis From Scratch With Python: Step By Step Guide by Peters Morgan 
+English | 2016 | ISBN: 1721942817 | 166 Pages | EPUB | 10 MB
+
+Are you thinking of becoming a data analyst using Python?
+If you are looking for a complete guide to data analysis using Python language and its library that will help you to become an effective data scientist, this book is for you.
+From AI Sciences Publisher
+Our books may be the best one for beginners; it’s a step-by-step guide for any person who wants to start learning Artificial Intelligence and Data Science from scratch. It will help you in preparing a solid foundation and learn any other high-level courses. To get the most out of the concepts that would be covered, readers are advised to adopt hands on approach, which would lead to better mental representations.
+Step By Step Guide and Visual Illustrations and Examples
+The Book give complete instructions for manipulating, processing, cleaning, modeling and crunching datasets in Python. This is a hands-on guide with practical case studies of data analysis problems effectively. You will learn pandas, NumPy, IPython, and Jupiter in the Process.
+Target Users
+This book is a practical introduction to data science tools in Python. It is ideal for analyst’s beginners to Python and for Python programmers new to data science and computer science. Instead of tough math formulas, this book contains several graphs and images.
+What’s Inside This Book?
+Why Choose Python for Data Science & Machine Learning
+Prerequisites & Reminders
+Python Quick Review
+Overview & Objectives
+A Quick Example
+Getting & Processing Data
+Data Visualization
+Supervised & Unsupervised Learning
+Regression
+Simple Linear Regression
+Multiple Linear Regression
+Decision Tree
+Random Forest
+Classification
+Logistic Regression
+K-Nearest Neighbors
+Decision Tree Classification
+Random Forest Classification
+Clustering
+Goals & Uses of Clustering
+K-Means Clustering
+Anomaly Detection
+Association Rule Learning
+Explanation
+Apriori
+Reinforcement Learning
+What is Reinforcement Learning
+Comparison with Supervised & Unsupervised Learning
+Applying Reinforcement Learning
+Neural Networks
+An Idea of How the Brain Works
+Potential & Constraints
+Here’s an Example
+Natural Language Processing
+Analyzing Words & Sentiments
+Using NLTK
+Model Selection & Improving Performance
+Sources & References.
+
+
 c++:
 A few resources for benchmarks, comparisons, and implementations:
 - CppCon 2017: Matt Kulukundis “Designing a Fast, Efficient, Cache-friendly Hash Table, Step by Step”
@@ -630,6 +703,7 @@ Data Structures and Network Algorithms (CBMS-NSF Regional Conference Series in A
 If you intend to place a wifi adapter in Monitor mode, you have got to have a primary network/Internet connection, either an ethernet adapter or another Wifi stick for both Internet access and not losing remote control of the VM/raspberry.
 
 difficult en:
+amortization 
 convolution
 Convolutional Neural Networks
 genesis
@@ -3728,3 +3802,4 @@ overbite, midline misalignment, lower jaw retrudes when swallowing, correct swal
 utv,ggl: tips to choose electric pressure cooker
 how to connect to office iMac from macbook at home
 
+how to differentiate Delehi and Menksoft Mongolian character codes?
