@@ -876,6 +876,9 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+blow sunshine up somebody's ass = give somebody excessive praise.
+bar: уушны газар ᠤᠤᠭᠤᠰᠢᠨ ᠤ ᠭᠠᠵᠠᠷ
+bar code: шугаман код ᠱᠤᠭᠤᠮᠠᠨ ᠻᠣᠳ᠋mb, үсгэн код ᠦᠰᠦᠭᠡᠨ ᠻᠣᠳ᠋mb
 coffee is a known diuretic
 Identify your learning techniques:visual, kinesthetic, auditory, etc.
 
@@ -1483,6 +1486,12 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+http://toli.gov.mn/
+https://president.mn/mongol-khelnii-zuv-bichih-durmiin-juram/
+
+Өвөр Монголд амьдардаг Америк хүн Монголчуудад зориулж монгол бичиг, тод монгол бичгийн үсгийн гар зохиож байна.
+https://play.google.com/store/apps/details?id=net.studymongolian.chimee
+
 ᠱᠤᠳᠠᠭ шуудаг:
 1. [хуучирсан] Бог малын арьсаар хийсэн доод биедээ өмсөх хувцас;
 2. Бөгсөнд өмсөх богинохон хувцас: шуудаг өмд (богинохон өмд), шуудаг өмсөх (богинохон өмд өмсөх);
@@ -2683,6 +2692,7 @@ ffmpeg -i '21darieh__дарь_эх-VPInIrd5Hqc.opus' -filter:a "atempo=1.25" '21
 
 #ffmpeg mp3 => opus, atempo
 ffmpeg -i Цагийн_жамыг_тодруулагч_Цаасан_шувуу_хэмээх_сургаал.mp3 -filter:a "atempo=1.1" -acodec libopus Цагийн_жамыг_тодруулагч_Цаасан_шувуу_хэмээх_сургаал_SoundCloud.opus
+ffmpeg -i Хийморийн\ сан\ оршивой.-bGok4u7Sg1k.opus -acodec libmp3lame hiimori.mp3
 
 mov -> mp4: ffmpeg -i correction_proposal_for_6_Mongolian_words.mov -vcodec h264 -acodec aac correction_proposal_for_6_Mongolian_words.mp4
 
