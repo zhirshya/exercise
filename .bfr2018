@@ -371,8 +371,29 @@ Using NLTK
 Model Selection & Improving Performance
 Sources & References.
 
+Mastering Machine Learning with scikit-learn, 2nd Edition by Gavin Hackeling 
+English | 2017 | ISBN: 1788299879 | 254 Pages | True PDF, EPUB, AZW3 | 18 MB
+
+Use scikit-learn to apply machine learning to real-world problems
+Machine learning is the buzzword bringing computer science and statistics together to build smart and efficient models. Using powerful algorithms and techniques offered by machine learning you can automate any analytical model.
+This book examines a variety of machine learning models including popular machine learning algorithms such as k-nearest neighbors, logistic regression, naive Bayes, k-means, decision trees, and artificial neural networks. It discusses data preprocessing, hyperparameter optimization, and ensemble methods. You will build systems that classify documents, recognize images, detect ads, and more. You will learn to use scikit-learn’s API to extract features from categorical variables, text and images; evaluate model performance, and develop an intuition for how to improve your model’s performance.
+By the end of this book, you will master all required concepts of scikit-learn to build efficient models at work to carry out advanced tasks with the practical approach.
+What You Will Learn:
+
+Review fundamental concepts such as bias and variance
+Extract features from categorical variables, text, and images
+Predict the values of continuous variables using linear regression and K Nearest Neighbors
+Classify documents and images using logistic regression and support vector machines
+Create ensembles of estimators using bagging and boosting techniques
+Discover hidden structures in data using K-Means clustering
+Evaluate the performance of machine learning systems in common tasks.
+
+
 
 c++:
+C++ compile time CBOR/BSON coder/decoder generator
+serialize/desirialize C++ types in well defined binary format
+
 A few resources for benchmarks, comparisons, and implementations:
 - CppCon 2017: Matt Kulukundis “Designing a Fast, Efficient, Cache-friendly Hash Table, Step by Step”
  https://www.youtube.com/watch?v=ncHmEUmJZf4
@@ -737,7 +758,7 @@ You can breathe through your nose and have all of those problems, though. It's h
 
 That would seem to be at the heart of a lot of cranio facial problems.  Nasal obstruction is not normal and should be addressed ASAP.
 
-You mean the posterior third of the tongue? Try and say the word "wing", but holding the "NG" sound, that  will get your tongue up there.
+You mean the posterior third of the tongue? Try and say the word "wing", but holding the "NG" sound, that will get your tongue up there.
 if you imagine getting the back of your tongue up as far posteriorly as your uvula you should hit the spot. I thought i had my posterior third up but i didnt realize how far posterior it needed to be. Huge difference now.
 
 Do NOT push it against teeth. Just palate. Pushing it against the teeth will push your teeth forward and might create an overbite or other nasty side effects.
@@ -855,7 +876,11 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+coffee is a known diuretic
+Identify your learning techniques:visual, kinesthetic, auditory, etc.
+
 retrude: to move backward : displace posteriorly retrude the mandible.
+recessed chin
 standing desk
 deal breaker issues
 residential wiring
@@ -916,6 +941,12 @@ orthotropic
 Tips and Exercises on Improving Incorrect Swallowing by Prof John Mew
 https://www.youtube.com/watch?v=iTN5VDldq2U
 Teeth in or near contact, lips closed/sealed. Tongue on the palate. You have to keep trying to keep the tonque on the roof. Dont breaht trough your mouth but inhale and exhale trough your nose. And don't suck with your tonque against the teeth while swallowing but rather let the tonque do a sweep of the food from down to the palatte and swallow with your throat/neck.
+
+Mew Push Swallow by Dr Mike Mew Part 2
+https://www.youtube.com/watch?v=lKaW3zNIuWY
+Learning to rest with the back 1/3 of your tongue onto the roof of your mouth is critical.
+1. The back of the tongue is the most critical. Your body is the trunk of the tree. With out it being aligned the results will be mediocre at best. Like a small tree supported by a crutch. ALL MUST WORK IN HARMONY.
+2. ?! Tongue should be pulled back when swallowing. When swallow the tongue should do a wave motion like a sweeping motion.
 
 plagiotropic
 
@@ -3025,6 +3056,22 @@ done < <(cd B; find . -printf "%p %h\n")
 
 mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
 
+sed:
+sed '1,/hLk2-CTSeCE/ {
+quote> /hLk2-CTSeCE/ !{
+quote> d
+quote> }
+quote> }' <dllst.all >dllst.tail
+
+http://www.grymoire.com/Unix/Sed.html#uh-25
+Since each sed command must start on its own line, the curly braces and the nested sed commands must be on separate lines.
+
+utss $(sed -n '1,/FQoX0ebmxgk/!p' dllst.all) #previous line of hLk2-CTSeCE
+
+copy a local Git Repository to a VM:
+LC_CTYPE=C && LANG=C && find . \! \( -type d -path '.git*' -prune \) -type f -print0 | xargs -0 sed -i '' 's/\<almas\>/dev/g'
+https://blog.openshift.com/clone-local-working-branch-git-repository-vm/
+
 Natsagnyam NAMKHAI
 
 For your channel, if you need FREE softwares for editing your own videos, adding overlays, text, etc, consider those shown far below. They are all free and downloadable from their official websites. For those softwares, there are plentiful tutorials here in Youtube. 
@@ -3749,10 +3796,6 @@ Another interesting bit was doing sets of tip of tongue to palate - 10 sec reps 
 монгол ёс хүн нас барах д
 монгол оршуулгийн ёс
 
-copy a local Git Repository to a VM:
-LC_CTYPE=C && LANG=C && find . \! \( -type d -path '.git*' -prune \) -type f -print0 | xargs -0 sed -i '' 's/\<almas\>/dev/g'
-https://blog.openshift.com/clone-local-working-branch-git-repository-vm/
-
 Fetching almas
 The authenticity of host '[almas.dip.jp]:40022 ([120.51.39.190]:40022)' can't be established.
 RSA key fingerprint is SHA256:o22lRyqLOUj5nCf+udfe1gYdlDwjWh/kXvyqTCk+vFU.
@@ -3803,3 +3846,17 @@ utv,ggl: tips to choose electric pressure cooker
 how to connect to office iMac from macbook at home
 
 how to differentiate Delehi and Menksoft Mongolian character codes?
+
+pip3 install --upgrade tensorflow
+pip install --upgrade tensorflow
+Collecting tensorflow
+  Could not find a version that satisfies the requirement tensorflow (from versions: )
+No matching distribution found for tensorflow
+
+Hoarder
+
+Tips for Caring for Aging Parents:
+
+
+delirium
+squat on seatless toilet
