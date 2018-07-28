@@ -192,6 +192,8 @@ https://exmail.qq.com/cgi-bin/loginpage
 qingbatu@delehi.com .d*G*1*5
 
 book:
+Becoming a Better Programmer: A Handbook for People Who Care About Code by Pete Goodliffe
+
 Hexaflexagons, probability paradoxes, and the tower of Hanoi by Martin Gardner
 
 Deep Belief Nets in C++ and CUDA C: Volume 1: Restricted Boltzmann Machines and Supervised Feedforward Networks by Timothy Masters 
@@ -391,6 +393,12 @@ Evaluate the performance of machine learning systems in common tasks.
 
 
 c++:
+https://www.reddit.com/r/cpp/
+https://www.reddit.com/r/cpp/comments/7pp8tv/why_should_i_learn_c_in_2018/
+Every time you instantiate a class, you decide where it shall live; on the stack or on the heap. This has an impact on the lifetime of the object. Stack allocated objects are destroyed when their scope is exited (i.e. when a function returns), however, heap allocated objects do not have lifetimes associated with scope and must be cleaned up manually (or by using RAII).
+
+There is a lot of compiler magic that can cause issues when you aren't aware of what the compiler is doing. There is a good reason it does it, but it can be hard to find information on it that makes sense to a beginner.
+
 C++ compile time CBOR/BSON coder/decoder generator
 serialize/desirialize C++ types in well defined binary format
 
@@ -876,6 +884,14 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+oblivious
+1 : lacking remembrance, memory, or mindful attention
+2 : lacking active conscious knowledge or awareness —usually used with of or to.
+e.g. Oblivious of any previous decisions not to stand together …  , the three stood in a tight group … —Doris Lessing, The Good Terrorist, 1985.
+Prentice looked up from his food, which he had been steadily shovelling in, completely oblivious of everyone. —Antonya Nelson, New Yorker, 9 Nov. 1992.
+
+delirium tremens n.: эмн цагаан солио ᠡᠮᠡᠨᠡ ᠴᠠᠭᠠᠨ ᠰᠣᠯᠢᠶ᠎ᠠ
+We look forward to seeing you again before too long.
 ACAP: adult child of aging parents
 telemeter
 double-booking
@@ -3078,6 +3094,10 @@ done < <(cd B; find . -printf "%p %h\n")
 mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
 
 sed:
+'' needed for macOS 
+sed -i '' '/pKMZjd9CFnw/d' dllst
+
+delete all lines before the first match of a pattern:
 sed '1,/hLk2-CTSeCE/ {
 quote> /hLk2-CTSeCE/ !{
 quote> d
@@ -3714,10 +3734,6 @@ VLC:
 normal speed: ^ option 0
 It would be better for VLC to have current playback speed shown on control bar or status bar or title bar.
 
-bainu:
-ᠰᠢᠳᠦᠨ ᠤ ᠠᠪᠣᠴᠠᠯᠳᠣᠯ ᠢᠶᠡᠨ ᠲᠡᠭᠰᠢᠯᠡᠬᠦ
-meaningful uplifting neural pathways and muscle memories
-
 macbook => imac folder transfer error (transfer instead the bzip2 compressed folders to avoid this error!):
 You can’t copy “Python” because it has the same name as another item on the destination volume, and that volume doesn’t distinguish between upper- and lowercase letters in filenames.
 
@@ -3867,8 +3883,11 @@ Collecting tensorflow
   Could not find a version that satisfies the requirement tensorflow (from versions: )
 No matching distribution found for tensorflow
 
-Hoarder
-delirium
 book: When Your Parent Becomes Your Child
-stroganoff
-itegel@hotmail.com
+ehshig, wechat h5, bods.vip
+c++ network asio programming
+tms yandex
+c++ CRTP SFINAE
+The curiously recurring template pattern (CRTP) is an idiom in C++ in which a class X derives from a class template instantiation using X itself as template argument. More generally it is known as F-bound polymorphism, and it is a form of F-bounded quantification.
+
+how to drive russian UAZ УАЗ van
