@@ -557,6 +557,14 @@ apple CoreText
 
 ACCU (Association of C and C++ Users)
 
+I would like to stress this point as well, building anything vaguely complex with C++ and learning more in-depth about some features of the language can really help you expand your understanding of the current programming environment in general.
+Will understanding shared memory, native threading, memory ordering, optimizing, working with "fundamental" algorithms (e.g. stuff like partition and sort rather than stuff like map, filter, reduce), zero-cost abstraction, handling computations using simd... etc, help you in most projects ? No, not even in most C++ projects.
+But knowing that you can always mess with the source code of your database or library, knowing you can always write a heavily optimize version of your software or plugin a custom C++ library for certain tasks, understanding threading and memory tit for tat is "empowering". It makes you code without the fear of the unknown, it gives you a "safe" area where most projects lie, since you know you've done harder stuff (in terms of programming) and you know that, no matter how much hidden complexity this project hides, you can likely handle it.
+Not to mention that, on the occasions where your skills come in handy you will basically be heralded as a wizard hero by colleagues who only ever learned scripting languages.
+C++ is the only language ,that I don't use at work, which I make sure I always stay somewhat up to date with, be it poking around the std, reading a bit on the new compiler patches or watching talks and reading books, blogs (or reddit posts). I personally would say this has helped me tremendously, but in the end that is a personal opinion and the same argument could be made about Rust or C.
+
+C++ is also a great language for building a lower level understanding of computers since it operates very close to the metal and concepts like cache locality start to become more relevant. Knowing how a system works under the hood will probably help you write better code in other languages too.
+
 «end of c++»
 
 physics:
@@ -3944,3 +3952,6 @@ c++ CRTP SFINAE
 The curiously recurring template pattern (CRTP) is an idiom in C++ in which a class X derives from a class template instantiation using X itself as template argument. More generally it is known as F-bound polymorphism, and it is a form of F-bounded quantification.
 
 how to drive russian UAZ УАЗ van
+how to learn physics
+Modern C++ for Computer Vision andImage Processing
+stl::rotate, uniq, sort, splice, pluck, partial sort
