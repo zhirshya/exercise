@@ -455,6 +455,13 @@ apple CoreText
 
 ACCU (Association of C and C++ Users)
 
+copy elision
+https://en.cppreference.com/w/cpp/language/copy_elision
+https://en.wikipedia.org/wiki/Copy_elision
+
+https://www.quora.com/Why-is-C++-so-much-harder-to-learn-than-either-C-or-C
+C++ is a complex, permissive language designed for full control over the machine. It allows absolute control of the data in memory (storage classes). This requires some rather refined techniques for non-trivial types (see rvalue references and copy elision rules). Rather than trying to work around logical errors by dynamic checks, it assumes that the programmer is proficient enough not to do them and when they do, the process simply crashes. That’s the price for code efficiency; the idea is that the code must be correct to be acceptable anyway, so (implicit) dynamic checks are redundant. And C++ is a language for people who try to get rid of everything that’s redundant while providing support for everything that’s technically possible. But for that, you need full control, so the language contains more means of control. That makes it complex and therefore harder to learn.
+
 «end of c++»
 
 physics:
@@ -2947,6 +2954,8 @@ done < <(cd B; find . -printf "%p %h\n")
 
 mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
 
+cd /Users/dev/lode/ext_tar/tmp && bash -c 'wget --progress=dot:mega -Q 0 -P "." -l 0 -nd -nH -N --no-use-server-timestamps https://dev-www.libreoffice.org/src/libabw-0.1.2.tar.xz 2>&1 | tee -a /Users/dev/lode/ext_tar/fetch.log && [ $PIPESTATUS -eq 0 ]' && SUM=`shasum -a 256 libabw-0.1.2.tar.xz | sed "s/ .*//"` && if test "$SUM" != "0b72944d5af81dda0a5c5803ee84cbac4b81441a4d767aa57029adc6744c2485"; then echo ERROR: expected checksum for libabw-0.1.2.tar.xz is 0b72944d5af81dda0a5c5803ee84cbac4b81441a4d767aa57029adc6744c2485 2>&1 | tee -a /Users/dev/lode/ext_tar/fetch.log; false; fi && mv libabw-0.1.2.tar.xz ../
+
 Natsagnyam NAMKHAI
 
 For your channel, if you need FREE softwares for editing your own videos, adding overlays, text, etc, consider those shown far below. They are all free and downloadable from their official websites. For those softwares, there are plentiful tutorials here in Youtube. 
@@ -3710,3 +3719,10 @@ jp:
 そのため店長への国内外のメディアのインタビューが殺到した。どのメディアも、「市長の媚薬店は一体いつ、どのような経緯で創業されたか？」と厳しく追及した。
 店長は困り果てて脳梗塞を起こし、現在病院で応急手当中・・・。
 
+transcranial direct current stimulation, tDCS
+
+Enable port forwarding to the Mac for incoming SMB and VNC services on your Internet router. How this is done varies depending on the router and again you may need to Google. Some routers are compatible with dynamic DNS services, which means you can use the same hostname without worrying about a changing IP address.
+Once port forwarding is setup, to open a file sharing connection to the remote Mac from a Windows computer, open the Start menu and in the Search field type two backslashes, followed by the Internet address or dynamic DNS hostname of the router (e.g. \\keirmac.dyndns.com). With a Linux desktop environment, choose to connect to a server and enter smb:// followed by the address (e.g. smb://keirmac.dyndns.com). For screen sharing, use a VNC client on Windows or Linux and simply type the address when prompted.
+Macs come with Secure Shell (SSH) built-in to enable you to connect remotely to the command-line. Enabling SSH is as simple as putting a tick alongside Remote Login within the Sharing pane of System Preferences on the home or office Mac. Again, to access the remote Mac across the Internet you’ll need to enable SSH port forwarding on the router.
+
+ccache is short for compiler cache - and it is exactly that.
