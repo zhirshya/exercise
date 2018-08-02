@@ -120,8 +120,11 @@ git rev-parse --short=9 HEAD
 x=$(git rev-parse --short=6 HEAD)
 $ printf '%s\n' "$x"
 
+Ctrl Opt Cmd Eject: shutdown Mac
+Ctrl Cmd Eject: restart Mac
 Ctrl Cmd Space: smiley
 Ctrl Cmd q: lock screen
+Shift Cmd 4, press space, mouse hover target window, Left click: shot target window.
 Ctrl 英数 Space: toggle IME
 ⌥ ← →: move cursor forward/backward in word unit
 Command–Mission Control	(⌘ F3): Show the desktop
