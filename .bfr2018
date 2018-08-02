@@ -894,6 +894,7 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+ROHO cushion with baffles
 risorgimento: a time of renewal or renaissance,revival.
 turmeric
 peppermint
@@ -1533,6 +1534,22 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+авшиг (хуучирсан)
+1. Эртний Энэтхэгт шинээр хаан ор суухдаа дөрвөн мөрний ус буюу рашааныг толгой дээрээ цутгаж, төрийн эрх барих эрхийг олох зан үйл;
+2. Нууц хөлгөнөө, мандалт толгой дээр ус цутгаж нууц үндсийг сонсох, номлох, бясалгах эрх олох буюу тарнийн үүдэнд орох зан үйлсээр эрх өргөмжлөх ёс;
+3. Эрдэм чадалтай мэргэн багш нар хамаг амьтанд тус үйлдэх үүднээс ван тавьж номын хурим үйлдэх ёс.
+
+ᠬᠥᠬᠦᠯ ХӨХӨЛ I:
+1. Хүүхэд багачуудын нялхын үсийг авахдаа үлдээсэн хэсэг үс: хөхөл тавих (хөхөл үлдээх), хөхөл үлдээх (хүүхэд багачуудын толгойд хэсэг үс үлдээх);
+2. Адууг дэллэхдээ толгой дээр нь үлдээсэн урт туг үс - Хээр азарганы хөхлөөр хийсэн хиур туг сүлд чинь... Монголын нууц товчоо;
+3. [хуучирсан] Монгол эрчүүдийн толгой дээрээ үлдээдэг байсан гурван хэсэг туг үс.
+
+ᠬᠥᠬᠢᠯ ХӨХӨЛ II: Хүн амьтны бусдын үйл явдлыг дагаж сэтгэл хөгжих нь: хөхөл хөгжил [хоршоо] (хүний сэтгэл баясан харах нь).
+
+ᠬᠥᠬᠦᠯ ХӨХӨЛ IV: Хүн, амьтны арьс, салстаас үүссэн, удаан явцтай элбэг тохиолддог хоргүй хавдар.
+
+хангарьд
+
 Цагаан уул цэцэг буюу ул өвс.
 Үхэшгүй мөнхийн Цагаан Уул цэцэг
 
@@ -1990,6 +2007,23 @@ https://www.youtube.com/watch?v=z6AMO6VVSDQ
 Бунд хорол буюу Монгол гэрийн тооно авч яваа хийморийн хүлэг. Усыг могойгоор дүрсэлдэг - Хангарид усыг тогтоож дарж байгаа гэж үзэж болно. Тогоруу их чухал, тогоруу ГАН ГАР, ГАН ГАЧИГ ГАР, ГАН ГАР гэж дуулдаг гэдэг - Монгол хэлээр шүүдээ. Тиймээс бороо хур орж ГАН гарах юм.
 
 өшөө их
+
+Хангарьд:
+Хятадын Фэн Хуан (Feng Huang) шувуу нь Тахиа Тогос хоёрын эрлийз гэмээр шувуу байдаг.
+Энэ шувуу
+-ЭВЭРГҮЙ
+-ГАРГҮЙ (хүний)
+-ХӨХГҮЙ (хүний)
+-АМЬ МОГОЙГҮЙ
+-ГАЛАН ҮСГҮЙ юм. Ямар сохор хүн ингэж том андуурдаг байнаа?
+
+http://www.squidoo.com/fenghuang
+-Энэ хуудсанд бичсэн байна : Хятадын домогт Фэн Хуан гэж хос шувуу байх бөгөөд Фэн нь эр шувуу. Хуан нь эм шувуу. ФэнХуан шувуу нь жигүүртний эзэн хамгийн үзэсгэлэнтэй шувуу бөгөөд амьтаны мах иддэггүй, харин ургамалын навч үр жимсээр хоололдог. Амьтан төдийгүй мод ургамалд ч хоргүй амьтан юм.
+-ТА НАР БОДДОО ГАЛТ ШУВУУ МОД УРГАМАЛ ГЭМТЭЭХГҮЙ БАЙХУУ?
+
+Эр тогос илүү ганган чамин байдаг :
+
+Харин хагас хүн, хагас шувуу бас эвэртэй Хангарьд бол тун өөр зан авиртай ГАЛТ ШУВУУ юм.
 
 «end of mgl»
 
@@ -3999,7 +4033,8 @@ https://coderprog.com/c17-stl-solutions-video/
 
 turmeric curcumin, black pepper, avocado, coconut oil,
  
-modern c++ boilerplate code snippet => family c++ code repository => c++ project and library
+modern c++ boilerplate code snippet => family c++ code repository, journal => c++ project and library
 
 share mac's wired ethernet connection with android phone attached to usb
 before too long
+yandex browser source code
