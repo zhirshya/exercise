@@ -744,6 +744,13 @@ Data Structures and Network Algorithms (CBMS-NSF Regional Conference Series in A
 
 If you intend to place a wifi adapter in Monitor mode, you have got to have a primary network/Internet connection, either an ethernet adapter or another Wifi stick for both Internet access and not losing remote control of the VM/raspberry.
 
+Tips to Understand Legacy Code:
+Decoupling: a simple and efficient way to work on decoupling code is to write unit test on a specific piece of code.
+In a large monolithic / legacy code base, you typically struggle to just compile and link with a specific piece of code without pulling a lot of other code (singletons to initialize, cyclic dependencies, poor organization in different modules...). Therefore you are forced to cut / invert the dependencies and reorganize the code to be able to unit test just this specific module (without having to build & link with the entire app).
+And the good thing about it is that, at the same time, you are also introducing unit testing on the legacy code which will help a lot to refactor it (some people define legacy code as untested code).
+
+«end of eecs,ict»
+
 difficult en:
 amortization 
 convolution
