@@ -566,6 +566,11 @@ brew update && brew upgrade && brew upgrade python git sourcetree make cmake nod
 sudo softwareupdate -ia --verbose
 
 VirtualBox:
+https://www.linuxquestions.org/questions/linux-virtualization-and-cloud-90/how-to-check-version-of-virtualbox-guest-additions-currently-installed-in-guest-syste-946053/
+lsmod | grep -io vboxguest | xargs modinfo | grep -iw version
+or more verbosely:
+modinfo vboxguest
+
 sudo apt install build-essential module-assistant dkms
 sudo m-a prepare ?
 
@@ -649,6 +654,10 @@ interpolate
 liaison
 
 en:
+I don’t hold a grudge on C++.
+If you tend to hold a grudge, you don't let it go when you feel someone's insulted or wronged you. I hope you won't hold a grudge against me for bringing it up.
+Grudge comes from the now dead Middle English word "grutch," which meant "to complain or grumble." Someone who bears a grudge might often be grouchy. You can specify a type of grudge: political grudge, personal grudge, etc. You know Grandpa's been holding a grudge against the neighbors for years, but you have to wonder: How long can he hold that shotgun?
+
 Excuse me, hang on a second, I'll be with you in a second.
 Would you mind if I make a call, would it disturb you?
 
@@ -786,6 +795,7 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+intensive labor: ирмүү хөдөлмөр ᠢᠷᠮᠡᠭᠦ ᠬᠥᠳᠡᠯᠮᠦᠷᠢ
 standing desk
 deal breaker issues
 residential wiring
@@ -2408,6 +2418,8 @@ https://stackoverflow.com/questions/4210042/how-to-exclude-a-directory-in-find-c
 find /Volumes/DATA -not \( -path '/Volumes/DATA/node_modules*' -prune \) -not \( -path '/Volumes/DATA/amule' -prune \) -not \( -path '/Volumes/DATA/tnsrfl' -prune \) -type f -iname "dl*" -o -iname "dn*"
 A more precise (and POSIX compatible) variation of this method: find searchdir \! \( -type d \( -path './excludedir/*' -o -path './excludedir2/*' -o -path './excludedir3/*' \) -prune \) followed by any conditions that should match what you are looking for:
 find /Volumes/DATA \! \( -type d \( -path '/Volumes/DATA/node_modules*' -o -path '/Volumes/DATA/amule' -o -path '/Volumes/DATA/tnsrfl' \) -prune \) -type f -iname "dl*" -o -iname "dn*"
+exclude single directory from find:
+find ~ -path ~/lode/dev/core/workdir -prune -o -type f -name "*build*log*" -exec ls -alF {} \;
 
 lo:
 libreoffice@lists.freedesktop.org
@@ -3726,3 +3738,12 @@ Once port forwarding is setup, to open a file sharing connection to the remote M
 Macs come with Secure Shell (SSH) built-in to enable you to connect remotely to the command-line. Enabling SSH is as simple as putting a tick alongside Remote Login within the Sharing pane of System Preferences on the home or office Mac. Again, to access the remote Mac across the Internet you’ll need to enable SSH port forwarding on the router.
 
 ccache is short for compiler cache - and it is exactly that.
+
+https://askubuntu.com/questions/3697/how-do-i-install-fonts
+Font files that are placed in the hidden .fonts directory of your home folder will automatically be available. You can also place them in the ~/.local/share/fonts directory on newer versions of Ubuntu per the comments below.
+You can also double-click on the font file (or select Open with Font Viewer in the right-click menu). Then click the Install Font button.
+If you need the fonts to be available system-wide, you'll need to copy them to /usr/local/share/fonts and reboot (or manually rebuild the font cache with fc-cache -f -v).
+You can confirm they are installed correctly by running fc-list | grep "<name-of-font>"
+You may need to restart some programs, like OpenOffice Writer, before they actually show the new fonts (usually such programs are caching the font list when they start up).
+
+
