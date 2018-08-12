@@ -771,8 +771,13 @@ best scp optons: scp -Cpv
 
 direct ethernet scp transfer between mac and linux:
 disable the WiFi, set the Ethernet IP address on Mac to 192.168.1.215, and 192.168.1.216 on Linux, set Subnet Mask on both machines to 255.255.255.0, and set the default gateway to 192.168.1.7 for both, leave the DNS portions blank.
+Bypass proxy settings for *.local, 169.254/16
 
-Enable file sharing on destination machine? So destination's firewall won't block scp connection?
+Allow incoming SCP connections on Mac:
+System Preferences → Sharing → check Remote Login checkbox. This will enable SSH, and in turn, SCP.
+Allow incoming SCP connections on Fedora Linux:
+Settings → Sharing → check Remote Login checkbox. This will enable SSH, and in turn, SCP.
+Note, SFTP / SCP both operate on the same port as SSH, so if SSH is allowed through, SFTP and SCP will also be allowed through.
 
 https://www.linuxquestions.org/questions/linux-networking-3/need-help-connecting-mac-to-linux-via-ethernet-934523/
 
@@ -798,10 +803,6 @@ https://gist.github.com/michaelminter/7377743
 for graphical transfer:
 Access a Shared Folder from Mac OS X: smb://COMPUTERNAME
 Access a Shared Folder from Linux: smb://COMPUTERNAME
-
-Allow incoming SCP connections on Mac:
-System Preferences pane → Sharing applet → check the Remote Login checkbox. This will enable SSH, and in turn, SCP.
-Note, SFTP / SCP both operate on the same port as SSH, so if SSH is allowed through, SFTP and SCP will also be allowed through.
 
 How to transfer large amounts of data via network
 http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html
@@ -3628,8 +3629,6 @@ How would a dopamine antagonist work? … continue asking yourself elaborative q
 
 
 asuult:
-Will enabling file sharing on destination machine let destination's firewall won't block scp connection?
-
 libreoffice how to mark annotate corrections
 
 handwriting of Mongolian numbers
