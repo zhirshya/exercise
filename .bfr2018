@@ -803,6 +803,9 @@ Allow incoming SCP connections on Mac:
 System Preferences pane → Sharing applet → check the Remote Login checkbox. This will enable SSH, and in turn, SCP.
 Note, SFTP / SCP both operate on the same port as SSH, so if SSH is allowed through, SFTP and SCP will also be allowed through.
 
+How to transfer large amounts of data via network
+http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html
+
 «end of eecs,ict»
 
 difficult en:
