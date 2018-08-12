@@ -746,6 +746,59 @@ Decoupling: a simple and efficient way to work on decoupling code is to write un
 In a large monolithic / legacy code base, you typically struggle to just compile and link with a specific piece of code without pulling a lot of other code (singletons to initialize, cyclic dependencies, poor organization in different modules...). Therefore you are forced to cut / invert the dependencies and reorganize the code to be able to unit test just this specific module (without having to build & link with the entire app).
 And the good thing about it is that, at the same time, you are also introducing unit testing on the legacy code which will help a lot to refactor it (some people define legacy code as untested code).
 
+Reset a root password on Fedora, CentOS, and similar Linux distros:
+@vmlinuz line, remove rhgb quiet and replace with the following:
+rd.break enforcing=0
+
+Setting enforcing=0 will allow you to avoid performing a complete system SELinux relabeling. Once the system is rebooted, you'll only have to restore the correct SELinux context for the /etc/shadow file. I'll show you how to do this too.
+Press Ctrl-x to start.
+The system will now be in emergency mode.
+Remount the hard drive with read-write access:
+# mount –o remount,rw /sysroot
+Run chroot to access the system:
+
+# chroot /sysroot
+You can now change the root password:
+# passwd
+Type the new root password twice when prompted. If you are successful, you should see a message that reads "all authentication tokens updated successfully."
+Type exit twice to reboot the system.
+Log in as root and restore the SELinux label to the /etc/shadow file.
+# restorecon -v /etc/shadow
+Turn SELinux back to enforcing mode:
+# setenforce 1
+
+best scp optons: scp -Cpv
+
+direct ethernet scp transfer between mac and linux:
+disable the WiFi, set the Ethernet IP address on Mac to 192.168.1.215, and 192.168.1.216 on Linux, set Subnet Mask on both machines to 255.255.255.0, and set the default gateway to 192.168.1.7 for both, leave the DNS portions blank.
+
+Enable file sharing on destination machine? So destination's firewall won't block scp connection?
+
+https://www.linuxquestions.org/questions/linux-networking-3/need-help-connecting-mac-to-linux-via-ethernet-934523/
+
+scp source_file_name username@destination_host:destination_folder
+
+Provide the detail information of SCP process using -v parameter: scp -v
+
+Provide modification times, access times, and modes from original files: The “-p” parameter will help you on this. An estimated time and the connection speed will appear on the screen.
+
+Make file transfer faster using -C parameter
+One of parameter that can faster your file transfer is “-C” parameter. The “-C” parameter will compress your files on the go. The unique thing is the compression is only happen in the network. When the file is arrived to the destination server, it will returning into the original size as before the compression happen.
+The thing that we should notice that compression method will not work on any files. When the source file is already compressed, you will not find any improvement there. Files such as .zip, .rar, pictures, and .iso files will not affected by “-C” parameter.
+
+Specify specific port to use with SCP
+Usually SCP is using port 22 as a default port. But for security reason, you may change the port into another port. For example, we are using port 2249. Then the command should be like this.
+scp -P 2249
+
+Copy files inside directory recursively: scp -r
+
+https://www.tecmint.com/scp-commands-examples/
+https://gist.github.com/michaelminter/7377743
+
+for graphical transfer:
+Access a Shared Folder from Mac OS X: smb://COMPUTERNAME
+Access a Shared Folder from Linux: smb://COMPUTERNAME
+
 «end of eecs,ict»
 
 difficult en:
@@ -1581,6 +1634,8 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+Зөгнөл Нострадамус
+
 ᠠᠰᠢᠭᠦᠢ ашгүй : quite good, better than expected.
 
 Ѳѳрийнхѳѳрѳѳ амьдар - Амьдрал лаг гоё
