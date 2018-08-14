@@ -795,6 +795,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+The tick, the Asian longhorned tick (or Haemaphysalis longicornis), has the potential to transmit an assortment of nasty diseases to humans, including an emerging virus that kills up to 30 percent of victims. So far, the tick hasn’t been found carrying any diseases in the US. It currently poses the largest threat to livestock, pets, and wild animals; the ticks can attack en masse and drain young animals of blood so quickly that they die—an execution method called exsanguination.
+
 intensive labor: ирмүү хөдөлмөр ᠢᠷᠮᠡᠭᠦ ᠬᠥᠳᠡᠯᠮᠦᠷᠢ
 standing desk
 deal breaker issues
@@ -3746,4 +3748,22 @@ If you need the fonts to be available system-wide, you'll need to copy them to /
 You can confirm they are installed correctly by running fc-list | grep "<name-of-font>"
 You may need to restart some programs, like OpenOffice Writer, before they actually show the new fonts (usually such programs are caching the font list when they start up).
 
+iMac keyboard page up/down for virutalbox linux guest:
+https://apple.stackexchange.com/questions/26930/how-can-i-achieve-page-up-and-page-down-in-os-x
+hardware keyboard on Macintosh machines has:
+Fn + ← = Home
+Fn + → = End
+Fn + ↑ = Pg up
+Fn + ↓ = Pg down
 
+
+Metal renderer
+http://www.linuxfromscratch.org/blfs/view/svn/xsoft/libreoffice.html
+https://www.collaboraoffice.com/code/
+fatal: Unable to look up gerrit.libreoffice.org (port 9418) (nodename nor servname provided, or not known)
+awry
+libreoffice master build error CppunitTest sw_ooxmlexport failed
+grp odfvalidator configure*
+git will pulling master automatically update a branch created by merging master with another branch?
+FnKNsfYaQPw comment; cognitive conflict mind map
+proper way to write c++ unit tests
