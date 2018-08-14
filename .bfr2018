@@ -1,8 +1,5 @@
 I must lose myself in action, lest I wither in despair.
 
-It is extremely important to keep your biological age substantially younger than your chronological age.
-https://www.youtube.com/watch?v=XExB45GRrfc
-
 Man's Search for Meaning:
 Life is not primarily a quest for pleasure, as Freud believed, or a quest for power, as Alfred Adler taught, but a quest for meaning.
 The truth- that love is the ultimate and the highest goal to which man can aspire. Then I grasped the meaning of the greatest secret that human poetry and human thought and believe have to impart: The salvation of man is through love and in love.
@@ -120,8 +117,11 @@ git rev-parse --short=9 HEAD
 x=$(git rev-parse --short=6 HEAD)
 $ printf '%s\n' "$x"
 
+Ctrl Opt Cmd Eject: shutdown Mac
+Ctrl Cmd Eject: restart Mac
 Ctrl Cmd Space: smiley
 Ctrl Cmd q: lock screen
+Shift Cmd 4, press space, mouse hover target window, Left click: shot target window.
 Ctrl 英数 Space: toggle IME
 ⌥ ← →: move cursor forward/backward in word unit
 Command–Mission Control	(⌘ F3): Show the desktop
@@ -192,6 +192,8 @@ https://exmail.qq.com/cgi-bin/loginpage
 qingbatu@delehi.com .d*G*1*5
 
 book:
+Becoming a Better Programmer: A Handbook for People Who Care About Code by Pete Goodliffe
+
 Hexaflexagons, probability paradoxes, and the tower of Hanoi by Martin Gardner
 
 Deep Belief Nets in C++ and CUDA C: Volume 1: Restricted Boltzmann Machines and Supervised Feedforward Networks by Timothy Masters 
@@ -299,7 +301,107 @@ find: -exec: no terminating ";" or "+"
 $find /Volumes/DATA ~ -type f -iname "*dnld*" -exec zsh -c 'mv $0 ${0/dnld/dllst}' {};
 find: -exec: no terminating ";" or "+"
 
+finance:
+Net Present Value
+Internal Rate Return
+amortization 
+
+python:
+Personal Finance with Python: Using pandas, Requests, and Recurrent by Max Humber 
+	English | 2018 | ISBN: 1484238011 | 117 Pages | True PDF, EPUB | 11 MB
+Deal with data, build up financial formulas in code from scratch, and evaluate and think about money in your day-to-day life. This book is about Python and personal finance and how you can effectively mix the two together.
+In Personal Finance with Python you will learn Python and finance at the same time by creating a profit calculator, a currency converter, an amortization schedule, a budget, a portfolio rebalancer, and a purchase forecaster. Many of the examples use pandas, the main data manipulation tool in Python. Each chapter is hands-on, self-contained, and motivated by fun and interesting examples.
+Although this book assumes a minimal familiarity with programming and the Python language, if you don’t have any, don’t worry. Everything is built up piece-by-piece and the first chapters are conducted at a relaxed pace. You’ll need Python 3.6 (or above) and all of the setup details are included.
+What You’ll Learn:
+	Work with data in pandas
+	Calculate Net Present Value and Internal Rate Return
+	Query a third-party API with Requests
+	Manage secrets
+	Build efficient loops
+	Parse English sentences with Recurrent
+	Work with the YAML file format
+	Fetch stock quotes and use Prophet to forecast the future.
+
+Data Analysis From Scratch With Python: Step By Step Guide by Peters Morgan 
+English | 2016 | ISBN: 1721942817 | 166 Pages | EPUB | 10 MB
+
+Are you thinking of becoming a data analyst using Python?
+If you are looking for a complete guide to data analysis using Python language and its library that will help you to become an effective data scientist, this book is for you.
+From AI Sciences Publisher
+Our books may be the best one for beginners; it’s a step-by-step guide for any person who wants to start learning Artificial Intelligence and Data Science from scratch. It will help you in preparing a solid foundation and learn any other high-level courses. To get the most out of the concepts that would be covered, readers are advised to adopt hands on approach, which would lead to better mental representations.
+Step By Step Guide and Visual Illustrations and Examples
+The Book give complete instructions for manipulating, processing, cleaning, modeling and crunching datasets in Python. This is a hands-on guide with practical case studies of data analysis problems effectively. You will learn pandas, NumPy, IPython, and Jupiter in the Process.
+Target Users
+This book is a practical introduction to data science tools in Python. It is ideal for analyst’s beginners to Python and for Python programmers new to data science and computer science. Instead of tough math formulas, this book contains several graphs and images.
+What’s Inside This Book?
+Why Choose Python for Data Science & Machine Learning
+Prerequisites & Reminders
+Python Quick Review
+Overview & Objectives
+A Quick Example
+Getting & Processing Data
+Data Visualization
+Supervised & Unsupervised Learning
+Regression
+Simple Linear Regression
+Multiple Linear Regression
+Decision Tree
+Random Forest
+Classification
+Logistic Regression
+K-Nearest Neighbors
+Decision Tree Classification
+Random Forest Classification
+Clustering
+Goals & Uses of Clustering
+K-Means Clustering
+Anomaly Detection
+Association Rule Learning
+Explanation
+Apriori
+Reinforcement Learning
+What is Reinforcement Learning
+Comparison with Supervised & Unsupervised Learning
+Applying Reinforcement Learning
+Neural Networks
+An Idea of How the Brain Works
+Potential & Constraints
+Here’s an Example
+Natural Language Processing
+Analyzing Words & Sentiments
+Using NLTK
+Model Selection & Improving Performance
+Sources & References.
+
+Mastering Machine Learning with scikit-learn, 2nd Edition by Gavin Hackeling 
+English | 2017 | ISBN: 1788299879 | 254 Pages | True PDF, EPUB, AZW3 | 18 MB
+
+Use scikit-learn to apply machine learning to real-world problems
+Machine learning is the buzzword bringing computer science and statistics together to build smart and efficient models. Using powerful algorithms and techniques offered by machine learning you can automate any analytical model.
+This book examines a variety of machine learning models including popular machine learning algorithms such as k-nearest neighbors, logistic regression, naive Bayes, k-means, decision trees, and artificial neural networks. It discusses data preprocessing, hyperparameter optimization, and ensemble methods. You will build systems that classify documents, recognize images, detect ads, and more. You will learn to use scikit-learn’s API to extract features from categorical variables, text and images; evaluate model performance, and develop an intuition for how to improve your model’s performance.
+By the end of this book, you will master all required concepts of scikit-learn to build efficient models at work to carry out advanced tasks with the practical approach.
+What You Will Learn:
+
+Review fundamental concepts such as bias and variance
+Extract features from categorical variables, text, and images
+Predict the values of continuous variables using linear regression and K Nearest Neighbors
+Classify documents and images using logistic regression and support vector machines
+Create ensembles of estimators using bagging and boosting techniques
+Discover hidden structures in data using K-Means clustering
+Evaluate the performance of machine learning systems in common tasks.
+
+
+
 c++:
+https://www.reddit.com/r/cpp/
+https://www.reddit.com/r/cpp/comments/7pp8tv/why_should_i_learn_c_in_2018/
+Every time you instantiate a class, you decide where it shall live; on the stack or on the heap. This has an impact on the lifetime of the object. Stack allocated objects are destroyed when their scope is exited (i.e. when a function returns), however, heap allocated objects do not have lifetimes associated with scope and must be cleaned up manually (or by using RAII).
+
+There is a lot of compiler magic that can cause issues when you aren't aware of what the compiler is doing. There is a good reason it does it, but it can be hard to find information on it that makes sense to a beginner.
+
+C++ compile time CBOR/BSON coder/decoder generator
+serialize/desirialize C++ types in well defined binary format
+
 A few resources for benchmarks, comparisons, and implementations:
 - CppCon 2017: Matt Kulukundis “Designing a Fast, Efficient, Cache-friendly Hash Table, Step by Step”
  https://www.youtube.com/watch?v=ncHmEUmJZf4
@@ -335,6 +437,8 @@ Maximum flow.
 NP complete algorithms such as graph coloring, traveling salesman problem etc.
 
 I'd like to parse unicode strings, where characters stored in more than 1 bytes are represented with "\uXXXX". Is there a RTL_TEXTENCODING or something else to parse that to OUString? e.g. "Tamás" == "Tam\u00e1s" ?
+
+error: ISO C++17 does not allow 'register' storage class specifier [-Wregister]
 
 'register' storage class specifier is deprecated and incompatible with C++17
 
@@ -461,6 +565,14 @@ https://en.wikipedia.org/wiki/Copy_elision
 
 https://www.quora.com/Why-is-C++-so-much-harder-to-learn-than-either-C-or-C
 C++ is a complex, permissive language designed for full control over the machine. It allows absolute control of the data in memory (storage classes). This requires some rather refined techniques for non-trivial types (see rvalue references and copy elision rules). Rather than trying to work around logical errors by dynamic checks, it assumes that the programmer is proficient enough not to do them and when they do, the process simply crashes. That’s the price for code efficiency; the idea is that the code must be correct to be acceptable anyway, so (implicit) dynamic checks are redundant. And C++ is a language for people who try to get rid of everything that’s redundant while providing support for everything that’s technically possible. But for that, you need full control, so the language contains more means of control. That makes it complex and therefore harder to learn.
+
+I would like to stress this point as well, building anything vaguely complex with C++ and learning more in-depth about some features of the language can really help you expand your understanding of the current programming environment in general.
+Will understanding shared memory, native threading, memory ordering, optimizing, working with "fundamental" algorithms (e.g. stuff like partition and sort rather than stuff like map, filter, reduce), zero-cost abstraction, handling computations using simd... etc, help you in most projects ? No, not even in most C++ projects.
+But knowing that you can always mess with the source code of your database or library, knowing you can always write a heavily optimize version of your software or plugin a custom C++ library for certain tasks, understanding threading and memory tit for tat is "empowering". It makes you code without the fear of the unknown, it gives you a "safe" area where most projects lie, since you know you've done harder stuff (in terms of programming) and you know that, no matter how much hidden complexity this project hides, you can likely handle it.
+Not to mention that, on the occasions where your skills come in handy you will basically be heralded as a wizard hero by colleagues who only ever learned scripting languages.
+C++ is the only language ,that I don't use at work, which I make sure I always stay somewhat up to date with, be it poking around the std, reading a bit on the new compiler patches or watching talks and reading books, blogs (or reddit posts). I personally would say this has helped me tremendously, but in the end that is a personal opinion and the same argument could be made about Rust or C.
+
+C++ is also a great language for building a lower level understanding of computers since it operates very close to the metal and concepts like cache locality start to become more relevant. Knowing how a system works under the hood will probably help you write better code in other languages too.
 
 «end of c++»
 
@@ -641,7 +753,76 @@ Data Structures and Network Algorithms (CBMS-NSF Regional Conference Series in A
 
 If you intend to place a wifi adapter in Monitor mode, you have got to have a primary network/Internet connection, either an ethernet adapter or another Wifi stick for both Internet access and not losing remote control of the VM/raspberry.
 
+Tips to Understand Legacy Code:
+Decoupling: a simple and efficient way to work on decoupling code is to write unit test on a specific piece of code.
+In a large monolithic / legacy code base, you typically struggle to just compile and link with a specific piece of code without pulling a lot of other code (singletons to initialize, cyclic dependencies, poor organization in different modules...). Therefore you are forced to cut / invert the dependencies and reorganize the code to be able to unit test just this specific module (without having to build & link with the entire app).
+And the good thing about it is that, at the same time, you are also introducing unit testing on the legacy code which will help a lot to refactor it (some people define legacy code as untested code).
+
+Reset a root password on Fedora, CentOS, and similar Linux distros:
+@vmlinuz line, remove rhgb quiet and replace with the following:
+rd.break enforcing=0
+
+Setting enforcing=0 will allow you to avoid performing a complete system SELinux relabeling. Once the system is rebooted, you'll only have to restore the correct SELinux context for the /etc/shadow file. I'll show you how to do this too.
+Press Ctrl-x to start.
+The system will now be in emergency mode.
+Remount the hard drive with read-write access:
+# mount –o remount,rw /sysroot
+Run chroot to access the system:
+
+# chroot /sysroot
+You can now change the root password:
+# passwd
+Type the new root password twice when prompted. If you are successful, you should see a message that reads "all authentication tokens updated successfully."
+Type exit twice to reboot the system.
+Log in as root and restore the SELinux label to the /etc/shadow file.
+# restorecon -v /etc/shadow
+Turn SELinux back to enforcing mode:
+# setenforce 1
+
+best scp optons: scp -Cpv
+
+direct ethernet scp transfer between mac and linux:
+disable the WiFi, set the Ethernet IP address on Mac to 192.168.1.215, and 192.168.1.216 on Linux, set Subnet Mask on both machines to 255.255.255.0, and set the default gateway to 192.168.1.7 for both, leave the DNS portions blank.
+Bypass proxy settings for *.local, 169.254/16
+
+Allow incoming SCP connections on Mac:
+System Preferences → Sharing → check Remote Login checkbox. This will enable SSH, and in turn, SCP.
+Allow incoming SCP connections on Fedora Linux:
+Settings → Sharing → check Remote Login checkbox. This will enable SSH, and in turn, SCP.
+Note, SFTP / SCP both operate on the same port as SSH, so if SSH is allowed through, SFTP and SCP will also be allowed through.
+
+https://www.linuxquestions.org/questions/linux-networking-3/need-help-connecting-mac-to-linux-via-ethernet-934523/
+
+scp source_file_name username@destination_host:destination_folder
+
+Provide the detail information of SCP process using -v parameter: scp -v
+
+Provide modification times, access times, and modes from original files: The “-p” parameter will help you on this. An estimated time and the connection speed will appear on the screen.
+
+Make file transfer faster using -C parameter
+One of parameter that can faster your file transfer is “-C” parameter. The “-C” parameter will compress your files on the go. The unique thing is the compression is only happen in the network. When the file is arrived to the destination server, it will returning into the original size as before the compression happen.
+The thing that we should notice that compression method will not work on any files. When the source file is already compressed, you will not find any improvement there. Files such as .zip, .rar, pictures, and .iso files will not affected by “-C” parameter.
+
+Specify specific port to use with SCP
+Usually SCP is using port 22 as a default port. But for security reason, you may change the port into another port. For example, we are using port 2249. Then the command should be like this.
+scp -P 2249
+
+Copy files inside directory recursively: scp -r
+
+https://www.tecmint.com/scp-commands-examples/
+https://gist.github.com/michaelminter/7377743
+
+for graphical transfer:
+Access a Shared Folder from Mac OS X: smb://COMPUTERNAME
+Access a Shared Folder from Linux: smb://COMPUTERNAME
+
+How to transfer large amounts of data via network
+http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html
+
+«end of eecs,ict»
+
 difficult en:
+amortization 
 convolution
 Convolutional Neural Networks
 genesis
@@ -657,6 +838,8 @@ en:
 I don’t hold a grudge on C++.
 If you tend to hold a grudge, you don't let it go when you feel someone's insulted or wronged you. I hope you won't hold a grudge against me for bringing it up.
 Grudge comes from the now dead Middle English word "grutch," which meant "to complain or grumble." Someone who bears a grudge might often be grouchy. You can specify a type of grudge: political grudge, personal grudge, etc. You know Grandpa's been holding a grudge against the neighbors for years, but you have to wonder: How long can he hold that shotgun?
+
+The first thing I did was clean the bathroom. Actually. I’ll be honest and tell you my mother in law cleaned the bathroom. The tub was moldy, the toilet was totally disgusting, and the brick floors (yes, brick!) were pretty gross. If you don’t feel like you can get clean somewhere, then you’ll never feel any relief from the gross. She scrubby bubbled everything (even the floor!!!).
 
 Excuse me, hang on a second, I'll be with you in a second.
 Would you mind if I make a call, would it disturb you?
@@ -677,7 +860,7 @@ You can breathe through your nose and have all of those problems, though. It's h
 
 That would seem to be at the heart of a lot of cranio facial problems.  Nasal obstruction is not normal and should be addressed ASAP.
 
-You mean the posterior third of the tongue? Try and say the word "wing", but holding the "NG" sound, that  will get your tongue up there.
+You mean the posterior third of the tongue? Try and say the word "wing", but holding the "NG" sound, that will get your tongue up there.
 if you imagine getting the back of your tongue up as far posteriorly as your uvula you should hit the spot. I thought i had my posterior third up but i didnt realize how far posterior it needed to be. Huge difference now.
 
 Do NOT push it against teeth. Just palate. Pushing it against the teeth will push your teeth forward and might create an overbite or other nasty side effects.
@@ -798,6 +981,88 @@ en2mn2rus:
 The tick, the Asian longhorned tick (or Haemaphysalis longicornis), has the potential to transmit an assortment of nasty diseases to humans, including an emerging virus that kills up to 30 percent of victims. So far, the tick hasn’t been found carrying any diseases in the US. It currently poses the largest threat to livestock, pets, and wild animals; the ticks can attack en masse and drain young animals of blood so quickly that they die—an execution method called exsanguination.
 
 intensive labor: ирмүү хөдөлмөр ᠢᠷᠮᠡᠭᠦ ᠬᠥᠳᠡᠯᠮᠦᠷᠢ
+
+zebra :	алаг хулан ᠠᠯᠠᠭ ᠬᠤᠯᠠᠨ, алаг тахь ᠠᠯᠠᠭ ᠲᠠᠬᠢ
+
+ledger : тооцооны дэвтэр ᠲᠣᠭᠠᠴᠠᠭᠠᠨ ᠤ ᠳᠡᠪᠲᠡᠷ, хөндлөвч ᠬᠥᠨᠳᠡᠯᠡᠪᠴᠢ
+subsidiary ledger [acc.] : туслах дэвтэр ᠲᠤᠰᠠᠯᠠᠬᠤ ᠳᠡᠪᠲᠡᠷ
+ameliorate
+
+Geographic proximity to wealth and overall mental health and morale of the people around.
+
+Disease is cells're mal-functioning. Two causes of it are nutritional deficiency and toxicity.
+Sugar is deadly metabolic poison and makes human older. Get rid of it from diet completely.
+It is extremely important to keep your biological age substantially younger than your chronological age.
+https://www.youtube.com/watch?v=XExB45GRrfc
+
+Retractable Razor Blades Knife with Snap Off Blades and Slide Locks.
+Steel blade track supports heavy-duty cutting; thumb-slide blade extend/retract with position lock.
+
+An OTF Knife, also known as an out-the-front knife, sliding knife, or telescoping knife, is a pocketknife with a blade that opens and closes through a hole in one end of the handle. Contrast this with the majority of knives, which are either standard folding knives or are "fixed blade" sheath knives (having no mechanical operation).
+"OTF" only refers to the basic portion of the knife's mechanical operation where the blade slides parallel with the handle to deploy.
+OTF knives may be further subdivided into manual sliding knives, which are not restricted as inertia knives, and automatic OTF switchblade knives and gravity knives, which are restricted offensive weapons (white weapon).
+
+Tips for Dealing with Pushy Salespeople
+How to Handle Aggressive Salespeople in a Polite Manner
+Bad Habits That Make Salespeople Seem Pushy 
+
+How to put/set up a Clothesline Outdoors or Indoors
+
+to style : моодонд оруулах ᠮᠣᠳ᠋ ᠲᠤ ᠣᠷᠤᠭᠤᠯᠬᠤ
+key fob
+Belt strap keychain
+wax also beeswax : лав ᠯᠠᠪ
+clean wax off apples
+never eat wax-coated apples
+Mix one tablespoon of vinegar and one tablespoon of baking soda in water. Dip each apple in this mixture and scrub it using a vegetable brush, then rinse them under tap water.
+edelweiss [bot.] : цагаан уул цэцэг ᠴᠠᠭᠠᠨ ᠤᠯᠠ? ᠴᠡᠴᠡᠭ
+tongue splinting
+oven mitt
+Stove top pressure cooker
+Electric pressure cooker
+Diameter of hair strands – some men have thicker hair follicles, and that’s why their beards look thicker.
+Reverse-Grip Dumbbell Bench Press
+anabolic hormones
+catabolic hormones
+ROHO cushion with baffles
+risorgimento: a time of renewal or renaissance,revival.
+turmeric
+peppermint
+boiled fermented milk			цагаа ᠴᠠᠭ᠎ᠠ
+mare's fermented milk			исгэлэн айраг ᠢᠰᠬᠦᠯᠡᠩ ᠠᠶᠢᠷᠠᠭ
+fermented mare's milk for guests			сөн ᠰᠥᠩ
+fermented milk of mares			айраг ᠠᠶᠢᠷᠠᠭ
+fermented goat's or sheep's milk			цөрөм ᠴᠥᠷᠮ᠎ᠡ
+to serve fermented mare's milk at feast [verb]			сөн түших ᠰᠥᠩ ᠲᠦᠰᠢᠬᠦ
+
+oblivious
+1 : lacking remembrance, memory, or mindful attention
+2 : lacking active conscious knowledge or awareness —usually used with of or to.
+e.g. Oblivious of any previous decisions not to stand together …  , the three stood in a tight group … —Doris Lessing, The Good Terrorist, 1985.
+Prentice looked up from his food, which he had been steadily shovelling in, completely oblivious of everyone. —Antonya Nelson, New Yorker, 9 Nov. 1992.
+
+delirium tremens n.: эмн цагаан солио ᠡᠮᠡᠨᠡ ᠴᠠᠭᠠᠨ ᠰᠣᠯᠢᠶ᠎ᠠ
+We look forward to seeing you again before too long.
+ACAP: adult child of aging parents
+telemeter
+double-booking
+double-book
+hamster
+squat on seatless toilet
+undecipherable secret code script
+carcass meat: тураг мах ᠲᠤᠷᠤᠭ ᠮᠢᠬ᠎ᠠ
+to chop meat: мах хөшиглөх ᠮᠢᠬ᠎ᠠ ᠬᠥᠰᠢᠭᠡᠯᠡᠬᠦ
+canned meat: лаазалсан мах ᠯᠠᠵᠠᠯᠠᠭᠰᠠᠨ ᠮᠢᠬ᠎ᠠ
+ground meat: хигсэн мах ᠬᠡᠭᠢᠭᠰᠡᠨ ᠮᠢᠬ᠎ᠠ, таташ ᠲᠠᠲᠠᠰᠢ, машиндсан мах ᠮᠠᠱᠢᠨᠳᠠᠭᠰᠠᠨ ᠮᠢᠬ᠎ᠠ
+blow sunshine up somebody's ass = give somebody excessive praise.
+bar: уушны газар ᠤᠤᠭᠤᠰᠢᠨ ᠤ ᠭᠠᠵᠠᠷ
+bar code: шугаман код ᠱᠤᠭᠤᠮᠠᠨ ᠻᠣᠳ᠋mb, үсгэн код ᠦᠰᠦᠭᠡᠨ ᠻᠣᠳ᠋mb
+coffee is a known diuretic
+Identify your learning techniques:visual, kinesthetic, auditory, etc.
+
+retrude: to move backward : displace posteriorly retrude the mandible.
+recessed chin
+
 standing desk
 deal breaker issues
 residential wiring
@@ -857,7 +1122,13 @@ orthodontics
 orthotropic
 Tips and Exercises on Improving Incorrect Swallowing by Prof John Mew
 https://www.youtube.com/watch?v=iTN5VDldq2U
-Teeth in or near contact, lips closed/sealed. Tong on the palate. You have to keep trying to keep the tonque on the roof. Dont breaht trough your mouth but inhale and exhale trough your nose. And dont suckel with your tonque against the theeth while swallowing but rather let the tonque do a sweep of the food from down to the palatte and swallow with your throat/neck.
+Teeth in or near contact, lips closed/sealed. Tongue on the palate. You have to keep trying to keep the tonque on the roof. Dont breaht trough your mouth but inhale and exhale trough your nose. And don't suck with your tonque against the teeth while swallowing but rather let the tonque do a sweep of the food from down to the palatte and swallow with your throat/neck.
+
+Mew Push Swallow by Dr Mike Mew Part 2
+https://www.youtube.com/watch?v=lKaW3zNIuWY
+Learning to rest with the back 1/3 of your tongue onto the roof of your mouth is critical.
+1. The back of the tongue is the most critical. Your body is the trunk of the tree. With out it being aligned the results will be mediocre at best. Like a small tree supported by a crutch. ALL MUST WORK IN HARMONY.
+2. ?! Tongue should be pulled back when swallowing. When swallow the tongue should do a wave motion like a sweeping motion.
 
 plagiotropic
 
@@ -1394,6 +1665,78 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+ᠭᠢᠯᠠᠶᠢᠬᠤ гялайх	II : Санаж хүссэн зүйл гүйцэлдэх, ач тус хүртсэндээ баясан бахархах - Бидэнтэй маргадаг ч хүн байхгүй болж бид хоёр гялайж байна. П.Лувсанцэрэн. Хөдөөгийн дуун., танд гялайлаа (танд баярлалаа).
+
+Зөгнөл Нострадамус
+
+ᠠᠰᠢᠭᠦᠢ ашгүй : quite good, better than expected.
+
+Ѳѳрийнхѳѳрѳѳ амьдар - Амьдрал лаг гоё
+
+ᠭᠠᠷᠴᠠ гарц II: Гарах газар, гарам: гарцаар гарах (гарах газраар гарах), замын гарц (зам гарах газар), мөрөн голын гарц (гол мөрний гарам, олом) - Туул голын явган гарцаар гараад, Богд уул руу гэртээ харьцгаадаг билээ. Д.Сүхбаатарын тухай дуртгалууд.
+I: Гарах хэмжээ: газрын гарц (өвс ногооны ургалтын хэмжээ) - Гол мөрний сав, булаг, бүрд бүхий газрын чийглэг хөрсөнд хаврын сүүлч, зуны үед газрын гарц илүү сайн байдаг. Ж.Самбуу. Мал маллагааны арга туршлагаас., ноосны гарц (ноос гарах хэмжээ), сүүний гарц (сүү саалийн гарах хэмжээ).
+
+ᠣᠭᠤᠴᠢᠯᠠᠬᠤ Байн байн оочих: халуун цай оочлох (халуун цайг хурдан хурдан сорж уух). => slurp?
+ᠣᠭᠤᠴᠢᠬᠤ оочих : Ундны зүйлийг багаар сорж уух: цай оочих (цайг бага багаар уух) - Хүү минь, би байна, юм оочих уу? Ж.Лодой. Бүрхэг шөнө., олохын өмнө зарахыг бодно, оочихын өмнө цадахыг бодно [зүйр цэцэн үг] (ховдог шунахай байдал), орох оронгүй, оочих аягагүй [зүйр цэцэн үг] (өөрийн гэсэн гэр оронгүй, ядуу зүдүү гэсэн санаа).
+
+1639 онд  нийслэлийн түүхийг эхлүүлсэн гэх тэр өргөө гэрийг одоогийн энэ Алтан тэвшийн хөндийд биш, Хархүрэмтэй ойролцоо Өвөрхангай аймгийн нутагт  барьсан. Анхдугаарыг амьд ахуйд 1706 онд Эрдэнэ толгойд, 1719 онд Дааган дэлд, 1720 онд Усан сээрт, 1723 онд  Жаргалантын голд гэх мэтээр нутаглаж байсан.
+
+Энэ ганзогын бэр гүйх үед ямар ая яваад байна хэлж өгөөч.
+>Бэр гуйх үед явж байгаа аялгуу нь Төрийн шагналт, Урлагийн гавъяат зүтгэлтэн, хөгжмийн зохиолч Б.Шарав гуайн "Сэтгэлийн эгшиг" цомогт багтсан "Тэмүүлэл" нэртэй аялгуу.
+
+ᠲᠤᠤᠯᠢ тууль: Ардын аман зохиолын шүлэглэн хэлэх томоохон төрөл зүйл - Мянхай хар багаас эцгийн тууль ярихыг сонсоод туульд гардаг баатрууд шиг болохыг ихэд хүсэмжилдэг байжээ. Ш.Нацагдорж. Мандхай цэцэн хатан., тууль хайлах (тууль аялгуулан хэлэх), үлгэр тууль [хоршоо] (ардын аман зохиолын томоохон хэмжээний төрөл).
+
+ᠬᠣᠷᠤᠮᠰᠠᠭ᠎ᠠ хоромсого: Нум дүрэх сав - Энхрий хайрт охиндоо, саадаг хоромсого бүрдсэн, саруул баатар олохоор, эрэл сураг тавьж, эрийг сонгон явнам. Халх ардын тууль., саадаг хоромсого [хоршоо] (нум сумаа дүрж агуулах сав).
+
+ᠬᠠᠨ ᠭᠠᠷᠤᠳᠢ хангарди?
+https://mongoltoli.mn/search.php?ug_id=105509&opt=1&word=ХАНГАРДИ#
+1. Үлгэр домогт гардаг гайхамшигт чадалтай маш том биетэй шувуу - Тэгээд галын дэргэд үргэлж байдаг хүн нь авгай хүн тул түүний үсийг хангардийн далавч шиг болгож чингэхлээр сайх хэрээ хангардиас айж гэнэ. Х.Нямбуу. Хамгийн эрхэм ёсон;
+2. Улаанбаатар хотын сүлд тэмдэг.
+
+ᠠᠪᠢᠰᠢᠭ᠌ авшиг (хуучирсан)
+1. Эртний Энэтхэгт шинээр хаан ор суухдаа дөрвөн мөрний ус буюу рашааныг толгой дээрээ цутгаж, төрийн эрх барих эрхийг олох зан үйл;
+2. Нууц хөлгөнөө, мандалт толгой дээр ус цутгаж нууц үндсийг сонсох, номлох, бясалгах эрх олох буюу тарнийн үүдэнд орох зан үйлсээр эрх өргөмжлөх ёс;
+3. Эрдэм чадалтай мэргэн багш нар хамаг амьтанд тус үйлдэх үүднээс ван тавьж номын хурим үйлдэх ёс.
+
+авшиг өгөх ᠠᠪᠢᠰᠢᠭ ᠥᠭᠬᠦ: to consecrate.
+
+ᠬᠥᠬᠦᠯ ХӨХӨЛ I:
+1. Хүүхэд багачуудын нялхын үсийг авахдаа үлдээсэн хэсэг үс: хөхөл тавих (хөхөл үлдээх), хөхөл үлдээх (хүүхэд багачуудын толгойд хэсэг үс үлдээх);
+2. Адууг дэллэхдээ толгой дээр нь үлдээсэн урт туг үс - Хээр азарганы хөхлөөр хийсэн хиур туг сүлд чинь... Монголын нууц товчоо;
+3. [хуучирсан] Монгол эрчүүдийн толгой дээрээ үлдээдэг байсан гурван хэсэг туг үс.
+
+ᠬᠥᠬᠢᠯ ХӨХӨЛ II: Хүн амьтны бусдын үйл явдлыг дагаж сэтгэл хөгжих нь: хөхөл хөгжил [хоршоо] (хүний сэтгэл баясан харах нь).
+
+ᠬᠥᠬᠦᠯ ХӨХӨЛ IV: Хүн, амьтны арьс, салстаас үүссэн, удаан явцтай элбэг тохиолддог хоргүй хавдар.
+
+хангарьд
+хан гарьд
+
+Цагаан уул цэцэг буюу ул өвс.
+Үхэшгүй мөнхийн Цагаан Уул цэцэг
+
+Цагаан уул цэцэг (англ. Edelweiss), ( Leontopodium alpinum), нь Asteraceae овгийн ургамал юм. Биологийн нэр Leontopodium нь грек хэлний leon (арслан) , podion (савар) гэсэн үгнээс гаралтай ажээ.
+Навч, цэцэг нь цагаан үсэрхэг бүрхүүлтэй байна. 7-9 сард 5-6 жижиг шар толгойтой од хэлбэрийн дэлбээтэй цагаан цэцэг гардаг. Энэхүү ургамал нь 3-20 см өндөр ба голдуу хад чулуурхаг ууланд 2000-2900 м өндөрлөг газар ургах нь элбэг. Хоргүй ургамал бөгөөд ардын эмчилгээнд хэрэглэх нь бий.
+Цагаан уул цэцгийг Монгол, Болгар, Хорват, Швейцари, Франц, Норвеги, Итали, Малайз, Индонез , Герман, Испани , Польш , Словак , Словен , Австри , Румын зэрэг олон оронд хуулиар хамгаалсан байдаг.
+
+ᠤᠷᠤᠮᠳᠠᠬᠤ урамдах
+1. Буга, бухын ороо нь орон хангинан дуугарах: буга урамдах (бугын дуугарах) - Уулын царамд орооны буга цангинатал урамдав. Л.Дашням. Бурхантын цэцэг;
+2. Урам дуугаргах: урамдан авлах (урам татан ан авлах).
+
+даржиг
+
+усгал
+1. Хүний зан аалийн амарлингуй, дөлгөөн нь: усгал дөлгөөн [хоршоо] (ааш авир болон нүдний харц намуун, тогтуун), усгал зөөлөн [хоршоо] (ааш авир болон нүдний харц намуун зөөлөн, тогтуун) - Усгал зөөлөн занг мөрний ус мэт ундраа. Д.Равжаа. Зохиолын эмхэтгэл;
+2. Хүний нүдний харц тунгалаг, зөөлөн дөлгөөн - Ёндонжамц өндөр гоолиг биетэй, нүд усгал зөөлөн, зан эелдэг. Ш.Нацагдорж. Мандхай цэцэн хатан.
+усгал дөлгөөн - ааш авир болон нүдний харц намуун, тогтуун
+усгал зөөлөн - ааш авир болон нүдний харц намуун зөөлөн, тогтуун.
+
+http://toli.gov.mn/
+https://president.mn/mongol-khelnii-zuv-bichih-durmiin-juram/
+
+Өвөр Монголд амьдардаг Америк хүн Монголчуудад зориулж монгол бичиг, тод монгол бичгийн үсгийн гар зохиож байна.
+https://play.google.com/store/apps/details?id=net.studymongolian.chimee
+
 ᠱᠤᠳᠠᠭ шуудаг:
 1. [хуучирсан] Бог малын арьсаар хийсэн доод биедээ өмсөх хувцас;
 2. Бөгсөнд өмсөх богинохон хувцас: шуудаг өмд (богинохон өмд), шуудаг өмсөх (богинохон өмд өмсөх);
@@ -1451,7 +1794,7 @@ http://medee.mn/mobile.php?eid=91534
 ᠬᠣᠶᠠᠷᠳᠠᠬᠢ ︖
 
 ᠳᠣᠭᠤᠭᠰᠢ доош
-чорос роман
+чорос = Ойрад
 
 https://mongoltoli.mn/search.php?opt=2&word=%E1%A0%B3%E1%A0%A0%E1%A0%A8%E1%A0%B5%E1%A0%A2%E1%A0%A8%E1%A0%B3%E1%A0%A0%E1%A0%AD%E1%A0%AA%E1%A0%A0
 https://mongoltoli.mn/search.php?opt=2&word=ᠳᠠᠨᠵᠢᠨᠳᠠᠭᠪᠠ
@@ -1767,7 +2110,90 @@ https://www.facebook.com/groups/zugaatai.hel.shinjlel/permalink/789153364601081/
 Энэ жил Өндөр гэгээн Занабазарын мэлмий гийсний 380 жилийн ой тохиож байгаа түүхэн жил билээ. “Их эзэн Чингис хааны хөшөө, Төрийн ёслол хүндэтгэлийн өргөө цогцолбор”-т байрладаг Монгол төрийн түүхийн музейгээс эрхлэн энэхүү түүхэн их ойг тохиолдуулан “Өндөр гэгээн Занабазар” номыг толилуулахаар болжээ.
 Өндөр гэгээн Занабазар нь төр-шашны нэрт зүтгэлтэн төдийгүй дундад зууны үеийн монголын үндэсний соёл урлагийг нэгэн үе гоо зүйн танигдашгүй өндөрлөгт хүргэж чадсан уран зураач, уран барималч, оточ, хэл шинжээч, яруу найрагч зэрэг тэнгэрлиг авьяас билигтэй хосгүй нэгэн байсныг гэрчлэх дахин давтагдашгүй урлагийн хосгүй бүтээлүүд үзэгчдийн мэлмийг мялаасаар байгаа билээ. Монгол хүний урлахуйн их эрдэм ухаанаар туурвин бүтээгдэж, он цагийн шалгарлыг даван туулсаар бидэнд уламжлагдан ирсэн түүх, соёлын дурсгалт зүйлсүүдээрээ дамжуулан монгол нутаг дахь хүний амьдралын түүх, соёл урлаг, ёс заншил, байгаль орчны түүхийг сурталчлан таниулах, улмаар тэдгээрийг унаган төрхөөр нь хадгалан хамгаалж, хойч үедээ өвлүүлэн үлдээх эрхэм хүндтэй үүргийг музейн ажилтнууд хүлээдэг юм. Эл номдоо 17 дугаар зууны үеийн монголын урлаг соёлын хөгжил дэвшил тэр дундаа хүрэл цутгамлын суурь урлаг хөгжлийнхөө өндөр төвшинд хүрснийг харуулах Өндөр гэгээний өөрийн мутраар урлан бүтээсэн алдарт бүтээлүүдийн тухай, бурхадын мутрын зангаа, барьц зэргийн тайлбар болон төвд хэлээр бичигдсэн Занабазарын намтрыг багтаажээ.
 
+Харын шашин
+
+Монгол хийморийн сан
+https://www.youtube.com/watch?v=35jEz6TWQ_Y
+Эцэг тэнгэр байгаль эхийн дөрвөн зүг, найман зовхист
+Гучин гурван тэнгэр хийгээд Хурмаст тэнгэрт
+Эрлэг хаан, Лусын хаан хийгээд төрсөн газрын савдагт
+Халх төрийн Соёмбот сүлд, сахиусан тэнгэр Гарид танаа
+Амьтай амьгүй шүтээн хийгээд өвөг дээдсийн онгон сахиусуудад 
+Хамаг Монголын гурван эрдэнийг итгэж сүслэн даатгая.
+Энэхүү хийморийг дарцагийг хийсгэснээр
+Нар, сар, гал гурван эрдэнэ явах замыг минь гэрэлтүүл
+Онгод, ном, багш гурван эрдэнэ итгэлийг минь батжуул
+Хань ижил, үр хүүхэд, гал голомт гурван эрдэнэ сэтгэлийг минь баясга
+Нэр төр, авъяас билиг, ажил мэргэжил гурван эрдэнэ ноёлох өндөрлөгт намайг хүргэ.
+
+Шонхор шиг нисэх, морь шиг зүтгэх, нохой шиг хайчлах, хүн шиг амьдрах
+(Эр хүн) миний сүлд хийморийг дээш босго
+
+Жигүүртэн шувууд жигүүрэндээ хүчтэй,
+Араатан амьтан араандаа хүчтэй,
+Адгуус амьтан шөрмөстэй,
+Монгол хүн оюундаа хүчтэй байх болтугай.
+
+Энх амгалангийн цагт цэнгэлийн манлайд хүрэх
+Хүссэн юм бүхэн хийгээд есөн хүсэл санасанаар бүтэх өлзий хутаг оршиг.
+Миний явдал суудал, ярих тэргүүнтэн өөрт өрөөлд халгүй байж
+Миний амь нас, сүнс сүлд, хувь заяа сэтгэлийн буян мэт арвижин уртсаж
+Ясны хаан, махны хатан минь хурц оршиг.
+
+Үл зохилдох элдэв дайсан, далдаар хорлогчидын хараасан хараал нь хар толгой дээр нь буцаг.
+Хатгалдах дайсан ирэх аваас ялах үйлийг зохиож миний Монгол мөнх оршиг.
+
+-БАЙГ гэсэн үгийг хаслаа, "байг" гэж "зогс" гэсэн утгатай байдаг тул сөрөг нөлөөтэй байж болох юм.
+-эвтэй, хүчтэй, шудрага ёс нтр нь 9-н хүслийн нэг Эрдэм билигийн нэг хэсэг.
+-хаалтанд байгаа (Эр хүн) гэсэн хэсэгт нэрээ бичиж болно. Үгийн сонголт, бурхан, ад зэтгэр, луу, арслан, аянганы эзэн гэх мэт дурьдаагүй дутуу үлдээсэн гомдоосон этгээд байвал хэлэлцэж болно.
+Дөрвөн хүчтэн хийморийн тухай:
+https://youtu.be/LX-rK2jSCOo
+
+хий морь: шашны ёсны морь унасан хүний зурагтай нэгэн зүйл дарцаг.
+
+http://toli.query.mn/words/27016
+ДӨРВӨН ХҮЧТЭН
+1.Жигүүртэн, 2.Араатан, 3.Адгуус, 4.Хүн
+-Жигүүртэн жигүүртээн хүчтэй юм бол Хүн бодож сэтгэхдээ хүчтэй болно.
+Арслан бар гэх мэт зэрлэг араатан, жигүүртэн бүр хүнд аз авчрахгүй. Харин гаршуулсан араатан (муур, нохой), адгуус (мал), жигүүртэн (бүргэд,шонхор) аз авчрах бэлэгдэлтэй.
+Би тариа будааны зураг оруулмаар л байдын.
+Хийморийн дарцаг нь сайн сайхан амьдралыг л бэлэгдэх ёстой. Харамсалтай нь өрх бүр хийморьтой явахгүй. Аз гэж сохор юм.
+12 жилийн дөрөвт хүч чадлаараа луунаас илүү гэж Туулай жагссан байгаа. Туулайны хувьд Луу бол Лууван нь юм. Туулай зүүн зүг, сар, эмэгтэй хүнийг бэлэгдэж байгаа бол Луу -эд баялаг, өмсөж зүүх гоёл чимэглэлийг бэлэгдэнэ. Гэтэл эмэгтэй хүний чухал чимэг түүний найз нөхөр, ЗаЛУУ нь байх учиртай. Залуу хүн морь унаж явааг дүрсэлсэн бол Луу илүү болох биз.
+
+дарцаг ᠳᠠᠷᠴᠠᠭ
+1. Гурван залаа, бүчтэй, тарнийн үсэг дармалласан бяцхан туг: хийморийн дарцаг (хийморийн туг) - Хэзээ ч юм, оройдоо хийморийн дарцаг, хадаг яндар хийсгэсэн том овоотой, жил бүрий тахидаг догшин лус савдагтай ойр хавьд цуутай байснаа өвгөн хайрхан одоо бүүр түүр санах шиг болно. Д. Гармаа. Аниргүй хайрханы шивнээ., дарцгийн хэл (дарцгийн залаа) - Хоёр хоногийн дараа Ац голын зүүн дэх зулзаган модтой нарлаг дулаан энгэрт хээрийн салхинаа дэрвэх маанийн цагаан дарцаг доор Данзангийн цогцос мөнхөрч билээ. Б.Нямаа. Арандалынхан;
+2. Иш бүхий жижиг далбаа: дарцаг барих (жижиг далбаа гартаа авах), дарцаг хийсгэх (дарцгийг салхинд дэрвүүлэх), улаан дарцаг (улаан өнгийн дарцаг, хувьсгалын бэлгэ тэмдэг) - Хадан хясааны аман дээр иртэл улаан дарцаг хийсгэсэн хэдэн орос цэрэг угтлаа. С. Удвал. Их хувь заяа., цагаан дарцаг (хэлэлцээ хийх, бууж өгөхөд хэрэглэх дохио тэмдэг; ихэвчлэн цагаан өнгийн бөс даавуу, цагаан өнгийн зүйл хэрэглэдэг) - Тал дундуур аажим тэнүүн урагшилж явсан нүүдлийн цувааны өөдөөс цагаан дарцаг барьсан хоёр хүн угтан ирлээ. Л.Түдэв. Улаан долгион., туг дарцаг [хоршоо] (жижиг туг; сүр жавхаа, хийморийг бэлгэдэн салхинд хийсгэнэ) - Газрын цэцэг тэнгэрт ганхана уу гэлтэй, гал улаан туг дарцаг, далбаа намирна. Ж.Бадраа. Уяхан хорвоон хань.
+
+Монгол Хийморь ХУР -ийн дарцаг
+https://www.youtube.com/watch?v=z6AMO6VVSDQ
+Бунд хорол буюу Монгол гэрийн тооно авч яваа хийморийн хүлэг. Усыг могойгоор дүрсэлдэг - Хангарид усыг тогтоож дарж байгаа гэж үзэж болно. Тогоруу их чухал, тогоруу ГАН ГАР, ГАН ГАЧИГ ГАР, ГАН ГАР гэж дуулдаг гэдэг - Монгол хэлээр шүүдээ. Тиймээс бороо хур орж ГАН гарах юм.
+
+өшөө их
+
+Хангарьд:
+Хятадын Фэн Хуан (Feng Huang) шувуу нь Тахиа Тогос хоёрын эрлийз гэмээр шувуу байдаг.
+Энэ шувуу
+-ЭВЭРГҮЙ
+-ГАРГҮЙ (хүний)
+-ХӨХГҮЙ (хүний)
+-АМЬ МОГОЙГҮЙ
+-ГАЛАН ҮСГҮЙ юм. Ямар сохор хүн ингэж том андуурдаг байнаа?
+
+http://www.squidoo.com/fenghuang
+-Энэ хуудсанд бичсэн байна : Хятадын домогт Фэн Хуан гэж хос шувуу байх бөгөөд Фэн нь эр шувуу. Хуан нь эм шувуу. ФэнХуан шувуу нь жигүүртний эзэн хамгийн үзэсгэлэнтэй шувуу бөгөөд амьтаны мах иддэггүй, харин ургамалын навч үр жимсээр хоололдог. Амьтан төдийгүй мод ургамалд ч хоргүй амьтан юм.
+-ТА НАР БОДДОО ГАЛТ ШУВУУ МОД УРГАМАЛ ГЭМТЭЭХГҮЙ БАЙХУУ?
+
+Эр тогос илүү ганган чамин байдаг :
+
+Харин хагас хүн, хагас шувуу бас эвэртэй Хангарьд бол тун өөр зан авиртай ГАЛТ ШУВУУ юм.
+
+Karakorum (Khalkha Mongolian: Хархорум Kharkhorum) was the capital of the Mongol Empire between 1235 and 1260, and of the Northern Yuan in the 14–15th centuries. Its ruins lie in the northwestern corner of the Övörkhangai Province of Mongolia, near today's town of Kharkhorin, and adjacent to the Erdene Zuu monastery. They are part of the upper part of the World Heritage site Orkhon Valley.
+
 «end of mgl»
+
+mgl words I like:
+ᠦᠭᠡᠳᠡᠷᠡᠭ
+Ѳѳрийнхѳѳрѳѳ 
 
 mglname:
 ᠲᠡᠭᠦᠰᠠᠯᠲᠠᠨᠬᠣᠶᠠᠭᠲᠣ
@@ -2315,7 +2741,10 @@ https://note.mu/ihayato/n/nc851aa610fa4
 
 残業続きなのはもちろん、毎日会社の成績のことばかりで頭がいっぱい、緊張状態を強いれられているようでは、副業はおろか、プライベートな活動を楽しむ余裕すらなくなります。
 
-cn2en2mn:
+cn2en2mn2ru:
+正版包邮
+上火
+红包 red packet
 藤盒 rattan box
 藤垫 rattan mat
 叫外卖 order takeout?
@@ -2595,6 +3024,7 @@ ffmpeg -i '21darieh__дарь_эх-VPInIrd5Hqc.opus' -filter:a "atempo=1.25" '21
 
 #ffmpeg mp3 => opus, atempo
 ffmpeg -i Цагийн_жамыг_тодруулагч_Цаасан_шувуу_хэмээх_сургаал.mp3 -filter:a "atempo=1.1" -acodec libopus Цагийн_жамыг_тодруулагч_Цаасан_шувуу_хэмээх_сургаал_SoundCloud.opus
+ffmpeg -i Хийморийн\ сан\ оршивой.-bGok4u7Sg1k.opus -acodec libmp3lame hiimori.mp3
 
 mov -> mp4: ffmpeg -i correction_proposal_for_6_Mongolian_words.mov -vcodec h264 -acodec aac correction_proposal_for_6_Mongolian_words.mp4
 
@@ -2943,6 +3373,13 @@ https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop
 24.) Logout - 01:27:39
 
 shell:
+try:
+find /path -iname *.pdf -print0 | for i in `xargs 0`; do echo $i; \
+    pdftotext "$i" - | grep pattern; done
+for printing the lines the pattern occurs inside the pdf.
+
+tr '[:upper:]' '[:lower:]' <<< "Хангарьд"
+
 tr ' ' '_' <<< "~/bkup/make your decision when it is to your advantage, when the outcome and timing will benefit you"
 
 https://stackoverflow.com/questions/5648266/comparing-two-directory-recursively-copy-content-of-directory-to-third-director
@@ -2969,6 +3406,26 @@ done < <(cd B; find . -printf "%p %h\n")
 mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
 
 cd /Users/dev/lode/ext_tar/tmp && bash -c 'wget --progress=dot:mega -Q 0 -P "." -l 0 -nd -nH -N --no-use-server-timestamps https://dev-www.libreoffice.org/src/libabw-0.1.2.tar.xz 2>&1 | tee -a /Users/dev/lode/ext_tar/fetch.log && [ $PIPESTATUS -eq 0 ]' && SUM=`shasum -a 256 libabw-0.1.2.tar.xz | sed "s/ .*//"` && if test "$SUM" != "0b72944d5af81dda0a5c5803ee84cbac4b81441a4d767aa57029adc6744c2485"; then echo ERROR: expected checksum for libabw-0.1.2.tar.xz is 0b72944d5af81dda0a5c5803ee84cbac4b81441a4d767aa57029adc6744c2485 2>&1 | tee -a /Users/dev/lode/ext_tar/fetch.log; false; fi && mv libabw-0.1.2.tar.xz ../
+
+sed:
+'' needed for macOS 
+sed -i '' '/pKMZjd9CFnw/d' dllst
+
+delete all lines before the first match of a pattern:
+sed '1,/hLk2-CTSeCE/ {
+quote> /hLk2-CTSeCE/ !{
+quote> d
+quote> }
+quote> }' <dllst.all >dllst.tail
+
+http://www.grymoire.com/Unix/Sed.html#uh-25
+Since each sed command must start on its own line, the curly braces and the nested sed commands must be on separate lines.
+
+utss $(sed -n '1,/FQoX0ebmxgk/!p' dllst.all) #previous line of hLk2-CTSeCE
+
+copy a local Git Repository to a VM:
+LC_CTYPE=C && LANG=C && find . \! \( -type d -path '.git*' -prune \) -type f -print0 | xargs -0 sed -i '' 's/\<almas\>/dev/g'
+https://blog.openshift.com/clone-local-working-branch-git-repository-vm/
 
 Natsagnyam NAMKHAI
 
@@ -3587,12 +4044,8 @@ libreoffice build in ubntu 18.04 error recipe for target libreoffice/instdir/pro
 
 traditional Mongolian vertical letf-to-right writing support
 
-It's better for VLC to have current playback speed shown on control bar or status bar or title bar.
-
-bainu:
-ᠰᠢᠳᠦᠨ ᠤ ᠠᠪᠣᠴᠠᠯᠳᠣᠯ ᠢᠶᠡᠨ ᠲᠡᠭᠰᠢᠯᠡᠬᠦ
-meaningful uplifting neural pathways and muscle memories
-
+VLC:
+normal speed: ^ option 0
 It would be better for VLC to have current playback speed shown on control bar or status bar or title bar.
 
 macbook => imac folder transfer error (transfer instead the bzip2 compressed folders to avoid this error!):
@@ -3683,6 +4136,7 @@ So try to keep the lips definitely sealed so that there is a vacuum in your mout
 
 medical tape
 Just use the 3M micropore tape that comes in inexpensive rolls.
+fold lips inwards before taping.
 
 The neck doesn't support the jaw, the jaw supported the tongue. If you want to reverse the jaw sinking then you have to use your tongue to support your entire mid face by mewing. I'll link you a playlist for mewing and the correct sleeping position! https://www.youtube.com/watch?v=nCiZUKnDf0Y 
 https://www.youtube.com/playlist?list=PL-PUlLHndQMP9mmRQpJL6h1aFSxkV-6RT
@@ -3692,10 +4146,6 @@ Another interesting bit was doing sets of tip of tongue to palate - 10 sec reps 
 машин жолоодох барих арга дэм
 монгол ёс хүн нас барах д
 монгол оршуулгийн ёс
-
-copy a local Git Repository to a VM:
-LC_CTYPE=C && LANG=C && find . \! \( -type d -path '.git*' -prune \) -type f -print0 | xargs -0 sed -i '' 's/\<almas\>/dev/g'
-https://blog.openshift.com/clone-local-working-branch-git-repository-vm/
 
 Fetching almas
 The authenticity of host '[almas.dip.jp]:40022 ([120.51.39.190]:40022)' can't be established.
@@ -3767,3 +4217,56 @@ grp odfvalidator configure*
 git will pulling master automatically update a branch created by merging master with another branch?
 FnKNsfYaQPw comment; cognitive conflict mind map
 proper way to write c++ unit tests
+
+how to connect to office iMac from macbook at home
+
+how to differentiate Delehi and Menksoft Mongolian character codes?
+
+pip3 install --upgrade tensorflow
+pip install --upgrade tensorflow
+Collecting tensorflow
+  Could not find a version that satisfies the requirement tensorflow (from versions: )
+No matching distribution found for tensorflow
+
+book: When Your Parent Becomes Your Child
+ehshig, wechat h5, bods.vip
+c++ network asio programming
+tms yandex
+c++ CRTP SFINAE
+The curiously recurring template pattern (CRTP) is an idiom in C++ in which a class X derives from a class template instantiation using X itself as template argument. More generally it is known as F-bound polymorphism, and it is a form of F-bounded quantification.
+
+how to drive russian UAZ УАЗ van
+how to learn physics
+Modern C++ for Computer Vision andImage Processing
+stl::rotate, uniq, sort, splice, pluck, partial sort
+homemade apple cider vinegar
+SEO/SEM in Yandex
+https://coderprog.com/c17-stl-solutions-video/
+
+turmeric curcumin, black pepper, avocado, coconut oil,
+ 
+modern c++ boilerplate code snippet => family c++ code repository, journal => c++ project and library
+
+share mac's wired ethernet connection with android phone attached to usb
+before too long
+yandex browser source code
+
+Raising children:
+Self recognition through mirror since about 2 years' old for humans. See if your children could recognize themselves through mirrors when they are 18 months old.
+
+make chess game using modern c++
+remove wax coating from apple
+FREEKey can be easily pressed open to remove or add keys
+
+https://www.reddit.com/r/marriedredpill/
+Relationship is beta, procreation is alpha
+
+why use  ``'' in shell scripts and non-programming context?
+http://www.stroustrup.com/tour2.html
+The ``tour'' is a quick (about 240 pages) tutorial overview of all of standard C++ (language and standard library) at a moderately high level for people who already know C++ or at least are experienced programmers. It covers C++17 plus a few likely features of C++20.
+
+ᠴᠠᠭᠠᠨ ᠤᠯᠠ ᠴᠡᠴᠡᠭ
+
+c++ qt5 cmake
+180c eg ag fvs2
+cognitive conflict and intelligence

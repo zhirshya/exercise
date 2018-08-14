@@ -203,3 +203,13 @@ https://stackoverflow.com/questions/12010308/how-can-i-replace-a-pattern-only-on
 #find..."" -> find...''
 :g/find /s/"/'/g
 
+vim multiline regex
+%s/^<\{5,7}\s*HEAD\_.\{-}=======\n//
+%s/^>\{5,7}.*\n//
+
+#doesn't work
+g/^<\{5,7}\s*HEAD\_.\{-}=======\n/d
+
+what does "::g" mean in vim regex?
+s:/\*\_.*\*::g
+
