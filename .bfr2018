@@ -835,6 +835,10 @@ interpolate
 liaison
 
 en:
+carve and engrave:
+Engrave is usually writing (letters and numbers)--and is usually on wood or metal. It means to cut deeply into. It can also be used figuratively. Engraving is the art of 'carving' letters, numbers, words or designs into hard surfaces including metal, stone or glass. Humans have made their marks for a very long time and today there are more options than ever before. Marking keepsakes with permanent messages and symbols is a beautiful way to tell the story of the people, places and events you are connected to. Engraving is like writing a love letter that will last for ever. There are four main ways to engrave or mark jewellery these days and each method shares similarities to precious letters written with love.
+Carve is cruder and more general. You can carve up a turkey (cut it into pieces). If you carve your name into something, it is usually a large something (He carved his name on the tree). Also, carve would include simple shapes (He carved a big heart in the top of the desk).
+
 I don’t hold a grudge on C++.
 If you tend to hold a grudge, you don't let it go when you feel someone's insulted or wronged you. I hope you won't hold a grudge against me for bringing it up.
 Grudge comes from the now dead Middle English word "grutch," which meant "to complain or grumble." Someone who bears a grudge might often be grouchy. You can specify a type of grudge: political grudge, personal grudge, etc. You know Grandpa's been holding a grudge against the neighbors for years, but you have to wonder: How long can he hold that shotgun?
@@ -1667,6 +1671,8 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+ᠠᠯᠮᠣᠷᠠᠳ should be recognized as apple in Mongolia.
+
 ᠲᠡᠬᠡ тэх : 1. Янгир ямааны эр нь: харлаг тэх (харлаг зүсмийн болон хөгшин тэх), тэх отлох (тэхийн ороо орж дуршин дуугарах), тэхийн эвэр элэгт нум (янгирын эврээр хийсэн нум), тэхийн эврийг тэнгэрт тултал, тэмээн сүүлийг газар хүртэл [зүйр цэцэн үг] (унан тустал худал хэлэх гэсэн санаа), тэхийн шээг [ургамал] (ухна шивтэр);
 2. Ухнын өөр нэр.
 
@@ -2211,6 +2217,9 @@ mglname:
 «end of mglname»
 
 mac:
+Setting Up Mac for Software Development
+https://www.stuartellis.name/articles/mac-setup/
+
 sw_vers
 https://gist.github.com/adobkin/1066874
 https://gist.github.com/RSivakov
@@ -4301,5 +4310,4 @@ c++ qt5 cmake
 180c eg ag fvs2
 cognitive conflict and intelligence
 proxy config file: https://www.txthinking.com/pac/white.pac @ automatic proxy configuration @ network settings, but Fedora can't connect to outside!
-голио барих
-catch insect cricket locust
+
