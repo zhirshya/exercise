@@ -978,6 +978,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+cricket : хүрэлзгэнэ ᠬᠦᠷᠡᠯᠵᠡᠭᠡᠨ᠎ᠡ : Шавжийн анги, хос далавчтан багийн нэг овог, нэн олон зүйлтэй, Монголд нэг зүйл бий. Биеийн урт нь арван нэгээс хорин миллиметр: голомтын хүрэлзгэнэ [амьтан] (үхэр хүрэлзгэнээс бяцхан болоод шаравтархан өнгөтэй, нэг зүйл хүрэлзгэнэ).
+
 The tick, the Asian longhorned tick (or Haemaphysalis longicornis), has the potential to transmit an assortment of nasty diseases to humans, including an emerging virus that kills up to 30 percent of victims. So far, the tick hasn’t been found carrying any diseases in the US. It currently poses the largest threat to livestock, pets, and wild animals; the ticks can attack en masse and drain young animals of blood so quickly that they die—an execution method called exsanguination.
 
 intensive labor: ирмүү хөдөлмөр ᠢᠷᠮᠡᠭᠦ ᠬᠥᠳᠡᠯᠮᠦᠷᠢ
@@ -1665,6 +1667,11 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+ᠲᠡᠬᠡ тэх : 1. Янгир ямааны эр нь: харлаг тэх (харлаг зүсмийн болон хөгшин тэх), тэх отлох (тэхийн ороо орж дуршин дуугарах), тэхийн эвэр элэгт нум (янгирын эврээр хийсэн нум), тэхийн эврийг тэнгэрт тултал, тэмээн сүүлийг газар хүртэл [зүйр цэцэн үг] (унан тустал худал хэлэх гэсэн санаа), тэхийн шээг [ургамал] (ухна шивтэр);
+2. Ухнын өөр нэр.
+
+ᠤᠬᠤᠨ᠎ᠠ ухна : Хөнгөлж засаагүй эр ямаа: ухна тавих (а. Ишгийг ухна болгохоор засаж хөнгөлөлгүй үлдээх; б. Нийллэгийн үеэр хөгнийг тайлж сүрэгт нийлүүлэх) - Доголон нулимстай нүдээрээ ухнаа харав. П.Хорлоо. Түүвэр зохиол., хуц ухна [хоршоо] (хонь, ямааны эцэг мал); *ухна царайлах (уруу царайлах, унхиагүй байх), *ухаанд нь ухна ишиг үхэх (урагшгүйтэх, бодож сэтгэж хийж чадахгүй байх),*халтар ухна (бохир заваан), *халтар ухна болох (бохирдох, заваан болох), *хуцаа ухнаас өгөх (уургаа шилбүүрээс өгөх, алдаатай наймаа хийх), *ухна харайхын зуур (нүд ирмэхийн зуур, маш түргэн зуур), зуун ямаанд жаран ухна [зүйр цэцэн үг] (юмыг тэнцвэргүй болох, тоог нь ихдүүлэх, бага зүйлд их ажил гэх мэт санаа), ухнад явсан хүү ямаа ишиглэсэн хойно ирэх [зүйр цэцэн үг] (а. Хэзээ хойно нь санаа тавих; өнгөрсөн борооны хойноос цув нөмрөх; б. Алхайн удаж цаг алдах гэх мэт санаа), ухна шивтэр [ургамал] (цуварч ургадаг алгалаг онь бүхий навчтай, ганц бэлгэт ондоо гэр бүхий цацаг хэлбэрт баг цэцэгтэй, жимс сууна; үхрийн нүд; тэхийн шээг), ухнын сахал [ургамал] (үндэслэг иштэй язгуураасаа багларч ургасан навчтай, гүехэн хөх цэцэгтэй нэгэн зүйл ургамал, үндэс, үр нь эмд нь орно).
+
 ᠭᠢᠯᠠᠶᠢᠬᠤ гялайх	II : Санаж хүссэн зүйл гүйцэлдэх, ач тус хүртсэндээ баясан бахархах - Бидэнтэй маргадаг ч хүн байхгүй болж бид хоёр гялайж байна. П.Лувсанцэрэн. Хөдөөгийн дуун., танд гялайлаа (танд баярлалаа).
 
 Зөгнөл Нострадамус
@@ -2203,7 +2210,11 @@ mglname:
 
 «end of mglname»
 
-macos:
+mac:
+sw_vers
+https://gist.github.com/adobkin/1066874
+https://gist.github.com/RSivakov
+
 To inspect the ACL, you can run the ls command with the -e flag. For example:
 ls -aleF /Volumes
 
@@ -2230,8 +2241,27 @@ sudo apt-get install python-pip
 sudo apt-get install python-setuptools m2crypto
 sudo pip install shadowsocks
 
+change Mac's name using the OS X Terminal (tested on Mac OS X 10.13.6):
+if you have a Mac connected to your network without a display running as an iTunes or other media server, then you may only ever interact with your Mac via SSH in the Terminal.
+Type in the following command, replacing "name" with a user-friendly name that will identify the computer:
+
+scutil --set ComputerName "name"
+
+Once you press return, this name will be set. Next, type the following command, replacing "name" with the name that you wish to display on your local network to Bonjour-based services:
+scutil --set LocalHostName "name"
+
+Finally, you can also configure and set how the computer is displayed when connecting through SSH, and the name shown inside of the Terminal by typing the following command, replacing "name" with the name you want to use to display in the Terminal and when connecting to the machine over SSH:
+scutil --set HostName "name"
+
+Note: When specifying a LocalHostName and HostName, you should not have spaces in the name. After you press return for each of the items above, you will be prompted to enter your administrator password to authenticate the changes.
+
+After you've set all of these items, you can type this command into the Terminal to ensure that the proper items were set:
+scutil --get HostName
+
+«end of mac»
+
 Create Configuration:
-nano /etc/shadowsocks.json
+vim /etc/shadowsocks.json
 Config file:
 {
     "server":"0.0.0.0",
@@ -4270,3 +4300,6 @@ The ``tour'' is a quick (about 240 pages) tutorial overview of all of standard C
 c++ qt5 cmake
 180c eg ag fvs2
 cognitive conflict and intelligence
+proxy config file: https://www.txthinking.com/pac/white.pac @ automatic proxy configuration @ network settings, but Fedora can't connect to outside!
+голио барих
+catch insect cricket locust
