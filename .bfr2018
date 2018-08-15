@@ -2389,7 +2389,15 @@ At least in emacs.
 
 c++ ed25519 SHA256 implementation
 https://blog.g3rt.nl/upgrade-your-ssh-keys.html
-ssh-keygen -o -a 4096 -t ed25519 -C 'email'
+ssh-keygen -o -a 4096 -t ed25519 -C 'comment field'
+
+https://wiki.archlinux.org/index.php/SSH_keys
+Note: If you set a passphrase for your key, it is strongly encouraged to use the -o option to ssh-keygen. This will save your private key in the new OpenSSH format, which has greatly increased resistance to brute-force password cracking, but is not supported by versions of OpenSSH prior to 6.5. According to ssh-keygen(1), Ed25519 keys always use the new private key format. Also use the -a switch to specify the number of KDF rounds on the password encryption.
+You can also add an optional comment field to the public key with the -C switch, to more easily identify it in places such as ~/.ssh/known_hosts, ~/.ssh/authorized_keys and ssh-add -L output. For example:
+$ ssh-keygen -C "$(whoami)@$(hostname)-$(date -Ins)" #"date -Ins" is linux only, e.g. 2018-08-15T15:08:15,930394983+08:00
+will add a comment saying which user created the key on which machine and when.
+macos equivalent of linux "date -I"
+
 eval "$(ssh-agent -s)"
 
 update .ssh/config
