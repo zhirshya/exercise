@@ -990,7 +990,7 @@ Step under the bar, and put your hands around it.  For this type of squat, we ar
 smith machine squat
 front squat
 back squat
-preying mantis ᠴᠥᠭᠦᠷᠴᠡᠭᠡᠨ᠎ᠡ : Шавжийн ангийн нэг баг, зүйл олон. Бие урт нарийн, далавч урт, жижиг шавжаар идэшлэгч махчин шавжууд.
+preying mantis ᠴᠥᠭᠦᠷᠴᠡᠭᠡᠨ᠎ᠡ  цөгөрцгөнө : Шавжийн ангийн нэг баг, зүйл олон. Бие урт нарийн, далавч урт, жижиг шавжаар идэшлэгч махчин шавжууд.
 
 cricket : хүрэлзгэнэ ᠬᠦᠷᠡᠯᠵᠡᠭᠡᠨ᠎ᠡ : Шавжийн анги, хос далавчтан багийн нэг овог, нэн олон зүйлтэй, Монголд нэг зүйл бий. Биеийн урт нь арван нэгээс хорин миллиметр: голомтын хүрэлзгэнэ [амьтан] (үхэр хүрэлзгэнээс бяцхан болоод шаравтархан өнгөтэй, нэг зүйл хүрэлзгэнэ).
 
@@ -4329,3 +4329,4 @@ c++ qt5 cmake
 cognitive conflict and intelligence
 proxy config file: https://www.txthinking.com/pac/white.pac @ automatic proxy configuration @ network settings, but Fedora can't connect to outside!
 
+which compiled native language has REPL
