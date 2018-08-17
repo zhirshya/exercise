@@ -986,6 +986,11 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+skid mark
+ᠲᠣᠷᠮᠤᠰ тоормос : Аливаа хөдлөгч машин тэрэгний хурд хөдөлгөөнийг зогсоох буюу удаашруулах хэрэгсэл: тоормос гишгэх (тоормослох, машины тоормосон дээрээ гишгэж ажиллуулах) - Жолоо булааж гэнэт машин шүргэх шиг болоход тоормосоо гишгэв. Ч.Алагсай. Алтайн зам., тоормос муутай (тоормосны ажиллагаа муу), тоормос сайтай (тоормосны ажиллагаа сайн), тоормосны урт (тээврийн машины тоормосолж эхэлснээс бүрэн зогсох хүртэлх хугацаанд туулсан зай).
+
+whey-like product remaining after cream or butter has been extracted from milk : цөв ᠴᠥᠪ
+whey protein
 aura: an energy field that is held to emanate from a living being.
 epileptic seizure : татаж унадаг ᠲᠠᠲᠠᠵᠤ ᠤᠨᠠᠳᠠᠭ , саа ᠰᠠ, багтрах ᠪᠠᠭᠲᠠᠷᠠᠬᠤ
 
@@ -2230,6 +2235,9 @@ mglname:
 «end of mglname»
 
 mac:
+grep Delehi IME process
+ps -ef|grep inputmethod, ps -ef|grep com.delehi
+
 Setting Up Mac for Software Development
 https://www.stuartellis.name/articles/mac-setup/
 
@@ -3956,9 +3964,6 @@ why do you use translate3d(-50%, -50%, 0px) in addition to matrix3d on each elem
 accessing web request and response from inside c++ program:
 1. console.log(pteJS.name) -> bolor-toli.com / http://asuult.net/dic/; 2. check against Үелэх_систем.png & chemistry books; 3. Ordered Map(elemNameEng,elemNameMgl) -> pteTMS.json; 4. compile to visualization -> jpg; 5. record pronunciation: 118 opus/mp3/webm
 
-delheioffice todo:
-instdir/DelehiOffice6.1_SDK -> instdir/DelehiOffice2018_SDK
-
 js map reduce filter
 js pluck
 js reverse collection
@@ -4332,4 +4337,9 @@ c++ qt5 cmake
 cognitive conflict and intelligence
 proxy config file: https://www.txthinking.com/pac/white.pac @ automatic proxy configuration @ network settings, but Fedora can't connect to outside!
 
-which compiled native language has REPL
+delheioffice todo:
+instdir/DelehiOffice6.1_SDK -> instdir/DelehiOffice2018_SDK
+? sw/source/core/docnode/node.cxx: pFrame->IsVertLR() => pFrame->IsLeftToRight()
+
+«delheioffice todo»
+
