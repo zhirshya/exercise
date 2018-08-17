@@ -1,0 +1,32 @@
+{
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+    },
+    // "editor.cursorStyle": "block",
+    "editor.fontSize": 11,
+    "editor.fontLigatures": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "gitlens.historyExplorer.enabled": true,
+    "window.zoomLevel": 1,
+    "files.encoding": "utf8",
+    "editor.multiCursorModifier": "ctrlCmd",
+    // "editor.fontFamily": "Mongolian White",
+    // "editor.fontFamily": "MongolQagan",
+    // "editor.fontFamily": "Bichimel",
+    // "editor.fontFamily": "Chagan",
+
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "terminal.integrated.fontSize": 12,
+}
