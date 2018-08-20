@@ -559,6 +559,13 @@ apple CoreText
 
 ACCU (Association of C and C++ Users)
 
+copy elision
+https://en.cppreference.com/w/cpp/language/copy_elision
+https://en.wikipedia.org/wiki/Copy_elision
+
+https://www.quora.com/Why-is-C++-so-much-harder-to-learn-than-either-C-or-C
+C++ is a complex, permissive language designed for full control over the machine. It allows absolute control of the data in memory (storage classes). This requires some rather refined techniques for non-trivial types (see rvalue references and copy elision rules). Rather than trying to work around logical errors by dynamic checks, it assumes that the programmer is proficient enough not to do them and when they do, the process simply crashes. That’s the price for code efficiency; the idea is that the code must be correct to be acceptable anyway, so (implicit) dynamic checks are redundant. And C++ is a language for people who try to get rid of everything that’s redundant while providing support for everything that’s technically possible. But for that, you need full control, so the language contains more means of control. That makes it complex and therefore harder to learn.
+
 I would like to stress this point as well, building anything vaguely complex with C++ and learning more in-depth about some features of the language can really help you expand your understanding of the current programming environment in general.
 Will understanding shared memory, native threading, memory ordering, optimizing, working with "fundamental" algorithms (e.g. stuff like partition and sort rather than stuff like map, filter, reduce), zero-cost abstraction, handling computations using simd... etc, help you in most projects ? No, not even in most C++ projects.
 But knowing that you can always mess with the source code of your database or library, knowing you can always write a heavily optimize version of your software or plugin a custom C++ library for certain tasks, understanding threading and memory tit for tat is "empowering". It makes you code without the fear of the unknown, it gives you a "safe" area where most projects lie, since you know you've done harder stuff (in terms of programming) and you know that, no matter how much hidden complexity this project hides, you can likely handle it.
@@ -671,6 +678,11 @@ brew update && brew upgrade && brew upgrade python git sourcetree make cmake nod
 sudo softwareupdate -ia --verbose
 
 VirtualBox:
+https://www.linuxquestions.org/questions/linux-virtualization-and-cloud-90/how-to-check-version-of-virtualbox-guest-additions-currently-installed-in-guest-syste-946053/
+lsmod | grep -io vboxguest | xargs modinfo | grep -iw version
+or more verbosely:
+modinfo vboxguest
+
 sudo apt install build-essential module-assistant dkms
 sudo m-a prepare ?
 
@@ -825,6 +837,27 @@ liaison
 en:
 Find New Sources of Income: With the birth of The IRA, there simply is no such thing as job security anymore. If you are dependent on a job (“just over broke”) for 100% of your income, you are in a very bad position.  There are thousands of different ways to make extra money. What you don’t want to do is to have all of your eggs in one basket. One day when the economy melts down and you are out of a job are you going to be destitute or are you going to be okay?
 
+loquat 枇杷
+https://english.stackexchange.com/questions/346840/do-you-walk-up-or-climb-stairs
+Either of the following would be equally correct:
+I climbed the stairs. (Not "I climbed up the stairs.")
+OR
+I walked up the stairs.
+
+if I were talking about our own stairs at home, which I use every day, I think I would say I walked up the stairs, or I went upstairs. However if I visited a tall building and the lifts (elevators) were not working, I might say I had to climb the stairs to the eighteenth floor. If I had to go into my loft (attic) at home I would probably say I climbed up the loft ladder. Our speech is highly nuanced but it is not always easy to spot the rules which we all employ, without thinking, every day.
+
+Should you wear a belt or knee wraps? The former helps to stabilize the spine by increasing intra-abdominal pressure and the latter is just a way of elevating more weight. Especially if you are getting started with the squat, go without either.
+
+https://english.stackexchange.com/questions/22621/what-are-the-differences-between-inverse-reverse-and-converse
+
+carve and engrave:
+Engrave is usually writing (letters and numbers)--and is usually on wood or metal. It means to cut deeply into. It can also be used figuratively. Engraving is the art of 'carving' letters, numbers, words or designs into hard surfaces including metal, stone or glass. Humans have made their marks for a very long time and today there are more options than ever before. Marking keepsakes with permanent messages and symbols is a beautiful way to tell the story of the people, places and events you are connected to. Engraving is like writing a love letter that will last for ever. There are four main ways to engrave or mark jewellery these days and each method shares similarities to precious letters written with love.
+Carve is cruder and more general. You can carve up a turkey (cut it into pieces). If you carve your name into something, it is usually a large something (He carved his name on the tree). Also, carve would include simple shapes (He carved a big heart in the top of the desk).
+
+I don’t hold a grudge on C++.
+If you tend to hold a grudge, you don't let it go when you feel someone's insulted or wronged you. I hope you won't hold a grudge against me for bringing it up.
+Grudge comes from the now dead Middle English word "grutch," which meant "to complain or grumble." Someone who bears a grudge might often be grouchy. You can specify a type of grudge: political grudge, personal grudge, etc. You know Grandpa's been holding a grudge against the neighbors for years, but you have to wonder: How long can he hold that shotgun?
+
 The first thing I did was clean the bathroom. Actually. I’ll be honest and tell you my mother in law cleaned the bathroom. The tub was moldy, the toilet was totally disgusting, and the brick floors (yes, brick!) were pretty gross. If you don’t feel like you can get clean somewhere, then you’ll never feel any relief from the gross. She scrubby bubbled everything (even the floor!!!).
 
 Excuse me, hang on a second, I'll be with you in a second.
@@ -964,6 +997,27 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+before too long
+skid mark
+ᠲᠣᠷᠮᠤᠰ тоормос : Аливаа хөдлөгч машин тэрэгний хурд хөдөлгөөнийг зогсоох буюу удаашруулах хэрэгсэл: тоормос гишгэх (тоормослох, машины тоормосон дээрээ гишгэж ажиллуулах) - Жолоо булааж гэнэт машин шүргэх шиг болоход тоормосоо гишгэв. Ч.Алагсай. Алтайн зам., тоормос муутай (тоормосны ажиллагаа муу), тоормос сайтай (тоормосны ажиллагаа сайн), тоормосны урт (тээврийн машины тоормосолж эхэлснээс бүрэн зогсох хүртэлх хугацаанд туулсан зай).
+
+whey-like product remaining after cream or butter has been extracted from milk : цөв ᠴᠥᠪ
+whey protein
+aura: an energy field that is held to emanate from a living being.
+epileptic seizure : татаж унадаг ᠲᠠᠲᠠᠵᠤ ᠤᠨᠠᠳᠠᠭ , саа ᠰᠠ, багтрах ᠪᠠᠭᠲᠠᠷᠠᠬᠤ
+
+Step under the bar, and put your hands around it.  For this type of squat, we are going to want a thumbless grip, so that our wrists are properly aligned with our forearms.
+smith machine squat
+front squat
+back squat
+preying mantis ᠴᠥᠭᠦᠷᠴᠡᠭᠡᠨ᠎ᠡ  цөгөрцгөнө : Шавжийн ангийн нэг баг, зүйл олон. Бие урт нарийн, далавч урт, жижиг шавжаар идэшлэгч махчин шавжууд.
+
+cricket : хүрэлзгэнэ ᠬᠦᠷᠡᠯᠵᠡᠭᠡᠨ᠎ᠡ : Шавжийн анги, хос далавчтан багийн нэг овог, нэн олон зүйлтэй, Монголд нэг зүйл бий. Биеийн урт нь арван нэгээс хорин миллиметр: голомтын хүрэлзгэнэ [амьтан] (үхэр хүрэлзгэнээс бяцхан болоод шаравтархан өнгөтэй, нэг зүйл хүрэлзгэнэ).
+
+The tick, the Asian longhorned tick (or Haemaphysalis longicornis), has the potential to transmit an assortment of nasty diseases to humans, including an emerging virus that kills up to 30 percent of victims. So far, the tick hasn’t been found carrying any diseases in the US. It currently poses the largest threat to livestock, pets, and wild animals; the ticks can attack en masse and drain young animals of blood so quickly that they die—an execution method called exsanguination.
+
+intensive labor: ирмүү хөдөлмөр ᠢᠷᠮᠡᠭᠦ ᠬᠥᠳᠡᠯᠮᠦᠷᠢ
+
 zebra :	алаг хулан ᠠᠯᠠᠭ ᠬᠤᠯᠠᠨ, алаг тахь ᠠᠯᠠᠭ ᠲᠠᠬᠢ
 
 ledger : тооцооны дэвтэр ᠲᠣᠭᠠᠴᠠᠭᠠᠨ ᠤ ᠳᠡᠪᠲᠡᠷ, хөндлөвч ᠬᠥᠨᠳᠡᠯᠡᠪᠴᠢ
@@ -1044,6 +1098,7 @@ Identify your learning techniques:visual, kinesthetic, auditory, etc.
 
 retrude: to move backward : displace posteriorly retrude the mandible.
 recessed chin
+
 standing desk
 deal breaker issues
 residential wiring
@@ -1646,6 +1701,13 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+ᠠᠯᠮᠣᠷᠠᠳ should be recognized as apple in Mongolia.
+
+ᠲᠡᠬᠡ тэх : 1. Янгир ямааны эр нь: харлаг тэх (харлаг зүсмийн болон хөгшин тэх), тэх отлох (тэхийн ороо орж дуршин дуугарах), тэхийн эвэр элэгт нум (янгирын эврээр хийсэн нум), тэхийн эврийг тэнгэрт тултал, тэмээн сүүлийг газар хүртэл [зүйр цэцэн үг] (унан тустал худал хэлэх гэсэн санаа), тэхийн шээг [ургамал] (ухна шивтэр);
+2. Ухнын өөр нэр.
+
+ᠤᠬᠤᠨ᠎ᠠ ухна : Хөнгөлж засаагүй эр ямаа: ухна тавих (а. Ишгийг ухна болгохоор засаж хөнгөлөлгүй үлдээх; б. Нийллэгийн үеэр хөгнийг тайлж сүрэгт нийлүүлэх) - Доголон нулимстай нүдээрээ ухнаа харав. П.Хорлоо. Түүвэр зохиол., хуц ухна [хоршоо] (хонь, ямааны эцэг мал); *ухна царайлах (уруу царайлах, унхиагүй байх), *ухаанд нь ухна ишиг үхэх (урагшгүйтэх, бодож сэтгэж хийж чадахгүй байх),*халтар ухна (бохир заваан), *халтар ухна болох (бохирдох, заваан болох), *хуцаа ухнаас өгөх (уургаа шилбүүрээс өгөх, алдаатай наймаа хийх), *ухна харайхын зуур (нүд ирмэхийн зуур, маш түргэн зуур), зуун ямаанд жаран ухна [зүйр цэцэн үг] (юмыг тэнцвэргүй болох, тоог нь ихдүүлэх, бага зүйлд их ажил гэх мэт санаа), ухнад явсан хүү ямаа ишиглэсэн хойно ирэх [зүйр цэцэн үг] (а. Хэзээ хойно нь санаа тавих; өнгөрсөн борооны хойноос цув нөмрөх; б. Алхайн удаж цаг алдах гэх мэт санаа), ухна шивтэр [ургамал] (цуварч ургадаг алгалаг онь бүхий навчтай, ганц бэлгэт ондоо гэр бүхий цацаг хэлбэрт баг цэцэгтэй, жимс сууна; үхрийн нүд; тэхийн шээг), ухнын сахал [ургамал] (үндэслэг иштэй язгуураасаа багларч ургасан навчтай, гүехэн хөх цэцэгтэй нэгэн зүйл ургамал, үндэс, үр нь эмд нь орно).
+
 ᠭᠢᠯᠠᠶᠢᠬᠤ гялайх	II : Санаж хүссэн зүйл гүйцэлдэх, ач тус хүртсэндээ баясан бахархах - Бидэнтэй маргадаг ч хүн байхгүй болж бид хоёр гялайж байна. П.Лувсанцэрэн. Хөдөөгийн дуун., танд гялайлаа (танд баярлалаа).
 
 Зөгнөл Нострадамус
@@ -2184,7 +2246,17 @@ mglname:
 
 «end of mglname»
 
-macos:
+mac:
+grep Delehi IME process
+ps -ef|grep inputmethod, ps -ef|grep com.delehi
+
+Setting Up Mac for Software Development
+https://www.stuartellis.name/articles/mac-setup/
+
+sw_vers
+https://gist.github.com/adobkin/1066874
+https://gist.github.com/RSivakov
+
 To inspect the ACL, you can run the ls command with the -e flag. For example:
 ls -aleF /Volumes
 
@@ -2211,8 +2283,27 @@ sudo apt-get install python-pip
 sudo apt-get install python-setuptools m2crypto
 sudo pip install shadowsocks
 
+change Mac's name using the OS X Terminal (tested on Mac OS X 10.13.6):
+if you have a Mac connected to your network without a display running as an iTunes or other media server, then you may only ever interact with your Mac via SSH in the Terminal.
+Type in the following command, replacing "name" with a user-friendly name that will identify the computer:
+
+scutil --set ComputerName "name"
+
+Once you press return, this name will be set. Next, type the following command, replacing "name" with the name that you wish to display on your local network to Bonjour-based services:
+scutil --set LocalHostName "name"
+
+Finally, you can also configure and set how the computer is displayed when connecting through SSH, and the name shown inside of the Terminal by typing the following command, replacing "name" with the name you want to use to display in the Terminal and when connecting to the machine over SSH:
+scutil --set HostName "name"
+
+Note: When specifying a LocalHostName and HostName, you should not have spaces in the name. After you press return for each of the items above, you will be prompted to enter your administrator password to authenticate the changes.
+
+After you've set all of these items, you can type this command into the Terminal to ensure that the proper items were set:
+scutil --get HostName
+
+«end of mac»
+
 Create Configuration:
-nano /etc/shadowsocks.json
+vim /etc/shadowsocks.json
 Config file:
 {
     "server":"0.0.0.0",
@@ -2329,7 +2420,15 @@ At least in emacs.
 
 c++ ed25519 SHA256 implementation
 https://blog.g3rt.nl/upgrade-your-ssh-keys.html
-ssh-keygen -o -a 4096 -t ed25519 -C 'email'
+ssh-keygen -o -a 4096 -t ed25519 -C 'comment field'
+
+https://wiki.archlinux.org/index.php/SSH_keys
+Note: If you set a passphrase for your key, it is strongly encouraged to use the -o option to ssh-keygen. This will save your private key in the new OpenSSH format, which has greatly increased resistance to brute-force password cracking, but is not supported by versions of OpenSSH prior to 6.5. According to ssh-keygen(1), Ed25519 keys always use the new private key format. Also use the -a switch to specify the number of KDF rounds on the password encryption.
+You can also add an optional comment field to the public key with the -C switch, to more easily identify it in places such as ~/.ssh/known_hosts, ~/.ssh/authorized_keys and ssh-add -L output. For example:
+$ ssh-keygen -C "$(whoami)@$(hostname)-$(date -Ins)" #"date -Ins" is linux only, e.g. 2018-08-15T15:08:15,930394983+08:00
+will add a comment saying which user created the key on which machine and when.
+macos equivalent of linux "date -I"
+
 eval "$(ssh-agent -s)"
 
 update .ssh/config
@@ -2830,6 +2929,8 @@ https://stackoverflow.com/questions/4210042/how-to-exclude-a-directory-in-find-c
 find /Volumes/DATA -not \( -path '/Volumes/DATA/node_modules*' -prune \) -not \( -path '/Volumes/DATA/amule' -prune \) -not \( -path '/Volumes/DATA/tnsrfl' -prune \) -type f -iname "dl*" -o -iname "dn*"
 A more precise (and POSIX compatible) variation of this method: find searchdir \! \( -type d \( -path './excludedir/*' -o -path './excludedir2/*' -o -path './excludedir3/*' \) -prune \) followed by any conditions that should match what you are looking for:
 find /Volumes/DATA \! \( -type d \( -path '/Volumes/DATA/node_modules*' -o -path '/Volumes/DATA/amule' -o -path '/Volumes/DATA/tnsrfl' \) -prune \) -type f -iname "dl*" -o -iname "dn*"
+exclude single directory from find:
+find ~ -path ~/lode/dev/core/workdir -prune -o -type f -name "*build*log*" -exec ls -alF {} \;
 
 lo:
 libreoffice@lists.freedesktop.org
@@ -3352,6 +3453,8 @@ https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop
 24.) Logout - 01:27:39
 
 shell:
+alias la='ls -thlAF'
+
 try:
 find /path -iname *.pdf -print0 | for i in `xargs 0`; do echo $i; \
     pdftotext "$i" - | grep pattern; done
@@ -3383,6 +3486,8 @@ done < <(cd B; find . -printf "%p %h\n")
 #EOF
 
 mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
+
+cd /Users/dev/lode/ext_tar/tmp && bash -c 'wget --progress=dot:mega -Q 0 -P "." -l 0 -nd -nH -N --no-use-server-timestamps https://dev-www.libreoffice.org/src/libabw-0.1.2.tar.xz 2>&1 | tee -a /Users/dev/lode/ext_tar/fetch.log && [ $PIPESTATUS -eq 0 ]' && SUM=`shasum -a 256 libabw-0.1.2.tar.xz | sed "s/ .*//"` && if test "$SUM" != "0b72944d5af81dda0a5c5803ee84cbac4b81441a4d767aa57029adc6744c2485"; then echo ERROR: expected checksum for libabw-0.1.2.tar.xz is 0b72944d5af81dda0a5c5803ee84cbac4b81441a4d767aa57029adc6744c2485 2>&1 | tee -a /Users/dev/lode/ext_tar/fetch.log; false; fi && mv libabw-0.1.2.tar.xz ../
 
 sed:
 '' needed for macOS 
@@ -3873,20 +3978,6 @@ why do you use translate3d(-50%, -50%, 0px) in addition to matrix3d on each elem
 accessing web request and response from inside c++ program:
 1. console.log(pteJS.name) -> bolor-toli.com / http://asuult.net/dic/; 2. check against Үелэх_систем.png & chemistry books; 3. Ordered Map(elemNameEng,elemNameMgl) -> pteTMS.json; 4. compile to visualization -> jpg; 5. record pronunciation: 118 opus/mp3/webm
 
-delheioffice todo:
-instdir/DelehiOffice6.1_SDK -> instdir/DelehiOffice2018_SDK
-
-git reset --hard HEAD@{3}
-HEAD is now at ee2dbf4f90c9 DelehiOffice 2015 -> 2018
- almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018-Dev  git reflog | grp "HEAD@{4}"
-(standard input)-2-03934385246a HEAD@{1}: checkout: moving from master to DelehiOffice2018-Dev
-(standard input)-3-36839898fadd HEAD@{2}: checkout: moving from DelehiOffice2018-Dev to master
-(standard input)-4-03934385246a HEAD@{3}: commit: modified mistakenly, so gco and commit again
-(standard input):5:ee2dbf4f90c9 HEAD@{4}: commit (merge): DelehiOffice 2015 -> 2018
-(standard input)-6-36839898fadd HEAD@{5}: checkout: moving from master to DelehiOffice2018-Dev
-(standard input)-7-36839898fadd HEAD@{6}: pull: Fast-forward
-(standard input)-8-2c63fcb0cf10 HEAD@{7}: checkout: moving from master to master
-
 
 js map reduce filter
 js pluck
@@ -4172,8 +4263,40 @@ jp:
 そのため店長への国内外のメディアのインタビューが殺到した。どのメディアも、「市長の媚薬店は一体いつ、どのような経緯で創業されたか？」と厳しく追及した。
 店長は困り果てて脳梗塞を起こし、現在病院で応急手当中・・・。
 
-mikemew@gmail.com
-overbite, midline misalignment, lower jaw retrudes when swallowing, correct swallowing: teeth together tongue@palate? micro-swallowing
+transcranial direct current stimulation, tDCS
+
+Enable port forwarding to the Mac for incoming SMB and VNC services on your Internet router. How this is done varies depending on the router and again you may need to Google. Some routers are compatible with dynamic DNS services, which means you can use the same hostname without worrying about a changing IP address.
+Once port forwarding is setup, to open a file sharing connection to the remote Mac from a Windows computer, open the Start menu and in the Search field type two backslashes, followed by the Internet address or dynamic DNS hostname of the router (e.g. \\keirmac.dyndns.com). With a Linux desktop environment, choose to connect to a server and enter smb:// followed by the address (e.g. smb://keirmac.dyndns.com). For screen sharing, use a VNC client on Windows or Linux and simply type the address when prompted.
+Macs come with Secure Shell (SSH) built-in to enable you to connect remotely to the command-line. Enabling SSH is as simple as putting a tick alongside Remote Login within the Sharing pane of System Preferences on the home or office Mac. Again, to access the remote Mac across the Internet you’ll need to enable SSH port forwarding on the router.
+
+ccache is short for compiler cache - and it is exactly that.
+
+https://askubuntu.com/questions/3697/how-do-i-install-fonts
+Font files that are placed in the hidden .fonts directory of your home folder will automatically be available. You can also place them in the ~/.local/share/fonts directory on newer versions of Ubuntu per the comments below.
+You can also double-click on the font file (or select Open with Font Viewer in the right-click menu). Then click the Install Font button.
+If you need the fonts to be available system-wide, you'll need to copy them to /usr/local/share/fonts and reboot (or manually rebuild the font cache with fc-cache -f -v).
+You can confirm they are installed correctly by running fc-list | grep "<name-of-font>"
+You may need to restart some programs, like OpenOffice Writer, before they actually show the new fonts (usually such programs are caching the font list when they start up).
+
+iMac keyboard page up/down for virutalbox linux guest:
+https://apple.stackexchange.com/questions/26930/how-can-i-achieve-page-up-and-page-down-in-os-x
+hardware keyboard on Macintosh machines has:
+Fn + ← = Home
+Fn + → = End
+Fn + ↑ = Pg up
+Fn + ↓ = Pg down
+
+
+Metal renderer
+http://www.linuxfromscratch.org/blfs/view/svn/xsoft/libreoffice.html
+https://www.collaboraoffice.com/code/
+fatal: Unable to look up gerrit.libreoffice.org (port 9418) (nodename nor servname provided, or not known)
+awry
+libreoffice master build error CppunitTest sw_ooxmlexport failed
+grp odfvalidator configure*
+git will pulling master automatically update a branch created by merging master with another branch?
+FnKNsfYaQPw comment; cognitive conflict mind map
+proper way to write c++ unit tests
 
 how to connect to office iMac from macbook at home
 
@@ -4205,7 +4328,6 @@ turmeric curcumin, black pepper, avocado, coconut oil,
 modern c++ boilerplate code snippet => family c++ code repository, journal => c++ project and library
 
 share mac's wired ethernet connection with android phone attached to usb
-before too long
 yandex browser source code
 
 Raising children:
@@ -4228,4 +4350,25 @@ c++ qt5 cmake
 180c eg ag fvs2
 cognitive conflict and intelligence
 
+proxy config file: https://www.txthinking.com/pac/white.pac @ automatic proxy configuration @ network settings, but Fedora can't connect to outside!
+
+delehioffice todo:
+instdir/DelehiOffice6.1_SDK -> instdir/DelehiOffice2018_SDK
+? sw/source/core/docnode/node.cxx: pFrame->IsVertLR() => pFrame->IsLeftToRight()
+
+git reset --hard HEAD@{3}
+HEAD is now at ee2dbf4f90c9 DelehiOffice 2015 -> 2018
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018-Dev  git reflog | grp "HEAD@{4}"
+(standard input)-2-03934385246a HEAD@{1}: checkout: moving from master to DelehiOffice2018-Dev
+(standard input)-3-36839898fadd HEAD@{2}: checkout: moving from DelehiOffice2018-Dev to master
+(standard input)-4-03934385246a HEAD@{3}: commit: modified mistakenly, so gco and commit again
+(standard input):5:ee2dbf4f90c9 HEAD@{4}: commit (merge): DelehiOffice 2015 -> 2018
+(standard input)-6-36839898fadd HEAD@{5}: checkout: moving from master to DelehiOffice2018-Dev
+(standard input)-7-36839898fadd HEAD@{6}: pull: Fast-forward
+(standard input)-8-2c63fcb0cf10 HEAD@{7}: checkout: moving from master to master
+
+«delehioffice todo»
+
+search particular user's libreoffice mail archive
+things every python developer should know
 
