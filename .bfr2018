@@ -4372,3 +4372,6 @@ HEAD is now at ee2dbf4f90c9 DelehiOffice 2015 -> 2018
 search particular user's libreoffice mail archive
 things every python developer should know
 
+Set the ANT_HOME Variable on a Linux or Macintosh System
+ls -l $(which ant)
+
