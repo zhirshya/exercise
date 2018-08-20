@@ -3876,6 +3876,18 @@ accessing web request and response from inside c++ program:
 delheioffice todo:
 instdir/DelehiOffice6.1_SDK -> instdir/DelehiOffice2018_SDK
 
+git reset --hard HEAD@{3}
+HEAD is now at ee2dbf4f90c9 DelehiOffice 2015 -> 2018
+ almas@3c2d3e26252423  ~/lode/dev/core   DelehiOffice2018-Dev  git reflog | grp "HEAD@{4}"
+(standard input)-2-03934385246a HEAD@{1}: checkout: moving from master to DelehiOffice2018-Dev
+(standard input)-3-36839898fadd HEAD@{2}: checkout: moving from DelehiOffice2018-Dev to master
+(standard input)-4-03934385246a HEAD@{3}: commit: modified mistakenly, so gco and commit again
+(standard input):5:ee2dbf4f90c9 HEAD@{4}: commit (merge): DelehiOffice 2015 -> 2018
+(standard input)-6-36839898fadd HEAD@{5}: checkout: moving from master to DelehiOffice2018-Dev
+(standard input)-7-36839898fadd HEAD@{6}: pull: Fast-forward
+(standard input)-8-2c63fcb0cf10 HEAD@{7}: checkout: moving from master to master
+
+
 js map reduce filter
 js pluck
 js reverse collection
