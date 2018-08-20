@@ -3451,6 +3451,8 @@ https://stackoverflow.com/questions/16931770/makefile4-missing-separator-stop
 24.) Logout - 01:27:39
 
 shell:
+alias la='ls -thlAF'
+
 try:
 find /path -iname *.pdf -print0 | for i in `xargs 0`; do echo $i; \
     pdftotext "$i" - | grep pattern; done
@@ -4353,3 +4355,5 @@ instdir/DelehiOffice6.1_SDK -> instdir/DelehiOffice2018_SDK
 «delheioffice todo»
 
 search particular user's libreoffice mail archive
+things every python developer should know
+
