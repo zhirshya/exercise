@@ -192,6 +192,12 @@ https://exmail.qq.com/cgi-bin/loginpage
 qingbatu@delehi.com .d*G*1*5
 
 book:
+Engineering Mathematics, 8th Edition by John Bird 
+English | 2017 | ISBN: 1138673595 | 726 Pages | True PDF, EPUB
+
+Advanced Mathematical Techniques in Engineering Sciences by Mangey Ram 
+English | 2018 | ISBN: 1138554399 | 352 Pages
+
 Becoming a Better Programmer: A Handbook for People Who Care About Code by Pete Goodliffe
 
 Hexaflexagons, probability paradoxes, and the tower of Hanoi by Martin Gardner
@@ -584,6 +590,8 @@ electrum: forgot electrum wallet generation key
 12gEgX9e5Bu86ASTTmvij3mDgqu82XyEh8 d*G*1*5!#
 
 eecs,ict:
+user-defined functions (UDFs)
+
 If you're using ./configure, you should run "make clean" prior to running configure again.
 
 splice ( ≈ concat), pluck ( ≈ split)
