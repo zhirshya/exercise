@@ -2831,6 +2831,7 @@ https://note.mu/ihayato/n/nc851aa610fa4
 残業続きなのはもちろん、毎日会社の成績のことばかりで頭がいっぱい、緊張状態を強いれられているようでは、副業はおろか、プライベートな活動を楽しむ余裕すらなくなります。
 
 cn2en2mn2ru:
+沙果 ᠠᠭᠠᠯᠢᠭ ᠠᠯᠮᠤᠷᠠᠳ 
 正版包邮
 上火
 红包 red packet
@@ -4399,7 +4400,9 @@ HEAD is now at ee2dbf4f90c9 DelehiOffice 2015 -> 2018
 search particular user's libreoffice mail archive
 things every python developer should know
 
-tips for passing driving tests
 tips for becoming better driver
 most difficult driving theory tests
 most important things for driving stick shift car
+
+gco DelehiOffice2018-Dev && git rebase master
+
