@@ -1006,6 +1006,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+scouring pads
+
 before too long
 skid mark
 ᠲᠣᠷᠮᠤᠰ тоормос : Аливаа хөдлөгч машин тэрэгний хурд хөдөлгөөнийг зогсоох буюу удаашруулах хэрэгсэл: тоормос гишгэх (тоормослох, машины тоормосон дээрээ гишгэж ажиллуулах) - Жолоо булааж гэнэт машин шүргэх шиг болоход тоормосоо гишгэв. Ч.Алагсай. Алтайн зам., тоормос муутай (тоормосны ажиллагаа муу), тоормос сайтай (тоормосны ажиллагаа сайн), тоормосны урт (тээврийн машины тоормосолж эхэлснээс бүрэн зогсох хүртэлх хугацаанд туулсан зай).
@@ -4431,3 +4433,5 @@ grep -rnH 'make distclean' /Users/dev/lode
 one piece ggl,bolor
 safari exprot webpage to pdf including pictures
 search and replace string recursively in a directory, comment out original lines, then replace in copies
+is coarse non-stick inner pot safe
+
