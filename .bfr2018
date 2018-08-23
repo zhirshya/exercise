@@ -4406,8 +4406,6 @@ most important things for driving stick shift car
 
 gco DelehiOffice2018-Dev && git rebase master
 
-make distclean No rule to make target 'distclean'
-
 Set the ANT_HOME Variable on a Linux or Macintosh System
 ls -l $(which ant)
 
@@ -4423,4 +4421,6 @@ Shine. (nickel works to increase the protective layer that chromium forms and al
 South 3rd Ring Road
 South 2nd Ring Road
 
+make distclean No rule to make target 'distclean'
+grep -rnH 'make distclean' /Users/dev/lode
 
