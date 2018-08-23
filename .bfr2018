@@ -809,8 +809,8 @@ scp -P 2249
 
 Copy files inside directory recursively: scp -r
 
-#asks password for every outmost scope file and directory!
-scp -r dev@192.168.97.197:~/lrn/doc/{new-web-typography,blockchain-quick-reference,html5-javascript-projects-2nd,web-technology-theory-practice,macos-programming-absolute-beginners.pdf,computational-thinking-first-algorithms-then-code.pdf} ~/doc
+scp -BCpvr dev@192.168.97.197:~/lrn/doc/{new-web-typography,blockchain-quick-reference,html5-javascript-projects-2nd,web-technology-theory-practice,macos-programming-absolute-beginners.pdf,computational-thinking-first-algorithms-then-code.pdf} ~/doc
+-B : Selects batch mode (prevents asking for passwords or passphrases).
 
 https://www.tecmint.com/scp-commands-examples/
 https://gist.github.com/michaelminter/7377743
