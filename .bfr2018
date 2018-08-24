@@ -192,6 +192,12 @@ https://exmail.qq.com/cgi-bin/loginpage
 qingbatu@delehi.com .d*G*1*5
 
 book:
+Engineering Mathematics, 8th Edition by John Bird 
+English | 2017 | ISBN: 1138673595 | 726 Pages | True PDF, EPUB
+
+Advanced Mathematical Techniques in Engineering Sciences by Mangey Ram 
+English | 2018 | ISBN: 1138554399 | 352 Pages
+
 Becoming a Better Programmer: A Handbook for People Who Care About Code by Pete Goodliffe
 
 Hexaflexagons, probability paradoxes, and the tower of Hanoi by Martin Gardner
@@ -584,6 +590,9 @@ electrum: forgot electrum wallet generation key
 12gEgX9e5Bu86ASTTmvij3mDgqu82XyEh8 d*G*1*5!#
 
 eecs,ict:
+distributed application (DApp)
+user-defined functions (UDFs)
+
 If you're using ./configure, you should run "make clean" prior to running configure again.
 
 splice ( ≈ concat), pluck ( ≈ split)
@@ -1000,6 +1009,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+scouring pads
+
 before too long
 skid mark
 ᠲᠣᠷᠮᠤᠰ тоормос : Аливаа хөдлөгч машин тэрэгний хурд хөдөлгөөнийг зогсоох буюу удаашруулах хэрэгсэл: тоормос гишгэх (тоормослох, машины тоормосон дээрээ гишгэж ажиллуулах) - Жолоо булааж гэнэт машин шүргэх шиг болоход тоормосоо гишгэв. Ч.Алагсай. Алтайн зам., тоормос муутай (тоормосны ажиллагаа муу), тоормос сайтай (тоормосны ажиллагаа сайн), тоормосны урт (тээврийн машины тоормосолж эхэлснээс бүрэн зогсох хүртэлх хугацаанд туулсан зай).
@@ -2826,6 +2837,7 @@ https://note.mu/ihayato/n/nc851aa610fa4
 残業続きなのはもちろん、毎日会社の成績のことばかりで頭がいっぱい、緊張状態を強いれられているようでは、副業はおろか、プライベートな活動を楽しむ余裕すらなくなります。
 
 cn2en2mn2ru:
+沙果 ᠠᠭᠠᠯᠢᠭ ᠠᠯᠮᠤᠷᠠᠳ 
 正版包邮
 上火
 红包 red packet
@@ -3544,6 +3556,13 @@ defaults write com.apple.screencapture type jpg
 killall SystemUIServer
 
 automotive:
+3 Point Turn :: K Turn :: Y Turn
+https://www.youtube.com/watch?v=724tCW8gqO8
+2-Point Reverse Turn
+https://www.youtube.com/watch?v=vrefrsJHXuM
+
+4 Point Turn formerly known as a 3 Point Turn 1st movement
+
 I completely agree with getting people to start learning the catch or bite point of the clutch first then learning to hover the throttle.
 If you live in an area with a lot of traffic, better start working out your right leg because your left one will start to bulk! I have been sore before simply from being in a traffic jam for a few hours.
 Learning the clutch pedal "bite" point is the first thing I always teach too. I just have them get the car started by moving the clutch only, then push it back all the way in. Repeat this step over and over until they can do it quickly, then slowly add in the gas pedal.
@@ -3561,6 +3580,17 @@ tips and tricks to skilfully drive manual shift car better
 repair manual shift car
 Driving Hacks Techniques from Experienced Drivers
 Be A Better Driver
+
+parallel parking, backing up straight, and three- or four-point turns
+https://www.wikihow.com/Pass-Your-Driving-Test
+Should I turn and look behind me when parallel parking, or only use my mirrors?
+You should do a full sweep before beginning the maneuver, and then drive in reverse while looking out your rear window. Once you get to the point where you need to start worrying about lining up with the curb, switch your attention to your mirrors, but still only use them as aids.
+
+If and when your instructor asks you to park, be sure to remember the three special words. Mirror, Signal, Blind spot.
+A green light never really means "go!" when you make a turn. If you're turning across an intersection at a green light, wait to see if the cars in the other lane have a red light.
+Once you passed you can take extra driving lessons to reduce your premium on your Car Insurance.
+
+«end of automotive»
 
 chess:
 https://www.ichess.net/blog/5-chess-strategy-tips-for-beginners/
@@ -4376,6 +4406,12 @@ HEAD is now at ee2dbf4f90c9 DelehiOffice 2015 -> 2018
 search particular user's libreoffice mail archive
 things every python developer should know
 
+tips for becoming better driver
+most difficult driving theory tests
+most important things for driving stick shift car
+
+gco DelehiOffice2018-Dev && git rebase master
+
 Set the ANT_HOME Variable on a Linux or Macintosh System
 ls -l $(which ant)
 
@@ -4388,6 +4424,10 @@ Choose a pressure cooker that is made of high-quality durable stainless steel.  
 Stain and corrosion resistance. (stainless steel must include at least 10.5% chromium to be considered stainless.  A greater amount of chromium adds to its durability)
 Shine. (nickel works to increase the protective layer that chromium forms and also adds gleam and shine)
 
+Stainless Steel Inner Pot
+Stainless Steel Cooking Pot and Steam Rack
+rice paddle
+
 South 3rd Ring Road
 South 2nd Ring Road
 
@@ -4398,4 +4438,13 @@ How Elon Musk learns faster and better than everyone else
 https://qz.com/968101/how-elon-musk-learns-faster-and-better-than-everyone-else/
 I call people like Musk “expert-generalists” (a term coined by Orit Gadiesh, chairman of Bain & Company). Expert-generalists study widely in many different fields, understand deeper principles that connect those fields, and then apply the principles to their core specialty.
 Based on my review of Musk’s life and the academic literature related to learning and expertise, I’m convinced that we should all learn across multiple fields in order to increase our odds of breakthrough success.
+
+make distclean No rule to make target 'distclean'
+grep -rnH 'make distclean' /Users/dev/lode
+
+one piece ggl,bolor
+safari exprot webpage to pdf including pictures
+search and replace string recursively in a directory, comment out original lines, then replace in copies
+is coarse non-stick inner pot safe
+
 
