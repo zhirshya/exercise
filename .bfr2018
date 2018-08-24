@@ -818,6 +818,9 @@ scp -P 2249
 
 Copy files inside directory recursively: scp -r
 
+scp -Cpvr dev@192.168.97.197:~/lrn/doc/{new-web-typography,blockchain-quick-reference,html5-javascript-projects-2nd,web-technology-theory-practice,macos-programming-absolute-beginners.pdf,computational-thinking-first-algorithms-then-code.pdf} ~/doc
+-B : Selects batch mode (prevents asking for passwords or passphrases). #-B still asks for password for every outmost file and directory!
+
 https://www.tecmint.com/scp-commands-examples/
 https://gist.github.com/michaelminter/7377743
 
@@ -1196,6 +1199,7 @@ sprain:	шөрмөс шидрэх ᠰᠢᠷᠪᠦᠰᠦ ᠰᠢᠳᠡᠷᠡᠬᠦ
 Peaceful coexistence ensures that you remain afloat when negative politics arise.
 
 barbell
+barbell row
 deadlift
 bench press
 
@@ -4426,6 +4430,14 @@ rice paddle
 
 South 3rd Ring Road
 South 2nd Ring Road
+
+77 Brain Hacks to Learn Faster, Deeper, and Better
+http://www.mindpowernews.com/BrainHacks.htm
+
+How Elon Musk learns faster and better than everyone else
+https://qz.com/968101/how-elon-musk-learns-faster-and-better-than-everyone-else/
+I call people like Musk “expert-generalists” (a term coined by Orit Gadiesh, chairman of Bain & Company). Expert-generalists study widely in many different fields, understand deeper principles that connect those fields, and then apply the principles to their core specialty.
+Based on my review of Musk’s life and the academic literature related to learning and expertise, I’m convinced that we should all learn across multiple fields in order to increase our odds of breakthrough success.
 
 make distclean No rule to make target 'distclean'
 grep -rnH 'make distclean' /Users/dev/lode
