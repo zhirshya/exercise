@@ -4516,6 +4516,8 @@ https://www.youtube.com/watch?v=ro3Mh9o7JPU
 happy as a clam, get fleeced
 
 beaker browser issues:
+BloomFilterWrap.cpp:72:21: error: no matching constructor for initialization of 'String::Utf8Value'
+
 Electron[45746:2762100] *** WARNING: Textured window <AtomNSWindow: 0x7ff8adef35b0> is getting an implicitly transparent titlebar. This will break when linking against newer SDKs. Use NSWindow's -titlebarAppearsTransparent=YES instead.
 
 
