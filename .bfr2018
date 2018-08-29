@@ -582,6 +582,9 @@ C++ is also a great language for building a lower level understanding of compute
 
 «end of c++»
 
+math:
+formal logic notation, proof methods; induction, well-ordering; sets, relations; elementary graph theory; integer congruences; asymptotic notation and growth of functions; permutations and combinations, counting principles; discrete probability
+
 physics:
 single slit diffraction
 
@@ -1009,6 +1012,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+bistro зуушны газар ᠵᠠᠭᠤᠰᠢᠨ ᠤ ᠭᠠᠵᠠᠷ, жижиг цайны газар ᠵᠢᠵᠢᠭ ᠴᠠᠢ ᠶᠢᠨ ᠭᠠᠵᠠᠷ
+
 scouring pads
 
 before too long
@@ -4553,7 +4558,10 @@ Electron App is still a server-client architecture. Serialport runs fine on the 
 Browser-Serialport does not cause this error, but it also does not work at all (no port listings, nothing). Plus, Browser-Serialport does not provide TypeScript typings (at least as npm @types/ package), so its not practical for me.
 The correct way to use SerialPort inside an Electron App is to call all functions from the main thread. This is every js-module that is required from the main.js that Electron starts as entry point. The interconnection to the renderer goes through Electron's ipcMain tunnel.
 
-en2mn: Filter by tag, browser session, browser tab
+This project${"'"}s files are synced to
+
+en2mn: Filter by tag, browser session, browser tab, favicon
 
 LCLC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g" /Users/dev/beaker-master/app/background-process.build.js
+
 
