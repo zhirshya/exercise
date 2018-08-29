@@ -2863,6 +2863,26 @@ en2cn:
 hair clay 发泥
 
 js:
+async function onRestoreSelected () {
+  await Promise.all(selectedArchives.map(async a => {
+    a.checked = false
+    a.userSettings.isSaved = true
+    await beaker.archives.add(a.url, {isSaved: true})
+  }))
+
+  selectedArchives = []
+  await loadArchives()
+  render()
+}
+
+function onClickDelete (i) {
+  // remove
+  var v = visits[i]
+  visits.splice(i, 1)
+  beaker.history.removeVisit(v.url)
+  render()
+}
+
 Try catch is synchronous.
 
 Blackbox JavaScript Source Files
@@ -4527,4 +4547,13 @@ BloomFilterWrap.cpp:72:21: error: no matching constructor for initialization of 
 
 Electron[45746:2762100] *** WARNING: Textured window <AtomNSWindow: 0x7ff8adef35b0> is getting an implicitly transparent titlebar. This will break when linking against newer SDKs. Use NSWindow's -titlebarAppearsTransparent=YES instead.
 
+electron:
+https://github.com/node-serialport/node-serialport/issues/1039
+Electron App is still a server-client architecture. Serialport runs fine on the main thread, that is the "server-side" (node.js). Calling Serialport from the renderer, which is the Angular 2 part, is not possible due to security restrictions. fs is a node.js module, that is simply not available to the render thread / scope.
+Browser-Serialport does not cause this error, but it also does not work at all (no port listings, nothing). Plus, Browser-Serialport does not provide TypeScript typings (at least as npm @types/ package), so its not practical for me.
+The correct way to use SerialPort inside an Electron App is to call all functions from the main thread. This is every js-module that is required from the main.js that Electron starts as entry point. The interconnection to the renderer goes through Electron's ipcMain tunnel.
+
+en2mn: Filter by tag, browser session, browser tab
+
+LCLC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g" /Users/dev/beaker-master/app/background-process.build.js
 
