@@ -582,6 +582,9 @@ C++ is also a great language for building a lower level understanding of compute
 
 «end of c++»
 
+math:
+formal logic notation, proof methods; induction, well-ordering; sets, relations; elementary graph theory; integer congruences; asymptotic notation and growth of functions; permutations and combinations, counting principles; discrete probability
+
 physics:
 single slit diffraction
 
@@ -1018,6 +1021,10 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+happy as a clam, get fleeced
+
+bistro зуушны газар ᠵᠠᠭᠤᠰᠢᠨ ᠤ ᠭᠠᠵᠠᠷ, жижиг цайны газар ᠵᠢᠵᠢᠭ ᠴᠠᠢ ᠶᠢᠨ ᠭᠠᠵᠠᠷ
+
 scouring pads
 
 before too long
@@ -2872,6 +2879,26 @@ en2cn:
 hair clay 发泥
 
 js:
+async function onRestoreSelected () {
+  await Promise.all(selectedArchives.map(async a => {
+    a.checked = false
+    a.userSettings.isSaved = true
+    await beaker.archives.add(a.url, {isSaved: true})
+  }))
+
+  selectedArchives = []
+  await loadArchives()
+  render()
+}
+
+function onClickDelete (i) {
+  // remove
+  var v = visits[i]
+  visits.splice(i, 1)
+  beaker.history.removeVisit(v.url)
+  render()
+}
+
 Try catch is synchronous.
 
 Blackbox JavaScript Source Files
@@ -3565,6 +3592,13 @@ defaults write com.apple.screencapture type jpg
 killall SystemUIServer
 
 automotive:
+A throttle is the mechanism by which fluid flow is managed by the constriction or obstruction.
+An engine's power can be increased or decreased by the restriction of inlet gases (by the use of a throttle), but usually decreased. The term throttle has come to refer, informally and incorrectly, to any mechanism by which the power or speed of an engine is regulated, such as a car's accelerator pedal. What is often termed a throttle (in an aviation context) is more correctly called a thrust lever, particularly for jet engine powered aircraft. For a steam engine, the steam valve that sets the engine speed/power is often known as a regulator.
+
+control oversteer
+highway entrance ramp
+heel-toe downshifting: Heel-and-toe shifting[1] is an advanced driving technique used mostly in performance driving with a manual gearbox,[2] although some drivers use it on the road in everyday conditions in the interest of effectiveness. It involves operating the throttle and brake pedals simultaneously with the right foot, while facilitating normal activation of the clutch with the left foot. It is used when braking and downshifting simultaneously (prior to entering a turn), and allows the driver to "blip" the throttle to raise the engine speed and smoothly engage the lower gear. (See Synchronized transmission.) Obsoleted by prevalence of Automatic transmission and specifically Dual-clutch transmission in performance applications that provide on-demand downshifting with rev matching faster and more reliably than a driver can do manually.
+
 3 Point Turn :: K Turn :: Y Turn
 https://www.youtube.com/watch?v=724tCW8gqO8
 2-Point Reverse Turn
@@ -4527,4 +4561,22 @@ pylon
 
 puffy swollen lower eyelid
 why blue lights are harmful to eyes
+
+beaker browser issues:
+BloomFilterWrap.cpp:72:21: error: no matching constructor for initialization of 'String::Utf8Value'
+
+Electron[45746:2762100] *** WARNING: Textured window <AtomNSWindow: 0x7ff8adef35b0> is getting an implicitly transparent titlebar. This will break when linking against newer SDKs. Use NSWindow's -titlebarAppearsTransparent=YES instead.
+
+electron:
+https://github.com/node-serialport/node-serialport/issues/1039
+Electron App is still a server-client architecture. Serialport runs fine on the main thread, that is the "server-side" (node.js). Calling Serialport from the renderer, which is the Angular 2 part, is not possible due to security restrictions. fs is a node.js module, that is simply not available to the render thread / scope.
+Browser-Serialport does not cause this error, but it also does not work at all (no port listings, nothing). Plus, Browser-Serialport does not provide TypeScript typings (at least as npm @types/ package), so its not practical for me.
+The correct way to use SerialPort inside an Electron App is to call all functions from the main thread. This is every js-module that is required from the main.js that Electron starts as entry point. The interconnection to the renderer goes through Electron's ipcMain tunnel.
+
+This project${"'"}s files are synced to
+
+en2mn: Filter by tag, browser session, browser tab, favicon
+
+LCLC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g" /Users/dev/beaker-master/app/background-process.build.js
+
 
