@@ -1739,6 +1739,8 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+ᠰᠡᠭᠡᠯᠳᠦᠷᠭᠡ сэгэлдрэг : Ташуур зэргийн бариул дээр нүхлэн оруулсан гогцоо: малгайн сэгэлдрэг (малгай битүү уяа), ташуурын сэгэлдрэг (ташуурын оосор).
+
 ᠠᠯᠮᠣᠷᠠᠳ should be recognized as apple in Mongolia.
 
 ᠲᠡᠬᠡ тэх : 1. Янгир ямааны эр нь: харлаг тэх (харлаг зүсмийн болон хөгшин тэх), тэх отлох (тэхийн ороо орж дуршин дуугарах), тэхийн эвэр элэгт нум (янгирын эврээр хийсэн нум), тэхийн эврийг тэнгэрт тултал, тэмээн сүүлийг газар хүртэл [зүйр цэцэн үг] (унан тустал худал хэлэх гэсэн санаа), тэхийн шээг [ургамал] (ухна шивтэр);
@@ -4567,6 +4569,16 @@ Pull with your arms and elbows.
 StrongLifts 5x5 Workout B: FULL Video (Official)
 https://www.youtube.com/watch?v=ro3Mh9o7JPU
 
+neglected:
+C/C++ problem solving skills
+critical thinking
+deep breathing
+chess
+workout
+hacking
+
+«end of neglected»
+
 finesse
 pylon
 
@@ -4587,6 +4599,10 @@ This project${"'"}s files are synced to
 
 en2mn: Filter by tag, browser session, browser tab, favicon
 
-LCLC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g" /Users/dev/beaker-master/app/background-process.build.js
+LCLC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g; s/setup\$9();/\/\/&/g" ~/beaker-master/app/background-process.build.js
+npm run rebuild && LC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g; s/setup\$9();/\/\/&/g" ~/beaker-master-orig/app/background-process.build.js && npm start
+
+console.time('electron-beaker-build')
+console.timeEnd('electron-beaker-build')
 
 
