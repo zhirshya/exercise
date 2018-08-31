@@ -4558,6 +4558,16 @@ Pull with your arms and elbows.
 StrongLifts 5x5 Workout B: FULL Video (Official)
 https://www.youtube.com/watch?v=ro3Mh9o7JPU
 
+neglected:
+C/C++ problem solving skills
+critical thinking
+deep breathing
+chess
+workout
+hacking
+
+«end of neglected»
+
 finesse
 pylon
 
@@ -4579,7 +4589,7 @@ This project${"'"}s files are synced to
 
 en2mn: Filter by tag, browser session, browser tab, favicon
 
-LCLC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g" /Users/dev/beaker-master/app/background-process.build.js
+LCLC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g; s/setup\$9();/\/\/&/g" /Users/dev/beaker-master/app/background-process.build.js
+console.time('electron-beaker-build')
+console.timeEnd('electron-beaker-build')
 
-
-manual transmission car driving mistakes to avoid
