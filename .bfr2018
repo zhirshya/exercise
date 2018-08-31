@@ -4589,7 +4589,10 @@ This project${"'"}s files are synced to
 
 en2mn: Filter by tag, browser session, browser tab, favicon
 
-LCLC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g; s/setup\$9();/\/\/&/g" /Users/dev/beaker-master/app/background-process.build.js
+LCLC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g; s/setup\$9();/\/\/&/g" ~/beaker-master/app/background-process.build.js
+npm run rebuild && LC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g; s/setup\$9();/\/\/&/g" ~/beaker-master-orig/app/background-process.build.js && npm start
+
 console.time('electron-beaker-build')
 console.timeEnd('electron-beaker-build')
+
 
