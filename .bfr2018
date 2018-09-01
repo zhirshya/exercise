@@ -4578,6 +4578,7 @@ C/C++ problem solving skills
 critical thinking
 deep breathing
 chess
+physical labor
 workout
 hacking
 
@@ -4609,4 +4610,6 @@ npm run rebuild && LC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = requir
 console.time('electron-beaker-build')
 console.timeEnd('electron-beaker-build')
 
+Hands-On Enterprise Automation with Python pdf epub ISBN: 1788998512
+Gray Hat Hacking: The Ethical Hacker’s Handbook, 5th Edition pdf epub ISBN: 1260108415
 
