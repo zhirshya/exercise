@@ -4626,5 +4626,6 @@ Gray Hat Hacking: The Ethical Hacker’s Handbook, 5th Edition pdf epub ISBN: 12
 
 comparison of DirectX OpenGL OpenCL CUDA
 how SSO and OpenAuth work
-c++ Asio https client server
+c++ Asio https client server => downloader? webcrawler? REST API?
+
 
