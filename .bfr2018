@@ -3199,6 +3199,7 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+View a file in a different Git branch without changing branches
 @delehioffice2015: git show DelehiOffice2018-Dev:instsetoo_native/util/openoffice.lst.in
 
 remote (branch) invisible to local repo:
