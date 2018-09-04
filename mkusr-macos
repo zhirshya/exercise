@@ -1,0 +1,10 @@
+#todo: specify system language and locale when creating user on terminal
+dscl . -create /Users/chnsmp
+dscl . -create /Users/chnsmp UserShell /bin/zsh
+dscl . -create /Users/chnsmp RealName "Chinese Simplified" 
+dscl . -create /Users/chnsmp UniqueID "510"
+dscl . -create /Users/chnsmp PrimaryGroupID 20
+dscl . -create /Users/chnsmp NFSHomeDirectory /Users/chnsmp
+dscl . -passwd /Users/chnsmp password 
+dscl . -append /Groups/admin GroupMembership chnsmp
+#sudo reboot
