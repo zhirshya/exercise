@@ -848,6 +848,7 @@ http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html
 «end of eecs,ict»
 
 difficult en:
+stash
 amortization 
 convolution
 Convolutional Neural Networks
@@ -3198,6 +3199,8 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+@delehioffice2015: git show DelehiOffice2018-Dev:instsetoo_native/util/openoffice.lst.in
+
 remote (branch) invisible to local repo:
 https://stackoverflow.com/questions/945654/git-checkout-updating-paths-is-incompatible-with-switching-branches/
 I believe this occurs when you are trying to checkout a remote branch that your local git repo is not aware of yet. Try:
@@ -4612,6 +4615,9 @@ Browser-Serialport does not cause this error, but it also does not work at all (
 The correct way to use SerialPort inside an Electron App is to call all functions from the main thread. This is every js-module that is required from the main.js that Electron starts as entry point. The interconnection to the renderer goes through Electron's ipcMain tunnel.
 
 This project${"'"}s files are synced to
+
+
+«end of electron»
 
 en2mn: Filter by tag, browser session, browser tab, favicon
 
