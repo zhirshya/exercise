@@ -606,8 +606,7 @@ formal logic notation, proof methods; induction, well-ordering; sets, relations;
 physics:
 single slit diffraction
 
-electrum: forgot electrum wallet generation key
-12gEgX9e5Bu86ASTTmvij3mDgqu82XYEh8
+electrum: wallet generation seed: city oblige element skirt dad hammer denial liar machine favorite puppy truck prsvrr gtd
 12gEgX9e5Bu86ASTTmvij3mDgqu82XyEh8 d*G*1*5!#
 
 anki:
@@ -617,6 +616,9 @@ data structure
 AI
 Russian
 driving manual transmission
+hacking
+
+«end of anki»
 
 
 eecs,ict:
@@ -864,6 +866,7 @@ http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html
 «end of eecs,ict»
 
 difficult en:
+stash
 amortization 
 convolution
 Convolutional Neural Networks
@@ -877,6 +880,8 @@ interpolate
 liaison
 
 en:
+As a “sin of omission,” ostracism is an act that someone didn’t do: they didn’t acknowledge you or reach out to you or invite you to something. Whether the act of one person or many, it can include being left off email threads, being looked over for a committee position, or being ignored when making suggestions. You may experience conversations stopping when you try to join in, no one taking your order for a coffee run, or finding out that you haven’t been invited to a weekend outing with colleagues.
+
 With upbringing like mine, how else could I turn out?
 
 5 minutes thrice everyday
@@ -1043,6 +1048,10 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+battle rope
+
+(image) occlusion
+
 tachometer (revolution-counter, tach, rev-counter, RPM gauge) is an instrument measuring the rotation speed of a shaft or disk, as in a motor or other machine.[1] The device usually displays the revolutions per minute (RPM) on a calibrated analogue dial, but digital displays are increasingly common. The word comes from Greek ταχος (tachos "speed") and metron ("measure"). Essentially the words tachometer and speedometer have identical meaning: a device that measures speed. It is by arbitrary convention that in the automotive world one is used for engine and the other for vehicle speed. In formal engineering nomenclature, more precise terms are used to distinguish the two. : тахометр ᠲᠠᠾᠣᠮᠧᠲ᠋ᠷ, эргэлтийн давтамж хэмжүүр ᠡᠷᠭᠢᠯᠲᠡ ᠶᠢᠨ ᠳᠠᠪᠲᠠᠮᠵᠢ ᠬᠡᠮᠵᠢᠭᠦᠷ
 
 happy as a clam
@@ -1281,7 +1290,7 @@ derby (dress shoes)
 
 mustache: живэр (сахал) ᠵᠢᠪᠡᠷᠢ ᠰᠠᠬᠠᠯ
 the beard grown in the depression under the lower lip: ооч сахал ᠣᠭᠤᠴᠢ ᠰᠠᠬᠠᠯ
-wallow: to indulge oneself immoderately. e.g. wallowing in self-pity.
+wallow: to indulge oneself immoderately. e.g. wallowing in self-pity or sob story.
 
 fasting: мацаг барих
 conscientious:
@@ -1757,6 +1766,8 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+бат цагаан мод	(ургамал): наран ээвэр голын хөвөөний элсэрхэг газар, ой шугуйн хөвөөгөөр ургадаг тураг буюу бут мод, гурав ба таван хошуутай навчтай, арзгар саарал судалтай, үр үндэс артай, үрийг нь цайны оронд ууж болно.
+
 ᠰᠡᠭᠡᠯᠳᠦᠷᠭᠡ сэгэлдрэг : Ташуур зэргийн бариул дээр нүхлэн оруулсан гогцоо: малгайн сэгэлдрэг (малгай битүү уяа), ташуурын сэгэлдрэг (ташуурын оосор).
 
 ᠠᠯᠮᠣᠷᠠᠳ should be recognized as apple in Mongolia.
@@ -3206,6 +3217,9 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+View a file in a different Git branch without changing branches
+@delehioffice2015: git show DelehiOffice2018-Dev:instsetoo_native/util/openoffice.lst.in
+
 remote (branch) invisible to local repo:
 https://stackoverflow.com/questions/945654/git-checkout-updating-paths-is-incompatible-with-switching-branches/
 I believe this occurs when you are trying to checkout a remote branch that your local git repo is not aware of yet. Try:
@@ -4588,12 +4602,18 @@ StrongLifts 5x5 Workout B: FULL Video (Official)
 https://www.youtube.com/watch?v=ro3Mh9o7JPU
 
 neglected:
-C/C++ problem solving skills
+How to Read a Book (Mortimer Adler. He co-authored a heavily revised edition in 1972 with Charles Van Doren)
+How to Study Way More Effectively | The Feynman Technique
+Scan and read in chunks
+eliminate subvocalization
+mnemonics
 critical thinking
 deep breathing
 chess
+physical labor
 workout
-hacking
+hands-on skills: hacking, tinkering
+C/C++ problem solving skills
 
 «end of neglected»
 
@@ -4615,6 +4635,9 @@ The correct way to use SerialPort inside an Electron App is to call all function
 
 This project${"'"}s files are synced to
 
+
+«end of electron»
+
 en2mn: Filter by tag, browser session, browser tab, favicon
 
 LCLC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = require('contains-ads');/\/\/&/g; s/setup\$9();/\/\/&/g" ~/beaker-master/app/background-process.build.js
@@ -4626,6 +4649,12 @@ console.timeEnd('electron-beaker-build')
 @work imac:
 find ~ \! \( -type d \( -path ~/DeleheiOffice -o -path ~/lode -o -path ~/lode_MacCopy_.git_index_err -o -path ~/tnsrfl -o -path ~/"beaker-master*" -o -path ~/.vscode -o -path ~/.oh-my-zsh -o -path ~/deleheidict \) -prune \) -type f -iname "dl*" -o -iname "dn*"
 
+Hands-On Enterprise Automation with Python pdf epub ISBN: 1788998512
+Gray Hat Hacking: The Ethical Hacker’s Handbook, 5th Edition pdf epub ISBN: 1260108415
+
+comparison of DirectX OpenGL OpenCL CUDA
+how SSO and OpenAuth work
+c++ Asio https client server => downloader? webcrawler? REST API?
 
 huawei SLA-AL00 googleplay rom
 python tox
