@@ -185,7 +185,7 @@ https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-macos.htm#JSJI
 
 WARNING : no suitable nasm (Netwide Assembler) found for internal libjpeg-turbo
 
-prsvrrgtd@outlook.com
+Atlassian Bitbucket : prsvrrgtd@outlook.com
 apple id: strategyrr@outlook.com outlook_passwd
 
 https://exmail.qq.com/cgi-bin/loginpage
@@ -313,6 +313,24 @@ Internal Rate Return
 amortization 
 
 python:
+https://www.youtube.com/watch?v=rfscVS0vtbw
+username = input("Enter your name: ")
+print("Hello", str(username) + ", It's nice to meet you!")
+age = input("Enter your age: ")
+gender = input("Enter your gender: ")
+country = input("Enter your contry: ")
+address = input("Enter your address: ")
+print("Thank you, we have stolen all of your personal information.")
+print(str(username) + ",", str(age) + ",", str(gender) + ",", str(country) + ",", str(address))
+>Tip: 
+str() isn't needed for all the variables because whatever you input using the input() will always return a string. 
+str() isn't needed for the age; it's only needed when concatenating: 
+age = int( input('Your age? ') ) 
+print( 'Hello ' + str(age) + ' year old!' ) 
+VS. 
+print( 'Hello', age, 'year old!' )   # age is an int type, but here it wasn't converted 
+Both output the same, but note the difference.
+
 Personal Finance with Python: Using pandas, Requests, and Recurrent by Max Humber 
 	English | 2018 | ISBN: 1484238011 | 117 Pages | True PDF, EPUB | 11 MB
 Deal with data, build up financial formulas in code from scratch, and evaluate and think about money in your day-to-day life. This book is about Python and personal finance and how you can effectively mix the two together.
@@ -4605,4 +4623,11 @@ npm run rebuild && LC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = requir
 console.time('electron-beaker-build')
 console.timeEnd('electron-beaker-build')
 
+@work imac:
+find ~ \! \( -type d \( -path ~/DeleheiOffice -o -path ~/lode -o -path ~/lode_MacCopy_.git_index_err -o -path ~/tnsrfl -o -path ~/"beaker-master*" -o -path ~/.vscode -o -path ~/.oh-my-zsh -o -path ~/deleheidict \) -prune \) -type f -iname "dl*" -o -iname "dn*"
 
+
+huawei SLA-AL00 googleplay rom
+python tox
+websocket
+delehi search engine: python kibana MySQL geography cluster(my.ini) CentOS: Hohhot, Beijing, Qingdao
