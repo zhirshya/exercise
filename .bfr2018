@@ -3217,6 +3217,21 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+Deleting Old Local Branches
+http://erikaybar.name/git-deleting-old-local-branches/
+First, be sure to prune your remote branches
+	git remote prune origin  
+and then
+	git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d
+4b) Review/edit list before deleting
+If you want to review and/or edit the list of branches before deleting them. One way to accomplish this is to pipe the branch names into your clipboard via pbcopy, paste them into your favorite editor, and then pipe them into git branch -d yourself. Example:
+
+Pipe list into your clipboard via git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | pbcopy
+Paste into editor. Review. Edit as needed.
+Copy the edited list back into your clipboard.
+Pipe clipboard into commmand via: pbpaste | xargs git branch -d.
+EOF
+
 View a file in a different Git branch without changing branches
 @delehioffice2015: git show DelehiOffice2018-Dev:instsetoo_native/util/openoffice.lst.in
 
@@ -4661,3 +4676,6 @@ huawei SLA-AL00 googleplay rom
 python tox
 websocket
 delehi search engine: python kibana MySQL geography cluster(my.ini) CentOS: Hohhot, Beijing, Qingdao
+how segway work
+python excel automation : ask from narisu
+c++ py: text => ᠀, ᠀  => docx,xlsx
