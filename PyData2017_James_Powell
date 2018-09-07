@@ -1,0 +1,51 @@
+Starts at 4:36﻿
+metaclasses: 18:50
+metaclasses(explained): 40:40
+decorator: 45:20
+generator: 1:04:30
+context manager: 1:22:37
+summary: 1:40:00﻿
+
+At 18:00, why in _add_ function  is there an * in the return ? Thank you (Ploynomial(*  ... )﻿
+> The generator comprehension is being unpacked into arguments. Notice in the constructor of Polynomial (line 9) how the signature accepts *coeffs, this means the construct accepts unlimited arguments with will be expressed as a list. See: https://docs.python.org/3/glossary.html#term-argument﻿
+
+That whole _add_ thing at the beginning is what I've been looking for for the past two months and never found until this video which I didn't even mean to watch. Now I can add custom matrices with just a plus.
+> why are you using custom matrices instead of numpy?
+
+I hear dunder all the time (sentdex on YouTube for example). From my experience, 'magic methods' are things like '%run' and '%matplotlib inline' in Jupyter notebooks. So magic methods are provided by the interpreter rather than Python.﻿
+> that's odd, never come across that. in fact, when I search python magic methods on google I get a whole bunch of tutorial links to the underscore methods. I actually got some links to the official Data Model python docs despite the word "magic" never appearing on the page.
+and in stack overflow the "magic-method" tag seems to be devoted to these methods.﻿
+Now I'm curious as to how the use of these words has developed so differently.
+A case where english ambiguity and language weirdness sort of seeps into programming due to a lack of a good name for good functionality﻿.
+> Not sure if it's just me but just now I have realized that the weird word "dunder" means DoubleUNDERscore.
+> 'dunder' is common in python conference videos. 'magic' has been baked into ipython since pre-1.0, and retained in Jupyter after the 4.0 split. 
+Launch ipthon. At startup you see a reference to %quickref. Run that, and in the 3rd line of the body of the resultant Quick Reference Card, you find '%magic : Information about IPython's 'magic' % functions.'﻿
+
+
+Wouldn't a better solution be for Python to allow for the library maker to create a test suite (tested on the user side's methods, not the local super() methods, and have something like a _class_validate_ method for the user to run in their Unit Tests?)  Because this just seems slow, unwieldy, and exorbitantly unpythonic as a solution to this problem, let alone making bad, slower code.  (This was demonstrated by another lecture this year or last on metaprogramming in Python).  Checking at run time (and every time an instance is created) is asinine and wasteful, also this is conceptually confused.  This is really a unit test problem, and it should be pushed into that domain.﻿
+
+Hoe does he do that split screen with the terminal and text editor.﻿
+>Either tmux, a vim plugin, or a tiling window manager. (99% says it's tmux here.)﻿
+>He may have used :vsplit at some point, but at 8:47 he definitely used tmux to split screen.
+EDIT: At about 20 minutes in, he did use :vsplit (or C-w v).﻿
+
+** For the naysayers that question his python skills, just look at the following line created on the fly around 1:02:30.  Could you have written this that quickly and have gotten it to run, correctly, the first time?:
+
+print(‘running {.__name__}’.format(f))
+
+for those that criticize the length of the talk, look at the number of folks who are still confused.
+He is covering a number of relatively complex subjects, and that’s going to take time.
+
+I like his choice to talk about the principles involved in dunder methods, deferring us to the docs for more specifics.  I’d rather use the docs any day, than try to remember the specific arguments.
+ 
+There are few talks where people really try to explain why you might want to do this or that via this mechanism.  I think his examples of decorators, contexts, generators etc. are only possible after explaining the generality of dunder methods.
+Showing how metaclasses provide alternative hooks  makes them seem much less mysterious.
+
+And yes, “dunder” should be the preferred term. “Special or magic” should be reserved for their usage, not the methods themselves.  “magic” is ambiguous because of the magic commands used with IPython.  dunder is unambiguous.
+
+And he is showing the principles here.  the exact value that len should return for a polynomial is debatable, but not really significant to the talk.  Yes, evaluation of the polynomial might be appropriate for __call__, but again, the detail isn’t as important as the principle being shown.
+The way he shows how you can validate the implementation of library vs client code from the other’s perspective, is very instructive.  Yes there are subtleties around what you want to do when a module is loaded, and if you’re going to “load” client code to get the assertion failure displayed at build time rather than run time, but knowing that it can be done is very useful.  I think a lot of the run-time implementation details of Python are very good to know if you want to be an “Expert”.  Knowing when it is appropriate to use that knowledge is equally important.  I don’t think think he ever says”this is what you should do.”  He’s showing that these pretty powerful techniques are not that complicated.
+Of course, if you’re a Python newbie, *args and **kwargs aren’t going to mean anything to you.
+But it’s easy to look them up then return to the talk﻿.
+
+* meta classes are like overly convoluted and manually created interfaces? And you can have only one per class?
