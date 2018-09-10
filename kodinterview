@@ -1,0 +1,28 @@
+https://www.youtube.com/watch?v=PnnsDf3zEMw
+I just failed an interview at airbnb today dealing with the traveling salesman problem.
+> that's NP complete.  surprised anyone would ask you that... most likely the right answer was "there is no good answer, just brute force it".
+> the right answer would have been something along the lines of "brute forces takes way too long, just try and go for the best approximation by using a genetic algorithm".
+if you go and check each and every possible route, then that would take forever. even if you would only have like 10 destinations, then you would already have 10! = 3,628,800 possible routes you would have to check.
+if it has to be fast then use an approximation with A* would be a solution.
+
+> http://numerical.recipes/ suggests simulated annealing for getting a good answer (rather than the best one).
+> @AS That may be the case but from what I've read about Airbnb you certainly are expected to find a working solution (in running code) and later explain how you came up with it. They also sometimes explicitly specify both time and space complexities that your solution must live up to. The 45min time constraint they give you to understand the problem and develop a solution involving TSP or A* is very small, I'd definitely not pass that myself. They're shooting very high in talent hunt and it obviously works out for them, I wonder if the tech lead would be able to qualify as a software engineer in Airbnb.
+
+For the reverse a linked-list question, would an interviewer be specifically looking for the use of pointers? I've basically learned linked lists really only with a Node object with data and next attribute that just acts like a sort of pseudopointer to another Node object. Am I at a disadvantage if I were to use some technique like that as opposed to working with actual pointers in C/C++?
+> I think you need a solid understanding of pointers, even if you don't use them in your language.  Some interviewers will purposely just try to snag you on a question like that, it's a common one so know it...  If you can understand that Java is implementing objects as pointers, passed by reference, you'll be good.
+
+Here's the list if you want to search the topic's, still TechLead just nails it explaining each one on the video.
+- Tree traversal
+- Binary search tree
+- Recursive function
+- Iterative algorithm
+- Stacks and queues
+- Object oriented programming
+- Data structures (Hashmaps, graphs, etc.)
+
+Less but still important:
+- Pointers in C or C++
+- Sorting algorithms
+- Strings and how to navigate through them (Some types: palindrome, anagram)
+- Dynamic programming
+

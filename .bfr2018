@@ -185,7 +185,7 @@ https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-macos.htm#JSJI
 
 WARNING : no suitable nasm (Netwide Assembler) found for internal libjpeg-turbo
 
-prsvrrgtd@outlook.com
+Atlassian Bitbucket : prsvrrgtd@outlook.com
 apple id: strategyrr@outlook.com outlook_passwd
 
 https://exmail.qq.com/cgi-bin/loginpage
@@ -313,6 +313,24 @@ Internal Rate Return
 amortization 
 
 python:
+https://www.youtube.com/watch?v=rfscVS0vtbw
+username = input("Enter your name: ")
+print("Hello", str(username) + ", It's nice to meet you!")
+age = input("Enter your age: ")
+gender = input("Enter your gender: ")
+country = input("Enter your contry: ")
+address = input("Enter your address: ")
+print("Thank you, we have stolen all of your personal information.")
+print(str(username) + ",", str(age) + ",", str(gender) + ",", str(country) + ",", str(address))
+>Tip: 
+str() isn't needed for all the variables because whatever you input using the input() will always return a string. 
+str() isn't needed for the age; it's only needed when concatenating: 
+age = int( input('Your age? ') ) 
+print( 'Hello ' + str(age) + ' year old!' ) 
+VS. 
+print( 'Hello', age, 'year old!' )   # age is an int type, but here it wasn't converted 
+Both output the same, but note the difference.
+
 Personal Finance with Python: Using pandas, Requests, and Recurrent by Max Humber 
 	English | 2018 | ISBN: 1484238011 | 117 Pages | True PDF, EPUB | 11 MB
 Deal with data, build up financial formulas in code from scratch, and evaluate and think about money in your day-to-day life. This book is about Python and personal finance and how you can effectively mix the two together.
@@ -863,6 +881,27 @@ interpolate
 liaison
 
 en:
+Kyu Tee Lee 4 days ago (edited)
+I am 53 years of age.
+I came from a highly disfunctional broken home family. 
+I at age 10 and older raised myself.
+I did not go to school after graduating highschool.
+I fought against the general mindset of the world that a disability made one inept. 
+I have proven time and again that I can do more than be a housewife, even though my parents were of the mindset that being a housewife was all I should or could be able to do. 
+I have educated myself in: Commercial and Residential Air conditioning and Refrigeration and gained certification, Cerification requirements and obtained a 10 ton pilot certification for a seafaring vessel,went through internships for home repair and restoration and eventually became a contractor and much more. I have in the past 6 years taught myself graphic arts, create 3D meshes, edit videos, create textures and some coding. 
+To me the ability to learn something new is a great joy and not a chore.
+I believe those that do not learn something new everyday are basically like the walking dead.
+
+Failure is not a depressive issue for me, nor is it the end of the line as most seem to believe. 
+It is a wakeup call to me and signals that I lack some knowledge and need to educate myself further before trying again. I am not perfect but I am learning and growing to gain more perfection without dwelling on failure. I know there are others with more knowledge than I have obtained. So being humble is a good asset when wanting to learn from someone with more knowledge and in teaching others in what knowledge you have obtained.
+I do not blame my parents or other for my life!
+If my life was different I might not have struggled to prove I was capable of so much more in life.
+Those that make excuses for their lot in life are wasting the time and energy to make a better life for themselves. 
+It takes RESPONSIBILITY, EDUCATION, HARD WORK, INTEGRITY AND FORTITUDE!
+Beware: those that do not motivate and encourage you in your goals or dreams are not the people you want in your life!!! Life is not an easy experience and life is the biggest classroom you will ever be in.
+
+Sorry about being so long-winded(/ˌlɒŋˈwɪndɪd/). I mostly wanted to put this up (t)here in case someone else is in a similar situation because; life is hard. A family member is currently on a psychiatric hold; I was the victim of a domestic violence situation last week; I lost my insurance the same month I got promoted so have been paying out-of-pocket for my medications. Etc. It never ends, no one's life is easy, and nothing is for free. Spend the time, money and energy on your MENTAL HEALTH first and foremost, so that you can help those around you to the best of your ability, and hope they do the same for themselves so that everyone who knows you is better off because you're around.
+
 As a “sin of omission,” ostracism is an act that someone didn’t do: they didn’t acknowledge you or reach out to you or invite you to something. Whether the act of one person or many, it can include being left off email threads, being looked over for a committee position, or being ignored when making suggestions. You may experience conversations stopping when you try to join in, no one taking your order for a coffee run, or finding out that you haven’t been invited to a weekend outing with colleagues.
 
 With upbringing like mine, how else could I turn out?
@@ -3215,6 +3254,21 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
+Deleting Old Local Branches
+http://erikaybar.name/git-deleting-old-local-branches/
+First, be sure to prune your remote branches
+	git remote prune origin  
+and then
+	git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d
+4b) Review/edit list before deleting
+If you want to review and/or edit the list of branches before deleting them. One way to accomplish this is to pipe the branch names into your clipboard via pbcopy, paste them into your favorite editor, and then pipe them into git branch -d yourself. Example:
+
+Pipe list into your clipboard via git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | pbcopy
+Paste into editor. Review. Edit as needed.
+Copy the edited list back into your clipboard.
+Pipe clipboard into commmand via: pbpaste | xargs git branch -d.
+EOF
+
 View a file in a different Git branch without changing branches
 @delehioffice2015: git show DelehiOffice2018-Dev:instsetoo_native/util/openoffice.lst.in
 
@@ -3689,6 +3743,8 @@ GM Fine's 15 Basic Endgame Rules (from Basic Chess Endings):
 15. Rooks belong behind passed Pawns.
 
 todo:
+macos schedule sudo script to be executed on startup
+
 ᠰᠢᠳᠦᠨ ᠤ ᠠᠪᠣᠴᠠᠯᠳᠣᠯ ᠢᠶᠡᠨ ᠲᠡᠭᠰᠢᠯᠡᠬᠦ: lip seal tape
 
 Boris Khereid
@@ -3860,6 +3916,8 @@ How would a dopamine antagonist work? … continue asking yourself elaborative q
 
 
 asuult:
+git will pulling master automatically update a branch created by merging master with another branch?
+
 libreoffice how to mark annotate corrections
 
 handwriting of Mongolian numbers
@@ -4414,7 +4472,6 @@ fatal: Unable to look up gerrit.libreoffice.org (port 9418) (nodename nor servna
 awry
 libreoffice master build error CppunitTest sw_ooxmlexport failed
 grp odfvalidator configure*
-git will pulling master automatically update a branch created by merging master with another branch?
 FnKNsfYaQPw comment; cognitive conflict mind map
 proper way to write c++ unit tests
 
@@ -4599,7 +4656,8 @@ Pull with your arms and elbows.
 StrongLifts 5x5 Workout B: FULL Video (Official)
 https://www.youtube.com/watch?v=ro3Mh9o7JPU
 
-neglected:
+neglected/regrets:
+Not asking Dr. Qiu Tian(North China Electric Power University) during late October to mid December 2009 in Beijing to mentor me on c++, Emacs and STEM subjects at weekends while he was working as contract consultant for the company I worked for then.
 How to Read a Book (Mortimer Adler. He co-authored a heavily revised edition in 1972 with Charles Van Doren)
 How to Study Way More Effectively | The Feynman Technique
 Scan and read in chunks
@@ -4613,7 +4671,7 @@ workout
 hands-on skills: hacking, tinkering
 C/C++ problem solving skills
 
-«end of neglected»
+«end of neglected/regrets»
 
 finesse
 pylon
@@ -4644,6 +4702,9 @@ npm run rebuild && LC_CTYPE=C && LANG=C && sed -i '' "s/var containsAds = requir
 console.time('electron-beaker-build')
 console.timeEnd('electron-beaker-build')
 
+@work imac:
+find ~ \! \( -type d \( -path ~/DeleheiOffice -o -path ~/lode -o -path ~/lode_MacCopy_.git_index_err -o -path ~/tnsrfl -o -path ~/"beaker-master*" -o -path ~/.vscode -o -path ~/.oh-my-zsh -o -path ~/deleheidict \) -prune \) -type f -iname "dl*" -o -iname "dn*"
+
 Hands-On Enterprise Automation with Python pdf epub ISBN: 1788998512
 Gray Hat Hacking: The Ethical Hacker’s Handbook, 5th Edition pdf epub ISBN: 1260108415
 
@@ -4651,5 +4712,19 @@ comparison of DirectX OpenGL OpenCL CUDA
 how SSO and OpenAuth work
 c++ Asio https client server => downloader? webcrawler? REST API?
 
+huawei SLA-AL00 googleplay rom
+python tox
+websocket
+delehi search engine: python kibana MySQL geography cluster(my.ini) CentOS: Hohhot, Beijing, Qingdao
+how segway work
+python excel automation : ask from narisu
+c++ py: text => ᠀, ᠀  => docx,xlsx
+memoization
+
+https://coderprog.com/?s=flask
 
 digress
+
+c++ stl illustrations
+JavaScript Memoization
+python3 BeautifulSoup

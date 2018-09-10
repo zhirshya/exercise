@@ -1,0 +1,10 @@
+https://www.youtube.com/watch?v=ghTwo5Kvbmo
+1. Install VirtualBox for Windows hosts.
+2. Create a Virtual Machine with Debian, or any other light linux distro. (you can increase the cpu cores and RAM space dedicated to the machine during the installation process, and lower them after the installation finished).
+3. Install Putty on your Windows (host).
+4. Install Guest Additions driver in your linux distro, and enable Folder Sharing between your VIrtualBox Machine and your host OS (Windows). // so that your vm and host OS share access over same folders.
+5. Make sure your VM has access to the network through "bridged" instead of NAT. 
+6. Login to your machine through Putty. 
+7. Voila! You can now run Photoshop or any other windows-related software natively, while having the UNIX commands in the Putty's CLI. 
+                Yes, you can spawn multiple instances of Putty.
+

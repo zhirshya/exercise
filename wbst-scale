@@ -1,0 +1,21 @@
+https://www.youtube.com/watch?v=yPF94QiI2qk
+Ex-Google Tech Lead Patrick Shyu talks about scalability, and how he grew a website to handle 10 million users (per month).  I cover load balancing, content delivery networks, mysql query optimization, database master/slave replication, horizontal/vertical sharding, and more.
+* Note, these experiences were from projects before I began working at Google, so I'm talking about my individual experiences (Google uses a ton more techniques, though the basic concepts are similar).
+
+For short term, using Azure or Amazon would be great if you needed scale. But it is far more expensive than setting up servers yourself using Linode or your own hardware. It is very rare that you'll need the kind of scale that he talks about in the video. If you use Azure etc you still have to learn very specific things just on how to use their systems, - time that you could have spent setting up your own stuff and actually learning more about hosting that is more useful than learning to use azure/amazon.
+Also, an important point he is not talking about is the use/purpose of your applications. Not all have busy database access all the time or big images to load. This is extremely important to consider when deciding how to scale. You need to consider how your app is used!! and even better; think about this when you make it.
+
+The problem with databases is only solved with something Java web based is doing for decades ... Connection pooling ...  Obviously one needs to optimize database query's, use correct indexes and a good database structure is paramount. When it comes to the limit were the DB is getting slow ... then another very very important thing is to make the most out of the caching possibilities for each data model. 
+Then finally one has to go to hardware ..enter SDD drives, preferably using the PCI-e interface, not sata. 
+Then if all else fails :) .... Distributed databases ...all those of course lso must have top notch SSDs.
+
+Master-slva setup on MySQL is paramount for backups ... there's not other way to make real-time backups other then using master-slave server ... and also redundancy ... 
+About the keeping the DB query simple ..yup, that's  KEY ! DB's are not made to make calculations.
+
+Your description is pretty accurate except for the load balancing part. Nginx or HAProxy are solid choices for load balancing and are desirable in a scalable architecture. I have also been using a similar architecture and have been able to achieve pretty awesome results!
+> I also feel that the LB part was a bit off too. For LB, what matters the most is the network bandwidth that your data center is providing you with. If you are doing SSL termination, you will need a bit of CPU but that's all. You don't need disk space nor memory.
+
+When using domain names to "load balance", how do you handle the situation where one domain gets overwhelmed by traffic? e.g. "www1.example.com" gets 1 million users at one time, but "www2.example.com" gets only 10,000 users?
+> Round Robin in your scenario. But true load balancing happens behind the domain name, should be IP based so, www1.example.com could use DNS to point to the load balancer at 1.2.3.2 that then points to 1.2.3.4., 1.2.3.5, 1.2.3.6 servers in the backend, that's how load balancing works. That way your front end users don't get switched to multiple domain names.
+
+
