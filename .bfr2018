@@ -313,6 +313,10 @@ Internal Rate Return
 amortization 
 
 python:
+Using Flask and popular extensions Flask-RESTful, Flask-JWT, and Flask-SQLAlchemy we will dive right into developing complete, solid, production-ready REST APIs.
+Using SQLAlchemy to easily and efficiently store resources to a database; and
+Understand the complex intricacies of deployments and performance of REST APIs.
+
 https://www.youtube.com/watch?v=rfscVS0vtbw
 username = input("Enter your name: ")
 print("Hello", str(username) + ", It's nice to meet you!")
@@ -1069,6 +1073,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+hunky-dory
+
 battle rope
 
 (image) occlusion
@@ -1270,6 +1276,7 @@ sprain:	шөрмөс шидрэх ᠰᠢᠷᠪᠦᠰᠦ ᠰᠢᠳᠡᠷᠡᠬᠦ
 Peaceful coexistence ensures that you remain afloat when negative politics arise.
 
 barbell
+safety squat bar (yoke bar)
 barbell row
 deadlift
 bench press
@@ -2912,6 +2919,10 @@ https://note.mu/ihayato/n/nc851aa610fa4
 残業続きなのはもちろん、毎日会社の成績のことばかりで頭がいっぱい、緊張状態を強いれられているようでは、副業はおろか、プライベートな活動を楽しむ余裕すらなくなります。
 
 cn2en2mn2ru:
+阳气乃生命之本，温煦身体是其重要的功能之一。
+温煦 wēn xù : 温暖，和煦。常用于形容阳光等。
+祛风寒
+可按摩涌泉穴和足三里，改善手脚冰凉的症状
 沙果 ᠠᠭᠠᠯᠢᠭ ᠠᠯᠮᠤᠷᠠᠳ 
 正版包邮
 上火
@@ -3900,6 +3911,9 @@ How would a dopamine antagonist work? … continue asking yourself elaborative q
 
 
 asuult:
+make distclean No rule to make target 'distclean'
+grep -rnH 'make distclean' /Users/dev/lode
+
 git will pulling master automatically update a branch created by merging master with another branch?
 
 libreoffice how to mark annotate corrections
@@ -4419,6 +4433,11 @@ android:
 on Android phone, you have to enable USB Debugging. You do this in the Developer options, which are hidden by default. So, if you haven’t already, you need to show the Developer options by going to Settings > About phone and then tapping Build number seven times. Hit the back button and enter the newly accessible Developer options.
 
 jp:
+生姜から芽が出るということは その生姜は生命力が高い証拠です。
+野菜売り場などで生姜の芽を発見したら 「生命力が強いんだね」と囁いてあげてください。
+
+紅茶やお料理にも簡単に使えて便利な生姜キューブ
+
 この強制的な行政措置に不満を抱く市民は、市長を出しにした小話を作ってやり返した。
 「北京市長春薬店」のという名の薬屋の看板撤去工事は、「北京」の二文字を撤去したところでストップがかかり、「市長春薬店」が残った。
 （注：中国語の「春薬」は「媚薬」の意味、残った看板は「市長の媚薬店」に変わった）。
@@ -4565,9 +4584,6 @@ How Elon Musk learns faster and better than everyone else
 https://qz.com/968101/how-elon-musk-learns-faster-and-better-than-everyone-else/
 I call people like Musk “expert-generalists” (a term coined by Orit Gadiesh, chairman of Bain & Company). Expert-generalists study widely in many different fields, understand deeper principles that connect those fields, and then apply the principles to their core specialty.
 Based on my review of Musk’s life and the academic literature related to learning and expertise, I’m convinced that we should all learn across multiple fields in order to increase our odds of breakthrough success.
-
-make distclean No rule to make target 'distclean'
-grep -rnH 'make distclean' /Users/dev/lode
 
 one piece ggl,bolor
 safari exprot webpage to pdf including pictures
