@@ -4708,7 +4708,6 @@ console.timeEnd('electron-beaker-build')
 @work imac:
 find ~ \! \( -type d \( -path ~/DeleheiOffice -o -path ~/lode -o -path ~/lode_MacCopy_.git_index_err -o -path ~/tnsrfl -o -path ~/"beaker-master*" -o -path ~/.vscode -o -path ~/.oh-my-zsh -o -path ~/deleheidict \) -prune \) -type f -iname "dl*" -o -iname "dn*"
 
-Hands-On Enterprise Automation with Python pdf epub ISBN: 1788998512
 Gray Hat Hacking: The Ethical Hacker’s Handbook, 5th Edition pdf epub ISBN: 1260108415
 
 comparison of DirectX OpenGL OpenCL CUDA
@@ -4731,3 +4730,4 @@ digress
 c++ stl illustrations
 JavaScript Memoization
 python3 BeautifulSoup
+expedient
