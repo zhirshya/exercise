@@ -1074,6 +1074,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+If two people know a secret, there's no secret at all.
+
 Please could you not do that.
 
 calisthenics
@@ -3084,6 +3086,7 @@ find ~ -path ~/lode/dev/core/workdir -prune -o -type f -name "*build*log*" -exec
 lo:
 https://www.collaboraoffice.com/code/
 https://www.collaboraoffice.com/
+https://speakerdeck.com/vmiklos
 collabora online
 
 https://ask.libreoffice.org/en/question/47412/how-do-i-debug-basic-code-macro-launched-from-within-base/
