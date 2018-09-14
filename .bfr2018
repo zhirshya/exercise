@@ -626,6 +626,8 @@ hacking
 
 
 eecs,ict:
+directed acyclic graph:DAG
+
 distributed application (DApp)
 user-defined functions (UDFs)
 
@@ -3085,6 +3087,8 @@ exclude single directory from find:
 find ~ -path ~/lode/dev/core/workdir -prune -o -type f -name "*build*log*" -exec ls -alF {} \;
 
 lo:
+https://github.com/smehrbrodt/libreoffice-starter-extension
+
 https://www.collaboraoffice.com/code/
 https://www.collaboraoffice.com/
 https://speakerdeck.com/vmiklos
@@ -4140,9 +4144,6 @@ added 682 packages from 744 contributors in 18.748s
     Severity: 2 Low | 2 High
     Run `npm audit` for more detail
 
-lo:
-make[1]: *** No rule to make target 'vcl/vcl.common.component', needed by 'workdir/ComponentTarget/vcl/vcl.common.component'.
-
 b&d:
 1.https://boldanddetermined.com/quit-masturbating/#comment-1676016
 First time I heard about pornography from friends was around 8. 
@@ -4793,4 +4794,7 @@ digress
 
 How to make trimmed down optimized ROM with no knowledge of Android development? 
 huawei SLA-AL00 googleplay rom
+
+breakpoints:
+editeng/source/editeng/impedit3.cxx
 
