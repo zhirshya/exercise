@@ -26,6 +26,8 @@ python3 -m pip install -U pip
 
 #pip3 install --upgrade virtualenvwrapper virtualenv  #virtualenv is unnecessary because of pipenv, what about virtualenvwrapper?
 pip3 install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint
+#lldb on MacOS uses python2's six?
+pip install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint
 
 #$ZSH/tools/upgrade.sh #Permission denied
 #https://github.com/robbyrussell/oh-my-zsh/issues/4078
