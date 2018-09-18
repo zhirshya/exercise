@@ -24,10 +24,31 @@ python3 -m pip install -U pip
 #$pip -V
 #pip 10.0.1 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
 
-#pip3 install --upgrade virtualenvwrapper virtualenv  #virtualenv is unnecessary because of pipenv, what about virtualenvwrapper?
-pip3 install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint
+#https://stackoverflow.com/questions/2720014/upgrading-all-packages-with-pip?rq=1
+#pip list --outdated --format=freeze | tee pip_before_upgrade.txt | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+
+#todo: pip3 install --upgrade virtualenvwrapper virtualenv  #virtualenv is unnecessary because of pipenv, what about virtualenvwrapper?
+
+#https://www.tensorflow.org/install/install_mac
+
+#pip3 install --upgrade tensorflow
+#Collecting tensorflow
+#  Could not find a version that satisfies the requirement tensorflow (from versions: )
+#No matching distribution found for tensorflow
+
+#pip install --upgrade  tensorflow
+#Requirement already up-to-date: tensorflow in /usr/local/lib/python2.7/site-packages (1.10.1)
+
+#pip2 install --upgrade  tensorflow
+#Requirement already up-to-date: tensorflow in /usr/local/lib/python2.7/site-packages (1.10.1)
+
+# pip == pip2 ?
+
+sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.10.1-py3-none-any.whl
+pip3 install --upgrade PySocks Flask keras six cppman itchat pylint pip
+
 #lldb on MacOS uses python2's six?
-pip install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint
+pip2 install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint pip
 
 #$ZSH/tools/upgrade.sh #Permission denied
 #https://github.com/robbyrussell/oh-my-zsh/issues/4078
