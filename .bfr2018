@@ -4816,3 +4816,6 @@ huawei SLA-AL00 googleplay rom
 breakpoints:
 editeng/source/editeng/impedit3.cxx
 
+https://stackoverflow.com/questions/47658596/strange-mixing-of-system-homebrew-python-with-lldb
+PATH=/usr/bin:$PATH lldb instdir/LibreOfficeDev.app
+
