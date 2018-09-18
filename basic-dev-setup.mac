@@ -7,7 +7,7 @@ npm update -g nodemon
 #https://arui.tech/en/why-locally-install-is-much-better-than-globally-in-npm/
 #npm update -g nodemon request lodash yargs wepy-cli typescript coffeescript http-server vue d3 three p5 periodic-table
 
-#todo: macos upgrde pip3
+#todo: macos upgrade pip3
 #sudo pip install --upgrade pip pip3
 #Collecting pip3
 #  Could not find a version that satisfies the requirement pip3 (from versions: )
@@ -25,7 +25,9 @@ python3 -m pip install -U pip
 #pip 10.0.1 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
 
 #pip3 install --upgrade virtualenvwrapper virtualenv  #virtualenv is unnecessary because of pipenv, what about virtualenvwrapper?
-pip3 install --upgrade PySocks Flask tensorflow keras cppman itchat pylint
+pip3 install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint
+#lldb on MacOS uses python2's six?
+pip install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint
 
 #$ZSH/tools/upgrade.sh #Permission denied
 #https://github.com/robbyrussell/oh-my-zsh/issues/4078
