@@ -628,6 +628,12 @@ hacking
 
 
 eecs,ict:
+sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.10.1-py3-none-any.whl
+The directory '/Users/dev/Library/Caches/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/Users/dev/Library/Caches/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+
+pitfalls, perils, and risks of software development
+
 directed acyclic graph:DAG
 
 distributed application (DApp)
@@ -1078,6 +1084,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+pitfalls, perils, and risks of software development
+
 instant pot lid holder
 If two people know a secret, there's no secret at all.
 
