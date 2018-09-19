@@ -45,10 +45,10 @@ python3 -m pip install -U pip
 # pip == pip2 ?
 
 sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.10.1-py3-none-any.whl
-pip3 install --upgrade PySocks Flask keras six cppman itchat pylint pip
+pip3 install --upgrade PySocks Flask keras six cppman itchat pylint pip untangle xmltodict olefile oletools
 
 #lldb on MacOS uses python2's six?
-pip2 install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint pip
+pip2 install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint pip untangle xmltodict olefile oletools
 
 #$ZSH/tools/upgrade.sh #Permission denied
 #https://github.com/robbyrussell/oh-my-zsh/issues/4078
