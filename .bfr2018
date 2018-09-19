@@ -434,6 +434,9 @@ Evaluate the performance of machine learning systems in common tasks.
 
 
 c++:
+https://www.youtube.com/watch?v=CWglkNBUmD4
+If I wanted to write 100% safe code, I would write it in Rust. I don't write code in C++ expecting it to be safe. When I have to allocate an object on the heap I use unique_ptr, and when I have to allocate an array I use vector. When I need to reference the allocated data I use raw pointers(T*) or references(T&) for objects and references to vectors(std::vector<T>&) for arrays because vectors keep track of the array size. I never use shared_ptr and weak_ptr.
+
 https://www.reddit.com/r/cpp/
 https://www.reddit.com/r/cpp/comments/7pp8tv/why_should_i_learn_c_in_2018/
 Every time you instantiate a class, you decide where it shall live; on the stack or on the heap. This has an impact on the lifetime of the object. Stack allocated objects are destroyed when their scope is exited (i.e. when a function returns), however, heap allocated objects do not have lifetimes associated with scope and must be cleaned up manually (or by using RAII).
@@ -645,6 +648,8 @@ hacking
 
 
 eecs,ict:
+Amazon Web Services in Action, Second Edition is a comprehensive introduction to deploying web applications in the AWS cloud. You’ll find clear, relevant coverage of all essential AWS services, with a focus on automation, security, high availability, and scalability. This thoroughly revised edition covers the latest additions to AWS, including serverless infrastructure with AWS Lambda, sharing data with EFS, and in-memory storage with ElastiCache.
+
 sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.10.1-py3-none-any.whl
 The directory '/Users/dev/Library/Caches/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
 The directory '/Users/dev/Library/Caches/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
@@ -1105,6 +1110,8 @@ backup camera
 backup sensors
 
 pitfalls, perils, and risks of software development
+
+example of memorizing collocations(educating children how to read and learn): pitfalls, perils, and risks of software development
 
 instant pot lid holder
 If two people know a secret, there's no secret at all.
@@ -1852,6 +1859,10 @@ VS1-5 -ig ᠨᠡᠮᠡᠭᠦᠯᠬᠦ ᠪᠡᠷ ᠵᠠᠷᠢᠮ ᠬᠦᠮᠦ�
 стратеги ᠰᠲ᠋ᠷᠠᠲ᠋ᠧᠭᠢ
 
 Свечэг хэрхэн цэвэрлэх вэ?
+
+excoriated acne [collocation][med.]: чонон хөрвөсийн батга ᠴᠢᠨᠤᠨ ᠬᠥᠷᠪᠡᠰ ᠦᠨ ᠪᠠᠳᠬ᠎ᠠ
+acne : батга ᠪᠠᠳᠬ᠎ᠠ
+
 
 хүсэл хясал
 
@@ -4852,4 +4863,9 @@ huawei SLA-AL00 googleplay rom
 
 breakpoints:
 editeng/source/editeng/impedit3.cxx
+
+https://stackoverflow.com/questions/47658596/strange-mixing-of-system-homebrew-python-with-lldb
+PATH=/usr/bin:$PATH lldb instdir/LibreOfficeDev.app
+
+mail Dennis Feodorov: best russian english, English Russian dictionary, Russian grammar book => russia tour
 
