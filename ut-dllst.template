@@ -1,0 +1,5 @@
+#youtube-dl -v --proxy socks5://127.0.0.1:1080 --youtube-skip-dash-manifest -r 1000k $(cat dllst)
+-f 43
+-f 18
+-f best 
+-f best 
