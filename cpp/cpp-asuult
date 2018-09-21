@@ -1,0 +1,17 @@
+Hello, how to specify breakpoints on function declarations (not necessarily inline functions) in c++ header files?
+Is that sensible and doable?
+I want to list my modifications to a big c++ project into a file and use “lldb -S breakpoint-file” to debug the modified project on MacOS using lldb.
+e.g. ./include/svx/svdoashp.hxx:206:    virtual void SetVerticalWriting(bool bVertical, bool bVertLR = false) override;
+If doable, is “./include/svx/svdoashp.hxx --line 206" correct or “./include/svx/svdoashp.hxx --name SetVerticalWriting(bool bVertical, bool bVertLR = false)” correct?
+Return value and const, delete specifiers should all be deleted for breakpoint specification, right?
+I’m new to lldb.
+> may not be the answer you are looking for, but I have found the most reliable way to add a breakpoint is to simply compile in the breakpoint
+IE, add `__debugbreak` or equivalent for your platform exactly where you want to break.
+
+>> Clang/GCC do not have an intrinsic for breakpoints (AFAIK).
+I made the equivalent using some inline asm.
+
+>>> its less to do with your compiler and more to do with your platform.
+if you google around you can find some portability shims to make a platform agnosticish `debugbreak`, but in general on linux you can use `raise(SIGTRAP)` or inline assembly as you mentioned.
+
+
