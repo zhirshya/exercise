@@ -630,6 +630,8 @@ C++ is also a great language for building a lower level understanding of compute
 «end of c++»
 
 math:
+l’Hopital’s rule
+
 formal logic notation, proof methods; induction, well-ordering; sets, relations; elementary graph theory; integer congruences; asymptotic notation and growth of functions; permutations and combinations, counting principles; discrete probability
 
 physics:
@@ -1856,6 +1858,12 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+тохуу үг: тоглоомын үг, шоглоомын үг.
+
+чөдрийн хаа: чөдрийн өмнөх хоёр салаа сум.
+
+нохой зээх (амьтан) : суусрынхан овгийн, сүүгээр бойжигч нэг зүйл махчин амьтан, бие лагс, 75-105 сантиметр урт, бараавтар хүрэн зүстэй, өтгөн ширүүн үстэй, биеийн хажуугаар ташуу цайвар зурвастай Еврази, Хойд Америкийн шилмүүст ойд тархан амьдарна.
+
 ᠵᠠᠷᠢᠮ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ ᠶᠢᠨ iOS  ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ ᠢ ᠪᠦᠷᠢᠨ ᠰᠠᠢᠬᠠᠨ ᠳᠡᠮᠵᠢᠬᠦ ᠦᠭᠡᠢ ᠡᠴᠡ ᠪᠣᠯ MVS ᠨᠢ ᠬᠠᠷᠠᠭᠳᠠᠬᠤ Charactor ᠪᠣᠯᠵᠤ ᠢᠯᠡᠷᠡᠵᠤ ᠪᠠᠢᠨ᠎ᠠ᠃ ᠡᠨᠡ ᠹᠣᠨᠲ ᠤᠨ ᠠᠰᠠᠭᠤᠳᠠᠯ ᠪᠢᠰᠢ ᠡ᠃
 ᠲᠠᠭᠠᠪᠤᠷᠢ ᠪᠣᠯᠤᠨ ᠡᠮᠦᠨᠡᠬᠢ ᠦᠭᠡ ᠳᠤᠮᠳᠠ nnbsp (U+202F) ᠨᠡᠮᠡᠬᠦ ᠲᠣᠭᠲᠠᠭᠠᠯ ᠲᠠᠢ ᠪᠣᠯᠬᠤᠷ space ᠣᠷᠤᠭᠤᠯᠬᠤ ᠦᠶᠡᠰ ᠪᠤᠷᠤᠭᠤ ᠢᠯᠡᠷᠡᠵᠦ ᠪᠠᠢᠨ᠎ᠠ᠃
 
@@ -3162,6 +3170,9 @@ exclude single directory from find:
 find ~ -path ~/lode/dev/core/workdir -prune -o -type f -name "*build*log*" -exec ls -alF {} \;
 
 lo:
+ (gdb) run --writer
+ (gdb) run --calc
+
 https://github.com/smehrbrodt/libreoffice-starter-extension
 
 https://www.collaboraoffice.com/code/
@@ -4878,6 +4889,16 @@ editeng/source/editeng/impedit3.cxx
 
 https://stackoverflow.com/questions/47658596/strange-mixing-of-system-homebrew-python-with-lldb
 PATH=/usr/bin:$PATH lldb instdir/LibreOfficeDev.app
+PATH=/usr/bin:$PATH lldb -S ~/lo-tblr-grep-no-C.out
+
+PATH=/usr/bin:$PATH lldb -S ~/lo-tblr-grep-no-C.out
+(lldb) command source -s 0 '/Users/dev/lo-tblr-grep-no-C.out'
+Executing commands in '/Users/dev/lo-tblr-grep-no-C.out'.
+(lldb) file /Users/dev/lode/dev/core/instdir/LibreOfficeDev.app
+Current executable set to '/Users/dev/lode/dev/core/instdir/LibreOfficeDev.app' (x86_64).
+(lldb) breakpoint set --file /Users/dev/lode/dev/core/editeng/source/editeng/editdoc.cxx --line 1910
+Breakpoint 1: no locations (pending).
+WARNING:  Unable to resolve breakpoint to any actual locations.
 
 todo: macos recursively find string under a directory and set lldb breakpoints on every matched lines
 
