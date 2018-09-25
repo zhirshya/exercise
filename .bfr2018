@@ -4976,3 +4976,6 @@ mail Dennis Feodorov: best russian english, English Russian dictionary, Russian 
 
 tips to sing better as non professional
 
+macos SDK
+xcrun --sdk macosx --show-sdk-path
+
