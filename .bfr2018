@@ -5038,3 +5038,7 @@ l 1 I: b71lEI6P02O
 アプリを作ろう！Ｖｉｓｕａｌ Ｃ＋＋入門 Ｖｉｓｕａｌ Ｃ＋＋２０１７対応 無償のＶｉｓｕａｌ Ｓｔｕｄｉｏ Ｃｏｍｍｕｎｉｔｙでゼロから学ぶプログラミング
 https://honto.jp/netstore/pd-book_28938123.html
 
+correct?:
+https://www.youtube.com/watch?v=ReVeUvwTGdU
+Hey, you messed up 2's compliment. If you are complimenting a 4 bit number you have to compliment all 4 bits, even the leading 0's. If you had, it would be 1010+1010, or 4 (overflow telling you that you added a negative). Also expressing numbers larger than 2^(n-1) is bad form, as numbers end up sharing the same bit value (like -6 and 10).
+
