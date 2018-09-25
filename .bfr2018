@@ -659,6 +659,9 @@ hacking
 
 
 eecs,ict:
+Do you feel like you've been watching tutorials endlessly and not making headway on your goal of becoming a developer? You may be stuck in what I call "Tutorial Purgatory".
+https://www.youtube.com/watch?v=MxxAc9a4ILU
+
 Amazon Web Services in Action, Second Edition is a comprehensive introduction to deploying web applications in the AWS cloud. You’ll find clear, relevant coverage of all essential AWS services, with a focus on automation, security, high availability, and scalability. This thoroughly revised edition covers the latest additions to AWS, including serverless infrastructure with AWS Lambda, sharing data with EFS, and in-memory storage with ElastiCache.
 
 sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.10.1-py3-none-any.whl
