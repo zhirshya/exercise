@@ -82,11 +82,10 @@ It’s a lot better to be a competent, conscious player than to be a bystander o
 The key is to understand the players and the rules and then to play the game in a way that aligns with your personal values and principles. Don’t be fooled into compromising “just this once,” because once is all it takes to lose control.
 
 010010
-呼和浩特市新华东街89号维力斯酒店13F西
+呼和浩特市新华东街89号维力斯酒店贵宾楼14F
 内蒙古德力海信息技术有限公司
 Delehi Information Technology Co. Ltd.
-010010
-West 13F, Uiles Hotel, No.89 East Xinhua Street, Hohhot, P.R.China
+14F, VIP bldg, Uiles Hotel, No.89 East Xinhua Street, Hohhot, P.R.China
 
 入网证号 02-5043-171159
 suit size: 170/88A (46A)
@@ -659,6 +658,9 @@ hacking
 
 
 eecs,ict:
+Do you feel like you've been watching tutorials endlessly and not making headway on your goal of becoming a developer? You may be stuck in what I call "Tutorial Purgatory".
+https://www.youtube.com/watch?v=MxxAc9a4ILU
+
 Amazon Web Services in Action, Second Edition is a comprehensive introduction to deploying web applications in the AWS cloud. You’ll find clear, relevant coverage of all essential AWS services, with a focus on automation, security, high availability, and scalability. This thoroughly revised edition covers the latest additions to AWS, including serverless infrastructure with AWS Lambda, sharing data with EFS, and in-memory storage with ElastiCache.
 
 sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.10.1-py3-none-any.whl

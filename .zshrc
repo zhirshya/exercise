@@ -191,6 +191,7 @@ alias lynx='lynx -cookies=off'
 alias rtvl='echo "\$?":$?'
 alias grp='grep --exclude-dir={.git,.svn,.hg,.bzr,cvs,CVS} --color=auto -r -n -H -C 3 -i'
 alias src='source ~/.zshrc'
+alias eko='echo -e'
 
 #punctuation,symbol,rus word
 alias rangli='echo ð '
@@ -228,5 +229,9 @@ unsetopt CASE_GLOB # match case insensitive patterns with ls
 
 #. ~/.zsh-func
 source ~/.zsh-func
+
+#source ~/.nvm/nvm.sh #https://github.com/creationix/nvm, Node Version Manager - Simple bash script to manage multiple active node.js versions
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /Users/dev/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
