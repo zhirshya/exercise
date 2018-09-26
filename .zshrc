@@ -229,5 +229,4 @@ unsetopt CASE_GLOB # match case insensitive patterns with ls
 #. ~/.zsh-func
 source ~/.zsh-func
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ulimit -S -n 122880
+source /Users/dev/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
