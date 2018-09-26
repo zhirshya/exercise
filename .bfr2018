@@ -931,6 +931,15 @@ interpolate
 liaison
 
 en:
+
+Be kind but set rules with people. ALWAYS. Every Single Time. If you don’t set boundary, they will step over it and treat you like shit.
+If they cross that first time, it’s warning. Do it again then it’s over. You have to set rules with people the very first day so they know you are not a pushover or doormat.
+It’s possible to be nice without being a pushover.
+E.g., “Pardon me, but I actually ordered the orange juice, not the lemon juice.”
+If they charge you for it anyway, say, “Excuse me, but the bill lists the lemon juice that I didn’t order.”
+If they leave it on anyway, just make a simple statement: “I’m not paying for something I didn’t order.” Then pay the bill minus the erroneous charge.
+No need to be anything but nice at any point. Polite, but implacable.
+
 RSVP is a process for a response from the invited person or people. It is an initialism derived from the French phrase Répondez s'il vous plaît meaning "Please respond".
 
 http://www.themillionairefastlane.com/11-poverty-traps.php
@@ -1170,6 +1179,9 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+
+mission [comm.] : эрхэм зорилго ᠡᠷᠬᠢᠮ ᠵᠣᠷᠢᠯᠭ᠎ᠠ , үүрэг даалгавар ᠡᠭᠦᠷᠭᠡ ᠳᠠᠭᠠᠭᠠᠯᠭᠠᠪᠤᠷᠢ
+
 ostracize
 cavitation
 
@@ -5032,6 +5044,9 @@ mail Dennis Feodorov: best russian english, English Russian dictionary, Russian 
 
 tips to sing better as non professional
 
+macos SDK
+xcrun --sdk macosx --show-sdk-path
+
 vc++ medical app
 
 l 1 I: b71lEI6P02O
@@ -5044,4 +5059,5 @@ https://honto.jp/netstore/pd-book_28938123.html
 correct?:
 https://www.youtube.com/watch?v=ReVeUvwTGdU
 Hey, you messed up 2's compliment. If you are complimenting a 4 bit number you have to compliment all 4 bits, even the leading 0's. If you had, it would be 1010+1010, or 4 (overflow telling you that you added a negative). Also expressing numbers larger than 2^(n-1) is bad form, as numbers end up sharing the same bit value (like -6 and 10).
+
 
