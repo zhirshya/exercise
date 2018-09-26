@@ -1,4 +1,5 @@
 #LO MacOS
+export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
 #export CFLAGS="-stdlib=libc++ -std=c++1z"
 #export CXXFLAGS="-stdlib=libc++ -std=c++1z"
 #export CPPFLAGS="-stdlib=libc++ -std=c++1z"
@@ -7,15 +8,13 @@
 #export CPP=""
 #export CCACHE_CPP2=YES
 export LODE_HOME=$HOME/lode
-#export JAVA_HOME=`/usr/libexec/java_home`
+export JAVA_HOME=$(/usr/libexec/java_home)
+export ANT_HOME=/usr/local/Cellar/ant/1.10.5/libexec
 export GOPATH=$HOME/go-workspace
 export GOROOT=/usr/local/opt/go/libexec
-#export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:${PATH}:/usr/local/bin:/usr/local/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH="${LODE_HOME}/opt/bin:${PATH}:/usr/local/bin:/usr/local/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$GOROOT/bin:$GOPATH/bin"
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="${LODE_HOME}/opt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
+export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$GOROOT/bin:$GOPATH/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -71,7 +70,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -223,11 +222,12 @@ alias grkusegt='echo Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ
 alias grkuseg='echo α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ/ς τ υ φ χ ψ ω '
 #https://en.wikipedia.org/wiki/Greek_language
 alias circldNum='echo ⓪ ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳ '
-alias eko='echo -e'
 
 unsetopt CASE_GLOB # match case insensitive patterns with ls
 #setopt noglob #turn off globbing(wildcard expansion)
 
 #. ~/.zsh-func
 source ~/.zsh-func
-#. ~/.nvm/nvm.sh #https://github.com/creationix/nvm, Node Version Manager - Simple bash script to manage multiple active node.js versions
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ulimit -S -n 122880
