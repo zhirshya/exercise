@@ -234,4 +234,4 @@ source ~/.zsh-func
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
