@@ -5115,3 +5115,4 @@ PYTHON_CFLAGS
 PYTHON_LIBS
 configure.ac:6541:    CXXFLAGS="$CFLAGS -Werror -fno-enforce-eh-specs"
 
+Т.Баярхүү
