@@ -1209,6 +1209,7 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+CNKI（China National Knowledge Infrastructure）
 free төлбөргүй ᠲᠥᠯᠦᠪᠦᠷᠢ ᠦᠭᠡᠢ, татваргүй ᠲᠠᠲᠠᠪᠤᠷᠢ ᠦᠭᠡᠢ, чөлөөтэй ᠴᠢᠯᠦᠭᠡᠲᠡᠢ, бөхлөөгүй ᠪᠥᠬᠡᠯᠡᠭᠡ ᠦᠭᠡᠢ, бэхлээгүй ᠪᠡᠬᠢᠯᠡᠭᠡ ᠦᠭᠡᠢ
 duty-free shop	татваргүй барааны дэлгүүр
 free of tariffs	татваргүй ᠲᠠᠲᠠᠪᠤᠷᠢ ᠦᠭᠡᠢ
@@ -1660,6 +1661,11 @@ self-explanatory: Title Case, Sentence case, UPPERCASE, lowercase
 «end of en2mn2rus»
 
 rus:
+Вот мчится тройка почтовая
+
+Парадоксы русского языка. http://www.youtube.com/watch?v=2b51NDGBIpc  Есть ли логика в Русском языке? Видео показывает любопытные наблюдения над некоторыми особенностями русского языка. 
+P.S. В видео спрятана ОДНА орфографическая ошибка, которую не заметили ТЫСЯЧИ зрителей!
+
 Learn Russian ||| Daily Russian Conversation Practice ||| English/Russian
 https://www.youtube.com/watch?v=kiEjR4zE3F4
 программист
@@ -1972,6 +1978,7 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+ᠳᠡᠭᠡᠯᠡᠢ дэглий : heron, wader, handsaw, ardea.
 э-мэйл ᠡᠮᠧᠶᠢᠯ
 
 ᠲᠡᠷᠡᠯᠵᠢ тэрэлж (ургамал) : Гонзгойвтор гилгэр навчтай, цагаан цэцэгтэй, бөөрөнхий улаан жимстэй мөнх ногоон үзэмжийн мод. Навчнаас нь анхилам тос гарган авна, иш, навч, жимсийг элдүүрийн түүхий эд болгоно.
@@ -3294,6 +3301,7 @@ cn2en2mn2ru:
 光彩熠熠(yì) [bright] 闪烁的样子
 海参崴
 阴虚火旺、目赤内热
+得瑟 show off, чамирхах ᠴᠠᠮᠢᠷᠬᠠᠬᠤ
 
 en2cn:
 hair clay 发泥
@@ -5193,5 +5201,10 @@ Russian and English Bilingual Books
 scrape comments of https://www.youtube.com/watch?v=2b51NDGBIpc
 Парадоксы русского языка. /Paradoxes of the Russian language.
 
+webcrawler angular router link
+
+diff:
+-l  --paginate
+              Pass the output through `pr' to paginate it.
 
 
