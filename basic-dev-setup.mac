@@ -44,10 +44,10 @@ python3 -m pip install -U pip
 
 # pip == pip2 ?
 
-pip3 install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint pip untangle xmltodict olefile oletools
+pip3 install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint pip untangle xmltodict olefile oletools pycuda
 
 #lldb on MacOS uses python2's six?
-pip2 install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint pip untangle xmltodict olefile oletools
+pip2 install --upgrade PySocks Flask tensorflow keras six cppman itchat pylint pip untangle xmltodict olefile oletools pycuda
 
 #$ZSH/tools/upgrade.sh #Permission denied
 #https://github.com/robbyrussell/oh-my-zsh/issues/4078
