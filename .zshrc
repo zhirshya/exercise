@@ -219,6 +219,8 @@ alias orsusegt='echo А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т
 alias orsuseg='echo а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я '
 alias mglkrlt='echo А Б В Г Д Е Ё Ж З И Й К Л М Н О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я '
 alias mglkrl='echo а б в г д е ё ж з и й к л м н о ө п р с т у ү ф х ц ч ш щ ъ ы ь э ю я '
+alias mgl67t='echo Ө U̶ '
+alias mgl67='echo ө u̶ '
 alias grkusegt='echo Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω '
 alias grkuseg='echo α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ/ς τ υ φ χ ψ ω '
 #https://en.wikipedia.org/wiki/Greek_language
