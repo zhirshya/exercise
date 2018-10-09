@@ -933,7 +933,11 @@ interpolate
 liaison
 
 en:
+
 quality conversation starters
+
+I carved this lesson into my brain since I was 10 years old.
+
 She constantly flakes on plans.
 
 Met a woman last Saturday, thought we hit it off.
@@ -3576,6 +3580,31 @@ error:libreoffice lode make output Too many open files
 c++ .hdl file
 $LODE_HOME/dev/core/workdir/UnoApiHeadersTarget/offapi/comprehensive/com/sun/star/text/WritingMode2.hdl
 
+Hi Oliver,
+Oliver Brinzing schrieb am 06-Oct-18 um 17:03:
+> Hi Regina,
+>
+>> if I set my PC to 100% screen resolution, the unit tests work. If I
+> set my PC to 125%, unit tests
+>> fail. 125% results in 120dpi, that is below the threshold for scaling.
+> if have win10 with 125% (120DPI / 1920x1080) and can build lo master
+> without build breaks:
+>
+>     /cygdrive/d/sources/libo-core/autogen.sh \
+>         --with-external-tar=/cygdrive/d/sources/lo-externalsrc \
+>         --with-junit=/cygdrive/d/sources/junit-4.10.jar \
+>         --with-ant-home=/cygdrive/d/sources/apache-ant-1.9.5 \
+>         --with-jdk-home=/cygdrive/d/Programme/Java/jdk1.8.0x64 \
+>         --enable-pch --disable-ccache --enable-debug --enable-64-bit
+>
+>    /opt/lo/bin/make gb_COLOR=1 gb_TITLES=1 2>&1 | tee build.log
+>
+> Do you run unittests after building?
+Yes, I start with 'make build-nocheck'. I see the problem when then 
+using 'make sw.check' and 'make sc.check' for example.
+Kind regards
+Regina
+
 «end of lo»
 
 youtube window: get list of all youtube shortcuts according to your player by pressing shift + ?.
@@ -5298,6 +5327,6 @@ mglasuult:
 
 холгуур ᠬᠣᠯᠭᠤᠭᠤᠷ︖
 
-
-
 按揭贷款转公积金贷款省月供500-1000
+
+
