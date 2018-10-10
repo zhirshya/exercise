@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo apt update && sudo apt dist-upgrade && sudo apt install g++ valgrind llvm git python3 python3-pip python-pip youtube-dl ruby openssl curl wget mongodb ffmpeg vlc
+sudo apt update && sudo apt dist-upgrade && sudo apt install software-properties-common apt-transport-https g++ valgrind llvm git python3 python3-pip python-pip youtube-dl ruby openssl curl wget mongodb ffmpeg vlc p7zip-full
 #pip3 install --user --upgrade pipenv
 #pip install --user --upgrade pipenv
 
