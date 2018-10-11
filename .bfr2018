@@ -5372,3 +5372,15 @@ MS Word(Menksoft encoding) => Guobiao txt => copy to webpage
 
 multicolumn list align multiline left item with single line right item
 
+Ethereum монгол
+
+pipenv:
+https://www.reddit.com/r/Python/comments/8jhtkh/pipenv_review_after_using_it_in_production/
+My problem with the python ecosystem (and other programming ecosystems) is that there's lots of overlapping tools that vary only a little, but the variation creates headaches. This creates a giant mess.
+That is if you get familiar with some tools (say pip & virtualenv), you don't want to have to also learn tons of slight variations that someone else may choose to use like pipenv, virtualenvwrapper, venv, pew, pyenv, pyenv-virtualenv, pyenv-virtualenvwrapper, pipsi, conda, etc.
+Python's core developers need to declare a winner as the standard people should use (even if it's not the best) and people need to move to that universal standard. Then they also need to make sure this winner is stable and accepted as a mainline python library/tool.
+
+The lock file is more secure (hashes), more reliable. If two packages will never agree on the version of their dependencies, it will let you know. The Pipfile itself let's you see and manage just the packages you specifically asked for, when you pipenv uninstall one of them, all those pesky dependencies disappear. It's also more easily editable and contains more information related to the dependencies and the environment.
+That doesn't mean you have to use it or that it will write the application for you. But it tries to make your life a bit easier.
+
+ant -diagnostics | grep home
