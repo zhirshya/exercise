@@ -2059,6 +2059,8 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+native : уугуул ᠤᠤᠭᠠᠯ
+native gold : бөөн алт ᠪᠥᠭᠡᠨ ᠠᠯᠲᠠ
 
 ᠭᠠ га I: Талбайн хэмжээ, арван мянган хавтгай дөрвөлжин метр: га тутамд оногдох үр (нэг га газарт тариалах үр), га -д тариалах (нэг га газарт үр суулгах), га- аас авах ургац (нэг га газарт тариалсан үрээс авах ургацын хэмжээ) - Нэг га-аас гурван центнер орчим ургац авна. Ж.Самбуу. Мал маллагааны арга туршлага.
 
@@ -2988,6 +2990,9 @@ Host *
  IdentityFile ~/.ssh/id_rsa
 
 /usr/bin/ssh-add -K ~/.ssh/id_ed25519
+
+git remote add almas ssh://git@almas.dip.jp:40022/git/DelehiOffice/core.git
+git push almas [your branch name]
 
 git remote add Almas ssh://git@almas.dip.jp:40022/cvs/git/DelehiOffice/core.git
 ~/lode/dev/core   master  git fetch Almas
