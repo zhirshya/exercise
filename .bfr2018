@@ -5384,3 +5384,6 @@ The lock file is more secure (hashes), more reliable. If two packages will never
 That doesn't mean you have to use it or that it will write the application for you. But it tries to make your life a bit easier.
 
 ant -diagnostics | grep home
+
+angular ionic
+
