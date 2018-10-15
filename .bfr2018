@@ -2061,10 +2061,16 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+
 ᠨᠠᠳᠠ ᠳᠤ
 ᠨᠠᠳᠠᠳᠦ
 
 дагалт хиа: даган явж үйлчлэх үүрэгтэй хүн.
+
+
+native : уугуул ᠤᠤᠭᠠᠯ
+native gold : бөөн алт ᠪᠥᠭᠡᠨ ᠠᠯᠲᠠ
+
 
 ᠪᠦᠷᠬᠦᠭᠡᠷ бүрхээр : Тогоо тавих, архи нэрэхэд жалавчны дор тавьдаг хавхаг ёроолгүй торх мэт хэрэгсэл: бүрхээр тавих (а. Тогоон дээр бүрхээр тавих; б. [шилжсэн] Шимийн архи нэрэх) - Түүнийг тогоо бүрхээр, жалавчаа бэлтгэж байхыг хөрш айлын Загд тэр дор нь мэдчихлээ. Л.Түдэв. Нүүдэл.
 
@@ -2072,11 +2078,12 @@ mgl:
 1. Өвчүүний бүдэрхийн дээхэн талд байдаг хоолойн доорх хүнхэр, өнгөлзүүр;
 2. Морь малын омруун дээрх хонхор.
 
+
 skirt :	чээжний гялтан ᠴᠡᠭᠡᠵᠢᠨ ᠦ ᠭᠢᠯᠲᠠᠩ
 
 
 ᠭᠠ га I: Талбайн хэмжээ, арван мянган хавтгай дөрвөлжин метр: га тутамд оногдох үр (нэг га газарт тариалах үр), га -д тариалах (нэг га газарт үр суулгах), га- аас авах ургац (нэг га газарт тариалсан үрээс авах ургацын хэмжээ) - Нэг га-аас гурван центнер орчим ургац авна. Ж.Самбуу. Мал маллагааны арга туршлага.
->>>>>>> 87195d3b4a8c128e59eadac01ba566ee2bc28970
+
 
 чонын хөрвөш : бие халуу оргин загатнаж, хэсэг хэсэг бэлцрүү гарч гөвдрүүтэх харшил өвчин.
 
@@ -3004,6 +3011,9 @@ Host *
  IdentityFile ~/.ssh/id_rsa
 
 /usr/bin/ssh-add -K ~/.ssh/id_ed25519
+
+git remote add almas ssh://git@almas.dip.jp:40022/git/DelehiOffice/core.git
+git push almas [your branch name]
 
 git remote add Almas ssh://git@almas.dip.jp:40022/cvs/git/DelehiOffice/core.git
 ~/lode/dev/core   master  git fetch Almas
@@ -5391,9 +5401,28 @@ MS Word(Menksoft encoding) => Guobiao txt => copy to webpage
 Warning: The filesystem on / appears to be case-sensitive.
 The default macOS filesystem is case-insensitive. Please report any apparent problems.
 
+
 bootcut
 
 ᠲᠡᠦᠳ᠋
 https://mongoltoli.mn/search.php?opt=2&word=ᠲᠡᠦᠳ᠋
 http://bolor-toli.com/dictionary/word?search=ᠲᠡᠦᠳ᠋&selected_lang=4-1&see_usages=true&see_variants=true
+
+Ethereum монгол
+
+pipenv:
+https://www.reddit.com/r/Python/comments/8jhtkh/pipenv_review_after_using_it_in_production/
+My problem with the python ecosystem (and other programming ecosystems) is that there's lots of overlapping tools that vary only a little, but the variation creates headaches. This creates a giant mess.
+That is if you get familiar with some tools (say pip & virtualenv), you don't want to have to also learn tons of slight variations that someone else may choose to use like pipenv, virtualenvwrapper, venv, pew, pyenv, pyenv-virtualenv, pyenv-virtualenvwrapper, pipsi, conda, etc.
+Python's core developers need to declare a winner as the standard people should use (even if it's not the best) and people need to move to that universal standard. Then they also need to make sure this winner is stable and accepted as a mainline python library/tool.
+
+The lock file is more secure (hashes), more reliable. If two packages will never agree on the version of their dependencies, it will let you know. The Pipfile itself let's you see and manage just the packages you specifically asked for, when you pipenv uninstall one of them, all those pesky dependencies disappear. It's also more easily editable and contains more information related to the dependencies and the environment.
+That doesn't mean you have to use it or that it will write the application for you. But it tries to make your life a bit easier.
+
+ant -diagnostics | grep home
+
+angular ionic
+
+echo -e "$JAVA_HOME \n$ANT_HOME \n$MAVEN_HOME"
+
 
