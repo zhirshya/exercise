@@ -5398,3 +5398,5 @@ ant -diagnostics | grep home
 
 angular ionic
 
+echo -e "$JAVA_HOME \n$ANT_HOME \n$MAVEN_HOME"
+
