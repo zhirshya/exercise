@@ -936,6 +936,11 @@ interpolate
 liaison
 
 en:
+You have to stop wasting time on people who don’t invest in you and spend time on people who do.
+“Never make someone a priority when all you are to them is an option.” – Maya Angelou
+
+Be a great wingman and never fight over women. You should be assisting each other in meeting women, not sabotaging one another’s chances.
+
 roll with the punches when adversity hits you
 
 The only articles are "a", "an" and "the".
@@ -1457,6 +1462,8 @@ downhill
 inline skating
 in-line skate
 rollerblade in traffic
+While turning left it would help if you keep your left shoulder and skate forward (same for the right).
+
 
 How To Make Sure Pool Cue is Level
 pool cue tip
@@ -3766,6 +3773,8 @@ ffmpeg -i Хийморийн\ сан\ оршивой.-bGok4u7Sg1k.opus -acodec l
 
 mov -> mp4: ffmpeg -i correction_proposal_for_6_Mongolian_words.mov -vcodec h264 -acodec aac correction_proposal_for_6_Mongolian_words.mp4
 
+find . -type f -name "*.mkv" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn -c:a libmp3lame -y "${FILE%.mkv}.mp3";' _ '{}' \;
+
 ﹖(https://unicodelookup.com/#question/1)
 
 http://mongoliankeyboardformac.blogspot.jp/
@@ -5430,3 +5439,4 @@ react native dingding auto clockon-clockoff, carrefour signin, train ticket
 brunch menu
 pet peeve
 one of the worst ways it might become clear that a girl isn’t feeling you is if she bails on you and your plans at the last minute.
+burpees
