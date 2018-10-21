@@ -661,6 +661,11 @@ hacking
 
 
 eecs,ict:
+курс: Информатика. Алгоритмы и структуры данных на Python 3.
+прочитана 05.09.2017
+лектор: Хирьянов Тимофей Фёдорович
+сайт курса: http://judge.mipt.ru/mipt_cs_on_python3/
+
 Advancements in microprocessor architecture, interconnection technology, and software development have fueled rapid growth in parallel and distributed computing. However, this development is only of practical benefit if it is accompanied by progress in the design, analysis and programming of parallel algorithms.
 This concise textbook provides, in one place, three mainstream parallelization approaches, Open MPP, MPI and OpenCL, for multicore computers, interconnected computers and graphical processing units. An overview of practical parallel computing and principles will enable the reader to design efficient parallel programs for solving various computational problems on state-of-the-art personal computers and computing clusters.
 
