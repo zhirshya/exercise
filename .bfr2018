@@ -2061,6 +2061,7 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+ᠵᠢᠷᠭᠤᠭ᠎ᠠ ᠲᠠᠢ ᠲᠠᠶᠠᠭ
 
 native : уугуул ᠤᠤᠭᠠᠯ
 native gold : бөөн алт ᠪᠥᠭᠡᠨ ᠠᠯᠲᠠ
@@ -5407,4 +5408,25 @@ ant -diagnostics | grep home
 angular ionic
 
 echo -e "$JAVA_HOME \n$ANT_HOME \n$MAVEN_HOME"
+
+func(){
+# Get system value
+$ git config --system --get https.proxy
+$ git config --system --get http.proxy
+
+# Get global value
+$ git config --global --get https.proxy
+$ git config --global --get http.proxy
+
+# Check configuration for your user
+$ cat $HOME/.gitconfig
+
+# Unset system value
+$ git config --system --unset https.proxy
+$ git config --system --unset http.proxy
+
+# Unset global value
+$ git config --system --unset https.proxy
+$ git config --system --unset http.proxy
+}
 
