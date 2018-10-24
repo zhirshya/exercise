@@ -1,0 +1,45 @@
+https://www.youtube.com/watch?v=JYz12w8hjfI
+
+save twenty six minutes of your time:
+
+1. let { city, ...restOfTheObject } = sourceObject
+restOfTheObject will have all other properties of the sourceObject without 'city' property.
+2. regexp match() is cool.
+3. 'for ... of' is here for iterating all iterable objects. Also can be used for asynchronous operations, just insert 'await' just after the 'for'.﻿
+ 
+I didn't know
+const { city, email, ...restOfObject } = originalObject; 
+was a secret that none knew about. Tho, I would have done 
+let filteredObject;
+{
+    const { city, email, ...rest } = originalObject;
+    filteredObject = rest;
+}
+That way city and email variables are not littering your active variables.
+ 
+You could also use:
+Promise.all(ArrayOfItems.map(async (Item) => { 
+    const ret = await asynchronousMethod(item);
+    // Do something with ret
+}));
+If you want to wait on a bunch of promises based on array data. I believe this is also a bit more efficient.
+
+Also works with arrays
+[first, second, ...rest] = someArray
+
+Why do you still use var?
+> It depends on if you are looking for function scope (var) or block scope (const, let). Also it is just plain old habit to use var to not have to bother about browser compatibility. Mostly being lazy to be honest.
+
+11:14 Actually, if you didn't get a first name theMatch[1] would be undefined. You can even see that at 11:30 when you changed the regular expression. Still, I'm looking forward to named capturing groups, will be a game changer!
+
+I feel like there are too many options to manage async requests.  I haven't adopted the 'async await' method, for fear I will unnecessarily block code from running.  I use the then / catch syntax and Promise.all() when necessary.  Am I missing out by not using try / catch? or async await?  Do people stick with one syntax, or is there a best syntax to use based on the scenario?  I'm very confused by this?!
+> ‘await’ doesn’t block. It’s just syntactic sugar for a promise. 
+I mix and match await and regular promises depending on the situation. I’m not expert enough yet to explain when and why or to give you a rule of thumb for it.
+
+how you do the " //? " thing 
+what tool is it?
+> it's called Quokka. It has both a free tier and a pro tier. Check it out here https://www.youtube.com/watch?v=W4brAobC2Hc or on their site https://quokkajs.com/
+
+5:10 is great to pass React props around.
+
+
