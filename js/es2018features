@@ -5,7 +5,7 @@ save twenty six minutes of your time:
 1. let { city, ...restOfTheObject } = sourceObject
 restOfTheObject will have all other properties of the sourceObject without 'city' property.
 2. regexp match() is cool.
-3. 'for ... of' is here for iterating all iterable objects. Also can be used for asynchronous operations, just insert 'await' just after the 'for'.﻿
+3. 'for ... of' is here for iterating all iterable objects. Also can be used for asynchronous operations, just insert 'await' just after the 'for'.
  
 I didn't know
 const { city, email, ...restOfObject } = originalObject; 

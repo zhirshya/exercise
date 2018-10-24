@@ -1290,6 +1290,11 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+
+composure
+
+functional programming
+
 impulse buying
 
 ether [chem.] : эфир ᠧᠹᠢᠷ
@@ -2114,6 +2119,15 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+
+https://www.youtube.com/watch?v=-KUhTBajBic
+Залбирал үйлдэн сэтгэл төвлөрч
+Замбуулин хорвоон гасланг хөөх
+Зургаадай таягаа тулан зүтгэх
+Зуун живаагаар маань шивших
+
+ᠵᠢᠷᠭᠤᠭ᠎ᠠ ᠲᠠᠢ ᠲᠠᠶᠠᠭ
+
 үзэл бодлын зөрөг
 
 Байнга лекц тавигддаг юмуу?  Давтамж нь хэдий хугацаатай байдаг вэ?
@@ -5527,6 +5541,27 @@ angular ionic
 
 echo -e "$JAVA_HOME \n$ANT_HOME \n$MAVEN_HOME"
 
+func(){
+# Get system value
+$ git config --system --get https.proxy
+$ git config --system --get http.proxy
+
+# Get global value
+$ git config --global --get https.proxy
+$ git config --global --get http.proxy
+
+# Check configuration for your user
+$ cat $HOME/.gitconfig
+
+# Unset system value
+$ git config --system --unset https.proxy
+$ git config --system --unset http.proxy
+
+# Unset global value
+$ git config --system --unset https.proxy
+$ git config --system --unset http.proxy
+}
+
 react native dingding auto clockon-clockoff, carrefour signin, train ticket
 brunch menu
 pet peeve
@@ -5548,4 +5583,17 @@ https://www.amazon.com/Rollerblade-Macroblade-Fitness-Inline-Performance/dp/B073
 
 Python(programming language)᠄ ︿ᠫᠶ᠋ᠲ᠋ᠣᠨ᠋﹀ ︵ᠬᠠᠷᠢ ᠦᠭ᠎ᠡ ᠢᠨ N ᠳᠤᠰᠤᠯ ᠲᠠᠢ)︖
 ︿ᠫᠶ᠋ᠲ᠋ᠣᠨ᠋﹀ ᠢ ︿p y' t' o n'﹀ ᠢᠡᠷ ᠪᠢᠴᠢᠭᠰᠡᠨ ᠪᠣᠯᠪᠠᠴᠤ y ᠭᠡᠢᠭᠦᠯᠦᠭᠴᠢ ᠢᠨ ᠭᠣᠬ᠎ᠠ ᠨᠢ ᠢᠯᠡᠷᠡᠬᠦ ᠦᠭᠡᠢ᠂ ᠪᠢ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠭᠰᠡᠨ ᠤᠤ︖
+
+Like many stupid men, I have taken women out for fancy dinners on first dates. I have completely screwed up my chances with several pretty, interesting women.
+
+If I could sum up my philosophy of relationships in four words, those words would be “as normal as possible.” What I mean is that in any romantic relationship that doesn’t involve a leather harness, a fur suit, or identity theft, I think a good goal is trying to achieve normalcy. Ideally, you want to get to a point where you’re dating someone who enjoys your benefits and finds your drawbacks.
+The ideal date is something that includes both a smidgen of fantasy and a dose of reality.
+
+DO ask: 'What are you looking for in a relationship?' At the same time, you should think about what you're looking for too; otherwise you're just wasting each other's time.
+DO ask: 'What’s something I should know about you?'
+DO (maybe) ask: 'So when did you last get tested?'
+Never lick your knife, no matter how good the gravy.
+Pause during the meal, it's not a race. You should put your cutlery down every three mouthfuls.
+
+Benefits Of Being Totally Single During Cuffing Season.
 
