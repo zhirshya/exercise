@@ -1,0 +1,17 @@
+https://stackoverflow.com/questions/2497801/closures-are-poor-mans-objects-and-vice-versa-what-does-this-mean
+Objects are poor man's closures.
+
+Consider Java. Java is an object-oriented programming language with no language level support for real lexical closures. As a work-around Java programmers use anonymous inner classes that can close over the variables available in lexical scope (provided they're final). In this sense, objects are poor man's closures.
+
+Closures are poor man's objects.
+
+Consider Haskell. Haskell is a functional language with no language level support for real objects. However they can be modeled using closures, as described in this excellent paper by Oleg Kiselyov and Ralf Lammel. In this sense, closures are poor man's objects.
+
+If you come from an OO background, you'll probably find thinking in terms of objects more natural, and may therefore think of them as a more fundamental concept than closures. If you come from a FP background, you might find thinking in terms of closures more natural, and may therefore think of them as a more fundamental concept than objects.
+
+Moral of the story is that closures and objects are ideas that are expressible in terms of each other, and none is more fundamental than the other. That's all there is to the statement under consideration.
+
+In philosophy, this is referred to as model dependent realism.
+edited Jan 3 '14 at 10:23 Miikka
+> There's a small difference in that, in objects, state is explicitly defined on object instantiation. In closures, state comes from an unknown outer scope. Thus, using objects results in more decoupled, explicit, and testable code. – dtheodor Feb 29 '16 at 11:13
+
