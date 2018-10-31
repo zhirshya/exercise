@@ -5642,3 +5642,88 @@ Benefits Of Being Totally Single During Cuffing Season.
 
 win10 iterm2 like terminal
 win10 zsh
+
+ONLY 7 Exercises Men Need To Build Muscle
+https://www.youtube.com/watch?v=YGGleRBn99Q
+TIMESTAMPS:
+#1-Barbell row 1:04
+#2- Barbell and dumbbell chest presses 2:48
+#3- Barbell squats 4:33
+#4- The pull up 7:12
+#5 -Deadlift 8:51
+#6- Shoulder press 10:15
+#7- Power clean 11:51
+On the bench the bar shouldn't travel in a straight line. For a high-bar squat you're bending too much. When deadilifting you shouldn't look up because you're putting the spine in an unnatural position while under load also you're overextending way too much at the top and at the bottom your shoulders are in front of the bar...and your clean is just upright rowing with a bit of a legdrive. Nice video...it's got a great concept but compare what are you doing and teaching to what people who have more training experience are teaching... I don't want to sound like hater ...but these are things that lead to injuries... Maybe some of these things show up because you're doing the exercises with lower weights than you usually do.
+
+While I agree with the general message of this video, I have a few points:
+
+You can't "strengthen your central nervous system".
+You can adapt you nervous system to the skill & efficiency of an exercise, but this adaptation is useful only for the performance aspect of the exercise & is not applicable to other activities. Only the physiological adaptation that occurs from the development of contractile bodyweight from performing the exercise is useful for other activities. 
+
+You should not be trying to keep your weight on your heels in a squat, you should be driving through the middle of your foot.
+
+The idea that underhand chin ups work more of your biceps than your lats (vs overhand) is flawed. In actual fact underhand chin ups put the biceps in a stronger position & decrease the likelihood of the brachioradialis becoming the limiting factor & depriving the Latissimus Dorsi of stimulus.
+
+Explosive lifts actually suck for building muscle, as any explosive movement does. This is because despite recruiting high threshold muscle fibres which have the greatest potential for growth, they do not meet these muscle fibres need for mechanical tension & metabolic fatigue to actually incur a growth stimulus. This is why Olympic weightlifters need to perform strength building exercises such as Squats & Deadlifts variations in addition to practising competition lifts, because Clean & Jerks & Snatches in & of themselves do not build the strength necessary to improve one's performance on those lifts alone. Not to mention the inherent danger of performing explosive lifts, which for the majority of trainees are not worth it.   
+
+There are also many problems with the technique cue for some of the exercises in this video like keeping your head up on Deadlifts, as this causes one to overextend the cervical spine which puts the one in a weak & potentially vulnerable position.
+
+There are other points but I'm not prepared to go through every aspect of the video with a fine tooth comb.
+
+How to pull up on the right & reverse 2 car lengths - New driving test manoeuvre.
+>Highway code advises not to park on the right
+>Puts it in the test
+>Takes out left corner reverse and turn in the road instead
+Great system.
+
+pay attention at what the nav sat says.
+
+要什么主食？要什么酒水饮料？你们要不要再看一下？
+
+Using capacitors instead of a car battery for 3 years and counting!
+Inspired by youtuber Lasersaber of laserhacker.com, I built this unit 3 years ago and have never looked back. 
+6x Maxwell 350 Farad Super Capacitors
+In series, these units produce just over 58 Farads at 16 volts. It is enough to start a 4 cylinder or a 6 cylinder car. But you only get one shot so if the engine doesn't start, you'll need to recharge it. This is why I added the small 7AH SLA battery. So if the car doesn't start with one go, I just wait a few seconds and the battery recharges the boostpack again for another try. I've done this 3 or 4 times in a row as a test and it worked fine, but didn't go further since I didn't want to hurt the small battery. I have no protection circuitry to protect the battery from going too low. Due to the low cost to replace it if necessary, ($12 on Amazon) I didn't feel the need to dig into that at this point.  
+I've seen other recent videos of people adding all kinds of things like high wattage resistors between the battery and boostpack, charge controllers, etc. I just don't think it's necessary. I mean come on, this has been running for me for 3 years so far with no issues and none of the fancy circuitry.
+I don't think that the average person would like this setup for the long haul because the capacitors, even with the addition of the small 7AH SLA battery, just doesn't have a lot of reserve power. 
+I.E Leave the headlights on for more than a couple min and you're gonna need a jump start. 
+Consider searching for Lasersaber's Channel and watch his videos about this project.
+
+> Capacitors are good for around one million cycles (charges/discharge). If you charge them once a day, they should last for about 2,750 years. By that time, you should be old enough to draw social security.
+>> Am I the only one who's thinking this would be the great way to augment the existing battery?
+
+I mean your typical starting battery is great for providing a ton of amperage for starting, but are absolutely terrible as far as everything else is concerned. if you were to pair a capacitor bank with a deep cycle battery, you could have the radio on for hours and power the portable fridge when fishing or camping, with the peace of mind from knowing that capacitor bank is there and ready to give that starter motor a firm kick in the ass.
+>>> Yes, you are totally right! That is a great idea actually. Deep cycle to get long low current runtimes. Caps to handle the high current starting. Love it.
+
+> To the naysayers, did you ever hear of a capacitor-start motor?  Capacitors are included in the design to "kick-start" large motors. The same idea is used under your feet when you ride electric trains in a city subway system. My opinion is, these experiments are worthwhile to prove the concept of replacing your automobile battery with a super-cap. The advantages are many: 
+1.  The super-cap could well outlive you. You may even pass a well-made super-cap down to your heirs.  If one capacitor did fail, simply replace it and continue using your bank.
+2. The performance of lead-acid batteries falloff drastically in cold conditions. I remember well crossing my fingers on a cold morning in the northeast US if I had forgotten to plug in the block heater on my diesel. Super-caps would be an excellent choice in cold conditions.
+3. Super-caps will accept a rapid charge. They will soak up energy as fast as you can supply it. 4.  Capacitors do not care if you want a trickle of energy to run a LED for an extended period or if you need a large amount of energy in a short period (cranking over a large engine or industrial motor start).
+5. For those who worry about environmental issues, capacitors certainly have an advantage over lead-acid batteries.
+6. The cost of capacitors is coming down steadily while the physical size and amount of storage is increasing all the time.
+>> A "capacitor start" electric motor does not use a capacitor to provide any additional "kick-start" current.  A typical starter capacitor is around 47 micro farads (yes, MICRO) and it is used to provide a phase shift on some of the windings  in order to get the motor to turn from a rest position.  Induction motors, by themselves, do not turn from a cold start.  The phase shift starts the turning at which point the motor will continue to turn.  In the case where a starter capacitor goes bad, the motor will stall and hum loudly (because there is no reverse EMF to limit current).  At that point you can give the motor a spin by hand and it will start - even in reverse if you spin it that way.
+
+> 1st time I have made a comment on YouTube just to add a couple pointers - As far as I’m aware that’s a 12VDC7AH AGM (glass matt, not gel) and from what I understand about AGM compared with SLA (normal sealed lead acid car batteries) they don’t like the same charging or float voltage, eg 13.8V not 14.2V so while the capacitors are fine to start the car then run off alt to charge and Power electronics, the battery you are using will produce excess hydrogen and while this is a well ventilated area it will not help with the internal chemical process in the battery which will eventually bulge/slightly explode after critical condition (depending the depth of discharge/recharge rates - below 80% mass) so while this helps keep the capacitors charge in longer use terms while Car is off to be able to have the 70A or so starting current for the starter, if you do not have a voltage(and current) regulator your AGM will have a significantly shortened life span (use a suitable rectifier or something) - might be something to add to have this a bit safer in the long run etc.
+
+I would also recommend to anyone that is looking to use just capacitors and not additional AH stored to NOT do it, as yes it may start your Car and charge the caps off the alternator for the next start... but while you Car is on it will strictly be running from alt, and this can be very dangerous especially for Cars running lots of electronics eg most Cars after 2005, you my have voltage stability issues which effect the ECU in dramatic ways. I know that BMWs and Mercedes Audi etc all use voltage sensitive devices for airbag sensors and many engine components, so without a constant stable voltage for these things you are likely to damage things which will be very expensive to fix. Also while you drive if you experience drops in voltage (loud music charging phones and your cars ecu and lights all take a toll on and weighs in out your alt, meaning less ability to charge your caps) like this it can possibly cause issues with misfires and or in serious matters your Car can turn off on the expressway etc.. 
+
+I highly recommend using a Battery with AH and CCA rated for your vehicle as many cars now have depth chargers rated for their batteries to ensure life span and Best preformance. But if you must use caps please also add some stable source of Voltage with correct charging equipment for what you intend to use... keeps your Car safe from damage, also others while driving! Be safe ppl!
+>> You took the words right out of my thoughts! great and correct comment.
+>>> Agree also, seen 3 batteries blow in my life. All had 2 do with cycling lead batteries. 2 were in Alaska, as batteries go dead often and cycle of dying and jumping went 2 shit. 3rd was my lawn tracker and and same dumbass lesson I should have learned. When they blow, so does acid. Blinded my buddy in 1 eye, lucky vision came back a week or so later.
+
+> The voltage output V= Q(charge in coulombs) divided by C (capacitance). Because the of constant charge variations and C is constant, the voltage is going to fluctuate all over the place. This is not good because the car electrical system requires a constant 12volts. You can offset this problem by making the capacitance so large that the proportional variation of charge is only a small proportion of the total charge. But that will be costly and bulky. Adding the battery (a constant voltage source) will help. 
+But man, this is basic electricity 101 and what you are attempting to demonstrate is not practical.
+>> ?
+
+> Combining the battery with the supercaps gives a superbattery.  Say both are fully charged - both will be voltage equalised. The supercaps will lose their charge, but the battery will slowly top the supercaps up, equalizing the two.  Turn the starter motor with a heavy drag on a -10C morning and most of the energy will be drawn from the supercaps as the line of least resistance is taken, and ensures a fast spin of the starter motor, not degrading the battery by over drawing energy from it. Batteries do not like energy to be drawn out fast, it lessens the lifespan. The charging system will top both up as the car runs along. 
+Supercaps are superb at clawing back braking kinetic energy. The clawed back energy goes straight into the supercaps.  So circuitry is needed between the battery and the supercaps to ensure the supercaps are not 100% full and can absorb the free energy from braking.
+>> This is the use case that makes the most sense to me as well.  I've seen a video for semi trucks where all but one battery is replaced by supercap units that are built to fit the same form factor as the battery. I got the sense that they were doing exactly as you've described, combining the advantages of the  supercap and the battery to complement one another.
+I'd love to see a hybrid design that replaces most of the batteries with supercaps sized to be able to store all of the energy that could be dumped by regenerative braking from the highest highway speed the stock tires are rated to handle. 
+The battery in such a design could be protected from discharge as the poster describes, by Zener diodes that only allow it to be charged by the system except when the driver engages the engine start circuit.
+If the car hasn't been driven for a while, the car wouldn't be able to start for a few seconds while the  supercaps are replenished, and only when they're full would the starter be engaged.  An indicator on the dash would need to inform the driver of this, but it's really not that much different from learning to engage glow plugs on a diesel before starting it. And you can get by with a much smaller battery in terms of "cold cranking amp" rating, because it doesn't actually have to power the starter directly.
+>>> Do you actually know what you're talking about??? I think not. #1 The battery will charge the supercaps. The supercaps will stay charged AT BATTERY VOLTAGE as long as they're connected to the battery. Equalizing the two have no bearing on what you're trying to accomplish. If you leave the car set long enough, the supercaps WILL discharge the battery as they aren't like a can of water. They do self discharge over time. #2 Turn the starter on a 10C morning or ANY morning for that matter and you will draw power from BOTH the supercaps and the battery. There is no line of least resistance in a wire run that short. If the supercaps were in the car and the battery was a mile away and connected, the supercaps would discharge first in this case due to the resistance in the mile long wire run. As I said above in another post, if the engine won't start in the first 1 or 2 revolutions of the crankshaft, the supercap voltage drop will be extreme and fast. At this point, the battery would bear the full brunt of the starter motor's wrath. The "FAST SPIN" you refer to will be SHORT LIVED if you rely on the supercaps alone. 3) Car batteries DO like power to be drawn out fast. This is what they are designed to do. Deep cycle marine, camper or alternative energy bank batteries, however do not like to have quick high energy draws. These are made to be drawn from at a lower rate for a longer time and to a much deeper point of discharge than a car battery and not be damaged. You could swap places of one type for another in an emergency but you will seriously damage either battery type if used too long. If say your car battery dies but you have a fully charged trolling motor battery in your boat. You could put it in your car to get it started to go to the auto parts store for a replacement without much damage. If you put it in your car on a Sunday to go to church, use it all week to work and play until your paycheck comes in on Friday, pick up another boat battery while you're at it. If you buy a bunch of "1000 amp" truck batteries to install in your wind farm or solar system and it rains for 2 weeks straight. You'll run them into the ground. Take out a loan and replace them with the proper type too. Car batteries are made for a big blast of power with immediate recharging by a generator or alternator. This is what they were built for.
+If you properly read a car battery's voltage, TECHNICALLY SPEAKING, it would be 13.2 volts or 2.2 volts per cell. Due to internal resistance, a fully charged new battery will read between 12.7 and 12.9 volts. A car's charging system puts out anywhere between 13.6 volts for the older Fords  to 14.5 volts for most Chrysler products. This is NOT "way over" a normal battery's voltage. ANY charger whether it's a car charging system or a box in your garage has to put out a bit more voltage than the battery it is charging or it would take for ever to fully chemically charge a battery. The difference in charging voltages between different brands also takes into account the needs and requirements of the electrical system of the vehicle as a whole so as to not damage other components in the vehicle. Motors will overheat if under powered and computer sensors that, in some cases, are voltage sensitive and could give false readings if under powered.
+
+> Supercapacitors will outlive any vehicle. This exercise shows that a superior battery can be built at minimal cost. One that can last and last and start an engine quick with fast cranking speed.
+Supercaps are used on electric trains to claw back braking energy, to great effect. Some are in large banks on the trackside, others on the roof. 
+R&D is on to get supercaps with high energy storage - the same as say a Lith-ion battery for its size. There has been great strides using graphene.  Manchester University have made a breakthrough, but still the details to iron out.
