@@ -5619,3 +5619,13 @@ Benefits Of Being Totally Single During Cuffing Season.
 
 win10 iterm2 like terminal
 win10 zsh
+
+git push -u zhirsh feature-tblr
+Перечисление объектов: 4169966, готово.
+Подсчет объектов: 100% (4169966/4169966), готово.
+При сжатии изменений используется до 4 потоков
+Сжатие объектов: 100% (885976/885976), готово.
+packet_write_wait: Connection to 13.250.177.223 port 22: Broken pipe
+fatal: the remote end hung up unexpectedly
+
+
