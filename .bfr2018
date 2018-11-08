@@ -3937,6 +3937,8 @@ ffmpeg -i Хийморийн\ сан\ оршивой.-bGok4u7Sg1k.opus -acodec l
 
 mov -> mp4: ffmpeg -i correction_proposal_for_6_Mongolian_words.mov -vcodec h264 -acodec aac correction_proposal_for_6_Mongolian_words.mp4
 
+ffmpeg -i Ирээдүйн\ ханиа\ хэрхэн\ яаж\ сонгох\ вэ_Dulguun\ Podcast\ \#6-NbSbzJu9yP4.opus -ss 0:22:3 -c:a libfdk_aac -vbr 5 -cutoff 18000 -t 0:1:21 Эмэгтэй-хүний-хувьд-Ирээдүйн-ханиа-NbSbzJu9yP4.aac
+
 find . -type f -name "*.mkv" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn -c:a libmp3lame -y "${FILE%.mkv}.mp3";' _ '{}' \;
 
 ﹖(https://unicodelookup.com/#question/1)
