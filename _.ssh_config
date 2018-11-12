@@ -5,6 +5,7 @@ Host github.com
 #	User git
 	AddKeysToAgent yes
 	IgnoreUnknown UseKeychain
+#https://gist.github.com/maff/e34fc6f6d629d7c4e097c374945a7ab2
 	UseKeychain yes
 	IdentityFile ~/.ssh/id_ed25519
 
