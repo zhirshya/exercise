@@ -13,6 +13,12 @@ export ANT_HOME=/usr/local/Cellar/ant/1.10.5/libexec
 export GOPATH=$HOME/go-workspace
 export GOROOT=/usr/local/opt/go/libexec
 
+#https://gist.github.com/snowyu/c0b64f8bc63d1fb0e04971866e8c0067
+export http_proxy=socks5://127.0.0.1:1080
+export https_proxy=socks5://127.0.0.1:1080
+#quotes required to avoid recursion, i.e. eternal self-reference?
+export socks5="socks5://127.0.0.1:1080"
+
 # If you come from bash you might have to change your $PATH.
 export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$GOROOT/bin:$GOPATH/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
 

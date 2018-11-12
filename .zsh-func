@@ -459,6 +459,10 @@ setopt SH_WORD_SPLIT
 			echo '$arg:['$arg'] hit =~ (sock|SOCK).*'
 			unset socks_proxy
 			unset SOCKS_PROXY
+			unset socks5
+			unset SOCKS5
+			unset socks
+			unset SOCKS
 		else
 			echo '$arg:['$arg'] unrecognized protocol!'
 		fi
@@ -469,16 +473,21 @@ fi
 prprx
 }
 
+#https://gist.github.com/snowyu/c0b64f8bc63d1fb0e04971866e8c0067
 function prprx() { 
 echo "http_proxy:[$http_proxy]"
 echo "https_proxy:[$https_proxy]"
 echo "ftp_proxy:[$ftp_proxy]"
 echo "socks_proxy:[$socks_proxy]"
+echo "socks:[$socks]"
+echo "socks5:[$socks5]"
 echo "no_proxy:[$no_proxy]"
 echo "HTTP_PROXY:[$HTTP_PROXY]"
 echo "HTTPS_PROXY:[$HTTPS_PROXY]"
 echo "FTP_PROXY:[$FTP_PROXY]"
 echo "SOCKS_PROXY:[$SOCKS_PROXY]"
+echo "SOCKS:[$SOCKS]"
+echo "SOCKS5:[$SOCKS5]"
 echo "NO_PROXY:[$NO_PROXY]"
 }
 
