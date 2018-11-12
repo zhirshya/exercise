@@ -5202,6 +5202,12 @@ Switched to a new branch 'DelehiOffice2018-Dev'
 warning: CRLF will be replaced by LF in sd/qa/unit/data/odp/BulletsAsImage.odp.                                                                                                
 The file will have its original line endings in your working directory.
 
+ssh:
+https://gist.github.com/maff/e34fc6f6d629d7c4e097c374945a7ab2
+Update .ssh/config with "UseKeychain yes" (needed on macOS sierra)
+macOS sierra needs an UseKeychain yes SSH config entry in order to use the Keychain to store key passphrases.
+
+
 android:
 on Android phone, you have to enable USB Debugging. You do this in the Developer options, which are hidden by default. So, if you haven’t already, you need to show the Developer options by going to Settings > About phone and then tapping Build number seven times. Hit the back button and enter the newly accessible Developer options.
 
