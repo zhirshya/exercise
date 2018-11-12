@@ -1,0 +1,28 @@
+# ProxyCommand nc -x localhost:1080 %h %p
+
+Host github.com
+	HostName github.com
+#	User git
+	AddKeysToAgent yes
+	IgnoreUnknown UseKeychain
+	UseKeychain yes
+	IdentityFile ~/.ssh/id_ed25519
+
+Host almas
+	HostName almas.dip.jp
+	AddKeysToAgent yes
+	IgnoreUnknown UseKeychain
+	UseKeychain yes
+	IdentityFile ~/.ssh/id_rsa
+
+Host lode
+	Hostname gerrit.libreoffice.org
+	Port 29418
+
+Host zhirsh
+	HostName github.com
+#	User git
+	AddKeysToAgent yes
+	IgnoreUnknown UseKeychain
+	UseKeychain yes
+	IdentityFile ~/.ssh/id_ftr-tblr_zhirsh
