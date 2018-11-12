@@ -2186,6 +2186,9 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+даажин ᠳᠠᠭᠠᠵᠢᠩ : object for teasing, derision
+даажин тохуу хийгч ᠳᠠᠭᠠᠵᠢᠩ ᠲᠣᠬᠤᠭᠤ ᠬᠢᠭᠴᠢ : teaser
+
 Тагна Урианхай ᠲᠠᠩᠨᠣ ᠤᠷᠢᠶ᠋ᠠᠩᠬᠠᠢ:
 ОХУ-ын Тува улсын хүн амын олонхийг бүрдүүлэгч түрэг гаралт угсаатан.
 Түүхэнд “Урианхай”, “Тагна урианхай” гэж нэрлэгддэг түрэг хэлт угсаатны бүлэг өөрсдийгөө хэзээ ч урианхай гэж нэрлэж байсангүй. Тэд өөрсдийгөө Туба буюу Тува гэж нэрлэдэг ажээ. Нийтийн тооллын II-IV зууны үеийн түүхэн хэрэг явдалтай холбогдон нанхиадын түүх шастирт анх тэмдэглэгдсэн Туфа, Тоба хэмээх аймгийн нэрсийн хожмын нэг хувилбар нь тува бололтой.
@@ -3070,6 +3073,12 @@ After you've set all of these items, you can type this command into the Terminal
 scutil --get HostName
 
 «end of mac»
+
+proxy:
+Sharing proxy for lan clients
+https://github.com/shadowsocks/shadowsocks-libev/issues/2042
+Shadowsocks Proxy
+https://gist.github.com/snowyu/c0b64f8bc63d1fb0e04971866e8c0067
 
 Create Configuration:
 vim /etc/shadowsocks.json
