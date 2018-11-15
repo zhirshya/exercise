@@ -1,0 +1,33 @@
+[core]
+	excludesfile = /Users/dev/.gitignore_global
+	ignorecase = false
+	gitproxy = socks5://127.0.0.1:1080
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Zhirshya
+	email = prsvrrgtd@outlook.com
+[commit]
+	template = /Users/dev/.stCommitMsg
+[diff]
+	renameLimit = 2147483647
+[merge]
+	renameLimit = 2147483647
+[color]
+	ui = auto
+
+#https://gist.github.com/snowyu/c0b64f8bc63d1fb0e04971866e8c0067
+[http]
+	postBuffer = 157286400
+	proxy = socks5://127.0.0.1:1080
+[https]
+	postBuffer = 157286400
+	proxy = socks5://127.0.0.1:1080
+[socks5]
+	postBuffer = 157286400
+	proxy = socks5://127.0.0.1:1080
+
