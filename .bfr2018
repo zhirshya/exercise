@@ -4046,7 +4046,9 @@ https://github.com/agnoster/agnoster-zsh-theme
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
 git:
-ssh config, Deploy keys @ repo settings @ github, git config
+git filter-branch --tree-filter 'rm -rf build/Mac-Browser.zip build/win-Browser.zip' HEAD
+
+ssh config, Deploy keys @ repo settings @ github, local git config
 
 Deleting Old Local Branches
 http://erikaybar.name/git-deleting-old-local-branches/
