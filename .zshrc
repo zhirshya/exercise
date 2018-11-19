@@ -20,7 +20,7 @@ export https_proxy=socks5://127.0.0.1:1080
 export socks5="socks5://127.0.0.1:1080"
 
 # If you come from bash you might have to change your $PATH.
-export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$GOROOT/bin:$GOPATH/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
+export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.cargo/bin:$GOROOT/bin:$GOPATH/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
