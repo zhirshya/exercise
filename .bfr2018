@@ -828,6 +828,7 @@ Developed jointly by Adobe and Microsoft, OpenType (.otf, .ttf, .ttc) fonts impr
 
 Hard water furred the kettle.
 symbol:
+ ≈ 
 ※
 90° anti-clockwise
 ♂️
@@ -2223,6 +2224,11 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+дуулах ᠳᠤᠭᠤᠯᠬᠤ
+statistics тоо бүртгэл ᠲᠣᠭ᠎ᠠ ᠪᠦᠷᠢᠳᠬᠡᠯ, статистик ᠰᠲ᠋ᠠᠲ᠋ᠢᠰᠲ᠋ᠢᠭ
+урд зүг ᠤᠷᠳᠤ ᠵᠦᠭ
+
+Лхарамба Агвандандар
 
 жор
 Ахлах тогоочийн заавраар
@@ -5961,4 +5967,23 @@ This is where "entering the zone" comes in handy.  When we are into that cogniti
 
 Инээд баярын хорвоодоо
 Ивээж сүжирч явъя  даа хоёулаа.
+
+badaa:
+Омог Овог Нэр
+Хатгин Санлиг Бадрал
+http://www.badral.net/?p=1139
+объект хандалтат програмчлал
+санах ойн автомат удирдлага ≈ garbage collector
+Би 20 бараг 25 жил код бичсэний дараа ч бүтээмж санасан хэмжээнд хүрсэнгүй. Миний бүтээмж миний туршлагатай л пропорциональ хамааралтай байна. Тиймээс би ReUse бол онцлоод байх шаардлагагүй, цаг идсэн чөтгөрийн дөнгө гэж хэлмээр байна. Учир нь дахин ашиглагдах код бичихийн тулд та олон талаас нь эргэцүүлж, энгийн код бичихээс 5-10 дахин урт хугацаа зарцуулан бодож бичнэ.
+Та интеграци хийгээд эхэлбэл эсвэл DDD буюу Domain Driven Design, Microservices бичээд эхэлбэл миний юу яриад байгааг (буруу хийсвэрлэл, ээдрээтэй модель) илүү нарийн ойлгоно оо.
+За тэгэхээр бид яах ёстой болж байна вэ?
+Миний хувьд өөрийн туршлага дээрээ суурилаад зөвлөхөд мэргэжил нэгт анд та бүхэн дахин ашиглалтын оронд SOLID зарчмыг байнга бодож кодоо бичвэл хамаагүй цэвэрхэн архитектуртай, хамаагүй үр дүнтэй код бичих болно. Ялангуяа тэр эхний үсгийн илтгэж байгаа (S)-Single Responsibility principle бол ойлгоход амар бичихэд ч хялбар зарчим. TDD-Test Driven Development барих нь хэзээ ч буруудахгүй.
+цаг хэмнэлт, үр бүтээмж бол Объект хандалтат технолгиос орж ирээд байгаа зүйл биш юм. За тэгээд flow програмчлал, функциональ програмчлалын clojure функцүүдээс эхлээд айхтар бүтээмжтэй технологиуд багагүй бий. Энэ мэтчилэн эргэцүүлбэл:
+Харин санах ойн автомат удирдлага л бидэнд өндөр бүтээмжийг өгч байгаа юм. Өнөө garbage collector энээ тэрээ чинь гэсэн үг. Нөгөө талаас объект хандалтат програмчлалыг буруу ойлгож, хийдэг нь зөв хийдэг программистаасаа олон шүү. Бүр доод түвшинд хурд, хүчин чадал шаардлагатай программ бичье гэвэл С/C++ ашиглаж өөрөө санах ойгоо удирдахаас өөр аврал байхгүй.
+SOLID is one of the most popular sets of design principles in object-oriented software development. It’s a mnemonic acronym for the following five design principles:
+Single Responsibility Principle
+Open/Closed Principle
+Liskov Substitution Principle
+Interface Segregation Principle
+Dependency Inversion
 
