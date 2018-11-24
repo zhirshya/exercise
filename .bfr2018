@@ -7,6 +7,26 @@ Secret to long life is knowing when it's time to leave, better leave early than 
 
 I must lose myself in action, lest I wither in despair.
 
+“How To Stop Worrying And Start Living” By Dale Carnegie
+eyes, muscles and nerve tension and breakdown, relax, let go, stop squinting, stop straining, stop frowning. Let go!
+
+How do you relax? Do you start with your mind, or do you start with your nerves? You
+don't start with either. You always begin to relax with your muscles!
+Let's give it a try. To show how it is done, suppose we start with your eyes. Read this
+paragraph through, and when you've reached the end, lean back, close your eyes, and
+say to your eyes silently: "Let go. Let go. Stop straining, stop frowning. Let go. Let go."
+Repeat that over and over very slowly for a minute ....
+Didn't you notice that after a few seconds the muscles of the eyes began to obey? Didn't
+you feel as though some hand had wiped away the tension? Well, incredible as it
+seems, you have sampled in that one minute the whole key and secret to the art of
+relaxing. You can do the same thing with the jaw, with the muscles of the face, with the
+neck, with the shoulders, the whole of the body. But the most important organ of all is
+the eye. Dr. Edmund Jacobson of the University of Chicago has gone so far as to say
+that if you can completely relax the muscles of the eyes, you can forget all your troubles!
+The reason the eyes are so important in relieving nervous tension is that they burn up
+one-fourth of all the nervous energies consumed by the body. That is also why so many
+people with perfectly sound vision suffer from "eyestrain". They are tensing the eyes.
+
 Man's Search for Meaning:
 Life is not primarily a quest for pleasure, as Freud believed, or a quest for power, as Alfred Adler taught, but a quest for meaning.
 The truth- that love is the ultimate and the highest goal to which man can aspire. Then I grasped the meaning of the greatest secret that human poetry and human thought and believe have to impart: The salvation of man is through love and in love.
@@ -2228,7 +2248,10 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
-дуулах ᠳᠤᠭᠤᠯᠬᠤ
+ᠳᠤᠭᠤᠯᠭᠠᠬᠤ дуулгах : to make known (engagement by groom's parents), to take public, to intimate, harbinger?
+ᠳᠤᠭᠤᠯᠬᠤ дуулах : to hear about sb./sth., to listen
+дуулах ᠳᠤᠭᠤᠯᠬᠤ => ᠳᠤᠭᠤᠯᠣᠭ᠎ᠠ ᠦᠭᠡᠢ, ᠳᠤᠭᠤᠯᠳᠣᠭ᠎ᠠ ᠦᠭᠡᠢ
+
 statistics тоо бүртгэл ᠲᠣᠭ᠎ᠠ ᠪᠦᠷᠢᠳᠬᠡᠯ, статистик ᠰᠲ᠋ᠠᠲ᠋ᠢᠰᠲ᠋ᠢᠭ
 урд зүг ᠤᠷᠳᠤ ᠵᠦᠭ
 
@@ -3145,6 +3168,9 @@ scutil --get HostName
 «end of mac»
 
 proxy:
+network proxy bypass address: *.local, 169.254/16
+proxy config file: https://www.txthinking.com/pac/white.pac @ automatic proxy configuration @ network settings, but Fedora can't connect to outside!
+
 Sharing proxy for lan clients
 https://github.com/shadowsocks/shadowsocks-libev/issues/2042
 Shadowsocks Proxy
@@ -4578,13 +4604,20 @@ GM Fine's 15 Basic Endgame Rules (from Basic Chess Endings):
 15. Rooks belong behind passed Pawns.
 
 todo:
+chives & eggs recipe
+
+c++ qt5 cmake
+180c eg ag fvs2
+
+macos recursively find string under a directory and set lldb breakpoints on every matched lines
+learning to use crimp tool to make eth cable at work
+
+VLC: have current playback speed shown on control bar or status bar or title bar.
 linux unix commands to find out which ip and mac address throttles LAN network bandwidth
 
 macos schedule sudo script to be executed on startup
 
 ᠰᠢᠳᠦᠨ ᠤ ᠠᠪᠣᠴᠠᠯᠳᠣᠯ ᠢᠶᠡᠨ ᠲᠡᠭᠰᠢᠯᠡᠬᠦ: lip seal tape
-
-Boris Khereid
 
 c++-programming-75-solved-problems (c++ programming: 75 solved problems)
 High Performance Applications with C++
@@ -4594,7 +4627,7 @@ C++ Standard Template Library
 test bolor ime (phonetic: only using pronounced characters; graphetic: using exact written characters): gol (important), haraa (eyesight), seree (fork), yargui (flower), yadam (ring finger), yaruu (), magn(e/u/a)g: , gagn(e/a)h: weld, tagnai: тагнай ᠲᠠᠩᠨᠠᠢ(palate), ᠸᠴᠢᠷ ochir (truncheon), Хаянхярваа: hayanhyarvaa? ᠬᠠᠶᠠᠨᠬᠢᠷᠸ᠎ᠠ ? ᠬᠠᠶᠠᠩᠬᠢᠷᠸ᠎ᠠ ?, anna karenina, 
 
 
-windows 10 regedit Delehi IME
+windows 10 regedit edit for Delehi IME: Photoshop font tweak?
 
 periodic tables of elements in russian -> mgl
 https://threejs.org/examples/css3d_periodictable.html
@@ -4680,14 +4713,17 @@ VPS: KVM: google BBR, OVZ
 
 javascript pitfalls gotcha
 
-http://nmg.ganji.com/jiajiao/2997882357x.htm
-信息编号:15010009008250018
-title: 周末辅导:蒙英日语 数学 物理 编程 Excel Mac
-教授课程:英语 日语 蒙语 数学 物理 编程 Excel Mac
+
+«end of todo»
 
 irc://chat.freenode.net/libreoffice-dev
 #libreoffice-dev
 BgnrPrgrmr
+
+http://nmg.ganji.com/jiajiao/2997882357x.htm
+信息编号:15010009008250018
+title: 周末辅导:蒙英日语 数学 物理 编程 Excel Mac
+教授课程:英语 日语 蒙语 数学 物理 编程 Excel Mac
 
 body:
 我是呼伦贝尔巴日古人。具有很好的蒙语发音及语法(懂竖写及西里尔蒙古文)，通过大学英语6级考试，英语托业考试(TOEIC)875分，日语能力考试(JLPT)N1级，计算机科学与技术专业本科毕业，并具备多年软件开发经验：掌握C, C++, C#, Java, Python, SQL等编程语言以及Excel, Word, PowerPoint等办公软件及Mac操作系统。
@@ -4698,10 +4734,6 @@ Mongolian language (Traditional Vertical Script and Cyrillic)：蒙语辅导及�
 Elementary to High School Math & Physics. (小学-->高中数学，初高中物理),
 日语，
 以及办公软件使用，程序编程，Excel, Word, PowerPoint, Mac系统使用方法。
-
-青工程师
-
-Boris Khereid
 
 We're rapidly headed toward the next 2008 financial implosion. In 3 years real estate will probably be about half what it currently is. Last time around I held off on buying a house and instead I doubled down and paid off my old condo. Then in 2012 when the recession bottomed out I cashed in silver for a down payment on my current house, which I got for 160k and now it's worth about 300k. Then I waited for the market to recover and sold my condo in 2015 and knocked out half the house mortgage. Also I started buying bitcoins during the horrible bitcoin bear market of 2014 and 2015 and tucked away a nice stash of bitcoins. I cashed in bitcoins last year and paid off the house.
 I'd stay out of stocks and real estate right now and instead go into silver and bitcoins. Then when the panic of this next big economic implosion drives the prices of those assets up (and drives the price of stocks and real estate dramatically down) then I'll sell some of those assets to move into stocks. I own my house mortgage free so it's a nice low cost base of operations while I stack bitcoins before the next big run-up.
@@ -5097,7 +5129,6 @@ coursera,gimp,ghpage,utb;rus,python
 
 brew tap caskroom/cask && brew cask install gimp
 
-todo: learning to use crimp tool to make eth cable at work
 book: Enlightened Office Politics: Understanding, Coping With, and Winning the Game--without Losing Your Soul
 
 admin@emtrek.org outlook haven't received activation link email
@@ -5116,8 +5147,6 @@ Debugging JavaScript/TypeScript Node apps with Chrome DevTools, VS Code
 
 solr search engine
 search engine: google vs yandex
-
-network proxy bypass address: *.local, 169.254/16
 
 c++ program to check encoding of file
 
@@ -5404,12 +5433,7 @@ http://www.stroustrup.com/tour2.html
 The ``tour'' is a quick (about 240 pages) tutorial overview of all of standard C++ (language and standard library) at a moderately high level for people who already know C++ or at least are experienced programmers. It covers C++17 plus a few likely features of C++20.
 
 ᠴᠠᠭᠠᠨ ᠤᠯᠠ ᠴᠡᠴᠡᠭ
-
-c++ qt5 cmake
-180c eg ag fvs2
 cognitive conflict and intelligence
-
-proxy config file: https://www.txthinking.com/pac/white.pac @ automatic proxy configuration @ network settings, but Fedora can't connect to outside!
 
 delehioffice todo:
 instdir/DelehiOffice6.1_SDK -> instdir/DelehiOffice2018_SDK
@@ -5618,8 +5642,6 @@ Current executable set to '/Users/dev/lode/dev/core/instdir/LibreOfficeDev.app' 
 (lldb) breakpoint set --file /Users/dev/lode/dev/core/editeng/source/editeng/editdoc.cxx --line 1910
 Breakpoint 1: no locations (pending).
 WARNING:  Unable to resolve breakpoint to any actual locations.
-
-todo: macos recursively find string under a directory and set lldb breakpoints on every matched lines
 
 No one gives a shit about you.
 This applies to everything you need or want. It applies to all the people in your life, including your parents and your family.
@@ -5994,6 +6016,6 @@ Dependency Inversion
 Do rubber soles last longer than leather soles?
 > You can go to a cobbler to get rubber half soles to extend the life of the shoes. For winter, I recommend going for rubber soles. Leather just can't handle moisture, salt and rubble.
 
-chives & eggs recipe
-ᠳᠣᠭᠣᠯᠭᠠᠬᠤ
+http://cslt.riit.tsinghua.edu.cn/mediawiki/images/7/70/Mongol_dict_v2.0.txt
+
 
