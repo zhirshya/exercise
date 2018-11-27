@@ -4645,7 +4645,10 @@ c++ qt5 cmake
 macos recursively find string under a directory and set lldb breakpoints on every matched lines
 learning to use crimp tool to make eth cable at work
 
-VLC: have current playback speed shown on control bar or status bar or title bar.
+VLC:
+1. have current playback speed shown on control bar or status bar or title bar.
+2. check existence of playlist files before repeat (or looping)
+
 linux unix commands to find out which ip and mac address throttles LAN network bandwidth
 
 macos schedule sudo script to be executed on startup
