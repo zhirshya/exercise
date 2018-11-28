@@ -133,7 +133,7 @@ Cloning into '/Users/almas/dev/core/dictionaries'...
 
 alias ping='ping -c 6 -i 1.5 '
 
-rsmnkpsstprsvrr@pm.me .Abrvm*CH1*5
+rsmnkpsstprsvrr@pm.me .Abrvm*CH*5
 
 $git remote -v
 github	https://github.com/LibreOffice/core.git (fetch)
@@ -292,7 +292,6 @@ CoreText c++
 https://developer.apple.com/documentation/coretext
 
 Яндекс
-https://yandex.com
 
 https://superuser.com/questions/307048/making-the-backspace-key-go-to-the-previous-folder-in-finder
 ⌥ Opt + ↑: in OS X Yosemite it is the shortcut for 'Go Up' command in Finder (e.g. it always goes to the folder one level above the one you're in). If you don't like the 'Go Up' command and would like to go to the previous folder - define your own shortcut as per babraz' answer, then paste the respective key combination instead of CURSOR_UP, VK_COMMAND code above.
@@ -3799,6 +3798,40 @@ en2cn:
 hair clay 发泥
 
 js:
+https://www.youtube.com/watch?v=oxoFVqetl1E
+question: sum(2)(3)(4)(1)......(n)
+solution: ? Desired o/p is to get sum of all numbers.
+> let add = (a) => {
+  let sum = a;
+  funct = function(b) {
+    sum += b;
+    return funct;
+  };
+
+  Object.defineProperty(funct, 'valueOf', {
+    value: function() {
+      return sum;
+    }
+  });
+  return funct;
+};
+
+console.log(+add(1)(2)(3));
+
+one interview question: given a complex JSON and to induce method into each key if and only if key is of type object, the method should accept key and return value based on key.
+> something like this?
+const x = {
+  a: 1,
+  b: {
+    y: 1,
+    getY: function() {
+      return this.y;
+    }
+  }
+}
+
+console.log(x.b.getY());
+
 For large JS apps:
 - The structure of your code is way more important when it comes to writing 'good' JavaScript.
 - The mentioned features are not necessarily 'best practices'. You don't need async/await if you are working with observables..
@@ -5210,7 +5243,6 @@ javascript typescript tracing and debugging better than using alert
 Debugging JavaScript/TypeScript Node apps with Chrome DevTools, VS Code
 
 solr search engine
-search engine: google vs yandex
 
 c++ program to check encoding of file
 
