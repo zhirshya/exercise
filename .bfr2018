@@ -3799,6 +3799,29 @@ en2cn:
 hair clay 发泥
 
 js:
+For large JS apps:
+- The structure of your code is way more important when it comes to writing 'good' JavaScript.
+- The mentioned features are not necessarily 'best practices'. You don't need async/await if you are working with observables..
+- Styling the console output with css sounds like a terrible idea to me because debugging code should be temporary, my little picasso ;). I recommend debugging with the console like this:
+console.log('2 save item', item);
+This way, you can locate your debugging code easily and provide some meaning instead of just throwing out variables. Also you can add a number to check if your code runs in the right order (async code..).
+> I think you meant Promises (not Observables) on the second point, which I encounter in every project and async/await truly boosts productivity and readability.
+>> I did mean observables. In all our reactive applications we are using 0 promises and 0 async/awaits. It's just one paradigm of handling async code of many (imo inferior to observables). I agree with you that async/await is way better than promises which in return are way better than callbacks.
+
+https://www.youtube.com/watch?v=Mus_vwhTCq0
+I find the Object.assign bit misleading. So I decided to comment here to clarify. In the video, he said instead of mutating an object, we might want to create a whole new object. Then he talked about Object.asign and said that object spread is just a syntactic sugar. This might mislead you to think that Object.assign will create a new object. But in fact, it doesn't. It mutates the first object in the arguments. And the object spread is only a syntactic sugar for Object.assign({}, ...), not for the whole Object.assign function. I hope this will clear things up.
+
+Your example using async/await is a bad usage of promises and leads to unnecessary blocking. The three random values are completely unrelated and you want them to be executed in parallel. Awaiting one after another prevents doing exactly that.
+The body of the method should preferably look something like this:
+let [ first, second, third ] = await Promise.all([ random(), random(), random() ]);
+console.log(`Result ${first + second + third}`);
+> It makes sense if you need data from each call, but the example didn't show that it looked like they could have all been called in parallel. If each random() took a parameter in which it went like:
+const first = await random();
+const second = await random(first);
+const third = await random(second);
+Then the examples would be reasonable.
+
+
 async function onRestoreSelected () {
   await Promise.all(selectedArchives.map(async a => {
     a.checked = false
