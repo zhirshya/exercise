@@ -133,7 +133,7 @@ Cloning into '/Users/almas/dev/core/dictionaries'...
 
 alias ping='ping -c 6 -i 1.5 '
 
-rsmnkpsstprsvrr_pm.me .Abrvm*CH*5
+rsmnkpsstprsvrr_pm_me .Abrvm*CH*5
 
 $git remote -v
 github	https://github.com/LibreOffice/core.git (fetch)
