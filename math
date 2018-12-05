@@ -1,0 +1,39 @@
+WHY is a sphere's surface area four times its shadow?
+https://www.youtube.com/watch?v=GNcFjFmqEc8
+Two lovely ways of relating a sphere's surface area to a circle.
+Fourier socks, pi plushies, and more: https://3b1b.co
+
+Discuss on reddit: https://www.reddit.com/r/3Blue1Brown/comments/a2gqo0/but_why_is_a_spheres_surface_area_four_times_its/
+The first proof goes back to Greek times, due to Archimedes, who was charmed by the fact that a sphere has 2/3 the volume of a cylinder encompassing it, and 2/3 the surface area as well (if you consider the caps).  Check out this video for another beautiful animation of that first proof:
+https://youtu.be/KZJw0AYn6_k
+
+Calculus series:
+https://3b1b.co/calculus
+
+As 3blue1brown said, using geometry is a great way to understand calculus. or at least where it comes from. I usualy try to introduce calculus with geometric examples (slopes and speed for derivatives, areas and position for integrals) and motivate them. But most of the time my students don't care about it.
+
+The "unwrapping 4 circles into triangles and fitting them into a cylinder" method is how I have been explaining this to students. I thought I came up with it. Bummer.
+> if you thought of it on your own, then you're still as smart as the person who came up with it. There's still something to be said for that.
+
+I first realized the connection when I was trying to find an intuitive way to explain to my students the relations C=2πr and A(circle)=πr². It may not be intuitive, but I have found that it is effective enough in giving my students a deeper understanding of these relations. I have been trying to come up with "toys" that can illustrate this, like a rigid rod for the radius, a string for the circumference, and an adjustable-length.... something for the edge between C and r. I, at least, found the idea enlightening, though some of my students haven't been able to understand what I'm trying to say.
+
+Shadow areas are 2×pi×Rsinthita×Rcosthita dthita (thanks for that similar angle hint)  so it's 1/2 of the area of all the rings on sphere at angle 2thita since area of the rings on sphere are 2pi×Rsinthita×Rdthita and sin2thita=2sinthitacosthita. Since sum of all even ring areas is equal to 2times the area of base...  And it's also true for odd rings.  Thus surface area of sphere becomes 4times the area of base i.e. 4piR^2. Is it ok?
+
+the area of the rings for any angle θ is 2π(r^2)sinθdθ
+And the area of their shadows is 2π(r^2)sinθcosθdθ = (1/2)π(r^2)sin2θd2θ
+So for the shadow of a ring at an angle θ, there is a corresponding ring at angle 2θ having a quarter of the area. θ should range from 0 to 90, and not all the way to 180, because otherwise the shadow will be cast twice. Also the new sphere made from the corresponding rings has courser iterations. Although, now I think that (1/2)π(r^2)sin2θd2θ could have been expressed as π(r^2)sin2θdθ with alternate rings which I guess is what the video was going for.
+> Math on your head is not as simple as on paper, but basically that's almost what i got thanks. Although that trick of chaining dθ into 1/2*d2θ i didn't thought about.
+
+antonofka9018:
+1. Circumference: 2pi*sin(th)*R; Area of the ring: 2pi*sin(th)*R^2*dth
+2. Area of the shadow: 2pi*sin(th)*cos(th)*R^2*dth = pi*sin(2th)*R^2*dth
+3. For them to differ by a factor of 1/2, sin(th) must be equal to sin(2a) (where a is the other angle). So th=2*a.
+4. Mapping area of each ring on the top of the sphere on to the shadow (halving the angle for each) we get a circle of shadows, whose radius is R/2, and whose area is 1/4*pi*R^2. After doing the same for the bottom portion, the total area is 1/2*pi*R^2. It is exactly 2 times less the area of the rings, so the area of half a sphere is pi*R^2 and so the area of the whole sphere is 2*pi*R^2, which means there's a hole in my argument but the general idea is correct I guess.
+
+* Correction * 
+Actually, when I said that the radius of the mapping is equal to half the radius of the sphere I was wrong as it must be equal to √2/2 since the angle is 45° and cos(45°)=√2/2. And so the area of the portion of the shadow that we get after the mapping is equal to π*(√2/2*R)^2 = π/2*R^2. This way we get the right answer if we proceed with my steps sketched above, in the main part of the comment.
+> This is certainly true when we consider the threshold of refining a partition of πR containing dθ. But  in terms of the raw geometrical approach, as given above (where it is nothing but a  fixed number), I do not see it, yet. I also had the idea of calculating the area of the ring using the formula "area of the big circle minus area of the small circle" which leaves me with A(θ, dθ, R) = 2πR² * dθ cos θ * sin θ + πR² * (dθ)² * cos² θ. ... which differs only in the "error term"  of πR² * (dθ)² * cos² θ from what others are getting using the different approach. I would still be right, if I somehow could understand that (dθ)² = 0.
+
+Animation engine for explanatory math videos
+https://github.com/3b1b/manim
+
