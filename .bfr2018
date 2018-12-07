@@ -472,6 +472,9 @@ Evaluate the performance of machine learning systems in common tasks.
 
 
 c++:
+https://github.com/BjarneStroustrup/Programming-_Principles_and_Practice_Using_Cpp/blob/master/Matrix11.h
+typedef long Index;    // I still dislike unsigned
+
 https://www.youtube.com/watch?v=CWglkNBUmD4
 If I wanted to write 100% safe code, I would write it in Rust. I don't write code in C++ expecting it to be safe. When I have to allocate an object on the heap I use unique_ptr, and when I have to allocate an array I use vector. When I need to reference the allocated data I use raw pointers(T*) or references(T&) for objects and references to vectors(std::vector<T>&) for arrays because vectors keep track of the array size. I never use shared_ptr and weak_ptr.
 
@@ -982,6 +985,7 @@ amortization
 nihilistic
 commission
 liaison
+string interpolation (or variable interpolation, variable substitution, or variable expansion)
 
 
 en:
@@ -6186,5 +6190,15 @@ yellow page
 
 https://www.youtube.com/watch?v=YydrW4CWX0w
 you should spend your time developing a library, with everything that makes your life easier, not reinventing a new language, where everyone has to write their libraries again.
+
+https://medium.com/@DuroSoft/why-crystal-is-the-most-promising-programming-language-of-2018-aad669d8344f
+fiber vs callback/promise
+a truly complete fibers implementation like the one in Crystal lets you get around callback/promise hell (JavaScript) and makes it a lot easier to write things like game/UI loops, events, asynchronous and synchronous IO, etc.
+
+rust crystal:
+https://medium.com/@DuroSoft/why-crystal-is-the-most-promising-programming-language-of-2018-aad669d8344f
+Jun 2,2018
+I think, possibly, the most important difference between Crystal and Rust is that Crystal is garbage collected while Rust is not. For apps where memory usage and performance need to be highly predictable, Rust is probably going to be the better choice. But Crystal’s simpler syntax is going to win out for most other applications.
+> I agree with your remark; I am quite skeptical of articles claiming a language which depends on GC is “fast like C”. Perhaps when running a tight loop without any heap allocations, yes. But, with a mark-and-sweep GC, I doubt it will be able to make latency guarantees comparable to C, C++ or Rust.
 
 
