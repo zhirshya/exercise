@@ -986,9 +986,11 @@ nihilistic
 commission
 liaison
 string interpolation (or variable interpolation, variable substitution, or variable expansion)
+remorse
 
 
 en:
+BFSSR:Bigger, Faster, Stronger, Smarter, and Richer.
 Techniques starbucks barista used to upsell me.
 
 Real growth is about not being overly positive (denial) or overly negative (nihilistic).
@@ -1384,6 +1386,12 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+fuzzy logic:
+business logic:	ажиллагааны логик ᠠᠵᠢᠯᠯᠠᠭᠠᠨ ᠤ ᠯᠣᠭᠢᠻ
+variable : хувьсагч ᠬᠤᠪᠢᠰᠤᠭᠴᠢ
+protuberant
+pathological
+
 cast-iron skillet
 Season Cast Iron
 New method for seasoning cast iron that creates a slick surface so indestructible that touch-ups are almost never necessary.
@@ -2280,6 +2288,8 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+эстрадын
+
 гартаам ᠭᠠᠷᠲᠠᠮ᠎ᠠ agate, sardonyx, onyx
 гартаам хөөрөг ᠭᠠᠷᠲᠠᠮ᠎ᠠ ᠬᠥᠭᠦᠦᠷ snuffbox made of agate
 
@@ -3856,6 +3866,10 @@ en2cn:
 hair clay 发泥
 
 js:
+https://www.youtube.com/watch?v=pBYqen3B2gc
+Fibonacci in JS looks exactly like calculating powers in C, this is the main reason we need to replace JS.
+const fib = (n,  f=0,  s=1) => !n ? f : fib(--n,  s,  f+s)
+
 https://www.youtube.com/watch?v=oxoFVqetl1E
 question: sum(2)(3)(4)(1)......(n)
 solution: ? Desired o/p is to get sum of all numbers.
