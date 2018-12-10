@@ -1386,6 +1386,8 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+clench fists
+clasp hands
 lunacy
 fuzzy logic:
 business logic:	ажиллагааны логик ᠠᠵᠢᠯᠯᠠᠭᠠᠨ ᠤ ᠯᠣᠭᠢᠻ
@@ -3869,6 +3871,32 @@ en2cn:
 hair clay 发泥
 
 js:
+https://www.youtube.com/watch?v=qi9VQqYcXqY
+To start using a framework you've to first understand the basics of javascript like:
+- scopes
+- the difference between var, let and const keywords
+- primitive type vs objects
+- spread operator
+- callbacks
+- How the "class" keyword works behind the scene
+- prototypes
+- arrays and objects deconstructing
+- arrow functions
+- modules
+- webpack
+And if your goal after mastering these concepts is to learn Angular, you need to add typescript to this list.
+ 
+Things to learn:
+Javascript Fundamentals - 1:39
+Modules - 2:50
+Classes - 4:00
+Arrow functions - 4:50
+Promises / Asynchronus requests - 5:05
+Destructuring - 6:20
+Concept of components & state - 7:30
+Spread operator - 10:50
+High order array functions - 11:49
+
 https://www.youtube.com/watch?v=pBYqen3B2gc
 Fibonacci in JS looks exactly like calculating powers in C, this is the main reason we need to replace JS.
 const fib = (n,  f=0,  s=1) => !n ? f : fib(--n,  s,  f+s)
@@ -6231,4 +6259,10 @@ WebAssembly
 https://www.youtube.com/watch?v=drJwMlD9Mjo
 serverless architecture and AWS lambda functions using Netlify. We will use the Netlify Lambda CLI tool to test the function locally
 
-
+https://www.youtube.com/watch?v=nS9W-wlJHPA
+Tip : Make the person you are arguing or debating with :
+(1) Think that you are both on the same side.
+(2) Repeat what they say in your own words.
+(3) Always try to look and sound calm.
+(4) Identify their weakness and exploit it.
+(5) Always have a backup plan for your backup plan. Never be caught unprepared.
