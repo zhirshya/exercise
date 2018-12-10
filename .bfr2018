@@ -1386,6 +1386,7 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+lunacy
 fuzzy logic:
 business logic:	ажиллагааны логик ᠠᠵᠢᠯᠯᠠᠭᠠᠨ ᠤ ᠯᠣᠭᠢᠻ
 variable : хувьсагч ᠬᠤᠪᠢᠰᠤᠭᠴᠢ
@@ -6215,4 +6216,12 @@ Jun 2,2018
 I think, possibly, the most important difference between Crystal and Rust is that Crystal is garbage collected while Rust is not. For apps where memory usage and performance need to be highly predictable, Rust is probably going to be the better choice. But Crystal’s simpler syntax is going to win out for most other applications.
 > I agree with your remark; I am quite skeptical of articles claiming a language which depends on GC is “fast like C”. Perhaps when running a tight loop without any heap allocations, yes. But, with a mark-and-sweep GC, I doubt it will be able to make latency guarantees comparable to C, C++ or Rust.
 
+https://www.youtube.com/watch?v=5G4gNTci95E
+I'm just on a road trip in northeastern USA and it really hit me like a brick wall how much of a waste of money tourism is going to museums buying stuff etc, Ive been guilty of both sadly. The best things in life are free including your imagination. Just remember and i need to as well the simpler you live  the easier it will be to achieve f.i.r.e.! Or remember what Thoreau wrote: 
+"A man is rich in proportion to the number of things which he can afford to let alone."
+I wonder if MGTOW money could do a talk on vagabonding as per discussed in Rolf Potts book. I'm wishing I didn't take this trip these transitory temporary vacations are a waste of time all effort and money should be saved for f.i.r.e. 
+Any thoughts my fellow mgtows?
 
+dry shampoo
+
+WebAssembly
