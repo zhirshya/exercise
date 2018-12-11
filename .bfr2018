@@ -1386,6 +1386,7 @@ TOC: Table of Contents
 «end of abbreviation»
 
 en2mn2rus:
+per se
 clench fists
 clasp hands
 lunacy
@@ -3872,6 +3873,8 @@ hair clay 发泥
 
 js:
 https://www.youtube.com/watch?v=qi9VQqYcXqY
+Learn what a raw XHR looks like (XML HTTP Request) write one out to get you some data from an api and display that data to the DOM. Next fetch API then AXIOS (jQuery Add on) after that youre good to go. AJAX isn't a thing per se but a way to refresh data on a page without refreshing the entire page.
+
 To start using a framework you've to first understand the basics of javascript like:
 - scopes
 - the difference between var, let and const keywords
