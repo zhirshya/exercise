@@ -925,7 +925,7 @@ Log in as root and restore the SELinux label to the /etc/shadow file.
 Turn SELinux back to enforcing mode:
 # setenforce 1
 
-best scp optons: scp -Cpv
+best scp optons: scp -pvCr
 
 direct ethernet scp transfer between mac and linux:
 disable the WiFi, set the Ethernet IP address on Mac to 192.168.1.215, and 192.168.1.216 on Linux, set Subnet Mask on both machines to 255.255.255.0, and set the default gateway to 192.168.1.7 for both, leave the DNS portions blank.
@@ -955,7 +955,7 @@ scp -P 2249
 
 Copy files inside directory recursively: scp -r
 
-scp -Cpvr dev@192.168.97.197:~/lrn/doc/{new-web-typography,blockchain-quick-reference,html5-javascript-projects-2nd,web-technology-theory-practice,macos-programming-absolute-beginners.pdf,computational-thinking-first-algorithms-then-code.pdf} ~/doc
+scp -pvCr dev@192.168.97.197:~/lrn/doc/{new-web-typography,blockchain-quick-reference,html5-javascript-projects-2nd,web-technology-theory-practice,macos-programming-absolute-beginners.pdf,computational-thinking-first-algorithms-then-code.pdf} ~/doc
 -B : Selects batch mode (prevents asking for passwords or passphrases). #-B still asks for password for every outmost file and directory!
 
 https://www.tecmint.com/scp-commands-examples/
