@@ -469,7 +469,10 @@ setopt SH_WORD_SPLIT
 	done
 unsetopt sh_word_split
 unsetopt SH_WORD_SPLIT
+else
+	unset http_proxy https_proxy socks5 socks5_proxy socks_proxy HTTP_PROXY HTTPS_PROXY SOCKS5 SOCKS5_PROXY SOCKS_PROXY
 fi
+
 prprx
 }
 
