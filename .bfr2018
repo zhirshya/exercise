@@ -967,6 +967,9 @@ Access a Shared Folder from Linux: smb://COMPUTERNAME
 How to transfer large amounts of data via network
 http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html
 
+Inside of app/src/main/, you will find a file named AndroidManifest.xml. AndroidManifest.xml is an XML file describing the application being built and what components — activities, services, etc. — are being supplied by that application. You can think of it as being the “table of contents” of what your application is about, much as a book has a “table of contents” listing the various parts, chapters, and appendices that appear in the book.
+Excerpt From: Mark L. Murphy. “The Busy Coder's Guide to Android Development Version 8.13.” Apple Books. 
+
 «end of eecs,ict»
 
 difficult en:
@@ -6345,5 +6348,14 @@ idiomatic Kotlin
 idiomatic c++17
 
 https://www.android.com/filetransfer/
+
+automation script: check updates
+https://github.com/commonsguy/cw-omnibus/releases
+
+“write an entire app in C/C++, mostly for games using OpenGL for 3D animations”
+2D (Canvas) and 3D (OpenGL)
+To use the x86 emulator, your development machine must have things set up properly first. Linux users need KVM, while Mac and Windows users need the “Intel Hardware Accelerated Execution Manager” (a.k.a., HAXM).
+Excerpt From: Mark L. Murphy. “The Busy Coder's Guide to Android Development Version 8.13.” Apple Books. 
+
 
 
