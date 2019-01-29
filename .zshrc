@@ -12,6 +12,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANT_HOME=/usr/local/Cellar/ant/1.10.5/libexec
 export GOPATH=$HOME/go-workspace
 export GOROOT=/usr/local/opt/go/libexec
+export GRADLE_HOME=/usr/local/Cellar/gradle/5.1.1
 
 #https://gist.github.com/snowyu/c0b64f8bc63d1fb0e04971866e8c0067
 #export http_proxy=socks5://127.0.0.1:1080
@@ -20,7 +21,7 @@ export GOROOT=/usr/local/opt/go/libexec
 #export socks5="socks5://127.0.0.1:1080"
 
 # If you come from bash you might have to change your $PATH.
-export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.cargo/bin:$GOROOT/bin:$GOPATH/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
+export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$GRADLE_HOME/bin:$HOME/.cargo/bin:$GOROOT/bin:$GOPATH/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
