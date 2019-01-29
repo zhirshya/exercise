@@ -5599,9 +5599,6 @@ Update .ssh/config with "UseKeychain yes" (needed on macOS sierra)
 macOS sierra needs an UseKeychain yes SSH config entry in order to use the Keychain to store key passphrases.
 
 
-android:
-on Android phone, you have to enable USB Debugging. You do this in the Developer options, which are hidden by default. So, if you haven’t already, you need to show the Developer options by going to Settings > About phone and then tapping Build number seven times. Hit the back button and enter the newly accessible Developer options.
-
 jp:
 熱血
 
@@ -6352,9 +6349,14 @@ https://www.android.com/filetransfer/
 automation script: check updates
 https://github.com/commonsguy/cw-omnibus/releases
 
+android:
+on Android phone, you have to enable USB Debugging. You do this in the Developer options, which are hidden by default. So, if you haven’t already, you need to show the Developer options by going to Settings > About phone and then tapping Build number seven times. Hit the back button and enter the newly accessible Developer options.
+
 “write an entire app in C/C++, mostly for games using OpenGL for 3D animations”
 2D (Canvas) and 3D (OpenGL)
 To use the x86 emulator, your development machine must have things set up properly first. Linux users need KVM, while Mac and Windows users need the “Intel Hardware Accelerated Execution Manager” (a.k.a., HAXM).
+If you are not using the Gradle Wrapper, you will need to decide when to take on a new Android Gradle Plugin release and plan to update your Gradle installation and build.gradle files in tandem at that point.
+
 Excerpt From: Mark L. Murphy. “The Busy Coder's Guide to Android Development Version 8.13.” Apple Books. 
 
 
