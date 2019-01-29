@@ -12,7 +12,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANT_HOME=/usr/local/Cellar/ant/1.10.5/libexec
 export GOPATH=$HOME/go-workspace
 export GOROOT=/usr/local/opt/go/libexec
-export GRADLE_HOME=/usr/local/Cellar/gradle/5.1.1
+export GRADLE_HOME=$(brew info gradle | sed -nE 's#^(/usr/local/Cellar/gradle/[^ ]+).+\*#\1#p')
 
 #https://gist.github.com/snowyu/c0b64f8bc63d1fb0e04971866e8c0067
 #export http_proxy=socks5://127.0.0.1:1080
