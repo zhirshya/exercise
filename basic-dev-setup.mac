@@ -3,23 +3,18 @@
 #https://github.com/v2ray/homebrew-v2ray
 brew update && brew upgrade llvm git python3 pipenv node youtube-dl ruby openssl curl wget mongodb kubectl crystal p7zip gradle v2ray-core; brew upgrade ffmpeg --with-chromaprint --with-fdk-aac --with-libass --with-librsvg --with-libsoxr --with-libssh --with-tesseract --with-libvidstab --with-opencore-amr --with-openh264 --with-openjpeg --with-openssl --with-rtmpdump --with-rubberband --with-sdl2 --with-snappy --with-tools --with-webp --with-x265 --with-xz --with-zeromq --with-zimg --with-ffplay --with-freetype --with-libquvi --with-libvorbis --with-libvpx --with-opuS
 
-#todo: pip3 install --upgrade virtualenvwrapper virtualenv  #virtualenv is unnecessary because of pipenv, what about virtualenvwrapper?
-
 npm install -g npm@latest
 npm update -g nodemon
 #https://arui.tech/en/why-locally-install-is-much-better-than-globally-in-npm/
 #npm update -g nodemon request lodash yargs wepy-cli typescript coffeescript http-server vue d3 three p5 periodic-table
 
-#todo: macos upgrade pip3
-#sudo pip install --upgrade pip pip3
-#Collecting pip3
-#  Could not find a version that satisfies the requirement pip3 (from versions: )
-#No matching distribution found for pip3
-
 #https://github.com/Homebrew/legacy-homebrew/issues/50607
 #python3 -m pip install -U --force-reinstall pip
 
-python3 -m pip install -U pip
+#python3 -m pip3 install -U pip3  #python3.7: No module named pip
+#python3 -m pip install -U pip  #python3.7: No module named pip
+python -m pip install -U pip
+
 #$which pip3
 #/usr/local/bin/pip3
 #$pip3 -V
