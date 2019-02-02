@@ -6356,8 +6356,56 @@ on Android phone, you have to enable USB Debugging. You do this in the Developer
 2D (Canvas) and 3D (OpenGL)
 To use the x86 emulator, your development machine must have things set up properly first. Linux users need KVM, while Mac and Windows users need the “Intel Hardware Accelerated Execution Manager” (a.k.a., HAXM).
 If you are not using the Gradle Wrapper, you will need to decide when to take on a new Android Gradle Plugin release and plan to update your Gradle installation and build.gradle files in tandem at that point.
+the “Gradle Wrapper”
+groovy => gradle
 
+“There are two types of resources that use images like these: drawables and mipmaps. In truth, they are nearly identical. Mipmaps are used mostly for “launcher icons” — the icons seen in home screen launchers that identify activities that the user can start. Drawables hold everything else.”
+“The suffixes (e.g., -mdpi, -hdpi) are filters, indicating under what circumstances the images stored in those directories should be used. Specifically, -ldpi indicates images that should be used on devices with low-density screens (around 120 dots-per-inch, or “dpi”). The -mdpi suffix indicates resources for medium-density screens (around 160dpi), -hdpi indicates resources for high-density screens (around 240dpi). -xhdpi indicates resources for extra-high-density screens (around 320dpi), -xxhdpi indicates extra-extra-high-density screens (around 480dpi), -xxxhdpi indicates extra-extra-extra-high-density screens (around 640dpi), and so on.”
+
+“dip (or dp) for density-independent pixels — one dip equals one hardware pixel for a ~160dpi resolution screen, but one dip equals two hardware pixels on a ~320dpi screen”
+“sp for scaled pixels, where one sp equals one dip for normal font scale levels, increasing and decreasing as needed based upon the user’s chosen font scale level in Settings”
+
+“Using Layouts from Java
+Given that you have painstakingly set up the widgets and containers for your view in an XML layout file named main.xml stored in res/layout/, all you need is one statement in your activity’s onCreate() callback to use that layout, as we saw in our stub project’s activity:
+setContentView(R.layout.main);
+Here, R.layout.main tells Android to load in the layout (layout) resource (R) named main.xml (main).”
+
+“What happened is that Android 8.0 changed findViewById() to return T, using Java generics to automatically cast it to the data type you request in the assignment. Casts are a compile-time thing in Java — they do not appear in compiled code and have no effects at runtime. As a result, code that skips the casts works perfectly fine on older devices as well.”
+
+android:textColor to set the color of the label’s text, in RGB hex format (e.g., #FF0000 for red) or ARGB hex format (e.g., #88FF0000 for a translucent red)
+
+“Their base AdapterView class is so named because it partners with objects implementing the Adapter interface to determine what choices are available for the user to choose from.”
+
+“Clicking the Spinner drops down a list for the user to choose an item from. You basically get the ability to choose an item from a list without taking up all the screen space of a ListView, at the cost of an extra click to make a change.”
+
+server-side redirect (e.g., HTTP 301 or 304 response)
+
+
+adb logcat
+
+Alt-Enter (or Option-Return on macOS)
+Ctrl-Alt-L (or Command-Option-L on macOS)
 Excerpt From: Mark L. Murphy. “The Busy Coder's Guide to Android Development Version 8.13.” Apple Books. 
+
+reread:
+Excerpt From: Mark L. Murphy. “The Busy Coder's Guide to Android Development Version 8.13.” Apple Books. 
+The LinearLayout has its sizes (android:layout_width, android:layout_height) set each to match_parent, so it will fill up all space available to it. In this sample app, that will be everything below the tabs.
+Both Button widgets have their android:layout_width attributes also set to match_parent, so they will fill up all available space on the screen horizontally.
+The bottom Button has its android:layout_height set to wrap_content, so it will only take up as much space as is needed to render its caption and background around it.
+The top Button has android:layout_height set to 0dp. If we did not do anything else, that would result in an impossibly-short button. However, we also have android:layout_weight="1".
+When this gets rendered on the screen, LinearLayout will make two passes through its children. On the first pass, it asks for how much space each child wants, based upon the android:layout_height values (since this is a vertical LinearLayout). The first Button will ask for 0 pixels of space, while the bottom Button will ask for however much it needs for its content. Then, the second pass of the LinearLayout through its children asks for their weights. The first Button has a weight of 1, while the bottom Button has the default weight of 0. As a result, the top Button gets 1/1 = 100% of all pixels left over from what the first pass used. This causes the top Button to become tall, shoving the bottom Button to the bottom of the screen.
+
+
+<?xml version="1.0" encoding="utf-8"?>
+
+
+монголын топ шилдэг өгүүллэг
+
+Android-Studio git over ssh: e.g. git@github.com:zhirshya/mongol-library.git
+1. check at system terminal:
+ssh -Tv git@github.com
+2. switch Android Studio to "Native" SSH executable. (Mac)
+
 
 
 
