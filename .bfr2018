@@ -5668,7 +5668,10 @@ The curiously recurring template pattern (CRTP) is an idiom in C++ in which a cl
 
 how to drive russian UAZ УАЗ van
 how to learn physics
-Modern C++ for Computer Vision andImage Processing
+
+Modern C++ for Computer Vision and Image Processing
+http://www.ipb.uni-bonn.de/teaching/modern-cpp/
+
 stl::rotate, uniq, sort, splice, pluck, partial sort
 homemade apple cider vinegar
 SEO/SEM in Yandex
@@ -6413,6 +6416,13 @@ ssh -Tv git@github.com
 
 Android plugin 3.2.0 and higher now support building the Android App Bundle—a new upload format that defers APK generation and signing to compatible app stores, such as Google Play. With app bundles, you no longer have to build, sign, and manage multiple APKs, and users get smaller, more optimized downloads.
 
+https://www.githubstatus.com/
 
+brew update
+fatal: unable to access 'https://github.com/Homebrew/homebrew-core/': LibreSSL SSL_read: SSL_ERROR_SYSCALL, errno 54
+^C%
 
+ffmpeg Error: invalid option: --with-chromaprint
+
+how to check if ffmpeg installed with x265 openjpeg webp libopus libvorbis libvpx ffplay support in macos? 
 
