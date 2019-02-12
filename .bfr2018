@@ -2311,6 +2311,7 @@ Standalone FM Radio Headsets
 For phones without built-in FM radio, there is always the option to purchase a standalone FM radio headset. There are many FM radio headsets available, which connect to the phone via Bluetooth or via the headphone socket. These are a popular option for receiving FM radio on phones that do not come with built-in receivers.
 
 mgl:
+ᠭᠣᠶᠤᠤ гоёо: bulbous plant found in the Gobi, cynomorium.
 ᠵᠦᠴᠢᠶ᠎ᠡ  жүчээ: Морины саравч, адууны байр, зүчээ - Тэр өдөр жүчээнд жижүүрлэж, дарга нарын морьд гүүтэй холилдоод амар заяа үзүүлэхгүй нэг буланг голцуу сахиж байв. М.Шолохов. Дөлгөөн Дон.
 
 arguing contest: дайралцаа ᠳᠠᠭᠠᠷᠢᠯᠴᠠᠭ᠎ᠠ
@@ -3868,10 +3869,15 @@ https://note.mu/ihayato/n/nc851aa610fa4
 
 残業続きなのはもちろん、毎日会社の成績のことばかりで頭がいっぱい、緊張状態を強いれられているようでは、副業はおろか、プライベートな活動を楽しむ余裕すらなくなります。
 
+http://www.mzywfy.org.cn/translate.jsp
 cn2en2mn2ru:
+打工
+叫外卖 order takeout?
+红包 red packet
+上火
+肉苁蓉 ᠴᠠᠭᠠᠨ ᠭᠣᠶᠣᠣ 
 户枢不蠹，流水不腐
 义 vs 意
-
 恩格尔系数，是指居民家庭中食品支出占消费总支出的比重。
 「读万卷书不如行万里路，行万里路不如阅人无数，阅人无数不如名家指路，名师指路不如自己领悟」
 不逞利口，不论人短
@@ -3895,11 +3901,8 @@ cn2en2mn2ru:
 可按摩涌泉穴和足三里，改善手脚冰凉的症状
 沙果 ᠠᠭᠠᠯᠢᠭ ᠠᠯᠮᠤᠷᠠᠳ 
 正版包邮
-上火
-红包 red packet
 藤盒 rattan box
 藤垫 rattan mat
-叫外卖 order takeout?
 聚酯纤维 polyester
 聚乙烯 polyethylene
 牛油果 avocado 又名鳄梨
@@ -3908,7 +3911,6 @@ cn2en2mn2ru:
 刚性需求 rigid demand
 柔性需求 flexible demand
 按揭贷款
-言者无心，听者有意
 琢磨
 懵 měng:本意是指昏昧无知的样子，也指一时的心乱迷糊，还指无知、欺骗。
 懵憧 měng chōng:糊涂
@@ -3918,7 +3920,9 @@ cn2en2mn2ru:
 得瑟 show off, чамирхах ᠴᠠᠮᠢᠷᠬᠠᠬᠤ
 静:心、气、神、体都要处于安宁放松的状态。
 “慎独”，举头三尺有神明。
+言者无心，听者有意
 “大处着眼，小处着手，群聚守口，独居守心”
+众人守口,寡人守心
 “行事不可任心，说话不可任口”
 “禁大言以务实”
 “恶言不出于口，忿言不反于身”
@@ -6405,6 +6409,9 @@ Android-Studio git over ssh: e.g. git@github.com:zhirshya/mongol-library.git
 1. check at system terminal:
 ssh -Tv git@github.com
 2. switch Android Studio to "Native" SSH executable. (Mac)
+
+
+Android plugin 3.2.0 and higher now support building the Android App Bundle—a new upload format that defers APK generation and signing to compatible app stores, such as Google Play. With app bundles, you no longer have to build, sign, and manage multiple APKs, and users get smaller, more optimized downloads.
 
 
 
