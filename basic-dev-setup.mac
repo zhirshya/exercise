@@ -13,7 +13,9 @@ npm update -g nodemon
 
 #python3 -m pip3 install -U pip3  #python3.7: No module named pip
 #python3 -m pip install -U pip  #python3.7: No module named pip
-python -m pip install -U pip
+#python -m pip install -U pip #pip 2
+python3 -m pip install -U pip3
+pip install --upgrade pip setuptools pipenv
 
 #$which pip3
 #/usr/local/bin/pip3
