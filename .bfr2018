@@ -211,6 +211,11 @@ Fn
 
 502 Bad Gateway
 
+java:
+
+javac -cp /usr/dspace/webapps/xmlui/WEB-INF/lib/groupdocs-watermark-18.8.jar:/home/dspace/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar FfmpegKaller.java
+java -cp /usr/dspace/webapps/xmlui/WEB-INF/lib/groupdocs-watermark-18.8.jar:/home/dspace/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:. FfmpegKaller
+
 set JAVA_HOME in Ubuntu:
 sudo update-alternatives --display java
 update-alternatives --config java
@@ -362,6 +367,9 @@ Internal Rate Return
 amortization 
 
 python:
+Literal String Interpolation
+f'He said his name is {name!r}.'
+
 closure vs functor vs object
 https://stackoverflow.com/questions/34317003/idioms-in-python-closure-vs-functor-vs-object
 
@@ -6448,6 +6456,9 @@ https://pan.baidu.com/s/1xoJMnUBcCvDN6_WValh3Qg#list/path=%2F
 提取码：2bay
 
 ubuntu 16.04, 18.04 vm: Y*u
+
+https://docs.python.org/3/library/string.html#formatstrings
+
 
 
 
