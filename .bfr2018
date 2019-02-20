@@ -6475,8 +6475,14 @@ https://www.scribd.com/document/252553773/writing-idiomatic-python-3-pdf
 
 ffmpeg Encode video with alpha channel
 
-
-The router needs to know BOTH routes - the route from network A to B and the route from network B to A. You need to setup IP's in both networks to be the default gateway.
+Accessing a share on another subnet
+https://community.spiceworks.com/topic/2109639-accessing-a-share-on-another-subnet?page=2
+What happens if you put a route directly on the PC? That would remove the Cisco from interacting with the traffic in any way.
+Use route add command.
+When I add the route to the PC via:
+route add 10.0.0.0 mask 255.255.255.0 metric 1
+I can access it. When I add the exact same route to the router, I cannot.
+> The router needs to know BOTH routes - the route from network A to B and the route from network B to A. You need to setup IP's in both networks to be the default gateway.
 > I appreciate the response, Gary. I'm not sure what you mean, though. All computers in the 192.168.100.0/24 network have a gateway of 192.168.100.241. All computers on the 10.0.0.0/24 network have 10.0.0.254 as the gateway (which is the router between the networks.) I set up 2 routes on the Cisco going both ways? Is something specific to Cisco routing? Using the Netgear right now as the router with that one route works fast and flawlessly.
 
 
