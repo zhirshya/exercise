@@ -6485,9 +6485,19 @@ I can access it. When I add the exact same route to the router, I cannot.
 > The router needs to know BOTH routes - the route from network A to B and the route from network B to A. You need to setup IP's in both networks to be the default gateway.
 > I appreciate the response, Gary. I'm not sure what you mean, though. All computers in the 192.168.100.0/24 network have a gateway of 192.168.100.241. All computers on the 10.0.0.0/24 network have 10.0.0.254 as the gateway (which is the router between the networks.) I set up 2 routes on the Cisco going both ways? Is something specific to Cisco routing? Using the Netgear right now as the router with that one route works fast and flawlessly.
 
+route add 10.0.0.0 mask 255.255.255.0 metric 1
+
+sudo route add 192.168.1.0 mask 255.255.255.0 metric 1
+route: invalid mask: 0.0.0.1
+sudo route add 192.168.1.1 mask 255.255.255.0 metric 1
+route: invalid mask: 0.0.0.1
 
 #have to escape = for zsh
 ffmpeg -i 3\ years\ of\ Computer\ Science\ in\ 8\ minutes-ReVeUvwTGdU.webm -vf drawtext="fontfile=/Users/dev/Library/Fonts/MongolianScript.ttf text='Мак ᠦᠢᠯᠡᠳᠦᠯ ᠦᠨ ᠰᠢᠰᠲ<180b>ᠧᠮ ᠦᠨ ᠬᠤᠪᠢ ᠳᠤ LibreOffice-г᠃': fontcolor=yellow: fontsize=24: box=1: boxcolor=black@0.5: boxborderw=5: x\=(w-text_w)/2: y\=(h-text_h)/2" -codec:a copy -y test-mnglscript.ttf.webm
+
+#written to(as?) seperate glyphs, how to write mngl text vertically?
+ffmpeg -i 3\ years\ of\ Computer\ Science\ in\ 8\ minutes-ReVeUvwTGdU.webm -vf drawtext="fontfile=/Users/dev/Library/Fonts/MongolianScript.ttf: text='Мак ᠦᠢᠯᠡᠳᠦᠯ ᠦᠨ ᠰᠢᠰᠲ<180b>ᠧᠮ ᠦᠨ ᠬᠤᠪᠢ ᠳᠤ LibreOffice-г᠃': fontcolor=yellow: fontsize=24: box=1: boxcolor=black@0.5: boxborderw=5: x\=(w-text_w)/2: y\=(h-text_h)/2" -codec:a copy -y test-mnglscript.ttf.webm
+
 
 
 
