@@ -943,7 +943,7 @@ Log in as root and restore the SELinux label to the /etc/shadow file.
 Turn SELinux back to enforcing mode:
 # setenforce 1
 
-best scp optons: scp -pvCr
+best scp optons: scp -prvC
 
 direct ethernet scp transfer between mac and linux:
 disable the WiFi, set the Ethernet IP address on Mac to 192.168.1.215, and 192.168.1.216 on Linux, set Subnet Mask on both machines to 255.255.255.0, and set the default gateway to 192.168.1.7 for both, leave the DNS portions blank.
@@ -973,8 +973,10 @@ scp -P 2249
 
 Copy files inside directory recursively: scp -r
 
-scp -pvCr dev@192.168.97.197:~/lrn/doc/{new-web-typography,blockchain-quick-reference,html5-javascript-projects-2nd,web-technology-theory-practice,macos-programming-absolute-beginners.pdf,computational-thinking-first-algorithms-then-code.pdf} ~/doc
+scp -prvC dev@192.168.97.197:~/lrn/doc/{new-web-typography,blockchain-quick-reference,html5-javascript-projects-2nd,web-technology-theory-practice,macos-programming-absolute-beginners.pdf,computational-thinking-first-algorithms-then-code.pdf} ~/doc
 -B : Selects batch mode (prevents asking for passwords or passphrases). #-B still asks for password for every outmost file and directory!
+
+scp -prvC root@192.168.51.7:{/usr/dspace/assetstore/71/38/79/71387901514147365345475387001712441924\*,/usr/dspace/watermark/watermark.\*p\*g} .
 
 https://www.tecmint.com/scp-commands-examples/
 https://gist.github.com/michaelminter/7377743
@@ -6497,6 +6499,28 @@ ffmpeg -i 3\ years\ of\ Computer\ Science\ in\ 8\ minutes-ReVeUvwTGdU.webm -vf d
 
 #written to(as?) seperate glyphs, how to write mngl text vertically?
 ffmpeg -i 3\ years\ of\ Computer\ Science\ in\ 8\ minutes-ReVeUvwTGdU.webm -vf drawtext="fontfile=/Users/dev/Library/Fonts/MongolianScript.ttf: text='Мак ᠦᠢᠯᠡᠳᠦᠯ ᠦᠨ ᠰᠢᠰᠲ<180b>ᠧᠮ ᠦᠨ ᠬᠤᠪᠢ ᠳᠤ LibreOffice-г᠃': fontcolor=yellow: fontsize=24: box=1: boxcolor=black@0.5: boxborderw=5: x\=(w-text_w)/2: y\=(h-text_h)/2" -codec:a copy -y test-mnglscript.ttf.webm
+
+
+root@dspace bin]# file /usr/dspace/watermark/watermark.jpg
+/usr/dspace/watermark/watermark.jpg: PNG image data, 200 x 96, 8-bit/color RGBA, non-interlaced
+[root@dspace bin]# file /usr/dspace/watermark/watermark.png
+/usr/dspace/watermark/watermark.png: PNG image data, 48 x 48, 8-bit/color RGBA, non-interlaced
+
+ffmpeg -version:            show version
+ffmpeg -formats:            show available formats
+ffmpeg -codecs:             show available codecs
+ffmpeg -decoders:           show available decoders
+ffmpeg -encoders:           show available encoders
+ffmpeg -bsfs:               show available bit stream filters
+ffmpeg -protocols:          show available protocols
+ffmpeg -filters:            show available filters
+ffmpeg -pix_fmts:           show available pixel formats
+ffmpeg -layouts:            show standard channel layouts
+ffmpeg -sample_fmts:        show available audio sample formats
+
+tar -xJvf wkhtmltox-linux-i386_0.12.0-03c001d.tar.xz
+
+byte order: little-endian
 
 
 
