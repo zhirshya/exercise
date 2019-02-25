@@ -6526,6 +6526,26 @@ byte order: little-endian
 
 https://forum.groupdocs.com outlook .d*3
 
+How to Remotely Debug Application Running on Tomcat From Within Intellij IDEA
+https://blog.trifork.com/2014/07/14/how-to-remotely-debug-application-running-on-tomcat-from-within-intellij-idea/
+Using the JPDA_OPTS, option you would have the needed start-up argument set in a file named setenv.sh (or setenv.bat if on windows). Create the file if it does not exist already. Have it in the CATALINA_HOME/bin directory. And add this to the content:
+Using your first option (JPDA_OPTS in setenv.sh) did not work immediately on tomcat 7.0.57.
+Omitting the spaces in your example fiexed the problem:
+export JPDA_OPTS=”-agentlib:jdwp=transport=dt_socket,address=1043,server=y,suspend=n”
+and if on Windows:
+set JPDA_OPTS="-agentlib:jdwp=transport=dt_socket,address=1043,server=y,suspend=n"
+
+What these settings basically do is to enable remote debugging and configure available options: specifying the communication protocol between the running application and the debugger, (ie transport=dt_socket) the port at which the remote application should debugged (ie address=1403). The server=y setting indicates that this JVM would be the one to be debugged while suspend=n is used to tell the JVM to execute right away and not wait for an attached debugger. If set to “y” then the application would be suspended and not run until a debugger is attached.
+A good situation where you would want to have suspend=y is when debugging an issue that prevents an application from starting successfully, having suspend=y would make sure that the JVM waits for the remote debugger to connect before attempting to start and run the application.
+Although the settings can be put directly inside catalina.sh (or catalina.bat) it is always preferable to have extra configurations in the setenv.* file. It would be automatically be picked up by Tomcat.
+Note that another options you may encounter that may be used to enable remote debugging is:
+-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=1043, suspend=n
+The difference between this and the recommended setting is that the -Xdebug and -Xrunjdwp option is the old way of enabling remote debugging; it applies to JVM prior to JAVA 5.0 (JAVA 1.5.0) while -agentlib:jdwp option applies to JAVA 5.0 and beyond…And with this configuration in place, you can then start Tomcat via the command line arguments:
+$CATALINA_HOME/bin/catalina.sh jpda start
+
+Out of the box you can already do:
+./catalina.sh jpda run
+That will start tomcat in debug mode, listening for connections on port 8000.
 
 
 
