@@ -6528,6 +6528,10 @@ https://forum.groupdocs.com outlook .d*3
 
 How to Remotely Debug Application Running on Tomcat From Within Intellij IDEA
 https://blog.trifork.com/2014/07/14/how-to-remotely-debug-application-running-on-tomcat-from-within-intellij-idea/
+The process of getting remote debugging working involves two steps:
+Starting Tomcat with remote debugging enabled and
+having your IDE, in our case IntelliJ IDEA, to be able to debug the remote tomcat application.
+
 Using the JPDA_OPTS, option you would have the needed start-up argument set in a file named setenv.sh (or setenv.bat if on windows). Create the file if it does not exist already. Have it in the CATALINA_HOME/bin directory. And add this to the content:
 Using your first option (JPDA_OPTS in setenv.sh) did not work immediately on tomcat 7.0.57.
 Omitting the spaces in your example fiexed the problem:
