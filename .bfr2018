@@ -6551,5 +6551,44 @@ Out of the box you can already do:
 ./catalina.sh jpda run
 That will start tomcat in debug mode, listening for connections on port 8000.
 
+echo $CATALINA_HOME/bin
+setenv.sh: export JPDA_OPTS=”-agentlib:jdwp=transport=dt_socket,address=1043,server=y,suspend=n”
+
+intellij remote debug tomcat 7.0.57 unable to open debugger port java.io.IOException "handshake failed - connection prematurally closed"
+https://yandex.com/search/?msid=1551154590.24643.140562.139565&text=intellij+remote+debug+tomcat+7.0.57+unable+to+open+debugger+port+java.io.IOException+%22handshake+failed+-+connection+prematurally+closed%22&suggest_reqid=992167588155081540446740581413566
+
+I need a Linux command to list all free open ports for use in an application:
+lsof -i TCP| fgrep LISTEN
+
+netstat -lntu
+
+linux commands to list processes and ports
+
+Monbs гар суулгагчид тавтай морил.
+Энэ суулгагч нь Болорсофт компаниас гаргасан монгол бичгийн кодчиллын тунгаамал загварт тохирсон гар болон стандарт кирилл монгол гарыг суулгана. Стандарт кирилл гар Мак үйлдлийн системд өгөгдмөлөөр суугаагүй байдаг тул орууллаа.
+Monbs гарын багц (see below for english)
+Энэ гарын драйверыг суулгаснаар та Болорсофт компаниас гаргасан монгол бичгийн кодчиллын тунгаамал загвараар МАК үйлдлийн системд чөлөөтэй бичих боломжтой болно. Мөн МАК үйлдлийн системд стандарт кирилл монгол гар байдаггүй тул түүнийг мөн багтаалаа.
+Бид Аппле компанитай холбогдож, бүтээгдэхүүнүүдэд нь стандарт кирилл гар байхгүй байгаа алдааг тайлагнасан бөгөөд дараагийн хувилбартаа оруулахаар болсон хариуг аваад байна. Тэр үед нь кирилл монгол гарыг энэ багцаас хасна.
+Түргэн бичихэд зориулсан Монгол бичгийн оновчилсон гарыг бид мөн хийж байгаа бөгөөд бэлэн болохоор дараагийн хувилбарт түүнийг мөн нэмнэ.
+Цаашид дөрвөлжин, тод, али гали, манж, шивээ, соёмбо бичгүүдийн хувьд хийгдэх гаруудыг нэмэх болно.
+Та https://www.mngl.net хуудсаар зочилж, мэдээлэл авч байгаарай. Тунгаамал загвар, цахим орчин дахь монгол бичгийн хэрэглээ, заавар зөвлөгөө зэрэг маш хэрэгтэй баримт бичгүүд https://wiki.mngl.net хуудсанд бий.
+Мөн цаашид бид төрөл бүрийн монгол бичгийн программ хангамж, жишээлбэл монгол бичгийн үг үсгийн алдаа шалгуур, хөрвүүлэгч зэргийг гаргана. Та https://buy.bolorsoft.com хаягаар зочилж, манай бүтээгдэхүүнүүдийг сонирхох боломжтой.
+==================================================
+Monbs keyboard package
+Installing this setup package you can freely write with refined unicode encoding model, which is developed by Bolorsoft. We also included cyrillic Mongolian keyboard in this package, as it is still missing in MAC OSes. We already have sent a bug report and contacted with Apple. They have informed that it will be included next MAC OSX release. After that, we will remove cyrillic keyboard.
+In the future, we will package other Mongolic keyboards like "Durvuljin", "Tod", "Ali Gali", "Manj", "Shivee", "Soyombo" etc.
+So stay tuned for further information and visit to https://www.mngl.net. More documentation and manuals are available under https://wiki.mngl.net.
+We will release spellchecker for Mongolian script and other products around Mongolian script. See: https://buy.bolorsoft.com
+
+Монгол гар амжилттай суулаа.
+Үйлдлийн системээ шинээр эхлүүлээд та системийн тохиргоо (Apple->System Preferences->Keyboard->Input sources) руугаа орж + товчийг дарж Монгол (Mongolian) хэлийг сонгож, манай гаруудыг оруулж ирэх боломжтой.
+Та зөвхөн Тунгаамал загварыг дэмжсэн фонтуудыг хэрэглэх боломжтой тул https://www.mngl.net/download/ хаягаар орж манай фонтуудыг татаж авч суулгана уу. Заавар зөвөлгөө https://wiki.mngl.net хуудсанд бий.
+
+ffmpeg change tone pitch tempo of voice
+tone, pitch and tempo of voice
+
+
+win10:dvr/L*M*I*A2019227
+
 
 
