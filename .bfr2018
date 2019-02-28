@@ -6385,6 +6385,8 @@ https://github.com/commonsguy/cw-omnibus/releases
 android:
 on Android phone, you have to enable USB Debugging. You do this in the Developer options, which are hidden by default. So, if you haven’t already, you need to show the Developer options by going to Settings > About phone and then tapping Build number seven times. Hit the back button and enter the newly accessible Developer options.
 
+GraphQL is a rapidly-ascending alternative to REST for implementing Web services. Developed by Facebook, GraphQL is popular in Web development. And, where Web service development goes, mobile app development — including Android — inevitably follows.
+
 “write an entire app in C/C++, mostly for games using OpenGL for 3D animations”
 2D (Canvas) and 3D (OpenGL)
 To use the x86 emulator, your development machine must have things set up properly first. Linux users need KVM, while Mac and Windows users need the “Intel Hardware Accelerated Execution Manager” (a.k.a., HAXM).
@@ -6587,7 +6589,7 @@ We will release spellchecker for Mongolian script and other products around Mong
 ffmpeg change tone pitch tempo of voice
 tone, pitch and tempo of voice
 
-win10:dvr/L*M*I*A*19227
+win10:dvr/L*M*I*A*19228
 
 dualboot windows 10 and Hiren's boot cd from usb drive
 https://www.youtube.com/watch?v=UCHEQlmFy78 
