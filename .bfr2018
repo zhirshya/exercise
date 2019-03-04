@@ -489,13 +489,17 @@ Discover hidden structures in data using K-Means clustering
 Evaluate the performance of machine learning systems in common tasks.
 
 
-
 c++:
 https://github.com/BjarneStroustrup/Programming-_Principles_and_Practice_Using_Cpp/blob/master/Matrix11.h
 typedef long Index;    // I still dislike unsigned
 
 https://www.youtube.com/watch?v=CWglkNBUmD4
 If I wanted to write 100% safe code, I would write it in Rust. I don't write code in C++ expecting it to be safe. When I have to allocate an object on the heap I use unique_ptr, and when I have to allocate an array I use vector. When I need to reference the allocated data I use raw pointers(T*) or references(T&) for objects and references to vectors(std::vector<T>&) for arrays because vectors keep track of the array size. I never use shared_ptr and weak_ptr.
+
+OpenCL is an open standard from the Khronos group which provides a low-level C API for compiling and offloading code to be executed on another heterogeneous architecture and moving data to and from the device. A more recent standard form the Khronos group; SYCL is a single source heterogeneous programming model which provides the performance portability of OpenCL with a high-level modern C++ programming interface. 
+SYCL allows users to write standard C++ code which is then executed on a range of heterogeneous architectures including CPUs, GPUs, DSPs, FPGAs and other accelerators. On top of this SYCL also provides a high-level abstraction which allows users to describe their computations as a task graph with data dependencies, while the SYCL runtime performs data dependency analysis and scheduling. SYCL also supports a host device which will execute on the host CPU with the same execution and memory model guarantees as OpenCL for debugging purposes, and a fallback mechanism which allows an application to recover from failure.
+
+
 
 https://www.reddit.com/r/cpp/
 https://www.reddit.com/r/cpp/comments/7pp8tv/why_should_i_learn_c_in_2018/
@@ -6598,6 +6602,9 @@ https://www.youtube.com/watch?v=UCHEQlmFy78
 
 
 googleplay startup error on china huawei phone: core GSM service is required to use Googleplay
+
+хөрвөгч валют ᠬᠥᠷᠪᠡᠭᠴᠢ ᠸᠠᠯᠦᠲ᠋ᠠ
+
 
 
 
