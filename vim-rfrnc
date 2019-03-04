@@ -213,3 +213,5 @@ g/^<\{5,7}\s*HEAD\_.\{-}=======\n/d
 what does "::g" mean in vim regex?
 s:/\*\_.*\*::g
 
+%s/\*"\s\+-o\s\+-iname\s\+"\*/\r/g
+
