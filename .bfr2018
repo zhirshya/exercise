@@ -6610,4 +6610,12 @@ googleplay startup error on china huawei phone: core GSM service is required to 
 монгол бичиг
 
 
+ffmpeg filter_complex drawtext use custom variable to hold rotation values
+
+principal value of the arc tangent of y/x
+
+# Parsed_overlay_7 @ 0x7fb6c5008e00] [Eval @ 0x7ffee87bbd50] Undefined constant or missing '(' in 'ih/iw)'
+fmpeg -noautorotate -i tsergiin_polgyon\^laager_taa_ambaar_barin.mkv -filter_complex "color=black:100x100[c];[c][0]scale2ref[ct][mv];[ct]setsar=1,drawtext=fontfile=/Users/dev/Library/Fonts/MongolianScript.ttf:text='ᠬᠢᠴᠢᠶᠡᠯ ᠵᠢᠳ<180b>ᢉᠦᠯ᠂ᠰᠢᠷᠭᠠᠭᠤ ᠬᠦᠳᠦᠯᠮᠦᠷᠯᠡᠯ':fontsize=12:fontcolor=red,split[text][alpha];[text][alpha]alphamerge,rotate='atan(ih/iw)*PI/180':c=black@0[txta];[mv][txta]overlay=x=1:y='tan(ih/iw)':shortest=1" -y tsergiin_polgyon\^laager_taa_ambaar_barin_drawtext_atan_tan.mkv
+
+
 
