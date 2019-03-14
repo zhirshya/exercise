@@ -4383,7 +4383,7 @@ ffmpeg -i '21darieh__дарь_эх-VPInIrd5Hqc.opus' -filter:a "atempo=1.25" '21
 ffmpeg -i Цагийн_жамыг_тодруулагч_Цаасан_шувуу_хэмээх_сургаал.mp3 -filter:a "atempo=1.1" -acodec libopus Цагийн_жамыг_тодруулагч_Цаасан_шувуу_хэмээх_сургаал_SoundCloud.opus
 ffmpeg -i Хийморийн\ сан\ оршивой.-bGok4u7Sg1k.opus -acodec libmp3lame hiimori.mp3
 
-mov -> mp4: ffmpeg -i correction_proposal_for_6_Mongolian_words.mov -vcodec h264 -acodec aac correction_proposal_for_6_Mongolian_words.mp4
+mov/mkv -> mp4: ffmpeg -i correction_proposal_for_6_Mongolian_words.mov -vcodec h264 -acodec aac correction_proposal_for_6_Mongolian_words.mp4
 
 ffmpeg -i Ирээдүйн\ ханиа\ хэрхэн\ яаж\ сонгох\ вэ_Dulguun\ Podcast\ \#6-NbSbzJu9yP4.opus -ss 0:22:3 -c:a libfdk_aac -vbr 5 -cutoff 18000 -t 0:1:21 Эмэгтэй-хүний-хувьд-Ирээдүйн-ханиа-NbSbzJu9yP4.aac
 
@@ -6653,6 +6653,78 @@ Tips to Improve Reading Comprehension WgbG5lo5Usg
 Use the SQ3R system (survey, question, read, recite, and review) when reading for comprehension during standardized testing. This method allows you to efficiently read for comprehension a passage included on a test.
 
 http://breakingnews.mn/c/r/99062
+
+
+Spring AOP:
+Learn Spring for Android Application Development: Build robust Android applications with Kotlin 1.3 and Spring 5 by S. M. Mohi Us Sunnat 
+English | 2019 | ISBN: 1789349252 | 392 Pages | EPUB | 42 MB
+A hands-on guide to Android programming with Spring MVC, Spring Boot, and Spring Security
+As the new official language for Android, Kotlin is attracting new as well as existing Android developers. As most developers are still working with Java and want to switch to Kotlin, they find a combination of these two appealing. This book addresses this interest by bringing together Spring, a widely used Java SE framework for building enterprise-grade applications, and Kotlin.
+Learn Spring for Android Application Development will guide you in leveraging some of the powerful modules of the Spring Framework to build lightweight and robust Android apps using Kotlin. You will work with various modules, such as Spring AOP, Dependency Injection, and Inversion of Control, to develop applications with better dependency management. You’ll also explore other modules of the Spring Framework, such as Spring MVC, Spring Boot, and Spring Security. Each chapter has practice exercises at the end for you to assess your learning.
+By the end of the book, you will be fully equipped to develop Android applications with Spring technologies.
+What you will learn:
+Get to grips with the basics of the Spring Framework
+Write web applications using the Spring Framework with Kotlin
+Develop Android apps with Kotlin
+Connect a RESTful web service with your app using Retrofilt
+Understand JDBC, JPA, MySQL for Spring and SQLite Room for Android
+Explore Spring Security fundamentals, Basic Authentication, and OAuth2
+Delve into Concurrency and Reactive programming using Kotlin
+Develop testable applications with Spring and Android.
+
+
+барга ардын дуу
+Өвөр Монголын Хөлөнбуйр хотын Хуучин Барга хошуунд
+Дорнод аймгийн Хөлөнбуйр суманд
+
+
+http://analiz.mn/postview/2093
+
+“ҮХЭРТ, ХҮЙТЭН ХОЁР”-ЫН АЛАГ НҮДЭН ДОЛГОР 
+Өвөр Монголын “Анд” хамтлагийн уртын дууч Цэцэгмаа хэмээх бүсгүй “Үхэрт, хүйтэн хоёр” хэмээх дуу дуулахдаа Барга түмний сайхан хүүхэн “Алаг нүдэн” Долгор хэмээгчийг дурсан санагалздаг ажээ. 20-р зууны эхэн үед Өвөр Монголын Барга хошуунд амьдарч асан тэр Долгор гэдэг нь үнэхээр үзэсгэлэн төгс бүсгүй байж. Олон арван эр түүнтэй амьдралаа холбох гэж зүтгэсэн ч Долгор хариу өгсөнгүй. Харин шинэ Барга хошууны Далай сумын Цогт хэмээх сайхан залууд сэтгэлээ ханзалжээ. Ингээд хоёр хос халуун хайрандаа умбан жаргаж байтал далайн чанадаас япончууд Манжуурт довтлон ирж дайн эхэлсэнээр залуу эр Цогт Хайлаар луу цэргийн албанд татагдсан байна. Тэрбээр цэргийн албаа нэр төртэй хааж 1945 оны чөлөөлөх дайн дууссаны дараа Барга хошуундаа иртэл жилийн өмнө нутагт нь гарсан их түймрийн улмаас олон хүн амь үрэгдсэний дотор хайрт бүсгүй Долгор нь гамшигт өртсөнийг дуулж сонсчээ. Гэсэн ч Цогт дурлалт бүсгүйгээ амьд байх болуужин гэх хүсэлдээ хөтлөгдөн Баргын уудам талаар долоон шөнө, долоон өдөр түүнийгээ хайгаад “Үхэрт хүйтэн” хэмээх газар нутаглаж байсан нэг айлаас зүүж явсан ээмэг, бөгжийг нь олж аваад алаг нүдэн хүүхнээ эргэж ирэхээргүй алсад одсон гэдэгт сая л итгэжээ. Тэгээд цээжин дэх уй гунигаа гадагшлуулахдаа “Үхэрт, хүйтэн хоёр” хэмээх дуу зохиож дуулсан гэдэг. Дууны үгийг сийрүүлвээс: 
+“Үргэлжийн ойрхон харагдагч 
+Үхэрт, хүйтэн хоёр уу даа. 
+Үеийн жаахан Долгороо 
+Үерт дайрахыг нь харсангүй 
+Арын бууцанд буусаар 
+Адуу тогтохоо байлаа даа 
+Аяганд хийсэн хоол нь 
+Аманд орохоо болилоо доо 
+Алттай магнаг торгыг 
+Ар л биендээ шингээгээсэй 
+Алаг нүдэн Долгороо 
+Аюул дайрахыг нь үзсэнгүй” гэж уянгалуулжээ. Энэхүү дууг 2010 онд Хятад улс биет бус соёлын өвөөрөө бүртгэж авсан юм байна. 
+
+Үхэрт Хүйтэн Хоёр ДУУНЫ ҮГ:
+Үргэлжийн ойрхон харагдагч
+Үхэрт хүйтэн хоёр уу
+Үеийн жаахан Долгороо
+Үерт дайрахыг нь хүрээгүй
+
+Арын бууцанд буусаар
+Адуу тогтохоо байлаа даа
+Аяганд хийсэн хоол нь
+Аманд орохоо болилоо доо
+
+Хоолойн бууцанд буусаар
+Хонь тогтохоо байлаа даа
+Хоол умд хоёр нь
+Хоолойд орхоо болилоо доо
+
+Алттай магнаг торгыг
+Ар л биендээ шингээгээсэй
+Алаг нүдэн Долгорыг
+Аюул дайрахыг хүрээгүй
+
+Гавтын нуурын захад
+Ганц л толгойн энгэрт
+Хархан нүдэн Долгорыг
+Галын аюул дайрлаа даа.
+
+Үхэрт хүйтэн кино
+
+ЗУУН АЙЛ ОРЧИМД ДӨРВӨН ЭГНЭЭ АВТО ЗАМ БАРИНА.
+
 
 
 
