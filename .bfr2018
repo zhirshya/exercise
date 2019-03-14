@@ -789,6 +789,7 @@ Microservices also bring other problems, such as making it hard to debug and tra
 
 grep:
 grep -v -e '^[[:space:]]*$' -e '^#' file will give you all non-blank, non-comment lines in a script or config file (or any file type that uses the hash character for comments).
+find . -iname '*.kt*' -o -iname '*.java' -o -iname '*.xml' | xargs grep --exclude-dir={.git,.svn,.hg,.bzr,cvs,CVS} --color=auto -r -n -H -C 3 -i -E 'constructor|companion|init' >>  ~/ktln-AndroidStudio3.2Sample-grep-E_constructor-companion-init
 
 awk:
 env grep -i "t in our dictionary" webResponse.out | awk -F '(<b>)|(</b>)' '{print $2}'
@@ -1020,6 +1021,7 @@ remorse
 
 
 en:
+Schmach (genitive Schmach, no plural): disgrace.
 BFSSR:Bigger, Faster, Stronger, Smarter, and Richer.
 Techniques starbucks barista used to upsell me.
 
