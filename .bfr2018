@@ -4379,6 +4379,9 @@ ffmpeg command line: ffmpeg -y -i 'file:Threads in C++-wXBcwHwIt_I.f137.mp4' -i 
 ffmpeg -i '21darieh__дарь_эх-VPInIrd5Hqc.opus' -filter:v "setpts=PTS/1.25" -filter:a "atempo=1.25" '21darieh__дарь_эх-VPInIrd5Hqc_spdx1.25.opus' =>
 ffmpeg -i '21darieh__дарь_эх-VPInIrd5Hqc.opus' -filter:a "atempo=1.25" '21darieh__дарь_эх-VPInIrd5Hqc_spdx1.25.opus'
 
+#HH:MM:SS.ms
+ffmpeg -i БАРГЫН\ ШҮТЭЭН-BsuJEYsr22s.mkv 2>&1 | grep "Duration" | cut -d ' ' -f 4 | sed s/,//
+
 -analyzeduration 2147483647 -probesize 2147483647
 
 #ffmpeg mp3 => opus, atempo
