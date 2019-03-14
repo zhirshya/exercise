@@ -1,0 +1,5 @@
+https://kotlinlang.org/docs/reference/properties.html
+var setterWithAnnotation: Any? = null
+    @Inject set // annotate the setter with Inject
+
+
