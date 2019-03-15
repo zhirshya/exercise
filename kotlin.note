@@ -1,5 +1,66 @@
+Excerpt From: Neil Smyth. “Android Studio 3.2 Development Essentials - Kotlin Edition: Developing Android 9 Apps Using Android Studio 3.2, Kotlin and Android Jetpack.” Apple Books. 
+
 https://kotlinlang.org/docs/reference/properties.html
 var setterWithAnnotation: Any? = null
     @Inject set // annotate the setter with Inject
+
+./RoomDemo/app/src/main/java/com/ebookfrenzy/roomdemo/ui/main/MainViewModel.kt-15-    private val allProducts: LiveData<List<Product>>?
+
+constructor() {
+
+companion object {
+
+./AppLinking/app/src/main/java/com/ebookfrenzy/applinking/MyDBHandler.kt:25:    init {
+./AppLinking/app/src/main/java/com/ebookfrenzy/applinking/MyDBHandler.kt-26-        myCR = context?.contentResolver
+./AppLinking/app/src/main/java/com/ebookfrenzy/applinking/MyDBHandler.kt-27-    }
+
+
+./RemoteBound/.idea/codeStyles/Project.xml-18-      <class>
+./RemoteBound/.idea/codeStyles/Project.xml-19-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Property" />
+./RemoteBound/.idea/codeStyles/Project.xml-20-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Synthesize" />
+./RemoteBound/.idea/codeStyles/Project.xml:21:        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="InitMethod" />
+./RemoteBound/.idea/codeStyles/Project.xml-22-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="StaticMethod" />
+./RemoteBound/.idea/codeStyles/Project.xml-23-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="InstanceMethod" />
+./RemoteBound/.idea/codeStyles/Project.xml-24-        <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="DeallocMethod" />
+
+./NavigationDemo/app/src/main/java/com/ebookfrenzy/navigationdemo/ui/main/MainFragment.kt:19:    private lateinit var viewModel: MainViewModel
+
+./MasterDetailFlow/app/src/main/java/com/ebookfrenzy/masterdetailflow/WebsiteListActivity.kt-68-        private val onClickListener: View.OnClickListener
+./MasterDetailFlow/app/src/main/java/com/ebookfrenzy/masterdetailflow/WebsiteListActivity.kt-69-
+./MasterDetailFlow/app/src/main/java/com/ebookfrenzy/masterdetailflow/WebsiteListActivity.kt:70:        init {
+./MasterDetailFlow/app/src/main/java/com/ebookfrenzy/masterdetailflow/WebsiteListActivity.kt-71-            onClickListener = View.OnClickListener { v ->
+./MasterDetailFlow/app/src/main/java/com/ebookfrenzy/masterdetailflow/WebsiteListActivity.kt-72-                val item = v.tag as DummyContent.DummyItem
+
+./ViewModelDemo/app/src/main/java/com/ebookfrenzy/viewmodeldemo/ui/main/MainFragment.kt-12-class MainFragment : Fragment() {
+./ViewModelDemo/app/src/main/java/com/ebookfrenzy/viewmodeldemo/ui/main/MainFragment.kt-13-
+./ViewModelDemo/app/src/main/java/com/ebookfrenzy/viewmodeldemo/ui/main/MainFragment.kt:14:    companion object {
+./ViewModelDemo/app/src/main/java/com/ebookfrenzy/viewmodeldemo/ui/main/MainFragment.kt-15-        fun newInstance() = MainFragment()
+./ViewModelDemo/app/src/main/java/com/ebookfrenzy/viewmodeldemo/ui/main/MainFragment.kt-16-    }
+
+./LifecycleDemo/app/src/main/java/com/ebookfrenzy/lifecycledemo/ui/main/MainFragment.kt:22:    private lateinit var viewModel: MainViewModel
+./LifecycleDemo/app/src/main/java/com/ebookfrenzy/lifecycledemo/ui/main/MainFragment.kt-23-
+./LifecycleDemo/app/src/main/java/com/ebookfrenzy/lifecycledemo/ui/main/MainFragment.kt-24-    override fun onCreateView(
+./LifecycleDemo/app/src/main/java/com/ebookfrenzy/lifecycledemo/ui/main/MainFragment.kt-25-        inflater: LayoutInflater, container: ViewGroup?,
+
+“If a variable is required to be able to store a null value, it must be specifically declared as a nullable type by placing a question mark (?) after the type declaration:
+val username: String? = null”
+
+“A much more efficient way to achieve this same verification, however, is to call the function using the safe call operator (represented by ?.) as follows:
+val uppercase = username?.toUpperCase()
+In the above example, if the username variable is null, the toUpperCase() function will not be called and execution will proceed at the next line of code. If, on the other hand, a non-null value is assigned the toUpperCase() function will be called and the result assigned to the uppercase variable.
+In addition to function calls, the safe call operator may also be used when accessing properties:
+val uppercase = username?.length”
+
+“Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type String?”
+
+“The Kotlin Elvis operator can be used in conjunction with nullable types to define a default value that is to be returned in the event that a value or expression result is null. The Elvis operator (?:) is used to separate two expressions. If the expression on the left does not resolve to a null value that value is returned, otherwise the result of the rightmost expression is returned. This can be thought of as a quick alternative to writing an if-else statement to check for a null value. Consider the following code:
+if (myString != null) {
+    return myString
+} else {
+    return "String is null"
+}
+The same result can be achieved with less coding using the Elvis operator as follows:
+return myString ?: "String is null”
+
 
 
