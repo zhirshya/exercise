@@ -5,6 +5,8 @@ brew update && brew upgrade
 
 #brew upgrade ffmpeg --with-chromaprint --with-fdk-aac --with-libass --with-librsvg --with-libsoxr --with-libssh --with-tesseract --with-libvidstab --with-opencore-amr --with-openh264 --with-openjpeg --with-openssl --with-rtmpdump --with-rubberband --with-sdl2 --with-snappy --with-tools --with-webp --with-x265 --with-xz --with-zeromq --with-zimg --with-ffplay --with-freetype --with-libquvi --with-libvorbis --with-libvpx --with-opuS --enable-zlib --enable-demuxer=image2 --enable-decoder=mjpeg,png --enable-protocol=file
 
+sudo youtube-dl -U
+
 npm install -g npm@latest
 npm update -g nodemon
 #https://arui.tech/en/why-locally-install-is-much-better-than-globally-in-npm/
