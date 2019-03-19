@@ -6738,8 +6738,11 @@ unzip and find AAct.exe in iso
  
 Сүүлийн үед гараад байгаа "цулам" гэдэг үгийг монгол бичгээр хэрхэн бичих вэ?
 
-
 Хярж хэвтсэн нохой
+
+brew update && brew upgrade && sudo youtube-dl -U
+
+Git Push & Pull with Two different account and Two different user on same machine
 
 
 
