@@ -6762,3 +6762,6 @@ https://www.youtube.com/user/HotZetiGer/videos
 
 Вансэмбэрүү цэцэг
 
+java.awt.image.RasterFormatException: (y + height) is outside raster
+
+
