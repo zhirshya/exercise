@@ -6766,5 +6766,7 @@ java.awt.image.RasterFormatException: (y + height) is outside raster
 
 recursion (or induction, if you prefer)
 
+depend quadrat- ically on the input size n, meaning that the number of operations required scales as a constant times n2. In Theorem 1.2, one of these factors of n is replaced by log2 n.
+
 
 
