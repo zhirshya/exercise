@@ -495,6 +495,8 @@ Evaluate the performance of machine learning systems in common tasks.
 
 
 c++:
+Deleting null pointer is a no OP in C++.
+
 https://github.com/BjarneStroustrup/Programming-_Principles_and_Practice_Using_Cpp/blob/master/Matrix11.h
 typedef long Index;    // I still dislike unsigned
 
@@ -1024,6 +1026,7 @@ remorse
 
 
 en:
+I have slightly redacted to 2x and ABC.
 Schmach (genitive Schmach, no plural): disgrace.
 BFSSR:Bigger, Faster, Stronger, Smarter, and Richer.
 Techniques starbucks barista used to upsell me.
@@ -1438,6 +1441,10 @@ TOC: Table of Contents
 en2mn2rus:
 stare [noun]: гөлөрсөн харц ᠭᠥᠯᠢᠷᠡᠭᠰᠡᠨ ᠬᠠᠷᠠᠴᠠ
 to stare [verb]: гөлрөх ᠭᠥᠯᠢᠷᠡᠬᠦ
+
+state philharmonic: улсын филармон ᠤᠯᠤᠰ ᠤᠨ ᠹᠢᠯᠠᠷᠮᠣᠨᠢ
+
+philharmonic: symphony orchestra
 
 per se
 clench fists
@@ -3983,6 +3990,7 @@ cn2en2mn2ru:
 燊 shēn: 旺盛, 【形】 炽盛〖flaming〗盛貌。
 甯 níng 【字义】所愿也。；姓氏，有“甯 “、“寗”两种写法。
 【甯字颂】身正如洪钟，用心深府中；决胜千里外，谈笑百家村。－－汉中甯氏志俊撰
+不可小觑
 
 en2cn:
 hair clay 发泥
@@ -6823,5 +6831,15 @@ Excerpt From: S. M. Mohi Us Sunnat. “Learn Spring for Android Application Deve
 No one really gives as much of a shit about you as you think.
 
 sometimes barely the sludge on the bottom of the barrel.
+
+Data Science from Scratch: First Principles with Python, 2nd Edition by Joel Grus 
+English | 2019 | ISBN: 1492041139
+Learn the basics of linear algebra, statistics, and probability—and how and when they’re used in data science
+Collect, explore, clean, munge, and manipulate data
+Dive into the fundamentals of machine learning
+Implement models such as k-nearest neighbors, Naïve Bayes, linear and logistic regression, decision trees, neural networks, and clustering
+Explore recommender systems, natural language processing, network analysis, MapReduce, and databases
+
+
 
 
