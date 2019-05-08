@@ -161,7 +161,6 @@ alias lsn='less -N'
 alias dff=diff
 alias dffBb='diff -Bb'
 alias mr='more -s'
-alias rmrf='rm -rf'
 alias kty=whoami #Кто я?
 alias 03f='disable -p "?"'
 alias 13f='enable -p ?'
