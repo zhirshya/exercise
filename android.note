@@ -2,3 +2,13 @@ Optical Character Recognition (OCR)
 TextRecognizer
 TextToSpeech
 
+https://www.youtube.com/watch?v=IrMw7MEgADk
+A single activity app will honestly feel a lot better from a UX standpoint. All the apps I create try to have as few Activities as possible, and the end result is a lot better. When I use an app that uses that Activity A -> slide transition -> Activity B, it just hurts how old, and terrible that is.
+Trust me, use Fragments as much as possible, it'll make the app feel a lot smoother. Fragments and BottomSheets.
+
+> Yeah, the Activity just contains the logic for replacing the Fragments, the Fragments know exactly what they're doing and can handle themselves. You can pretty much just convert all other Activities into Fragments, and then throw them into one Activity, and you won't have to change much in terms of code.
+
+> I agree that using multiple Fragments in a single Activity may result in more robust transitions (since you won't have to make a round trip to the system, pass the data through IPC, get WindowManager involved etc), as well as more flexible UI composition. And while lately I tend to split my UI into stateless components that get recreated upon activity restart, I still use Fragments when I need to make them stateful (e.g. dialogs, tabs etc). However, in an app that has multiple entry points (e.g. from launcher and notification), there's specific Activity functionality such as intent flags for task management, which is very non-trivial to replicate using fragments — to the extent that sometimes it's better to simulate a Dialog-looking translucent activity over another activity rather than use a standard dialog.
+As always, it depends. Now it's easier than ever to use fragments and migrate to/from using them, due to ViewModel approach.
+
+> BottomSheets rocks, and you know what improved my bottom sheets like beautiful!! LiveData.. that's the best thing they could give us developers.
