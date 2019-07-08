@@ -62,5 +62,6 @@ if (myString != null) {
 The same result can be achieved with less coding using the Elvis operator as follows:
 return myString ?: "String is null”
 
-
+//open var
+open var mAppBar: AppBarLayout? = null
 
