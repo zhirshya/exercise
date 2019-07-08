@@ -5124,6 +5124,9 @@ How would a dopamine antagonist work? … continue asking yourself elaborative q
 
 
 asuult:
+why wget a url downloads html source?
+wget https://github.com/github/gitignore/blob/master/Android.gitignore
+
 configure ipv6 in macos to use in ipv4 computer network environment? 
 
 change system locale but preserve display language as english?
@@ -5473,7 +5476,7 @@ brew tap caskroom/cask && brew cask install gimp
 
 book: Enlightened Office Politics: Understanding, Coping With, and Winning the Game--without Losing Your Soul
 
-emtrek.org: .MT*9*#
+emtrek.org: .d*9??
 
 how many algorithms in C++ STL?
 git-hooks for lode dev only: install the necessary git-hooks to be able to push a commit to lode via gerrit.
