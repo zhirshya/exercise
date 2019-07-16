@@ -3,6 +3,7 @@ TextRecognizer
 TextToSpeech
 
 https://www.youtube.com/watch?v=IrMw7MEgADk
+Modern Android development: Android Jetpack, Kotlin, and more (Google I/O 2018)
 A single activity app will honestly feel a lot better from a UX standpoint. All the apps I create try to have as few Activities as possible, and the end result is a lot better. When I use an app that uses that Activity A -> slide transition -> Activity B, it just hurts how old, and terrible that is.
 Trust me, use Fragments as much as possible, it'll make the app feel a lot smoother. Fragments and BottomSheets.
 
@@ -12,3 +13,27 @@ Trust me, use Fragments as much as possible, it'll make the app feel a lot smoot
 As always, it depends. Now it's easier than ever to use fragments and migrate to/from using them, due to ViewModel approach.
 
 > BottomSheets rocks, and you know what improved my bottom sheets like beautiful!! LiveData.. that's the best thing they could give us developers.
+
+https://www.youtube.com/watch?v=2k8x8V77CrU
+Single Activity: Why, When, and How (Android Dev Summit '18)
+
+Handling activities navigations it's always a pain. Cant wait to see the progress to the final Navigation component.
+
+Banner ads can perform uninterrupted and register more impressions when a single activity pattern is employed.
+
+FragmentScenario and FragmentFactory which were literally just released and help considerably towards not just making a Single Activity structure work, but also make it testable.
+If you want in depth talks on Navigation, I'd suggest the I/O 2018 talk and the Droidcon NYC 2018 talk: https://www.youtube.com/watch?v=ST2W1Y_Ztvk
+
+Ian's the best. His Udacity courses were great too :-). Now I'm off to bug my manager to make the app single activity haha.
+> Like I said at the end, don't contort yourself if it doesn't make sense. Moving each Activity one at a time to Navigation until each is just an empty shell of an Activity makes it a lot easier to later combine the graphs and collapse multiple Activities into one without it being a 'big bang' kind of approach. Updating the Migrating to Navigation guide to call out the steps to make that transition is definitely something we're working on - feel free to star the feature request to track progress: https://issuetracker.google.com/issues/119646049.
+
+Picture in picture mode is so broken.
+> Yep, if you're using multiple activities, there's definitely some gotchas as described in https://medium.com/google-developers/navigation-patterns-with-pip-2c5b6a446ba0 - a lot of these are significantly minimized if you are using a single activity since that avoids any noticeable effects of the task change that occurs when entering picture in picture mode.
+
+what's happens when you have a app where some screens have a navbar or drawer  and some screens do not? Can you really do the same with one activity?
+> Wouldn't it be as simple as hiding those views depending on what fragment is visible?
+
+How does this work with when you have app that supports phones and tablet. For example a master detail view on tablet?. In tablet we don't add or replace the fragment as master and detail fragment are side by side. Different navigation graph for phones and tablets?
+> I talked about this in some detail in this reddit AMA: https://www.reddit.com/r/androiddev/comments/8xspo7/were_on_the_engineering_team_for_android_p_ask_us/e2ojrwn/ - basically, due to free-form multi-window being available on Chrome OS devices, you should focus on every screen of your app being responsive rather than making huge changes like switching to master/detail. We're working on making that more officially part of our documentation - you can star the feature request for updates on that: https://issuetracker.google.com/issues/79668915.
+
+
