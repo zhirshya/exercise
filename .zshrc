@@ -12,7 +12,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANT_HOME=/usr/local/Cellar/ant/1.10.5/libexec
 export GOPATH=$HOME/go-workspace
 export GOROOT=/usr/local/opt/go/libexec
-export GRADLE_HOME=$(brew info gradle | sed -nE 's#^(/usr/local/Cellar/gradle/[^ ]+).+\*#\1#p')
+#export GRADLE_HOME=$(brew info gradle | sed -nE 's#^(/usr/local/Cellar/gradle/[^ ]+).+\*#\1#p')
+export GRADLE_HOME=/usr/local/opt/gradle/libexec
+export HOMEBREW_FORCE_BREWED_CURL=1
 
 #https://gist.github.com/snowyu/c0b64f8bc63d1fb0e04971866e8c0067
 #export http_proxy=socks5://127.0.0.1:1080
@@ -21,7 +23,7 @@ export GRADLE_HOME=$(brew info gradle | sed -nE 's#^(/usr/local/Cellar/gradle/[^
 #export socks5="socks5://127.0.0.1:1080"
 
 # If you come from bash you might have to change your $PATH.
-export PATH="${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$GRADLE_HOME/bin:$HOME/.cargo/bin:$GOROOT/bin:$GOPATH/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
+export PATH="~/Library/android/sdk/platform-tools/:$GRADLE_HOME/bin:${LODE_HOME}/opt/bin:/usr/local/opt/ccache/libexec:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$GRADLE_HOME/bin:$HOME/.cargo/bin:$GOROOT/bin:$GOPATH/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin:/usr/games:/usr/local/games"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -243,3 +245,4 @@ source ~/.zsh-func
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
