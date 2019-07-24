@@ -37,3 +37,44 @@ How does this work with when you have app that supports phones and tablet. For e
 > I talked about this in some detail in this reddit AMA: https://www.reddit.com/r/androiddev/comments/8xspo7/were_on_the_engineering_team_for_android_p_ask_us/e2ojrwn/ - basically, due to free-form multi-window being available on Chrome OS devices, you should focus on every screen of your app being responsive rather than making huge changes like switching to master/detail. We're working on making that more officially part of our documentation - you can star the feature request for updates on that: https://issuetracker.google.com/issues/79668915.
 
 
+fragment and view
+
+Android Developer’s Guide to Fragment Navigation Pattern
+https://www.toptal.com/android/android-fragment-navigation-pattern
+Ryan Taylor: I'm a fan of the simplified cross-scene communications and not having to recreate reused views (I.e. navigation menu, minimized media player, etc.) as you mentioned in your article. However, over the past year of working with a single-Activity architecture, I've noticed a few headaches come up that I think are worth sharing:
+a) Toolbar management becomes a mess. For example, say you navigate from a simple, single-titled Toolbar to a CollapsingToolbarLayout or a Toolbar with a nested SearchView. Since Toolbars require that they be managed by an Activity, when dealing with a single Activity structure, those Toolbar changes need to be communicated from every Fragment to that Activity. Transitions between opaque and translucent status bars also need to be toggled in this matter.
+b) The single Activity tends to become a sort of God class. When all navigation occurs in the one Activity, that Activity needs to know about every scene in the app.
+c) By passing a single navigation management interface, all Fragments gain the power to navigate anywhere in the app. This might not be desirable.
+d) Prevents you from performing meaningful Activity transition animations.
+
+Ivan Schuetz: A few clarifications for Post and commenters:
+1. Fragments are not "only UI" so they are not simply replaceable with views - if they were they would have not been created in the first place! I think it's perfectly fine to put business logic in fragments, e.g. To call a service to get the data to be displayed. This way you can easily compose a screen using multiple fragments that contain the UI as well as the behavior without anything additional.
+2. It's a bad idea to pass callback or listeners to fragments to communicate with the container, because the system can re-create the fragments at any point, for which it will not call the constructor you used to initialize it, so this new fragment instance will not have any of the in-memory parameters you passed to it. This is why you have to use bundles to pass data to fragments (this is serialized, so it doesn't disappear when the fragment is re-created) and have to use things like onActivityResult to get data back from it. A listener is also only an in-memory parameter and would disappear.
+3. To avoid a "fat activity" you can simply create different components, coordinators, etc. (if necessary at all) to which the activity delegates the work. Anyway, if you put the business logic in the fragment themselves, you don't need for the most part a fat central component. If you feel that your fragment are becoming fat you can any time put their business logic in a business-logic only component but which would be associated only with the fragment.
+
+Really interesting pattern in paper, but as Ryan said, when the projects become large enough the main Activity that holds the Fragments references transforms in something like a 'God' class.
+The mess that's caused by it and its maintainability cost, for me, its just not worth it.
+In practice I would recommend a mixed approach, with Activities created for each of the modules of the application and Fragments for each of the UI components of it (Tabs, FullScreenDialogs, etc..).
+
+mewa: Nice article, but in my opinion the biggest headache on Android is not the Activity vs Fragment vs Views dispute but the general architecture of an app.
+People building Android apps often tend to forget that it's the "God" objects, Ryan has mentioned, that are the main source of issues that often result later in unmaintainable code, bugs and poor testability. 
+The first thing one would do is to separate your logic and ui.
+After having worked with 1-activity-to-many-fragments architecture, I have to admit that personally I prefer Views, as they are really straight-forward, have no async transactions that could introduce "hazards" as well as some other Fragment-sprecific quirks. 
+Although they do involve writing a bit of boilerplate code, in most use cases using Views results in a simpler application lifecycle.
+When it comes to portability issues, there are basically none with this approach, since you could always wrap your View - and actually that's what Fragments really are.
+That is just a preference though - View, as I perceive it, could mean the basic UI building block, but it has to be referred to as an idea, that fragments could implement too.
+The most important thing therefore is to give the view layer an abstraction that can be easily adapted to changes.
+
+I totally agree with Ryan Taylor.
+Also one more thing - backstack. FragmentManager will give you some headaches with proper management of it, showing animations on changing fragments and some other stuff.
+Fragments were created firstly to represent UI, to give developer ability to create parts of Screen and be able to divide them between screens, if on screen rotation new dimensions of screen will not allow to show same parts in their places.
+It is very terrible mistake for all of us, who tried whenever to put business logic, model managment in class Fragment, which is responsible Only for showing user UI, part of it, even if it fills screen.
+Also it isn't good idea to put in 1 class all control of everything (what single activity will become soon). You will have very big monster class with 1000+ lines of code and it would be almost impossible to go forward and add new features in future.
+In result I found for myself that better will be to have many activities and many fragments, sometimes activities without fragment at all.
+My advice is: try not to go in extreme position in using fragments everywhere where it is possible.
+
+I use a mix of both. Where i need to show drawer i use fragments and where i need to show back or up button i use parent activtiy concept. But it was a good article i learned from it that we can apply a listener on fragments for delivering results to previous fragment.
+
+Nice discussion. The drawer layout also is difficult to implement well with multiple activities because ideally you want the navigation to happen while the drawer is animating closed. It would be impossible or at least really difficult (maybe using activity transitions) to do this with different activities.
+
+
