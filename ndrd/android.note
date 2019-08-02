@@ -77,4 +77,26 @@ I use a mix of both. Where i need to show drawer i use fragments and where i nee
 
 Nice discussion. The drawer layout also is difficult to implement well with multiple activities because ideally you want the navigation to happen while the drawer is animating closed. It would be impossible or at least really difficult (maybe using activity transitions) to do this with different activities.
 
+https://www.youtube.com/watch?v=8zLBWrKm1jo
+安卓开发之数据存储在本地的四种方式
+本地数据存储，在安卓开发过程中是不可避免的一个话题。这些本地的数据可能是用户的设置，程序的设置，用户的数据图片, 也可能是网络传输的一些缓冲数据。
 
+4种方法可以存储安卓程序的数据。
+第1种是Shared Preference(共享选项)。
+这种方法适合于存储一些基本数据类型的数据。他提供的是key-value（键值）的方式。键必须是字符串类型的，值可以是布尔型的，浮点型的，整型的，长整型的，或者字符串类型的。
+这种方式是用一个xml文件在私有的目录里面存放这些数据的。一个程序可以有多个这样的文件。
+
+第2种是Internal Storage(内部存储)。
+这种方式用来存储一些复杂的数据结构。因为是内部存储方式，所以其他程序无法访问。这样可以保证数据的安全性。当你的程序卸载以后，这些内部存储数据也会被清除掉。
+
+这类数据一般包括像一些对象，或者本地需要一些类似文件系统访问模式的数据。
+
+第3种是External Storage(外部存储)。
+这种存储方式用来存储一些文件对象。这些文件可以被其他程序来访问。要使用外部存储，需要申请特别的写权限WRITE_EXTERNAL_STORAGE。如果其他程序需要访问这些外部存储数据的话，也需要申请读权限READ_EXTERNAL_STORAGE 。
+
+从安卓4.4开始，用户可以把自己的数据写入一个私有的外部存储文件夹中，如果这样的话，用户就不需要申请写权限WRITE_EXTERNAL_STORAGE。当用户卸载程序的时候，这个文件夹也会被清除。
+
+从安卓7.0开始， 安卓程序可以申请访问特定的文件目录，而不是申请访问整个外部存储空间。这样可以保证数据的安全性，防止误操作。用户只可以访问图片目录，或者文档目录。
+
+第4种是SQLite database(数据库)。
+这种方式需要了解一些数据库方面的知识。适合存储相对结构化的数据。尤其是表结构。数据库是跟当前程序绑定的其他程序无法访问。
