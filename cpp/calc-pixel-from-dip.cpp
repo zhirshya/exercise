@@ -62,6 +62,7 @@ int main(int argc, char** argv){
 		double dpiBaselineRatio = dpi/160.0;
 		for(auto dip : dipPairs){
 			pair<double,double> pxPair = {dpiBaselineRatio*dip.first, dpiBaselineRatio*dip.second};
+		//	pair<double,double> pxPair = {ceil(dpiBaselineRatio*dip.first), ceil(dpiBaselineRatio*dip.second)};
 			pxPairs.emplace_back(pxPair);
 		}
 	}
