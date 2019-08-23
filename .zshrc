@@ -15,6 +15,7 @@ export GOROOT=/usr/local/opt/go/libexec
 #export GRADLE_HOME=$(brew info gradle | sed -nE 's#^(/usr/local/Cellar/gradle/[^ ]+).+\*#\1#p')
 export GRADLE_HOME=/usr/local/opt/gradle/libexec
 export HOMEBREW_FORCE_BREWED_CURL=1
+export LC_ALL=en_US.UTF-8
 
 #https://gist.github.com/snowyu/c0b64f8bc63d1fb0e04971866e8c0067
 #export http_proxy=socks5://127.0.0.1:1080
@@ -244,5 +245,6 @@ source ~/.zsh-func
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -d ~/zsh-syntax-highlighting ] && source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
