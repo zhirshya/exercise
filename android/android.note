@@ -1,0 +1,142 @@
+Optical Character Recognition (OCR) 
+TextRecognizer
+TextToSpeech
+
+https://www.youtube.com/watch?v=IrMw7MEgADk
+Modern Android development: Android Jetpack, Kotlin, and more (Google I/O 2018)
+A single activity app will honestly feel a lot better from a UX standpoint. All the apps I create try to have as few Activities as possible, and the end result is a lot better. When I use an app that uses that Activity A -> slide transition -> Activity B, it just hurts how old, and terrible that is.
+Trust me, use Fragments as much as possible, it'll make the app feel a lot smoother. Fragments and BottomSheets.
+
+> Yeah, the Activity just contains the logic for replacing the Fragments, the Fragments know exactly what they're doing and can handle themselves. You can pretty much just convert all other Activities into Fragments, and then throw them into one Activity, and you won't have to change much in terms of code.
+
+> I agree that using multiple Fragments in a single Activity may result in more robust transitions (since you won't have to make a round trip to the system, pass the data through IPC, get WindowManager involved etc), as well as more flexible UI composition. And while lately I tend to split my UI into stateless components that get recreated upon activity restart, I still use Fragments when I need to make them stateful (e.g. dialogs, tabs etc). However, in an app that has multiple entry points (e.g. from launcher and notification), there's specific Activity functionality such as intent flags for task management, which is very non-trivial to replicate using fragments — to the extent that sometimes it's better to simulate a Dialog-looking translucent activity over another activity rather than use a standard dialog.
+As always, it depends. Now it's easier than ever to use fragments and migrate to/from using them, due to ViewModel approach.
+
+> BottomSheets rocks, and you know what improved my bottom sheets like beautiful!! LiveData.. that's the best thing they could give us developers.
+
+https://www.youtube.com/watch?v=2k8x8V77CrU
+Single Activity: Why, When, and How (Android Dev Summit '18)
+
+Handling activities navigations it's always a pain. Cant wait to see the progress to the final Navigation component.
+
+Banner ads can perform uninterrupted and register more impressions when a single activity pattern is employed.
+
+FragmentScenario and FragmentFactory which were literally just released and help considerably towards not just making a Single Activity structure work, but also make it testable.
+If you want in depth talks on Navigation, I'd suggest the I/O 2018 talk and the Droidcon NYC 2018 talk: https://www.youtube.com/watch?v=ST2W1Y_Ztvk
+
+Ian's the best. His Udacity courses were great too :-). Now I'm off to bug my manager to make the app single activity haha.
+> Like I said at the end, don't contort yourself if it doesn't make sense. Moving each Activity one at a time to Navigation until each is just an empty shell of an Activity makes it a lot easier to later combine the graphs and collapse multiple Activities into one without it being a 'big bang' kind of approach. Updating the Migrating to Navigation guide to call out the steps to make that transition is definitely something we're working on - feel free to star the feature request to track progress: https://issuetracker.google.com/issues/119646049.
+
+Picture in picture mode is so broken.
+> Yep, if you're using multiple activities, there's definitely some gotchas as described in https://medium.com/google-developers/navigation-patterns-with-pip-2c5b6a446ba0 - a lot of these are significantly minimized if you are using a single activity since that avoids any noticeable effects of the task change that occurs when entering picture in picture mode.
+
+what's happens when you have a app where some screens have a navbar or drawer  and some screens do not? Can you really do the same with one activity?
+> Wouldn't it be as simple as hiding those views depending on what fragment is visible?
+
+How does this work with when you have app that supports phones and tablet. For example a master detail view on tablet?. In tablet we don't add or replace the fragment as master and detail fragment are side by side. Different navigation graph for phones and tablets?
+> I talked about this in some detail in this reddit AMA: https://www.reddit.com/r/androiddev/comments/8xspo7/were_on_the_engineering_team_for_android_p_ask_us/e2ojrwn/ - basically, due to free-form multi-window being available on Chrome OS devices, you should focus on every screen of your app being responsive rather than making huge changes like switching to master/detail. We're working on making that more officially part of our documentation - you can star the feature request for updates on that: https://issuetracker.google.com/issues/79668915.
+
+
+fragment and view
+
+Android Developer’s Guide to Fragment Navigation Pattern
+https://www.toptal.com/android/android-fragment-navigation-pattern
+Ryan Taylor: I'm a fan of the simplified cross-scene communications and not having to recreate reused views (I.e. navigation menu, minimized media player, etc.) as you mentioned in your article. However, over the past year of working with a single-Activity architecture, I've noticed a few headaches come up that I think are worth sharing:
+a) Toolbar management becomes a mess. For example, say you navigate from a simple, single-titled Toolbar to a CollapsingToolbarLayout or a Toolbar with a nested SearchView. Since Toolbars require that they be managed by an Activity, when dealing with a single Activity structure, those Toolbar changes need to be communicated from every Fragment to that Activity. Transitions between opaque and translucent status bars also need to be toggled in this matter.
+b) The single Activity tends to become a sort of God class. When all navigation occurs in the one Activity, that Activity needs to know about every scene in the app.
+c) By passing a single navigation management interface, all Fragments gain the power to navigate anywhere in the app. This might not be desirable.
+d) Prevents you from performing meaningful Activity transition animations.
+
+Ivan Schuetz: A few clarifications for Post and commenters:
+1. Fragments are not "only UI" so they are not simply replaceable with views - if they were they would have not been created in the first place! I think it's perfectly fine to put business logic in fragments, e.g. To call a service to get the data to be displayed. This way you can easily compose a screen using multiple fragments that contain the UI as well as the behavior without anything additional.
+2. It's a bad idea to pass callback or listeners to fragments to communicate with the container, because the system can re-create the fragments at any point, for which it will not call the constructor you used to initialize it, so this new fragment instance will not have any of the in-memory parameters you passed to it. This is why you have to use bundles to pass data to fragments (this is serialized, so it doesn't disappear when the fragment is re-created) and have to use things like onActivityResult to get data back from it. A listener is also only an in-memory parameter and would disappear.
+3. To avoid a "fat activity" you can simply create different components, coordinators, etc. (if necessary at all) to which the activity delegates the work. Anyway, if you put the business logic in the fragment themselves, you don't need for the most part a fat central component. If you feel that your fragment are becoming fat you can any time put their business logic in a business-logic only component but which would be associated only with the fragment.
+
+Really interesting pattern in paper, but as Ryan said, when the projects become large enough the main Activity that holds the Fragments references transforms in something like a 'God' class.
+The mess that's caused by it and its maintainability cost, for me, its just not worth it.
+In practice I would recommend a mixed approach, with Activities created for each of the modules of the application and Fragments for each of the UI components of it (Tabs, FullScreenDialogs, etc..).
+
+mewa: Nice article, but in my opinion the biggest headache on Android is not the Activity vs Fragment vs Views dispute but the general architecture of an app.
+People building Android apps often tend to forget that it's the "God" objects, Ryan has mentioned, that are the main source of issues that often result later in unmaintainable code, bugs and poor testability. 
+The first thing one would do is to separate your logic and ui.
+After having worked with 1-activity-to-many-fragments architecture, I have to admit that personally I prefer Views, as they are really straight-forward, have no async transactions that could introduce "hazards" as well as some other Fragment-sprecific quirks. 
+Although they do involve writing a bit of boilerplate code, in most use cases using Views results in a simpler application lifecycle.
+When it comes to portability issues, there are basically none with this approach, since you could always wrap your View - and actually that's what Fragments really are.
+That is just a preference though - View, as I perceive it, could mean the basic UI building block, but it has to be referred to as an idea, that fragments could implement too.
+The most important thing therefore is to give the view layer an abstraction that can be easily adapted to changes.
+
+I totally agree with Ryan Taylor.
+Also one more thing - backstack. FragmentManager will give you some headaches with proper management of it, showing animations on changing fragments and some other stuff.
+Fragments were created firstly to represent UI, to give developer ability to create parts of Screen and be able to divide them between screens, if on screen rotation new dimensions of screen will not allow to show same parts in their places.
+It is very terrible mistake for all of us, who tried whenever to put business logic, model managment in class Fragment, which is responsible Only for showing user UI, part of it, even if it fills screen.
+Also it isn't good idea to put in 1 class all control of everything (what single activity will become soon). You will have very big monster class with 1000+ lines of code and it would be almost impossible to go forward and add new features in future.
+In result I found for myself that better will be to have many activities and many fragments, sometimes activities without fragment at all.
+My advice is: try not to go in extreme position in using fragments everywhere where it is possible.
+
+I use a mix of both. Where i need to show drawer i use fragments and where i need to show back or up button i use parent activtiy concept. But it was a good article i learned from it that we can apply a listener on fragments for delivering results to previous fragment.
+
+Nice discussion. The drawer layout also is difficult to implement well with multiple activities because ideally you want the navigation to happen while the drawer is animating closed. It would be impossible or at least really difficult (maybe using activity transitions) to do this with different activities.
+
+https://www.youtube.com/watch?v=8zLBWrKm1jo
+安卓开发之数据存储在本地的四种方式
+本地数据存储，在安卓开发过程中是不可避免的一个话题。这些本地的数据可能是用户的设置，程序的设置，用户的数据图片, 也可能是网络传输的一些缓冲数据。
+
+4种方法可以存储安卓程序的数据。
+第1种是Shared Preference(共享选项)。
+这种方法适合于存储一些基本数据类型的数据。他提供的是key-value（键值）的方式。键必须是字符串类型的，值可以是布尔型的，浮点型的，整型的，长整型的，或者字符串类型的。
+这种方式是用一个xml文件在私有的目录里面存放这些数据的。一个程序可以有多个这样的文件。
+
+第2种是Internal Storage(内部存储)。
+这种方式用来存储一些复杂的数据结构。因为是内部存储方式，所以其他程序无法访问。这样可以保证数据的安全性。当你的程序卸载以后，这些内部存储数据也会被清除掉。
+
+这类数据一般包括像一些对象，或者本地需要一些类似文件系统访问模式的数据。
+
+第3种是External Storage(外部存储)。
+这种存储方式用来存储一些文件对象。这些文件可以被其他程序来访问。要使用外部存储，需要申请特别的写权限WRITE_EXTERNAL_STORAGE。如果其他程序需要访问这些外部存储数据的话，也需要申请读权限READ_EXTERNAL_STORAGE 。
+
+从安卓4.4开始，用户可以把自己的数据写入一个私有的外部存储文件夹中，如果这样的话，用户就不需要申请写权限WRITE_EXTERNAL_STORAGE。当用户卸载程序的时候，这个文件夹也会被清除。
+
+从安卓7.0开始， 安卓程序可以申请访问特定的文件目录，而不是申请访问整个外部存储空间。这样可以保证数据的安全性，防止误操作。用户只可以访问图片目录，或者文档目录。
+
+第4种是SQLite database(数据库)。
+这种方式需要了解一些数据库方面的知识。适合存储相对结构化的数据。尤其是表结构。数据库是跟当前程序绑定的其他程序无法访问。
+
+https://www.youtube.com/watch?v=bqZbq9ztUqw
+View Model is Presentation logic. it is too close to view\UI to be anything than presentation logic.
+> Actually, I use it for a front end session state container and have a different class (which is essentially a Presenter) handle presentation logic. This way Presentation Logic, Front end data, View binding, and the back end are all kept separate.
+
+You seem to be implying that the VM is just Presentation Logic; it never is just presentation logic in any implementation I have seen, because it also stores data. Hence why I choose to separate the two typically.
+ 
+@wiseAss Can you elaborate more about storing data? I did not get it. You mean calling repository?
+@Irakli Dadiani No, I would refer to calling the repository as a back end operation.
+
+Another name for View Model is Presentation Model (you can read about it on Martin Fowler's blog, he explains it very well). Now, whether you decide to add a fourth piece to this GUI pattern (such as a Presenter, or I simply call it a Logic class) or not, the "View Model" always models (in the verb sense of the word) the data necessary to render the UI. It is not simply Presentation Logic as it always possesses this function of modelling data, as in holding member fields, or in the case of android, LiveData objects. 
+
+In a simple app, I don't mind this thing called "View Model" doing a little bit of presentation logic, but in a larger application, the View Model suddenly gets loaded with Presentation Logic while still holding on to the data which the View must subscribe to and render. When this happens, you get this ugly scenario where you either choose to have the View take on more Presentation Logic (making them more difficult to write/test), or you make your View Model more intimate with the Presentation Logic of a particular view (which then means you have less re-usability of that particular View Model).
+
+My solution in complex apps (again, I don't care so much about simple apps where the presentation logic is trivial), is to apply separation of concerns to the View Model, so that it really just does EXACTLY what the name would imply. It Models the data necessary to render the View. Then I have a logic class (like a Presenter) coordinate both the View and the View Model. 
+
+I am not trying to reinvent a new architecture here, I simply applied separation of concerns when I noticed that a thing called a View Model (implying nothing to do with logic of any kind) became responsible for storing front end state and also encapsulating presentation logic. 
+
+A similar problem can pop up in MVP, where a person must decide to have the View or the Presenter store front end state (data typed in EditTexts, an id passed in via intent, stuff like that). When that happens I will again add in a View Model such that my other objects are no longer breaking separation of concerns. In other words, in my opinion, MVP, MVVM, are both frequently incomplete architectures if one rigorously applies separation of concerns.
+
+All of this depends on the nature of the feature I am building of course. Here's an example:
+https://github.com/BracketCove/PosTrainer/tree/master/app/src/main/java/com/bracketcove/postrainer/reminder
+ 
+@wiseAss I see. Totally agree about ViewModel being overloaded with functionality, I think it responsible for everything presentation needs. I prefer "Control freak" ViewModels or "Dumb view" in MVP because it is easy to test, and everything responsible for feature behavior is in one place. But I don't really think VM is reusable, because it is highly coupled with feature\behavior. I don't really see the point of VM being abstract enough to be reusable, only use cases. 
+I also agree that that MVVM and MVP have almost the same weak spots, that's why I prefer MVI which has better separation of concerns, very low coupling due to one input point (Event) and one output (ViewState) and so on.
+
+Android Icon Sizes
+https://www.creativefreedom.co.uk/icon-designers-blog/android-4-1-icon-size-guide-made-simple/
+https://www.creativefreedom.co.uk/icon-designers-blog/simple-android-icon-size-guide-for-lollipop-5-1/
+
+All Android icons follow the same scaling rules, so when creating your icon files you must make 5 versions to cover all the platforms available. The table below shows the pixel densities and icon sizes for the different types of user interface icons used by Android:
+
+ 	MDPI (Baseline)	HDPI	XHDPI	XXHDPI	XXXHDPI
+Scale	1 x	1.5 x	2 x	3 x	4 x
+DPI	~ 160 dpi	~ 240 dpi	~ 320 dpi	~ 480 dpi	~ 640 dpi
+App Launcher Icons	48 px	72 px	96 px	144 px	192 px
+Action bar Icons	32 px (24px inset)	48 px	64 px	96 px	128 px
+Small / Contextual Icons	16 px (12px inset)	24 px	32 px	48 px	64 px
+Notification Icons	24 px (22px inset)	36 px	48 px	72 px	96 px
+
